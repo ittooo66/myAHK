@@ -184,9 +184,11 @@ mbind_q(){
 			run "C:\Windows\System32\Taskmgr.exe"
 	}else if RCMD() || CAPS()
 		Send,{BackSpace}
-	else if LCMD()
-		Send,!{F4}
-	else if SPACE()
+	else if LCMD(){
+		MsgBox , 1 , Confirm, Really?
+		ifMsgBox, OK
+			Send,!{F4}
+	}else if SPACE()
 		press("y")
 	else
 		press("q")
