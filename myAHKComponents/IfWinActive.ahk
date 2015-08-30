@@ -104,7 +104,7 @@
 	RControl & w::
 		if GetKeyState("LControl", "P") && GetKeyState("RControl", "P")
 			;文字色変更（青）
-			Send, !{h}{f}{c}{Left}{Left}{Return}
+			Send, !{h}{f}{c}{Left}{Left}{Down}{Down}{Down}{Down}{Return}
 		Else if GetKeyState("LControl", "P")
 			Send, ^{l}
 		Else
