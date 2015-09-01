@@ -206,8 +206,8 @@
 	Return
 
 	;文字サイズ変更
-	LShift & WheelUp::Send, ^{[}
-	LShift & WheelDown::Send, ^{]}
+	LShift & WheelUp::Send, ^{]}
+	LShift & WheelDown::Send, ^{[}
 
 #IfWinActive
 
