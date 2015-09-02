@@ -192,8 +192,8 @@
 	Return
 	RControl & v::
 		if GetKeyState("LControl", "P")
-;???
-			Send, !{}
+			;View
+			Send, +{F5}
 		Else
 			mbind_v()
 	Return
