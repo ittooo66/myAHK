@@ -11,7 +11,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 \::Delete
 RAlt & Backspace::send,{\}
 
-;Reload AHK
+;Reload/Suspend AHK
 RAlt & ,::Reload
 RAlt & .::Suspend
 
@@ -33,13 +33,14 @@ LControl & Space::Send,!{``}
 ;window切り替え
 LControl & Tab::AltTab
 
-Space & Tab::return
+;SandS。Space押上げでSpaceキーActivateとSpace押しキャンセル用のTab
 Space::Send,{Space}
+Space & Tab::return
 
-;もろもろバインド
+;もろもろバインドとリスナー
 #include %A_ScriptDir%\myAHKComponents\MBind.ahk
-;もろもろバインドリスナー
 #include %A_ScriptDir%\myAHKComponents\MBindListener.ahk
-;IfWinActives ここに入れて優先で当たるように
+
+;IfWinActives ここで優先で当たるように
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\General.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
