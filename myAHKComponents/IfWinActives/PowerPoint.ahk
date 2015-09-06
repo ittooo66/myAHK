@@ -153,4 +153,7 @@
 	LShift & WheelUp::Send, ^{]}
 	LShift & WheelDown::Send, ^{[}
 
+	XButton2::Send,^{y}
+	XButton1::Send,^{z}
+
 #IfWinActive
