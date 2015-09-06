@@ -40,5 +40,6 @@ Space::Send,{Space}
 #include %A_ScriptDir%\myAHKComponents\MBind.ahk
 ;もろもろバインドリスナー
 #include %A_ScriptDir%\myAHKComponents\MBindListener.ahk
-;IfWinActive ここに入れて優先で当たるように
-#include %A_ScriptDir%\myAHKComponents\IfWinActive.ahk
+;IfWinActives ここに入れて優先で当たるように
+#include %A_ScriptDir%\myAHKComponents\IfWinActives\General.ahk
+#include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
