@@ -143,7 +143,7 @@
 	Return
 	RControl & b::
 		if GetKeyState("LControl", "P")
-		;枠線太さ変更
+			;枠線太さ変更
 			Send, !{j}{d}{s}{o}{w}
 		Else
 			mbind_b()
@@ -155,5 +155,9 @@
 
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
+
+	;横スクロール。powerpoint側にマクロを用意する必要あり。
+	XButton2 & WheelUp::Send,!{w}{p}{m}{Down}{Tab}{Return}
+	XButton2 & WheelDown::Send,!{w}{p}{m}{Down}{Down}{Tab}{Return}
 
 #IfWinActive

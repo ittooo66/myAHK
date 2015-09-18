@@ -49,8 +49,10 @@
 
 ;Excel
 #IfWinActive,ahk_class XLMAIN
-	LShift & WheelUp::Send, {Left}
-	LShift & WheelDown::Send, {Right}
+	要wheelscroll.ahk
+	<+WheelUp::WheelLeft
+	<+WheelDown::WheelRight
+
 #IfWinActive
 
 ;Atom
