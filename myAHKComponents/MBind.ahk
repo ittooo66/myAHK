@@ -35,6 +35,8 @@ mbind_d(){
 		Send,#{d}
 	else if RCMD() && CAPS()
 		Send,!+{9}
+	else if RALT() && CAPS()
+		mousemove()
 	else if RCMD() || CAPS()
 		press("{DOWN}")
 	else if SPACE()
@@ -51,6 +53,8 @@ mbind_e(){
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\TeraPad\TeraPad.exe"
 	}else if CAPS() && RCMD()
 		Send,!+{0}
+	else if RALT() && CAPS()
+		mousemove()
 	else if CAPS() || RCMD()
 		press("{UP}")
 	else if SPACE()
@@ -67,6 +71,8 @@ mbind_f(){
 			Run,explorer.exe
 	}else if RCMD() && CAPS()
 		Send,!+{8}
+	else if RALT() && CAPS()
+		mousemove()
 	else if LCMD() && CAPS()
 		Send,^{PgDn}
 	else if CAPS() || RCMD()
@@ -223,6 +229,8 @@ mbind_s(){
 			run "C:\Program Files (x86)\Skype\Phone\Skype.exe"
 	}else if LCMD() && CAPS()
 		Send,^{PgUp}
+	else if RALT() && CAPS()
+		mousemove()
 	else if RCMD() && CAPS()
 		Send,!+{7}
 	else if RCMD() || CAPS()
@@ -487,4 +495,10 @@ SHIFT(){
 }
 SPACE(){
 	return GetKeyState("Space","P")
+}
+RALT(){
+	return GetKeyState("RAlt","P")
+}
+LALT(){
+	return GetKeyState("LAlt","P")
 }
