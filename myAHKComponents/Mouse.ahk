@@ -58,19 +58,18 @@ RAlt & e::
 RAlt & s::
 RAlt & d::
 RAlt & f::
+    val := 1
+    slp := 10
     While (GetKeyState("RAlt", "P")){
-        val := 40
-        if GetKeyState("LShift","P")
-            val := 5
-        else if GetKeyState("Ctrl","P")
-            val := 1
-
         MoveX := 0, MoveY := 0
         MoveY += GetKeyState("e", "P") ? -val : 0
         MoveX += GetKeyState("s", "P") ? -val : 0
         MoveY += GetKeyState("d", "P") ? val : 0
         MoveX += GetKeyState("f", "P") ? val : 0
         MouseMove, %MoveX%, %MoveY%, 1, R
-        Sleep, 10
+        Sleep, %slp%
+        val++
+        if( !GetKeyState("e", "P") && !GetKeyState("d", "P") && !GetKeyState("s", "P") && !GetKeyState("f", "P"))
+            val := 1
     }
 Return
