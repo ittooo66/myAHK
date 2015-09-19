@@ -132,7 +132,14 @@ mbind_k(){
 }
 
 mbind_l(){
-	press("l")
+	if RCMD() &&LCMD(){
+		if !select("ApolloRuntimeContentWindow",""){
+			if !select("RiotWindowClass",""){
+				run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\League of Legends\League of Legends"
+			}
+		}
+	}else
+		press("l")
 }
 
 mbind_m(){
