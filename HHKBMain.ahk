@@ -6,7 +6,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;マウス設定（キーボードマウスとKana設定）
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
 
-;基本配置変更_HHKB
+;基本配置変更,chgkey.exeに注意
 `::Delete
 \::Backspace
 Backspace::\
