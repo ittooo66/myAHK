@@ -44,14 +44,9 @@ XButton2 & LButton::
 Return
 
 
-
-
-
-
-
 ;キーボードマウスエミュレーション
 RAlt & q::Send,{WheelUp}
-RAlt & a::Send,{WheelDown}
+RAlt & t::Send,{WheelDown}
 RAlt & w::Send,{LButton}
 RAlt & r::Send,{RButton}
 RAlt & e::

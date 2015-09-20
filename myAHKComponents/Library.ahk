@@ -190,6 +190,8 @@ mousemove(){
 		val++
 		if( !GetKeyState("e", "P") && !GetKeyState("d", "P") && !GetKeyState("s", "P") && !GetKeyState("f", "P"))
 			val := 1
+		if( !GetKeyState("RControl","P") )
+			Send,{LButton Up}
 	}
 	Send,{LButton Up}
 }
