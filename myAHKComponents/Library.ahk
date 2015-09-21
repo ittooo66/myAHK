@@ -1,5 +1,14 @@
 ;ライブラリ
 
+;ざっくりマクロ（rcmd||caps + b）用、適当に書き換えてくかんじ
+macro(){
+;	Send,{F2}
+;	Send,{HOME}
+;	Send,^{v}
+;	Send,{Return}
+}
+
+
 ;特定のWindowクラスを最下層から引っ張る
 ;ahkClass:クラス名
 ;ahkTitle:タイトル名。クラスで判別不可時（atom<>chrome）に使用,普段は空指定("")
