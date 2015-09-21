@@ -14,7 +14,7 @@ mbind_a(){
 
 mbind_b(){
 	if RCMD() || CAPS(){
-			macro()
+		macro()
 	}else if SPACE()
 		press("/")
 	else
