@@ -2,6 +2,7 @@
 RButton::Send,{RButton}
 XButton2::Send,{XButton2}
 XButton1::Send,{XButton1}
+;Window catalog(need Dexpot)
 MButton::!+0
 
 ;ウィンドウ変更
@@ -11,7 +12,7 @@ XButton1 & WheelDown::AltTab
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
 
-;ウィンドウ選択画面(by Dexpot)
+;ウィンドウ選択画面(need Dexpot)
 XButton1 & Xbutton2::Send,!+{9}
 XButton2 & XButton1::Send,!+{9}
 
