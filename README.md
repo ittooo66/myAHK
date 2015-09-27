@@ -11,31 +11,22 @@ myAHK
 または
 + `Main_HHKB.ahk`(for HHKB)
 
-を起動。
+を起動。`myAHKComponents/`以下に依存
 
 
 
-### myAHKComponents ###
+### myAHKComponents/ ###
     IfWinActives/       :特定Windowにおける挙動
     Library.ahk         :べんり機能置き場
     MBind.ahk           :ほぼ本体。全体的な挙動
     MBindListener.ahk   :MBindを当てるためのリスナ
     Mouse.ahk           :マウス周りの挙動
 
-### GamingAHK ###
+### GamingAHK/ ###
 ゲーム用のAHK集。本体と共存不可能になったので別個に起動。
 
-注意
-----------------
-+ 実行順序  
-一番下が優先されるスタイルの模様。Karabinerと逆？強烈なバインドはなるべく上の方に来るように書く。#includeは宣言場所で展開されるようなので、このルールを踏まえ、展開場所に注意
+### reference/ ###
 
-+ 修飾キー周り  
-略記法(>+)と正式記法(RShift &)でフック力が違うのか等価の挙動にならない（略記のが低層フック？）。使用の際は注意を
-
-
-reference
-----------------
 なんかにつかえそうだなあAHK集。
 
 + [EnableUIAccess][EnableUIAccess]  
@@ -61,6 +52,18 @@ IME切り替え用AHK。つよそうだけどつかってない
 
 + InvertPadScroll.ahk  
 パッドのスクロール逆転用のAHK
+
+
+注意
+----------------
++ 実行順序  
+一番下が優先されるスタイルの模様。Karabinerと逆？強烈なバインドはなるべく上の方に来るように書く。#includeは宣言場所で展開されるようなので、このルールを踏まえ、展開場所に注意
+
++ 修飾キー周り  
+略記法(>+)と正式記法(RShift &)でフック力が違うのか等価の挙動にならない（略記のが低層フック？）。使用の際は注意を
+
+
+
 
 
 [WheelScroll.ahk]: http://blechmusik.hatenablog.jp/entry/20100529/1275141213
