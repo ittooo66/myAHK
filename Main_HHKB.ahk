@@ -45,3 +45,4 @@ Space & Tab::return
 ;IfWinActives ここで優先で当たるように
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\General.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
+#include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
