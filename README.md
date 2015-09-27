@@ -11,7 +11,7 @@ myAHK
 または
 + `Main_HHKB.ahk`(for HHKB)
 
-を起動。`myAHKComponents/`以下に依存
+を起動。`myAHKComponents/`以下に依存。
 
 
 
