@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 # Clipboard保持内容の無視
 Clipboard/*.txt
 # FileAlias保持内容の無視
+<<<<<<< HEAD:myAHKComponents/.gitignore
 FileAlias/*.txt
+=======
+=======
+myAHKComponents/Clipboard/*.txt
+>>>>>>> 57452b6d898db6fd50d98f7cd2b327913bfb6789
+myAHKComponents/FileAlias/*.txt
+>>>>>>> parent of 808e8bc... conflict kowai:.gitignore
