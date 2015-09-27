@@ -1,60 +1,71 @@
-# myAHK
-
-## 実行ファイル
-Main_AWKB.ahk:Apple Wireless Keyboard用実行ファイル
-
-Main_HHKB.ahk:HHKB用実行ファイル
-
-＞ともにIncludeしてるのはmyAHKComponents以下。
-
-## myAHKComponents
-
-### Mouse.ahk
-マウスバインド及びマウス操作のスクリプト。
-### IfWinActive/
-Application固有のバインド
-
-### Library.ahk
-Google検索とかクリップボードとかの便利機能。
+myAHK
+======================
+おれおれキーバインド。  
+各種コンポーネントの中身については[README.md][README.md]を、キー入力時の挙動は[MANUAL.pptx][MANUAL.pptx]参照のこと。
 
 
-### MBind.ahk/MBindListener.ahk
-基本的なバインドはここに全部。それぞれ
 
-・MBind.ahk：挙動内容書いてある。RCMDとかで割りと綺麗に定義可能
+使い方
+------
++ `Main_AWKB.ahk`(for Apple Wireless Keyboard)   
+または
++ `Main_HHKB.ahk`(for HHKB)
 
-・MBindListener：引っ掛けてくる部分。RControlとか>^とかがわっさ～～～
+を起動。
 
-### GamingAHK
-ゲーム用。本体は弄りすぎて共存不可能になったのでここで別個起動
 
-## reference
-なんかに使えないかなータイプのAHKスクリプト倉庫。
-### Enable UI Access
-UAC周りの制約を撤廃するためのもの（Windows7以降用？）
 
-これ無いとAltTabが効かなかったりLoLで修飾キー周りが悲惨になります
+### myAHKComponents ###
+    IfWinActives/       :特定Windowにおける挙動
+    Library.ahk         :べんり機能の実装場所
+    MBind.ahk           :ほぼ本体。全体的な挙動
+    MBindListener.ahk   :MBindを当てるためのリスナ
+    Mouse.ahk           :マウス周りの挙動
 
-#### MouseGestureL
-マウスジェスチャががっつり入る
+### GamingAHK ###
+ゲーム用のAHK集。本体と共存不可能になったので別個に起動。
 
-他のAHKと干渉気味になるので現在様子見中
+注意
+----------------
++ 実行順序  
+一番下が優先されるスタイルの模様。Karabinerと逆？強烈なバインドはなるべく上の方に来るように書く。#includeは宣言場所で展開されるようなので、このルールを踏まえ、展開場所に注意
 
-#### VDM.ahk
-仮想デスクトップ。これなんかに使えそうな気がしなくなくなくもない
++ 修飾キー周り  
+略記法(>+)と正式記法(RShift &)でフック力が違うのか等価の挙動にならない（略記のが低層フック？）。使用の際は注意を
 
-#### InvertPadScroll.ahk
-MBPRのスクロール逆転用
 
-#### Logger.ahk
+reference
+----------------
+なんかにつかえそうだなあAHK集。
+
++ [EnableUIAccess][EnableUIAccess]  
+必須。AHKからUAC周りの制約を消せる。これ無いとAltTabが効かなかったりLoLで修飾キー周りが悲惨になります
+
++ [MouseGestureL][MouseGestureL]  
+マウスジェスチャできるやつ。多機能だけどマウスバインド充実しだしたしもう不要？
+
++ [IME.ahk][IME.ahk]  
+IME切り替え用AHK。つよそうだけどつかってない
+
++ [WheelScroll.ahk][WheelScroll.ahk]  
+ホイール周り（横スクロール）の強化。横スク不可のExcelを横スクロールできるようになる。PPTは無理っぽい、ナンデ。
+
++ Logger.ahk  
 キーロガー（未完成）。さらなる効率化のための情報収集のためのツール（の予定）。
 
-#### WheelScroll.ahk
-ホイール周り（横スクロール）の強化。横スク不可のExcelを横スクロールできるようになる（らしい）。PPTは無理っぽい、ナンデ。
++ VDM.ahk  
+仮想デスクトップ構築。
 
-## 諸注意
-・実行順序：下から順に引っかかっていくスタイルの模様。Karabinerと逆？強烈なバインドはなるべく上の方に来るように書きましょう
++ referenceIncludesXAI.ahk  
+どこかのだれかのAHK。
 
-・#includeは宣言場所で展開されるようなので、上記のルールを踏まえ、展開場所に注意
++ InvertPadScroll.ahk  
+パッドのスクロール逆転用のAHK
 
-・修飾キー周り：略記法(>+)と正式記法(RShift &)でフック力が違うのか等価の挙動にならない（略記のが低層フック？）。使用の際は注意を
+
+[WheelScroll.ahk]: http://blechmusik.hatenablog.jp/entry/20100529/1275141213
+[IME.ahk]: http://www6.atwiki.jp/eamat/pages/17.html
+[MouseGestureL]: http://hp.vector.co.jp/authors/VA018351/mglahk.html
+[EnableUIAccess]: http://www.autohotkey.com/board/topic/70449-enable-interaction-with-administrative-programs/
+[README.md]: https://github.com/ittooo66/myAHK/blob/master/README.md
+[MANUAL.pptx]: https://github.com/ittooo66/myAHK/blob/master/MANUAL.pptx
