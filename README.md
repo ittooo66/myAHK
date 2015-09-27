@@ -6,12 +6,14 @@
 実行用。基本的なバインドはちょっと展開しちゃってる。IncludeしてるやつはmyAHKComponents以下。
 ####Mouse.ahk
 マウスバインド及びマウス操作のスクリプト。
-####IfWinActive.ahk
+####IfWinActive/
 App固有のバインド
 ####Library.ahk
 Google検索とかクリップボードとか。
 ####MBind.ahk/MBindListener.ahk
 基本的なバインドはここに全部。それぞれ
+####GamingAHK
+ゲーム用。本体は弄りすぎて共存不可能になったのでここで別個起動
 
 
 ・MBind.ahk：挙動内容書いてある。RCMDとかで割りと綺麗に定義可能
