@@ -1,9 +1,9 @@
 # myAHK
 
 ## 実行ファイル
-Main.ahk:Apple Wireless Keyboard用実行ファイル
+Main_AWKB.ahk:Apple Wireless Keyboard用実行ファイル
 
-HHKBMain.ahk:HHKB用実行ファイル
+Main_HHKB.ahk:HHKB用実行ファイル
 
 ＞ともにIncludeしてるのはmyAHKComponents以下。
 
