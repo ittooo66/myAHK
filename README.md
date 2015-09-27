@@ -30,7 +30,7 @@ my[AHK][AHK]
 なんかにつかえそうだなあAHK集。
 
 + [EnableUIAccess][EnableUIAccess]  
-必須。AHKからUAC周りの制約を消せる。これ無いとAltTabが効かなかったりLoLで修飾キー周りが悲惨になります
+必須。AHKからUAC周りの制約を消せる。これ無いとAltTabが効かなかったりLoLで修飾キー周りが悲惨に  
 
 + [MouseGestureL][MouseGestureL]  
 マウスジェスチャできるやつ。多機能だけどマウスバインド充実しだしたしもう不要？
@@ -42,10 +42,10 @@ IME切り替え用AHK。つよそうだけどつかってない
 ホイール周り（横スクロール）の強化。横スク不可のExcelを横スクロールできるようになる。PPTは無理っぽい、ナンデ。
 
 + Logger.ahk  
-キーロガー（未完成）。さらなる効率化のための情報収集のためのツール（の予定）。
+キーロガー（未完成）。
 
 + VDM.ahk  
-仮想デスクトップ構築。
+仮想デスクトップ。
 
 + referenceIncludesXAI.ahk  
 どこかのだれかのAHK。
