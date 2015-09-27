@@ -34,6 +34,23 @@
       Send,+{F6}
   Return
 
-
+  ;横スクロール
+  XButton2 & ~WheelUp::
+    Send,{WheelDown}
+    sidescroll_on_intellij()
+  return
+  XButton2 & ~WheelDown::
+    Send,{WheelUp}
+    sidescroll_on_intellij()
+  return
+  sidescroll_on_intellij(){
+    Send,{Shift Down}
+    While (GetKeyState("XButton2", "P")){
+      ;サイドボタンとShiftの押し下げを連動
+      ;Wheelはチルダで活かしてShift+Wheelを入力
+      sleep,100
+    }
+    Send,{Shift Up}
+  }
 
 #IfWinActive
