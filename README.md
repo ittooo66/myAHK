@@ -1,7 +1,7 @@
 my[AHK][AHK]
 ======================
 おれおれキーバインド。  
-各種コンポーネントの中身については[README.md][README.md]を、キー入力時の挙動は[MANUAL.pptx][MANUAL.pptx]参照のこと。
+各種コンポーネントの中身についてはREADME.mdを、キー入力時の挙動はMANUAL.pptx参照のこと。
 
 
 
@@ -70,5 +70,3 @@ IME切り替え用AHK。つよそうだけどつかってない
 [IME.ahk]: http://www6.atwiki.jp/eamat/pages/17.html
 [MouseGestureL]: http://hp.vector.co.jp/authors/VA018351/mglahk.html
 [EnableUIAccess]: http://www.autohotkey.com/board/topic/70449-enable-interaction-with-administrative-programs/
-[README.md]: https://github.com/ittooo66/myAHK/blob/master/README.md
-[MANUAL.pptx]: https://github.com/ittooo66/myAHK/blob/master/MANUAL.pptx
