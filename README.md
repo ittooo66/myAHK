@@ -17,7 +17,7 @@ myAHK
 
 ### myAHKComponents ###
     IfWinActives/       :特定Windowにおける挙動
-    Library.ahk         :べんり機能の実装場所
+    Library.ahk         :べんり機能置き場
     MBind.ahk           :ほぼ本体。全体的な挙動
     MBindListener.ahk   :MBindを当てるためのリスナ
     Mouse.ahk           :マウス周りの挙動
