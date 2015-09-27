@@ -28,8 +28,7 @@ select(ahkClass, ahkTitle){
 		WinGetClass, this_class, ahk_id %this_id%
 		WinGetTitle, this_title, ahk_id %this_id%
 		;class一致確認
-		if (this_class = ahkClass)
-		{
+		ifInString, this_class , %ahkClass%, {
 			;title一致確認
 			ifInString, this_title , %ahkTitle%, {
 				;最前面に表示
