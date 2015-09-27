@@ -28,12 +28,6 @@ Google検索とかクリップボードとかの便利機能。
 ### GamingAHK
 ゲーム用。本体は弄りすぎて共存不可能になったのでここで別個起動
 
-
-### Clipboard/
-拡張コピペ機能のクリップ内容保持場所
-### FileAlias/
-ファイル直飛び機能のPath保持場所
-
 ## reference
 なんかに使えないかなータイプのAHKスクリプト倉庫。
 ### Enable UI Access
