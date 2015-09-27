@@ -1,4 +1,4 @@
-myAHK
+my[AHK][AHK]
 ======================
 おれおれキーバインド。  
 各種コンポーネントの中身については[README.md][README.md]を、キー入力時の挙動は[MANUAL.pptx][MANUAL.pptx]参照のこと。
@@ -65,7 +65,7 @@ IME切り替え用AHK。つよそうだけどつかってない
 
 
 
-
+[AHK]: https://github.com/AutoHotkey/AutoHotkey
 [WheelScroll.ahk]: http://blechmusik.hatenablog.jp/entry/20100529/1275141213
 [IME.ahk]: http://www6.atwiki.jp/eamat/pages/17.html
 [MouseGestureL]: http://hp.vector.co.jp/authors/VA018351/mglahk.html
