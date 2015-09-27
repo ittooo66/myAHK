@@ -1,56 +1,64 @@
 # myAHK
 
-##本体
+## 本体
+Main.ahk:実行ファイル（Apple Wireless Keyboard用）
 
-###Main.ahk
-実行用。基本的なバインドはちょっと展開しちゃってる。IncludeしてるやつはmyAHKComponents以下。
-####Mouse.ahk
+HHKBMain.ahk:実行ファイル（HHKB用）
+
+＞ともにIncludeしてるのはmyAHKComponents以下。
+
+## myAHKComponents
+
+### Mouse.ahk
 マウスバインド及びマウス操作のスクリプト。
-####IfWinActive/
-App固有のバインド
-####Library.ahk
-Google検索とかクリップボードとか。
-####MBind.ahk/MBindListener.ahk
-基本的なバインドはここに全部。それぞれ
-####GamingAHK
-ゲーム用。本体は弄りすぎて共存不可能になったのでここで別個起動
+### IfWinActive/
+Application固有のバインド
 
+### Library.ahk
+Google検索とかクリップボードとかの便利機能。
+
+
+### MBind.ahk/MBindListener.ahk
+基本的なバインドはここに全部。それぞれ
 
 ・MBind.ahk：挙動内容書いてある。RCMDとかで割りと綺麗に定義可能
 
 ・MBindListener：引っ掛けてくる部分。RControlとか>^とかがわっさ～～～
 
-####myAHKComponents各種ディレクトリ
+### GamingAHK
+ゲーム用。本体は弄りすぎて共存不可能になったのでここで別個起動
 
-・FileAlias : 2cmdランチャの指定ディレクトリが入ってる
 
-・Clipboard : 拡張Clipboardの記録内容が入ってる
+### Clipboard/
+拡張コピペ機能のクリップ内容保持場所
+### FileAlias/
+ファイル直飛び機能のPath保持場所
 
-##外部AHK(in reference)
-
-###Enable UI Access
+## reference
+なんかに使えないかなータイプのAHKスクリプト倉庫。
+### Enable UI Access
 UAC周りの制約を撤廃するためのもの（Windows7以降用？）
 
 これ無いとAltTabが効かなかったりLoLで修飾キー周りが悲惨になります
 
-###MouseGestureL
+#### MouseGestureL
 マウスジェスチャががっつり入る
 
 他のAHKと干渉気味になるので現在様子見中
 
-###VDM.ahk
+#### VDM.ahk
 仮想デスクトップ。これなんかに使えそうな気がしなくなくなくもない
 
-###InvertPadScroll.ahk
+#### InvertPadScroll.ahk
 MBPRのスクロール逆転用
 
-###Logger.ahk
+#### Logger.ahk
 キーロガー（未完成）。さらなる効率化のための情報収集のためのツール（の予定）。
 
-###WheelScroll.ahk
+#### WheelScroll.ahk
 ホイール周り（横スクロール）の強化。横スク不可のExcelを横スクロールできるようになる（らしい）。PPTは無理っぽい、ナンデ。
 
-##諸注意
+## 諸注意
 ・実行順序：下から順に引っかかっていくスタイルの模様。Karabinerと逆？強烈なバインドはなるべく上の方に来るように書きましょう
 
 ・#includeは宣言場所で展開されるようなので、上記のルールを踏まえ、展開場所に注意
