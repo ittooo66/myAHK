@@ -128,7 +128,7 @@ mbind_j(){
 		selectShift("SunAwtFrame","")
 	else if RCMD() && LCMD(){
 		if !select("SunAwtFrame","")
-			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.0.3\bin\idea.exe"
+			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin\idea.exe"
 	}else if RCMD() || CAPS()
 		press("/")
 	else
