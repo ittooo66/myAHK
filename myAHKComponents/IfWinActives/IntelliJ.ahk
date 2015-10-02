@@ -26,12 +26,16 @@
   LShift & t::
     if GetKeyState("LControl","P")
       Send,^+{F11}
+    else
+      mbind_t()
   return
 
   ;Rename
   RControl & r::
     if GetKeyState("LControl","")
       Send,+{F6}
+    else
+      mbind_r()
   Return
 
   ;横スクロール
