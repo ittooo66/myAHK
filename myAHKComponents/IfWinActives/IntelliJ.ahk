@@ -65,4 +65,12 @@
       mbind_e()
   return
 
+  ;javadoc表示
+  RControl & q::
+    if GetKeyState("LControl","P")
+      Send,^{q}
+    else
+      mbind_q()
+  return
+
 #IfWinActive
