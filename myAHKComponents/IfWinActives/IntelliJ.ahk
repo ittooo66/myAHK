@@ -57,4 +57,12 @@
     Send,{Shift Up}
   }
 
+  ;実行
+  RControl & e::
+    if GetKeyState("LControl","P")
+      Send,+{F10}
+    else
+      mbind_e()
+  return
+
 #IfWinActive
