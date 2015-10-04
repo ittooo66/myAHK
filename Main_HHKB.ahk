@@ -8,21 +8,15 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 
 ;基本配置変更,chgkey.exeに注意
 `::Delete
-\::Backspace
-Backspace::\
-RAlt & \::send,{\}
+RAlt & Backspace::send,{\}
 
 ;Reload/Suspend AHK
 RAlt & ,::Reload
 RAlt & .::Suspend
 
-;位置保持改行
-RShift & Return::Send,{Return}{Left}
-RControl & Return::Send,{Return}{Left}
-
 ;一行消し（左）
-RShift & \::Send,+{HOME}{Backspace}
-RControl & \::Send,+{HOME}{Backspace}
+RShift & BackSpace::Send,+{HOME}{Backspace}
+RControl & BackSpace::Send,+{HOME}{Backspace}
 
 ;一行消し（右）
 RShift & `::Send,+{END}{BackSpace}
