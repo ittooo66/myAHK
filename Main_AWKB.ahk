@@ -15,10 +15,6 @@ RAlt & Backspace::send,{\}
 RAlt & ,::Reload
 RAlt & .::Suspend
 
-;位置保持改行
-RShift & Return::Send,{Return}{Left}
-RControl & Return::Send,{Return}{Left}
-
 ;一行消し（左）
 RShift & Backspace::Send,+{HOME}{Backspace}
 RControl & Backspace::Send,+{HOME}{Backspace}
