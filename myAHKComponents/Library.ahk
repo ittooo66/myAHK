@@ -4,8 +4,8 @@
 macro(){
 ;	Send,{F2}
 ;	Send,{HOME}
-	Send,^{v}
-	Send,{Return}
+;	Send,^{v}
+;	Send,{Return}
 }
 
 
