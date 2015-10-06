@@ -2,10 +2,10 @@
 
 ;ざっくりマクロ（rcmd||caps + b）用、適当に書き換えてくかんじ
 macro(){
-;	Send,{F2}
-;	Send,{HOME}
-;	Send,^{v}
-;	Send,{Return}
+	Send,{F2}
+	Send,{HOME}
+	Send,^{v}
+	Send,{Return}
 }
 
 
