@@ -12,6 +12,7 @@ my[AHK][AHK]
 + `Main_HHKB.ahk`(for HHKB)
 
 を起動。`myAHKComponents/`以下に依存。
+`CRLFに！！！
 
 
 

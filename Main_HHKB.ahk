@@ -12,6 +12,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #Up::Send,+{Up}
 #Down::Send,+{Down}
 #/::Send,+{/}
+#Tab::Send,+{Tab}
 
 ;基本配置変更,chgkey.exeに注意
 `::Delete
