@@ -19,6 +19,14 @@
 		else
 			mbind_w()
 	return
+
+	XButton2 & LButton::
+	    Send,{MButton}
+	    While (GetKeyState("LButton", "P") && GetKeyState("Xbutton2","P"))
+	        Sleep, 10
+	    Send,{MButton}
+	Return
+
 #IfWinActive
 
 ;タスクバー上
