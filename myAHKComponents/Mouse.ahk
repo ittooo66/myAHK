@@ -11,20 +11,15 @@ XButton1 & WheelDown::AltTab
 ;横スクロール
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
-
 ;ウィンドウ選択画面(need Dexpot)
 XButton1 & Xbutton2::Send,!+{9}
 XButton2 & XButton1::Send,!+{9}
-
 ;Reload/Suspend bindings(for gaming)
 XButton1 & MButton::Suspend
 XButton2 & MButton::Reload
 
-;未定s
-XButton1 & RButton::Send,{}
-XButton2 & RButton::Send,{}
-XButton1 & LButton::Send,^{1}
 
+;Chrome系（タブ持ちApp系）でよく機能するバインド
 ;タブ変更
 RButton & WheelUp::Send,^{PgUp}
 RButton & WheelDown::Send,^{PgDn}
@@ -36,13 +31,13 @@ RButton & XButton2::Send,^+{t}
 RButton & MButton::Send,^{t}
 ;Pin tab
 RButton & LButton::Send,!{p}
-;ホイールクリックのスクロール（Chromeで一番良く機能）
-XButton2 & LButton::
-    Send,{MButton}
-    While (GetKeyState("LButton", "P") && GetKeyState("Xbutton2","P"))
-        Sleep, 10
-    Send,{MButton}
-Return
+;ホイールクリック
+XButton2 & LButton::Send,{MButton}
+
+;未定s
+XButton1 & RButton::Send,{}
+XButton2 & RButton::Send,{}
+XButton1 & LButton::Send,^{1}
 
 
 ;キーボードマウスエミュレーション
