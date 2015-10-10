@@ -37,9 +37,9 @@ XButton2 & LButton::Send,{MButton}
 ;未定s
 XButton1 & RButton::Send,{}
 XButton2 & RButton::Send,{}
-XButton1 & LButton::Send,^{1}
+XButton1 & LButton::Send,{}
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;キーボードマウスエミュレーション
 RAlt & q::Send,{WheelUp}
 RAlt & t::Send,{WheelDown}
