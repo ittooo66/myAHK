@@ -1,7 +1,5 @@
 mbind_a(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("Chrome_WidgetWin_1","Atom")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("Chrome_WidgetWin_1","Atom")
 			run, C:\Users\AHK\AppData\Local\atom\update.exe	--processStart atom.exe
 	}else if RCMD() || CAPS()
@@ -48,9 +46,7 @@ mbind_d(){
 }
 
 mbind_e(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("TTeraPadMainForm","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("TTeraPadMainForm","")
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\TeraPad\TeraPad.exe"
 	}else if CAPS() && RCMD()
@@ -66,9 +62,7 @@ mbind_e(){
 }
 
 mbind_f(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("CabinetWClass","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("CabinetWClass","")
 			Run,explorer.exe
 	}else if RCMD() && CAPS()
@@ -86,9 +80,7 @@ mbind_f(){
 }
 
 mbind_g(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("Chrome_WidgetWin_1","Chrome")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("Chrome_WidgetWin_1","Chrome")
 			run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 	}else if RCMD() && CAPS()
@@ -114,9 +106,7 @@ mbind_h(){
 }
 
 mbind_i(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("OpusApp","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("OpusApp","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
 	}else
@@ -124,9 +114,7 @@ mbind_i(){
 }
 
 mbind_j(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("SunAwtFrame","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("SunAwtFrame","")
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin\idea.exe"
 	}else if RCMD() || CAPS()
@@ -163,9 +151,7 @@ mbind_m(){
 }
 
 mbind_n(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("Notepad","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("Notepad","")
 			run "C:\Windows\System32\notepad.exe"
 	}else if RCMD() || CAPS()
@@ -175,9 +161,7 @@ mbind_n(){
 }
 
 mbind_o(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("XLMAIN","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("XLMAIN","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\excel.exe"
 	}else
@@ -185,9 +169,7 @@ mbind_o(){
 }
 
 mbind_p(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("PPTFrameClass","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("PPTFrameClass","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\powerpnt.exe"
 	}else
@@ -195,9 +177,7 @@ mbind_p(){
 }
 
 mbind_q(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("TaskManagerWindow","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("TaskManagerWindow","")
 			run "C:\Windows\System32\Taskmgr.exe"
 	}else if RCMD() || CAPS()
@@ -213,9 +193,7 @@ mbind_q(){
 }
 
 mbind_r(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("AcrobatSDIWindow","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("AcrobatSDIWindow","")
 			run "C:\Program Files (x86)\Adobe\Reader 11.0\Reader\AcroRd32.exe"
 	}else	if RCMD() || CAPS()
@@ -227,9 +205,7 @@ mbind_r(){
 }
 
 mbind_s(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("tSkMainForm","")
-	else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !select("tSkMainForm","")
 			run "C:\Program Files (x86)\Skype\Phone\Skype.exe"
 	}else if LCMD() && CAPS()
@@ -247,9 +223,7 @@ mbind_s(){
 }
 
 mbind_t(){
-	if RCMD() && LCMD() && SHIFT()
-		selectShift("ConsoleWindowClass","")
-	else if LCMD() && RCMD(){
+	if LCMD() && RCMD(){
 		if !select("ConsoleWindowClass","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 	}else if RCMD() || CAPS()
