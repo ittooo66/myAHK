@@ -65,19 +65,6 @@ selectShift(ahkClass, ahkTitle){
 	return false
 }
 
-;全ウィンドウをアクティブに。挙動おっせえ
-fullWinActivate(){
-	;配列idに現在稼働中のWindowを突っ込む
-	WinGet, id, list, , , Program Manager
-	Loop, %id%
-	{
-		;this_idに現在見てるWindowのIDを入れる
-		StringTrimRight, this_id, id%A_Index%, 0
-		;this_idをActivate
-		WinActivate, ahk_id %this_id%
-	}
-}
-
 ;修飾キー付きのkeypress
 press(key){
   modifiers := ""
@@ -196,4 +183,20 @@ mousemove(){
 			Send,{LButton Up}
 	}
 	Send,{LButton Up}
+}
+
+
+;使ってなさげ
+
+;全ウィンドウをアクティブに。挙動おっせえ
+fullWinActivate(){
+	;配列idに現在稼働中のWindowを突っ込む
+	WinGet, id, list, , , Program Manager
+	Loop, %id%
+	{
+		;this_idに現在見てるWindowのIDを入れる
+		StringTrimRight, this_id, id%A_Index%, 0
+		;this_idをActivate
+		WinActivate, ahk_id %this_id%
+	}
 }
