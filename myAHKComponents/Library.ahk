@@ -79,6 +79,7 @@ press(key){
 	Send,%modifiers%%key%
 }
 
+;Google検索機能、prefixつけて辞書直飛び
 googleSearch(){
 	InputBox, InputVar, Search
 	If ErrorLevel <> 0
@@ -94,6 +95,7 @@ googleSearch(){
 	}
 }
 
+;youtube動画をDLする
 download(){
 	Send, ^l
 	clipboard =
