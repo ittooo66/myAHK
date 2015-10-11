@@ -6,14 +6,6 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;マウス設定（キーボードマウスとKana設定）
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
 
-;:Legacy Binds(for HHKB RShift+FNArrow)
-#Left::Send,+{Left}
-#Right::Send,+{Right}
-#Up::Send,+{Up}
-#Down::Send,+{Down}
-#/::Send,+{/}
-#Tab::Send,+{Tab}
-
 ;基本配置変更,chgkey.exeに注意
 `::Delete
 Delete::Send,{``}
