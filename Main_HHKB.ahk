@@ -3,7 +3,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #InstallKeybdHook
 ;Library
 #include %A_ScriptDir%\myAHKComponents\Library.ahk
-;マウス設定（キーボードマウスとKana設定）
+;マウス設定
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
 
 ;基本配置変更,chgkey.exeに注意
