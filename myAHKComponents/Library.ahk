@@ -160,6 +160,14 @@ mousemove(){
 	Send,{LButton Up}
 }
 
+;ログ出力 => ./log.txt
+printlog(log){
+	FileAppend,
+	(
+		%log%
+	), %A_WorkingDir%\myAHKComponents\log.txt
+}
+
 
 ;使ってなさげ
 
