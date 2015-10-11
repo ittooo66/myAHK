@@ -38,16 +38,3 @@ XButton2 & LButton::Send,{MButton}
 XButton1 & RButton::Send,{}
 XButton2 & RButton::Send,{}
 XButton1 & LButton::Send,{}
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;キーボードマウスエミュレーション
-RAlt & q::Send,{WheelUp}
-RAlt & t::Send,{WheelDown}
-RAlt & w::Send,{LButton}
-RAlt & r::Send,{RButton}
-RAlt & e::
-RAlt & s::
-RAlt & d::
-RAlt & f::
-    mousemove()
-return
