@@ -19,8 +19,8 @@ RWin & .::Suspend
 
 ;一行消し（両サイド）
 RShift & BackSpace::Send,+{HOME}{Backspace}
-RShift & `::Send,+{END}{BackSpace}
 RControl & BackSpace::Send,+{HOME}{Backspace}
+RShift & `::Send,+{END}{BackSpace}
 RControl & `::Send,+{END}{BackSpace}
 
 ;IME切替え
