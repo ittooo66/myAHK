@@ -38,7 +38,7 @@ Space & Tab::return
 #include %A_ScriptDir%\myAHKComponents\MBind.ahk
 #include %A_ScriptDir%\myAHKComponents\MBindListener.ahk
 
-;IfWinActives ここで優先で当たるように
+;IfWinActives ここで優先で当てること
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\General.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
