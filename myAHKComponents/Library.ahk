@@ -166,19 +166,3 @@ printlog(log){
 		%log%
 	), %A_WorkingDir%\myAHKComponents\log.txt
 }
-
-
-;使ってなさげ
-
-;全ウィンドウをアクティブに。挙動おっせえ
-fullWinActivate(){
-	;配列idに現在稼働中のWindowを突っ込む
-	WinGet, id, list, , , Program Manager
-	Loop, %id%
-	{
-		;this_idに現在見てるWindowのIDを入れる
-		StringTrimRight, this_id, id%A_Index%, 0
-		;this_idをActivate
-		WinActivate, ahk_id %this_id%
-	}
-}
