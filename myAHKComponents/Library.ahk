@@ -3,7 +3,6 @@ macro(){
 	return true
 }
 
-
 ;特定のWindowクラスを最下層から引っ張る
 ;ahkClass:クラス名
 ;ahkTitle:タイトル名。クラスで判別不可時（atom<>chrome）に使用,普段は空指定("")
@@ -49,7 +48,7 @@ press(key){
 	Send,%modifiers%%key%
 }
 
-;Google検索機能、prefixつけて辞書直飛び
+;検索機能など
 googleSearch(){
 	InputBox, InputVar, Search
 	If ErrorLevel <> 0
