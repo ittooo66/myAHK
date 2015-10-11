@@ -49,7 +49,7 @@ press(key){
 }
 
 ;検索機能など
-googleSearch(){
+search(){
 	InputBox, InputVar, Search
 	If ErrorLevel <> 0
 		return

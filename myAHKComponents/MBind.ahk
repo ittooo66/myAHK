@@ -84,7 +84,7 @@ mbind_g(){
 		if !select("Chrome_WidgetWin_1","Chrome")
 			run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 	}else if RCMD() && CAPS()
-		googleSearch()
+		search()
 	else if RCMD() || CAPS()
 		press("^{RIGHT}")
 	else if SPACE()
