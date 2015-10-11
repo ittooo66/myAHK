@@ -16,6 +16,8 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 
 ;基本配置変更,chgkey.exeに注意
 `::Delete
+Delete::Send,{``}
++Delete::Send,+{``}
 RAlt & Backspace::send,{\}
 
 ;Reload/Suspend AHK
