@@ -10,11 +10,12 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 `::Delete
 Delete::Send,{``}
 +Delete::Send,+{``}
-RAlt & Backspace::send,{\}
+LShift & Backspace::Send,+{\}
+RWin & Backspace::send,{\}
 
 ;Reload/Suspend AHK
-RAlt & ,::Reload
-RAlt & .::Suspend
+RWin & ,::Reload
+RWin & .::Suspend
 
 ;一行消し（左）
 RShift & BackSpace::Send,+{HOME}{Backspace}
