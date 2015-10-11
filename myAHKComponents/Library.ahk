@@ -91,6 +91,9 @@ googleSearch(){
 		if (prefix = "wl "){
 			StringTrimLeft, query, InputVar, 3
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "http://ejje.weblio.jp/content_find?query=%query%&searchType=exact&x=0&y=0"
+		}else if (prefix = "gm "){
+			StringTrimLeft, query, InputVar, 3
+			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/maps/search/%query%"
 		}else if var > 0
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/search?hl=ja&q=%InputVar%"
 	}
