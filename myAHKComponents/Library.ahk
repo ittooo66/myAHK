@@ -146,3 +146,18 @@ printlog(log){
 		%log%
 	), %A_WorkingDir%\myAHKComponents\log.txt
 }
+
+;GUIウィンドウが出力されているか、どうか
+guiIsOn(){
+  ;配列idに現在稼働中のWindowを突っ込む
+  WinGet, id, list, , , Program Manager
+  ;for(int A_Index=1;A_Index<N(id);A_Index++)
+  Loop, %id%
+  {
+    StringTrimRight, this_id, id%A_Index%, 0
+    WinGetClass, this_class, ahk_id %this_id%
+    ifInString, this_class, AutoHotkeyGui
+      return true
+  }
+  return false
+}

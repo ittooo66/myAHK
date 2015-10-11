@@ -32,7 +32,7 @@ CustomColor = 0x404040  ; RGB
 Gui, Color, %CustomColor%
 Gui, Font, s11 cWhite
 
-;テキスト入れてるだけカナ？
+;cRed=赤、テキストがその後
 Gui, Add, Text, cRed , [ESC] : Close
 Gui, Add, Text, cRed , [WIN]+[SHIFT]+[C] : Copy Information to clipboard
 
@@ -62,17 +62,20 @@ Gui, Add, Text, vMyControlHWND x+4 w400,
 Gui, Add, Text, cYellow xm+0, ControlText:
 Gui, Add, Text, vMyControlText x+4 w400 r2,
 
-Gui +AlwaysOnTop +LastFound   ; Make it always-on-top and make it the last found window.
-
+;常に最前面に表示（+AlwaysOnTop）
+Gui +AlwaysOnTop
+;半透明？
+Gui +LastFound
 Opacity=210
 Winset, Transparent, %Opacity%
+;ウィンドウ縁を削除、半透明処理のあとにすること？
+Gui, -Caption
 
-Gui, -Caption  ; Remove the borders. Due to a quirk in Windows, this must be done after transparency.
-
+;ジャンプ命令。えっぐ。
 Gosub, UpdateInfo
 
 ;GUI表示（x,y）
-Gui, Show, x64 y64
+Gui, Show, XCenter YCenter
 
 Menu, RightClickMenu, Add, Sample Code: Click Control, MakeSnippetControlClick
 Menu, RightClickMenu, Add, Sample Code: Click Position, MakeSnippetClickPosition
@@ -97,22 +100,32 @@ UpdateInfo:
   GuiControl,, MyClassName, %_ClassName%
   GuiControl,, MyControlHWND, %_ControlHWND%
   GuiControl,, MyProcessName, %_ProcessName%
-  return
+return
 
+
+;Esc入力時に飛んで来るラベル
 GuiEscape:
+;Close処理時に飛んで来るラベル
 GuiClose:
   ExitApp
 
-; --- Right Click Menu
+
+
+a::
+  Gui, Show, XCenter YCenter
+return
+
+s::
+  Gui, Show, Hide
+return
 
 ; --- WIN+SHIFT+C で、カーソル位置の情報を取得する
 GuiContextMenu:
 
-
 #+c::
   GetInfoAtMousePosEx(MouseX, MouseY, WinHWND, ControlHWND, ControlClassNN, WinTitle, ControlText, ClassName, ProcessName)
   Menu, RightClickMenu, Show
-  return
+return
 
 MakeSnippetCheckButton:
   Clipboard=
