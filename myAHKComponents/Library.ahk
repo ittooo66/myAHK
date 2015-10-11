@@ -70,7 +70,7 @@ search(){
 	}
 }
 
-;youtube動画をDLする
+;youtube動画DL
 download(){
 	Send, ^l
 	clipboard =
