@@ -35,37 +35,6 @@ select(ahkClass, ahkTitle){
 	return false
 }
 
-;selectの逆さ版。挙動が気に入らない
-selectShift(ahkClass, ahkTitle){
-	;配列idに現在稼働中のWindowを突っ込む
-	WinGet, id, list, , , Program Manager
-	;for(int A_Index=1;A_Index<N(id);A_Index++)
-	idPref := ""
-	Loop, %id%
-	{
-		;最下層から引っ張るためiを降順にする
-		i:=id-A_Index+1
-		;this_idに現在見てるWindowのIDを入れる
-		StringTrimRight, this_id, id%i%, 0
-		;this_idのClass、Titleを取得
-		WinGetClass, this_class, ahk_id %this_id%
-		WinGetTitle, this_title, ahk_id %this_id%
-		;class一致確認
-		if (this_class = ahkClass)
-		{
-			;title一致確認
-			ifInString, this_title , %ahkTitle%, {
-				;最前面に表示
-				if idPref != ""
-					WinActivate, ahk_id %idPref%
-				;一段ずらし
-				idPref := this_id
-			}
-		}
-	}
-	return false
-}
-
 ;修飾キー付きのkeypress
 press(key){
   modifiers := ""
