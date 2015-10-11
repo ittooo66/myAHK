@@ -17,12 +17,10 @@ RWin & Backspace::send,{\}
 RWin & ,::Reload
 RWin & .::Suspend
 
-;一行消し（左）
+;一行消し（両サイド）
 RShift & BackSpace::Send,+{HOME}{Backspace}
-RControl & BackSpace::Send,+{HOME}{Backspace}
-
-;一行消し（右）
 RShift & `::Send,+{END}{BackSpace}
+RControl & BackSpace::Send,+{HOME}{Backspace}
 RControl & `::Send,+{END}{BackSpace}
 
 ;IME切替え
