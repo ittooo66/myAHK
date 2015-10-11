@@ -56,12 +56,15 @@ search(){
 	else{
 		StringLen, var, InputVar
 		StringLeft, prefix, InputVar, 3
+		;wl:Weblioで単語検索
 		if (prefix = "wl "){
 			StringTrimLeft, query, InputVar, 3
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "http://ejje.weblio.jp/content_find?query=%query%&searchType=exact&x=0&y=0"
+		;gm:Googlamap検索
 		}else if (prefix = "gm "){
 			StringTrimLeft, query, InputVar, 3
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/maps/search/%query%"
+		;通常:google検索
 		}else if var > 0
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/search?hl=ja&q=%InputVar%"
 	}
