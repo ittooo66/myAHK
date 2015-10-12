@@ -35,9 +35,9 @@ RButton & LButton::Send,!{p}
 XButton2 & LButton::Send,{MButton}
 
 ;未定s
-XButton1 & RButton::Send,{}
+XButton1 & RButton::Send,{RWin}
 XButton2 & RButton::Send,{}
-XButton1 & LButton::Send,{}
+XButton1 & LButton::Run, "C:\Users\AHK\Dropbox\"
 
 ;------------------------------
 ;キーボードマウスエミュレーション
