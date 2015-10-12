@@ -39,7 +39,7 @@
 #IfWinActive
 
 ;デスクトップ上
-#IfWinActive,ahk_class Progman
+#IfWinActive,ahk_class WorkerW
 	XButton1::return
 	XButton2::return
 #IfWinActive
