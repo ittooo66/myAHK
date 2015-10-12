@@ -11,10 +11,14 @@
   RControl & s::
     if GetKeyState("LControl","P")
       Send,!{Left}
+    else
+      mbind_s()
   return
   RControl & f::
     if GetKeyState("LControl","P")
       Send,!{Right}
+    else
+      mbind_f()
   return
 
   ;タブ開閉
