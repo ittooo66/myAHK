@@ -44,6 +44,12 @@
 	XButton2::return
 #IfWinActive
 
+;デスクトップ上(ラボPCだとこっち)
+#IfWinActive,ahk_class Progman
+	XButton1::return
+	XButton2::return
+#IfWinActive
+
 ;Reader
 #IfWinActive, ahk_exe AcroRd32.exe
 	;スクロールの調整
