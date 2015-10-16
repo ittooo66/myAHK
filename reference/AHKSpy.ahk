@@ -63,7 +63,8 @@ Gui, Add, Text, cYellow xm+0, ControlText:
 Gui, Add, Text, vMyControlText x+4 w400 r2,
 
 ;常に最前面に表示（+AlwaysOnTop）
-Gui +AlwaysOnTop
+;Gui +AlwaysOnTop
+
 ;半透明？
 Gui +LastFound
 Opacity=210
@@ -75,7 +76,8 @@ Gui, -Caption
 Gosub, UpdateInfo
 
 ;GUI表示（x,y）
-Gui, Show, XCenter YCenter
+;Gui, Show, XCenter YCenter
+Gui, Show, x10 y10
 
 Menu, RightClickMenu, Add, Sample Code: Click Control, MakeSnippetControlClick
 Menu, RightClickMenu, Add, Sample Code: Click Position, MakeSnippetClickPosition
@@ -110,14 +112,6 @@ GuiClose:
   ExitApp
 
 
-
-a::
-  Gui, Show, XCenter YCenter
-return
-
-s::
-  Gui, Show, Hide
-return
 
 ; --- WIN+SHIFT+C で、カーソル位置の情報を取得する
 GuiContextMenu:
