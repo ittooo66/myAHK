@@ -13,6 +13,7 @@ Delete::Send,{``}
 LShift & Backspace::Send,+{\}
 RWin & Backspace::send,{\}
 RWin & `::Send,{``}
+RControl & Esc::Send,{Delete}
 
 ;Reload/Suspend AHK
 RWin & ,::Reload
