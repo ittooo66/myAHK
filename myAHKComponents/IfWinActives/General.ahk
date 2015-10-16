@@ -26,7 +26,6 @@
 	        Sleep, 10
 	    Send,{MButton}
 	Return
-
 #IfWinActive
 
 ;タスクバー上
@@ -48,6 +47,35 @@
 #IfWinActive,ahk_class Progman
 	XButton1::return
 	XButton2::return
+#IfWinActive
+
+;エクスプローラー（QTTabBar使ってます）
+#IfWinActive,ahk_class CabinetWClass
+	RButton & XButton1::Send,^{w}
+	RButton & XButton2::Send,^+{z}
+	RButton & LButton::Send,^{`;}
+	RButton & MButton::Send,^{n}
+	RButton & WheelUp::Send,^+{Tab}
+	RButton & WheelDown::Send,^{Tab}
+
+	RControl & s::
+	LControl & s::
+		if CAPS() && LCMD()
+			Send,^+{Tab}
+		else
+			mbind_s()
+	return
+
+	RControl & f::
+	LControl & f::
+		if CAPS() && LCMD()
+			Send,^{Tab}
+		else
+			mbind_s()
+	return
+
+	LControl & t::Send,{}
+
 #IfWinActive
 
 ;Reader
