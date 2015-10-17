@@ -1,26 +1,26 @@
 ;
-; Redirect Scrool Function  ƒXƒNƒ[ƒ‹§Œä
-;   E‰Á‘¬‘Î‰
-;   EWord / Excel / VBE / GŠÛ“™‚Ì•ªŠ„ƒyƒCƒ“‚àŒİŠ·ƒXƒNƒ[ƒ‹‚Å‘€ì‰Â”\
+; Redirect Scrool Function  ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«åˆ¶å¾¡
+;   ãƒ»åŠ é€Ÿå¯¾å¿œ
+;   ãƒ»Word / Excel / VBE / ç§€ä¸¸ç­‰ã®åˆ†å‰²ãƒšã‚¤ãƒ³ã‚‚äº’æ›ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã§æ“ä½œå¯èƒ½
 ;
-;   ’P‘Ì / ‘g‚İ—¼‘Î‰  2008/05/25 (AutoHotkey 1.0.47.06)
-;   ‘g‚İ 
+;   å˜ä½“ / çµ„è¾¼ã¿ä¸¡å¯¾å¿œ  2008/05/25 (AutoHotkey 1.0.47.06)
+;   çµ„è¾¼ã¿æ™‚
 ;     #Include WheelScroll.ahk
-;     Gosub,WheelInit             ;‰Šú‰» :AutoExecuteƒZƒNƒVƒ‡ƒ“‚É‹Lq
+;     Gosub,WheelInit             ;åˆæœŸåŒ– :AutoExecuteã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«è¨˜è¿°
 ;---------------------------------------------------------------------------
 
 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;   ’P‘Ì‹N“®—p
+;   å˜ä½“èµ·å‹•ç”¨
 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#NoEnv                  ; •Ï”–¼‚ğ‰ğß‚·‚é‚Æ‚«AŠÂ‹«•Ï”‚ğ–³‹‚·‚é
-#SingleInstance FORCE   ; •¡”ƒvƒƒZƒX‚ÅÀs‚Ì‹Ö~
-#WinActivateForce       ; ƒ^ƒXƒNƒo[ƒAƒCƒRƒ““_–Å–h~
-#MaxHotkeysPerInterval 80 ;ƒL[ƒŠƒs[ƒgƒGƒ‰[–h~—p
+#NoEnv                  ; å¤‰æ•°åã‚’è§£é‡ˆã™ã‚‹ã¨ãã€ç’°å¢ƒå¤‰æ•°ã‚’ç„¡è¦–ã™ã‚‹
+#SingleInstance FORCE   ; è¤‡æ•°ãƒ—ãƒ­ã‚»ã‚¹ã§å®Ÿè¡Œã®ç¦æ­¢
+#WinActivateForce       ; ã‚¿ã‚¹ã‚¯ãƒãƒ¼ã‚¢ã‚¤ã‚³ãƒ³ç‚¹æ»…é˜²æ­¢
+#MaxHotkeysPerInterval 80 ;ã‚­ãƒ¼ãƒªãƒ”ãƒ¼ãƒˆã‚¨ãƒ©ãƒ¼é˜²æ­¢ç”¨
 
 WheelAutoExecute:
-    SendMode Input              ; ‘—M’†‚Éƒ†[ƒU[‘€ì‚ğŒã‰ñ‚µ‚É‚·‚éB
+    SendMode Input              ; é€ä¿¡ä¸­ã«ãƒ¦ãƒ¼ã‚¶ãƒ¼æ“ä½œã‚’å¾Œå›ã—ã«ã™ã‚‹ã€‚
     Gosub,WheelInit
-    Hotkey,^ESC, WheelExit     ;I—¹F [Ctrl]+[ESC]
+    Hotkey,^ESC, WheelExit     ;çµ‚äº†ï¼š [Ctrl]+[ESC]
 return
 WheelExit:
     exitapp
@@ -28,46 +28,46 @@ return
 
 
 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;   ’P‘Ì/‘g‚İ—¼—p
+;   å˜ä½“/çµ„è¾¼ã¿ä¸¡ç”¨
 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 WheelInit:
 ;-------------------------------------------------------
-;   ‰Šú‰»
+;   åˆæœŸåŒ–
 ;-------------------------------------------------------
-    ;--- ƒIƒvƒVƒ‡ƒ“ ---
-    DefaultScrollMode = 0           ;Šî–{“®ìƒ‚[ƒh  0:WHELL 1:ŒİŠ·SCROLL
-    AcclSpeed         = 1           ;‰Á‘¬‚Ì”{—¦(0‚Å‰Á‘¬OFF)
-    AcclTOut          = 300         ;‰Á‘¬ƒ^ƒCƒ€ƒAƒEƒg’l(ms)
-    ScrlCount         = 2           ;ŒİŠ·ƒXƒNƒ[ƒ‹s”
+    ;--- ã‚ªãƒ—ã‚·ãƒ§ãƒ³ ---
+    DefaultScrollMode = 0           ;åŸºæœ¬å‹•ä½œãƒ¢ãƒ¼ãƒ‰  0:WHELL 1:äº’æ›SCROLL
+    AcclSpeed         = 1           ;åŠ é€Ÿæ™‚ã®å€ç‡(0ã§åŠ é€ŸOFF)
+    AcclTOut          = 300         ;åŠ é€Ÿã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆå€¤(ms)
+    ScrlCount         = 2           ;äº’æ›ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«è¡Œæ•°
 
-    ;ƒzƒC[ƒ‹‚Å“®‚©‚·ƒRƒ“ƒgƒ[ƒ‹‚ÌƒNƒ‰ƒXƒŠƒXƒg
+    ;ãƒ›ã‚¤ãƒ¼ãƒ«ã§å‹•ã‹ã™ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚¯ãƒ©ã‚¹ãƒªã‚¹ãƒˆ
     MouseWhellList =MozillaWindowClass
 
-    ;ŒİŠ·ƒ‚[ƒh‚Å“®‚©‚·ƒRƒ“ƒgƒ[ƒ‹‚ÌƒNƒ‰ƒXƒŠƒXƒg
-    VScroolList =  MdiClient            ;MDIe (MS-Access‚È‚Ç)
+    ;äº’æ›ãƒ¢ãƒ¼ãƒ‰ã§å‹•ã‹ã™ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚¯ãƒ©ã‚¹ãƒªã‚¹ãƒˆ
+    VScroolList =  MdiClient            ;MDIè¦ª (MS-Accessãªã©)
                   ,VbaWindow            ;VisualBasicEditor
-                  ,_WwB                 ;MS-Word(•ÒW—Ìˆæ‘S‘Ì)
+                  ,_WwB                 ;MS-Word(ç·¨é›†é ˜åŸŸå…¨ä½“)
                   ,Excel7               ;MS-Excel
 ;;;;;                  ,OModule                ;MS-Access97   2008.05.20
 
-    ;MDI–‘OƒAƒNƒeƒBƒu‰»ƒŠƒXƒg (±¸Ã¨ÌŞq³¨İÄŞ³‚Ì‚İÊŞ°‚ª‚ ‚é±ÌßØ‚È‚Ç)
+    ;MDIäº‹å‰ã‚¢ã‚¯ãƒ†ã‚£ãƒ–åŒ–ãƒªã‚¹ãƒˆ (ï½±ï½¸ï¾ƒï½¨ï¾Œï¾å­ï½³ï½¨ï¾ï¾„ï¾ï½³ã®ã¿ï¾Šï¾ï½°ãŒã‚ã‚‹ï½±ï¾Œï¾Ÿï¾˜ãªã©)
     MdiActivateList = Excel7            ;MS-Excel
 
-    ;--- ŒİŠ·ƒ‚[ƒh ƒJƒXƒ^ƒ€“®ì ---
-    ;–³‹ƒŠƒXƒg(ƒoƒCƒpƒX‚µ‚ÄeƒRƒ“ƒgƒ[ƒ‹‚ğ§Œä‚·‚é)
-    BypassCtlList =   ScrollBar         ;ƒXƒNƒ[ƒ‹ƒo[–{‘Ì
-                    , _WwG              ;MS-Word•ªŠ„ƒyƒCƒ“(ˆê‚Âã‚Ì_WwB‚Å§Œä)
+    ;--- äº’æ›ãƒ¢ãƒ¼ãƒ‰ ã‚«ã‚¹ã‚¿ãƒ å‹•ä½œ ---
+    ;ç„¡è¦–ãƒªã‚¹ãƒˆ(ãƒã‚¤ãƒ‘ã‚¹ã—ã¦è¦ªã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚’åˆ¶å¾¡ã™ã‚‹)
+    BypassCtlList =   ScrollBar         ;ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼æœ¬ä½“
+                    , _WwG              ;MS-Wordåˆ†å‰²ãƒšã‚¤ãƒ³(ä¸€ã¤ä¸Šã®_WwBã§åˆ¶å¾¡)
 
-    ;ŒZ’íƒXƒNƒ[ƒ‹ƒo[ : ½¸Û°ÙÊŞ°‚ª”z‰º‚Å‚Í‚È‚­“¯—ñ‚É‚ ‚é±ÌßØ
-    BrotherScroolBarList = TkfInnerView.UnicodeClass    ;–GƒfƒBƒ^
+    ;å…„å¼Ÿã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ : ï½½ï½¸ï¾›ï½°ï¾™ï¾Šï¾ï½°ãŒé…ä¸‹ã§ã¯ãªãåŒåˆ—ã«ã‚ã‚‹ï½±ï¾Œï¾Ÿï¾˜
+    BrotherScroolBarList = TkfInnerView.UnicodeClass    ;èŒãƒ‡ã‚£ã‚¿
 
-    ;‹Ö~ƒŠƒXƒgF½¸Û°ÙÊİÄŞÙ‚ªæ‚ê‚È‚¢‚ÍAŒİŠ·ƒ‚[ƒh‚ğg—p‚µ‚È‚¢
-    NullShwndTabooList = Excel7         ;MS-Excel(ƒNƒ‰ƒbƒVƒ…‘Îô)
+    ;ç¦æ­¢ãƒªã‚¹ãƒˆï¼šï½½ï½¸ï¾›ï½°ï¾™ï¾Šï¾ï¾„ï¾ï¾™ãŒå–ã‚Œãªã„æ™‚ã¯ã€äº’æ›ãƒ¢ãƒ¼ãƒ‰ã‚’ä½¿ç”¨ã—ãªã„
+    NullShwndTabooList = Excel7         ;MS-Excel(ã‚¯ãƒ©ãƒƒã‚·ãƒ¥å¯¾ç­–)
 
 
-    ;---- ‰¡ƒXƒNƒ[ƒ‹ ƒJƒXƒ^ƒ€“®ì ---
-    ;‰¡ƒXƒNƒ[ƒ‹œŠOƒŠƒXƒg
-    HDisavledList = 
+    ;---- æ¨ªã‚¹ã‚¯ãƒ­ãƒ¼ãƒ« ã‚«ã‚¹ã‚¿ãƒ å‹•ä½œ ---
+    ;æ¨ªã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«é™¤å¤–ãƒªã‚¹ãƒˆ
+    HDisavledList =
 
 return
 
@@ -77,19 +77,19 @@ return
 WheelDown::     WheelRedirect()
 WheelUp::       WheelRedirect()
 
-;ShiftƒzƒC[ƒ‹‚Å‰¡ƒXƒNƒ[ƒ‹
+;Shiftãƒ›ã‚¤ãƒ¼ãƒ«ã§æ¨ªã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
 +WheelDown::    WheelRedirect(1)
 +WheelUp::      WheelRedirect(1)
 
-/* ¦¦¦¦¦ Logicoolƒ}ƒEƒX—p İ’èƒTƒ“ƒvƒ‹ ¦¦¦¦¦¦¦¦¦¦¦¦¦¦
+/* â€»â€»â€»â€»â€» Logicoolãƒã‚¦ã‚¹ç”¨ è¨­å®šã‚µãƒ³ãƒ—ãƒ« â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
 
-;Logicoolƒ}ƒEƒXƒ`ƒ‹ƒg1(uberOptions‚Å ¶:F13 ‰E:F14‚ªŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚é‚Æ‰¼’è)
-; ‚½‚¾‚µ‰Ÿ‰º‰ğœî•ñ‚Í³‚µ‚­æ‚ê‚È‚¢‚Ì‚Åuser.xml‚ğè“®‚É‚Ä•ÒW‚µ
-; ƒL[ƒŠƒs[ƒg‚ğ”­¶‚³‚¹‚é•K—v‚ ‚è
+;Logicoolãƒã‚¦ã‚¹ãƒãƒ«ãƒˆ1(uberOptionsã§ å·¦:F13 å³:F14ãŒå‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ã¨ä»®å®š)
+; ãŸã ã—æŠ¼ä¸‹è§£é™¤æƒ…å ±ã¯æ­£ã—ãå–ã‚Œãªã„ã®ã§user.xmlã‚’æ‰‹å‹•ã«ã¦ç·¨é›†ã—
+; ã‚­ãƒ¼ãƒªãƒ”ãƒ¼ãƒˆã‚’ç™ºç”Ÿã•ã›ã‚‹å¿…è¦ã‚ã‚Š
 F13::   WheelRedirect(1,0)
 F14::   WheelRedirect(1,1)
 
-;Logicoolƒ}ƒEƒXƒ`ƒ‹ƒg2(SetPoint‚Å ¶:F11 ‰E:F12‚ÉŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚é‚Æ‰¼’è)
+;Logicoolãƒã‚¦ã‚¹ãƒãƒ«ãƒˆ2(SetPointã§ å·¦:F11 å³:F12ã«å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ã¨ä»®å®š)
 F11::       SetTimer,TiltRepeatL,80
 F11 up::    SetTimer,TiltRepeatL,OFF
 F12::       SetTimer,TiltRepeatR,80
@@ -100,7 +100,7 @@ return
 TiltRepeatR:
     WheelRedirect(1,1)
 return
-;¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
+;â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
 */
 
 ;
@@ -110,9 +110,9 @@ return
 ;==============================================
 WheelRedirect(mode=0,dir="")
 ;-------------------------------------------------------------
-;   ƒzƒC[ƒ‹ƒŠƒ_ƒCƒŒƒNƒg
-;   mode 0:cƒXƒNƒ[ƒ‹  1:‰¡ƒXƒNƒ[ƒ‹ (È—ª:c)
-;   dir  0:UP(LEFT)      1:DOWN(RIGHT)  (È—ª:ƒzƒC[ƒ‹€‹’)
+;   ãƒ›ã‚¤ãƒ¼ãƒ«ãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆ
+;   mode 0:ç¸¦ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«  1:æ¨ªã‚¹ã‚¯ãƒ­ãƒ¼ãƒ« (çœç•¥æ™‚:ç¸¦)
+;   dir  0:UP(LEFT)      1:DOWN(RIGHT)  (çœç•¥æ™‚:ãƒ›ã‚¤ãƒ¼ãƒ«æº–æ‹ )
 ;-------------------------------------------------------------
 {
     global  DefaultScrollMode, AcclSpeed, AcclTOut, ScrlCount
@@ -128,37 +128,37 @@ WheelRedirect(mode=0,dir="")
     ifEqual,ctrl,,  SetEnv,ctrl,%hwnd%              ;2008.05.25
     WinGetClass,ccls,ahk_id %ctrl%
 
-    ;–³‹ƒŠƒXƒgƒ`ƒFƒbƒNF1ŠK‘wã‚ÌƒRƒ“ƒgƒ[ƒ‹‚ğ§Œä‘ÎÛ‚Æ‚·‚é
+    ;ç„¡è¦–ãƒªã‚¹ãƒˆãƒã‚§ãƒƒã‚¯ï¼š1éšå±¤ä¸Šã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚’åˆ¶å¾¡å¯¾è±¡ã¨ã™ã‚‹
     ifInString, BypassCtlList, %ccls%
     {
         ctrl := DllCall("GetParent",UInt,ctrl, UInt)
         WinGetClass,ccls,ahk_id %ctrl%
     }
 
-    ;MDI–‘OƒAƒNƒeƒBƒu‰»ƒŠƒXƒgƒ`ƒFƒbƒN : ”ñ±¸Ã¨ÌŞq³¨İÄŞ³‚ğ±¸Ã¨ÌŞ‰»
+    ;MDIäº‹å‰ã‚¢ã‚¯ãƒ†ã‚£ãƒ–åŒ–ãƒªã‚¹ãƒˆãƒã‚§ãƒƒã‚¯ : éï½±ï½¸ï¾ƒï½¨ï¾Œï¾å­ï½³ï½¨ï¾ï¾„ï¾ï½³ã‚’ï½±ï½¸ï¾ƒï½¨ï¾Œï¾åŒ–
     if ccls in %MdiActivateList%
     {
         MdiClient := DllCall("GetParent",UInt,ctrl, UInt)
         SendMessage, 0x229, 0,0,,ahk_id %MdiClient% ;WM_MDIGETACTIVE
         if (ctrl != ErrorLevel) {
-            if(ccls = "Excel7")     {               ;ExcelƒJƒXƒ^ƒ€
+            if(ccls = "Excel7")     {               ;Excelã‚«ã‚¹ã‚¿ãƒ 
                 WinActivate, ahk_id %hwnd%
                 MouseClick,Left
             }
             Else    PostMessage,0x222, %ctrl%,0,,ahk_id %MdiClient%
         }
     }
-    scnt := GetScrollBarHwnd(shwnd,mx,my,ctrl,mode) ;½¸Û°ÙÊİÄŞÙæ“¾
+    scnt := GetScrollBarHwnd(shwnd,mx,my,ctrl,mode) ;ï½½ï½¸ï¾›ï½°ï¾™ï¾Šï¾ï¾„ï¾ï¾™å–å¾—
 
-    ;ƒXƒNƒ[ƒ‹“®ìw’è
+    ;ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«å‹•ä½œæŒ‡å®š
     scmode := DefaultScrollMode<<1 | mode
-    if ccls in %HDisavledList%          ;‰¡ƒXƒNƒ[ƒ‹‹Ö~
+    if ccls in %HDisavledList%          ;æ¨ªã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ç¦æ­¢
         scmode &= 0x10
-    if ccls in %MouseWhellList%         ;ƒzƒC[ƒ‹ƒ‚[ƒh
+    if ccls in %MouseWhellList%         ;ãƒ›ã‚¤ãƒ¼ãƒ«ãƒ¢ãƒ¼ãƒ‰
         scmode &= 0x01
-    if ccls in %VScroolList%            ;ŒİŠ·ƒ‚[ƒh
+    if ccls in %VScroolList%            ;äº’æ›ãƒ¢ãƒ¼ãƒ‰
         scmode |= 0x10
-    if (!shwnd) {                       ;ŒİŠ·ƒ‚[ƒh‹Ö~ƒŠƒXƒg
+    if (!shwnd) {                       ;äº’æ›ãƒ¢ãƒ¼ãƒ‰ç¦æ­¢ãƒªã‚¹ãƒˆ
         if ccls in %NullShwndTabooList%
             scmode  = 0
     }
@@ -170,12 +170,12 @@ WheelRedirect(mode=0,dir="")
 
 GetScrollBarHwnd(byref shwnd, mx,my,Cntlhwnd,mode=0)
 ;----------------------------------------------------------------------------
-; ŠY“–ƒRƒ“ƒgƒ[ƒ‹‚ÌƒXƒNƒ[ƒ‹ƒnƒ“ƒhƒ‹‚ğ•Ô‚·
-;   –ß‚è’l w’è•ûŒü‚ÌƒXƒNƒ[ƒ‹ƒIƒuƒWƒFƒNƒg”
-;   out    shwnd       ƒXƒNƒ[ƒ‹ƒnƒ“ƒhƒ‹Ši”[æ
-;   in     mx,my       ƒ}ƒEƒXˆÊ’u
-;          Cntlhwnd    ‘ÎÛƒRƒ“ƒgƒ[ƒ‹‚Ìƒnƒ“ƒhƒ‹
-;          mode        0:VSCROLL(c) 1:HSCROLL(‰¡)
+; è©²å½“ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™
+;   æˆ»ã‚Šå€¤ æŒ‡å®šæ–¹å‘ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæ•°
+;   out    shwnd       ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ³ãƒ‰ãƒ«æ ¼ç´å…ˆ
+;   in     mx,my       ãƒã‚¦ã‚¹ä½ç½®
+;          Cntlhwnd    å¯¾è±¡ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ãƒãƒ³ãƒ‰ãƒ«
+;          mode        0:VSCROLL(ç¸¦) 1:HSCROLL(æ¨ª)
 ;----------------------------------------------------------------------------
 {
     global BrotherScroolBarList
@@ -184,9 +184,9 @@ GetScrollBarHwnd(byref shwnd, mx,my,Cntlhwnd,mode=0)
     WinGet,lst,ControlList,ahk_id %Cntlhwnd%
     WinGetClass,pcls, ahk_id %Cntlhwnd%
 
-    ;”z‰º‚ÉƒXƒNƒ[ƒ‹ƒo[‚È‚µ
+    ;é…ä¸‹ã«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ãªã—
     ifNotInString, lst, ScrollBar
-    {   ;ŒZ’íw’è‚ª‚ ‚éê‡‚ÍA©•ª‚Æ“¯—ñ‚ÌƒXƒNƒ[ƒ‹ƒo[‚ğ’T‚·
+    {   ;å…„å¼ŸæŒ‡å®šãŒã‚ã‚‹å ´åˆã¯ã€è‡ªåˆ†ã¨åŒåˆ—ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã‚’æ¢ã™
         if pcls in %BrotherScroolBarList%
         {
             Cntlhwnd := DllCall("GetParent",UInt,Cntlhwnd, UInt)
@@ -196,7 +196,7 @@ GetScrollBarHwnd(byref shwnd, mx,my,Cntlhwnd,mode=0)
         else return 0
     }
 
-    ;ƒXƒNƒ[ƒ‹ƒo[ƒRƒ“ƒgƒ[ƒ‹‚Ì’Šo
+    ;ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®æŠ½å‡º
     vcnt = 0
     hcnt = 0
     Loop,Parse,lst,`n
@@ -206,12 +206,12 @@ GetScrollBarHwnd(byref shwnd, mx,my,Cntlhwnd,mode=0)
         ControlGet,hwnd, Hwnd,,%A_LoopField%,ahk_id %Cntlhwnd%
         WinGetpos, sx,sy,sw,sh, ahk_id %hwnd%
 
-        if (sw < sh)    {   ;cƒXƒNƒ[ƒ‹
+        if (sw < sh)    {   ;ç¸¦ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
             vcnt++
             WinGetpos, vx%vcnt%,vy%vcnt%,vw%vcnt%,vh%vcnt%, ahk_id %hwnd%
             if (vi = "")
-            || ((vy%vi%!=sy)&&((sy<my)&&(vy%vi%<sy))||((vy%vi%>my)&&(vy%vi%>sy))) ;ã‰º•ªŠ„
-            || ((vx%vi%!=sx)&&((sx>mx)&&(vx%vi%>sx))||((vx%vi%<mx)&&(vx%vi%<sx))) ;¶‰E•ªŠ„
+            || ((vy%vi%!=sy)&&((sy<my)&&(vy%vi%<sy))||((vy%vi%>my)&&(vy%vi%>sy))) ;ä¸Šä¸‹åˆ†å‰²
+            || ((vx%vi%!=sx)&&((sx>mx)&&(vx%vi%>sx))||((vx%vi%<mx)&&(vx%vi%<sx))) ;å·¦å³åˆ†å‰²
             {
                 vi := vcnt
                 if (mode = 0)   {
@@ -220,12 +220,12 @@ GetScrollBarHwnd(byref shwnd, mx,my,Cntlhwnd,mode=0)
                 }
             }
         }
-        if (sw > sh)    {   ;‰¡ƒXƒNƒ[ƒ‹
+        if (sw > sh)    {   ;æ¨ªã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
             hcnt++
             WinGetpos, hx%hcnt%,hy%hcnt%,hw%hcnt%,hh%hcnt%, ahk_id %hwnd%
             if (hi = "")
-            || ((hx%hi%!=sx)&&((sx<mx)&&(hx%hi%<sx))||((hx%hi%>mx)&&(hx%hi%>sx)))           ;¶‰E(ExcelŒ^)
-            || ((hy%hi%!=sy)&&((sy+sh>my)&&(hy%hi%>sy))||((hy%hi%+hh%hi%<my)&&(hy%hi%<sy))) ;ã‰º(WordŒ^)
+            || ((hx%hi%!=sx)&&((sx<mx)&&(hx%hi%<sx))||((hx%hi%>mx)&&(hx%hi%>sx)))           ;å·¦å³(Excelå‹)
+            || ((hy%hi%!=sy)&&((sy+sh>my)&&(hy%hi%>sy))||((hy%hi%+hh%hi%<my)&&(hy%hi%<sy))) ;ä¸Šä¸‹(Wordå‹)
             {
                 hi := hcnt
                 if (mode = 1)   {
@@ -236,8 +236,8 @@ GetScrollBarHwnd(byref shwnd, mx,my,Cntlhwnd,mode=0)
         }
     }
 
-    ;---ƒAƒNƒeƒBƒuƒyƒCƒ“‚É‚µ‚©ƒo[‚ª‚È‚¢ƒAƒvƒŠA‰Â”\‚È‚çƒyƒCƒ“‚ğØ‚è‘Ö‚¦‚é---
-    ;[GŠÛ]—p ƒJƒXƒ^ƒ€F•ªŠ„ƒEƒBƒ“ƒhƒEØ‚è‘Ö‚¦
+    ;---ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãƒšã‚¤ãƒ³ã«ã—ã‹ãƒãƒ¼ãŒãªã„ã‚¢ãƒ—ãƒªã€å¯èƒ½ãªã‚‰ãƒšã‚¤ãƒ³ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹---
+    ;[ç§€ä¸¸]ç”¨ ã‚«ã‚¹ã‚¿ãƒ ï¼šåˆ†å‰²ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦åˆ‡ã‚Šæ›¿ãˆ
     if (pcls = "HM32CLIENT") && !((vy1 <= my) && (vy1+vh1 >= my))
         PostMessage, 0x111, 142,  0, ,ahk_id %Cntlhwnd%   ;WM_COMMAND
     ;------------------------------------------------------------------------
@@ -249,27 +249,27 @@ GetScrollBarHwnd(byref shwnd, mx,my,Cntlhwnd,mode=0)
 
 MOUSEWHELL(hwnd,mx,my,dir="", ASpeed=1,ATOut=300)
 ;----------------------------------------------------------------------------
-; WM_MOUSEWHELL‚É‚æ‚é”CˆÓƒRƒ“ƒgƒ[ƒ‹ƒXƒNƒ[ƒ‹
-;       hwnd        ŠY“–ƒRƒ“ƒgƒ[ƒ‹‚ÌƒEƒBƒ“ƒhƒEƒnƒ“ƒhƒ‹
-;       mx,my       ƒ}ƒEƒXˆÊ’u
-;       dir         ‘OŒã•ûŒü 0:UP 1:DOWN
+; WM_MOUSEWHELLã«ã‚ˆã‚‹ä»»æ„ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
+;       hwnd        è©²å½“ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒãƒ³ãƒ‰ãƒ«
+;       mx,my       ãƒã‚¦ã‚¹ä½ç½®
+;       dir         å‰å¾Œæ–¹å‘ 0:UP 1:DOWN
 ;
-;       ASpeed       :‰Á‘¬‚Ì”{—¦(0‚Å‰Á‘¬OFF)
-;       ATOut        :‰Á‘¬ƒ^ƒCƒ€ƒAƒEƒg’l(ms)
+;       ASpeed       :åŠ é€Ÿæ™‚ã®å€ç‡(0ã§åŠ é€ŸOFF)
+;       ATOut        :åŠ é€Ÿã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆå€¤(ms)
 ;----------------------------------------------------------------------------
 {
     static delta
 
-    ;ƒzƒC[ƒ‹‰Á‘¬
-    If (A_PriorHotkey <> A_ThisHotkey) || (ATOut < A_TimeSincePriorHotkey) 
+    ;ãƒ›ã‚¤ãƒ¼ãƒ«åŠ é€Ÿ
+    If (A_PriorHotkey <> A_ThisHotkey) || (ATOut < A_TimeSincePriorHotkey)
        || (0 >= ASpeed)
         delta = 120
     Else If (delta < 1000)
         delta += 120 * ASpeed
 
-    ; wParam: Delta(ˆÚ“®—Ê)
-    wpalam  :=GetKeyState("LButton")     | GetKeyState("RButton") <<1 
-            | GetKeyState("Shift")   <<2 | GetKeyState("Ctrl")    <<3 
+    ; wParam: Delta(ç§»å‹•é‡)
+    wpalam  :=GetKeyState("LButton")     | GetKeyState("RButton") <<1
+            | GetKeyState("Shift")   <<2 | GetKeyState("Ctrl")    <<3
             | GetKeyState("MButton") <<4 | GetKeyState("XButton1")<<5
             | GetKeyState("XButton2")<<6
 
@@ -281,7 +281,7 @@ MOUSEWHELL(hwnd,mx,my,dir="", ASpeed=1,ATOut=300)
          wpalam |=   delta << 16        ;up
     Else wpalam |= -(delta << 16)       ;down
 
-    ; lParam: XYÀ•W
+    ; lParam: XYåº§æ¨™
     lpalam := (my << 16) | mx
 
     ;WM_MOUSEWHELL
@@ -290,34 +290,34 @@ MOUSEWHELL(hwnd,mx,my,dir="", ASpeed=1,ATOut=300)
 
 SCROLL(hwnd,mode=0,shwnd=0,dir="", ScrlCnt=1,ASpeed=1,ATOut=300)
 ;----------------------------------------------------------
-; WM_SCROLL‚É‚æ‚é”CˆÓƒRƒ“ƒgƒ[ƒ‹ƒXƒNƒ[ƒ‹
-;       hwnd        ŠY“–ƒRƒ“ƒgƒ[ƒ‹‚ÌƒEƒBƒ“ƒhƒEƒnƒ“ƒhƒ‹
-;       mode        0:VSCROLL(c) 1:HSCROLL(‰¡)
-;       shwnd       ƒXƒNƒ[ƒ‹ƒo[‚Ìƒnƒ“ƒhƒ‹
-;       dir         ‘OŒã•ûŒü 0:SB_LINEUP/LEFT 1:SB_LINEDOWN/RIGHT
+; WM_SCROLLã«ã‚ˆã‚‹ä»»æ„ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
+;       hwnd        è©²å½“ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒãƒ³ãƒ‰ãƒ«
+;       mode        0:VSCROLL(ç¸¦) 1:HSCROLL(æ¨ª)
+;       shwnd       ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã®ãƒãƒ³ãƒ‰ãƒ«
+;       dir         å‰å¾Œæ–¹å‘ 0:SB_LINEUP/LEFT 1:SB_LINEDOWN/RIGHT
 ;
-;       ScrlCnt      :ƒXƒNƒ[ƒ‹s”
-;       ASpeed       :‰Á‘¬‚Ì”{—¦(0‚Å‰Á‘¬OFF)
-;       ATOut        :‰Á‘¬ƒ^ƒCƒ€ƒAƒEƒg’l(ms)
+;       ScrlCnt      :ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«è¡Œæ•°
+;       ASpeed       :åŠ é€Ÿæ™‚ã®å€ç‡(0ã§åŠ é€ŸOFF)
+;       ATOut        :åŠ é€Ÿã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆå€¤(ms)
 ;----------------------------------------------------------
 {
     static ACount
 
-    ;‰Á‘¬
-    If (A_PriorHotkey <> A_ThisHotkey) || (ATOut < A_TimeSincePriorHotkey) 
+    ;åŠ é€Ÿ
+    If (A_PriorHotkey <> A_ThisHotkey) || (ATOut < A_TimeSincePriorHotkey)
        || (0 >= ASpeed)
         ACount := ScrlCnt
     Else
         ACount += ScrlCnt * ASpeed
 
-    ;wParam: •ûŒü
+    ;wParam: æ–¹å‘
     if (dir = "")
     {
         ifInstring A_ThisHotkey, WheelUp
              dir = 0                        ;SB_LINEUP   / SB_LINELEFT
         Else dir = 1                        ;SB_LINEDOWN / SB_LINERIGHT
     }
-    
+
     ;0x114:WM_HSCROLL  0x115:WM_VSCROLL
     msg := 0x115 - mode
 
@@ -325,4 +325,3 @@ SCROLL(hwnd,mode=0,shwnd=0,dir="", ScrlCnt=1,ASpeed=1,ATOut=300)
         PostMessage, %msg%, %dir%, %shwnd%, , ahk_id %hwnd%
     PostMessage, %msg%, 8, %shwnd%, , ahk_id %hwnd% ;SB_ENDSCROLL
 }
-
