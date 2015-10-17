@@ -429,27 +429,35 @@ mbind_equal(){
 }
 
 mbind_bracket_left(){
+	press("[")
 }
 
 mbind_bracket_right(){
+	press("]")
 }
 
 mbind_backslash(){
+	press("\")
 }
 
 mbind_semicolon(){
+	press("`;")
 }
 
 mbind_quote(){
+	press("'")
 }
 
 mbind_period(){
+	press(".")
 }
 
 mbind_camma(){
+	press(",")
 }
 
 mbind_slash(){
+	press("/")
 }
 
 LCMD(){

@@ -455,3 +455,88 @@ RShift & =::
 Space & =::
 	mbind_equal()
 Return
+
+<^[::
+>^[::
+>+[::
+<+[::
+LControl & [::
+RControl & [::
+LShift & [::
+RShift & [::
+Space & [::
+	mbind_bracket_left()
+Return
+
+<^\::
+>^\::
+>+\::
+<+\::
+LControl & \::
+RControl & \::
+LShift & \::
+RShift & \::
+Space & \::
+	mbind_backslash()
+Return
+
+;エスケープシーケンス（`;）使用でのバインド
+<^;::
+>^;::
+>+;::
+<+;::
+LControl & `;::
+RControl & `;::
+LShift & `;::
+RShift & `;::
+Space & `;::
+	mbind_semicolon()
+Return
+
+<^'::
+>^'::
+>+'::
+<+'::
+LControl & '::
+RControl & '::
+LShift & '::
+RShift & '::
+Space & '::
+	mbind_quote()
+Return
+
+<^.::
+>^.::
+>+.::
+<+.::
+LControl & .::
+RControl & .::
+LShift & .::
+RShift & .::
+Space & .::
+	mbind_period()
+Return
+
+<^,::
+>^,::
+>+,::
+<+,::
+LControl & ,::
+RControl & ,::
+LShift & ,::
+RShift & ,::
+Space & ,::
+	mbind_camma()
+Return
+
+<^/::
+>^/::
+>+/::
+<+/::
+LControl & /::
+RControl & /::
+LShift & /::
+RShift & /::
+Space & /::
+	mbind_slash()
+Return
