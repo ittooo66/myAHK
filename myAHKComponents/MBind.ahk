@@ -476,7 +476,7 @@ SPACE(){
 	return GetKeyState("Space","P")
 }
 RALT(){
-	return GetKeyState("RAlt","P")
+	return GetKeyState("RWin","P")
 }
 LALT(){
 	return GetKeyState("LAlt","P")
