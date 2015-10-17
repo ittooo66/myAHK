@@ -75,7 +75,6 @@
 	return
 
 	LControl & t::Send,{}
-
 #IfWinActive
 
 ;Reader
@@ -94,12 +93,12 @@
 	要wheelscroll.ahk
 	<+WheelUp::WheelLeft
 	<+WheelDown::WheelRight
-
 #IfWinActive
 
 ;Atom
 #IfWinActive,ahk_exe atom.exe
 	^Tab::Send,^{0}
+	XButton2 & LButton::intelliScroll()
 #IfWinActive
 
 ;Command Prompt,Powershell
