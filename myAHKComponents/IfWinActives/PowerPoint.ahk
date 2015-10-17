@@ -170,7 +170,7 @@
 
 	;閉じる
 	RButton & XButton1::
-		Send,^{q}
+		Send,!{F4}
 	Return
 
 #IfWinActive
