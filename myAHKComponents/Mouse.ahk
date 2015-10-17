@@ -24,7 +24,14 @@ XButton2 & MButton::Reload
 RButton & WheelUp::Send,^{PgUp}
 RButton & WheelDown::Send,^{PgDn}
 ;タブ消去
-RButton & XButton1::Send,^{w}
+RButton & XButton1::
+  Send,^{w}
+  sleep, 1000
+  while(GetKeyState("XButton1","P")){
+    Send,^{w}
+    sleep, 200
+  }
+return
 ;前に使ったタブ
 RButton & XButton2::Send,^+{t}
 ;New tab
