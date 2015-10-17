@@ -156,4 +156,21 @@
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
 
+	;ホイールでリボン切り替え
+	RButton & WheelUp::
+		Send,{Alt}
+		Send,{Left}
+		Send,{Alt}
+	Return
+	RButton & WheelDown::
+		Send,{Alt}
+		Send,{Right}
+		Send,{Alt}
+	Return
+
+	;閉じる
+	RButton & XButton1::
+		Send,^{q}
+	Return
+
 #IfWinActive
