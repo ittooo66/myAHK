@@ -124,13 +124,13 @@ addAlias(Num){
 	Send,^{a}
 	clipboard =
 	Send, ^c
-	ClipWait
+	ClipWait 1
 	filename = %clipboard%
 	Send,{Esc}
 	Send,^{l}
 	clipboard =
 	Send, ^c
-	ClipWait
+	ClipWait 1
 	filedir = %clipboard%
 	FileDelete,  %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
 	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
