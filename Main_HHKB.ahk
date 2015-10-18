@@ -21,8 +21,16 @@ RWin & ,::Reload
 RWin & .::Suspend
 
 ;一行消し（両サイド）
-RShift & BackSpace::Send,+{HOME}{Backspace}
-RShift & `::Send,+{END}{BackSpace}
+RShift & BackSpace::
+  Send,+{HOME}
+  copyTo("V")
+  Send,{Backspace}
+return
+RShift & `::
+  Send,+{END}
+  copyTo("V")
+  Send,{BackSpace}
+return
 
 ;IME切替え
 LControl & Space::Send,!{``}
