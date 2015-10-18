@@ -166,28 +166,26 @@ Space & n::
 	mbind_n()
 Return
 
-;AltTab系は一行記法しか対応していない？ここに記述
-RShift & o::ShiftAltTab
-RControl & o::ShiftAltTab
 <^o::
 >^o::
 >+o::
 <+o::
 LControl & o::
+RControl & o::
 LShift & o::
+RShift & o::
 Space & o::
 	mbind_o()
 Return
 
-;AltTab系は一行記法しか対応していない？ここに記述
-RShift & p::AltTab
-RControl & p::AltTab
 <^p::
 >^p::
 >+p::
 <+p::
 LControl & p::
+RControl & p::
 LShift & p::
+RShift & p::
 Space & p::
 	mbind_p()
 Return
@@ -456,16 +454,30 @@ Space & =::
 	mbind_equal()
 Return
 
+;AltTab系は一行記法しか対応していない？ここに記述
+RShift & [::ShiftAltTab
+RControl & [::ShiftAltTab
 <^[::
 >^[::
 >+[::
 <+[::
 LControl & [::
-RControl & [::
 LShift & [::
-RShift & [::
 Space & [::
 	mbind_bracket_left()
+Return
+
+;AltTab系は一行記法しか対応していない？ここに記述
+RShift & ]::AltTab
+RControl & ]::AltTab
+<^]::
+>^]::
+>+]::
+<+]::
+LControl & ]::
+LShift & ]::
+Space & ]::
+	mbind_bracket_right()
 Return
 
 <^\::
