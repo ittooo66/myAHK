@@ -1,5 +1,6 @@
+;アイコン設定
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
-
+;おまじない
 #InstallKeybdHook
 ;Library
 #include %A_ScriptDir%\myAHKComponents\Library.ahk
@@ -10,7 +11,6 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 `::Delete
 Delete::Send,{``}
 +Delete::Send,+{``}
-LShift & Backspace::Send,+{\}
 RWin & Backspace::send,{\}
 RWin & `::Send,{``}
 RControl & Esc::Send,{Delete}
@@ -21,9 +21,8 @@ RWin & .::Suspend
 
 ;一行消し（両サイド）
 RShift & BackSpace::Send,+{HOME}{Backspace}
-RControl & BackSpace::Send,+{HOME}{Backspace}
 RShift & `::Send,+{END}{BackSpace}
-RControl & `::Send,+{END}{BackSpace}
+RControl & BackSpace::Send,+{HOME}{Backspace}
 
 ;IME切替え
 LControl & Space::Send,!{``}
@@ -32,7 +31,7 @@ LControl & Space::Send,!{``}
 LControl & Tab::AltTab
 
 ;SandS。Space押上げでSpaceキーActivateとSpace押しキャンセル用のTab
-Space::Send,{Space}
+*Space::mbind_space()
 Space & Tab::return
 
 ;もろもろバインドとリスナー
