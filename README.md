@@ -12,7 +12,7 @@ my[AHK][AHK]
 + `Main_AWKB.ahk`(for Apple Wireless Keyboard)   
 
 を起動。`myAHKComponents/`以下に依存。  
-全ファイルCRLFにすること！！！
+全ファイルCRLFにすること！(ZIPダウンロード非推奨)
 
 ### myAHKComponents/ ###
     IfWinActives/       :特定Window下における挙動
