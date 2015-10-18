@@ -16,6 +16,10 @@ RWin & Backspace::send,{\}
 RWin & `::Send,{``}
 RControl & Esc::Send,{Delete}
 
+;RCMDテンキー用
+RShift & Tab::Send,{Tab}
+RShift & Return::Send,{Return}
+
 ;Reload/Suspend AHK
 RWin & ,::Reload
 RWin & .::Suspend
