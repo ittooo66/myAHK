@@ -103,23 +103,29 @@ mbind_i(){
 	if RCMD() && LCMD(){
 		if !select("OpusApp","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
-	}else
-			press("i")
+	}else if RCMD()
+		press("8")
+	else
+		press("i")
 }
 
 mbind_j(){
 	if RCMD() && LCMD(){
 		if !select("SunAwtFrame","")
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin\idea.exe"
-	}else if RCMD() || CAPS()
-		press("/")
+	}else if RCMD()
+		press("4")
+	else if CAPS()
+		press("{F6}")
 	else
 		press("j")
 }
 
 mbind_k(){
-	if RCMD() || CAPS()
+	if CAPS()
 		press("{F7}")
+	else if RCMD()
+		press("5")
 	else
 		press("k")
 }
@@ -131,6 +137,11 @@ mbind_l(){
 				run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\League of Legends\League of Legends"
 			}
 		}
+	}else if CAPS(){
+		press("{F9}")
+		press("{F8}")
+	}else if RCMD(){
+		press("6")
 	}else
 		press("l")
 }
@@ -138,9 +149,11 @@ mbind_l(){
 mbind_m(){
 	if RCMD() && CAPS()
 		download()
-	else if RCMD() || CAPS()
-		press("-")
-	else
+	else if RCMD()
+		press("1")
+	else if CAPS(){
+		;TODO
+	}else
 		press("m")
 }
 
@@ -158,7 +171,9 @@ mbind_o(){
 	if RCMD() && LCMD(){
 		if !select("XLMAIN","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\excel.exe"
-	}else
+	}else if RCMD()
+		press("9")
+	else
 		press("o")
 }
 
@@ -227,8 +242,10 @@ mbind_t(){
 }
 
 mbind_u(){
-	if RCMD() || CAPS()
+	if CAPS()
 		press("``")
+	else if RCMD()
+		press("7")
 	else if SPACE()
 		press("]")
 	else
@@ -449,11 +466,17 @@ mbind_quote(){
 }
 
 mbind_period(){
-	press(".")
+	if RCMD(){
+		press("3")
+	}else
+		press(".")
 }
 
 mbind_camma(){
-	press(",")
+	if RCMD()
+		press("2")
+	else
+		press(",")
 }
 
 mbind_slash(){
