@@ -81,21 +81,33 @@ download(){
 
 ;拡張クリップボード(copy)
 copyTo(Num){
+	;cb_bkに中身を退避
 	cb_bk = %ClipboardAll%
+	;一旦clipboardを空にする
 	clipboard =
+	;clipboardにCopy
 	Send,^c
-	ClipWait
-	FileDelete,  %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.txt
-	FileAppend,	%clipboard% , %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.txt
+	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	If ErrorLevel <> 0
+	{
+		;終了
+		Return
+	}
+	;ファイルにClipboardを保存
+	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.dat
+	;cb_bkから取得
 	Clipboard = %cb_bk%
+	;cb_bk開放
+	cb_bk =
 }
 
 ;拡張クリップボード(paste)
 pasteFrom(Num){
 	cb_bk = %ClipboardAll%
-	FileRead, Clipboard , %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.txt
+	FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.dat
 	Send,^v
-	Sleep, 200
 	Clipboard = %cb_bk%
 }
 
