@@ -53,6 +53,8 @@ IME切り替え用AHK。つよい。べんり。
 + InvertPadScroll.ahk  
 パッドのスクロール逆転用のAHK
 
++ TrackWheel
+
 
 注意
 ----------------
