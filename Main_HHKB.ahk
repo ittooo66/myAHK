@@ -3,6 +3,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
 ;Library
+#include %A_ScriptDir%\myAHKComponents\ExtLibs\IME.ahk
 #include %A_ScriptDir%\myAHKComponents\Library.ahk
 ;マウス設定
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
@@ -22,10 +23,11 @@ RWin & .::Suspend
 ;一行消し（両サイド）
 RShift & BackSpace::Send,+{HOME}{Backspace}
 RShift & `::Send,+{END}{BackSpace}
-RControl & BackSpace::Send,+{HOME}{Backspace}
 
 ;IME切替え
 LControl & Space::Send,!{``}
+RControl & BackSpace::IME_SET("0")
+RControl & Return::IME_SET("1")
 
 ;window切り替え
 LControl & Tab::AltTab
