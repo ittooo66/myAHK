@@ -153,10 +153,9 @@ intelliScroll(){
 		;値調整
 		diff := mouseDiffY/30
 		if (diff<0){
-			diff:= -diff
-			While(diff>0){
+			While(diff<0){
 				Send,{WheelUp}
-				diff:= diff-3
+				diff:= diff+3
 			}
 		}else{
 			While(diff>0){
