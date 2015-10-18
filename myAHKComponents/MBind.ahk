@@ -460,6 +460,15 @@ mbind_slash(){
 	press("/")
 }
 
+mbind_space(){
+	if RCMD()
+		press("0")
+	else if CAPS()
+		press("^{Space}")
+	else
+		press("{Space}")
+}
+
 LCMD(){
 	return GetKeyState("LControl", "P")
 }
