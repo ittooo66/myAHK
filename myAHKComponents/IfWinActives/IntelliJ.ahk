@@ -77,4 +77,7 @@
       mbind_q()
   return
 
+  ;intelliScroll
+  XButton2 & LButton::intelliScroll()
+
 #IfWinActive
