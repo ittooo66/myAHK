@@ -86,10 +86,7 @@ copyTo(Num){
 	Send,^c
 	ClipWait
 	FileDelete,  %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.txt
-	FileAppend,
-	(
-	%clipboard%
-	), %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.txt
+	FileAppend,	%clipboard% , %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.txt
 	Clipboard = %cb_bk%
 }
 
@@ -124,10 +121,7 @@ addAlias(Num){
 	ClipWait
 	filedir = %clipboard%
 	FileDelete,  %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
-	FileAppend,
-	(
-	%filedir%\%filename%
-	), %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
+	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
 	Clipboard = %cb_bk%
 	Send,{Return}
 	Send,+{Tab}+{Tab}
