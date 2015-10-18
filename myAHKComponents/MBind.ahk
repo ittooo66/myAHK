@@ -92,7 +92,7 @@ mbind_h(){
 		if !select("HwndWrapper","")
 			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
 	}else if RCMD() || CAPS()
-		press("*")
+		press("{BackSpace}")
 	else if SPACE()
 		press("'")
 	else
@@ -162,7 +162,7 @@ mbind_n(){
 		if !select("Notepad","")
 			run "C:\Windows\System32\notepad.exe"
 	}else if RCMD() || CAPS()
-		press("{+}")
+		press("{*}")
 	else
 		press("n")
 }
@@ -181,7 +181,9 @@ mbind_p(){
 	if RCMD() && LCMD(){
 		if !select("PPTFrameClass","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\powerpnt.exe"
-	}else
+	}else if RCMD()
+		press("{-}")
+	else
 		press("p")
 }
 
@@ -458,11 +460,17 @@ mbind_backslash(){
 }
 
 mbind_semicolon(){
-	press("`;")
+	if RCMD()
+		press("{+}")
+	else
+		press("`;")
 }
 
 mbind_quote(){
-	press("'")
+	if RCMD()
+		press("{=}")
+	else
+		press("'")
 }
 
 mbind_period(){
