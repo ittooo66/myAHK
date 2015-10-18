@@ -1,19 +1,18 @@
 my[AHK][AHK]
 ======================
 おれおれキーバインド。  
-各種コンポーネントの中身についてはREADME.mdを、キー入力時の挙動はMANUAL.pptx参照のこと。
+各種コンポーネントの中身については`README.md`を、キー入力時の挙動は`MANUAL.pptx`参照のこと。
 
 
 
 使い方
 ------
-+ `Main_AWKB.ahk`(for Apple Wireless Keyboard)   
-または
 + `Main_HHKB.ahk`(for HHKB)
+または
++ `Main_AWKB.ahk`(for Apple Wireless Keyboard)   
 
-を起動。`myAHKComponents/`以下に依存。全ファイルCRLFにすること！！！
-
-
+を起動。`myAHKComponents/`以下に依存。  
+全ファイルCRLFにすること！！！
 
 ### myAHKComponents/ ###
     IfWinActives/       :特定Window下における挙動
@@ -27,7 +26,8 @@ my[AHK][AHK]
 
 ### reference/ ###
 
-なんかにつかえそうだなあAHK集。
+なんかにつかえそうだなあAHK集。依存しているものは
+`myAHKComponents/ExtLibs/`以下に引っ越して使う。
 
 + [EnableUIAccess][EnableUIAccess]  
 必須。AHKからUAC周りの制約を消せる。これ無いとAltTabが効かなかったりLoLで修飾キー周りが悲惨に  
@@ -36,7 +36,7 @@ my[AHK][AHK]
 マウスジェスチャできるやつ。多機能だけどマウスバインド充実しだしたしもう不要？
 
 + [IME.ahk][IME.ahk]  
-IME切り替え用AHK。つよそうだけどつかってない
+IME切り替え用AHK。つよい。べんり。
 
 + [WheelScroll.ahk][WheelScroll.ahk]  
 ホイール周り（横スクロール）の強化。横スク不可のExcelを横スクロールできるようになる。PPTは無理っぽい、ナンデ。
@@ -61,7 +61,6 @@ IME切り替え用AHK。つよそうだけどつかってない
 
 2. 修飾キー周り  
 略記法(>+)と正式記法(RShift &)でフック力が違うのか等価の挙動にならない（略記のが低層フック？）。使用の際は注意を
-
 
 
 
