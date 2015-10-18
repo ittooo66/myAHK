@@ -130,7 +130,7 @@ addAlias(Num){
 	), %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
 	Clipboard = %cb_bk%
 	Send,{Return}
-	Send,{Tab}{Tab}{Tab}
+	Send,+{Tab}+{Tab}
 }
 
 ;ショートカットを開く
