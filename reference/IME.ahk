@@ -1,24 +1,24 @@
 /*----------------------------------------------------------------------------
-  IME ����p Functuion (�R�s�y�p)
-   ����m�F��  2005/09/12
-     WinNT4 SP6 / WinXP SP2 (98�n�ł������炭��OK)
+  IME 制御用 Functuion (コピペ用)
+   動作確認環境  2005/09/12
+     WinNT4 SP6 / WinXP SP2 (98系でもおそらくはOK)
 
-    IME_Func.ahk ����悭�g�� IME��Ԏ擾/�Z�b�g���̂ݒ��o
-    �e�֐��ԂɈˑ��֌W�͂���܂���B
-    �֐��Ԃ̈ˑ��֌W�͖����̂�
-    �K�v�Ȋ֐��P�̂�
+    IME_Func.ahk からよく使う IME状態取得/セット部のみ抽出
+    各関数間に依存関係はありません。
+    関数間の依存関係は無いので
+    必要な関数単体で
 
-    2008.07.11 v1.0.47�ȍ~�� �֐����C�u�����X�N���v�g�Ή��p�Ƀt�@�C�������C��
+    2008.07.11 v1.0.47以降の 関数ライブラリスクリプト対応用にファイル名を修正
 -----------------------------------------------------------------------------
 */
 
 
 IME_GET(WinTitle="")
 ;-----------------------------------------------------------
-; IME�̏�Ԃ̎擾
-;    �ΏہF AHK v1.0.34�ȍ~
-;   WinTitle : �Ώ�Window (�ȗ���:�A�N�e�B�u�E�B���h�E)
-;   �߂�l  1:ON 0:OFF
+; IMEの状態の取得
+;    対象： AHK v1.0.34以降
+;   WinTitle : 対象Window (省略時:アクティブウィンドウ)
+;   戻り値  1:ON 0:OFF
 ;-----------------------------------------------------------
 {
     ifEqual WinTitle,,  SetEnv,WinTitle,A
@@ -35,11 +35,11 @@ IME_GET(WinTitle="")
 
 IME_SET(setSts, WinTitle="")
 ;-----------------------------------------------------------
-; IME�̏�Ԃ��Z�b�g
-;    �ΏہF AHK v1.0.34�ȍ~
+; IMEの状態をセット
+;    対象： AHK v1.0.34以降
 ;   SetSts  : 1:ON 0:OFF
-;   WinTitle: �Ώ�Window (�ȗ���:�A�N�e�B�u�E�B���h�E)
-;   �߂�l  1:ON 0:OFF
+;   WinTitle: 対象Window (省略時:アクティブウィンドウ)
+;   戻り値  1:ON 0:OFF
 ;-----------------------------------------------------------
 {
     ifEqual WinTitle,,  SetEnv,WinTitle,A
@@ -55,32 +55,32 @@ IME_SET(setSts, WinTitle="")
 }
 
 ;===========================================================================
-; IME ���̓��[�h �擾 / �Z�b�g
+; IME 入力モード 取得 / セット
 ;
-;    0000xxxx    ���ȓ���
-;    0001xxxx    ���[�}������
-;    xxxx0xxx    ���p
-;    xxxx1xxx    �S�p
-;    xxxxx000    �p��
-;    xxxxx001    �Ђ炪��
-;    xxxxx011    ��/�J�i
+;    0000xxxx    かな入力
+;    0001xxxx    ローマ字入力
+;    xxxx0xxx    半角
+;    xxxx1xxx    全角
+;    xxxxx000    英数
+;    xxxxx001    ひらがな
+;    xxxxx011    ｶﾅ/カナ
 ;
-;     0 (0x00  0000 0000) ����    ���p��
-;     3 (0x03  0000 0011)         ����
-;     8 (0x08  0000 1000)         �S�p��
-;     9 (0x09  0000 1001)         �Ђ炪��
-;    11 (0x0B  0000 1011)         �S�J�^�J�i
-;    16 (0x10  0001 0000) ���[�}�����p��
-;    19 (0x13  0001 0011)         ����
-;    24 (0x18  0001 1000)         �S�p��
-;    25 (0x19  0001 1001)         �Ђ炪��
-;    27 (0x1B  0001 1011)         �S�J�^�J�i
+;     0 (0x00  0000 0000) かな    半英数
+;     3 (0x03  0000 0011)         半ｶﾅ
+;     8 (0x08  0000 1000)         全英数
+;     9 (0x09  0000 1001)         ひらがな
+;    11 (0x0B  0000 1011)         全カタカナ
+;    16 (0x10  0001 0000) ローマ字半英数
+;    19 (0x13  0001 0011)         半ｶﾅ
+;    24 (0x18  0001 1000)         全英数
+;    25 (0x19  0001 1001)         ひらがな
+;    27 (0x1B  0001 1011)         全カタカナ
 
 IME_GetConvMode(WinTitle="")
 ;-------------------------------------------------------
-; IME ���̓��[�h�擾
-;   in  WinTitle    (�ȗ����A�N�e�B�u�E�B���h�E)
-;   �߂�l:  ���̓��[�h
+; IME 入力モード取得
+;   in  WinTitle    (省略時アクティブウィンドウ)
+;   戻り値:  入力モード
 ;--------------------------------------------------------
 {
     ifEqual WinTitle,,  SetEnv,WinTitle,A
@@ -97,9 +97,9 @@ IME_GetConvMode(WinTitle="")
 
 IME_SetConvMode(ConvMode,WinTitle="")
 ;-------------------------------------------------------
-; IME ���̓��[�h�Z�b�g
-;   in  ConvMode    ���̓��[�h
-;       WinTitle    (�ȗ����A�N�e�B�u�E�B���h�E)
+; IME 入力モードセット
+;   in  ConvMode    入力モード
+;       WinTitle    (省略時アクティブウィンドウ)
 ;--------------------------------------------------------
 {
     ifEqual WinTitle,,  SetEnv,WinTitle,A
@@ -115,17 +115,17 @@ IME_SetConvMode(ConvMode,WinTitle="")
 }
 
 ;===========================================================================
-; IME �ϊ����[�h
-;    0:���ϊ�
-;    1:�l��/�n��
-;    8:���
-;   16:�b�����t�D��
+; IME 変換モード
+;    0:無変換
+;    1:人名/地名
+;    8:一般
+;   16:話し言葉優先
 
 IME_GetSentenceMode(WinTitle="")
 ;-------------------------------------------------------
-; IME �ϊ����[�h�擾
-;   in  WinTitle    (�ȗ����A�N�e�B�u�E�B���h�E)
-;   �߂�l:  0:���ϊ� 1:�l��/�n�� 8:��� 16:�b�����t�D��
+; IME 変換モード取得
+;   in  WinTitle    (省略時アクティブウィンドウ)
+;   戻り値:  0:無変換 1:人名/地名 8:一般 16:話し言葉優先
 ;--------------------------------------------------------
 {
     ifEqual WinTitle,,  SetEnv,WinTitle,A
@@ -142,9 +142,9 @@ IME_GetSentenceMode(WinTitle="")
 
 IME_SetSentenceMode(SentenceMode,WinTitle="")
 ;-------------------------------------------------------
-; IME �ϊ����[�h�Z�b�g
-;   in  SentenceMode 0:���ϊ� 1:�l��/�n�� 8:��� 16:�b�����t�D��
-;       WinTitle     (�ȗ����A�N�e�B�u�E�B���h�E)
+; IME 変換モードセット
+;   in  SentenceMode 0:無変換 1:人名/地名 8:一般 16:話し言葉優先
+;       WinTitle     (省略時アクティブウィンドウ)
 ;--------------------------------------------------------
 {
     ifEqual WinTitle,,  SetEnv,WinTitle,A
