@@ -32,7 +32,7 @@ RButton & MButton::Send,^{t}
 ;Pin tab
 RButton & LButton::Send,!{p}
 ;ホイールクリック
-XButton2 & LButton::Send,{MButton}
+XButton2 & LButton::intelliScroll()
 
 ;未定s
 XButton1 & RButton::Send,{RWin}
