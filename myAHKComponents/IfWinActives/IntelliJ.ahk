@@ -77,6 +77,14 @@
       mbind_q()
   return
 
+  ;フォーマッタ
+  RControl & a::
+    if GetKeyState("LControl","P")
+      Send,^!{l}
+    Else
+      mbind_a()
+  return
+
   ;intelliScroll
   XButton2 & LButton::intelliScroll()
 
