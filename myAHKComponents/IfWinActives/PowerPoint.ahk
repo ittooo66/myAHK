@@ -129,8 +129,8 @@
 	Return
 	RControl & c::
 		if GetKeyState("LControl", "P")
-;???
-			Send, !{}
+			;トリミング
+			Send, !{j}{p}{v}{c}
 		Else
 			mbind_c()
 	Return
