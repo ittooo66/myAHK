@@ -510,7 +510,13 @@ CAPS(){
 	return GetKeyState("LControl","P")
 }
 SHIFT(){
-	return GetKeyState("LShift","P") || GetKeyState("RShift","P")
+	return LSHIFT() || RSHIFT()
+}
+LSHIFT(){
+	return GetKeyState("LShift","P")
+}
+RSHIFT(){
+	return GetKeyState("RShift","P")
 }
 SPACE(){
 	return GetKeyState("Space","P")
