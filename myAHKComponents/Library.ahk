@@ -34,20 +34,6 @@ select(ahkClass, ahkTitle){
 	return false
 }
 
-;修飾キー付きのkeypress
-press(key){
-  modifiers := ""
-	if GetKeyState("LControl", "P")
-		modifiers = %modifiers%^
-	if GetKeyState("LShift", "P")
-		modifiers = %modifiers%+
-	if GetKeyState("Alt", "P")
-		modifiers = %modifiers%!
-	if GetKeyState("Win", "P")
-		modifiers = %modifiers%`#
-	Send,%modifiers%%key%
-}
-
 ;検索機能など
 search(){
 	InputBox, InputVar, Search

@@ -521,3 +521,17 @@ RALT(){
 LALT(){
 	return GetKeyState("LAlt","P")
 }
+
+;修飾キー付きのkeypress
+press(key){
+  modifiers := ""
+	if GetKeyState("LWin", "P")
+		modifiers = %modifiers%^
+	if GetKeyState("Shift", "P")
+		modifiers = %modifiers%+
+	if GetKeyState("LAlt", "P")
+		modifiers = %modifiers%!
+	if GetKeyState("RAlt", "P")
+		modifiers = %modifiers%`#
+	Send,%modifiers%%key%
+}
