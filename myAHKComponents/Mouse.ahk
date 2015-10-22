@@ -42,31 +42,31 @@ XButton1 & LButton::Run, "C:\Users\AHK\Dropbox\"
 ;------------------------------
 ;キーボードマウスエミュレーション
 ;------------------------------
-RWin & q::Send,{WheelUp}
-RWin & t::Send,{WheelDown}
-RWin & w::Send,{LButton}
-RWin & r::Send,{RButton}
-RWin & e::
-RWin & s::
-RWin & d::
-RWin & f::
-  val := 1
-  slp := 10
-  if(GetKeyState("RControl","P"))
-    Send,{LButton Down}
-  While (GetKeyState("RWin", "P")){
-    MoveX := 0, MoveY := 0
-    MoveY += GetKeyState("e", "P") ? -val : 0
-    MoveX += GetKeyState("s", "P") ? -val : 0
-    MoveY += GetKeyState("d", "P") ? val : 0
-    MoveX += GetKeyState("f", "P") ? val : 0
-    MouseMove, %MoveX%, %MoveY%, 1, R
-    Sleep, %slp%
-    val++
-    if( !GetKeyState("e", "P") && !GetKeyState("d", "P") && !GetKeyState("s", "P") && !GetKeyState("f", "P"))
-      val := 1
-    if( !GetKeyState("RControl","P") )
-      Send,{LButton Up}
-  }
-  Send,{LButton Up}
-Return
+;RWin & q::Send,{WheelUp}
+;RWin & t::Send,{WheelDown}
+;RWin & w::Send,{LButton}
+;RWin & r::Send,{RButton}
+;RWin & e::
+;RWin & s::
+;RWin & d::
+;RWin & f::
+;  val := 1
+;  slp := 10
+;  if(GetKeyState("RControl","P"))
+;    Send,{LButton Down}
+;  While (GetKeyState("RWin", "P")){,
+;    MoveX := 0, MoveY := 0
+;    MoveY += GetKeyState("e", "P") ? -val : 0
+;    MoveX += GetKeyState("s", "P") ? -val : 0
+;    MoveY += GetKeyState("d", "P") ? val : 0
+;    MoveX += GetKeyState("f", "P") ? val : 0
+;    MouseMove, %MoveX%, %MoveY%, 1, R
+;    Sleep, %slp%
+;    val++
+;    if( !GetKeyState("e", "P") && !GetKeyState("d", "P") && !GetKeyState("s", "P") && !GetKeyState("f", "P"))
+;      val := 1
+;    if( !GetKeyState("RControl","P") )
+;      Send,{LButton Up}
+;  }
+;  Send,{LButton Up}
+;Return
