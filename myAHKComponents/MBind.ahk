@@ -501,22 +501,22 @@ mbind_space(){
 }
 
 LCMD(){
-	return GetKeyState("LControl", "P")
+	return GetKeyState("LWin", "P")
 }
 RCMD(){
-	return GetKeyState("RShift", "P")
+	return GetKeyState("RWin", "P")
 }
 CAPS(){
-	return GetKeyState("RControl","P")
+	return GetKeyState("LControl","P")
 }
 SHIFT(){
-	return GetKeyState("LShift","P")
+	return GetKeyState("LShift","P") || GetKeyState("RShift","P")
 }
 SPACE(){
 	return GetKeyState("Space","P")
 }
 RALT(){
-	return GetKeyState("RWin","P")
+	return GetKeyState("RAlt","P")
 }
 LALT(){
 	return GetKeyState("LAlt","P")
