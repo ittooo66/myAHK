@@ -7,7 +7,7 @@ my[AHK][AHK]
 
 使い方
 ------
-+ `Main_HHKB.ahk`(for HHKB)
++ `Main.ahk`(for HHKB)
 
 を起動。`myAHKComponents/`以下に依存。  
 全ファイルCRLFにすること！(ZIPダウンロードすると大変なことに)
