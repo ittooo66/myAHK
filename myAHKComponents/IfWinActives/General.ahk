@@ -50,6 +50,10 @@
 #IfWinActive
 
 ;エクスプローラー（QTTabBar使ってます）
+;QTTabBar設定
+;	表示->オプション->QTTabBarで有効化
+;	タブ上右クリ->QTTabBarのオプション->ショートカットキー->現在のタブのロック／ロック解除
+;		Ctrl+L　を　Ctrl+；に
 #IfWinActive,ahk_class CabinetWClass
 	RButton & XButton1::Send,^{w}
 	RButton & XButton2::Send,^+{z}
