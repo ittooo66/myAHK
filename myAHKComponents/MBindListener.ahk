@@ -827,7 +827,6 @@ Return
 <#.::
 >!.::
 <!.::
-RAlt & .::
 LAlt & .::
 RWin & .::
 LWin & .::
@@ -847,7 +846,6 @@ Return
 <#,::
 >!,::
 <!,::
-RAlt & ,::
 LAlt & ,::
 RWin & ,::
 LWin & ,::
@@ -879,9 +877,6 @@ Space & /::
 	mbind_slash()
 Return
 
-;AltTab系は一行記法しか対応していない？ここに記述
-RWin & [::ShiftAltTab
-LControl & [::ShiftAltTab
 <^[::
 >^[::
 >+[::
@@ -900,9 +895,6 @@ Space & [::
 	mbind_bracket_left()
 Return
 
-;AltTab系は一行記法しか対応していない？ここに記述
-RWin & ]::AltTab
-LControl & ]::AltTab
 <^]::
 >^]::
 >+]::
@@ -920,3 +912,13 @@ LShift & ]::
 Space & ]::
 	mbind_bracket_right()
 Return
+
+;Reload/Suspend AHK
+RAlt & ,::Reload
+RAlt & .::Suspend
+
+;AltTab系
+RWin & ]::AltTab
+LControl & ]::AltTab
+RWin & [::ShiftAltTab
+LControl & [::ShiftAltTab
