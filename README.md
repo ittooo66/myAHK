@@ -8,11 +8,9 @@ my[AHK][AHK]
 使い方
 ------
 + `Main_HHKB.ahk`(for HHKB)
-または
-+ `Main_AWKB.ahk`(for Apple Wireless Keyboard)   
 
 を起動。`myAHKComponents/`以下に依存。  
-全ファイルCRLFにすること！(ZIPダウンロード非推奨)
+全ファイルCRLFにすること！(ZIPダウンロードすると大変なことに)
 
 ### myAHKComponents/ ###
     IfWinActives/       :特定Window下における挙動
@@ -66,6 +64,10 @@ IME切り替え用AHK。つよい。べんり。
 
 3. フック負けリスト
   + IME周り：Alt+\`,Ctrl+\`には勝てない模様。
+
+4. HHKBのDIPスイッチ  
+2と6がON
+
 
 
 [AHK]: https://github.com/AutoHotkey/AutoHotkey
