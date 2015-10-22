@@ -64,6 +64,8 @@ IME切り替え用AHK。つよい。べんり。
 2. 修飾キー周り  
 略記法(>+)と正式記法(RShift &)でフック力が違うのか等価の挙動にならない（略記のが低層フック？）。使用の際は注意を
 
+3. フック負けリスト
+  + IME周り：Alt+\`,Ctrl+\`には勝てない模様。
 
 
 [AHK]: https://github.com/AutoHotkey/AutoHotkey
