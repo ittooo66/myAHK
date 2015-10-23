@@ -26,6 +26,8 @@ mbind_c(){
 		pasteFrom("C")
 	else if SPACE()
 		press(",")
+	else if LCMD()
+		HistoricalClip_stackCopy()
 	else
 		press("c")
 }
@@ -35,9 +37,12 @@ mbind_d(){
 		Send,#{d}
 	else if RCMD() && CTRL()
 		Send,!+{9}
-	else if RCMD() || CTRL()
-		press("{DOWN}")
-	else if SPACE()
+	else if RCMD() || CTRL(){
+		if guiIsOn(){
+			HistoricalClip_down()
+		}else
+			press("{DOWN}")
+	}else if SPACE()
 		press("k")
 	else
 		press("d")
@@ -49,9 +54,12 @@ mbind_e(){
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\TeraPad\TeraPad.exe"
 	}else if CTRL() && RCMD()
 		Send,!+{0}
-	else if CTRL() || RCMD()
-		press("{UP}")
-	else if SPACE()
+	else if CTRL() || RCMD(){
+		if guiIsOn()
+			HistoricalClip_up()
+		else
+			press("{UP}")
+	}else if SPACE()
 		press("i")
 	else
 		press("e")
@@ -236,7 +244,10 @@ mbind_t(){
 		if !select("ConsoleWindowClass","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 	}else if RCMD() || CTRL()
-		Send,{Return}
+		if guiIsOn()
+			HistoricalClip_return()
+		else
+			Send,{Return}
 	else if SPACE()
 		press("p")
 	else
@@ -256,7 +267,7 @@ mbind_u(){
 
 mbind_v(){
 	if RCMD() || CTRL()
-		pasteFromHistory()
+		HistoricalClip_openWindow()
 	else if SPACE()
 		press(".")
 	else
