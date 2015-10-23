@@ -4,6 +4,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #InstallKeybdHook
 ;Library
 #include %A_ScriptDir%\myAHKComponents\Library\IME.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
 #include %A_ScriptDir%\myAHKComponents\Library.ahk
 ;マウス設定
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
@@ -58,3 +59,9 @@ Space & Tab::return
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\General.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
+
+return
+;ここからGUI周りのラベル記述
+GuiEscape:
+ Gui, show, Hide
+return
