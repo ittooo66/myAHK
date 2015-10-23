@@ -255,10 +255,8 @@ mbind_u(){
 }
 
 mbind_v(){
-	if ( CTRL() || RCMD() )&& SHIFT()
-		copyTo("V")
-	else if RCMD() || CTRL()
-		pasteFrom("V")
+	if RCMD() || CTRL()
+		pasteFromHistory()
 	else if SPACE()
 		press(".")
 	else
