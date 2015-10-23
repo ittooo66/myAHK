@@ -2,8 +2,8 @@
 #IfWinActive, ahk_exe chrome.exe
 	>^q::
 	<^q::
-	RControl & q::
 	LControl & q::
+	LWin & q::
 		if LCMD() && CTRL()
 			send,{Browser_back}
 		else
@@ -12,8 +12,8 @@
 
 	>^w::
 	<^w::
-	RControl & w::
 	LControl & w::
+	LWin & w::
 		if LCMD() && CTRL()
 			send,{Browser_forward}
 		else
@@ -62,23 +62,23 @@
 	RButton & WheelUp::Send,^+{Tab}
 	RButton & WheelDown::Send,^{Tab}
 
-	RControl & s::
 	LControl & s::
+	LWin & s::
 		if CTRL() && LCMD()
 			Send,^+{Tab}
 		else
 			mbind_s()
 	return
 
-	RControl & f::
 	LControl & f::
+	LWin & f::
 		if CTRL() && LCMD()
 			Send,^{Tab}
 		else
 			mbind_s()
 	return
 
-	LControl & t::Send,{}
+	LWin & t::Send,{}
 #IfWinActive
 
 ;Reader
@@ -94,7 +94,7 @@
 
 ;Excel
 #IfWinActive,ahk_class XLMAIN
-	要wheelscroll.ahk
+	;要wheelscroll.ahk
 	<+WheelUp::WheelLeft
 	<+WheelDown::WheelRight
 #IfWinActive
@@ -108,5 +108,5 @@
 ;Command Prompt,Powershell
 #IfWinActive,ahk_class ConsoleWindowClass
 	^L::SendInput , {Esc}cls{Enter}
-	LControl & q::SendInput , {Esc}exit{Enter}
+	LWin & q::SendInput , {Esc}exit{Enter}
 #IfWinActive

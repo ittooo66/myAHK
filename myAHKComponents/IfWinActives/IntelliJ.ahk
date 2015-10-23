@@ -2,20 +2,20 @@
   ;タブ切り替え
   RButton & WheelUp::Send,!{Left}
   RButton & WheelDown::Send,!{Right}
-  RControl & Tab::
-    if GetKeyState("LShift","P")
+  LControl & Tab::
+    if SHIFT()
       Send,!{Left}
     else
       Send,!{Right}
   return
-  RControl & s::
-    if GetKeyState("LControl","P")
+  LControl & s::
+    if LCMD()
       Send,!{Left}
     else
       mbind_s()
   return
-  RControl & f::
-    if GetKeyState("LControl","P")
+  LControl & f::
+    if LCMD()
       Send,!{Right}
     else
       mbind_f()
@@ -23,21 +23,23 @@
 
   ;タブ開閉
   RButton & XButton1::
-  LControl & w::
+  LWin & w::
     Send,^{F4}
   return
   RButton & XButton2::Send,^+{F11} ;非純正：Reopen Closed Tabに要追加
   LShift & t::
-    if GetKeyState("LControl","P")
+  LWin & t::
+    if SHIFT() && LCMD()
       Send,^+{F11}
     else
       mbind_t()
   return
 
-  ;Rename
-  RControl & r::
-    if GetKeyState("LControl","")
-      Send,+{F6}
+  ;Refactor
+  LControl & r::
+  LWin & r::
+    if CTRL() && LCMD()
+      Send,^!+{t}
     else
       mbind_r()
   Return
@@ -62,24 +64,27 @@
   }
 
   ;実行
-  RControl & e::
-    if GetKeyState("LControl","P")
+  LControl & e::
+  LWin & e::
+    if CTRL() && LCMD()
       Send,+{F10}
     else
       mbind_e()
   return
 
   ;javadoc表示
-  RControl & q::
-    if GetKeyState("LControl","P")
+  LControl & q::
+  LWin & q::
+    if CTRL() && LCMD()
       Send,^{q}
     else
       mbind_q()
   return
 
   ;フォーマッタ
-  RControl & a::
-    if GetKeyState("LControl","P")
+  LControl & a::
+  LWin & a::
+    if CTRL() && LCMD()
       Send,^!{l}
     Else
       mbind_a()
