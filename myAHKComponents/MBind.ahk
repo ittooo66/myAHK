@@ -256,7 +256,7 @@ mbind_u(){
 
 mbind_v(){
 	if ( CTRL() || RCMD() )&& SHIFT()
-		copyTo("V")vc
+		copyTo("V")
 	else if RCMD() || CTRL()
 		pasteFrom("V")
 	else if SPACE()
