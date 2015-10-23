@@ -2,7 +2,7 @@ mbind_a(){
 	if RCMD() && LCMD(){
 		if !select("Chrome_WidgetWin_1","Atom")
 			run, C:\Users\AHK\AppData\Local\atom\update.exe	--processStart atom.exe
-	}else if RCMD() || CAPS()
+	}else if RCMD() || CTRL()
 		press("^{LEFT}")
 	else if SPACE()
 		press("h")
@@ -11,7 +11,7 @@ mbind_a(){
 }
 
 mbind_b(){
-	if RCMD() || CAPS(){
+	if RCMD() || CTRL(){
 		macro()
 	}else if SPACE()
 		press("/")
@@ -20,9 +20,9 @@ mbind_b(){
 }
 
 mbind_c(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if ( CTRL() || RCMD() )&& SHIFT()
 		copyTo("C")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		pasteFrom("C")
 	else if SPACE()
 		press(",")
@@ -33,9 +33,9 @@ mbind_c(){
 mbind_d(){
 	if RCMD() && LCMD()
 		Send,#{d}
-	else if RCMD() && CAPS()
+	else if RCMD() && CTRL()
 		Send,!+{9}
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{DOWN}")
 	else if SPACE()
 		press("k")
@@ -47,9 +47,9 @@ mbind_e(){
 	if RCMD() && LCMD(){
 		if !select("TTeraPadMainForm","")
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\TeraPad\TeraPad.exe"
-	}else if CAPS() && RCMD()
+	}else if CTRL() && RCMD()
 		Send,!+{0}
-	else if CAPS() || RCMD()
+	else if CTRL() || RCMD()
 		press("{UP}")
 	else if SPACE()
 		press("i")
@@ -61,11 +61,11 @@ mbind_f(){
 	if RCMD() && LCMD(){
 		if !select("CabinetWClass","")
 			Run,explorer.exe
-	}else if RCMD() && CAPS()
+	}else if RCMD() && CTRL()
 		Send,!+{8}
-	else if LCMD() && CAPS()
+	else if LCMD() && CTRL()
 		Send,^{PgDn}
-	else if CAPS() || RCMD()
+	else if CTRL() || RCMD()
 		press("{RIGHT}")
 	else if SPACE()
 		press("l")
@@ -77,9 +77,9 @@ mbind_g(){
 	if RCMD() && LCMD(){
 		if !select("Chrome_WidgetWin_1","Chrome")
 			run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-	}else if RCMD() && CAPS()
+	}else if RCMD() && CTRL()
 		search()
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("^{RIGHT}")
 	else if SPACE()
 		press(";")
@@ -91,7 +91,7 @@ mbind_h(){
 	if RCMD() && LCMD(){
 		if !select("HwndWrapper","")
 			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
-	}else if RCMD() || CAPS()
+	}else if RCMD() || CTRL()
 		press("{BackSpace}")
 	else if SPACE()
 		press("'")
@@ -115,14 +115,14 @@ mbind_j(){
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin\idea.exe"
 	}else if RCMD()
 		press("4")
-	else if CAPS()
+	else if CTRL()
 		press("{F6}")
 	else
 		press("j")
 }
 
 mbind_k(){
-	if CAPS()
+	if CTRL()
 		press("{F7}")
 	else if RCMD()
 		press("5")
@@ -137,7 +137,7 @@ mbind_l(){
 				run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\League of Legends\League of Legends"
 			}
 		}
-	}else if CAPS(){
+	}else if CTRL(){
 		press("{F9}")
 		press("{F8}")
 	}else if RCMD(){
@@ -147,11 +147,11 @@ mbind_l(){
 }
 
 mbind_m(){
-	if RCMD() && CAPS()
+	if RCMD() && CTRL()
 		download()
 	else if RCMD()
 		press("1")
-	else if CAPS(){
+	else if CTRL(){
 		;TODO
 	}else
 		press("m")
@@ -161,7 +161,7 @@ mbind_n(){
 	if RCMD() && LCMD(){
 		if !select("Notepad","")
 			run "C:\Windows\System32\notepad.exe"
-	}else if RCMD() || CAPS()
+	}else if RCMD() || CTRL()
 		press("{*}")
 	else
 		press("n")
@@ -191,7 +191,7 @@ mbind_q(){
 	if RCMD() && LCMD(){
 		if !select("TaskManagerWindow","")
 			run "C:\Windows\System32\Taskmgr.exe"
-	}else if RCMD() || CAPS()
+	}else if RCMD() || CTRL()
 		Send,{BackSpace}
 	else if LCMD(){
 		MsgBox , 1 , Confirm, Really?
@@ -207,7 +207,7 @@ mbind_r(){
 	if RCMD() && LCMD(){
 		if !select("AcrobatSDIWindow","")
 			run "C:\Program Files (x86)\Adobe\Reader 11.0\Reader\AcroRd32.exe"
-	}else	if RCMD() || CAPS()
+	}else	if RCMD() || CTRL()
 		press("{END}")
 	else if SPACE()
 		press("o")
@@ -219,11 +219,11 @@ mbind_s(){
 	if RCMD() && LCMD(){
 		if !select("tSkMainForm","")
 			run "C:\Program Files (x86)\Skype\Phone\Skype.exe"
-	}else if LCMD() && CAPS()
+	}else if LCMD() && CTRL()
 		Send,^{PgUp}
-	else if RCMD() && CAPS()
+	else if RCMD() && CTRL()
 		Send,!+{7}
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{LEFT}")
 	else if SPACE()
 		press("j")
@@ -235,7 +235,7 @@ mbind_t(){
 	if LCMD() && RCMD(){
 		if !select("ConsoleWindowClass","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-	}else if RCMD() || CAPS()
+	}else if RCMD() || CTRL()
 		Send,{Return}
 	else if SPACE()
 		press("p")
@@ -244,7 +244,7 @@ mbind_t(){
 }
 
 mbind_u(){
-	if CAPS()
+	if CTRL()
 		press("``")
 	else if RCMD()
 		press("7")
@@ -255,9 +255,9 @@ mbind_u(){
 }
 
 mbind_v(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if ( CTRL() || RCMD() )&& SHIFT()
 		copyTo("V")vc
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		pasteFrom("V")
 	else if SPACE()
 		press(".")
@@ -266,7 +266,7 @@ mbind_v(){
 }
 
 mbind_w(){
-	if RCMD() || CAPS()
+	if RCMD() || CTRL()
 		press("{HOME}")
 	else if SPACE()
 		press("u")
@@ -275,9 +275,9 @@ mbind_w(){
 }
 
 mbind_x(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if ( CTRL() || RCMD() )&& SHIFT()
 		copyTo("X")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		pasteFrom("X")
 	else if SPACE()
 		press("m")
@@ -286,7 +286,7 @@ mbind_x(){
 }
 
 mbind_y(){
-	if RCMD() || CAPS()
+	if RCMD() || CTRL()
 		press("\")
 	else if SPACE()
 		press("[")
@@ -295,9 +295,9 @@ mbind_y(){
 }
 
 mbind_z(){
-	if ( CAPS() || RCMD() )&& SHIFT(){
+	if ( CTRL() || RCMD() )&& SHIFT(){
 		copyTo("Z")
-	}else if RCMD() || CAPS(){
+	}else if RCMD() || CTRL(){
 		pasteFrom("Z")
 	}else if SPACE()
 		press("n")
@@ -310,7 +310,7 @@ mbind_1(){
 		addAlias("1")
 	else if RCMD() && LCMD()
 		openAlias("1")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F1}")
 	else if SPACE()
 		press("6")
@@ -323,7 +323,7 @@ mbind_2(){
 		addAlias("2")
 	else if RCMD() && LCMD()
 		openAlias("2")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F2}")
 	else if SPACE()
 		press("7")
@@ -338,7 +338,7 @@ mbind_3(){
 		openAlias("3")
 	else if LCMD() && SHIFT()
 		Send,{PrintScreen}
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F3}")
 	else if SPACE()
 		press("8")
@@ -353,7 +353,7 @@ mbind_4(){
 		openAlias("4")
 	else if LCMD() && SHIFT()
 		Send,!{PrintScreen}
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F4}")
 	else if SPACE()
 		press("9")
@@ -366,7 +366,7 @@ mbind_5(){
 		addAlias("5")
 	else if RCMD() && LCMD()
 		openAlias("5")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F5}")
 	else if SPACE()
 		press("0")
@@ -379,7 +379,7 @@ mbind_6(){
 		addAlias("6")
 	else if RCMD() && LCMD()
 		openAlias("6")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F6}")
 	else if SPACE()
 		press("-")
@@ -392,7 +392,7 @@ mbind_7(){
 		addAlias("7")
 	else if RCMD() && LCMD()
 		openAlias("7")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F7}")
 	else if SPACE()
 		press("=")
@@ -405,7 +405,7 @@ mbind_8(){
 		addAlias("8")
 	else if RCMD() && LCMD()
 		openAlias("8")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F8}")
 	else
 		press("8")
@@ -416,7 +416,7 @@ mbind_9(){
 		addAlias("9")
 	else if RCMD() && LCMD()
 		openAlias("9")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F9}")
 	else
 		press("9")
@@ -427,21 +427,21 @@ mbind_0(){
 		addAlias("0")
 	else if RCMD() && LCMD()
 		openAlias("0")
-	else if RCMD() || CAPS()
+	else if RCMD() || CTRL()
 		press("{F10}")
 	else
 		press("0")
 }
 
 mbind_minus(){
-	if RCMD() || CAPS()
+	if RCMD() || CTRL()
 		press("{F11}")
 	else
 		press("-")
 }
 
 mbind_equal(){
-	if RCMD() || CAPS()
+	if RCMD() || CTRL()
 		press("{F12}")
 	else
 		press("=")
@@ -494,7 +494,7 @@ mbind_slash(){
 mbind_space(){
 	if RCMD()
 		press("0")
-	else if CAPS()
+	else if CTRL()
 		press("^{Space}")
 	else
 		press("{Space}")

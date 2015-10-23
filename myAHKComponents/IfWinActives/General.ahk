@@ -4,7 +4,7 @@
 	<^q::
 	RControl & q::
 	LControl & q::
-		if LCMD() && CAPS()
+		if LCMD() && CTRL()
 			send,{Browser_back}
 		else
 			mbind_q()
@@ -14,7 +14,7 @@
 	<^w::
 	RControl & w::
 	LControl & w::
-		if LCMD() && CAPS()
+		if LCMD() && CTRL()
 			send,{Browser_forward}
 		else
 			mbind_w()
@@ -64,7 +64,7 @@
 
 	RControl & s::
 	LControl & s::
-		if CAPS() && LCMD()
+		if CTRL() && LCMD()
 			Send,^+{Tab}
 		else
 			mbind_s()
@@ -72,7 +72,7 @@
 
 	RControl & f::
 	LControl & f::
-		if CAPS() && LCMD()
+		if CTRL() && LCMD()
 			Send,^{Tab}
 		else
 			mbind_s()
