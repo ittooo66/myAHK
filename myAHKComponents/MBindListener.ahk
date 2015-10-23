@@ -4,10 +4,6 @@
 <+a::
 >#a::
 <#a::
->!a::
-<!a::
-RAlt & a::
-LAlt & a::
 RWin & a::
 LWin & a::
 LControl & a::
@@ -24,10 +20,6 @@ Return
 <+b::
 >#b::
 <#b::
->!b::
-<!b::
-RAlt & b::
-LAlt & b::
 RWin & b::
 LWin & b::
 LControl & b::
@@ -44,10 +36,6 @@ Return
 <+c::
 >#c::
 <#c::
->!c::
-<!c::
-RAlt & c::
-LAlt & c::
 RWin & c::
 LWin & c::
 LControl & c::
@@ -64,10 +52,6 @@ Return
 <+d::
 >#d::
 <#d::
->!d::
-<!d::
-RAlt & d::
-LAlt & d::
 RWin & d::
 LWin & d::
 LControl & d::
@@ -84,10 +68,6 @@ Return
 <+e::
 >#e::
 <#e::
->!e::
-<!e::
-RAlt & e::
-LAlt & e::
 RWin & e::
 LWin & e::
 LControl & e::
@@ -104,10 +84,6 @@ Return
 <+f::
 >#f::
 <#f::
->!f::
-<!f::
-RAlt & f::
-LAlt & f::
 RWin & f::
 LWin & f::
 LControl & f::
@@ -124,10 +100,6 @@ Return
 <+g::
 >#g::
 <#g::
->!g::
-<!g::
-RAlt & g::
-LAlt & g::
 RWin & g::
 LWin & g::
 LControl & g::
@@ -144,10 +116,6 @@ Return
 <+h::
 >#h::
 <#h::
->!h::
-<!h::
-RAlt & h::
-LAlt & h::
 RWin & h::
 LWin & h::
 LControl & h::
@@ -164,10 +132,6 @@ Return
 <+i::
 >#i::
 <#i::
->!i::
-<!i::
-RAlt & i::
-LAlt & i::
 RWin & i::
 LWin & i::
 LControl & i::
@@ -184,10 +148,6 @@ Return
 <+j::
 >#j::
 <#j::
->!j::
-<!j::
-RAlt & j::
-LAlt & j::
 RWin & j::
 LWin & j::
 LControl & j::
@@ -204,10 +164,6 @@ Return
 <+k::
 >#k::
 <#k::
->!k::
-<!k::
-RAlt & k::
-LAlt & k::
 RWin & k::
 LWin & k::
 LControl & k::
@@ -224,10 +180,6 @@ Return
 <+l::
 >#l::
 <#l::
->!l::
-<!l::
-RAlt & l::
-LAlt & l::
 RWin & l::
 LWin & l::
 LControl & l::
@@ -244,10 +196,6 @@ Return
 <+m::
 >#m::
 <#m::
->!m::
-<!m::
-RAlt & m::
-LAlt & m::
 RWin & m::
 LWin & m::
 LControl & m::
@@ -264,10 +212,6 @@ Return
 <+n::
 >#n::
 <#n::
->!n::
-<!n::
-RAlt & n::
-LAlt & n::
 RWin & n::
 LWin & n::
 LControl & n::
@@ -284,10 +228,6 @@ Return
 <+o::
 >#o::
 <#o::
->!o::
-<!o::
-RAlt & o::
-LAlt & o::
 RWin & o::
 LWin & o::
 LControl & o::
@@ -304,10 +244,6 @@ Return
 <+p::
 >#p::
 <#p::
->!p::
-<!p::
-RAlt & p::
-LAlt & p::
 RWin & p::
 LWin & p::
 LControl & p::
@@ -324,10 +260,6 @@ Return
 <+q::
 >#q::
 <#q::
->!q::
-<!q::
-RAlt & q::
-LAlt & q::
 RWin & q::
 LWin & q::
 LControl & q::
@@ -344,10 +276,6 @@ Return
 <+r::
 >#r::
 <#r::
->!r::
-<!r::
-RAlt & r::
-LAlt & r::
 RWin & r::
 LWin & r::
 LControl & r::
@@ -364,10 +292,6 @@ Return
 <+s::
 >#s::
 <#s::
->!s::
-<!s::
-RAlt & s::
-LAlt & s::
 RWin & s::
 LWin & s::
 LControl & s::
@@ -384,10 +308,6 @@ Return
 <+t::
 >#t::
 <#t::
->!t::
-<!t::
-RAlt & t::
-LAlt & t::
 RWin & t::
 LWin & t::
 LControl & t::
@@ -404,10 +324,6 @@ Return
 <+u::
 >#u::
 <#u::
->!u::
-<!u::
-RAlt & u::
-LAlt & u::
 RWin & u::
 LWin & u::
 LControl & u::
@@ -424,10 +340,6 @@ Return
 <+v::
 >#v::
 <#v::
->!v::
-<!v::
-RAlt & v::
-LAlt & v::
 RWin & v::
 LWin & v::
 LControl & v::
@@ -444,10 +356,6 @@ Return
 <+w::
 >#w::
 <#w::
->!w::
-<!w::
-RAlt & w::
-LAlt & w::
 RWin & w::
 LWin & w::
 LControl & w::
@@ -464,10 +372,6 @@ Return
 <+x::
 >#x::
 <#x::
->!x::
-<!x::
-RAlt & x::
-LAlt & x::
 RWin & x::
 LWin & x::
 LControl & x::
@@ -484,10 +388,6 @@ Return
 <+y::
 >#y::
 <#y::
->!y::
-<!y::
-RAlt & y::
-LAlt & y::
 RWin & y::
 LWin & y::
 LControl & y::
@@ -504,10 +404,6 @@ Return
 <+z::
 >#z::
 <#z::
->!z::
-<!z::
-RAlt & z::
-LAlt & z::
 RWin & z::
 LWin & z::
 LControl & z::
@@ -524,10 +420,6 @@ Return
 <+1::
 >#1::
 <#1::
->!1::
-<!1::
-RAlt & 1::
-LAlt & 1::
 RWin & 1::
 LWin & 1::
 LControl & 1::
@@ -544,10 +436,6 @@ Return
 <+2::
 >#2::
 <#2::
->!2::
-<!2::
-RAlt & 2::
-LAlt & 2::
 RWin & 2::
 LWin & 2::
 LControl & 2::
@@ -564,10 +452,6 @@ Return
 <+3::
 >#3::
 <#3::
->!3::
-<!3::
-RAlt & 3::
-LAlt & 3::
 RWin & 3::
 LWin & 3::
 LControl & 3::
@@ -584,10 +468,6 @@ Return
 <+4::
 >#4::
 <#4::
->!4::
-<!4::
-RAlt & 4::
-LAlt & 4::
 RWin & 4::
 LWin & 4::
 LControl & 4::
@@ -604,10 +484,6 @@ Return
 <+5::
 >#5::
 <#5::
->!5::
-<!5::
-RAlt & 5::
-LAlt & 5::
 RWin & 5::
 LWin & 5::
 LControl & 5::
@@ -624,10 +500,6 @@ Return
 <+6::
 >#6::
 <#6::
->!6::
-<!6::
-RAlt & 6::
-LAlt & 6::
 RWin & 6::
 LWin & 6::
 LControl & 6::
@@ -644,10 +516,6 @@ Return
 <+7::
 >#7::
 <#7::
->!7::
-<!7::
-RAlt & 7::
-LAlt & 7::
 RWin & 7::
 LWin & 7::
 LControl & 7::
@@ -664,10 +532,6 @@ Return
 <+8::
 >#8::
 <#8::
->!8::
-<!8::
-RAlt & 8::
-LAlt & 8::
 RWin & 8::
 LWin & 8::
 LControl & 8::
@@ -684,10 +548,6 @@ Return
 <+9::
 >#9::
 <#9::
->!9::
-<!9::
-RAlt & 9::
-LAlt & 9::
 RWin & 9::
 LWin & 9::
 LControl & 9::
@@ -704,10 +564,6 @@ Return
 <+0::
 >#0::
 <#0::
->!0::
-<!0::
-RAlt & 0::
-LAlt & 0::
 RWin & 0::
 LWin & 0::
 LControl & 0::
@@ -724,10 +580,6 @@ Return
 <+-::
 >#-::
 <#-::
->!-::
-<!-::
-RAlt & -::
-LAlt & -::
 RWin & -::
 LWin & -::
 LControl & -::
@@ -744,10 +596,6 @@ Return
 <+=::
 >#=::
 <#=::
->!=::
-<!=::
-RAlt & =::
-LAlt & =::
 RWin & =::
 LWin & =::
 LControl & =::
@@ -764,10 +612,6 @@ Return
 <+\::
 >#\::
 <#\::
->!\::
-<!\::
-RAlt & \::
-LAlt & \::
 RWin & \::
 LWin & \::
 LControl & \::
@@ -785,10 +629,6 @@ Return
 <+;::
 >#;::
 <#;::
->!;::
-<!;::
-RAlt & `;::
-LAlt & `;::
 RWin & `;::
 LWin & `;::
 LControl & `;::
@@ -805,10 +645,6 @@ Return
 <+'::
 >#'::
 <#'::
->!'::
-<!'::
-RAlt & '::
-LAlt & '::
 RWin & '::
 LWin & '::
 LControl & '::
@@ -825,9 +661,6 @@ Return
 <+.::
 >#.::
 <#.::
->!.::
-<!.::
-LAlt & .::
 RWin & .::
 LWin & .::
 LControl & .::
@@ -844,9 +677,6 @@ Return
 <+,::
 >#,::
 <#,::
->!,::
-<!,::
-LAlt & ,::
 RWin & ,::
 LWin & ,::
 LControl & ,::
@@ -863,10 +693,6 @@ Return
 <+/::
 >#/::
 <#/::
->!/::
-<!/::
-RAlt & /::
-LAlt & /::
 RWin & /::
 LWin & /::
 LControl & /::
@@ -883,10 +709,6 @@ Return
 <+[::
 >#[::
 <#[::
->![::
-<![::
-RAlt & [::
-LAlt & [::
 LWin & [::
 RControl & [::
 RShift & [::
@@ -901,10 +723,6 @@ Return
 <+]::
 >#]::
 <#]::
->!]::
-<!]::
-RAlt & ]::
-LAlt & ]::
 LWin & ]::
 RControl & ]::
 RShift & ]::
