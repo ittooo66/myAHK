@@ -13,16 +13,16 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 Delete::Send,{``}
 +Delete::Send,+{``}
 RAlt & Backspace::send,{\}
-RALt & `::Send,{``}
 LControl & Esc::Send,{Delete}
 
 ;RCMDテンキー用
-RShift & Tab::Send,{Tab}
-RShift & Return::Send,{Return}
+RWin & Tab::Send,{Tab}
+RWin & Return::Send,{Return}
+LControl & Tab::Send,^{Tab}
 
 ;Winキー周り
-RWin::Return
-LWin::Return
+*RWin::Return
+*LWin::Return
 RAlt::Send,{RWin}
 
 ;一行消し（両サイド）
@@ -53,7 +53,6 @@ Space & Tab::return
 #include %A_ScriptDir%\myAHKComponents\MBindListener.ahk
 #include %A_ScriptDir%\myAHKComponents\MBindSetting.ahk
 #include %A_ScriptDir%\myAHKComponents\MBind.ahk
-
 
 ;IfWinActives ここで優先で当てること
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\General.ahk
