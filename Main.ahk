@@ -3,7 +3,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
 ;Library
-#include %A_ScriptDir%\myAHKComponents\ExtLibs\IME.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\IME.ahk
 #include %A_ScriptDir%\myAHKComponents\Library.ahk
 ;マウス設定
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
