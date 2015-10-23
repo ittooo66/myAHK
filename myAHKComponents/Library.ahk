@@ -82,7 +82,7 @@ copyTo(Num){
 		Return
 	}
 	;ファイルにClipboardを保存
-	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.dat
+	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%Num%.dat
 	;cb_bkから取得
 	Clipboard = %cb_bk%
 	;cb_bk開放
@@ -92,7 +92,7 @@ copyTo(Num){
 ;拡張クリップボード(paste)
 pasteFrom(Num){
 	cb_bk = %ClipboardAll%
-	FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Clipboard\%Num%.dat
+	FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%Num%.dat
 	Send,^v
 	Clipboard = %cb_bk%
 }
@@ -118,8 +118,8 @@ addAlias(Num){
 	Send, ^c
 	ClipWait 1
 	filedir = %clipboard%
-	FileDelete,  %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
-	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
+	FileDelete,  %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
+	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
 	Clipboard = %cb_bk%
 	Send,{Return}
 	Send,+{Tab}+{Tab}
@@ -127,7 +127,7 @@ addAlias(Num){
 
 ;ショートカットを開く
 openAlias(Num){
-	FileRead, file , %A_WorkingDir%\myAHKComponents\FileAlias\%Num%.txt
+	FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
 	run, %file%
 }
 
