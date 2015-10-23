@@ -1,7 +1,9 @@
+;選択中の履歴階層の値
 index := 1
 
-;履歴ペースト
+;Windowを開く
 HistoricalClip_openWindow(){
+  ;index値取得・調整
   global index
   if(index<1){
     index:=1
@@ -26,7 +28,6 @@ HistoricalClip_openWindow(){
     FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%A_Index%.txt
     Gui, Add, Text, , %file%
   }
-  Gui, Add, Text, , %index%
 
 	;Window周りの設定
 	Gui +LastFound
@@ -37,28 +38,32 @@ HistoricalClip_openWindow(){
 	Gui, Show
 }
 
+;上に移動
 HistoricalClip_up(){
   global index
   index--
   HistoricalClip_openWindow()
 }
 
+;下に移動
 HistoricalClip_down(){
   global index
   index++
   HistoricalClip_openWindow()
 }
 
+;決定
 HistoricalClip_return(){
   global index
   Gui, show, Hide
   cb_bk = %ClipboardAll%
   FileRead, Clipboard , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%index%.txt
-  sleep,100
+  Sleep,100
   Send,^v
   Clipboard = %cb_bk%
 }
 
+;コピーをスタックする
 HistoricalClip_stackCopy(){
   ;cb_bkに中身を退避
   cb_bk = %ClipboardAll%
