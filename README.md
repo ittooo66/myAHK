@@ -1,23 +1,23 @@
 my[AHK][AHK]
 ======================
-おれおれキーバインド。  
-各種コンポーネントの中身については`README.md`を、キー入力時の挙動は`MANUAL.pptx`参照のこと。
-
-
+### おれおれキーバインド。###
+    README.md      :各AHKの役割  
+    MANUAL.pptx    :キー入力時の挙動
 
 使い方
 ------
 + `Main.ahk`(for HHKB)
 
 を起動。`myAHKComponents/`以下に依存。  
-全ファイルCRLFにすること！(ZIPダウンロードすると大変なことに)
+全ファイルCRLFにする！(ZIPダウンロードすると大変なことに)
 
 ### myAHKComponents/ ###
     IfWinActives/       :特定Window下における挙動
     Library.ahk         :べんり機能置き場
     MBind.ahk           :ほぼ本体。全体的な挙動
     MBindListener.ahk   :MBindを当てるためのリスナ
-    Mouse.ahk           :マウス周りの挙動
+    MbindSetting.ahk    :MBindの仮想修飾キーの設定ファイル
+    Mouse.ahk           :マウス関連の挙動
 
 ### GamingAHK/ ###
 ゲーム用のAHK集。本体と共存不可能になったので別個に起動。
@@ -25,7 +25,7 @@ my[AHK][AHK]
 ### reference/ ###
 
 なんかにつかえそうだなあAHK集。依存しているものは
-`myAHKComponents/ExtLibs/`以下に引っ越して使う。
+`myAHKComponents/ExtLibs/`に引っ越して使う。
 
 + [EnableUIAccess][EnableUIAccess]  
 必須。AHKからUAC周りの制約を消せる。これ無いとAltTabが効かなかったりLoLで修飾キー周りが悲惨に  
@@ -54,7 +54,7 @@ IME切り替え用AHK。つよい。べんり。
 + TrackWheel
 
 
-注意
+各種注意
 ----------------
 1. 実行順序  
 一番下が優先されるスタイルの模様。Karabinerと逆？強烈なバインドはなるべく上の方に来るように書く。#includeは宣言場所で展開されるようなので、このルールを踏まえ、展開場所に注意
@@ -64,10 +64,13 @@ IME切り替え用AHK。つよい。べんり。
 
 3. フック負けリスト
   + IME周り：Alt+\`,Ctrl+\`には勝てない模様。
-  + Windows系：Win+L(画面ロック),Win+Enter(ナレーター), ともにレジストリいじってオフに)
+  + Windows系：Win+L(画面ロック),Win+Enter(ナレーター), ともにレジストリいじってオフに
 
 4. HHKBのDIPスイッチ  
 2と6がON
+
+5. 記法強弱
+  + `<!` < `RAlt`
 
 
 
