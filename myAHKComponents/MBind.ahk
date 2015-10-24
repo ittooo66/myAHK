@@ -290,7 +290,10 @@ mbind_x(){
 		pasteFrom("X")
 	else if SPACE()
 		press("m")
-	else
+	else if LCMD(){
+		HistoricalClip_stackCopy()
+		press("x")
+	}else
 		press("x")
 }
 
