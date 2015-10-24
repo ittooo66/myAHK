@@ -30,13 +30,6 @@
 	Return
 #IfWinActive
 
-;Excel
-#IfWinActive,ahk_class XLMAIN
-	;要wheelscroll.ahk
-	<+WheelUp::WheelLeft
-	<+WheelDown::WheelRight
-#IfWinActive
-
 ;Atom
 #IfWinActive,ahk_exe atom.exe
 	^Tab::Send,^{0}
