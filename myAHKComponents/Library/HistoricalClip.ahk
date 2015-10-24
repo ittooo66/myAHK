@@ -5,6 +5,7 @@ index := 1
 HistoricalClip_openWindow(){
   ;index値取得・調整
   global index
+  ;枠内調整
   if(index<1){
     index:=1
   }else if(index>10){
@@ -31,10 +32,11 @@ HistoricalClip_openWindow(){
 
 	;Window周りの設定
 	Gui +LastFound
-	Opacity=210
-	Winset, Transparent, %Opacity%
+  ;Windowを透明に
+	Winset, Transparent, 210
+  ;タイトルバー非表示
 	Gui, -Caption
-
+  ;GUI表示
 	Gui, Show
 }
 
@@ -65,10 +67,6 @@ HistoricalClip_return(){
 
 ;コピーをスタックする
 HistoricalClip_stackCopy(){
-  ;cb_bkに中身を退避
-  cb_bk = %ClipboardAll%
-  ;一旦clipboardを空にする
-  clipboard =
   ;clipboardにCopy
   Send,^c
   ;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
