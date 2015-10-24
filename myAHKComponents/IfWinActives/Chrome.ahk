@@ -1,3 +1,4 @@
+;chrome設定
 #IfWinActive, ahk_exe chrome.exe
 	>^q::
 	<^q::
