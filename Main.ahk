@@ -57,6 +57,9 @@ Space & Tab::return
 
 ;IfWinActives ここで優先で当てること
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\General.ahk
+#include %A_ScriptDir%\myAHKComponents\IfWinActives\Explorer.ahk
+#include %A_ScriptDir%\myAHKComponents\IfWinActives\Excel.ahk
+#include %A_ScriptDir%\myAHKComponents\IfWinActives\Chrome.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
 
