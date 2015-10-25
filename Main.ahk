@@ -11,25 +11,27 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 
 ;基本配置変更
 `::Delete
-Delete::Send,{``}
-+Delete::Send,+{``}
-RAlt & Backspace::send,{\}
-LControl & Esc::Send,{Delete}
+Delete::`
+
 ;Reload/Suspend AHK
 RAlt & ,::Reload
 RAlt & .::Suspend
 
-;RCMDテンキー用
+;諸々微調整
 RWin & Tab::Send,{Tab}
 RWin & Return::Send,{Return}
 LControl & Tab::Send,^{Tab}
+LControl & Esc::Send,{Delete}
+RAlt::Send,{RWin}
+LWin & Tab::AltTab
 
-;Winキー周り
+;Winキー周り封印
 RShift & RWin::Return
-RWin & RShift::return
+RWin & RShift::Return
+RWin & LWin::Return
+LWin & RWin::Return
 RWin::Return
 LWin::Return
-RAlt::Send,{RWin}
 
 ;一行消し（両サイド）
 RWin & BackSpace::
@@ -43,18 +45,16 @@ RWin & `::
 	Send,{BackSpace}
 return
 
-;IME切替え
+;IME
 LWin & Space::Send,!{``}
 LControl & BackSpace::IME_SET("0")
 LControl & Return::IME_SET("1")
-
-;window切り替え
-LWin & Tab::AltTab
 
 ;SandS。Space押上げでSpaceキーActivateとSpace押しキャンセル用のTab
 *Space::mbind_space()
 Space & Tab::return
 
+;ReturnにGUIフック
 ~Return::
 	if guiIsOn()
 		HistoricalClip_return()
