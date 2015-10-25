@@ -731,10 +731,6 @@ Space & ]::
 	mbind_bracket_right()
 Return
 
-;Reload/Suspend AHK
-RAlt & ,::Reload
-RAlt & .::Suspend
-
 ;AltTab系
 RWin & ]::AltTab
 LControl & ]::AltTab

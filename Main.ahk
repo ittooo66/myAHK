@@ -15,6 +15,9 @@ Delete::Send,{``}
 +Delete::Send,+{``}
 RAlt & Backspace::send,{\}
 LControl & Esc::Send,{Delete}
+;Reload/Suspend AHK
+RAlt & ,::Reload
+RAlt & .::Suspend
 
 ;RCMDテンキー用
 RWin & Tab::Send,{Tab}
