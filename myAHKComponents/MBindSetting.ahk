@@ -31,7 +31,7 @@ LALT(){
 
 ;修飾キー付きのkeypress
 press(key){
-  modifiers := ""
+	modifiers := ""
 	if GetKeyState("LWin", "P")
 		modifiers = %modifiers%^
 	if GetKeyState("Shift", "P")

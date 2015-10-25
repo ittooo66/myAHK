@@ -102,7 +102,7 @@ addAlias(Num){
 	;Explorer画面以外で暴発しないように
 	WinGetClass, class, A
 	if(class != "CabinetWClass"){
-	  return
+		return
 	}
 	;一応Clipboard対比しとく
 	cb_bk = %ClipboardAll%
@@ -118,7 +118,7 @@ addAlias(Num){
 	Send, ^c
 	ClipWait 1
 	filedir = %clipboard%
-	FileDelete,  %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
+	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
 	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
 	Clipboard = %cb_bk%
 	Send,{Return}
@@ -169,15 +169,15 @@ printlog(log){
 
 ;GUIウィンドウが出力されているか、どうか
 guiIsOn(){
-  ;配列idに現在稼働中のWindowを突っ込む
-  WinGet, id, list, , , Program Manager
-  ;for(int A_Index=1;A_Index<N(id);A_Index++)
-  Loop, %id%
-  {
-    StringTrimRight, this_id, id%A_Index%, 0
-    WinGetClass, this_class, ahk_id %this_id%
-    ifInString, this_class, AutoHotkeyGui
-      return true
-  }
-  return false
+	;配列idに現在稼働中のWindowを突っ込む
+	WinGet, id, list, , , Program Manager
+	;for(int A_Index=1;A_Index<N(id);A_Index++)
+	Loop, %id%
+	{
+		StringTrimRight, this_id, id%A_Index%, 0
+		WinGetClass, this_class, ahk_id %this_id%
+		ifInString, this_class, AutoHotkeyGui
+			return true
+	}
+	return false
 }

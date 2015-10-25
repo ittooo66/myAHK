@@ -28,14 +28,14 @@ RAlt::Send,{RWin}
 
 ;一行消し（両サイド）
 RWin & BackSpace::
-  Send,+{HOME}
-  copyTo("V")
-  Send,{Backspace}
+	Send,+{HOME}
+	HistoricalClip_stackCopy()
+	Send,{Backspace}
 return
 RWin & `::
-  Send,+{END}
-  copyTo("V")
-  Send,{BackSpace}
+	Send,+{END}
+	HistoricalClip_stackCopy()
+	Send,{BackSpace}
 return
 
 ;IME切替え
@@ -49,6 +49,11 @@ LWin & Tab::AltTab
 ;SandS。Space押上げでSpaceキーActivateとSpace押しキャンセル用のTab
 *Space::mbind_space()
 Space & Tab::return
+
+~Return::
+	if guiIsOn()
+		HistoricalClip_return()
+return
 
 ;もろもろバインドとリスナー
 #include %A_ScriptDir%\myAHKComponents\MBindListener.ahk
