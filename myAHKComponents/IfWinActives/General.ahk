@@ -39,5 +39,5 @@
 ;Command Prompt,Powershell
 #IfWinActive,ahk_class ConsoleWindowClass
 	^L::SendInput , {Esc}cls{Enter}
-	LWin & q::SendInput , {Esc}exit{Enter}
+	vkEBsc07B & q::SendInput , {Esc}exit{Enter}
 #IfWinActive

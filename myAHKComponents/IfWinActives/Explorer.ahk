@@ -12,7 +12,7 @@
 	RButton & WheelDown::Send,^{Tab}
 
 	LControl & s::
-	LWin & s::
+	vkEBsc07B & s::
 		if CAPS() && LCMD()
 			Send,^+{Tab}
 		else
@@ -20,12 +20,12 @@
 	return
 
 	LControl & f::
-	LWin & f::
+	vkEBsc07B & f::
 		if CAPS() && LCMD()
 			Send,^{Tab}
 		else
 			mbind_s()
 	return
 
-	LWin & t::Send,{}
+	vkEBsc07B & t::Send,{}
 #IfWinActive

@@ -3,7 +3,7 @@
 	>^q::
 	<^q::
 	LControl & q::
-	LWin & q::
+	vkEBsc07B & q::
 		if LCMD() && CAPS()
 			send,{Browser_back}
 		else
@@ -13,7 +13,7 @@
 	>^w::
 	<^w::
 	LControl & w::
-	LWin & w::
+	vkEBsc07B & w::
 		if LCMD() && CAPS()
 			send,{Browser_forward}
 		else

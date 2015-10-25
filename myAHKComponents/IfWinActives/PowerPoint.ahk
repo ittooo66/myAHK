@@ -1,41 +1,41 @@
 #IfWinActive,ahk_class PPTFrameClass
 	LControl & 1::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（橙）
 			Send, !{j}{d}{s}{o}{Right}{Right}{Right}{Right}{Right}{Down}{Down}{Down}{Down}{Return}
 		Else
 			mbind_1()
 	Return
 	LControl & 2::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（青）
 			Send, !{j}{d}{s}{o}{Left}{Left}{Down}{Down}{Down}{Down}{Return}
 		Else
 			mbind_2()
 	Return
 	LControl & 3::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（緑）
 			Send, !{j}{d}{s}{o}{Left}{Down}{Down}{Down}{Down}{Return}
 		Else
 			mbind_3()
 	Return
 	LControl & 4::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（赤）
 			Send, !{j}{d}{s}{o}{Down}{Down}{Down}{Down}{Down}{Down}{Return}
 		Else
 			mbind_4()
 	Return
 	LControl & 5::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（青）
 			Send, !{j}{d}{s}{o}
 		Else
 			mbind_5()
 	Return
 	LControl & q::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（橙）
 			Send, !{h}{f}{c}{Left}{Left}{Left}{Left}{Left}{Down}{Down}{Down}{Down}{Return}
 		else{
@@ -44,12 +44,12 @@
 			mbind_q()
 		}
 	Return
-	LWin & w::
+	vkEBsc07B & w::
 	LControl & w::
-		if GetKeyState("LWin", "P") && GetKeyState("LControl", "P")
+		if GetKeyState("vkEBsc07B", "P") && GetKeyState("LControl", "P")
 			;文字色変更（青）
 			Send, !{h}{f}{c}{Left}{Left}{Down}{Down}{Down}{Down}{Return}
-		Else if GetKeyState("LWin", "P")
+		Else if GetKeyState("vkEBsc07B", "P")
 			Send, ^{l}
 		Else
 			mbind_w()
@@ -62,14 +62,14 @@
 			mbind_e()
 	Return
 	LControl & r::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（赤）
 			Send, !{h}{f}{c}{Down}{Down}{Down}{Down}{Down}{Down}{Return}
 		Else
 			mbind_r()
 	Return
 	LControl & t::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;文字色選択
 			Send, !{h}{f}{c}
 		Else{
@@ -79,70 +79,70 @@
 		}
 	Return
 	LControl & a::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;箇条書き
 			Send, !{h}{u}
 		Else
 			mbind_a()
 	Return
 	LControl & s::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;図形配置
 			Send, !{n}{s}{h}
 		Else
 			mbind_s()
 	Return
 	LControl & d::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;図形塗り
 			Send, !{j}{d}{s}{f}
 		Else
 			mbind_d()
 	Return
 	LControl & f::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;フォント弄り
 			Send, !{h}{f}{f}
 		Else
 			mbind_f()
 	Return
 	LControl & g::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;図形の書式設定
 			Send, !{h}{o}
 		Else
 			mbind_g()
 	Return
 	LControl & z::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;背面へ移動
 			Send, !{j}{d}{a}{e}{b}
 		Else
 			mbind_z()
 	Return
 	LControl & x::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;前面へ移動
 			Send, !{j}{d}{a}{f}{f}
 		Else
 			mbind_x()
 	Return
 	LControl & c::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;トリミング
 			Send, !{j}{p}{v}{c}
 		Else
 			mbind_c()
 	Return
 	LControl & v::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;View
 			Send, +{F5}
 		Else
 			mbind_v()
 	Return
 	LControl & b::
-		if GetKeyState("LWin", "P")
+		if GetKeyState("vkEBsc07B", "P")
 			;枠線太さ変更
 			Send, !{j}{d}{s}{o}{w}
 		Else

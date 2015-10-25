@@ -8,11 +8,8 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #include %A_ScriptDir%\myAHKComponents\Library\myLibrary.ahk
 ;マウス設定
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
-;Winキー周り封印
-#include %A_ScriptDir%\myAHKComponents\WinKeyKiller.ahk
 
 ;基本配置変更
-`::Delete
 Delete::`
 
 ;Reload/Suspend AHK
@@ -20,27 +17,27 @@ RAlt & ,::Reload
 RAlt & .::Suspend
 
 ;諸々微調整
-RWin & Tab::Send,{Tab}
-RWin & Return::Send,{Return}
+vkFFsc079 & Tab::Send,{Tab}
+vkFFsc079 & Return::Send,{Return}
 LControl & Tab::Send,^{Tab}
 LControl & Esc::Send,{Delete}
 RAlt::Send,{RWin}
-LWin & Tab::AltTab
+vkEBsc07B & Tab::AltTab
 
 ;一行消し（両サイド）
-RWin & BackSpace::
+vkFFsc079 & BackSpace::
 	Send,+{HOME}
 	HistoricalClip_stackCopy()
 	Send,{Backspace}
 return
-RWin & `::
+vkFFsc079 & `::
 	Send,+{END}
 	HistoricalClip_stackCopy()
 	Send,{BackSpace}
 return
 
 ;IME
-LWin & Space::Send,!{``}
+vkEBsc07B & Space::Send,!{``}
 LControl & BackSpace::IME_SET("0")
 LControl & Return::IME_SET("1")
 

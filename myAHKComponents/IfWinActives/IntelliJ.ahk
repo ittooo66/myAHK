@@ -23,12 +23,12 @@
 
 	;タブ開閉
 	RButton & XButton1::
-	LWin & w::
+	vkEBsc07B & w::
 		Send,^{F4}
 	return
 	RButton & XButton2::Send,^+{F11} ;非純正：Reopen Closed Tabに要追加
 	LShift & t::
-	LWin & t::
+	vkEBsc07B & t::
 		if SHIFT() && LCMD()
 			Send,^+{F11}
 		else
@@ -37,7 +37,7 @@
 
 	;Refactor
 	LControl & r::
-	LWin & r::
+	vkEBsc07B & r::
 		if CAPS() && LCMD()
 			Send,^!+{t}
 		else
@@ -46,7 +46,7 @@
 
 	;構造選択+
 	LControl & e::
-	LWin & e::
+	vkEBsc07B & e::
 		if CAPS() && LCMD()
 			Send,^{w}
 		else
@@ -54,7 +54,7 @@
 	Return
 	;構造選択-
 	LControl & d::
-	LWin & d::
+	vkEBsc07B & d::
 		if CAPS() && LCMD()
 			Send,^+{w}
 		else
@@ -82,7 +82,7 @@
 
 	;実行
 	LControl & v::
-	LWin & v::
+	vkEBsc07B & v::
 		if CAPS() && LCMD()
 			Send,+{F10}
 		else
@@ -91,7 +91,7 @@
 
 	;javadoc表示
 	LControl & q::
-	LWin & q::
+	vkEBsc07B & q::
 		if CAPS() && LCMD()
 			Send,^{q}
 		else
@@ -100,7 +100,7 @@
 
 	;フォーマッタ
 	LControl & a::
-	LWin & a::
+	vkEBsc07B & a::
 		if CAPS() && LCMD()
 			Send,^!{l}
 		Else

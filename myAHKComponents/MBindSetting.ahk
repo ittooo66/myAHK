@@ -1,8 +1,8 @@
 LCMD(){
-	return GetKeyState("LWin", "P")
+	return GetKeyState("vkEBsc07B", "P")
 }
 RCMD(){
-	return GetKeyState("RWin", "P")
+	return GetKeyState("vkFFsc079", "P")
 }
 CAPS(){
 	return GetKeyState("LControl","P")
@@ -32,7 +32,7 @@ LALT(){
 ;修飾キー付きのkeypress
 press(key){
 	modifiers := ""
-	if GetKeyState("LWin", "P")
+	if GetKeyState("vkEBsc07B", "P")
 		modifiers = %modifiers%^
 	if GetKeyState("Shift", "P")
 		modifiers = %modifiers%+
