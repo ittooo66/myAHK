@@ -4,7 +4,7 @@
 	<^q::
 	LControl & q::
 	LWin & q::
-		if LCMD() && CTRL()
+		if LCMD() && CAPS()
 			send,{Browser_back}
 		else
 			mbind_q()
@@ -14,7 +14,7 @@
 	<^w::
 	LControl & w::
 	LWin & w::
-		if LCMD() && CTRL()
+		if LCMD() && CAPS()
 			send,{Browser_forward}
 		else
 			mbind_w()

@@ -13,7 +13,7 @@
 
 	LControl & s::
 	LWin & s::
-		if CTRL() && LCMD()
+		if CAPS() && LCMD()
 			Send,^+{Tab}
 		else
 			mbind_s()
@@ -21,7 +21,7 @@
 
 	LControl & f::
 	LWin & f::
-		if CTRL() && LCMD()
+		if CAPS() && LCMD()
 			Send,^{Tab}
 		else
 			mbind_s()

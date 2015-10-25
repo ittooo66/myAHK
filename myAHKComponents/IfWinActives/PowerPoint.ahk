@@ -55,7 +55,7 @@
 			mbind_w()
 	Return
 	LControl & e::
-		if CTRL() && LCMD()
+		if CAPS() && LCMD()
 			;文字色変更（緑）
 			Send, !{h}{f}{c}{Left}{Down}{Down}{Down}{Down}{Return}
 		else

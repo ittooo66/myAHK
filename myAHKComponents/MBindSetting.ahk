@@ -4,7 +4,7 @@ LCMD(){
 RCMD(){
 	return GetKeyState("RWin", "P")
 }
-CTRL(){
+CAPS(){
 	return GetKeyState("LControl","P")
 }
 SHIFT(){

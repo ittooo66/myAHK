@@ -23,7 +23,6 @@
 
 	;タブ開閉
 	RButton & XButton1::
-	LWin & w::
 		Send,^{F4}
 	return
 	RButton & XButton2::Send,^+{F11} ;非純正：Reopen Closed Tabに要追加
@@ -38,10 +37,21 @@
 	;Refactor
 	LControl & r::
 	LWin & r::
-		if CTRL() && LCMD()
+		if CAPS() && LCMD()
 			Send,^!+{t}
 		else
 			mbind_r()
+	Return
+
+	;構造選択
+	LControl & w::
+	LWin & w::
+		if CAPS() && LCMD()
+			Send,^{w}
+		else if LCMD()
+			Send,^{F4}
+		else
+			mbind_w()
 	Return
 
 	;横スクロール
@@ -66,7 +76,7 @@
 	;実行
 	LControl & e::
 	LWin & e::
-		if CTRL() && LCMD()
+		if CAPS() && LCMD()
 			Send,+{F10}
 		else
 			mbind_e()
@@ -75,7 +85,7 @@
 	;javadoc表示
 	LControl & q::
 	LWin & q::
-		if CTRL() && LCMD()
+		if CAPS() && LCMD()
 			Send,^{q}
 		else
 			mbind_q()
@@ -84,7 +94,7 @@
 	;フォーマッタ
 	LControl & a::
 	LWin & a::
-		if CTRL() && LCMD()
+		if CAPS() && LCMD()
 			Send,^!{l}
 		Else
 			mbind_a()
