@@ -2,12 +2,14 @@
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
-;Library
+;Library(グローバル変数持ちが一人(HistoricalClip)いるだけでフック力はなく無害)
 #include %A_ScriptDir%\myAHKComponents\Library\IME.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
-#include %A_ScriptDir%\myAHKComponents\Library.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\myLibrary.ahk
 ;マウス設定
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
+;Winキー周り封印
+#include %A_ScriptDir%\myAHKComponents\WinKeyKiller.ahk
 
 ;基本配置変更
 `::Delete
@@ -24,14 +26,6 @@ LControl & Tab::Send,^{Tab}
 LControl & Esc::Send,{Delete}
 RAlt::Send,{RWin}
 LWin & Tab::AltTab
-
-;Winキー周り封印
-RShift & RWin::Return
-RWin & RShift::Return
-RWin & LWin::Return
-LWin & RWin::Return
-RWin::Return
-LWin::Return
 
 ;一行消し（両サイド）
 RWin & BackSpace::
