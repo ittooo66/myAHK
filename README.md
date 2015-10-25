@@ -1,6 +1,7 @@
 my[AHK][AHK]
 ======================
 ### おれおれキーバインド。###
+
     README.md      :各AHKの役割  
     MANUAL.pptx    :キー入力時の挙動
 
@@ -12,6 +13,7 @@ my[AHK][AHK]
 全ファイルCRLFにする！(ZIPダウンロードすると大変なことに)
 
 ### myAHKComponents/ ###
+
     IfWinActives/       :特定Window下における挙動
     Library.ahk         :べんり機能置き場
     MBind.ahk           :ほぼ本体。全体的な挙動
@@ -69,8 +71,8 @@ IME切り替え用AHK。つよい。べんり。
 4. HHKBのDIPスイッチ  
 2と6がON
 
-5. 記法強弱
-  + `<!` < `RAlt`
+5. 記法によるフック力強弱
+  + `>!` < `RAlt`
 
 
 
