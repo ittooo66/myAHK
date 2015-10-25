@@ -33,11 +33,12 @@ RButton & MButton::Send,^{t}
 RButton & LButton::Send,!{p}
 ;ホイールクリック
 XButton2 & LButton::intelliScroll()
-
-;未定s
+;Winキー
 XButton1 & RButton::Send,{RWin}
-XButton2 & RButton::Send,{}
+;Explorer起動
 XButton1 & LButton::Run, "C:\Users\AHK\Dropbox\"
+;MButton
+XButton2 & RButton::Send,{MButton}
 
 ;------------------------------
 ;キーボードマウスエミュレーション
