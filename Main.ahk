@@ -22,8 +22,10 @@ RWin & Return::Send,{Return}
 LControl & Tab::Send,^{Tab}
 
 ;Winキー周り
-*RWin::Return
-*LWin::Return
+RShift & RWin::Return
+RWin & RShift::return
+RWin::Return
+LWin::Return
 RAlt::Send,{RWin}
 
 ;一行消し（両サイド）
