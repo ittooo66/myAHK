@@ -1,3 +1,6 @@
+;*Xで完全代替：不可能！わけわかんない！なんで！無変換＋Sとかが機能不全！
+
+*a::
 <^a::
 >^a::
 >+a::
@@ -12,6 +15,7 @@ Space & a::
 	mbind_a()
 Return
 
+*b::
 <^b::
 >^b::
 >+b::
@@ -26,6 +30,7 @@ Space & b::
 	mbind_b()
 Return
 
+*c::
 <^c::
 >^c::
 >+c::
@@ -40,6 +45,7 @@ Space & c::
 	mbind_c()
 Return
 
+*d::
 <^d::
 >^d::
 >+d::
@@ -54,6 +60,7 @@ Space & d::
 	mbind_d()
 Return
 
+*e::
 <^e::
 >^e::
 >+e::
@@ -68,6 +75,7 @@ Space & e::
 	mbind_e()
 Return
 
+*f::
 <^f::
 >^f::
 >+f::
@@ -82,6 +90,7 @@ Space & f::
 	mbind_f()
 Return
 
+*g::
 <^g::
 >^g::
 >+g::
@@ -96,6 +105,7 @@ Space & g::
 	mbind_g()
 Return
 
+*h::
 <^h::
 >^h::
 >+h::
@@ -110,6 +120,7 @@ Space & h::
 	mbind_h()
 Return
 
+*i::
 <^i::
 >^i::
 >+i::
@@ -124,6 +135,7 @@ Space & i::
 	mbind_i()
 Return
 
+*j::
 <^j::
 >^j::
 >+j::
@@ -138,6 +150,7 @@ Space & j::
 	mbind_j()
 Return
 
+*k::
 <^k::
 >^k::
 >+k::
@@ -152,6 +165,7 @@ Space & k::
 	mbind_k()
 Return
 
+*l::
 <^l::
 >^l::
 >+l::
@@ -166,6 +180,7 @@ Space & l::
 	mbind_l()
 Return
 
+*m::
 <^m::
 >^m::
 >+m::
@@ -180,6 +195,7 @@ Space & m::
 	mbind_m()
 Return
 
+*n::
 <^n::
 >^n::
 >+n::
@@ -194,6 +210,7 @@ Space & n::
 	mbind_n()
 Return
 
+*o::
 <^o::
 >^o::
 >+o::
@@ -208,6 +225,7 @@ Space & o::
 	mbind_o()
 Return
 
+*p::
 <^p::
 >^p::
 >+p::
@@ -222,6 +240,7 @@ Space & p::
 	mbind_p()
 Return
 
+*q::
 <^q::
 >^q::
 >+q::
@@ -236,6 +255,7 @@ Space & q::
 	mbind_q()
 Return
 
+*r::
 <^r::
 >^r::
 >+r::
@@ -250,6 +270,7 @@ Space & r::
 	mbind_r()
 Return
 
+*s::
 <^s::
 >^s::
 >+s::
@@ -264,6 +285,7 @@ Space & s::
 	mbind_s()
 Return
 
+*t::
 <^t::
 >^t::
 >+t::
@@ -278,6 +300,7 @@ Space & t::
 	mbind_t()
 Return
 
+*u::
 <^u::
 >^u::
 >+u::
@@ -292,6 +315,7 @@ Space & u::
 	mbind_u()
 Return
 
+*v::
 <^v::
 >^v::
 >+v::
@@ -306,6 +330,7 @@ Space & v::
 	mbind_v()
 Return
 
+*w::
 <^w::
 >^w::
 >+w::
@@ -320,6 +345,7 @@ Space & w::
 	mbind_w()
 Return
 
+*x::
 <^x::
 >^x::
 >+x::
@@ -334,6 +360,7 @@ Space & x::
 	mbind_x()
 Return
 
+*y::
 <^y::
 >^y::
 >+y::
@@ -348,6 +375,7 @@ Space & y::
 	mbind_y()
 Return
 
+*z::
 <^z::
 >^z::
 >+z::
@@ -362,6 +390,7 @@ Space & z::
 	mbind_z()
 Return
 
+*1::
 <^1::
 >^1::
 >+1::
@@ -376,6 +405,7 @@ Space & 1::
 	mbind_1()
 Return
 
+*2::
 <^2::
 >^2::
 >+2::
@@ -390,6 +420,7 @@ Space & 2::
 	mbind_2()
 Return
 
+*3::
 <^3::
 >^3::
 >+3::
@@ -404,6 +435,7 @@ Space & 3::
 	mbind_3()
 Return
 
+*4::
 <^4::
 >^4::
 >+4::
@@ -418,6 +450,7 @@ Space & 4::
 	mbind_4()
 Return
 
+*5::
 <^5::
 >^5::
 >+5::
@@ -432,6 +465,7 @@ Space & 5::
 	mbind_5()
 Return
 
+*6::
 <^6::
 >^6::
 >+6::
@@ -446,6 +480,7 @@ Space & 6::
 	mbind_6()
 Return
 
+*7::
 <^7::
 >^7::
 >+7::
@@ -460,6 +495,7 @@ Space & 7::
 	mbind_7()
 Return
 
+*8::
 <^8::
 >^8::
 >+8::
@@ -474,6 +510,7 @@ Space & 8::
 	mbind_8()
 Return
 
+*9::
 <^9::
 >^9::
 >+9::
@@ -488,6 +525,7 @@ Space & 9::
 	mbind_9()
 Return
 
+*0::
 <^0::
 >^0::
 >+0::
@@ -502,6 +540,7 @@ Space & 0::
 	mbind_0()
 Return
 
+*-::
 <^-::
 >^-::
 >+-::
@@ -516,6 +555,7 @@ Space & -::
 	mbind_minus()
 Return
 
+*=::
 <^=::
 >^=::
 >+=::
@@ -532,6 +572,7 @@ Space & =::
 	mbind_equal()
 Return
 
+*\::
 <^\::
 >^\::
 >+\::
@@ -547,6 +588,7 @@ Space & \::
 Return
 
 ;エスケープシーケンス（`;）使用でのバインド
+*;::
 <^;::
 >^;::
 >+;::
@@ -561,6 +603,7 @@ Space & `;::
 	mbind_semicolon()
 Return
 
+*'::
 <^'::
 >^'::
 >+'::
@@ -575,6 +618,7 @@ Space & '::
 	mbind_quote()
 Return
 
+*.::
 <^.::
 >^.::
 >+.::
@@ -589,6 +633,7 @@ Space & .::
 	mbind_period()
 Return
 
+*,::
 <^,::
 >^,::
 >+,::
@@ -603,6 +648,7 @@ Space & ,::
 	mbind_camma()
 Return
 
+*/::
 <^/::
 >^/::
 >+/::
@@ -617,6 +663,7 @@ Space & /::
 	mbind_slash()
 Return
 
+*[::
 <^[::
 >^[::
 >+[::
@@ -629,6 +676,7 @@ Space & [::
 	mbind_bracket_left()
 Return
 
+*]::
 <^]::
 >^]::
 >+]::
