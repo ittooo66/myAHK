@@ -17,13 +17,14 @@ Delete::`
 RAlt & ,::Reload
 RAlt & .::Suspend
 
+;IME
+vkEBsc07B & Space::Send,!{``}
+LControl & BackSpace::IME_SET("0")
+LControl & Return::IME_SET("1")
+
 ;諸々微調整
-vkFFsc079 & Tab::Send,{Tab}
-vkFFsc079 & Return::Send,{Return}
-LControl & Tab::Send,^{Tab}
 LControl & Esc::Send,{Delete}
 RAlt::Send,{RWin}
-vkEBsc07B & Tab::AltTab
 
 ;一行消し（両サイド）
 vkFFsc079 & BackSpace::
@@ -36,11 +37,6 @@ vkFFsc079 & `::
 	HistoricalClip_stackCopy()
 	Send,{BackSpace}
 return
-
-;IME
-vkEBsc07B & Space::Send,!{``}
-LControl & BackSpace::IME_SET("0")
-LControl & Return::IME_SET("1")
 
 ;SandS。Space押上げでSpaceキーActivateとSpace押しキャンセル用のTab
 *Space::mbind_space()
