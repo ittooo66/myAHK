@@ -32,13 +32,13 @@ LALT(){
 ;修飾キー付きのkeypress
 press(key){
 	modifiers := ""
-	if GetKeyState("vkEBsc07B", "P")
+	if LCMD()
 		modifiers = %modifiers%^
-	if GetKeyState("Shift", "P")
+	if SHIFT()
 		modifiers = %modifiers%+
-	if GetKeyState("LAlt", "P")
+	if LALT()
 		modifiers = %modifiers%!
-	if GetKeyState("RAlt", "P")
+	if RALT()
 		modifiers = %modifiers%`#
 	Send,%modifiers%%key%
 }
