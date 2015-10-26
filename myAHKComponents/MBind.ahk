@@ -35,8 +35,6 @@ mbind_c(){
 mbind_d(){
 	if RCMD() && LCMD()
 		Send,#{d}
-	else if RCMD() && CAPS()
-		Send,!+{9}
 	else if RCMD() || CAPS(){
 		if guiIsOn(){
 			HistoricalClip_down()
@@ -53,7 +51,7 @@ mbind_e(){
 		if !select("TTeraPadMainForm","")
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\TeraPad\TeraPad.exe"
 	}else if CAPS() && RCMD()
-		Send,!+{0}
+		Send,#{Tab}
 	else if CAPS() || RCMD(){
 		if guiIsOn()
 			HistoricalClip_up()
@@ -70,7 +68,7 @@ mbind_f(){
 		if !select("CabinetWClass","")
 			Run,explorer.exe
 	}else if RCMD() && CAPS()
-		Send,!+{8}
+		Send,^#{Right}
 	else if LCMD() && CAPS()
 		Send,^{PgDn}
 	else if CAPS() || RCMD()
@@ -230,7 +228,7 @@ mbind_s(){
 	}else if LCMD() && CAPS()
 		Send,^{PgUp}
 	else if RCMD() && CAPS()
-		Send,!+{7}
+		Send,^#{Left}
 	else if RCMD() || CAPS()
 		press("{LEFT}")
 	else if SPACE()

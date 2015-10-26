@@ -2,8 +2,7 @@
 RButton::Send,{RButton}
 XButton2::Send,{XButton2}
 XButton1::Send,{XButton1}
-;Window catalog(need Dexpot)
-MButton::!+0
+MButton::Send,#{Tab}
 
 ;ウィンドウ変更
 XButton1 & WheelUp::ShiftAltTab
@@ -11,9 +10,9 @@ XButton1 & WheelDown::AltTab
 ;横スクロール
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
-;ウィンドウ選択画面(need Dexpot)
-XButton1 & Xbutton2::Send,!+{9}
-XButton2 & XButton1::Send,!+{9}
+;ウィンドウ選択画面
+XButton1 & Xbutton2::Send,#{Tab}
+XButton2 & XButton1::Send,#{Tab}
 ;Reload/Suspend bindings(for gaming)
 XButton1 & MButton::Suspend
 XButton2 & MButton::Reload
