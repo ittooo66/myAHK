@@ -10,6 +10,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #include %A_ScriptDir%\myAHKComponents\Mouse.ahk
 
 ;基本配置変更
+`::Delete
 Delete::`
 
 ;Reload/Suspend AHK
