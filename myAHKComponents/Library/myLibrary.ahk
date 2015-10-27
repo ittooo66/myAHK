@@ -4,11 +4,11 @@ macro(){
 }
 
 ;特定のWindowクラスを最下層から引っ張る
-;ahkClass:クラス名
-;ahkTitle:タイトル名。クラスで判別不可時（atom<>chrome）に使用,普段は空指定("")
+;className:クラス名。空指定（""）の場合、Class指定なし
+;processName:プロセス名。idea.exeとかそういうやつ。空指定（""）の場合、Process指定なし
 ;true:引っ張ってこれた
 ;false:存在しなかった
-select(ahkClass, ahkTitle){
+select(className, processName){
 	;配列idに現在稼働中のWindowを突っ込む
 	WinGet, id, list, , , Program Manager
 	;for(int A_Index=1;A_Index<N(id);A_Index++)
@@ -17,14 +17,14 @@ select(ahkClass, ahkTitle){
 		;最下層から引っ張るためiを降順にする
 		i:=id-A_Index+1
 		;this_idに現在見てるWindowのIDを入れる
-		StringTrimRight, this_id, id%i%, 0
-		;this_idのClass、Titleを取得
+		this_id := id%i%
+		;this_idのClass、Processを取得
 		WinGetClass, this_class, ahk_id %this_id%
-		WinGetTitle, this_title, ahk_id %this_id%
+		WinGet, this_process, ProcessName, ahk_id %this_id%
 		;class一致確認
-		ifInString, this_class , %ahkClass%, {
+		ifInString, this_class , %className%, {
 			;title一致確認
-			ifInString, this_title , %ahkTitle%, {
+			ifInString, this_process , %processName%, {
 				;最前面に表示
 				WinActivate, ahk_id %this_id%
 				return true
