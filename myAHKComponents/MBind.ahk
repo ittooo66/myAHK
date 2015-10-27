@@ -65,8 +65,8 @@ mbind_e(){
 
 mbind_f(){
 	if RCMD() && LCMD(){
-		if !select("CabinetWClass","")
-			Run,explorer.exe
+		if !select("CabinetWClass","explorer.exe")
+			Run,"C:\Windows\explorer.exe"
 	}else if RCMD() && CAPS()
 		Send,^#{Right}
 	else if LCMD() && CAPS()
