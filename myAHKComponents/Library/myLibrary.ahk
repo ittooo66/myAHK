@@ -16,14 +16,14 @@ select(className, processName){
 	{
 		;最下層から引っ張るためiを降順にする
 		i:=id-A_Index+1
-		;this_idに現在見てるWindowのIDを入れる
+		;this_idに現在なめてるWindowIDを入れる
 		this_id := id%i%
 		;this_idのClass、Processを取得
 		WinGetClass, this_class, ahk_id %this_id%
 		WinGet, this_process, ProcessName, ahk_id %this_id%
 		;class一致確認
 		ifInString, this_class , %className%, {
-			;title一致確認
+			;process一致確認
 			ifInString, this_process , %processName%, {
 				;最前面に表示
 				WinActivate, ahk_id %this_id%
