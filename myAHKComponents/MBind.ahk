@@ -1,6 +1,6 @@
 mbind_a(){
 	if RCMD() && LCMD(){
-		if !select("Chrome_WidgetWin_1","Atom")
+		if !select("Chrome_WidgetWin_1","atom.exe")
 			run, C:\Users\AHK\AppData\Local\atom\update.exe	--processStart atom.exe
 	}else if RCMD() || CAPS()
 		press("^{LEFT}")
@@ -81,7 +81,7 @@ mbind_f(){
 
 mbind_g(){
 	if RCMD() && LCMD(){
-		if !select("Chrome_WidgetWin_1","Chrome")
+		if !select("Chrome_WidgetWin_1","chrome.exe")
 			run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 	}else if RCMD() && CAPS()
 		search()
@@ -117,7 +117,7 @@ mbind_i(){
 
 mbind_j(){
 	if RCMD() && LCMD(){
-		if !select("SunAwtFrame","")
+		if !select("SunAwtFrame","idea.exe")
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin\idea.exe"
 	}else if RCMD()
 		press("4")
@@ -128,7 +128,10 @@ mbind_j(){
 }
 
 mbind_k(){
-	if CAPS()
+	if RCMD() && LCMD(){
+		if !select("SunAwtFrame","javaw.exe")
+			run, "C:\Program Files\Processing\processing-2.2.1\processing.exe"
+	}else if CAPS()
 		press("{F7}")
 	else if RCMD()
 		press("5")
