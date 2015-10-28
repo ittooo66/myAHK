@@ -24,7 +24,7 @@
 		if CAPS() && LCMD()
 			Send,^{Tab}
 		else
-			mbind_s()
+			mbind_f()
 	return
 
 	vkEBsc07B & t::Send,{}
