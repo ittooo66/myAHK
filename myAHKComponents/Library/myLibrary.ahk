@@ -50,6 +50,9 @@ search(){
 		}else if (prefix = "gm "){
 			StringTrimLeft, query, InputVar, 3
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/maps/search/%query%"
+		;htt:URL打ち込みとして処理
+		}else if (prefix = "htt"){
+			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "%InputVar%"
 		;通常:google検索
 		}else if var > 0
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/search?hl=ja&q=%InputVar%"
