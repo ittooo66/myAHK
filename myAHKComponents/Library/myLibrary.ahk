@@ -163,7 +163,7 @@ intelliScroll(){
 }
 
 ;ログ出力 => ./log.txt
-printlog(log){
+print(log){
 	FileAppend,
 	(
 		%log%
