@@ -12,6 +12,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;基本配置変更
 `::Delete
 Delete::`
+RAlt::RWin
 
 ;Reload/Suspend AHK
 RAlt & ,::Reload
@@ -24,7 +25,6 @@ LControl & Return::IME_SET("1")
 
 ;諸々微調整
 LControl & Esc::Send,{Delete}
-RAlt::Send,{RWin}
 
 ;一行消し（両サイド）
 vkFFsc079 & BackSpace::
