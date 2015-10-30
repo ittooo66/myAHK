@@ -35,6 +35,8 @@ mbind_c(){
 mbind_d(){
 	if RCMD() && LCMD()
 		Send,#{d}
+	else if LSHIFT() && RSHIFT()
+		mouseMove("e","d","s","f")
 	else if RCMD() || CAPS(){
 		if guiIsOn(){
 			HistoricalClip_down()
@@ -52,6 +54,8 @@ mbind_e(){
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\TeraPad\TeraPad.exe"
 	}else if CAPS() && RCMD()
 		Send,#{Tab}
+	else if LSHIFT() && RSHIFT()
+		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
 		if guiIsOn()
 			HistoricalClip_up()
@@ -71,6 +75,8 @@ mbind_f(){
 		Send,^#{Right}
 	else if LCMD() && CAPS()
 		Send,^{PgDn}
+	else if LSHIFT() && RSHIFT()
+		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD()
 		press("{RIGHT}")
 	else if SPACE()
@@ -119,7 +125,9 @@ mbind_j(){
 	if RCMD() && LCMD(){
 		if !select("SunAwtFrame","idea.exe")
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin\idea.exe"
-	}else if RCMD()
+	}else if RSHIFT() && LSHIFT()
+		mouseDrag("j")
+	else if RCMD()
 		press("4")
 	else if CAPS()
 		press("{F6}")
@@ -131,7 +139,9 @@ mbind_k(){
 	if RCMD() && LCMD(){
 		if !select("SunAwtFrame","javaw.exe")
 			run, "C:\Program Files\Processing\processing-2.2.1\processing.exe"
-	}else if CAPS()
+	}else if RSHIFT() && LSHIFT()
+		Send,{RButton}
+	else if CAPS()
 		press("{F7}")
 	else if RCMD()
 		press("5")
@@ -232,6 +242,8 @@ mbind_s(){
 		Send,^{PgUp}
 	else if RCMD() && CAPS()
 		Send,^#{Left}
+	else if LSHIFT() && RSHIFT()
+		mouseMove("e","d","s","f")
 	else if RCMD() || CAPS()
 		press("{LEFT}")
 	else if SPACE()
