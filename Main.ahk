@@ -41,6 +41,8 @@ return
 ;SandS。Space押上げでSpaceキーActivateとSpace押しキャンセル用のTab
 *Space::mbind_space()
 Space & Tab::return
+;Spaceでのマウスキーボードのスロー化に寄与
+>+<+Space::Return
 
 ;ReturnにGUIフック
 ~Return::

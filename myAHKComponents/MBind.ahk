@@ -36,7 +36,7 @@ mbind_d(){
 	if RCMD() && LCMD()
 		Send,#{d}
 	else if LSHIFT() && RSHIFT()
-		mouseMove("e","d","s","f")
+		mouseMove("e","d","s","f","Space")
 	else if RCMD() || CAPS(){
 		if guiIsOn(){
 			HistoricalClip_down()
@@ -55,7 +55,7 @@ mbind_e(){
 	}else if CAPS() && RCMD()
 		Send,#{Tab}
 	else if LSHIFT() && RSHIFT()
-		mouseMove("e","d","s","f")
+		mouseMove("e","d","s","f","Space")
 	else if CAPS() || RCMD(){
 		if guiIsOn()
 			HistoricalClip_up()
@@ -76,7 +76,7 @@ mbind_f(){
 	else if LCMD() && CAPS()
 		Send,^{PgDn}
 	else if LSHIFT() && RSHIFT()
-		mouseMove("e","d","s","f")
+		mouseMove("e","d","s","f","Space")
 	else if CAPS() || RCMD()
 		press("{RIGHT}")
 	else if SPACE()
@@ -244,7 +244,7 @@ mbind_s(){
 	else if RCMD() && CAPS()
 		Send,^#{Left}
 	else if LSHIFT() && RSHIFT()
-		mouseMove("e","d","s","f")
+		mouseMove("e","d","s","f","Space")
 	else if RCMD() || CAPS()
 		press("{LEFT}")
 	else if SPACE()

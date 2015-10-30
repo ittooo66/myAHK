@@ -185,10 +185,12 @@ guiIsOn(){
 	return false
 }
 
-;key: イベント対象のキー４つ
-mouseMove(keyUp,keyDown,keyLeft,keyRight){
+;key: イベント対象のキー5つ
+mouseMove(keyUp,keyDown,keyLeft,keyRight,slowKey){
 	val := 1
 	slp := 10
+	if (GetKeyState(slowKey,"P"))
+		slp := 100
 	While(GetKeyState(keyUp,"P") || GetKeyState(keyDown,"P") || GetKeyState(keyLeft,"P") || GetKeyState(keyRight,"P")){
 		MoveX := 0, MoveY := 0
 		MoveY += GetKeyState(keyUp, "P") ? -val : 0
