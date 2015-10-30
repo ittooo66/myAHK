@@ -1,3 +1,5 @@
+;SteelSeries:KANAマウス設定用
+
 ;Default
 RButton::Send,{RButton}
 XButton2::Send,{XButton2}
@@ -16,7 +18,6 @@ XButton2 & XButton1::Send,#{Tab}
 ;Reload/Suspend bindings(for gaming)
 XButton1 & MButton::Suspend
 XButton2 & MButton::Reload
-
 
 ;Chrome系（タブ持ちApp系）でよく機能するバインド
 ;タブ変更

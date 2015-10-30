@@ -6,8 +6,8 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #include %A_ScriptDir%\myAHKComponents\Library\IME.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\myLibrary.ahk
-;マウス設定
-#include %A_ScriptDir%\myAHKComponents\Mouse.ahk
+;KANAマウス設定
+#include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
 
 ;基本配置変更
 `::Delete
