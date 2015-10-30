@@ -200,3 +200,11 @@ mouseMove(keyUp,keyDown,keyLeft,keyRight){
 		val++
 	}
 }
+
+mouseDrag(leftButtonKey){
+	Send,{LButton Down}
+	while(GetKeyState(leftButtonKey,"P")){
+		Sleep,100
+	}
+	Send,{LButton Up}
+}
