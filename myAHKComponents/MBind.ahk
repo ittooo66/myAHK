@@ -156,7 +156,9 @@ mbind_l(){
 				run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\League of Legends\League of Legends"
 			}
 		}
-	}else if CAPS(){
+	}else if LSHIFT() && RSHIFT()
+		Send,{WheelUp}
+	else if CAPS(){
 		press("{F9}")
 		press("{F8}")
 	}else if RCMD(){
@@ -485,7 +487,9 @@ mbind_backslash(){
 }
 
 mbind_semicolon(){
-	if RCMD()
+	if RSHIFT() && LSHIFT()
+		Send,{WheelDown}
+	else if RCMD()
 		press("{+}")
 	else
 		press("`;")
