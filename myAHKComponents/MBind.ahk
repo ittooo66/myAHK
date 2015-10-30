@@ -130,7 +130,7 @@ mbind_j(){
 	else if RCMD()
 		press("4")
 	else if CAPS()
-		press("{F6}")
+		press("{Return}")
 	else
 		press("j")
 }
