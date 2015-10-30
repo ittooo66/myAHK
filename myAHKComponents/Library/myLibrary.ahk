@@ -201,6 +201,7 @@ mouseMove(keyUp,keyDown,keyLeft,keyRight){
 	}
 }
 
+;マウスの左クリックエミュレート
 mouseDrag(leftButtonKey){
 	Send,{LButton Down}
 	while(GetKeyState(leftButtonKey,"P")){
