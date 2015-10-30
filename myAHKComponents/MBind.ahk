@@ -159,8 +159,7 @@ mbind_l(){
 	}else if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
 	else if CAPS(){
-		press("{F9}")
-		press("{F8}")
+		Send,{PgUp}
 	}else if RCMD(){
 		press("6")
 	}else
@@ -489,6 +488,8 @@ mbind_backslash(){
 mbind_semicolon(){
 	if RSHIFT() && LSHIFT()
 		Send,{WheelDown}
+	else if CAPS()
+		Send,{PgDn}
 	else if RCMD()
 		press("{+}")
 	else
