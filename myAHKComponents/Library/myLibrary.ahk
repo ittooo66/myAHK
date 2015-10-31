@@ -194,9 +194,9 @@ mouseMove(keyUp,keyDown,keyLeft,keyRight,slowKey){
 	While(GetKeyState(keyUp,"P") || GetKeyState(keyDown,"P") || GetKeyState(keyLeft,"P") || GetKeyState(keyRight,"P")){
 		MoveX := 0, MoveY := 0
 		MoveY += GetKeyState(keyUp, "P") ? -val : 0
-		MoveX += GetKeyState("s", "P") ? -val : 0
-		MoveY += GetKeyState("d", "P") ? val : 0
-		MoveX += GetKeyState("f", "P") ? val : 0
+		MoveX += GetKeyState(keyLeft, "P") ? -val : 0
+		MoveY += GetKeyState(keyDown, "P") ? val : 0
+		MoveX += GetKeyState(keyRight, "P") ? val : 0
 		MouseMove, %MoveX%, %MoveY%, 1, R
 		Sleep, %slp%
 		val++
