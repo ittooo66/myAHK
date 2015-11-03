@@ -7,8 +7,14 @@ XButton1::Send,{XButton1}
 MButton::Send,#{Tab}
 
 ;ウィンドウ変更
-XButton1 & WheelUp::Send,^#{Left}
-XButton1 & WheelDown::Send,^#{Right}
+XButton1 & WheelUp::
+	Send,^#{Left}
+	sleep,100
+return
+XButton1 & WheelDown::
+	Send,^#{Right}
+	sleep,100
+return
 ;横スクロール
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
