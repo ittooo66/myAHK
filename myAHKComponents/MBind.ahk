@@ -225,8 +225,8 @@ mbind_q(){
 
 mbind_r(){
 	if RCMD() && LCMD(){
-		if !select("AcrobatSDIWindow","")
-			run "C:\Program Files (x86)\Adobe\Reader 11.0\Reader\AcroRd32.exe"
+		if !select("ApplicationFrameWindow","ApplicationFrameHost.exe")
+			run "C:\Users\AHK\Dropbox\bcd\WinApp\Microsoft Edge.lnk"
 	}else	if RCMD() || CAPS()
 		press("{END}")
 	else if SPACE()
