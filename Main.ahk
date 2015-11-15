@@ -20,8 +20,6 @@ RAlt & .::Suspend
 
 ;IME
 vkEBsc07B & Space::Send,!{``}
-LControl & BackSpace::IME_SET("0")
-LControl & Return::IME_SET("1")
 
 ;諸々微調整
 LControl & Esc::Send,{Delete}
