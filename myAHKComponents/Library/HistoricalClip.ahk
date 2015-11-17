@@ -60,8 +60,9 @@ HistoricalClip_return(){
 	Gui, show, Hide
 	cb_bk = %ClipboardAll%
 	FileRead, Clipboard , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%index%.txt
-	Sleep,100
+	ClipWait
 	Send,^v
+	Sleep,300
 	Clipboard = %cb_bk%
 }
 
