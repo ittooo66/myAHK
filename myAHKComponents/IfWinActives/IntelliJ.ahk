@@ -72,7 +72,7 @@
 	return
 	sidescroll_on_intellij(){
 		Send,{Shift Down}
-		While (GetKeyState("XButton2", "P")){
+		while (GetKeyState("XButton2", "P")){
 			;サイドボタンとShiftの押し下げを連動
 			;Wheelはチルダで活かしてShift+Wheelを入力
 			sleep,100

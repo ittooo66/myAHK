@@ -24,7 +24,7 @@
 	;スクロールの調整
 	XButton2 & LButton::
 		Send,{MButton down}
-		While (GetKeyState("LButton", "P"))
+		while (GetKeyState("LButton", "P"))
 				Sleep, 10
 		Send,{MButton up}
 	Return

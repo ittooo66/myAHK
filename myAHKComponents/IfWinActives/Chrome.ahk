@@ -22,7 +22,7 @@
 
 	XButton2 & LButton::
 		Send,{MButton}
-		While (GetKeyState("LButton", "P") && GetKeyState("Xbutton2","P"))
+		while (GetKeyState("LButton", "P") && GetKeyState("Xbutton2","P"))
 			Sleep, 10
 		Send,{MButton}
 	Return

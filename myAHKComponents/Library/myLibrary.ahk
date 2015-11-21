@@ -138,7 +138,7 @@ openAlias(Num){
 intelliScroll(){
 	;初期マウス位置の取得
 	MouseGetPos, preMouseX, preMouseY
-	While(GetKeyState("LButton","P")){
+	while(GetKeyState("LButton","P")){
 		;現在マウス位置の取得
 		MouseGetPos, mouseX, mouseY
 		;差分取得
@@ -148,12 +148,12 @@ intelliScroll(){
 		;値調整
 		diff := mouseDiffY/30
 		if (diff<0){
-			While(diff<0){
+			while(diff<0){
 				Send,{WheelUp}
 				diff:= diff+3
 			}
 		}else{
-			While(diff>0){
+			while(diff>0){
 				Send,{WheelDown}
 				diff:= diff-3
 			}
@@ -191,7 +191,7 @@ mouseMove(keyUp,keyDown,keyLeft,keyRight,slowKey){
 	slp := 10
 	if (GetKeyState(slowKey,"P"))
 		slp := 100
-	While(GetKeyState(keyUp,"P") || GetKeyState(keyDown,"P") || GetKeyState(keyLeft,"P") || GetKeyState(keyRight,"P")){
+	while(GetKeyState(keyUp,"P") || GetKeyState(keyDown,"P") || GetKeyState(keyLeft,"P") || GetKeyState(keyRight,"P")){
 		MoveX := 0, MoveY := 0
 		MoveY += GetKeyState(keyUp, "P") ? -val : 0
 		MoveX += GetKeyState(keyLeft, "P") ? -val : 0
