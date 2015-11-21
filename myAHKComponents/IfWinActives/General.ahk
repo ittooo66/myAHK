@@ -27,7 +27,7 @@
 		while (GetKeyState("LButton", "P"))
 				Sleep, 10
 		Send,{MButton up}
-	Return
+	return
 #IfWinActive
 
 ;Atom

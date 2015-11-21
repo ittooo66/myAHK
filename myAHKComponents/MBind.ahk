@@ -130,7 +130,7 @@ mbind_j(){
 	else if RCMD()
 		press("4")
 	else if CAPS()
-		press("{Return}")
+		press("{return}")
 	else
 		press("j")
 }
@@ -261,7 +261,7 @@ mbind_t(){
 		if guiIsOn()
 			HistoricalClip_return()
 		else
-			Send,{Return}
+			Send,{return}
 	else if SPACE()
 		press("p")
 	else

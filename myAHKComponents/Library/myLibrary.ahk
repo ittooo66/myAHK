@@ -37,7 +37,7 @@ select(className, processName){
 ;検索機能など
 search(){
 	InputBox, InputVar, Search
-	If ErrorLevel <> 0
+	if ErrorLevel <> 0
 		return
 	else{
 		StringLen, var, InputVar
@@ -79,10 +79,10 @@ copyTo(Num){
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
 	ClipWait 0.5, 1
 	;クリップボードに何も入ってこないとき
-	If ErrorLevel <> 0
+	if ErrorLevel <> 0
 	{
 		;終了
-		Return
+		return
 	}
 	;ファイルにClipboardを保存
 	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%Num%.dat
@@ -124,7 +124,7 @@ addAlias(Num){
 	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
 	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
 	Clipboard = %cb_bk%
-	Send,{Return}
+	Send,{return}
 	Send,+{Tab}+{Tab}
 }
 

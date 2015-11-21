@@ -25,5 +25,5 @@
 		while (GetKeyState("LButton", "P") && GetKeyState("Xbutton2","P"))
 			Sleep, 10
 		Send,{MButton}
-	Return
+	return
 #IfWinActive

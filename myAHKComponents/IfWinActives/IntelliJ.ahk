@@ -42,7 +42,7 @@
 			Send,^!+{t}
 		else
 			mbind_r()
-	Return
+	return
 
 	;構造選択+
 	LControl & e::
@@ -51,7 +51,7 @@
 			Send,^{w}
 		else
 			mbind_e()
-	Return
+	return
 	;構造選択-
 	LControl & d::
 	vkEBsc07B & d::
@@ -59,7 +59,7 @@
 			Send,^+{w}
 		else
 			mbind_d()
-	Return
+	return
 
 	;横スクロール
 	XButton2 & ~WheelUp::

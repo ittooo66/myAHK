@@ -13,7 +13,7 @@ LShift & a::
 RShift & a::
 Space & a::
 	mbind_a()
-Return
+return
 
 *b::
 <^b::
@@ -28,7 +28,7 @@ LShift & b::
 RShift & b::
 Space & b::
 	mbind_b()
-Return
+return
 
 *c::
 <^c::
@@ -43,7 +43,7 @@ LShift & c::
 RShift & c::
 Space & c::
 	mbind_c()
-Return
+return
 
 *d::
 <^d::
@@ -58,7 +58,7 @@ LShift & d::
 RShift & d::
 Space & d::
 	mbind_d()
-Return
+return
 
 *e::
 <^e::
@@ -73,7 +73,7 @@ LShift & e::
 RShift & e::
 Space & e::
 	mbind_e()
-Return
+return
 
 *f::
 <^f::
@@ -88,7 +88,7 @@ LShift & f::
 RShift & f::
 Space & f::
 	mbind_f()
-Return
+return
 
 *g::
 <^g::
@@ -103,7 +103,7 @@ LShift & g::
 RShift & g::
 Space & g::
 	mbind_g()
-Return
+return
 
 *h::
 <^h::
@@ -118,7 +118,7 @@ LShift & h::
 RShift & h::
 Space & h::
 	mbind_h()
-Return
+return
 
 *i::
 <^i::
@@ -133,7 +133,7 @@ LShift & i::
 RShift & i::
 Space & i::
 	mbind_i()
-Return
+return
 
 *j::
 <^j::
@@ -148,7 +148,7 @@ LShift & j::
 RShift & j::
 Space & j::
 	mbind_j()
-Return
+return
 
 *k::
 <^k::
@@ -163,7 +163,7 @@ LShift & k::
 RShift & k::
 Space & k::
 	mbind_k()
-Return
+return
 
 *l::
 <^l::
@@ -178,7 +178,7 @@ LShift & l::
 RShift & l::
 Space & l::
 	mbind_l()
-Return
+return
 
 *m::
 <^m::
@@ -193,7 +193,7 @@ LShift & m::
 RShift & m::
 Space & m::
 	mbind_m()
-Return
+return
 
 *n::
 <^n::
@@ -208,7 +208,7 @@ LShift & n::
 RShift & n::
 Space & n::
 	mbind_n()
-Return
+return
 
 *o::
 <^o::
@@ -223,7 +223,7 @@ LShift & o::
 RShift & o::
 Space & o::
 	mbind_o()
-Return
+return
 
 *p::
 <^p::
@@ -238,7 +238,7 @@ LShift & p::
 RShift & p::
 Space & p::
 	mbind_p()
-Return
+return
 
 *q::
 <^q::
@@ -253,7 +253,7 @@ LShift & q::
 RShift & q::
 Space & q::
 	mbind_q()
-Return
+return
 
 *r::
 <^r::
@@ -268,7 +268,7 @@ LShift & r::
 RShift & r::
 Space & r::
 	mbind_r()
-Return
+return
 
 *s::
 <^s::
@@ -283,7 +283,7 @@ LShift & s::
 RShift & s::
 Space & s::
 	mbind_s()
-Return
+return
 
 *t::
 <^t::
@@ -298,7 +298,7 @@ LShift & t::
 RShift & t::
 Space & t::
 	mbind_t()
-Return
+return
 
 *u::
 <^u::
@@ -313,7 +313,7 @@ LShift & u::
 RShift & u::
 Space & u::
 	mbind_u()
-Return
+return
 
 *v::
 <^v::
@@ -328,7 +328,7 @@ LShift & v::
 RShift & v::
 Space & v::
 	mbind_v()
-Return
+return
 
 *w::
 <^w::
@@ -343,7 +343,7 @@ LShift & w::
 RShift & w::
 Space & w::
 	mbind_w()
-Return
+return
 
 *x::
 <^x::
@@ -358,7 +358,7 @@ LShift & x::
 RShift & x::
 Space & x::
 	mbind_x()
-Return
+return
 
 *y::
 <^y::
@@ -373,7 +373,7 @@ LShift & y::
 RShift & y::
 Space & y::
 	mbind_y()
-Return
+return
 
 *z::
 <^z::
@@ -388,7 +388,7 @@ LShift & z::
 RShift & z::
 Space & z::
 	mbind_z()
-Return
+return
 
 *1::
 <^1::
@@ -403,7 +403,7 @@ LShift & 1::
 RShift & 1::
 Space & 1::
 	mbind_1()
-Return
+return
 
 *2::
 <^2::
@@ -418,7 +418,7 @@ LShift & 2::
 RShift & 2::
 Space & 2::
 	mbind_2()
-Return
+return
 
 *3::
 <^3::
@@ -433,7 +433,7 @@ LShift & 3::
 RShift & 3::
 Space & 3::
 	mbind_3()
-Return
+return
 
 *4::
 <^4::
@@ -448,7 +448,7 @@ LShift & 4::
 RShift & 4::
 Space & 4::
 	mbind_4()
-Return
+return
 
 *5::
 <^5::
@@ -463,7 +463,7 @@ LShift & 5::
 RShift & 5::
 Space & 5::
 	mbind_5()
-Return
+return
 
 *6::
 <^6::
@@ -478,7 +478,7 @@ LShift & 6::
 RShift & 6::
 Space & 6::
 	mbind_6()
-Return
+return
 
 *7::
 <^7::
@@ -493,7 +493,7 @@ LShift & 7::
 RShift & 7::
 Space & 7::
 	mbind_7()
-Return
+return
 
 *8::
 <^8::
@@ -508,7 +508,7 @@ LShift & 8::
 RShift & 8::
 Space & 8::
 	mbind_8()
-Return
+return
 
 *9::
 <^9::
@@ -523,7 +523,7 @@ LShift & 9::
 RShift & 9::
 Space & 9::
 	mbind_9()
-Return
+return
 
 *0::
 <^0::
@@ -538,7 +538,7 @@ LShift & 0::
 RShift & 0::
 Space & 0::
 	mbind_0()
-Return
+return
 
 *-::
 <^-::
@@ -553,7 +553,7 @@ LShift & -::
 RShift & -::
 Space & -::
 	mbind_minus()
-Return
+return
 
 *=::
 <^=::
@@ -570,7 +570,7 @@ LShift & =::
 RShift & =::
 Space & =::
 	mbind_equal()
-Return
+return
 
 *\::
 <^\::
@@ -585,7 +585,7 @@ LShift & \::
 RShift & \::
 Space & \::
 	mbind_backslash()
-Return
+return
 
 ;エスケープシーケンス（`;）使用でのバインド
 *;::
@@ -601,7 +601,7 @@ LShift & `;::
 RShift & `;::
 Space & `;::
 	mbind_semicolon()
-Return
+return
 
 *'::
 <^'::
@@ -616,7 +616,7 @@ LShift & '::
 RShift & '::
 Space & '::
 	mbind_quote()
-Return
+return
 
 *.::
 <^.::
@@ -631,7 +631,7 @@ LShift & .::
 RShift & .::
 Space & .::
 	mbind_period()
-Return
+return
 
 *,::
 <^,::
@@ -646,7 +646,7 @@ LShift & ,::
 RShift & ,::
 Space & ,::
 	mbind_camma()
-Return
+return
 
 */::
 <^/::
@@ -661,7 +661,7 @@ LShift & /::
 RShift & /::
 Space & /::
 	mbind_slash()
-Return
+return
 
 *[::
 <^[::
@@ -674,7 +674,7 @@ RShift & [::
 LShift & [::
 Space & [::
 	mbind_bracket_left()
-Return
+return
 
 *]::
 <^]::
@@ -687,7 +687,7 @@ RShift & ]::
 LShift & ]::
 Space & ]::
 	mbind_bracket_right()
-Return
+return
 
 ;AltTab系
 vkFFsc079 & ]::AltTab

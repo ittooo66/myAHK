@@ -30,7 +30,7 @@ IME_GET(WinTitle="")
     DetectHiddenWindows,ON
     SendMessage 0x283, 0x005,0,,ahk_id %DefaultIMEWnd%
     DetectHiddenWindows,%DetectSave%
-    Return ErrorLevel
+    return ErrorLevel
 }
 
 IME_SET(setSts, WinTitle="")
@@ -51,7 +51,7 @@ IME_SET(setSts, WinTitle="")
     DetectHiddenWindows,ON
     SendMessage 0x283, 0x006,setSts,,ahk_id %DefaultIMEWnd%
     DetectHiddenWindows,%DetectSave%
-    Return ErrorLevel
+    return ErrorLevel
 }
 
 ;===========================================================================
@@ -92,7 +92,7 @@ IME_GetConvMode(WinTitle="")
     DetectHiddenWindows,ON
     SendMessage 0x283, 0x001,0,,ahk_id %DefaultIMEWnd%
     DetectHiddenWindows,%DetectSave%
-    Return ErrorLevel
+    return ErrorLevel
 }
 
 IME_SetConvMode(ConvMode,WinTitle="")
@@ -111,7 +111,7 @@ IME_SetConvMode(ConvMode,WinTitle="")
     DetectHiddenWindows,ON
     SendMessage 0x283, 0x002,ConvMode,,ahk_id %DefaultIMEWnd%
     DetectHiddenWindows,%DetectSave%
-    Return ErrorLevel
+    return ErrorLevel
 }
 
 ;===========================================================================
@@ -137,7 +137,7 @@ IME_GetSentenceMode(WinTitle="")
     DetectHiddenWindows,ON
     SendMessage 0x283, 0x003,0,,ahk_id %DefaultIMEWnd%
     DetectHiddenWindows,%DetectSave%
-    Return ErrorLevel
+    return ErrorLevel
 }
 
 IME_SetSentenceMode(SentenceMode,WinTitle="")
@@ -156,5 +156,5 @@ IME_SetSentenceMode(SentenceMode,WinTitle="")
     DetectHiddenWindows,ON
     SendMessage 0x283, 0x004,SentenceMode,,ahk_id %DefaultIMEWnd%
     DetectHiddenWindows,%DetectSave%
-    Return ErrorLevel
+    return ErrorLevel
 }
