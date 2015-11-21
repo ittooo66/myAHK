@@ -19,7 +19,7 @@ return
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
 ;ウィンドウ選択画面
-XButton1 & Xbutton2::Send,#{Tab}
+XButton1 & XButton2::Send,#{Tab}
 XButton2 & XButton1::Send,#{Tab}
 ;Reload/Suspend bindings(for gaming)
 XButton1 & MButton::Suspend
