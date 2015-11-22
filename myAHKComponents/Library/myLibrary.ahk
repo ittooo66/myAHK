@@ -88,15 +88,18 @@ copyTo(Num){
 	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%Num%.dat
 	;cb_bkから取得
 	Clipboard = %cb_bk%
-	;cb_bk開放
-	cb_bk =
 }
 
 ;拡張クリップボード(paste)
 pasteFrom(Num){
+	;cb_bkに中身を退避
 	cb_bk = %ClipboardAll%
+	;Clipboardに内容読み込み
 	FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%Num%.dat
+	;貼り付け
 	Send,^v
+	;干渉防止のため、貼り付け完了まで一寸待ってClipboardを元に戻す
+	sleep,300
 	Clipboard = %cb_bk%
 }
 
