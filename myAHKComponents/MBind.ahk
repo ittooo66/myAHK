@@ -131,6 +131,8 @@ mbind_j(){
 		press("4")
 	else if CAPS()
 		press("{return}")
+	else if SPACE()
+		download()
 	else
 		press("j")
 }
@@ -167,13 +169,9 @@ mbind_l(){
 }
 
 mbind_m(){
-	if RCMD() && CAPS()
-		download()
-	else if RCMD()
+	if RCMD()
 		press("1")
-	else if CAPS(){
-		;TODO
-	}else
+	else
 		press("m")
 }
 
