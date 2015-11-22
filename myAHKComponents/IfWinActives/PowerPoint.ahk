@@ -3,35 +3,35 @@
 		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（橙）
 			Send, !{j}{d}{s}{o}{Right}{Right}{Right}{Right}{Right}{Down}{Down}{Down}{Down}{return}
-		Else
+		else
 			mbind_1()
 	return
 	LControl & 2::
 		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（青）
 			Send, !{j}{d}{s}{o}{Left}{Left}{Down}{Down}{Down}{Down}{return}
-		Else
+		else
 			mbind_2()
 	return
 	LControl & 3::
 		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（緑）
 			Send, !{j}{d}{s}{o}{Left}{Down}{Down}{Down}{Down}{return}
-		Else
+		else
 			mbind_3()
 	return
 	LControl & 4::
 		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（赤）
 			Send, !{j}{d}{s}{o}{Down}{Down}{Down}{Down}{Down}{Down}{return}
-		Else
+		else
 			mbind_4()
 	return
 	LControl & 5::
 		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（青）
 			Send, !{j}{d}{s}{o}
-		Else
+		else
 			mbind_5()
 	return
 	LControl & q::
@@ -49,9 +49,9 @@
 		if GetKeyState("vkEBsc07B", "P") && GetKeyState("LControl", "P")
 			;文字色変更（青）
 			Send, !{h}{f}{c}{Left}{Left}{Down}{Down}{Down}{Down}{return}
-		Else if GetKeyState("vkEBsc07B", "P")
+		else if GetKeyState("vkEBsc07B", "P")
 			Send, ^{l}
-		Else
+		else
 			mbind_w()
 	return
 	LControl & e::
@@ -65,14 +65,14 @@
 		if GetKeyState("vkEBsc07B", "P")
 			;文字色変更（赤）
 			Send, !{h}{f}{c}{Down}{Down}{Down}{Down}{Down}{Down}{return}
-		Else
+		else
 			mbind_r()
 	return
 	LControl & t::
 		if GetKeyState("vkEBsc07B", "P")
 			;文字色選択
 			Send, !{h}{f}{c}
-		Else{
+		else{
 			;パワポの特性上Alt?刺さないと^BSで認識されるため
 			Send,{Alt}
 			mbind_t()
@@ -82,70 +82,70 @@
 		if GetKeyState("vkEBsc07B", "P")
 			;箇条書き
 			Send, !{h}{u}
-		Else
+		else
 			mbind_a()
 	return
 	LControl & s::
 		if GetKeyState("vkEBsc07B", "P")
 			;図形配置
 			Send, !{n}{s}{h}
-		Else
+		else
 			mbind_s()
 	return
 	LControl & d::
 		if GetKeyState("vkEBsc07B", "P")
 			;図形塗り
 			Send, !{j}{d}{s}{f}
-		Else
+		else
 			mbind_d()
 	return
 	LControl & f::
 		if GetKeyState("vkEBsc07B", "P")
 			;フォント弄り
 			Send, !{h}{f}{f}
-		Else
+		else
 			mbind_f()
 	return
 	LControl & g::
 		if GetKeyState("vkEBsc07B", "P")
 			;図形の書式設定
 			Send, !{h}{o}
-		Else
+		else
 			mbind_g()
 	return
 	LControl & z::
 		if GetKeyState("vkEBsc07B", "P")
 			;背面へ移動
 			Send, !{j}{d}{a}{e}{b}
-		Else
+		else
 			mbind_z()
 	return
 	LControl & x::
 		if GetKeyState("vkEBsc07B", "P")
 			;前面へ移動
 			Send, !{j}{d}{a}{f}{f}
-		Else
+		else
 			mbind_x()
 	return
 	LControl & c::
 		if GetKeyState("vkEBsc07B", "P")
 			;トリミング
 			Send, !{j}{p}{v}{c}
-		Else
+		else
 			mbind_c()
 	return
 	LControl & v::
 		if GetKeyState("vkEBsc07B", "P")
 			;View
 			Send, +{F5}
-		Else
+		else
 			mbind_v()
 	return
 	LControl & b::
 		if GetKeyState("vkEBsc07B", "P")
 			;枠線太さ変更
 			Send, !{j}{d}{s}{o}{w}
-		Else
+		else
 			mbind_b()
 	return
 

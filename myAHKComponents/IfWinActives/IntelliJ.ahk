@@ -103,7 +103,7 @@
 	vkEBsc07B & a::
 		if CAPS() && LCMD()
 			Send,^!{l}
-		Else
+		else
 			mbind_a()
 	return
 

@@ -61,6 +61,6 @@ return
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
 
-Return
+return
 ;以下、GUIのラベル等、初回起動では不要なやつら
 #include %A_ScriptDir%\myAHKComponents\GUILabel.ahk

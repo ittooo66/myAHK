@@ -24,7 +24,7 @@ HistoricalClip_openWindow(){
 	{
 		if(index = A_Index){
 			Gui, Font, s13 cRed
-		}Else
+		}else
 			Gui, Font, s13 cWhite
 		FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%A_Index%.txt
 		Gui, Add, Text, , %file%
