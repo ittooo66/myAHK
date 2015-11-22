@@ -74,34 +74,14 @@ return
 ;==============================================
 ;     Hotkeys
 ;==============================================
-WheelDown::     WheelRedirect()
-WheelUp::       WheelRedirect()
+;WheelDown::     WheelRedirect()
+;WheelUp::       WheelRedirect()
 
 ;Shiftホイールで横スクロール
-+WheelDown::    WheelRedirect(1)
-+WheelUp::      WheelRedirect(1)
+;+WheelDown::    WheelRedirect(1)
+;+WheelUp::      WheelRedirect(1)
 
-/* ※※※※※ Logicoolマウス用 設定サンプル ※※※※※※※※※※※※※※
-
-;Logicoolマウスチルト1(uberOptionsで 左:F13 右:F14が割り当てられていると仮定)
-; ただし押下解除情報は正しく取れないのでuser.xmlを手動にて編集し
-; キーリピートを発生させる必要あり
-F13::   WheelRedirect(1,0)
-F14::   WheelRedirect(1,1)
-
-;Logicoolマウスチルト2(SetPointで 左:F11 右:F12に割り当てられていると仮定)
-F11::       SetTimer,TiltRepeatL,80
-F11 up::    SetTimer,TiltRepeatL,OFF
-F12::       SetTimer,TiltRepeatR,80
-F12 up::    SetTimer,TiltRepeatR,OFF
-TiltRepeatL:
-    WheelRedirect(1,0)
-return
-TiltRepeatR:
-    WheelRedirect(1,1)
-return
 ;※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
-*/
 
 ;
 
@@ -145,7 +125,7 @@ WheelRedirect(mode=0,dir="")
                 WinActivate, ahk_id %hwnd%
                 MouseClick,Left
             }
-            Else    PostMessage,0x222, %ctrl%,0,,ahk_id %MdiClient%
+            else    PostMessage,0x222, %ctrl%,0,,ahk_id %MdiClient%
         }
     }
     scnt := GetScrollBarHwnd(shwnd,mx,my,ctrl,mode) ;ｽｸﾛｰﾙﾊﾝﾄﾞﾙ取得
@@ -165,7 +145,7 @@ WheelRedirect(mode=0,dir="")
 
     if (!scmode)
             MOUSEWHELL(ctrl,mx,my,dir,AcclSpeed,AcclTOut)
-    Else    SCROLL(ctrl,mode,shwnd,dir,ScrlCount,AcclSpeed,AcclTOut)
+    else    SCROLL(ctrl,mode,shwnd,dir,ScrlCount,AcclSpeed,AcclTOut)
 }
 
 GetScrollBarHwnd(byref shwnd, mx,my,Cntlhwnd,mode=0)
@@ -264,7 +244,7 @@ MOUSEWHELL(hwnd,mx,my,dir="", ASpeed=1,ATOut=300)
     If (A_PriorHotkey <> A_ThisHotkey) || (ATOut < A_TimeSincePriorHotkey)
        || (0 >= ASpeed)
         delta = 120
-    Else If (delta < 1000)
+    else If (delta < 1000)
         delta += 120 * ASpeed
 
     ; wParam: Delta(移動量)
@@ -275,11 +255,11 @@ MOUSEWHELL(hwnd,mx,my,dir="", ASpeed=1,ATOut=300)
 
     If (dir = 0)
          wpalam |=   delta << 16        ;up
-    Else if (dir = 1)
+    else if (dir = 1)
          wpalam |= -(delta << 16)       ;down
-    Else ifInstring A_ThisHotkey, WheelUp
+    else ifInstring A_ThisHotkey, WheelUp
          wpalam |=   delta << 16        ;up
-    Else wpalam |= -(delta << 16)       ;down
+    else wpalam |= -(delta << 16)       ;down
 
     ; lParam: XY座標
     lpalam := (my << 16) | mx
@@ -307,7 +287,7 @@ SCROLL(hwnd,mode=0,shwnd=0,dir="", ScrlCnt=1,ASpeed=1,ATOut=300)
     If (A_PriorHotkey <> A_ThisHotkey) || (ATOut < A_TimeSincePriorHotkey)
        || (0 >= ASpeed)
         ACount := ScrlCnt
-    Else
+    else
         ACount += ScrlCnt * ASpeed
 
     ;wParam: 方向
@@ -315,7 +295,7 @@ SCROLL(hwnd,mode=0,shwnd=0,dir="", ScrlCnt=1,ASpeed=1,ATOut=300)
     {
         ifInstring A_ThisHotkey, WheelUp
              dir = 0                        ;SB_LINEUP   / SB_LINELEFT
-        Else dir = 1                        ;SB_LINEDOWN / SB_LINERIGHT
+        else dir = 1                        ;SB_LINEDOWN / SB_LINERIGHT
     }
 
     ;0x114:WM_HSCROLL  0x115:WM_VSCROLL

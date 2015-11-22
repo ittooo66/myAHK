@@ -1,6 +1,5 @@
 ;Excel
 #IfWinActive,ahk_class XLMAIN
-	;要wheelscroll.ahk
-	<+WheelUp::WheelLeft
-	<+WheelDown::WheelRight
+	XButton2 & WheelUp::WheelRedirect(1)
+	XButton2 & WheelDown::WheelRedirect(1)
 #IfWinActive

@@ -6,6 +6,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #include %A_ScriptDir%\myAHKComponents\Library\IME.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\myLibrary.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\WheelScroll.ahk
 ;KANAマウス設定
 #include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
 
