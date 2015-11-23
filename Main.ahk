@@ -29,7 +29,7 @@ LControl & Esc::Send,{Delete}
 vkFFsc079 & BackSpace::
 	Send,+{HOME}
 	HistoricalClip_stackCopy()
-	Send,{Backspace}
+	Send,{BackSpace}
 return
 vkFFsc079 & `::
 	Send,+{END}
