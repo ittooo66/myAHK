@@ -1,7 +1,0 @@
-# Clipboard保持内容の無視
-Resources/Clipboard/*.dat
-Resources/Clipboard/*.txt
-# FileAlias保持内容の無視
-Resources/FileAlias/*.txt
-# Logの無視
-log.txt
