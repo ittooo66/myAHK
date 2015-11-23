@@ -12,19 +12,19 @@
 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;   単体起動用
 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#NoEnv                  ; 変数名を解釈するとき、環境変数を無視する
-#SingleInstance FORCE   ; 複数プロセスで実行の禁止
-#WinActivateForce       ; タスクバーアイコン点滅防止
-#MaxHotkeysPerInterval 80 ;キーリピートエラー防止用
+;#NoEnv                  ; 変数名を解釈するとき、環境変数を無視する
+;#SingleInstance FORCE   ; 複数プロセスで実行の禁止
+;#WinActivateForce       ; タスクバーアイコン点滅防止
+;#MaxHotkeysPerInterval 80 ;キーリピートエラー防止用
 
-WheelAutoExecute:
-    SendMode Input              ; 送信中にユーザー操作を後回しにする。
-    Gosub,WheelInit
-    Hotkey,^ESC, WheelExit     ;終了： [Ctrl]+[ESC]
-return
-WheelExit:
-    exitapp
-return
+;WheelAutoExecute:
+;    SendMode Input              ; 送信中にユーザー操作を後回しにする。
+;    Gosub,WheelInit
+;    Hotkey,^ESC, WheelExit     ;終了： [Ctrl]+[ESC]
+;return
+;WheelExit:
+;    exitapp
+;return
 
 
 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
