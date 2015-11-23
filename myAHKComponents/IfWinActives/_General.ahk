@@ -7,6 +7,13 @@
 	XButton2::return
 #IfWinActive
 
+;Win+Tab時の画面上
+#IfWinActive,ahk_class MultitaskingViewFrame
+	WheelUp::Send,{Left}
+	WheelDown::Send,{Right}
+	MButton::Send,{Return}
+#IfWinActive
+
 ;デスクトップ上
 #IfWinActive,ahk_class WorkerW
 	XButton1::return
