@@ -2,7 +2,7 @@
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
-;Library(グローバル変数持ちが一人(HistoricalClip)いるだけでフック力はなく無害)
+;Library(バインドは持たないがグローバル変数の干渉に注意。特にHistoricalClipとWheelScroll)
 #include %A_ScriptDir%\myAHKComponents\Library\IME.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\myLibrary.ahk
