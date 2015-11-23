@@ -1,1 +1,1 @@
-﻿#Include %A_ScriptDir%\Languages\English.ahk
+﻿#Include %A_ScriptDir%\Languages\Japanese.ahk
