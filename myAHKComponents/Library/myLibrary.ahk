@@ -167,7 +167,7 @@ intelliScroll(){
 
 ;ログ出力 => ./log.txt
 print(log){
-	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\log.txt
+	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\Resources\Log\log.txt
 }
 
 ;GUIウィンドウが出力されているか、どうか
