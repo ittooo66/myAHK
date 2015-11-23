@@ -30,12 +30,6 @@
 	return
 #IfWinActive
 
-;Atom
-#IfWinActive,ahk_exe atom.exe
-	^Tab::Send,^{0}
-	XButton2 & LButton::intelliScroll()
-#IfWinActive
-
 ;Command Prompt,Powershell
 #IfWinActive,ahk_class ConsoleWindowClass
 	^L::SendInput , {Esc}cls{Enter}
