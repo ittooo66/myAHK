@@ -26,17 +26,6 @@
 	XButton2::return
 #IfWinActive
 
-;Reader
-#IfWinActive, ahk_exe AcroRd32.exe
-	;スクロールの調整
-	XButton2 & LButton::
-		Send,{MButton down}
-		while (GetKeyState("LButton", "P"))
-				Sleep, 10
-		Send,{MButton up}
-	return
-#IfWinActive
-
 ;Command Prompt,Powershell
 #IfWinActive,ahk_class ConsoleWindowClass
 	^L::SendInput , {Esc}cls{Enter}
