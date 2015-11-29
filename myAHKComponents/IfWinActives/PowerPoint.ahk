@@ -153,6 +153,9 @@
 	LShift & WheelUp::Send, ^{]}
 	LShift & WheelDown::Send, ^{[}
 
+	XButton2 & WheelUp::ComObjActive("PowerPoint.Application").ActiveWindow.SmallScroll(0,0,0,3)
+	XButton2 & WheelDown::ComObjActive("PowerPoint.Application").ActiveWindow.SmallScroll(0,0,3,0)
+
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
 
