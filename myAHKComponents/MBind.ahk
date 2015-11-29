@@ -484,17 +484,15 @@ mbind_backslash(){
 mbind_semicolon(){
 	if RSHIFT() && LSHIFT()
 		Send,{WheelDown}
-	else if CAPS()
-		Send,{PgDn}
-	else if RCMD()
+	else if RCMD() || CAPS()
 		press("{+}")
 	else
 		press("`;")
 }
 
 mbind_quote(){
-	if RCMD()
-		press("{=}")
+	if RCMD() || CAPS()
+		press("{*}")
 	else
 		press("'")
 }
