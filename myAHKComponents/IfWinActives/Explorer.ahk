@@ -26,6 +26,4 @@
 		else
 			mbind_f()
 	return
-
-	vkEBsc07B & t::Send,{}
 #IfWinActive
