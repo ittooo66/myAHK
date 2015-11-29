@@ -187,7 +187,9 @@ mbind_o(){
 	if RCMD() && LCMD(){
 		if !select("XLMAIN","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\excel.exe"
-	}else if RCMD()
+	}else if RSHIFT() && LSHIFT()
+		Send,{WheelLeft}
+	else if RCMD()
 		press("9")
 	else
 		press("o")
@@ -197,7 +199,9 @@ mbind_p(){
 	if RCMD() && LCMD(){
 		if !select("PPTFrameClass","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\powerpnt.exe"
-	}else if RCMD()
+	}else if LSHIFT() && RSHIFT()
+		Send,{WheelRight}
+	else if RCMD()
 		press("{-}")
 	else
 		press("p")
