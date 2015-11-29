@@ -512,7 +512,10 @@ mbind_camma(){
 }
 
 mbind_slash(){
-	press("/")
+	if RCMD() || CAPS()
+		press("{=}")
+	else
+		press("/")
 }
 
 mbind_space(){
