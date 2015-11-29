@@ -115,7 +115,7 @@ mbind_i(){
 	if RCMD() && LCMD(){
 		if !select("OpusApp","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
-	}else if RCMD()
+	}else if RCMD() || CAPS()
 		press("8")
 	else
 		press("i")
@@ -127,10 +127,8 @@ mbind_j(){
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 15.0.1\bin\idea.exe"
 	}else if RSHIFT() && LSHIFT()
 		mouseDrag("j")
-	else if RCMD()
+	else if RCMD() || CAPS()
 		press("4")
-	else if CAPS()
-		press("{return}")
 	else if SPACE()
 		download()
 	else
@@ -143,7 +141,7 @@ mbind_k(){
 			run, "C:\Program Files\Processing\processing-2.2.1\processing.exe"
 	}else if RSHIFT() && LSHIFT()
 		Send,{RButton}
-	else if RCMD()
+	else if RCMD() || CAPS()
 		press("5")
 	else
 		press("k")
@@ -158,17 +156,17 @@ mbind_l(){
 		}
 	}else if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
-	else if CAPS(){
-		Send,{PgUp}
-	}else if RCMD(){
+	else if RCMD() || CAPS()
 		press("6")
-	}else
+	else
 		press("l")
 }
 
 mbind_m(){
-	if RCMD()
+	if RCMD() || CAPS()
 		press("1")
+	else if RALT()
+		return ;最小化無効
 	else
 		press("m")
 }
@@ -178,7 +176,7 @@ mbind_n(){
 		if !select("Notepad","")
 			run "C:\Windows\System32\notepad.exe"
 	}else if RCMD() || CAPS()
-		press("{*}")
+		press("{0}")
 	else
 		press("n")
 }
@@ -189,7 +187,7 @@ mbind_o(){
 			run "C:\Program Files\Microsoft Office 15\root\office15\excel.exe"
 	}else if RSHIFT() && LSHIFT()
 		Send,{WheelLeft}
-	else if RCMD()
+	else if RCMD() || CAPS()
 		press("9")
 	else
 		press("o")
@@ -269,9 +267,7 @@ mbind_t(){
 }
 
 mbind_u(){
-	if CAPS()
-		press("``")
-	else if RCMD()
+	if RCMD() || CAPS()
 		press("7")
 	else if SPACE()
 		press("]")
@@ -504,14 +500,14 @@ mbind_quote(){
 }
 
 mbind_period(){
-	if RCMD(){
+	if RCMD() || CAPS(){
 		press("3")
 	}else
 		press(".")
 }
 
 mbind_camma(){
-	if RCMD()
+	if RCMD() || CAPS()
 		press("2")
 	else
 		press(",")
@@ -522,9 +518,7 @@ mbind_slash(){
 }
 
 mbind_space(){
-	if RCMD()
-		press("0")
-	else if CAPS()
+	if RCMD() || CAPS()
 		press("^{Space}")
 	else
 		press("{Space}")
