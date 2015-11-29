@@ -71,6 +71,10 @@ LFだとAHKが改行認識できないのかパースおかしくなってすん
   + `>!` < `RAlt`
 
 
+1. AHK Version
+  +Lのほうじゃないともう多分動かない（PPT,EXCELのスクロールにCOMつかってるため）
+
+
 
 [AHK]: https://github.com/AutoHotkey/AutoHotkey
 [WheelScroll.ahk]: http://blechmusik.hatenablog.jp/entry/20100529/1275141213
