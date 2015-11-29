@@ -143,8 +143,6 @@ mbind_k(){
 			run, "C:\Program Files\Processing\processing-2.2.1\processing.exe"
 	}else if RSHIFT() && LSHIFT()
 		Send,{RButton}
-	else if CAPS()
-		press("{F7}")
 	else if RCMD()
 		press("5")
 	else
