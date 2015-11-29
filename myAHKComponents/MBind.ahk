@@ -104,7 +104,7 @@ mbind_h(){
 		if !select("HwndWrapper","")
 			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
 	}else if RCMD() || CAPS()
-		Send,{PgDn}
+		press("{PgDn}")
 	else if SPACE()
 		press("'")
 	else
@@ -199,7 +199,7 @@ mbind_p(){
 			run "C:\Program Files\Microsoft Office 15\root\office15\powerpnt.exe"
 	}else if LSHIFT() && RSHIFT()
 		Send,{WheelRight}
-	else if RCMD()
+	else if RCMD() || CAPS()
 		press("{-}")
 	else
 		press("p")
@@ -255,12 +255,12 @@ mbind_t(){
 	if LCMD() && RCMD(){
 		if !select("ConsoleWindowClass","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-	}else if RCMD() || CAPS()
+	}else if RCMD() || CAPS(){
 		if guiIsOn()
 			HistoricalClip_return()
 		else
-			Send,{return}
-	else if SPACE()
+			press("{return}")
+	}else if SPACE()
 		press("p")
 	else
 		press("t")
@@ -309,7 +309,7 @@ mbind_x(){
 
 mbind_y(){
 	if RCMD() || CAPS()
-		Send,{PgUp}
+		press("{PgUp}")
 	else if SPACE()
 		press("[")
 	else
