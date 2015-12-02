@@ -2,14 +2,14 @@
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
-;Library(バインドは持たないがグローバル変数の干渉に注意。特にHistoricalClipとWheelScroll)
+;Library(バインドは持たないがグローバル変数の干渉に注意。
 #include %A_ScriptDir%\Lib\Library\HistoricalClip.ahk
 #include %A_ScriptDir%\Lib\Library\_STD.ahk
 #include %A_ScriptDir%\Lib\Library\Macro.ahk
 #include %A_ScriptDir%\Lib\Library\WinD.ahk
 #include %A_ScriptDir%\Lib\Library\IntelliScroll.ahk
 ;KANAマウス設定
-#include <KANAMouse>
+#include %A_ScriptDir%\Lib\KANAMouse.ahk
 
 ;基本配置変更
 `::Delete
@@ -51,9 +51,9 @@ Space & Tab::return
 return
 
 ;もろもろバインドとリスナー
-#include <MBindListener>
-#include <MBindSetting>
-#include <MBind>
+#include %A_ScriptDir%\Lib\MBindListener.ahk
+#include %A_ScriptDir%\Lib\MBindSetting.ahk
+#include %A_ScriptDir%\Lib\MBind.ahk
 
 ;IfWinActives
 #include %A_ScriptDir%\Lib\IfWinActives\_General.ahk
