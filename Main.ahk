@@ -3,10 +3,10 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
 ;Library(バインドは持たないがグローバル変数の干渉に注意。特にHistoricalClipとWheelScroll)
-#include %A_ScriptDir%\myAHKComponents\Library\IME.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\myLibrary.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\WinD.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\IntelliScroll.ahk
 ;KANAマウス設定
 #include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
 
