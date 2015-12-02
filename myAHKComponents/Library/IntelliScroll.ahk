@@ -11,61 +11,72 @@ intelliScroll(){
 		mouseDiffY :=mouseY-preMouseY
 
 		;値調整
-		diffPointY := (mouseDiffY/54)
-		diffPointX := (mouseDiffX/54)
+		SetFormat, float, 0.0
+		diffPointY := (mouseDiffY/30)
+		SetFormat, float, 0.0
+		diffPointX := (mouseDiffX/30)
 
-		sleepCount := 200
-
-		if (diffY<0){
-			if(diffX<0){
-				;左上移動
-				while((diffY<0 || diffX<0) && GetKeyState("LButton","P")){
-					if(diffY<0)
-						Send,{WheelUp}
-					if(diffX<0)
-						send,{WheelLeft}
-					diffY:= diffY+30
-					diffX:= diffX+30
-					sleep,1
-					sleepCount--
+		;適用対象判定
+		absDiffPointY := diffPointY
+		if(diffPointY<0)
+			absDiffPointY := -diffPointY
+		absDiffPointX := diffPointX
+		if(diffPointX<0)
+			absDiffPointX := -diffPointX
+		if(absDiffPointX > absDiffPointY ){
+			;X方向適用
+			if(diffPointX > 0){
+				sleepCount := 100/absDiffPointX
+				sleepStack := 0
+				while(diffPointX > 0){
+					send,{WheelRight}
+					sleepStack += sleepCount
+					if(sleepStack > 20){
+						sleep, %sleepCount%
+						sleepStack := 0
+					}
+					diffPointX--
 				}
 			}else{
-				while((diffY<0 || diffX>0) && GetKeyState("LButton","P")){
-					if(diffY<0)
-						Send,{WheelUp}
-					if(diffX>0)
-						send,{WheelRight}
-					diffY:= diffY+30
-					diffX:= diffX-30
-					sleep,1
-					sleepCount--
+				sleepCount := 100/absDiffPointX
+				sleepStack := 0
+				while(diffPointX < 0){
+					send,{WheelLeft}
+					sleepStack += sleepCount
+					if(sleepStack > 20){
+						sleep, %sleepCount%
+						sleepStack := 0
+					}
+					diffPointX++
 				}
 			}
 		}else{
-			if(diffX<0){
-				while((diffY>0 || diffX<0) && GetKeyState("LButton","P")){
-					if(diffY>0)
-						Send,{WheelDown}
-					if(diffX<0)
-						send,{WheelLeft}
-					diffX:= diffX+30
-					diffY:= diffY-30
-					sleep,1
-					sleepCount--
+			;Y方向適用
+			if(diffPointY > 0){
+				sleepCount := 100/absDiffPointY
+				sleepStack := 0
+				while(diffPointY > 0){
+					send,{WheelDown}
+					sleepStack += sleepCount
+					if(sleepStack > 20){
+						sleep, %sleepCount%
+						sleepStack := 0
+					}
+					diffPointY--
 				}
 			}else{
-				while((diffY>0 || diffX>0) && GetKeyState("LButton","P")){
-					if(diffY>0)
-						Send,{WheelDown}
-					if(diffX>0)
-						send,{WheelRight}
-					diffY:= diffY-30
-					diffX:= diffX-30
-					sleep,1
-					sleepCount--
+				sleepCount := 100/absDiffPointY
+				sleepStack := 0
+				while(diffPointY < 0){
+					send,{WheelUp}
+					sleepStack += sleepCount
+					if(sleepStack > 20){
+						sleep, %sleepCount%
+						sleepStack := 0
+					}
+					diffPointY++
 				}
 			}
 		}
-		sleep, %sleepCount%
 	}
 }
