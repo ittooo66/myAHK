@@ -9,7 +9,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #include %A_ScriptDir%\Lib\Library\WinD.ahk
 #include %A_ScriptDir%\Lib\Library\IntelliScroll.ahk
 ;KANAマウス設定
-#include %A_ScriptDir%\Lib\KANAMouse.ahk
+#include <KANAMouse>
 
 ;基本配置変更
 `::Delete
@@ -51,11 +51,11 @@ Space & Tab::return
 return
 
 ;もろもろバインドとリスナー
-#include %A_ScriptDir%\Lib\MBindListener.ahk
-#include %A_ScriptDir%\Lib\MBindSetting.ahk
-#include %A_ScriptDir%\Lib\MBind.ahk
+#include <MBindListener>
+#include <MBindSetting>
+#include <MBind>
 
-;IfWinActives ここで優先で当てること
+;IfWinActives
 #include %A_ScriptDir%\Lib\IfWinActives\_General.ahk
 #include %A_ScriptDir%\Lib\IfWinActives\Explorer.ahk
 #include %A_ScriptDir%\Lib\IfWinActives\Excel.ahk
@@ -66,4 +66,4 @@ return
 
 return
 ;以下、GUIのラベル等、初回起動では不要なやつら
-#include %A_ScriptDir%\Lib\GUILabel.ahk
+#include <GUILabel>
