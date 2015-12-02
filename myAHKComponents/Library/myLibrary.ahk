@@ -1,8 +1,3 @@
-;ざっくりマクロ（rcmd||caps + b）用、適当に書き換えてくかんじ
-macro(){
-	return true
-}
-
 ;特定のWindowクラスを最下層から引っ張る
 ;className:クラス名。空指定（""）の場合、Class指定なし
 ;processName:プロセス名。idea.exeとかそういうやつ。空指定（""）の場合、Process指定なし
