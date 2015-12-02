@@ -137,34 +137,6 @@ openAlias(Num){
 	run, %file%
 }
 
-;よさげなスクロール、chromeのホイールボタンスクロールっぽい挙動を目指して。滑らかさが足りない
-intelliScroll(){
-	;初期マウス位置の取得
-	MouseGetPos, preMouseX, preMouseY
-	while(GetKeyState("LButton","P")){
-		;現在マウス位置の取得
-		MouseGetPos, mouseX, mouseY
-		;差分取得
-		mouseDiffX :=mouseX-preMouseX
-		mouseDiffY :=mouseY-preMouseY
-
-		;値調整
-		diff := mouseDiffY/30
-		if (diff<0){
-			while(diff<0){
-				Send,{WheelUp}
-				diff:= diff+3
-			}
-		}else{
-			while(diff>0){
-				Send,{WheelDown}
-				diff:= diff-3
-			}
-		}
-		sleep, 60
-	}
-}
-
 ;ログ出力 => ./log.txt
 print(log){
 	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\Resources\Log\log.txt
