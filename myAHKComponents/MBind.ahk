@@ -11,7 +11,9 @@ mbind_a(){
 }
 
 mbind_b(){
-	if RCMD() || CAPS(){
+	if (RCMD() || CAPS()) && SHIFT()
+		run C:\Windows\System32\notepad.exe %A_WorkingDir%\myAHKComponents\Library\Macro.ahk
+	else if RCMD() || CAPS(){
 		macro()
 	}else if SPACE()
 		press("/")
