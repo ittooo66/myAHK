@@ -3,13 +3,13 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
 ;Library(バインドは持たないがグローバル変数の干渉に注意。特にHistoricalClipとWheelScroll)
-#include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\_STD.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\Macro.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\WinD.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\IntelliScroll.ahk
+#include %A_ScriptDir%\Lib\Library\HistoricalClip.ahk
+#include %A_ScriptDir%\Lib\Library\_STD.ahk
+#include %A_ScriptDir%\Lib\Library\Macro.ahk
+#include %A_ScriptDir%\Lib\Library\WinD.ahk
+#include %A_ScriptDir%\Lib\Library\IntelliScroll.ahk
 ;KANAマウス設定
-#include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
+#include %A_ScriptDir%\Lib\KANAMouse.ahk
 
 ;基本配置変更
 `::Delete
@@ -51,19 +51,19 @@ Space & Tab::return
 return
 
 ;もろもろバインドとリスナー
-#include %A_ScriptDir%\myAHKComponents\MBindListener.ahk
-#include %A_ScriptDir%\myAHKComponents\MBindSetting.ahk
-#include %A_ScriptDir%\myAHKComponents\MBind.ahk
+#include %A_ScriptDir%\Lib\MBindListener.ahk
+#include %A_ScriptDir%\Lib\MBindSetting.ahk
+#include %A_ScriptDir%\Lib\MBind.ahk
 
 ;IfWinActives ここで優先で当てること
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\_General.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\Explorer.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\Excel.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\Chrome.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\Atom.ahk
+#include %A_ScriptDir%\Lib\IfWinActives\_General.ahk
+#include %A_ScriptDir%\Lib\IfWinActives\Explorer.ahk
+#include %A_ScriptDir%\Lib\IfWinActives\Excel.ahk
+#include %A_ScriptDir%\Lib\IfWinActives\Chrome.ahk
+#include %A_ScriptDir%\Lib\IfWinActives\PowerPoint.ahk
+#include %A_ScriptDir%\Lib\IfWinActives\IntelliJ.ahk
+#include %A_ScriptDir%\Lib\IfWinActives\Atom.ahk
 
 return
 ;以下、GUIのラベル等、初回起動では不要なやつら
-#include %A_ScriptDir%\myAHKComponents\GUILabel.ahk
+#include %A_ScriptDir%\Lib\GUILabel.ahk
