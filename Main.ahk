@@ -4,7 +4,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #InstallKeybdHook
 ;Library(バインドは持たないがグローバル変数の干渉に注意。特にHistoricalClipとWheelScroll)
 #include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\myLibrary.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\_STD.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\Macro.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\WinD.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\IntelliScroll.ahk
