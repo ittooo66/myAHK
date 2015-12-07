@@ -52,8 +52,8 @@ mbind_d(){
 
 mbind_e(){
 	if RCMD() && LCMD(){
-		if !select("TTeraPadMainForm","")
-			run "C:\Users\AHK\Dropbox\bcd\WinApp\TeraPad\TeraPad.exe"
+		if !select("Notepad","")
+			run "C:\Windows\System32\notepad.exe"
 	}else if CAPS() && RCMD()
 		Send,#{Tab}
 	else if LSHIFT() && RSHIFT()
