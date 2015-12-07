@@ -44,4 +44,10 @@ XButton1 & RButton::Send,{RWin}
 ;Explorer起動
 XButton1 & LButton::Run, "C:\Users\AHK\Dropbox\"
 ;MButton
-XButton2 & RButton::Send,{MButton}
+XButton2 & RButton::
+	Send,{MButton Down}
+	while(GetKeyState("XButton2","P")&&GetKeyState("RButton","P")){
+		sleep,30
+	}
+	Send,{MButton Up}
+return
