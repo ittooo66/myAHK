@@ -26,8 +26,7 @@ my[AHK][AHK]
 
 ### reference/ ###
 
-なんかにつかえそうだなあAHK集。依存しているものは
-`myAHKComponents/ExtLibs/`にお引っ越し中。
+なんかにつかえそうだなあAHK集。
 
 + [EnableUIAccess][EnableUIAccess]  
 必須。AHKからUAC周りの制約を消せる。これ無いとAltTabが効かなかったりLoLで修飾キー周りが悲惨に  
@@ -36,10 +35,7 @@ my[AHK][AHK]
 マウスジェスチャできるやつ。多機能だけどマウスバインド充実しだしたしもう不要。AHKゴリゴリ使ってるので参考文献として優秀。
 
 + [IME.ahk][IME.ahk]  
-IME切り替え用AHK。つよい。べんり。使用中。
-
-+ [WheelScroll.ahk][WheelScroll.ahk]  
-ホイール周り（横スクロール）の強化。横スク不可のExcelを横スクロールできるようになる。PPTは無理っぽい、ナンデ。使用中。
+IME切り替え用AHK。つよい。べんり。
 
 など。
 
