@@ -2,6 +2,12 @@ LCMD(){
 	return GetKeyState("vkEBsc07B", "P")
 }
 RCMD(){
+	;myAHKComponents/Library/FuncLock.ahk
+	global myFuncPressed
+	if(myFuncPressed == 1){
+		return true
+	}
+
 	return GetKeyState("vkFFsc079", "P")
 }
 CAPS(){

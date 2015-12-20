@@ -521,7 +521,9 @@ mbind_slash(){
 }
 
 mbind_space(){
-	if RCMD() || CAPS()
+	if RCMD()
+		myFuncLock()
+	else if CAPS()
 		press("^{Space}")
 	else
 		press("{Space}")
