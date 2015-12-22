@@ -1,5 +1,11 @@
 ;Excel
 #IfWinActive,ahk_class XLMAIN
+
+	;F1無効
+	F1::return
+	vkFFsc079 & 1::return
+	LControl & 1::return
+
 	XButton2 & WheelUp::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
 	XButton2 & WheelDown::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
 
