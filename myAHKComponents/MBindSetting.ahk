@@ -1,12 +1,16 @@
-LCMD(){
-	return GetKeyState("vkEBsc07B", "P")
-}
-RCMD(){
+FUNC(){
 	;myAHKComponents/Library/FuncLock.ahk
 	global myFuncPressed
 	if(myFuncPressed == 1){
 		return true
 	}
+}
+LCMD(){
+	return GetKeyState("vkEBsc07B", "P")
+}
+RCMD(){
+	if FUNC()
+		return true
 
 	return GetKeyState("vkFFsc079", "P")
 }

@@ -472,11 +472,17 @@ mbind_equal(){
 }
 
 mbind_bracket_left(){
-	press("[")
+	if FUNC()
+		press("/")
+	else
+		press("[")
 }
 
 mbind_bracket_right(){
-	press("]")
+	if FUNC()
+		press("=")
+	else
+		press("]")
 }
 
 mbind_backslash(){
@@ -515,7 +521,7 @@ mbind_camma(){
 
 mbind_slash(){
 	if RCMD() || CAPS()
-		press("{=}")
+		press(".")
 	else
 		press("/")
 }
