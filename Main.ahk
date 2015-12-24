@@ -17,6 +17,13 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 Delete::`
 RAlt::RWin
 
+;Lock解除
+vkFFsc079::
+	global myFuncPressed
+	if myFuncPressed = 1
+		MyFuncLock()
+return
+
 ;Reload/Suspend AHK
 RAlt & ,::Reload
 RAlt & .::Suspend
