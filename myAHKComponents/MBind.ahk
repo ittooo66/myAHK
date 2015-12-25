@@ -105,7 +105,9 @@ mbind_h(){
 	if RCMD() && LCMD(){
 		if !select("HwndWrapper","")
 			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
-	}else if RCMD() || CAPS()
+	}else if FUNC()
+		press("{BackSpace}")
+	else if RCMD() || CAPS()
 		press("{PgDn}")
 	else if SPACE()
 		press("'")
