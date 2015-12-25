@@ -7,7 +7,7 @@ windowChanging := false
 RButton::Send,{RButton}
 XButton2::Send,{XButton2}
 XButton1::Send,{XButton1}
-MButton::Send,#{Tab}
+MButton::winD()
 
 ;ウィンドウ変更
 XButton1 & WheelUp::
