@@ -23,6 +23,14 @@ vkFFsc079::
 	if myFuncPressed = 1
 		MyFuncLock()
 return
+;Lock解除、$マークで再帰呼び出し防止
+$Esc::
+	global myFuncPressed
+	if myFuncPressed = 1
+		MyFuncLock()
+	else
+		Send,{Esc}
+return
 
 ;Reload/Suspend AHK
 RAlt & ,::Reload
