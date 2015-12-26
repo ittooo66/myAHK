@@ -1,5 +1,5 @@
 ;Windows+Dを強化
-winD := 1
+winD := 0
 winD(){
 	global winD
 	if(winD==1){
