@@ -62,7 +62,7 @@ Space & Tab::return
 
 ;ReturnにGUIフック
 ~Return::
-	if guiIsOn()
+	if (historicalClipIsOn = 1)
 		HistoricalClip_return()
 return
 

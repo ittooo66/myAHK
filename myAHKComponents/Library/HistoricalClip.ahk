@@ -1,8 +1,29 @@
 ;選択中の履歴階層の値
 index := 1
 
+;GUIが表示されているかどうかのGlobal変数
+historicalClipIsOn := 0
+;GUIが表示されているかどうか
+historicalClipIsOn(){
+	global historicalClipIsOn
+	if (historicalClipIsOn = 1)
+		return true
+	else
+		return false
+}
+
+HistoricalClip_closeWindow(){
+	global historicalClipIsOn
+	historicalClipIsOn = 0
+	GUI, Destroy
+}
+
 ;Windowを開く
 HistoricalClip_openWindow(){
+	;historicalClipフラグを上げる
+	global historicalClipIsOn
+	historicalClipIsOn = 1
+
 	;index値取得・調整
 	global index
 	;枠内調整
@@ -64,6 +85,10 @@ HistoricalClip_return(){
 	Send,^v
 	Sleep,300
 	Clipboard = %cb_bk%
+
+	;historicalClipフラグを下げる
+	global historicalClipIsOn
+	historicalClipIsOn = 0
 }
 
 ;コピーをスタックする

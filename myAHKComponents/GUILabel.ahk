@@ -1,4 +1,4 @@
 ;GUI:Escape入力時
 GuiEscape:
- Gui, show, Hide
+ historicalClip_closeWindow()
 return
