@@ -105,7 +105,7 @@ mbind_h(){
 	if RCMD() && LCMD(){
 		if !select("HwndWrapper","")
 			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
-	}else if FUNC()
+	}else if myFuncIsOn()
 		press("{BackSpace}")
 	else if RCMD() || CAPS()
 		press("{PgDn}")
@@ -474,14 +474,14 @@ mbind_equal(){
 }
 
 mbind_bracket_left(){
-	if FUNC()
+	if RCMD() || CAPS()
 		press("/")
 	else
 		press("[")
 }
 
 mbind_bracket_right(){
-	if FUNC()
+	if RCMD() || CAPS()
 		press("=")
 	else
 		press("]")
@@ -529,7 +529,9 @@ mbind_slash(){
 }
 
 mbind_space(){
-	if RCMD()
+	if myFuncIsOn()
+		press("{Return}")
+	else if RCMD()
 		myFuncLock()
 	else if CAPS()
 		press("^{Space}")

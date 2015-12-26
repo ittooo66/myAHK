@@ -1,18 +1,8 @@
-FUNC(){
-	;myAHKComponents/Library/FuncLock.ahk
-	global myFuncPressed
-	if(myFuncPressed == 1){
-		return true
-	}
-}
 LCMD(){
 	return GetKeyState("vkEBsc07B", "P")
 }
 RCMD(){
-	if FUNC()
-		return true
-
-	return GetKeyState("vkFFsc079", "P")
+	return myFuncIsOn() || GetKeyState("vkFFsc079", "P")
 }
 CAPS(){
 	return GetKeyState("LControl","P")

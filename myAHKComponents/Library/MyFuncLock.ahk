@@ -1,5 +1,12 @@
-;myFunctionKeyのロック、MBindSetting.ahkで引っ張ってきてる
+;myFunctionKeyのロック
 myFuncPressed := 0
+myFuncIsOn(){
+	global myFuncPressed
+	if myFuncPressed = 1
+		return true
+	else
+		return false
+}
 myFuncLock(){
 	global myFuncPressed
 	if(myFuncPressed==1){
