@@ -4,8 +4,6 @@ mbind_a(){
 			run, C:\Users\AHK\AppData\Local\atom\update.exe	--processStart atom.exe
 	}else if RCMD() || CAPS()
 		press("^{LEFT}")
-	else if SPACE()
-		press("h")
 	else
 		press("a")
 }
@@ -15,9 +13,7 @@ mbind_b(){
 		run C:\Windows\System32\notepad.exe %A_WorkingDir%\myAHKComponents\Library\Macro.ahk
 	else if RCMD() || CAPS(){
 		macro()
-	}else if SPACE()
-		press("/")
-	else
+	}else
 		press("b")
 }
 
@@ -26,8 +22,6 @@ mbind_c(){
 		copyTo("C")
 	else if RCMD() || CAPS()
 		pasteFrom("C")
-	else if SPACE()
-		press(",")
 	else if LCMD()
 		HistoricalClip_stackCopy()
 	else
@@ -44,9 +38,7 @@ mbind_d(){
 			HistoricalClip_down()
 		else
 			press("{DOWN}")
-	}else if SPACE()
-		press("k")
-	else
+	}else
 		press("d")
 }
 
@@ -63,9 +55,7 @@ mbind_e(){
 			HistoricalClip_up()
 		else
 			press("{UP}")
-	}else if SPACE()
-		press("i")
-	else
+	}else
 		press("e")
 }
 
@@ -81,8 +71,6 @@ mbind_f(){
 		mouseMove("e","d","s","f","Space")
 	else if CAPS() || RCMD()
 		press("{RIGHT}")
-	else if SPACE()
-		press("l")
 	else
 		press("f")
 }
@@ -95,8 +83,6 @@ mbind_g(){
 		search()
 	else if RCMD() || CAPS()
 		press("^{RIGHT}")
-	else if SPACE()
-		press(";")
 	else
 		press("g")
 }
@@ -109,8 +95,6 @@ mbind_h(){
 		press("{BackSpace}")
 	else if RCMD() || CAPS()
 		press("{PgDn}")
-	else if SPACE()
-		press("'")
 	else
 		press("h")
 }
@@ -219,9 +203,7 @@ mbind_q(){
 		MsgBox , 1 , Confirm, Really?
 		ifMsgBox, OK
 			Send,!{F4}
-	}else if SPACE()
-		press("y")
-	else
+	}else
 		press("q")
 }
 
@@ -231,8 +213,6 @@ mbind_r(){
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\Microsoft Edge.lnk"
 	}else	if RCMD() || CAPS()
 		press("{END}")
-	else if SPACE()
-		press("o")
 	else
 		press("r")
 }
@@ -249,8 +229,6 @@ mbind_s(){
 		mouseMove("e","d","s","f","Space")
 	else if RCMD() || CAPS()
 		press("{LEFT}")
-	else if SPACE()
-		press("j")
 	else
 		press("s")
 }
@@ -264,17 +242,13 @@ mbind_t(){
 			HistoricalClip_return()
 		else
 			press("{return}")
-	}else if SPACE()
-		press("p")
-	else
+	}else
 		press("t")
 }
 
 mbind_u(){
 	if RCMD() || CAPS()
 		press("{Numpad7}")
-	else if SPACE()
-		press("]")
 	else
 		press("u")
 }
@@ -282,8 +256,6 @@ mbind_u(){
 mbind_v(){
 	if RCMD() || CAPS()
 		HistoricalClip_openWindow()
-	else if SPACE()
-		press(".")
 	else
 		press("v")
 }
@@ -291,8 +263,6 @@ mbind_v(){
 mbind_w(){
 	if RCMD() || CAPS()
 		press("{HOME}")
-	else if SPACE()
-		press("u")
 	else
 		press("w")
 }
@@ -302,8 +272,6 @@ mbind_x(){
 		copyTo("X")
 	else if RCMD() || CAPS()
 		pasteFrom("X")
-	else if SPACE()
-		press("m")
 	else if LCMD(){
 		HistoricalClip_stackCopy()
 		press("x")
@@ -314,8 +282,6 @@ mbind_x(){
 mbind_y(){
 	if RCMD() || CAPS()
 		press("{PgUp}")
-	else if SPACE()
-		press("[")
 	else
 		press("y")
 }
@@ -325,9 +291,7 @@ mbind_z(){
 		copyTo("Z")
 	}else if RCMD() || CAPS(){
 		pasteFrom("Z")
-	}else if SPACE()
-		press("n")
-	else
+	}else
 		press("z")
 }
 
@@ -338,8 +302,6 @@ mbind_1(){
 		openAlias("1")
 	else if RCMD() || CAPS()
 		press("{F1}")
-	else if SPACE()
-		press("6")
 	else
 		press("1")
 }
@@ -351,8 +313,6 @@ mbind_2(){
 		openAlias("2")
 	else if RCMD() || CAPS()
 		press("{F2}")
-	else if SPACE()
-		press("7")
 	else
 		press("2")
 }
@@ -366,8 +326,6 @@ mbind_3(){
 		Send,{PrintScreen}
 	else if RCMD() || CAPS()
 		press("{F3}")
-	else if SPACE()
-		press("8")
 	else
 		press("3")
 }
@@ -381,8 +339,6 @@ mbind_4(){
 		Send,!{PrintScreen}
 	else if RCMD() || CAPS()
 		press("{F4}")
-	else if SPACE()
-		press("9")
 	else
 		press("4")
 }
@@ -394,8 +350,6 @@ mbind_5(){
 		openAlias("5")
 	else if RCMD() || CAPS()
 		press("{F5}")
-	else if SPACE()
-		press("0")
 	else
 		press("5")
 }
@@ -407,8 +361,6 @@ mbind_6(){
 		openAlias("6")
 	else if RCMD() || CAPS()
 		press("{F6}")
-	else if SPACE()
-		press("-")
 	else
 		press("6")
 }
@@ -420,8 +372,6 @@ mbind_7(){
 		openAlias("7")
 	else if RCMD() || CAPS()
 		press("{F7}")
-	else if SPACE()
-		press("=")
 	else
 		press("7")
 }
