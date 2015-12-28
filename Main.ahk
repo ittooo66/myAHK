@@ -36,6 +36,10 @@ return
 RAlt & ,::Reload
 RAlt & .::Suspend
 
+;AltTab
+RAlt & ]::AltTab
+RAlt & [::ShiftAltTab
+
 ;IME
 vkEBsc07B & Space::Send,!{``}
 

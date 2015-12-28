@@ -668,6 +668,8 @@ return
 >^[::
 >+[::
 <+[::
+vkFFsc079 & [::
+LControl & [::
 vkEBsc07B & [::
 RControl & [::
 RShift & [::
@@ -681,6 +683,8 @@ return
 >^]::
 >+]::
 <+]::
+vkFFsc079 & ]::
+LControl & ]::
 vkEBsc07B & ]::
 RControl & ]::
 RShift & ]::
@@ -688,9 +692,3 @@ LShift & ]::
 Space & ]::
 	mbind_bracket_right()
 return
-
-;AltTab系
-vkFFsc079 & ]::AltTab
-LControl & ]::AltTab
-vkFFsc079 & [::ShiftAltTab
-LControl & [::ShiftAltTab
