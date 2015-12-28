@@ -280,7 +280,9 @@ mbind_x(){
 }
 
 mbind_y(){
-	if RCMD() || CAPS()
+	if myFuncIsOn()
+		press("{Tab}")
+	else if RCMD() || CAPS()
 		press("{PgUp}")
 	else
 		press("y")
