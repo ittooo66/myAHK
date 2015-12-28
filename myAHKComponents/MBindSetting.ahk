@@ -1,3 +1,5 @@
+;仮想修飾キー一覧
+
 LCMD(){
 	return GetKeyState("vkEBsc07B", "P")
 }
