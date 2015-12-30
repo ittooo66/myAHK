@@ -153,13 +153,15 @@
 	LShift & WheelUp::Send, ^{]}
 	LShift & WheelDown::Send, ^{[}
 
+	;横スクロール
 	XButton2 & WheelUp::ComObjActive("PowerPoint.Application").ActiveWindow.SmallScroll(0,0,0,3)
 	XButton2 & WheelDown::ComObjActive("PowerPoint.Application").ActiveWindow.SmallScroll(0,0,3,0)
 
+	;進む、戻る
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
 
-	;ホイールでリボン切り替え
+	;リボン切り替え
 	RButton & WheelUp::
 		Send,{Alt}
 		Send,{Left}
@@ -169,6 +171,22 @@
 		Send,{Alt}
 		Send,{Right}
 		Send,{Alt}
+	return
+
+	;図形挿入
+	RButton & MButton::
+		;図形メニューまで移動
+		Send,{Alt}{n}{s}{h}
+		;図形選択
+		Send,{Down}{Down}{Down}{Return}
+		Click
+		sleep,200
+		;白塗り
+		Send,{Alt}{h}{s}{f}{Return}
+		;黒字
+		Send,{Alt}{h}{f}{c}{Right}{Return}
+		;黒枠
+		Send,{Alt}{h}{s}{o}{Right}{Return}
 	return
 
 	;閉じる
