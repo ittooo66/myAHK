@@ -111,6 +111,7 @@
 	;intelliScroll
 	XButton2 & LButton::intelliScrollOnIntelliJ()
 	;よさげなスクロール
+	;(intelliScrollベースでShift押し連打に反応するアイツ対策に加工)
 	intelliScrollOnIntelliJ(){
 		;初期マウス位置の取得
 		MouseGetPos, preMouseX, preMouseY
