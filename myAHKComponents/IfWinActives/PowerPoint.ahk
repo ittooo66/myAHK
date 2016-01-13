@@ -175,18 +175,15 @@
 
 	;図形挿入
 	RButton & MButton::
-		;図形メニューまで移動
-		Send,{Alt}{n}{s}{h}
-		;図形選択
-		Send,{Down}{Down}{Down}{Return}
-		Click
-		sleep,200
-		;白塗り
-		Send,{Alt}{h}{s}{f}{Return}
-		;黒字
-		Send,{Alt}{h}{f}{c}{Right}{Return}
-		;黒枠
-		Send,{Alt}{h}{s}{o}{Right}{Return}
+		;cb_bkに中身を退避
+		cb_bk = %ClipboardAll%
+		;Clipboardに内容読み込み
+		FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Resources\PowerpointContent\rect.dat
+		;貼り付け
+		Send,^v
+		;干渉防止のため、貼り付け完了まで一寸待ってClipboardを元に戻す
+		sleep,300
+		Clipboard = %cb_bk%
 	return
 
 	;閉じる
