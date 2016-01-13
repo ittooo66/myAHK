@@ -1,6 +1,6 @@
 mbind_a(){
 	if RCMD() && LCMD(){
-		if !select("Chrome_WidgetWin_1","atom.exe")
+		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
 			run, C:\Users\AHK\AppData\Local\atom\update.exe	--processStart atom.exe
 	}else if RCMD() || CAPS()
 		press("^{LEFT}")
@@ -44,7 +44,7 @@ mbind_d(){
 
 mbind_e(){
 	if RCMD() && LCMD(){
-		if !select("Notepad","")
+		if !activateWindow("Notepad","","")
 			run "C:\Windows\System32\notepad.exe"
 	}else if CAPS() && RCMD()
 		Send,#{Tab}
@@ -61,7 +61,7 @@ mbind_e(){
 
 mbind_f(){
 	if RCMD() && LCMD(){
-		if !select("CabinetWClass","explorer.exe")
+		if !activateWindow("CabinetWClass","explorer.exe","")
 			Run,"C:\Windows\explorer.exe"
 	}else if RCMD() && CAPS()
 		Send,^#{Right}
@@ -77,7 +77,7 @@ mbind_f(){
 
 mbind_g(){
 	if RCMD() && LCMD(){
-		if !select("Chrome_WidgetWin_1","chrome.exe")
+		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
 			run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 	}else if RCMD() && CAPS()
 		search()
@@ -89,7 +89,7 @@ mbind_g(){
 
 mbind_h(){
 	if RCMD() && LCMD(){
-		if !select("HwndWrapper","")
+		if !activateWindow("HwndWrapper","","")
 			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
 	}else if myFuncIsOn()
 		press("{BackSpace}")
@@ -101,7 +101,7 @@ mbind_h(){
 
 mbind_i(){
 	if RCMD() && LCMD(){
-		if !select("OpusApp","")
+		if !activateWindow("OpusApp","","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
 	}else if RCMD() || CAPS()
 		press("{Numpad8}")
@@ -111,7 +111,7 @@ mbind_i(){
 
 mbind_j(){
 	if RCMD() && LCMD(){
-		if !select("SunAwtFrame","idea.exe")
+		if !activateWindow("SunAwtFrame","idea.exe","")
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 15.0.1\bin\idea.exe"
 	}else if RSHIFT() && LSHIFT()
 		mouseDrag("j")
@@ -125,7 +125,7 @@ mbind_j(){
 
 mbind_k(){
 	if RCMD() && LCMD(){
-		if !select("SunAwtFrame","javaw.exe")
+		if !activateWindow("SunAwtFrame","javaw.exe","")
 			run, "C:\Program Files\Processing\processing-2.2.1\processing.exe"
 	}else if RSHIFT() && LSHIFT()
 		Send,{RButton}
@@ -137,8 +137,8 @@ mbind_k(){
 
 mbind_l(){
 	if RCMD() &&LCMD(){
-		if !select("ApolloRuntimeContentWindow",""){
-			if !select("RiotWindowClass",""){
+		if !activateWindow("ApolloRuntimeContentWindow","",""){
+			if !activateWindow("RiotWindowClass","",""){
 				run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\League of Legends\League of Legends"
 			}
 		}
@@ -161,7 +161,7 @@ mbind_m(){
 
 mbind_n(){
 	if RCMD() && LCMD(){
-		if !select("Notepad","")
+		if !activateWindow("Notepad","","")
 			run "C:\Windows\System32\notepad.exe"
 	}else if RCMD() || CAPS()
 		press("{Numpad0}")
@@ -171,7 +171,7 @@ mbind_n(){
 
 mbind_o(){
 	if RCMD() && LCMD(){
-		if !select("XLMAIN","")
+		if !activateWindow("XLMAIN","","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\excel.exe"
 	}else if RSHIFT() && LSHIFT()
 		Send,{WheelLeft}
@@ -183,7 +183,7 @@ mbind_o(){
 
 mbind_p(){
 	if RCMD() && LCMD(){
-		if !select("PPTFrameClass","")
+		if !activateWindow("PPTFrameClass","","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\powerpnt.exe"
 	}else if LSHIFT() && RSHIFT()
 		Send,{WheelRight}
@@ -195,7 +195,7 @@ mbind_p(){
 
 mbind_q(){
 	if RCMD() && LCMD(){
-		if !select("TaskManagerWindow","")
+		if !activateWindow("TaskManagerWindow","","")
 			run "C:\Windows\System32\Taskmgr.exe"
 	}else if RCMD() || CAPS()
 		Send,{BackSpace}
@@ -209,7 +209,7 @@ mbind_q(){
 
 mbind_r(){
 	if RCMD() && LCMD(){
-		if !select("ApplicationFrameWindow","ApplicationFrameHost.exe")
+		if !activateWindow("ApplicationFrameWindow","ApplicationFrameHost.exe","Microsoft Edge")
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\Microsoft Edge.lnk"
 	}else	if RCMD() || CAPS()
 		press("{END}")
@@ -219,7 +219,7 @@ mbind_r(){
 
 mbind_s(){
 	if RCMD() && LCMD(){
-		if !select("tSkMainForm","")
+		if !activateWindow("tSkMainForm","","")
 			run "C:\Program Files (x86)\Skype\Phone\Skype.exe"
 	}else if LCMD() && CAPS()
 		Send,^{PgUp}
@@ -235,7 +235,7 @@ mbind_s(){
 
 mbind_t(){
 	if LCMD() && RCMD(){
-		if !select("ConsoleWindowClass","")
+		if !activateWindow("ConsoleWindowClass","","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 	}else if RCMD() || CAPS(){
 		if historicalClipIsOn()

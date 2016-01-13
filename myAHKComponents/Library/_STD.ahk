@@ -1,9 +1,11 @@
 ;特定のWindowクラスを最下層から引っ張る
 ;className:クラス名。空指定（""）の場合、Class指定なし
 ;processName:プロセス名。idea.exeとかそういうやつ。空指定（""）の場合、Process指定なし
+;titleName:タイトル。空指定（""）の場合、Title指定なし
+;===返り値===
 ;true:引っ張ってこれた
 ;false:存在しなかった
-select(className, processName){
+activateWindow(className, processName, titleName){
 	;配列idに現在稼働中のWindowを突っ込む
 	WinGet, id, list, , , Program Manager
 	;for(int A_Index=1;A_Index<N(id);A_Index++)
@@ -13,16 +15,20 @@ select(className, processName){
 		i:=id-A_Index+1
 		;this_idに現在なめてるWindowIDを入れる
 		this_id := id%i%
-		;this_idのClass、Processを取得
+		;this_idのClass,Title,Processを取得
 		WinGetClass, this_class, ahk_id %this_id%
+		WinGetTitle, this_title, ahk_id %this_id%
 		WinGet, this_process, ProcessName, ahk_id %this_id%
 		;class一致確認
 		ifInString, this_class , %className%, {
-			;process一致確認
-			ifInString, this_process , %processName%, {
-				;最前面に表示
-				WinActivate, ahk_id %this_id%
-				return true
+			;title一致確認
+			ifInString, this_title , %titleName%, {
+				;process一致確認
+				ifInString, this_process , %processName%, {
+					;最前面に表示
+					WinActivate, ahk_id %this_id%
+					return true
+				}
 			}
 		}
 	}
