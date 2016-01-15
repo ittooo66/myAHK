@@ -113,10 +113,10 @@ mbind_j(){
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 15.0.1\bin\idea.exe"
 	}else if RSHIFT() && LSHIFT()
 		mouseDrag("j")
+	else if CAPS() && RCMD()
+		download()
 	else if RCMD() || CAPS()
 		press("{Numpad4}")
-	else if SPACE()
-		download()
 	else
 		press("j")
 }
