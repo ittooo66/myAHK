@@ -91,7 +91,7 @@ mbind_h(){
 	if RCMD() && LCMD(){
 		if !activateWindow("HwndWrapper","","")
 			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
-	}else if myFuncIsOn() || RCMD() || CAPS()
+	}else if RCMD() || CAPS()
 		press("{BackSpace}")
 	else
 		press("h")
@@ -278,7 +278,7 @@ mbind_x(){
 }
 
 mbind_y(){
-	if myFuncIsOn() || RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{Tab}")
 	else
 		press("y")
@@ -481,11 +481,7 @@ mbind_slash(){
 }
 
 mbind_space(){
-	if myFuncIsOn()
-		press("{Return}")
-	else if RCMD()
-		myFuncLock()
-	else if CAPS()
+	if CAPS()
 		press("^{Space}")
 	else
 		press("{Space}")
