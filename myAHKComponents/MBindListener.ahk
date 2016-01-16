@@ -11,7 +11,6 @@ LControl & a::
 RControl & a::
 LShift & a::
 RShift & a::
-Space & a::
 	mbind_a()
 return
 
@@ -26,7 +25,6 @@ LControl & b::
 RControl & b::
 LShift & b::
 RShift & b::
-Space & b::
 	mbind_b()
 return
 
@@ -41,7 +39,6 @@ LControl & c::
 RControl & c::
 LShift & c::
 RShift & c::
-Space & c::
 	mbind_c()
 return
 
@@ -56,7 +53,6 @@ LControl & d::
 RControl & d::
 LShift & d::
 RShift & d::
-Space & d::
 	mbind_d()
 return
 
@@ -71,7 +67,6 @@ LControl & e::
 RControl & e::
 LShift & e::
 RShift & e::
-Space & e::
 	mbind_e()
 return
 
@@ -86,7 +81,6 @@ LControl & f::
 RControl & f::
 LShift & f::
 RShift & f::
-Space & f::
 	mbind_f()
 return
 
@@ -101,7 +95,6 @@ LControl & g::
 RControl & g::
 LShift & g::
 RShift & g::
-Space & g::
 	mbind_g()
 return
 
@@ -116,7 +109,6 @@ LControl & h::
 RControl & h::
 LShift & h::
 RShift & h::
-Space & h::
 	mbind_h()
 return
 
@@ -131,7 +123,6 @@ LControl & i::
 RControl & i::
 LShift & i::
 RShift & i::
-Space & i::
 	mbind_i()
 return
 
@@ -146,7 +137,6 @@ LControl & j::
 RControl & j::
 LShift & j::
 RShift & j::
-Space & j::
 	mbind_j()
 return
 
@@ -161,7 +151,6 @@ LControl & k::
 RControl & k::
 LShift & k::
 RShift & k::
-Space & k::
 	mbind_k()
 return
 
@@ -176,7 +165,6 @@ LControl & l::
 RControl & l::
 LShift & l::
 RShift & l::
-Space & l::
 	mbind_l()
 return
 
@@ -191,7 +179,6 @@ LControl & m::
 RControl & m::
 LShift & m::
 RShift & m::
-Space & m::
 	mbind_m()
 return
 
@@ -206,7 +193,6 @@ LControl & n::
 RControl & n::
 LShift & n::
 RShift & n::
-Space & n::
 	mbind_n()
 return
 
@@ -221,7 +207,6 @@ LControl & o::
 RControl & o::
 LShift & o::
 RShift & o::
-Space & o::
 	mbind_o()
 return
 
@@ -236,7 +221,6 @@ LControl & p::
 RControl & p::
 LShift & p::
 RShift & p::
-Space & p::
 	mbind_p()
 return
 
@@ -251,7 +235,6 @@ LControl & q::
 RControl & q::
 LShift & q::
 RShift & q::
-Space & q::
 	mbind_q()
 return
 
@@ -266,7 +249,6 @@ LControl & r::
 RControl & r::
 LShift & r::
 RShift & r::
-Space & r::
 	mbind_r()
 return
 
@@ -281,7 +263,6 @@ LControl & s::
 RControl & s::
 LShift & s::
 RShift & s::
-Space & s::
 	mbind_s()
 return
 
@@ -296,7 +277,6 @@ LControl & t::
 RControl & t::
 LShift & t::
 RShift & t::
-Space & t::
 	mbind_t()
 return
 
@@ -311,7 +291,6 @@ LControl & u::
 RControl & u::
 LShift & u::
 RShift & u::
-Space & u::
 	mbind_u()
 return
 
@@ -326,7 +305,6 @@ LControl & v::
 RControl & v::
 LShift & v::
 RShift & v::
-Space & v::
 	mbind_v()
 return
 
@@ -341,7 +319,6 @@ LControl & w::
 RControl & w::
 LShift & w::
 RShift & w::
-Space & w::
 	mbind_w()
 return
 
@@ -356,7 +333,6 @@ LControl & x::
 RControl & x::
 LShift & x::
 RShift & x::
-Space & x::
 	mbind_x()
 return
 
@@ -371,7 +347,6 @@ LControl & y::
 RControl & y::
 LShift & y::
 RShift & y::
-Space & y::
 	mbind_y()
 return
 
@@ -386,7 +361,6 @@ LControl & z::
 RControl & z::
 LShift & z::
 RShift & z::
-Space & z::
 	mbind_z()
 return
 
@@ -401,7 +375,6 @@ LControl & 1::
 RControl & 1::
 LShift & 1::
 RShift & 1::
-Space & 1::
 	mbind_1()
 return
 
@@ -416,7 +389,6 @@ LControl & 2::
 RControl & 2::
 LShift & 2::
 RShift & 2::
-Space & 2::
 	mbind_2()
 return
 
@@ -431,7 +403,6 @@ LControl & 3::
 RControl & 3::
 LShift & 3::
 RShift & 3::
-Space & 3::
 	mbind_3()
 return
 
@@ -446,7 +417,6 @@ LControl & 4::
 RControl & 4::
 LShift & 4::
 RShift & 4::
-Space & 4::
 	mbind_4()
 return
 
@@ -461,7 +431,6 @@ LControl & 5::
 RControl & 5::
 LShift & 5::
 RShift & 5::
-Space & 5::
 	mbind_5()
 return
 
@@ -476,7 +445,6 @@ LControl & 6::
 RControl & 6::
 LShift & 6::
 RShift & 6::
-Space & 6::
 	mbind_6()
 return
 
@@ -491,7 +459,6 @@ LControl & 7::
 RControl & 7::
 LShift & 7::
 RShift & 7::
-Space & 7::
 	mbind_7()
 return
 
@@ -506,7 +473,6 @@ LControl & 8::
 RControl & 8::
 LShift & 8::
 RShift & 8::
-Space & 8::
 	mbind_8()
 return
 
@@ -521,7 +487,6 @@ LControl & 9::
 RControl & 9::
 LShift & 9::
 RShift & 9::
-Space & 9::
 	mbind_9()
 return
 
@@ -536,7 +501,6 @@ LControl & 0::
 RControl & 0::
 LShift & 0::
 RShift & 0::
-Space & 0::
 	mbind_0()
 return
 
@@ -551,7 +515,6 @@ LControl & -::
 RControl & -::
 LShift & -::
 RShift & -::
-Space & -::
 	mbind_minus()
 return
 
@@ -568,7 +531,6 @@ LControl & =::
 RControl & =::
 LShift & =::
 RShift & =::
-Space & =::
 	mbind_equal()
 return
 
@@ -583,7 +545,6 @@ LControl & \::
 RControl & \::
 LShift & \::
 RShift & \::
-Space & \::
 	mbind_backslash()
 return
 
@@ -599,7 +560,6 @@ LControl & `;::
 RControl & `;::
 LShift & `;::
 RShift & `;::
-Space & `;::
 	mbind_semicolon()
 return
 
@@ -614,7 +574,6 @@ LControl & '::
 RControl & '::
 LShift & '::
 RShift & '::
-Space & '::
 	mbind_quote()
 return
 
@@ -629,7 +588,6 @@ LControl & .::
 RControl & .::
 LShift & .::
 RShift & .::
-Space & .::
 	mbind_period()
 return
 
@@ -644,7 +602,6 @@ LControl & ,::
 RControl & ,::
 LShift & ,::
 RShift & ,::
-Space & ,::
 	mbind_camma()
 return
 
@@ -659,7 +616,6 @@ LControl & /::
 RControl & /::
 LShift & /::
 RShift & /::
-Space & /::
 	mbind_slash()
 return
 
@@ -674,7 +630,6 @@ vkEBsc07B & [::
 RControl & [::
 RShift & [::
 LShift & [::
-Space & [::
 	mbind_bracket_left()
 return
 
@@ -689,6 +644,5 @@ vkEBsc07B & ]::
 RControl & ]::
 RShift & ]::
 LShift & ]::
-Space & ]::
 	mbind_bracket_right()
 return
