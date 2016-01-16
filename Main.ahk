@@ -8,7 +8,6 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #include %A_ScriptDir%\myAHKComponents\Library\Macro.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\WinD.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\IntelliScroll.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\MyFuncLock.ahk
 ;KANAマウス設定
 #include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
 
@@ -16,21 +15,6 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 `::Delete
 Delete::`
 RAlt::RWin
-
-;Lock解除
-vkFFsc079::
-	global myFuncPressed
-	if myFuncPressed = 1
-		MyFuncLock()
-return
-;Lock解除、$マークで再帰呼び出し防止
-$Esc::
-	global myFuncPressed
-	if myFuncPressed = 1
-		MyFuncLock()
-	else
-		Send,{Esc}
-return
 
 ;Reload/Suspend AHK
 RAlt & ,::Reload
