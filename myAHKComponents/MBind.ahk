@@ -480,9 +480,29 @@ mbind_slash(){
 		press("/")
 }
 
-mbind_space(){
-	if CAPS()
+;Spaceキー押し下げ時のOS時間
+spaceDownTime:=0
+;Spaceキー押し下げ判定（Space連打防止）
+spaceDownFlag:=0
+mbind_space_down(){
+	global spaceDownTime
+	global spaceDownFlag
+	if(spaceDownFlag == 0){
+		spaceDownTime := A_TickCount
+		spaceDownFlag := 1
+	}
+}
+
+mbind_space_up(){
+	if RCMD()
+		Send,{}
+	else if CAPS()
 		press("^{Space}")
-	else
-		press("{Space}")
+	else{
+		global spaceDownTime
+		if(A_TickCount - spaceDownTime < 400)
+			press("{Space}")
+	}
+	global spaceDownFlag
+	spaceDownFlag := 0
 }

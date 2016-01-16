@@ -42,9 +42,9 @@ vkFFsc079 & `::
 	Send,{BackSpace}
 return
 
-;SandS。Space押上げでSpaceキーActivateとSpace押しキャンセル用のTab
-*Space::mbind_space()
-Space & Tab::return
+;Space機能
+*Space::mbind_space_down()
+*Space Up::mbind_space_up()
 
 ;ReturnにGUIフック
 ~Return::
