@@ -4,7 +4,7 @@ LCMD(){
 	return GetKeyState("vkEBsc07B", "P")
 }
 RCMD(){
- 	return SPACE() || GetKeyState("vkFFsc079", "P")
+	return myFuncIsOn() || GetKeyState("vkFFsc079", "P")
 }
 CAPS(){
 	return GetKeyState("LControl","P")
