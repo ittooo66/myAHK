@@ -8,6 +8,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #include %A_ScriptDir%\myAHKComponents\Library\Macro.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\WinD.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\IntelliScroll.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\MouseControl.ahk
 ;KANAマウス設定
 #include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
 
