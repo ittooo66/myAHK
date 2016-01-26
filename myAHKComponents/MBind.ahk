@@ -102,7 +102,7 @@ mbind_i(){
 		if !activateWindow("OpusApp","","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
 	}else if RCMD() || CAPS()
-		press("{Numpad8}")
+		press("8")
 	else
 		press("i")
 }
@@ -116,7 +116,7 @@ mbind_j(){
 	else if CAPS() && RCMD()
 		download()
 	else if RCMD() || CAPS()
-		press("{Numpad4}")
+		press("4")
 	else
 		press("j")
 }
@@ -128,7 +128,7 @@ mbind_k(){
 	}else if RSHIFT() && LSHIFT()
 		Send,{RButton}
 	else if RCMD() || CAPS()
-		press("{Numpad5}")
+		press("5")
 	else
 		press("k")
 }
@@ -143,14 +143,14 @@ mbind_l(){
 	}else if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
 	else if RCMD() || CAPS()
-		press("{Numpad6}")
+		press("6")
 	else
 		press("l")
 }
 
 mbind_m(){
 	if RCMD() || CAPS()
-		press("{Numpad1}")
+		press("1")
 	else if RALT()
 		return ;最小化無効
 	else
@@ -162,7 +162,7 @@ mbind_n(){
 		if !activateWindow("Notepad","","")
 			run "C:\Windows\System32\notepad.exe"
 	}else if RCMD() || CAPS()
-		press("{Numpad0}")
+		press("0")
 	else
 		press("n")
 }
@@ -174,7 +174,7 @@ mbind_o(){
 	}else if RSHIFT() && LSHIFT()
 		Send,{WheelLeft}
 	else if RCMD() || CAPS()
-		press("{Numpad9}")
+		press("9")
 	else
 		press("o")
 }
@@ -246,7 +246,7 @@ mbind_t(){
 
 mbind_u(){
 	if RCMD() || CAPS()
-		press("{Numpad7}")
+		press("7")
 	else
 		press("u")
 }
@@ -457,7 +457,7 @@ mbind_quote(){
 
 mbind_period(){
 	if RCMD() || CAPS(){
-		press("{Numpad3}")
+		press("3")
 	}else if RSHIFT() && LSHIFT()
 		Send, {PgUp}
 	else
@@ -466,7 +466,7 @@ mbind_period(){
 
 mbind_camma(){
 	if RCMD() || CAPS()
-		press("{Numpad2}")
+		press("2")
 	else
 		press(",")
 }
