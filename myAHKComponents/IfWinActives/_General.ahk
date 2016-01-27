@@ -31,3 +31,21 @@
 	^L::SendInput , {Esc}cls{Enter}
 	vkEBsc07B & q::SendInput , {Esc}exit{Enter}
 #IfWinActive
+
+;AdobeAcrobatReader
+#IfWinActive,ahk_class AcrobatSDIWindow
+	RButton & WheelUp::send,^+{Tab}
+	RButton & WheelDown::send,^{Tab}
+	LControl & s::
+		if LCMD()
+			Send,^+{Tab}
+		else
+			mbind_s()
+	return
+	LControl & f::
+		if LCMD()
+			Send,^{Tab}
+		else
+			mbind_f()
+	return
+#IfWinActive
