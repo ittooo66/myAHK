@@ -25,7 +25,7 @@ ALT(){
 	return RALT() || LALT()
 }
 RALT(){
-	return GetKeyState("RAlt","P")
+	return GetKeyState("RWin","P")
 }
 LALT(){
 	return GetKeyState("LAlt","P")

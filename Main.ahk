@@ -12,18 +12,13 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;KANAマウス設定
 #include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
 
-;基本配置変更
-`::Delete
-Delete::`
-RAlt::RWin
-
 ;Reload/Suspend AHK
-RAlt & ,::Reload
-RAlt & .::Suspend
+RWin & ,::Reload
+RWin & .::Suspend
 
 ;AltTab
-RAlt & ]::AltTab
-RAlt & [::ShiftAltTab
+RWin & ]::AltTab
+RWin & [::ShiftAltTab
 
 ;IME
 vkEBsc07B & Space::Send,!{``}
