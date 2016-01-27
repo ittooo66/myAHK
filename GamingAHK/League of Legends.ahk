@@ -5,5 +5,3 @@ Menu, Tray, Icon, C:\Users\AHK\Dropbox\bcd\AHK\GamingAHK\League of Legends.ico, 
 #IfWinActive,ahk_class RiotWindowClass
     vkEBsc07B::Alt
 #IfWinActive
-
-Ralt & /::Reload
