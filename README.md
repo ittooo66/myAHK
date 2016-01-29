@@ -1,6 +1,6 @@
 my[AHK][AHK]
 ======================
-### おれおれキーバインド。###
+### Reinvent Key Bindings !###
 
     Main.ahk          :実行ファイル
     README.md         :各AHKの役割  
@@ -39,26 +39,42 @@ IME切り替え用AHK。つよい。べんり。
 
 など。
 
-各種注意
+外部依存
 ----------------
 1. HHKBのDIPスイッチ  
 2と6がON
 
-1. あらかじめ[EnableUIAccess][EnableUIAccess]してから、起動する
+1. レジストリ周りの依存([Chgkey.exe][Chgkey.exe]の使用)  
 
-1. レジストリ周りの依存  
-両Winキー（ダイヤ部）を変換、無変換に変更（Chgkey.exeを使用した）
+変換一覧
+```
+RWin           -> 変換(vkFFsc079)
+LWin           -> 無変換(vkEBsc07B)
+`(半角/全角)    -> Del
+Del            -> `(半角/全角)
+RAlt           -> RWin
+```
+
+諸注意
+----------------
+
+1. あらかじめ[EnableUIAccess][EnableUIAccess]してから、起動する
+もしくは管理者権限で起動。UAC周りの問題が山積してるのであとでどうにかすること．  
+    + 管理者実行の時にCOM周りが機能不全になる問題（PPT,Excelのスクロール問題）
+    + 非管理者実行では管理者権限APPにBindが刺さらない問題
 
 1. CRLF or LF  
 LFだとAHKが改行認識できないのかパースおかしくなってすんごいたくさんエラー出る。`git clone`はそのへん宜しくやってくれるっぽいけどZipダウンロードの時は注意
 
 1. 実行順序  
-一番下が優先されるスタイルの模様。Karabinerと逆？強烈なバインドはなるべく上の方に来るように書く。#includeは宣言場所で展開されるようなので、このルールを踏まえ、展開場所に注意
+一番下が優先されるスタイルの模様。Karabinerと逆？強烈なバインドはなるべく上の方に来るように書く。#includeは宣言場所で展開されるようなので、このルールを踏まえ、展開場所に注意  
+    たぶん干渉は存在しておらず？IfWinActiveの優先順位が高いだけで実行優先度は行数に依存はしていない？
 
 1. 修飾キー周り  
 略記法(>+)と正式記法(RShift &)でフック力が違うのか等価の挙動にならない（略記のが低層フック？）。使用の際は注意を
 
 1. フック負けリスト
+
   + IME周り：Alt+\`,Ctrl+\`には勝てない模様。
   + Win+L(画面ロック),Win+Enter(ナレーター), ともにレジストリいじってオフにはできる
   + Windowsキー押上：3キー入力（e.g. LWin+RWin+g）時にフック力が足りずバインドからはみ出る。結果、Windowsメニューを開く事故が頻発。解決策がないためレジストリからLWin,RWinを無変換・変換に変更。
@@ -68,7 +84,7 @@ LFだとAHKが改行認識できないのかパースおかしくなってすん
 
 
 1. AHK Version
-  +Lのほうじゃないともう多分動かない（PPT,EXCELのスクロールにCOMつかってるため）
+  + Lのほうじゃないともう多分動かない（PPT,EXCELのスクロールにCOMつかってるため）
 
 
 
@@ -77,3 +93,4 @@ LFだとAHKが改行認識できないのかパースおかしくなってすん
 [IME.ahk]: http://www6.atwiki.jp/eamat/pages/17.html
 [MouseGestureL]: http://hp.vector.co.jp/authors/VA018351/mglahk.html
 [EnableUIAccess]: http://www.autohotkey.com/board/topic/70449-enable-interaction-with-administrative-programs/
+[Chgkey.exe]:http://www.forest.impress.co.jp/library/software/changekey/
