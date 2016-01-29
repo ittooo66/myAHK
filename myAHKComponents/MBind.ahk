@@ -494,7 +494,7 @@ mbind_space_down(){
 }
 
 mbind_space_up(){
-	if RCMD()
+	if LCMD() || RCMD()
 		Send,{}
 	else if CAPS()
 		press("^{Space}")
