@@ -646,3 +646,7 @@ RShift & ]::
 LShift & ]::
 	mbind_bracket_right()
 return
+
+;Space機能
+*Space::mbind_space_down()
+*Space Up::mbind_space_up()

@@ -2,27 +2,15 @@
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
-;Library(バインドは持たないがグローバル変数の干渉に注意。
-#include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\_STD.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\Macro.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\WinD.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\IntelliScroll.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\MouseControl.ahk
-;KANAマウス設定
-#include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
 
 ;Reload/Suspend AHK
 RWin & ,::Reload
 RWin & .::Suspend
-
 ;AltTab
 RWin & ]::AltTab
 RWin & [::ShiftAltTab
-
 ;IME
 vkEBsc07B & Space::Send,!{``}
-
 ;諸々微調整
 LControl & Esc::Send,{Delete}
 
@@ -32,15 +20,11 @@ vkFFsc079 & BackSpace::
 	HistoricalClip_stackCopy()
 	Send,{BackSpace}
 return
-vkFFsc079 & `::
+vkFFsc079 & Delete::
 	Send,+{END}
 	HistoricalClip_stackCopy()
 	Send,{BackSpace}
 return
-
-;Space機能
-*Space::mbind_space_down()
-*Space Up::mbind_space_up()
 
 ;ReturnにGUIフック
 ~Return::
@@ -48,11 +32,19 @@ return
 		HistoricalClip_return()
 return
 
+;Library(バインドは持たないがグローバル変数の干渉に注意。
+#include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\_STD.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\Macro.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\WinD.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\IntelliScroll.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\MouseControl.ahk
+;KANAマウス設定
+#include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
 ;もろもろバインドとリスナー
 #include %A_ScriptDir%\myAHKComponents\MBindListener.ahk
 #include %A_ScriptDir%\myAHKComponents\MBindSetting.ahk
 #include %A_ScriptDir%\myAHKComponents\MBind.ahk
-
 ;IfWinActives
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\_General.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\Explorer.ahk
