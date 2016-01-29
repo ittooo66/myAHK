@@ -1,33 +1,33 @@
 ;仮想修飾キー一覧
 
-LCMD(){
+LCMD(){ ;HHKB_左ダイヤ
 	return GetKeyState("vkEBsc07B", "P")
 }
-RCMD(){
+RCMD(){ ;HHKB_右ダイヤ
 	return GetKeyState("vkFFsc079", "P")
 }
-CAPS(){
+CAPS(){ ;HHKB_Control
 	return GetKeyState("LControl","P")
 }
-SHIFT(){
+SHIFT(){ ;HHKB_両Shift
 	return LSHIFT() || RSHIFT()
 }
-LSHIFT(){
+LSHIFT(){ ;HHKB_左シフト
 	return GetKeyState("LShift","P")
 }
-RSHIFT(){
+RSHIFT(){ ;HHKB_右シフト
 	return GetKeyState("RShift","P")
 }
-SPACE(){
+SPACE(){ ;HHKB_スペース
 	return GetKeyState("Space","P")
 }
-ALT(){
+ALT(){ ;HHKB_両Alt
 	return RALT() || LALT()
 }
-RALT(){
+RALT(){ ;HHKB_右Alt
 	return GetKeyState("RWin","P")
 }
-LALT(){
+LALT(){ ;HHKB_左Alt
 	return GetKeyState("LAlt","P")
 }
 
