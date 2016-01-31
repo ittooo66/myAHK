@@ -449,7 +449,9 @@ mbind_semicolon(){
 }
 
 mbind_quote(){
-	if RCMD() || CAPS()
+	if RSHIFT() && LSHIFT()
+		Send,{MButton}
+	else if RCMD() || CAPS()
 		press("{*}")
 	else
 		press("'")
