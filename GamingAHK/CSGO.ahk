@@ -6,5 +6,3 @@ Menu, Tray, Icon, C:\Users\AHK\Dropbox\bcd\AHK\GamingAHK\CSGO.ico, 1
     XButton1::XButton1
     XButton2::XButton2
 #IfWinActive
-
->+<+Return::Exit
