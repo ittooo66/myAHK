@@ -43,12 +43,33 @@ HistoricalClip_openWindow(){
 	;表示
 	Loop, 10
 	{
+		;選択中か否かで配色設定の変更
 		if(index = A_Index){
 			Gui, Font, s13 cRed
-		}else
+		}else{
 			Gui, Font, s13 cWhite
-		FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%A_Index%.txt
-		Gui, Add, Text, , %file%
+		}
+
+		;file,indexを用意
+		file =
+		loopIndex := 0
+
+		;Clipboardファイルから１行づつ取得
+		Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%A_Index%.txt
+		{
+			;Clipboardファイルからfileに追加
+			file =%file%%A_LoopReadLine%
+			if (loopIndex = 5){
+				;5行以上は省略
+				file =%file%+[.....]
+				break
+			}else{
+				;改行追加してIndex加算
+				file =%file%`r`n
+				loopIndex++
+			}
+		}
+		Gui, Add, Text, ,%file%
 	}
 
 	;Window周りの設定
