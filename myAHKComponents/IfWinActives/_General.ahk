@@ -49,3 +49,8 @@
 			mbind_f()
 	return
 #IfWinActive
+
+;PhotoViewer
+#IfWinActive, ahk_class Photo_Lightweight_Viewer
+	RButton & XButton1::Send,!{F4}
+#IfWinActive
