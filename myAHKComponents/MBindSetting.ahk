@@ -41,6 +41,7 @@ press(key){
 	if LALT()
 		modifiers = %modifiers%!
 	if RALT()
-		modifiers = %modifiers%`#
-	Send,%modifiers%%key%
+		Send,{RWin down}%modifiers%%key%{RWin up}
+	else
+		Send,%modifiers%%key%
 }
