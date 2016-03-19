@@ -20,4 +20,20 @@
 			mbind_w()
 	return
 
+	;コピーして検索
+	>^g::
+	<^g::
+	LControl & g::
+	vkEBsc07B & g::
+		if LCMD() && CAPS(){
+			send,^{c}
+			sleep, 100
+			send,^{t}
+			sleep, 100
+			send,^{v}
+			sleep, 100
+			send,{return}
+		}else
+			mbind_g()
+	return
 #IfWinActive
