@@ -8,10 +8,10 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;KeyModifier監視用
 SetTimer, ModifierBrowse, 20
 ;JoyPadの各スティックポーリング
-SetTimer, WatchX, 20  ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchY, 20  ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchZ, 20  ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchR, 20  ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
 
 ;Reload/Suspend AHK
 RWin & ,::Reload
@@ -30,6 +30,7 @@ vkFFsc079 & Delete::lineDel("END")
 
 ;ReturnにGUIフック
 ~Return::
+	global historicalClipIsOn
 	if (historicalClipIsOn = 1)
 		HistoricalClip_return()
 return
@@ -63,4 +64,5 @@ return
 #include %A_ScriptDir%\myAHKComponents\Library\ModifierBrowser.ahk
 #include %A_ScriptDir%\myAHKComponents\JoyPadControl\WheelControl.ahk
 #include %A_ScriptDir%\myAHKComponents\JoyPadControl\MouseControl.ahk
+#include %A_ScriptDir%\myAHKComponents\JoyPadControl\CrossControl.ahk
 
