@@ -5,7 +5,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 
 ;KeyModifier監視用
 #Persistent
-SetTimer,OnTimer,20
+SetTimer, ModifierBrowse, 20
 
 ;Reload/Suspend AHK
 RWin & ,::Reload

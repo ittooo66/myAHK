@@ -3,10 +3,10 @@ GuiEscape:
  historicalClip_closeWindow()
 return
 
+;修飾キーブラウザ
 modifierBrowseIsOn := 0
-
 ;押しっぱなし現象可視化用
-OnTimer:
+ModifierBrowse:
 	global modifierBrowseIsOn
 	if (modifierBrowseIsOn == 0 )
 		return
