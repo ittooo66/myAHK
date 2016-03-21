@@ -1,46 +1,114 @@
 ;AButton
-Joy1::
+;Joy1::return
 ;BButton
-Joy2::
+;Joy2::return
 ;XButton
-Joy4::
+;Joy4::return
 ;YButton
-Joy5::
+;Joy5::return
+
 ;L1Button(XButton1)
-joy7IsUsed := false
 Joy7::
-	global joy7IsUsed
-	joy7IsUsed := false
+	pressJoy7()
 	KeyWait Joy7
 	if(!joy7IsUsed){
-		Send,{XButton1}
+		if GetKeyState("Joy8","P"){
+			useJoy8()
+			Send,#{Tab}
+		}else if GetKeyState("Joy10","P"){
+			useJoy10()
+			Send,^{w}
+		}else
+			Send,{XButton1}
 	}
 return
 ;R1Button
 Joy8::
-	Send,{XButton2}
+	KeyWait Joy8
+	if GetKeyState("Joy7","P"){
+		useJoy7()
+		Send,#{Tab}
+	}else if GetKeyState("Joy10","P"){
+		useJoy10()
+		Send,^+{t}
+	}else
+		Send,{XButton2}
 return
 ;L2Button
 Joy9::
-	if GetKeyState("Joy10","P")
+	if GetKeyState("Joy10","P"){
+		useJoy10()
 		Send,!{p}
-	else if GetKeyState("Joy7","P")
+	}else if GetKeyState("Joy7","P"){
+		useJoy7()
 		Run, "C:\Users\AHK\Dropbox\Entrance"
-	else{
+	}else{
 		Send,{LButton Down}
-		KeyWait Joy9
-		Send,{LButton Up}
+		;KeyWaitだとThread固めるのでこっちで対処
+		SetTimer, WaitforButtonUp9, 10
 	}
 return
 
+WaitforButtonUp9:
+	if GetKeyState("Joy9")
+		return
+	Send,{LButton Up}
+	SetTimer, WaitforButtonUp9, off
+return
+
 ;R2Button
-joy10IsUsed := false
 Joy10::
-	global joy10IsUsed
-	joy10IsUsed := false
+	pressJoy10()
 	KeyWait Joy10
 	if(!joy10IsUsed){
-		Click, Right
+		if GetKeyState("Joy8","P"){
+			useJoy8()
+			Send,{MButton Down}
+			while(GetKeyState("Joy8","P")&&GetKeyState("Joy10","P")){
+				sleep,30
+			}
+			Send,{MButton Up}
+		}else if GetKeyState("Joy7","P"){
+			useJoy7()
+			Send,{RWin}
+		}else
+			Click, Right
 	}
 return
-;Joy10 & Joy9::Send,!{p}
+
+joy7IsUsed := false
+useJoy7(){
+	global joy7IsUsed
+	joy7IsUsed := true
+}
+pressJoy7(){
+	global joy7IsUsed
+	joy7IsUsed := false
+}
+joy8IsUsed := false
+useJoy8(){
+	global joy8IsUsed
+	joy8IsUsed := true
+}
+pressJoy8(){
+	global joy8IsUsed
+	joy8IsUsed := false
+}
+joy9IsUsed := false
+useJoy9(){
+	global joy9IsUsed
+	joy9IsUsed := true
+}
+pressJoy9(){
+	global joy9IsUsed
+	joy9IsUsed := false
+}
+joy10IsUsed := false
+useJoy10(){
+	global joy10IsUsed
+	joy10IsUsed := true
+}
+pressJoy10(){
+	global joy10IsUsed
+	joy10IsUsed := false
+}
