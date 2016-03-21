@@ -1,7 +1,4 @@
-;SteelSeries:KANAマウス設定用
-
-;window変更中フラグ,押しっぱなし病起きてる？ので防止用
-windowChanging := false
+;SteelSeries:KANAマウス設定
 
 ;Default
 RButton::Send,{RButton}
@@ -10,24 +7,8 @@ XButton1::Send,{XButton1}
 MButton::winD()
 
 ;ウィンドウ変更
-XButton1 & WheelUp::
-	global windowChanging
-	if(!windowChanging){
-		windowChanging := true
-		Send,^#{Left}
-		sleep,100
-		windowChanging := false
-	}
-return
-XButton1 & WheelDown::
-	global windowChanging
-	if(!windowChanging){
-		windowChanging := true
-		Send,^#{Right}
-		sleep,100
-		windowChanging := false
-	}
-return
+XButton1 & WheelUp::windowChange("Left")
+XButton1 & WheelDown::windowChange("Right")
 ;横スクロール
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
@@ -50,6 +31,8 @@ RButton & XButton2::Send,^+{t}
 RButton & MButton::Send,^{t}
 ;Pin tab
 RButton & LButton::Send,!{p}
+
+
 ;ホイールクリック
 XButton2 & LButton::intelliScroll()
 ;Winキー

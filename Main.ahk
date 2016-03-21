@@ -3,8 +3,9 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
 
-;KeyModifier監視用
+;SetTimer有効化
 #Persistent
+;KeyModifier監視用
 SetTimer, ModifierBrowse, 20
 
 ;Reload/Suspend AHK
@@ -15,20 +16,12 @@ RWin & ]::AltTab
 RWin & [::ShiftAltTab
 ;IME
 vkEBsc07B & Space::Send,!{``}
-;諸々微調整
+;delete
 LControl & Esc::Send,{Delete}
 
 ;一行消し（両サイド）
-vkFFsc079 & BackSpace::
-	Send,+{HOME}
-	HistoricalClip_stackCopy()
-	Send,{BackSpace}
-return
-vkFFsc079 & Delete::
-	Send,+{END}
-	HistoricalClip_stackCopy()
-	Send,{BackSpace}
-return
+vkFFsc079 & BackSpace::lineDel("HOME")
+vkFFsc079 & Delete::lineDel("END")
 
 ;ReturnにGUIフック
 ~Return::
@@ -58,6 +51,6 @@ return
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\Atom.ahk
 
 return
-;以下、GUIのラベル等、初回起動では不要なやつら
+;以下、GUIのラベル等、初回起動では不要なやつら。SetTimerでポーリングした対象がメイン
 #include %A_ScriptDir%\myAHKComponents\GUILabel.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\ModifierBrowser.ahk
