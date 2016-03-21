@@ -7,6 +7,11 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #Persistent
 ;KeyModifier監視用
 SetTimer, ModifierBrowse, 20
+;JoyPadの各スティックポーリング
+SetTimer, WatchX, 20  ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchY, 20  ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchZ, 20  ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchR, 20  ;実際内部的には30ms毎くらいで回ってる模様
 
 ;Reload/Suspend AHK
 RWin & ,::Reload
@@ -49,8 +54,13 @@ return
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\Atom.ahk
+;JoyPadControl
+#include %A_ScriptDir%\myAHKComponents\JoyPadControl\ButtonControl.ahk
 
 return
 ;以下、GUIのラベル等、初回起動では不要なやつら。SetTimerでポーリングした対象がメイン
 #include %A_ScriptDir%\myAHKComponents\GUILabel.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\ModifierBrowser.ahk
+#include %A_ScriptDir%\myAHKComponents\JoyPadControl\WheelControl.ahk
+#include %A_ScriptDir%\myAHKComponents\JoyPadControl\MouseControl.ahk
+
