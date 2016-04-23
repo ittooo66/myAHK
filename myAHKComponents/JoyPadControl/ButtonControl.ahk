@@ -76,6 +76,23 @@ Joy10::
 	}
 return
 
+;R3Button
+Joy15::
+	pressJoy15()
+	KeyWait Joy15
+	if(!joy15IsUsed){
+		if GetKeyState("Joy10","P"){
+			useJoy10()
+			Send,^{t}
+		}else if GetKeyState("Joy8","P"){
+			useJoy8()
+			Reload
+		}else{
+			winD()
+		}
+	}
+return
+
 joy7IsUsed := false
 useJoy7(){
 	global joy7IsUsed
@@ -111,4 +128,13 @@ useJoy10(){
 pressJoy10(){
 	global joy10IsUsed
 	joy10IsUsed := false
+}
+joy15IsUsed := false
+useJoy15(){
+	global joy15IsUsed
+	joy15IsUsed := true
+}
+pressJoy15(){
+	global joy15IsUsed
+	joy15IsUsed := false
 }

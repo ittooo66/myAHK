@@ -27,6 +27,6 @@ WatchXY:
 		MoveY := MoveY*3
 	}
 
-	MouseMove, %MoveX%,%MoveY%,0,R
+	MouseMove, %MoveX%,%MoveY%,1,R
 
 return
