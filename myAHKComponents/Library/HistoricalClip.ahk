@@ -34,9 +34,9 @@ HistoricalClip_openWindow(){
 	}
 
 	;GUI初期化
-	GUI, Destroy
+	Gui, Destroy
 	;常に最前面に表示
-	Gui +AlwaysOnTop
+	Gui, +AlwaysOnTop
 	;GUI背景色の変更
 	Gui, Color, 0x404040
 
@@ -44,7 +44,7 @@ HistoricalClip_openWindow(){
 	Loop, 10
 	{
 		;選択中か否かで配色設定の変更
-		if(index = A_Index){
+		if(index == A_Index){
 			Gui, Font, s13 cRed
 		}else{
 			Gui, Font, s13 cWhite
