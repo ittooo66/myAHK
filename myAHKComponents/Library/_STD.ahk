@@ -177,3 +177,18 @@ windowChange(direction){
 		_STDWindowChanging := false
 	}
 }
+
+;サウンドデバイス変更
+;（イヤホン：Num=0、スピーカ：Num=1）
+changeSound(Num){
+	run, control mmsys.cpl
+	sleep,800
+	activateWindow("#32770","","")
+	Send,{Up}{Up}{Up}{Up}
+	Loop, %Num%
+	{
+		Send,{Down}
+	}
+	Send,!{s}
+	Send,{Return}
+}
