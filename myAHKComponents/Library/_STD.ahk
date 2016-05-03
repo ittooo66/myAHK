@@ -180,7 +180,7 @@ windowChange(direction){
 
 ;サウンドデバイス変更
 ;（イヤホン：Num=0、スピーカ：Num=1）
-changeSound(Num){
+changeSoundDevice(Num){
 	run, control mmsys.cpl
 	sleep,800
 	activateWindow("#32770","","")

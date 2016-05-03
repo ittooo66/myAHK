@@ -102,7 +102,7 @@ mbind_i(){
 		if !activateWindow("OpusApp","","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
 	}else if RCMD() && CAPS()
-		changeSound("0")
+		changeSoundDevice("0")
 	else if RCMD() || CAPS()
 		press("8")
 	else
@@ -174,7 +174,7 @@ mbind_o(){
 		if !activateWindow("XLMAIN","","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\excel.exe"
 	}else if RCMD() && CAPS()
-		changeSound("1")
+		changeSoundDevice("1")
 	else if RSHIFT() && LSHIFT()
 		Send,{WheelLeft}
 	else if RCMD() || CAPS()
