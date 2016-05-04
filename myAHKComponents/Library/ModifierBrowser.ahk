@@ -1,35 +1,38 @@
-;修飾キーブラウザ
-modifierBrowseIsOn := 0
-;押しっぱなし現象可視化用
+;押下中修飾キー表示機能（押しっぱなし現象可視化用）
 ModifierBrowse:
+	;表示モード検出
 	global modifierBrowseIsOn
-	if (modifierBrowseIsOn == 0 )
+	if (modifierBrowseIsOn != 1)
 		return
 
-	commands := ""
+	;Modifier文字列生成
+	mods := ""
 	if RCMD()
-		commands := commands . "RCMD()"
+		mods := mods . "RCMD()"
 	if LCMD()
-		commands := commands . "LCMD()"
+		mods := mods . "LCMD()"
 	if ALT()
-		commands := commands . "ALT()"
+		mods := mods . "ALT()"
 	if CAPS()
-		commands := commands . "CAPS()"
+		mods := mods . "CAPS()"
 	if SPACE()
-		commands := commands . "SPACE()"
+		mods := mods . "SPACE()"
 	if SHIFT()
-		commands := commands . "SHIFT()"
+		mods := mods . "SHIFT()"
 	if GetKeyState("XButton1","P")
-		commands := commands . "XB1()"
+		mods := mods . "XB1()"
 	if GetKeyState("XButton2","P")
-		commands := commands . "XB2()"
+		mods := mods . "XB2()"
 
-	Tooltip, %commands%
+	;Modifier出力
+	Tooltip, %mods%
+
 return
 
+;修飾キー表示機能トグル
 modifierBrowseToggle(){
 	global modifierBrowseIsOn
-	if (modifierBrowseIsOn == 0)
+	if (modifierBrowseIsOn != 1)
 		modifierBrowseIsOn := 1
 	else{
 		modifierBrowseIsOn := 0
