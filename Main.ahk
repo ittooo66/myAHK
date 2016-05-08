@@ -55,6 +55,7 @@ return
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
 #include %A_ScriptDir%\myAHKComponents\IfWinActives\Atom.ahk
+#include %A_ScriptDir%\myAHKComponents\IfWinActives\Explorer.ahk
 ;JoyPadControl
 #include %A_ScriptDir%\myAHKComponents\JoyPadControl\ButtonControl.ahk
 
