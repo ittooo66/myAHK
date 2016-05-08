@@ -30,8 +30,7 @@ vkFFsc079 & Delete::lineDel("END")
 
 ;ReturnにGUIフック
 ~Return::
-	global historicalClipIsOn
-	if (historicalClipIsOn = 1)
+	if HistoricalClip_isDisplayed()
 		HistoricalClip_return()
 return
 

@@ -34,7 +34,7 @@ mbind_d(){
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if RCMD() || CAPS(){
-		if historicalClipIsOn()
+		if HistoricalClip_isDisplayed()
 			HistoricalClip_down()
 		else
 			press("{DOWN}")
@@ -51,7 +51,7 @@ mbind_e(){
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
-		if historicalClipIsOn()
+		if HistoricalClip_isDisplayed()
 			HistoricalClip_up()
 		else
 			press("{UP}")
@@ -242,7 +242,7 @@ mbind_t(){
 		if !activateWindow("ConsoleWindowClass","","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 	}else if RCMD() || CAPS(){
-		if historicalClipIsOn()
+		if HistoricalClip_isDisplayed()
 			HistoricalClip_return()
 		else
 			press("{return}")

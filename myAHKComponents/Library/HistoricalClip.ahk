@@ -1,36 +1,37 @@
 ;選択中の履歴階層の値
-index := 1
+HistoricalClip_index := 1
 
 ;GUIが表示されているかどうかのGlobal変数
-historicalClipIsOn := 0
+HistoricalClip_isDisplayed := 0
+
 ;GUIが表示されているかどうか
-historicalClipIsOn(){
-	global historicalClipIsOn
-	if (historicalClipIsOn = 1)
+HistoricalClip_isDisplayed(){
+	global HistoricalClip_isDisplayed
+	if (HistoricalClip_isDisplayed = 1)
 		return true
 	else
 		return false
 }
 
 HistoricalClip_closeWindow(){
-	global historicalClipIsOn
-	historicalClipIsOn = 0
+	global HistoricalClip_isDisplayed
+	HistoricalClip_isDisplayed = 0
 	GUI, Destroy
 }
 
 ;Windowを開く
 HistoricalClip_openWindow(){
 	;historicalClipフラグを上げる
-	global historicalClipIsOn
-	historicalClipIsOn = 1
+	global HistoricalClip_isDisplayed
+	HistoricalClip_isDisplayed = 1
 
-	;index値取得・調整
-	global index
+	;HistoricalClip_index値取得・調整
+	global HistoricalClip_index
 	;枠内調整
-	if(index<1){
-		index:=1
-	}else if(index>10){
-		index:=10
+	if(HistoricalClip_index<1){
+		HistoricalClip_index:=1
+	}else if(HistoricalClip_index>10){
+		HistoricalClip_index:=10
 	}
 
 	;GUI初期化
@@ -44,7 +45,7 @@ HistoricalClip_openWindow(){
 	Loop, 10
 	{
 		;選択中か否かで配色設定の変更
-		if(index == A_Index){
+		if(HistoricalClip_index == A_Index){
 			Gui, Font, s13 cRed
 		}else{
 			Gui, Font, s13 cWhite
@@ -84,32 +85,32 @@ HistoricalClip_openWindow(){
 
 ;上に移動
 HistoricalClip_up(){
-	global index
-	index--
+	global HistoricalClip_index
+	HistoricalClip_index--
 	HistoricalClip_openWindow()
 }
 
 ;下に移動
 HistoricalClip_down(){
-	global index
-	index++
+	global HistoricalClip_index
+	HistoricalClip_index++
 	HistoricalClip_openWindow()
 }
 
 ;決定
 HistoricalClip_return(){
-	global index
+	global HistoricalClip_index
 	Gui, show, Hide
 	cb_bk = %ClipboardAll%
-	FileRead, Clipboard , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%index%.txt
+	FileRead, Clipboard , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.txt
 	ClipWait
 	Send,^v
 	Sleep,300
 	Clipboard = %cb_bk%
 
 	;historicalClipフラグを下げる
-	global historicalClipIsOn
-	historicalClipIsOn = 0
+	global HistoricalClip_isDisplayed
+	HistoricalClip_isDisplayed = 0
 }
 
 ;コピーをスタックする
