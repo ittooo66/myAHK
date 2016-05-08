@@ -34,35 +34,37 @@ vkFFsc079 & Delete::lineDel("END")
 		HistoricalClip_return()
 return
 
-;Library(バインドは持たないがグローバル変数の干渉に注意。
-#include %A_ScriptDir%\myAHKComponents\Library\HistoricalClip.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\_STD.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\Macro.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\WinD.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\IntelliScroll.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\MouseControl.ahk
+;include参照先をmyAHKComponents直下に
+#include %A_ScriptDir%\myAHKComponents
+;Library(バインドは持たないがグローバル変数の干渉に注意)
+#include Library\HistoricalClip.ahk
+#include Library\_STD.ahk
+#include Library\Macro.ahk
+#include Library\WinD.ahk
+#include Library\IntelliScroll.ahk
+#include Library\MouseControl.ahk
 ;KANAマウス設定
-#include %A_ScriptDir%\myAHKComponents\KANAMouse.ahk
+#include KANAMouse.ahk
 ;もろもろバインドとリスナー
-#include %A_ScriptDir%\myAHKComponents\MBindListener.ahk
-#include %A_ScriptDir%\myAHKComponents\MBindSetting.ahk
-#include %A_ScriptDir%\myAHKComponents\MBind.ahk
-;IfWinActives
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\_General.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\Excel.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\Chrome.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\PowerPoint.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\IntelliJ.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\Atom.ahk
-#include %A_ScriptDir%\myAHKComponents\IfWinActives\Explorer.ahk
+#include MBindListener.ahk
+#include MBindSetting.ahk
+#include MBind.ahk
+;IfWinActives(特定Window/App上で有効になるバインドセット)
+#include IfWinActives\_General.ahk
+#include IfWinActives\Excel.ahk
+#include IfWinActives\Chrome.ahk
+#include IfWinActives\PowerPoint.ahk
+#include IfWinActives\IntelliJ.ahk
+#include IfWinActives\Atom.ahk
+#include IfWinActives\Explorer.ahk
 ;JoyPadControl
-#include %A_ScriptDir%\myAHKComponents\JoyPadControl\ButtonControl.ahk
+#include JoyPadControl\ButtonControl.ahk
 
 return
 ;以下、GUIのラベル等、初回起動では不要なやつら。SetTimerでポーリングした対象がメイン
-#include %A_ScriptDir%\myAHKComponents\GUILabel.ahk
-#include %A_ScriptDir%\myAHKComponents\Library\ModifierBrowser.ahk
-#include %A_ScriptDir%\myAHKComponents\JoyPadControl\WheelControl.ahk
-#include %A_ScriptDir%\myAHKComponents\JoyPadControl\MouseControl.ahk
-#include %A_ScriptDir%\myAHKComponents\JoyPadControl\CrossControl.ahk
+#include GUILabel.ahk
+#include Library\ModifierBrowser.ahk
+#include JoyPadControl\WheelControl.ahk
+#include JoyPadControl\MouseControl.ahk
+#include JoyPadControl\CrossControl.ahk
 
