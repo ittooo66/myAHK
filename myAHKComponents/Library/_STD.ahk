@@ -111,7 +111,7 @@ addAlias(Num){
 	if(class != "CabinetWClass"){
 		return
 	}
-	;一応Clipboard対比しとく
+	;一応Clipboard退避しとく
 	cb_bk = %ClipboardAll%
 	Send,{F2}
 	Send,^{a}
