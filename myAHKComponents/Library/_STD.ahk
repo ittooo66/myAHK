@@ -105,7 +105,7 @@ pasteFrom(Num){
 }
 
 ;ショートカット生成
-addAlias(Num){
+addAlias(num){
 	;Explorer画面以外で暴発しないように
 	WinGetClass, class, A
 	if(class != "CabinetWClass"){
@@ -133,7 +133,7 @@ addAlias(Num){
 }
 
 ;ショートカットを開く
-openAlias(Num){
+openAlias(num){
 	FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
 	run, %file%
 }
@@ -180,7 +180,7 @@ windowChange(direction){
 
 ;サウンドデバイス変更
 ;（イヤホン：Num=0、スピーカ：Num=1）
-changeSoundDevice(Num){
+changeSoundDevice(num){
 	run, control mmsys.cpl
 	sleep,800
 	activateWindow("#32770","","")
