@@ -125,8 +125,8 @@ addAlias(num){
 	Send, ^c
 	ClipWait 1
 	filedir = %clipboard%
-	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
-	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
+	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
 	Clipboard = %cb_bk%
 	Send,{return}
 	Send,+{Tab}+{Tab}
@@ -179,7 +179,7 @@ windowChange(direction){
 }
 
 ;サウンドデバイス変更
-;（イヤホン：Num=0、スピーカ：Num=1）
+;（イヤホン：num=0、スピーカ：num=1）
 changeSoundDevice(num){
 	run, control mmsys.cpl
 	sleep,800
