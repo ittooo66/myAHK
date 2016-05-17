@@ -70,7 +70,7 @@ download(){
 }
 
 ;拡張クリップボード(copy)
-copyTo(Num){
+copyTo(num){
 	;cb_bkに中身を退避
 	cb_bk = %ClipboardAll%
 	;一旦clipboardを空にする
@@ -86,17 +86,17 @@ copyTo(Num){
 		return
 	}
 	;ファイルにClipboardを保存
-	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%Num%.dat
+	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
 	;cb_bkから取得
 	Clipboard = %cb_bk%
 }
 
 ;拡張クリップボード(paste)
-pasteFrom(Num){
+pasteFrom(num){
 	;cb_bkに中身を退避
 	cb_bk = %ClipboardAll%
 	;Clipboardに内容読み込み
-	FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%Num%.dat
+	FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
 	;貼り付け
 	Send,^v
 	;干渉防止のため、貼り付け完了まで一寸待ってClipboardを元に戻す
@@ -134,7 +134,7 @@ addAlias(num){
 
 ;ショートカットを開く
 openAlias(num){
-	FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%Num%.txt
+	FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
 	run, %file%
 }
 
@@ -185,7 +185,7 @@ changeSoundDevice(num){
 	sleep,800
 	activateWindow("#32770","","")
 	Send,{Up}{Up}{Up}{Up}
-	Loop, %Num%
+	Loop, %num%
 	{
 		Send,{Down}
 	}
