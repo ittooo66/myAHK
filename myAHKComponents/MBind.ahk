@@ -241,6 +241,8 @@ mbind_t(){
 	if LCMD() && RCMD(){
 		if !activateWindow("ConsoleWindowClass","","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	}else if RCMD() && CAPS(){
+		ScreenSaver_toggle()
 	}else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed()
 			HistoricalClip_return()

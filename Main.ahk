@@ -5,13 +5,15 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 
 ;SetTimer有効化
 #Persistent
-;KeyModifier監視用
-SetTimer, ModifierBrowse, 20
 ;JoyPadの各スティックポーリング
 SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
 SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
 SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模様
 SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
+;各機能用のTimer
+SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ
+SetTimer, ScreenSaver_CheckAction, 1000 ;未入力タイマー
+SetTimer, Alarm_CheckTime, 1000 ;アラーム時刻チェック
 
 ;Reload/Suspend AHK
 RWin & ,::Reload
@@ -43,6 +45,8 @@ return
 #include Library\WinD.ahk
 #include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
+#include Library\ScreenSaver.ahk
+#include Library\Alarm.ahk
 ;KANAマウス設定
 #include KANAMouse.ahk
 ;もろもろバインドとリスナー
