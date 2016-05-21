@@ -1,8 +1,7 @@
 ;押下中修飾キー表示機能（押しっぱなし現象可視化用）
-ModifierBrowse:
+ModifierBrowser_CheckMods:
 	;表示モード検出
-	global modifierBrowseIsOn
-	if (modifierBrowseIsOn != 1)
+	if (!ModifierBrowser_isEnabled())
 		return
 
 	;Modifier文字列生成
@@ -29,13 +28,22 @@ ModifierBrowse:
 
 return
 
-;修飾キー表示機能トグル
-modifierBrowseToggle(){
-	global modifierBrowseIsOn
-	if (modifierBrowseIsOn != 1)
-		modifierBrowseIsOn := 1
-	else{
-		modifierBrowseIsOn := 0
-		Tooltip,
+;ModifierBrowser機能の有効化、無効化
+ModifierBrowser_toggle(){
+	if (ModifierBrowser_isEnabled()){
+		setStringWriter("ModifierBrowser_isEnabled","false")
+		msgBox, disabled ModifierBrowser
+	}else{
+		setStringWriter("ModifierBrowser_isEnabled","true")
+		msgBox, enabled ModifierBrowser
 	}
+}
+
+;ModifierBrowser機能の有効・無効の確認
+ModifierBrowser_isEnabled(){
+	state := getStringWriter("ModifierBrowser_isEnabled")
+	if(state == "true"){
+		return true
+	}
+	return false
 }
