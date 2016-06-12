@@ -25,7 +25,7 @@ Alarm(){
 	Alarm_isActive := 1
 
 	;サウンドデバイスをスピーカーに変更
-	changeSoundDevice("1")
+	changeSoundDevice("0")
 	sleep,1000
 
 	;Volumeを最大まで上げる
