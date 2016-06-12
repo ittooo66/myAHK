@@ -48,7 +48,7 @@ return
 #include Library\ScreenSaver.ahk
 #include Library\Alarm.ahk
 ;KANAマウス設定
-#include KANAMouse.ahk
+#include MouseBindings.ahk
 ;もろもろバインドとリスナー
 #include MBindListener.ahk
 #include MBindSetting.ahk
