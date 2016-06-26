@@ -21,8 +21,6 @@ RWin & .::Suspend
 ;AltTab
 RWin & ]::AltTab
 RWin & [::ShiftAltTab
-;delete
-LControl & Esc::Send,{Delete}
 
 ;ReturnにGUIフック
 ~Return::

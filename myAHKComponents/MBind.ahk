@@ -509,6 +509,14 @@ mbind_delete(){
 	}
 }
 
+mbind_escape(){
+	if CAPS(){
+		send,{Delete}
+	}else{
+		press("{Esc}")
+	}
+}
+
 ;Spaceキー押し下げ時のOS時間
 spaceDownTime:=0
 ;Spaceキー押し下げ判定（Space連打防止）

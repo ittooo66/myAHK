@@ -675,6 +675,20 @@ LShift & Delete::
 	mbind_delete()
 return
 
+*Esc::
+<^Esc::
+>^Esc::
+>+Esc::
+<+Esc::
+vkFFsc079 & Esc::
+LControl & Esc::
+vkEBsc07B & Esc::
+RControl & Esc::
+RShift & Esc::
+LShift & Esc::
+	mbind_escape()
+return
+
 ;Space機能
 *Space::mbind_space_down()
 *Space Up::mbind_space_up()
