@@ -505,7 +505,7 @@ mbind_space_down(){
 
 mbind_space_up(){
 	if LCMD() || RCMD()
-		Send,{}
+		Send,!{``}
 	else if CAPS()
 		press("^{Space}")
 	else{

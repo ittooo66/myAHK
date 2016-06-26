@@ -21,8 +21,6 @@ RWin & .::Suspend
 ;AltTab
 RWin & ]::AltTab
 RWin & [::ShiftAltTab
-;IME
-vkEBsc07B & Space::Send,!{``}
 ;delete
 LControl & Esc::Send,{Delete}
 
