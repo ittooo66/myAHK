@@ -20,6 +20,9 @@ Alarm_CheckTime:
 return
 
 Alarm(){
+	;アラーム無効モードなら無効
+	if !Alarm_isEnabled() return
+
 	;アラームを鳴らす合図
 	global Alarm_isActive
 	Alarm_isActive := 1
@@ -38,4 +41,25 @@ Alarm(){
 	Loop,{
 		SoundBeep, 444 , 150
 	}
+}
+
+
+;Alarm機能の有効化、無効化
+Alarm_toggle(){
+	if (Alarm_isEnabled()){
+		setStringWriter("Alarm_isEnabled","false")
+		msgBox, disabled Alarm
+	}else{
+		setStringWriter("Alarm_isEnabled","true")
+		msgBox, enabled Alarm
+	}
+}
+
+;Alarm機能の有効・無効の確認
+Alarm_isEnabled(){
+	state := getStringWriter("Alarm_isEnabled")
+	if(state == "true"){
+		return true
+	}
+	return false
 }

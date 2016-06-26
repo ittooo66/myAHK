@@ -215,7 +215,9 @@ mbind_r(){
 	if RCMD() && LCMD(){
 		if !activateWindow("ApplicationFrameWindow","ApplicationFrameHost.exe","Microsoft Edge")
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\Microsoft Edge.lnk"
-	}else	if RCMD() || CAPS()
+	}else if RCMD() && CAPS()
+		Alarm_toggle()
+	else if RCMD() || CAPS()
 		press("{END}")
 	else
 		press("r")
