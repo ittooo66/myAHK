@@ -2,18 +2,8 @@
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
-
 ;SetTimer有効化
 #Persistent
-;JoyPadの各スティックポーリング
-SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
-;各機能用のTimer
-SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ
-SetTimer, ScreenSaver_CheckAction, 1000 ;未入力タイマー
-SetTimer, Alarm_CheckTime, 1000 ;アラーム時刻チェック
 
 ;Reload/Suspend AHK
 RWin & ,::Reload
@@ -22,14 +12,22 @@ RWin & .::Suspend
 RWin & ]::AltTab
 RWin & [::ShiftAltTab
 
-;ReturnにGUIフック
-~Return::
-	if HistoricalClip_isDisplayed()
-		HistoricalClip_return()
-return
+;JoyPadの各スティックポーリング
+SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模様
+SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
+;各機能用のTimer
+SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ(ModifierBrowser.ahk)
+SetTimer, ScreenSaver_CheckAction, 1000 ;未入力タイマー(ScreenSaver.ahk)
+SetTimer, Alarm_CheckTime, 1000 ;アラーム時刻チェック(Alarm.ahk)
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
+;もろもろバインド
+#include MBindListener.ahk
+#include MBindSetting.ahk
+#include MBind.ahk
 ;Library(バインドは持たないがグローバル変数の干渉に注意)
 #include Library\HistoricalClip.ahk
 #include Library\_STD.ahk
@@ -39,12 +37,6 @@ return
 #include Library\MouseControl.ahk
 #include Library\ScreenSaver.ahk
 #include Library\Alarm.ahk
-;KANAマウス設定
-#include MouseBindings.ahk
-;もろもろバインドとリスナー
-#include MBindListener.ahk
-#include MBindSetting.ahk
-#include MBind.ahk
 ;IfWinActives(特定Window/App上で有効になるバインドセット)
 #include IfWinActives\_General.ahk
 #include IfWinActives\Excel.ahk
@@ -53,10 +45,14 @@ return
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
 #include IfWinActives\Explorer.ahk
-;JoyPadControl
+;Mouse設定
+#include MouseBindings.ahk
+;JoyPad設定
 #include JoyPadControl\ButtonControl.ahk
 
+;初回起動の実行、ここまで。
 return
+
 ;以下、GUIのラベル等、初回起動では不要なやつら。SetTimerでポーリングした対象がメイン
 #include GUILabel.ahk
 #include Library\ModifierBrowser.ahk

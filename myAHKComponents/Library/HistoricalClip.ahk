@@ -4,6 +4,12 @@ HistoricalClip_index := 1
 ;GUIが表示されているかどうかのGlobal変数
 HistoricalClip_isDisplayed := 0
 
+;ReturnにGUIフック
+~Return::
+	if HistoricalClip_isDisplayed()
+		HistoricalClip_return()
+return
+
 ;GUIが表示されているかどうか
 HistoricalClip_isDisplayed(){
 	global HistoricalClip_isDisplayed
