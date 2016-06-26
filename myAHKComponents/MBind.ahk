@@ -492,6 +492,23 @@ mbind_slash(){
 		press("/")
 }
 
+mbind_backspace(){
+	if RCMD(){
+		;一行消し
+		lineDel("HOME")
+	}else
+		press("{BackSpace}")
+}
+
+mbind_delete(){
+	if RCMD(){
+		;一行消し
+		lineDel("END")
+	}else{
+		press("{Delete}")
+	}
+}
+
 ;Spaceキー押し下げ時のOS時間
 spaceDownTime:=0
 ;Spaceキー押し下げ判定（Space連打防止）

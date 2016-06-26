@@ -24,10 +24,6 @@ RWin & [::ShiftAltTab
 ;delete
 LControl & Esc::Send,{Delete}
 
-;一行消し（両サイド）
-vkFFsc079 & BackSpace::lineDel("HOME")
-vkFFsc079 & Delete::lineDel("END")
-
 ;ReturnにGUIフック
 ~Return::
 	if HistoricalClip_isDisplayed()

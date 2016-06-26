@@ -647,6 +647,34 @@ LShift & ]::
 	mbind_bracket_right()
 return
 
+*BackSpace::
+<^BackSpace::
+>^BackSpace::
+>+BackSpace::
+<+BackSpace::
+vkFFsc079 & BackSpace::
+LControl & BackSpace::
+vkEBsc07B & BackSpace::
+RControl & BackSpace::
+RShift & BackSpace::
+LShift & BackSpace::
+	mbind_backspace()
+return
+
+*Delete::
+<^Delete::
+>^Delete::
+>+Delete::
+<+Delete::
+vkFFsc079 & Delete::
+LControl & Delete::
+vkEBsc07B & Delete::
+RControl & Delete::
+RShift & Delete::
+LShift & Delete::
+	mbind_delete()
+return
+
 ;Space機能
 *Space::mbind_space_down()
 *Space Up::mbind_space_up()
