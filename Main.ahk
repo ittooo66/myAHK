@@ -19,8 +19,6 @@ SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模�
 SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
 ;各機能用のTimer
 SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ(ModifierBrowser.ahk)
-SetTimer, ScreenSaver_CheckAction, 1000 ;未入力タイマー(ScreenSaver.ahk)
-SetTimer, Alarm_CheckTime, 1000 ;アラーム時刻チェック(Alarm.ahk)
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
@@ -35,8 +33,6 @@ SetTimer, Alarm_CheckTime, 1000 ;アラーム時刻チェック(Alarm.ahk)
 #include Library\WinD.ahk
 #include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
-#include Library\ScreenSaver.ahk
-#include Library\Alarm.ahk
 ;IfWinActives(特定Window/App上で有効になるバインドセット)
 #include IfWinActives\_General.ahk
 #include IfWinActives\Excel.ahk

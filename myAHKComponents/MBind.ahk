@@ -215,9 +215,7 @@ mbind_r(){
 	if RCMD() && LCMD(){
 		if !activateWindow("ApplicationFrameWindow","ApplicationFrameHost.exe","Microsoft Edge")
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\Microsoft Edge.lnk"
-	}else if RCMD() && CAPS()
-		Alarm_toggle()
-	else if RCMD() || CAPS()
+	}else if RCMD() || CAPS()
 		press("{END}")
 	else
 		press("r")
@@ -243,8 +241,6 @@ mbind_t(){
 	if LCMD() && RCMD(){
 		if !activateWindow("ConsoleWindowClass","","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-	}else if RCMD() && CAPS(){
-		ScreenSaver_toggle()
 	}else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed()
 			HistoricalClip_return()
