@@ -35,12 +35,15 @@ SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ(ModifierBrows
 #include Library\MouseControl.ahk
 ;IfWinActives(特定Window/App上で有効になるバインドセット)
 #include IfWinActives\_General.ahk
+#include IfWinActives\Explorer.ahk
+#include IfWinActives\InternetExplorer.ahk
+#include IfWinActives\Outlook.ahk
+#include IfWinActives\Word.ahk
 #include IfWinActives\Excel.ahk
-#include IfWinActives\Chrome.ahk
 #include IfWinActives\PowerPoint.ahk
+#include IfWinActives\Chrome.ahk
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
-#include IfWinActives\Explorer.ahk
 ;Mouse設定
 #include MouseBindings.ahk
 ;JoyPad設定
