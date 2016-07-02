@@ -251,7 +251,10 @@ mbind_t(){
 }
 
 mbind_u(){
-	if RCMD() || CAPS()
+	if RCMD() && LCMD(){
+		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
+			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
+	}if RCMD() || CAPS()
 		press("7")
 	else
 		press("u")
