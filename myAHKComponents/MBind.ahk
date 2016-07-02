@@ -4,6 +4,10 @@ mbind_a(){
 			run, C:\Users\AHK\AppData\Local\atom\update.exe	--processStart atom.exe
 	}else if RCMD() || CAPS()
 		press("^{LEFT}")
+	else if SPACE() && SHIFT()
+		copyTo("SA")
+	else if SPACE()
+		pasteFrom("SA")
 	else
 		press("a")
 }
@@ -11,9 +15,13 @@ mbind_a(){
 mbind_b(){
 	if (RCMD() || CAPS()) && SHIFT()
 		run C:\Windows\System32\notepad.exe %A_WorkingDir%\myAHKComponents\Library\Macro.ahk
-	else if RCMD() || CAPS(){
+	else if RCMD() || CAPS()
 		macro()
-	}else
+	else if SPACE() && SHIFT()
+		copyTo("SB")
+	else if SPACE()
+		pasteFrom("SB")
+	else
 		press("b")
 }
 
@@ -24,6 +32,10 @@ mbind_c(){
 		pasteFrom("C")
 	else if LCMD()
 		HistoricalClip_stackCopy()
+	else if SPACE() && SHIFT()
+		copyTo("SC")
+	else if SPACE()
+		pasteFrom("SC")
 	else
 		press("c")
 }
@@ -38,7 +50,11 @@ mbind_d(){
 			HistoricalClip_down()
 		else
 			press("{DOWN}")
-	}else
+	}else if SPACE() && SHIFT()
+			copyTo("SD")
+	else if SPACE()
+			pasteFrom("SD")
+	else
 		press("d")
 }
 
@@ -55,7 +71,11 @@ mbind_e(){
 			HistoricalClip_up()
 		else
 			press("{UP}")
-	}else
+	}else if SPACE() && SHIFT()
+		copyTo("SE")
+	else if SPACE()
+		pasteFrom("SE")
+	else
 		press("e")
 }
 
@@ -71,6 +91,10 @@ mbind_f(){
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD()
 		press("{RIGHT}")
+	else if SPACE() && SHIFT()
+		copyTo("SF")
+	else if SPACE()
+		pasteFrom("SF")
 	else
 		press("f")
 }
@@ -83,6 +107,10 @@ mbind_g(){
 		search()
 	else if RCMD() || CAPS()
 		press("^{RIGHT}")
+	else if SPACE() && SHIFT()
+		copyTo("SG")
+	else if SPACE()
+		pasteFrom("SG")
 	else
 		press("g")
 }
@@ -93,6 +121,10 @@ mbind_h(){
 			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
 	}else if RCMD() || CAPS()
 		press("{BackSpace}")
+	else if SPACE() && SHIFT()
+		copyTo("SH")
+	else if SPACE()
+		pasteFrom("SH")
 	else
 		press("h")
 }
@@ -105,6 +137,10 @@ mbind_i(){
 		changeSoundDevice("3")
 	else if RCMD() || CAPS()
 		press("8")
+	else if SPACE() && SHIFT()
+		copyTo("SI")
+	else if SPACE()
+		pasteFrom("SI")
 	else
 		press("i")
 }
@@ -119,6 +155,10 @@ mbind_j(){
 		download()
 	else if RCMD() || CAPS()
 		press("4")
+	else if SPACE() && SHIFT()
+		copyTo("SJ")
+	else if SPACE()
+		pasteFrom("SJ")
 	else
 		press("j")
 }
@@ -131,6 +171,10 @@ mbind_k(){
 		Send,{RButton}
 	else if RCMD() || CAPS()
 		press("5")
+	else if SPACE() && SHIFT()
+		copyTo("SK")
+	else if SPACE()
+		pasteFrom("SK")
 	else
 		press("k")
 }
@@ -146,6 +190,10 @@ mbind_l(){
 		Send,{WheelUp}
 	else if RCMD() || CAPS()
 		press("6")
+	else if SPACE() && SHIFT()
+		copyTo("SL")
+	else if SPACE()
+		pasteFrom("SL")
 	else
 		press("l")
 }
@@ -155,6 +203,10 @@ mbind_m(){
 		press("1")
 	else if RALT()
 		return ;最小化無効
+	else if SPACE() && SHIFT()
+		copyTo("SM")
+	else if SPACE()
+		pasteFrom("SM")
 	else
 		press("m")
 }
@@ -165,6 +217,10 @@ mbind_n(){
 			run "C:\Windows\System32\notepad.exe"
 	}else if RCMD() || CAPS()
 		press("0")
+	else if SPACE() && SHIFT()
+		copyTo("SN")
+	else if SPACE()
+		pasteFrom("SN")
 	else
 		press("n")
 }
@@ -179,6 +235,10 @@ mbind_o(){
 		Send,{WheelLeft}
 	else if RCMD() || CAPS()
 		press("9")
+	else if SPACE() && SHIFT()
+		copyTo("SO")
+	else if SPACE()
+		pasteFrom("SO")
 	else
 		press("o")
 }
@@ -193,6 +253,10 @@ mbind_p(){
 		Send,{WheelRight}
 	else if RCMD() || CAPS()
 		press("{-}")
+	else if SPACE() && SHIFT()
+		copyTo("SP")
+	else if SPACE()
+		pasteFrom("SP")
 	else
 		press("p")
 }
@@ -207,7 +271,11 @@ mbind_q(){
 		MsgBox , 1 , Confirm, Really?
 		ifMsgBox, OK
 			Send,!{F4}
-	}else
+	}else if SPACE() && SHIFT()
+		copyTo("SQ")
+	else if SPACE()
+		pasteFrom("SQ")
+	else
 		press("q")
 }
 
@@ -217,6 +285,10 @@ mbind_r(){
 			run "C:\Users\AHK\Dropbox\bcd\WinApp\Microsoft Edge.lnk"
 	}else if RCMD() || CAPS()
 		press("{END}")
+	else if SPACE() && SHIFT()
+		copyTo("SR")
+	else if SPACE()
+		pasteFrom("SR")
 	else
 		press("r")
 }
@@ -233,6 +305,10 @@ mbind_s(){
 		mouseMove("e","d","s","f")
 	else if RCMD() || CAPS()
 		press("{LEFT}")
+	else if SPACE() && SHIFT()
+		copyTo("SS")
+	else if SPACE()
+		pasteFrom("SS")
 	else
 		press("s")
 }
@@ -246,7 +322,11 @@ mbind_t(){
 			HistoricalClip_return()
 		else
 			press("{return}")
-	}else
+	}else if SPACE() && SHIFT()
+		copyTo("ST")
+	else if SPACE()
+		pasteFrom("ST")
+	else
 		press("t")
 }
 
@@ -256,6 +336,10 @@ mbind_u(){
 			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
 	}if RCMD() || CAPS()
 		press("7")
+	else if SPACE() && SHIFT()
+		copyTo("SU")
+	else if SPACE()
+		pasteFrom("SU")
 	else
 		press("u")
 }
@@ -263,6 +347,10 @@ mbind_u(){
 mbind_v(){
 	if RCMD() || CAPS()
 		HistoricalClip_openWindow()
+	else if SPACE() && SHIFT()
+		copyTo("SV")
+	else if SPACE()
+		pasteFrom("SV")
 	else
 		press("v")
 }
@@ -270,6 +358,10 @@ mbind_v(){
 mbind_w(){
 	if RCMD() || CAPS()
 		press("{HOME}")
+	else if SPACE() && SHIFT()
+		copyTo("SW")
+	else if SPACE()
+		pasteFrom("SW")
 	else
 		press("w")
 }
@@ -282,23 +374,35 @@ mbind_x(){
 	else if LCMD(){
 		HistoricalClip_stackCopy()
 		press("x")
-	}else
+	}else if SPACE() && SHIFT()
+		copyTo("SX")
+	else if SPACE()
+		pasteFrom("SX")
+	else
 		press("x")
 }
 
 mbind_y(){
 	if RCMD() || CAPS()
 		press("{Tab}")
+	else if SPACE() && SHIFT()
+		copyTo("SY")
+	else if SPACE()
+		pasteFrom("SY")
 	else
 		press("y")
 }
 
 mbind_z(){
-	if ( CAPS() || RCMD() )&& SHIFT(){
+	if ( CAPS() || RCMD() )&& SHIFT()
 		copyTo("Z")
-	}else if RCMD() || CAPS(){
+	else if RCMD() || CAPS()
 		pasteFrom("Z")
-	}else
+	else if SPACE() && SHIFT()
+		copyTo("SZ")
+	else if SPACE()
+		pasteFrom("SZ")
+	else
 		press("z")
 }
 
@@ -309,6 +413,10 @@ mbind_1(){
 		openAlias("1")
 	else if RCMD() || CAPS()
 		press("{F1}")
+	else if SPACE() && SHIFT()
+		copyTo("S1")
+	else if SPACE()
+		pasteFrom("S1")
 	else
 		press("1")
 }
@@ -320,6 +428,10 @@ mbind_2(){
 		openAlias("2")
 	else if RCMD() || CAPS()
 		press("{F2}")
+	else if SPACE() && SHIFT()
+		copyTo("S2")
+	else if SPACE()
+		pasteFrom("S2")
 	else
 		press("2")
 }
@@ -333,6 +445,10 @@ mbind_3(){
 		Send,{PrintScreen}
 	else if RCMD() || CAPS()
 		press("{F3}")
+	else if SPACE() && SHIFT()
+		copyTo("S3")
+	else if SPACE()
+		pasteFrom("S3")
 	else
 		press("3")
 }
@@ -346,6 +462,10 @@ mbind_4(){
 		Send,!{PrintScreen}
 	else if RCMD() || CAPS()
 		press("{F4}")
+	else if SPACE() && SHIFT()
+		copyTo("S4")
+	else if SPACE()
+		pasteFrom("S4")
 	else
 		press("4")
 }
@@ -357,6 +477,10 @@ mbind_5(){
 		openAlias("5")
 	else if RCMD() || CAPS()
 		press("{F5}")
+	else if SPACE() && SHIFT()
+		copyTo("S5")
+	else if SPACE()
+		pasteFrom("S5")
 	else
 		press("5")
 }
@@ -368,6 +492,10 @@ mbind_6(){
 		openAlias("6")
 	else if RCMD() || CAPS()
 		press("{F6}")
+	else if SPACE() && SHIFT()
+		copyTo("S6")
+	else if SPACE()
+		pasteFrom("S6")
 	else
 		press("6")
 }
@@ -379,6 +507,10 @@ mbind_7(){
 		openAlias("7")
 	else if RCMD() || CAPS()
 		press("{F7}")
+	else if SPACE() && SHIFT()
+		copyTo("S7")
+	else if SPACE()
+		pasteFrom("S7")
 	else
 		press("7")
 }
@@ -390,6 +522,10 @@ mbind_8(){
 		openAlias("8")
 	else if RCMD() || CAPS()
 		press("{F8}")
+	else if SPACE() && SHIFT()
+		copyTo("S8")
+	else if SPACE()
+		pasteFrom("S8")
 	else
 		press("8")
 }
@@ -401,6 +537,10 @@ mbind_9(){
 		openAlias("9")
 	else if RCMD() || CAPS()
 		press("{F9}")
+	else if SPACE() && SHIFT()
+		copyTo("S9")
+	else if SPACE()
+		pasteFrom("S9")
 	else
 		press("9")
 }
@@ -412,6 +552,10 @@ mbind_0(){
 		openAlias("0")
 	else if RCMD() || CAPS()
 		press("{F10}")
+	else if SPACE() && SHIFT()
+		copyTo("S0")
+	else if SPACE()
+		pasteFrom("S0")
 	else
 		press("0")
 }
@@ -419,6 +563,10 @@ mbind_0(){
 mbind_minus(){
 	if RCMD() || CAPS()
 		press("{F11}")
+	else if SPACE() && SHIFT()
+		copyTo("SMinus")
+	else if SPACE()
+		pasteFrom("SMinus")
 	else
 		press("-")
 }
@@ -426,6 +574,10 @@ mbind_minus(){
 mbind_equal(){
 	if RCMD() || CAPS()
 		press("{F12}")
+	else if SPACE() && SHIFT()
+		copyTo("SEqual")
+	else if SPACE()
+		pasteFrom("SEqual")
 	else
 		press("=")
 }
@@ -433,6 +585,10 @@ mbind_equal(){
 mbind_bracket_left(){
 	if RCMD() || CAPS()
 		press("/")
+	else if SPACE() && SHIFT()
+		copyTo("SLBracket")
+	else if SPACE()
+		pasteFrom("SLBracket")
 	else
 		press("[")
 }
@@ -440,12 +596,21 @@ mbind_bracket_left(){
 mbind_bracket_right(){
 	if RCMD() || CAPS()
 		press("=")
+	else if SPACE() && SHIFT()
+		copyTo("SRBracket")
+	else if SPACE()
+		pasteFrom("SRBracket")
 	else
 		press("]")
 }
 
 mbind_backslash(){
-	press("\")
+	if SPACE() && SHIFT()
+		copyTo("SBackslash")
+	else if SPACE()
+		pasteFrom("SBackslash")
+	else
+		press("\")
 }
 
 mbind_semicolon(){
@@ -453,6 +618,10 @@ mbind_semicolon(){
 		Send,{WheelDown}
 	else if RCMD() || CAPS()
 		press("{+}")
+	else if SPACE() && SHIFT()
+		copyTo("SSemicolon")
+	else if SPACE()
+		pasteFrom("SSemicolon")
 	else
 		press("`;")
 }
@@ -462,6 +631,10 @@ mbind_quote(){
 		Send,{MButton}
 	else if RCMD() || CAPS()
 		press("{*}")
+	else if SPACE() && SHIFT()
+		copyTo("SQuote")
+	else if SPACE()
+		pasteFrom("SQuote")
 	else
 		press("'")
 }
@@ -471,6 +644,10 @@ mbind_period(){
 		press("3")
 	}else if RSHIFT() && LSHIFT()
 		Send, {PgUp}
+	else if SPACE() && SHIFT()
+		copyTo("SPeriod")
+	else if SPACE()
+		pasteFrom("SPeriod")
 	else
 		press(".")
 }
@@ -478,6 +655,10 @@ mbind_period(){
 mbind_camma(){
 	if RCMD() || CAPS()
 		press("2")
+	else if SPACE() && SHIFT()
+		copyTo("SCamma")
+	else if SPACE()
+		pasteFrom("SCamma")
 	else
 		press(",")
 }
@@ -487,6 +668,10 @@ mbind_slash(){
 		press(".")
 	else if RSHIFT() && LSHIFT()
 		Send, {PgDn}
+	else if SPACE() && SHIFT()
+		copyTo("SSlash")
+	else if SPACE()
+		pasteFrom("SSlash")
 	else
 		press("/")
 }
@@ -495,7 +680,11 @@ mbind_backspace(){
 	if RCMD(){
 		;一行消し
 		lineDel("HOME")
-	}else
+	}else if SPACE() && SHIFT()
+		copyTo("SBackspace")
+	else if SPACE()
+		pasteFrom("SBackspace")
+	else
 		press("{BackSpace}")
 }
 
@@ -503,17 +692,23 @@ mbind_delete(){
 	if RCMD(){
 		;一行消し
 		lineDel("END")
-	}else{
+	}else if SPACE() && SHIFT()
+		copyTo("SDelete")
+	else if SPACE()
+		pasteFrom("SDelete")
+	else
 		press("{Delete}")
-	}
 }
 
 mbind_escape(){
 	if CAPS(){
 		send,{Delete}
-	}else{
+	}else if SPACE() && SHIFT()
+		copyTo("SEscape")
+	else if SPACE()
+		pasteFrom("SEscape")
+	else
 		press("{Esc}")
-	}
 }
 
 ;Spaceキー押し下げ時のOS時間
