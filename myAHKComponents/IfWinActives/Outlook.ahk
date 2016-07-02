@@ -32,5 +32,14 @@ vkEBsc07B & f::
 return
 
 
+RButton & XButton1::
+	WinGetTitle, Title, A
+	IfInString, Title, Outlook , {
+		;Outlookのコア(メールと予定表)では無効
+	}else{
+		Send,!{F4}
+	}
+return
+
 
 #IfWinActive
