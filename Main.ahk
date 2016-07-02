@@ -2,16 +2,9 @@
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
+
 ;SetTimer有効化
 #Persistent
-
-;Reload/Suspend AHK
-RWin & ,::Reload
-RWin & .::Suspend
-;AltTab
-RWin & ]::AltTab
-RWin & [::ShiftAltTab
-
 ;JoyPadの各スティックポーリング
 SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
 SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
@@ -19,6 +12,13 @@ SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模�
 SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
 ;各機能用のTimer
 SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ(ModifierBrowser.ahk)
+
+;Reload/Suspend AHK
+RWin & ,::Reload
+RWin & .::Suspend
+;AltTab
+RWin & ]::AltTab
+RWin & [::ShiftAltTab
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
