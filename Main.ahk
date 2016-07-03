@@ -33,6 +33,7 @@ RWin & [::ShiftAltTab
 #include Library\WinD.ahk
 #include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
+#include Library\NippouMacro.ahk
 ;IfWinActives(特定Window/App上で有効になるバインドセット)
 #include IfWinActives\_General.ahk
 #include IfWinActives\Explorer.ahk
