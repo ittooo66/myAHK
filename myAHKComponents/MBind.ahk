@@ -218,7 +218,7 @@ mbind_m(){
 mbind_n(){
 	if RCMD() && LCMD(){
 		if !activateWindow("Notepad","","")
-			run "C:\Windows\System32\notepad.exe"
+			run "C:\Users\66\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\Internet Explorer"
 	}else if RCMD() || CAPS()
 		press("0")
 	else if SPACE() && SHIFT()
