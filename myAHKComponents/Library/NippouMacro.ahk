@@ -20,6 +20,8 @@ NippouMacro_forwardTime(){
 	;日時形式がおかしければ終了
 	if (hour < 0 || 24 < hour || minute < 0 || 60 < minute){
 		Send,^v
+		Send,09`:30
+		Send,+{Left}+{Left}+{Left}+{Left}+{Left}
 		return
 	}
 
