@@ -545,7 +545,11 @@ mbind_9(){
 		copyTo("S9")
 	else if SPACE()
 		pasteFrom("S9")
-	else
+	else if SHIFT(){
+		press("9")
+		press("0")
+		send,{Left}
+	}else
 		press("9")
 }
 
@@ -593,8 +597,11 @@ mbind_bracket_left(){
 		copyTo("SLBracket")
 	else if SPACE()
 		pasteFrom("SLBracket")
-	else
+	else{
 		press("[")
+		press("]")
+		send,{Left}
+	}
 }
 
 mbind_bracket_right(){
