@@ -337,7 +337,7 @@ mbind_t(){
 mbind_u(){
 	if RCMD() && LCMD(){
 		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
-			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
+			run "C:\program files (x86)\microsoft office\office14\outlook.exe"
 	}if RCMD() || CAPS()
 		press("7")
 	else if SPACE() && SHIFT()
