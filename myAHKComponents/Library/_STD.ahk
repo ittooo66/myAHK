@@ -208,7 +208,6 @@ changeSoundDevice(num){
 	Send,{Return}
 }
 
-
 ;外部変数への書き込み
 ;揮発性なし（Reload,再起動でも値は普遍）
 ;書き方：setStringWriter("var","true")でvar.txtにtrueが書き込まれる
