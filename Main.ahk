@@ -6,19 +6,23 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;SetTimer有効化
 #Persistent
 ;JoyPadの各スティックポーリング
-SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模様
-SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
+;SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
+;SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
+;SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模様
+;SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
 ;各機能用のTimer
-SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ(ModifierBrowser.ahk)
+;SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ(ModifierBrowser.ahk)
+
+;Base Bindings
+Delete::`
+RAlt::RWin
 
 ;Reload/Suspend AHK
-RWin & ,::Reload
-RWin & .::Suspend
+RAlt & ,::Reload
+RAlt & .::Suspend
 ;AltTab
-RWin & ]::AltTab
-RWin & [::ShiftAltTab
+RAlt & ]::AltTab
+RAlt & [::ShiftAltTab
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
@@ -48,15 +52,15 @@ RWin & [::ShiftAltTab
 ;Mouse設定
 #include MouseBindings.ahk
 ;JoyPad設定
-#include JoyPadControl\ButtonControl.ahk
+;#include JoyPadControl\ButtonControl.ahk
 
 ;初回起動の実行、ここまで。
 return
 
 ;以下、GUIのラベル等、初回起動では不要なやつら。SetTimerでポーリングした対象がメイン
 #include GUILabel.ahk
-#include Library\ModifierBrowser.ahk
-#include JoyPadControl\WheelControl.ahk
-#include JoyPadControl\MouseControl.ahk
-#include JoyPadControl\CrossControl.ahk
+;#include Library\ModifierBrowser.ahk
+;#include JoyPadControl\WheelControl.ahk
+;#include JoyPadControl\MouseControl.ahk
+;#include JoyPadControl\CrossControl.ahk
 

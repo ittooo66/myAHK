@@ -249,7 +249,7 @@ mbind_o(){
 
 mbind_p(){
 	if RCMD() && CAPS(){
-		ModifierBrowser_toggle()
+		;ModifierBrowser_toggle()
 	}else if RCMD() && LCMD(){
 		if !activateWindow("PPTFrameClass","","")
 			run "C:\Program Files\Microsoft Office 15\root\office15\powerpnt.exe"
