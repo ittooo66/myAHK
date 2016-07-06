@@ -6,6 +6,19 @@
 	vkFFsc079 & 1::return
 	LControl & 1::return
 
+	;進む、戻る
+	XButton2::Send,^{y}
+	XButton1::Send,^{z}
+
+	RShift & z::
+	LShift & z::
+	vkEBsc07B & z::
+		if SHIFT() && LCMD()
+			Send,^{y}
+		else
+			mbind_z()
+	return
+
 	XButton2 & WheelUp::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
 	XButton2 & WheelDown::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
 

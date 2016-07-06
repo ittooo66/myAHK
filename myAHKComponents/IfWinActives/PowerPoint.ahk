@@ -127,14 +127,20 @@
 		else
 			mbind_g()
 	return
+
+	RShift & z::
+	LShift & z::
 	vkEBsc07B & z::
 	LControl & z::
-		if CAPS() && LCMD()
+		if CAPS() && LCMD(){
 			;背面へ移動
 			Send, !{j}{d}{a}{e}{b}
+		}else if SHIFT() && LCMD()
+			Send,^{y}
 		else
 			mbind_z()
 	return
+
 	vkEBsc07B & x::
 	LControl & x::
 		if CAPS() && LCMD()
