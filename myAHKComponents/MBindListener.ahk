@@ -661,17 +661,17 @@ LShift & BackSpace::
 	mbind_backspace()
 return
 
-*Delete::
-<^Delete::
->^Delete::
->+Delete::
-<+Delete::
-vkFFsc079 & Delete::
-LControl & Delete::
-vkEBsc07B & Delete::
-RControl & Delete::
-RShift & Delete::
-LShift & Delete::
+*`::
+<^`::
+>^`::
+>+`::
+<+`::
+vkFFsc079 & `::
+LControl & `::
+vkEBsc07B & `::
+RControl & `::
+RShift & `::
+LShift & `::
 	mbind_delete()
 return
 
