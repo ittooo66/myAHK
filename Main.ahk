@@ -4,7 +4,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #InstallKeybdHook
 
 ;SetTimer有効化
-#Persistent
+;#Persistent
 ;JoyPadの各スティックポーリング
 ;SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
 ;SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
@@ -16,7 +16,6 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;Base Bindings
 Delete::`
 RAlt::RWin
-
 ;Reload/Suspend AHK
 RAlt & ,::Reload
 RAlt & .::Suspend

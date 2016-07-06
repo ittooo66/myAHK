@@ -46,11 +46,10 @@ IME切り替え用AHK。つよい。
 1. レジストリ周りの依存([Chgkey.exe][Chgkey.exe]の使用)  
 変換一覧
 ```
-RWin           -> 変換(vkFFsc079)
-LWin           -> 無変換(vkEBsc07B)
-`(半角/全角)    -> Del
-Del            -> `(半角/全角)
-RAlt           -> RWin
+RWin              -> 変換(vkFFsc079)
+変換(vkFFsc079)   -> RWin
+LWin              -> 無変換(vkEBsc07B)
+無変換(vkEBsc07B)  -> LWin
 ```
 
 諸注意
