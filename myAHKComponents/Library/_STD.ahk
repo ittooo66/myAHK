@@ -178,6 +178,21 @@ windowChange(direction){
 	}
 }
 
+;Windows+Dを強化
+winD := 0
+winD(){
+	global winD
+	if(winD==1){
+		WinMinimizeAllUndo
+		winD := 0
+	}else{
+		WinMinimizeAll
+		;Desktopをフォーカス
+		WinActivate, ahk_class WorkerW
+		winD := 1
+	}
+}
+
 ;サウンドデバイス変更
 ;（イヤホン：num=0、スピーカ：num=1）
 changeSoundDevice(num){

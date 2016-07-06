@@ -33,7 +33,6 @@ RAlt & [::ShiftAltTab
 #include Library\HistoricalClip.ahk
 #include Library\_STD.ahk
 #include Library\Macro.ahk
-#include Library\WinD.ahk
 #include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
 #include Library\NippouMacro.ahk
