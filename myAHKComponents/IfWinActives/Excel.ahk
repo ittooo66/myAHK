@@ -10,6 +10,7 @@
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
 
+	;Shift押しZですすめるようにした
 	RShift & z::
 	LShift & z::
 	vkEBsc07B & z::
@@ -17,6 +18,93 @@
 			Send,^{y}
 		else
 			mbind_z()
+	return
+
+	;セル背景色変更
+	vkEBsc07B & d::
+	LControl & d::
+		if CAPS() && LCMD()
+			Send, !{h}{h}
+		else
+			mbind_d()
+	return
+
+	;セル内文字サイズ変更
+	vkEBsc07B & .::
+	LShift & .::
+		if SHIFT() && LCMD()
+			Send, !{h}{f}{g}
+		else
+			mbind_period()
+	return
+	vkEBsc07B & ,::
+	LShift & ,::
+		if SHIFT() && LCMD()
+			Send, !{h}{f}{k}
+		else
+			mbind_camma()
+	return
+
+	;文字色変更（赤）
+	vkEBsc07B & r::
+	LControl & r::
+		if CAPS() && LCMD()
+			Send, !{h}{f}{c}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Left}{Left}{Left}{Left}{return}
+		else
+			mbind_r()
+	return
+
+	;文字色変更（自動）
+	vkEBsc07B & q::
+	LControl & q::
+		if CAPS() && LCMD()
+			Send, !{h}{f}{c}{return}
+		else
+			mbind_q()
+	return
+
+	;文字配置マクロ（上下中央配置）
+	vkEBsc07B & u::
+	LControl & u::
+		if CAPS() && LCMD()
+			Send, !{h}{a}{t}
+		else
+			mbind_u()
+	return
+	vkEBsc07B & i::
+	LControl & i::
+		if CAPS() && LCMD()
+			Send, !{h}{a}{m}
+		else
+			mbind_i()
+	return
+	vkEBsc07B & o::
+	LControl & o::
+		if CAPS() && LCMD()
+			Send, !{h}{a}{b}
+		else
+			mbind_o()
+	return
+	vkEBsc07B & j::
+	LControl & j::
+		if CAPS() && LCMD()
+			Send, !{h}{a}{l}
+		else
+			mbind_j()
+	return
+	vkEBsc07B & k::
+	LControl & k::
+		if CAPS() && LCMD()
+			Send, !{h}{a}{c}
+		else
+			mbind_k()
+	return
+	vkEBsc07B & l::
+	LControl & l::
+		if CAPS() && LCMD()
+			Send, !{h}{a}{r}
+		else
+			mbind_l()
 	return
 
 	XButton2 & WheelUp::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
