@@ -1,7 +1,7 @@
 mbind_a(){
 	if RCMD() && LCMD(){
 		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
-			run, C:\Users\AHK\AppData\Local\atom\update.exe	--processStart atom.exe
+			run, C:\Users\66\AppData\Local\atom\update.exe --processStart atom.exe
 	}else if RCMD() || CAPS()
 		press("^{LEFT}")
 	else if SPACE() && SHIFT()
@@ -61,7 +61,7 @@ mbind_d(){
 mbind_e(){
 	if RCMD() && LCMD(){
 		if !activateWindow("Notepad","","")
-			run "C:\Windows\System32\notepad.exe"
+			openApp("SakuraEditor")
 	}else if CAPS() && RCMD()
 		Send,#{Tab}
 	else if LSHIFT() && RSHIFT()
@@ -82,7 +82,7 @@ mbind_e(){
 mbind_f(){
 	if RCMD() && LCMD(){
 		if !activateWindow("CabinetWClass","explorer.exe","")
-			Run,"C:\Windows\explorer.exe"
+			openApp("Entrance")
 	}else if RCMD() && CAPS()
 		Send,^#{Right}
 	else if LCMD() && CAPS()
@@ -102,7 +102,7 @@ mbind_f(){
 mbind_g(){
 	if RCMD() && LCMD(){
 		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-			run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+			openApp("Chrome")
 	}else if RCMD() && CAPS()
 		search()
 	else if RCMD() || CAPS()
@@ -118,7 +118,7 @@ mbind_g(){
 mbind_h(){
 	if RCMD() && LCMD(){
 		if !activateWindow("HwndWrapper","","")
-			run "C:\Users\AHK\AppData\Local\GitHub\GitHub.appref-ms"
+			run "C:\Users\66\AppData\Local\GitHub\GitHub.appref-ms"
 	}else if RCMD() || CAPS()
 		press("{BackSpace}")
 	else if SPACE() && SHIFT()
@@ -132,7 +132,7 @@ mbind_h(){
 mbind_i(){
 	if RCMD() && LCMD(){
 		if !activateWindow("OpusApp","","")
-			run "C:\Program Files\Microsoft Office 15\root\office15\winword.exe"
+			openApp("Word")
 	}else if RCMD() && CAPS()
 		changeSoundDevice("3")
 	else if RCMD() || CAPS()
@@ -218,7 +218,7 @@ mbind_m(){
 mbind_n(){
 	if RCMD() && LCMD(){
 		if !activateWindow("Notepad","","")
-			run "C:\Users\66\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\Internet Explorer"
+			openApp("Internet Explorer")
 	}else if RCMD() || CAPS()
 		press("0")
 	else if SPACE() && SHIFT()
@@ -232,7 +232,7 @@ mbind_n(){
 mbind_o(){
 	if RCMD() && LCMD(){
 		if !activateWindow("XLMAIN","","")
-			run "C:\Program Files\Microsoft Office 15\root\office15\excel.exe"
+			openApp("Excel")
 	}else if RCMD() && CAPS()
 		changeSoundDevice("0")
 	else if RSHIFT() && LSHIFT()
@@ -252,7 +252,7 @@ mbind_p(){
 		;ModifierBrowser_toggle()
 	}else if RCMD() && LCMD(){
 		if !activateWindow("PPTFrameClass","","")
-			run "C:\Program Files\Microsoft Office 15\root\office15\powerpnt.exe"
+			openApp("PowerPoint")
 	}else if LSHIFT() && RSHIFT()
 		Send,{WheelRight}
 	else if RCMD() || CAPS()
@@ -337,7 +337,7 @@ mbind_t(){
 mbind_u(){
 	if RCMD() && LCMD(){
 		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
-			run "C:\program files (x86)\microsoft office\office14\outlook.exe"
+			openApp("Outlook")
 	}if RCMD() || CAPS()
 		press("7")
 	else if SPACE() && SHIFT()

@@ -39,8 +39,7 @@ XButton2 & LButton::intelliScroll()
 XButton1 & RButton::Send,{RWin}
 ;Explorer起動
 XButton1 & LButton::
-	;Run, "C:\Users\AHK\Dropbox\Entrance"
-	Run, "C:\Users\4872870\Downloads\Entrance"
+	openApp("Entrance")
 return
 ;MButton
 XButton2 & RButton::
