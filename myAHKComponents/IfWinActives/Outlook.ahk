@@ -1,36 +1,28 @@
 #IfWinActive,ahk_class rctrl_renwnd32
 
-;MailCheckUsecase
+;次のメールへ
+RButton & WheelDown::
+	send,^{>}
+return
 
-;メールをそのままにして次へ
-LControl & s::
-vkEBsc07B & s::
-	if CAPS() & LCMD()
-		send,^{>}
-	else
-		mbind_s()
+;前のメールへ
+RButton & WheelUp::
+	send,^{<}
 return
 
 ;メールをDoneして次へ
-LControl & d::
-vkEBsc07B & d::
-	if CAPS() & LCMD(){
-		send,^+{1}
-		send,{return}
-	}else
-		mbind_d()
+RButton & LButton::
+	send,^+{1}
+	sleep,200
+	send,{return}
 return
 
 ;メールをリマインドフォルダへ
-LControl & f::
-vkEBsc07B & f::
-	if CAPS() & LCMD(){
-		send,^+{2}
-		send,{return}
-	}else
-		mbind_f()
+RButton & XButton2::
+	send,^+{2}
+	sleep,200
+	send,{return}
 return
-
 
 RButton & XButton1::
 	WinGetTitle, Title, A
