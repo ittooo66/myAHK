@@ -17,6 +17,13 @@ RButton & LButton::
 	send,{return}
 return
 
+;メールをDoingして次へ
+RButton & LButton::
+	send,^+{2}
+	sleep,200
+	send,{return}
+return
+
 ;メールをリマインドフォルダへ
 RButton & XButton2::
 	send,^+{2}
@@ -24,6 +31,7 @@ RButton & XButton2::
 	send,{return}
 return
 
+;メールを閉じる
 RButton & XButton1::
 	WinGetTitle, Title, A
 	IfInString, Title, Outlook , {
