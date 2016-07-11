@@ -47,6 +47,7 @@ RAlt & [::ShiftAltTab
 #include IfWinActives\Chrome.ahk
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
+#include IfWinActives\SakuraEditor.ahk
 ;Mouse設定
 #include MouseBindings.ahk
 ;JoyPad設定
