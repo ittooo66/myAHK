@@ -2,7 +2,9 @@ mbind_a(){
 	if RCMD() && LCMD(){
 		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
 			run, C:\Users\66\AppData\Local\atom\update.exe --processStart atom.exe
-	}else if RCMD() || CAPS()
+	}else if RCMD() && CAPS()
+		Send,{AppsKey}{UP}{UP}{UP}{UP}{Return}
+	else if RCMD() || CAPS()
 		press("^{LEFT}")
 	else if SPACE() && SHIFT()
 		copyTo("SA")
