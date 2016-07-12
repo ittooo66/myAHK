@@ -18,13 +18,6 @@ RButton & LButton::
 return
 
 ;メールをDoingして次へ
-RButton & LButton::
-	send,^+{2}
-	sleep,200
-	send,{return}
-return
-
-;メールをリマインドフォルダへ
 RButton & XButton2::
 	send,^+{2}
 	sleep,200
