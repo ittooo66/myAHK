@@ -60,7 +60,7 @@ mbind_d(){
 
 mbind_e(){
 	if RCMD() && LCMD(){
-		if !activateWindow("Notepad","","")
+		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
 	}else if CAPS() && RCMD()
 		Send,#{Tab}
@@ -217,7 +217,7 @@ mbind_m(){
 
 mbind_n(){
 	if RCMD() && LCMD(){
-		if !activateWindow("Notepad","","")
+		if !activateWindow("IEFrame","","")
 			openApp("Internet Explorer")
 	}else if RCMD() || CAPS()
 		press("0")
