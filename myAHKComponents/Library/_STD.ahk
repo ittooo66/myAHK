@@ -126,7 +126,12 @@ addAlias(num){
 	ClipWait 1
 	filedir = %clipboard%
 	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
-	FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+
+	;Windows7の場合はこっち
+	FileAppend,	%filedir% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+	;Windows10の場合はこっち
+	;FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+
 	Clipboard = %cb_bk%
 	Send,{return}
 	Send,+{Tab}+{Tab}
