@@ -14,4 +14,13 @@
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
 
+	vkEBsc07B & c::
+	LControl & c::
+		if CAPS() && LCMD()
+			;印刷
+			Send, {Alt}{f}{p}{Alt}
+		else
+			mbind_c()
+	return
+
 #IfWinActive

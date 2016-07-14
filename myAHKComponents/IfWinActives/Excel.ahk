@@ -107,6 +107,15 @@
 			mbind_l()
 	return
 
+	vkEBsc07B & c::
+	LControl & c::
+		if CAPS() && LCMD()
+			;印刷
+			Send, {Alt}{f}{p}{Alt}
+		else
+			mbind_c()
+	return
+
 	XButton2 & WheelUp::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
 	XButton2 & WheelDown::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
 

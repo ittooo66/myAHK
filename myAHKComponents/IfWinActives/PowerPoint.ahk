@@ -152,8 +152,8 @@
 	vkEBsc07B & c::
 	LControl & c::
 		if CAPS() && LCMD()
-			;トリミング
-			Send, !{j}{p}{v}{c}
+			;印刷
+			Send, {Alt}{f}{p}{Alt}
 		else
 			mbind_c()
 	return
