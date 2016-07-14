@@ -351,7 +351,10 @@ mbind_u(){
 }
 
 mbind_v(){
-	if RCMD() || CAPS()
+	if RCMD() && LCMD(){
+		if !activateWindow("VISIOA","VISIO.EXE","")
+			openApp("Visio")
+	}else if RCMD() || CAPS()
 		HistoricalClip_openWindow()
 	else if SPACE() && SHIFT()
 		copyTo("SV")
