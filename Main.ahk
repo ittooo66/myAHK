@@ -44,6 +44,7 @@ RAlt & [::ShiftAltTab
 #include IfWinActives\Word.ahk
 #include IfWinActives\Excel.ahk
 #include IfWinActives\PowerPoint.ahk
+#include IfWinActives\Visio.ahk
 #include IfWinActives\Chrome.ahk
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
