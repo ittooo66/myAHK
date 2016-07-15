@@ -111,30 +111,18 @@ addAlias(num){
 	if(class != "CabinetWClass"){
 		return
 	}
-	;一応Clipboard退避しとく
+	;Clipboard退避
 	cb_bk = %ClipboardAll%
-	Send,{F2}
-	Send,^{a}
+	;clipboardにコピー
 	clipboard =
 	Send, ^c
 	ClipWait 1
+	;ディレクトリ位置の再構成
 	filename = %clipboard%
-	Send,{Esc}
-	Send,^{l}
-	clipboard =
-	Send, ^c
-	ClipWait 1
-	filedir = %clipboard%
 	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
-
-	;Windows7の場合はこっち
-	FileAppend,	%filedir% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
-	;Windows10の場合はこっち
-	;FileAppend,	%filedir%\%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
-
+	FileAppend,	%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+	;Clipboard復帰
 	Clipboard = %cb_bk%
-	Send,{return}
-	Send,+{Tab}+{Tab}
 }
 
 ;ショートカットを開く
