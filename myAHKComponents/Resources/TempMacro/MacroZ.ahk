@@ -1,0 +1,3 @@
+MacroZ(){
+	Send,{z}
+}

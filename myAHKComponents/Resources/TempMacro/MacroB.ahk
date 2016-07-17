@@ -1,0 +1,3 @@
+MacroB(){
+	Send,{b}
+}

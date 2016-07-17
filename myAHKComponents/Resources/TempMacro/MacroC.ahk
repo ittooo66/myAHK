@@ -1,0 +1,3 @@
+MacroC(){
+	Send,{c}
+}

@@ -1,0 +1,3 @@
+MacroX(){
+	Send,{x}
+}

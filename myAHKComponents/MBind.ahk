@@ -16,9 +16,9 @@ mbind_a(){
 
 mbind_b(){
 	if (RCMD() || CAPS()) && SHIFT()
-		run C:\Windows\System32\notepad.exe %A_WorkingDir%\myAHKComponents\Library\Macro.ahk
+		TempMacro_open("B")
 	else if RCMD() || CAPS()
-		macro()
+		TempMacro_do("B")
 	else if SPACE() && SHIFT()
 		copyTo("SB")
 	else if SPACE()
@@ -29,9 +29,9 @@ mbind_b(){
 
 mbind_c(){
 	if ( CAPS() || RCMD() )&& SHIFT()
-		copyTo("C")
+		TempMacro_open("C")
 	else if RCMD() || CAPS()
-		pasteFrom("C")
+		TempMacro_do("C")
 	else if LCMD()
 		HistoricalClip_stackCopy()
 	else if SPACE() && SHIFT()
@@ -377,9 +377,9 @@ mbind_w(){
 
 mbind_x(){
 	if ( CAPS() || RCMD() )&& SHIFT()
-		copyTo("X")
+		TempMacro_open("X")
 	else if RCMD() || CAPS()
-		pasteFrom("X")
+		TempMacro_do("X")
 	else if LCMD(){
 		HistoricalClip_stackCopy()
 		press("x")
@@ -404,9 +404,9 @@ mbind_y(){
 
 mbind_z(){
 	if ( CAPS() || RCMD() )&& SHIFT()
-		copyTo("Z")
+		TempMacro_open("Z")
 	else if RCMD() || CAPS()
-		pasteFrom("Z")
+		TempMacro_do("Z")
 	else if SPACE() && SHIFT()
 		copyTo("SZ")
 	else if SPACE()

@@ -32,10 +32,15 @@ RAlt & [::ShiftAltTab
 ;Library(バインドは持たないがグローバル変数の干渉に注意)
 #include Library\HistoricalClip.ahk
 #include Library\_STD.ahk
-#include Library\Macro.ahk
 #include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
 #include Library\NippouMacro.ahk
+;TempMacroのInclude
+#include Library\TempMacro.ahk
+#include Resources\TempMacro\MacroZ.ahk
+#include Resources\TempMacro\MacroX.ahk
+#include Resources\TempMacro\MacroC.ahk
+#include Resources\TempMacro\MacroB.ahk
 ;IfWinActives(特定Window/App上で有効になるバインドセット)
 #include IfWinActives\_General.ahk
 #include IfWinActives\Explorer.ahk
