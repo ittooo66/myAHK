@@ -71,6 +71,8 @@ download(){
 
 ;拡張クリップボード(copy)
 copyTo(num){
+	;Spaceキーのスタックを消費
+	consumeSpace()
 	;cb_bkに中身を退避
 	cb_bk = %ClipboardAll%
 	;一旦clipboardを空にする
@@ -93,6 +95,8 @@ copyTo(num){
 
 ;拡張クリップボード(paste)
 pasteFrom(num){
+	;Spaceキーのスタックを消費
+	consumeSpace()
 	;cb_bkに中身を退避
 	cb_bk = %ClipboardAll%
 	;Clipboardに内容読み込み
