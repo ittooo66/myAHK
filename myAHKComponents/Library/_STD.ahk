@@ -117,7 +117,7 @@ directInput(string){
 	;貼り付け
 	Send,^v
 	;干渉防止のため、貼り付け完了まで一寸待ってClipboardを元に戻す
-	sleep,300
+	sleep,150
 	Clipboard = %cb_bk%
 }
 

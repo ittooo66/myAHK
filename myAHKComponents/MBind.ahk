@@ -171,8 +171,6 @@ mbind_k(){
 			run, "C:\Program Files\Processing\processing-2.2.1\processing.exe"
 	}else if RSHIFT() && LSHIFT()
 		Send,{RButton}
-	else if CAPS() && RCMD()
-		NippouMacro_backTime()
 	else if RCMD() || CAPS()
 		press("5")
 	else if SPACE() && SHIFT()
@@ -192,8 +190,6 @@ mbind_l(){
 		}
 	}else if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
-	else if CAPS() && RCMD()
-		NippouMacro_forwardTime()
 	else if RCMD() || CAPS()
 		press("6")
 	else if SPACE() && SHIFT()

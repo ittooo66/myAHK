@@ -1,5 +1,4 @@
-
-NippouMacro_forwardTime(){
+NippouMacro_upStartHour(){
 	;clipboardにCopy
 	Send,^x
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
@@ -9,47 +8,40 @@ NippouMacro_forwardTime(){
 	{
 		return
 	}
-
-	;頭二桁を数値として得る
-	StringTrimRight, sHour, ClipBoard, 3
-	hour := sHour
-	;尾二桁を数値として得る
-	StringTrimLeft, sMinute, ClipBoard, 3
-	minute := sMinute
-
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
 	;日時形式がおかしければ終了
-	if (hour < 0 || 24 < hour || minute < 0 || 60 < minute){
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
 		Send,^v
-		Send,09`:30
-		Send,+{Left}+{Left}+{Left}+{Left}+{Left}
 		return
 	}
 
-	;時間を15分すすめる
-	if( minute < 45 ){
-		minute := minute + 15
-	}else{
-		hour := hour + 1
-		if(hour<10)
-			Send,0
-		minute := 0
-	}
+	;時間調整
+	startHour := startHour + 1
+	if(startHour > 24)
+		startHour := 0
 
-	;貼り付けて、選択する
-	Send, %hour%
-	Send,`:
-	if(minute < 10)
-		Send, 0%minute%
+	;時間フォーマットを作成
+	time := ""
+	if(startHour < 10)
+		time := "0" . startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "		"
 	else
-		Send, %minute%
-	Loop, 5
-	{
-		Send,+{Left}
-	}
+		time := startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "		"
 
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
 }
 
-NippouMacro_backTime(){
+NippouMacro_downStartHour(){
 	;clipboardにCopy
 	Send,^x
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
@@ -59,47 +51,292 @@ NippouMacro_backTime(){
 	{
 		return
 	}
-
-	;頭二桁を数値として得る
-	StringTrimRight, sHour, ClipBoard, 3
-	hour := sHour
-	;尾二桁を数値として得る
-	StringTrimLeft, sMinute, ClipBoard, 3
-	minute := sMinute
-
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
 	;日時形式がおかしければ終了
-	if (hour < 0 || 24 < hour || minute < 0 || 60 < minute){
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
 		Send,^v
 		return
 	}
 
-	;時間を15分もどす
-	if( minute >= 15 ){
-		minute := minute - 15
-	}else{
-		hour := hour - 1
-		if(hour<10)
-			Send,0
-		minute := 45
-	}
+	;時間調整
+	startHour := startHour - 1
+	if(startHour < 0)
+		startHour := 24
 
-	;貼り付けて、選択する
-	Send, %hour%
-	Send,`:
-	if(minute < 10)
-		Send, 0%minute%
-	else
-		Send, %minute%
-	Loop, 5
+	;時間フォーマットを作成
+	time := ""
+	if(startHour < 10)
+		time := time . "0"
+	time := time . startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
+}
+
+NippouMacro_upStartMinute(){
+	;clipboardにCopy
+	Send,^x
+	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
 	{
-		Send,+{Left}
+		return
 	}
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
+	;日時形式がおかしければ終了
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
+		Send,^v
+		return
+	}
+
+	;時間調整
+	startMinute := startMinute + 15
+	if(startMinute > 59)
+		startMinute := 0
+
+	;時間フォーマットを作成
+	time := ""
+	if(startMinute < 10)
+		time := strStartHour . ":0" . startMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+	else
+		time := strStartHour . ":" . startMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
 }
 
-NippouMacro_rateUp(){
-	;◎○△▲☆
+NippouMacro_downStartMinute(){
+	;clipboardにCopy
+	Send,^x
+	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
+	{
+		return
+	}
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
+	;日時形式がおかしければ終了
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
+		Send,^v
+		return
+	}
+
+	;時間調整
+	startMinute := startMinute - 15
+	if(startMinute < 0)
+		startMinute := 45
+
+	;時間フォーマットを作成
+	time := ""
+	if(startMinute < 10)
+		time := strStartHour . ":0" . startMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+	else
+		time := strStartHour . ":" . startMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
 }
 
-NippouMacro_rateDown(){
+NippouMacro_upEndHour(){
+	;clipboardにCopy
+	Send,^x
+	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
+	{
+		return
+	}
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
+	;日時形式がおかしければ終了
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
+		Send,^v
+		return
+	}
 
+	;時間調整
+	endHour := endHour + 1
+	if(endHour > 24)
+		endHour := 0
+
+	;時間フォーマットを作成
+	time := ""
+	if(endHour < 10)
+		time := strStartHour . ":" . strStartMinute . "-0" . endHour . ":" . strEndMinute . "		"
+	else
+		time := startHour . ":" . strStartMinute . "-" . endHour . ":" . strEndMinute . "		"
+
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
+}
+
+NippouMacro_downEndHour(){
+	;clipboardにCopy
+	Send,^x
+	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
+	{
+		return
+	}
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
+	;日時形式がおかしければ終了
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
+		Send,^v
+		return
+	}
+
+	;時間調整
+	endHour := endHour - 1
+	if(endHour < 0)
+		endHour := 24
+
+	;時間フォーマットを作成
+	time := ""
+	if(endHour < 10)
+		time := strStartHour . ":" . strStartMinute . "-0" . endHour . ":" . strEndMinute . "		"
+	else
+		time := strStartHour . ":" . strStartMinute . "-" . endHour . ":" . strEndMinute . "		"
+
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
+}
+
+NippouMacro_upEndMinute(){
+	;clipboardにCopy
+	Send,^x
+	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
+	{
+		return
+	}
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
+	;日時形式がおかしければ終了
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
+		Send,^v
+		return
+	}
+
+	;時間調整
+	endMinute := endMinute + 15
+	if(endMinute > 59)
+		endMinute := 0
+
+	;時間フォーマットを作成
+	time := ""
+	if(endMinute < 10)
+		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":0" . endMinute . "		"
+	else
+		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":" . endMinute . "		"
+
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
+}
+
+NippouMacro_downEndMinute(){
+	;clipboardにCopy
+	Send,^x
+	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
+	{
+		return
+	}
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
+	;日時形式がおかしければ終了
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
+		Send,^v
+		return
+	}
+
+	;時間調整
+	endMinute := endMinute - 15
+	if(endMinute < 0)
+		endMinute := 45
+
+	;時間フォーマットを作成
+	time := ""
+	if(endMinute < 10)
+		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":0" . endMinute . "		"
+	else
+		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":" . endMinute . "		"
+
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
 }
