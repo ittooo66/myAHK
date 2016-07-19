@@ -31,9 +31,9 @@ NippouMacro_upStartHour(){
 	;時間フォーマットを作成
 	time := ""
 	if(startHour < 10)
-		time := "0" . startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+		time := "0" . startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "    "
 	else
-		time := startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+		time := startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "    "
 
 	;フォーマット入力
 	directInput(time)
@@ -75,7 +75,7 @@ NippouMacro_downStartHour(){
 	time := ""
 	if(startHour < 10)
 		time := time . "0"
-	time := time . startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+	time := time . startHour . ":" . strStartMinute . "-" . strEndHour . ":" . strEndMinute . "    "
 
 	;フォーマット入力
 	directInput(time)
@@ -116,9 +116,9 @@ NippouMacro_upStartMinute(){
 	;時間フォーマットを作成
 	time := ""
 	if(startMinute < 10)
-		time := strStartHour . ":0" . startMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+		time := strStartHour . ":0" . startMinute . "-" . strEndHour . ":" . strEndMinute . "    "
 	else
-		time := strStartHour . ":" . startMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+		time := strStartHour . ":" . startMinute . "-" . strEndHour . ":" . strEndMinute . "    "
 
 	;フォーマット入力
 	directInput(time)
@@ -159,9 +159,9 @@ NippouMacro_downStartMinute(){
 	;時間フォーマットを作成
 	time := ""
 	if(startMinute < 10)
-		time := strStartHour . ":0" . startMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+		time := strStartHour . ":0" . startMinute . "-" . strEndHour . ":" . strEndMinute . "    "
 	else
-		time := strStartHour . ":" . startMinute . "-" . strEndHour . ":" . strEndMinute . "		"
+		time := strStartHour . ":" . startMinute . "-" . strEndHour . ":" . strEndMinute . "    "
 
 	;フォーマット入力
 	directInput(time)
@@ -202,9 +202,9 @@ NippouMacro_upEndHour(){
 	;時間フォーマットを作成
 	time := ""
 	if(endHour < 10)
-		time := strStartHour . ":" . strStartMinute . "-0" . endHour . ":" . strEndMinute . "		"
+		time := strStartHour . ":" . strStartMinute . "-0" . endHour . ":" . strEndMinute . "    "
 	else
-		time := startHour . ":" . strStartMinute . "-" . endHour . ":" . strEndMinute . "		"
+		time := startHour . ":" . strStartMinute . "-" . endHour . ":" . strEndMinute . "    "
 
 	;フォーマット入力
 	directInput(time)
@@ -245,9 +245,9 @@ NippouMacro_downEndHour(){
 	;時間フォーマットを作成
 	time := ""
 	if(endHour < 10)
-		time := strStartHour . ":" . strStartMinute . "-0" . endHour . ":" . strEndMinute . "		"
+		time := strStartHour . ":" . strStartMinute . "-0" . endHour . ":" . strEndMinute . "    "
 	else
-		time := strStartHour . ":" . strStartMinute . "-" . endHour . ":" . strEndMinute . "		"
+		time := strStartHour . ":" . strStartMinute . "-" . endHour . ":" . strEndMinute . "    "
 
 	;フォーマット入力
 	directInput(time)
@@ -288,9 +288,9 @@ NippouMacro_upEndMinute(){
 	;時間フォーマットを作成
 	time := ""
 	if(endMinute < 10)
-		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":0" . endMinute . "		"
+		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":0" . endMinute . "    "
 	else
-		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":" . endMinute . "		"
+		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":" . endMinute . "    "
 
 	;フォーマット入力
 	directInput(time)
@@ -331,9 +331,9 @@ NippouMacro_downEndMinute(){
 	;時間フォーマットを作成
 	time := ""
 	if(endMinute < 10)
-		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":0" . endMinute . "		"
+		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":0" . endMinute . "    "
 	else
-		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":" . endMinute . "		"
+		time := strStartHour . ":" . strStartMinute . "-" . strEndHour . ":" . endMinute . "    "
 
 	;フォーマット入力
 	directInput(time)
