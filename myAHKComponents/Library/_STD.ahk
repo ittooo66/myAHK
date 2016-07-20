@@ -97,15 +97,10 @@ copyTo(num){
 pasteFrom(num){
 	;Spaceキーのスタックを消費
 	consumeSpace()
-	;cb_bkに中身を退避
-	cb_bk = %ClipboardAll%
-	;Clipboardに内容読み込み
-	FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
-	;貼り付け
-	Send,^v
-	;干渉防止のため、貼り付け完了まで一寸待ってClipboardを元に戻す
-	sleep,300
-	Clipboard = %cb_bk%
+	;content取得
+	FileRead, content ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
+	;content出力
+	directInput(content)
 }
 
 ;直接入力、IME無視で文字列(string)を入力する

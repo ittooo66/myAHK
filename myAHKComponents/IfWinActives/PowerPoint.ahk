@@ -198,19 +198,6 @@
 		Send,{Alt}
 	return
 
-	;図形挿入
-	RButton & MButton::
-		;cb_bkに中身を退避
-		cb_bk = %ClipboardAll%
-		;Clipboardに内容読み込み
-		FileRead, Clipboard ,*c %A_WorkingDir%\myAHKComponents\Resources\PowerpointContent\rect.dat
-		;貼り付け
-		Send,^v
-		;干渉防止のため、貼り付け完了まで一寸待ってClipboardを元に戻す
-		sleep,300
-		Clipboard = %cb_bk%
-	return
-
 	;閉じる
 	RButton & XButton1::
 		Send,!{F4}

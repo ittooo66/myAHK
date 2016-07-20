@@ -107,13 +107,8 @@ HistoricalClip_down(){
 HistoricalClip_return(){
 	global HistoricalClip_index
 	Gui, show, Hide
-	cb_bk = %ClipboardAll%
-	FileRead, Clipboard , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.txt
-	ClipWait
-	Send,^v
-	Sleep,300
-	Clipboard = %cb_bk%
-
+	FileRead, content , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.txt
+	directInput(content)
 	;historicalClipフラグを下げる
 	global HistoricalClip_isDisplayed
 	HistoricalClip_isDisplayed = 0
