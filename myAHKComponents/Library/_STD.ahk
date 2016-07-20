@@ -103,7 +103,7 @@ pasteFrom(num){
 	directInput(content)
 }
 
-;直接入力、IME無視で文字列(string)を入力する
+;直接入力、IME無視で文字列(string)(dat可)を入力する
 directInput(string){
 	;cb_bkに中身を退避
 	cb_bk = %ClipboardAll%
