@@ -1,6 +1,6 @@
 ;特定のマクロを開く
 TempMacro_open(id){
-	run C:\Program Files (x86)\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\Macro%id%.ahk
+	run C:\Program Files\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\Macro%id%.ahkz
 }
 
 ;マクロ実行
