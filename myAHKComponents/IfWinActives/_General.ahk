@@ -18,6 +18,15 @@
 #IfWinActive,ahk_class WorkerW
 	XButton1::return
 	XButton2::return
+
+	;ショートカット作成
+	vkEBsc07B & a::
+	LControl & a::
+		if CAPS() && LCMD()
+			Send,{AppsKey}{UP}{UP}{UP}{UP}{Return}
+		else
+			mbind_a()
+	return
 #IfWinActive
 
 ;デスクトップ上(ラボPCだとこっち)
