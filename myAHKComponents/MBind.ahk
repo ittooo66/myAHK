@@ -13,11 +13,7 @@ mbind_a(){
 }
 
 mbind_b(){
-	if (RCMD() || CAPS()) && SHIFT()
-		TempMacro_open("B")
-	else if RCMD() || CAPS()
-		TempMacro_do("B")
-	else if SPACE() && SHIFT()
+	if SPACE() && SHIFT()
 		copyTo("SB")
 	else if SPACE()
 		pasteFrom("SB")
