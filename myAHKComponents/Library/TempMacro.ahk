@@ -5,9 +5,7 @@ TempMacro_open(id){
 
 ;マクロ実行
 TempMacro_do(id){
-	if(id == "B")
-		MacroB()
-	else if(id == "Z")
+	if(id == "Z")
 		MacroZ()
 	else if(id == "X")
 		MacroX()
