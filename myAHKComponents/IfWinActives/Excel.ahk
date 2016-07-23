@@ -20,6 +20,15 @@
 			mbind_z()
 	return
 
+	;貼り付けオプションを離脱する
+	vkEBsc07B & v::
+		if LCMD(){
+			Send,^{v}
+			Send,^{c}
+		}else
+			mbind_v()
+	return
+
 	;セル背景色変更
 	vkEBsc07B & d::
 	LControl & d::
