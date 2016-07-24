@@ -120,7 +120,7 @@
 	LControl & c::
 		if CAPS() && LCMD()
 			;印刷
-			Send, {Alt}{f}{p}{Alt}
+			Send,!{f}{p}{Alt}
 		else
 			mbind_c()
 	return
