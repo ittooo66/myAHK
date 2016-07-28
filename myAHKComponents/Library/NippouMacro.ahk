@@ -1,3 +1,68 @@
+;要リファクタ!!!!!!
+
+
+NippouMacro_initTime(){
+	Send,{Up}
+	Send,{Home}
+	Loop, 7
+	{
+		Send,+^{RIGHT}
+	}
+	Send,^{c}
+	ClipWait 0.5, 1
+
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
+	{
+		Send,{Down}
+		return
+	}
+
+	;各値を得る
+	StringMid, strStartHour, ClipBoard, 1 , 2
+	StringMid, strStartMinute, ClipBoard, 4 , 2
+	StringMid, strEndHour, ClipBoard, 7 , 2
+	StringMid, strEndMinute, ClipBoard, 10 , 2
+	startHour := strStartHour
+	startMinute := strStartMinute
+	endHour := strEndHour
+	endMinute := strEndMinute
+	;日時形式がおかしければ終了
+	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
+		Send,{Down}
+		return
+	}
+
+	;時間フォーマットを作成
+	time := strEndHour . ":" . strEndMinute . "-" . strEndHour . ":" . strEndMinute . "    "
+
+	Send,{Down}
+	;フォーマット入力
+	directInput(time)
+	;フォーマット形式で選択
+	Send,+{Home}
+}
+
+NippouMacro_selectTime(){
+	Send,{End}
+	Send,+{Home}
+	Send,^{c}
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
+	{
+		return
+	}
+	StringLen, length, Clipboard
+	if (length > 14){
+		Send,{Left}
+		Loop, 7
+		{
+			Send,+^{RIGHT}
+		}
+	}
+}
+
 NippouMacro_upStartHour(){
 	;clipboardにCopy
 	Send,^x

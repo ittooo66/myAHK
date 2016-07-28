@@ -39,6 +39,22 @@
 			mbind_s()
 	return
 
+	LControl & d::
+	vkEBsc07B & d::
+		if CAPS() && LCMD()
+			NippouMacro_initTime()
+		else
+			mbind_d()
+	return
+
+	LControl & g::
+	vkEBsc07B & g::
+		if CAPS() && LCMD()
+			NippouMacro_selectTime()
+		else
+			mbind_g()
+	return
+
 	LControl & f::
 	vkEBsc07B & f::
 		if CAPS() && LCMD()
