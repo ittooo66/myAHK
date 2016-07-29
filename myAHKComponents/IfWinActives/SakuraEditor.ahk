@@ -14,31 +14,6 @@
 			mbind_z()
 	return
 
-
-	LControl & w::
-	vkEBsc07B & w::
-		if CAPS() && LCMD()
-			NippouMacro_downStartHour()
-		else
-			mbind_w()
-	return
-
-	LControl & r::
-	vkEBsc07B & r::
-		if CAPS() && LCMD()
-			NippouMacro_upStartHour()
-		else
-			mbind_r()
-	return
-
-	LControl & s::
-	vkEBsc07B & s::
-		if CAPS() && LCMD()
-			NippouMacro_downStartMinute()
-		else
-			mbind_s()
-	return
-
 	LControl & d::
 	vkEBsc07B & d::
 		if CAPS() && LCMD()
@@ -47,18 +22,34 @@
 			mbind_d()
 	return
 
-	LControl & g::
-	vkEBsc07B & g::
+	LControl & w::
+	vkEBsc07B & w::
 		if CAPS() && LCMD()
-			NippouMacro_selectTime()
+			NippouMacro_reloadTime(-1, 0, 0, 0)
 		else
-			mbind_g()
+			mbind_w()
+	return
+
+	LControl & r::
+	vkEBsc07B & r::
+		if CAPS() && LCMD()
+			NippouMacro_reloadTime(1, 0, 0, 0)
+		else
+			mbind_r()
+	return
+
+	LControl & s::
+	vkEBsc07B & s::
+		if CAPS() && LCMD()
+			NippouMacro_reloadTime(0, -15, 0, 0)
+		else
+			mbind_s()
 	return
 
 	LControl & f::
 	vkEBsc07B & f::
 		if CAPS() && LCMD()
-			NippouMacro_upStartMinute()
+			NippouMacro_reloadTime(0, 15, 0, 0)
 		else
 			mbind_f()
 	return
@@ -66,7 +57,7 @@
 	LControl & u::
 	vkEBsc07B & u::
 		if CAPS() && LCMD()
-			NippouMacro_downEndHour()
+			NippouMacro_reloadTime(0, 0, -1, 0)
 		else
 			mbind_u()
 	return
@@ -74,7 +65,7 @@
 	LControl & o::
 	vkEBsc07B & o::
 		if CAPS() && LCMD()
-			NippouMacro_upEndHour()
+			NippouMacro_reloadTime(0, 0, 1, 0)
 		else
 			mbind_o()
 	return
@@ -82,7 +73,7 @@
 	LControl & j::
 	vkEBsc07B & j::
 		if CAPS() && LCMD()
-			NippouMacro_downEndMinute()
+			NippouMacro_reloadTime(0, 0, 0, -15)
 		else
 			mbind_j()
 	return
@@ -90,7 +81,7 @@
 	LControl & l::
 	vkEBsc07B & l::
 		if CAPS() && LCMD()
-			NippouMacro_upEndMinute()
+			NippouMacro_reloadTime(0, 0, 0, 15)
 		else
 			mbind_l()
 	return
