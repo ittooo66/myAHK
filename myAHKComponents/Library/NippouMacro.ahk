@@ -63,21 +63,17 @@ NippouMacro_reloadTime( startHourDiff, startMinuteDiff, endHourDiff, endMinuteDi
 	;時間フォーマット作成
 	time =
 	if(startHour < 10)
-		time := time . "0" . startHour . ":"
-	else
-		time := time . startHour . ":"
+		time := time . "0"
+	time := time . startHour . ":"
 	if(startMinute < 10)
-		time := time . "0" . startMinute . "-"
-	else
-		time := time . startMinute . "-"
+		time := time . "0"
+	time := time . startMinute . "-"
 	if(endHour < 10)
-		time := time . "0" . endHour . ":"
-	else
-		time := time . endHour . ":"
+		time := time . "0"
+	time := time . endHour . ":"
 	if(endMinute < 10)
-		time := time . "0" . endMinute . "    "
-	else
-		time := time . endMinute . "    "
+		time := time . "0"
+	time := time . endMinute . "    "
 
 	;時間フォーマット出力
 	directInput(time . text)
