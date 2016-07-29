@@ -105,15 +105,8 @@ pasteFrom(num){
 
 ;直接入力、IME無視で文字列(string)(dat可)を入力する
 directInput(string){
-	;cb_bkに中身を退避
-	cb_bk = %ClipboardAll%
-	;Clipboardに内容読み込み
 	Clipboard := string
-	;貼り付け
 	Send,^v
-	;干渉防止のため、貼り付け完了まで一寸待ってClipboardを元に戻す
-	sleep,150
-	Clipboard = %cb_bk%
 }
 
 ;ショートカット生成)
