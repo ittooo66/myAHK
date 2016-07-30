@@ -1,6 +1,6 @@
 ;日報マクロの時間調整
 NippouMacro_reloadTime( startHourDiff, startMinuteDiff, endHourDiff, endMinuteDiff ){
-	;時間フォーマットを選択
+	;行選択
 	Send,{End}
 	Send,+{Home}
 	Send,^{c}
@@ -81,44 +81,48 @@ NippouMacro_reloadTime( startHourDiff, startMinuteDiff, endHourDiff, endMinuteDi
 
 ;日報マクロの初期時間の入力
 NippouMacro_initTime(){
+	;前行に戻る
 	Send,{Up}
-	Send,{Home}
-	Loop, 7
-	{
-		Send,+^{RIGHT}
-	}
+
+	;前行をまるまるコピー
+	Send,{End}
+	Send,+{Home}
 	Send,^{c}
 	ClipWait 0.5, 1
-
-	;クリップボードに何も入ってこないとき
 	if ErrorLevel <> 0
 	{
+		return
+	}
+
+	;前行の時間フォーマットを得る
+	StringLen, length, Clipboard
+	if (length > 14){
+		StringLeft, timeFormat, Clipboard, 15
+		StringTrimLeft, text, ClipBoard, 15
+	}else{
 		Send,{Down}
 		return
 	}
 
 	;各値を得る
-	StringMid, strStartHour, ClipBoard, 1 , 2
-	StringMid, strStartMinute, ClipBoard, 4 , 2
-	StringMid, strEndHour, ClipBoard, 7 , 2
-	StringMid, strEndMinute, ClipBoard, 10 , 2
+	StringMid, strStartHour, timeFormat, 1 , 2
+	StringMid, strStartMinute, timeFormat, 4 , 2
+	StringMid, strEndHour, timeFormat, 7 , 2
+	StringMid, strEndMinute, timeFormat, 10 , 2
 	startHour := strStartHour
 	startMinute := strStartMinute
 	endHour := strEndHour
 	endMinute := strEndMinute
+
+	;開始行に戻る
+	Send,{Down}
+
 	;日時形式がおかしければ終了
 	if (startHour < 0 || 24 < startHour || startMinute < 0 || 60 < startMinute || endHour < 0 || 24 < endHour || endMinute < 0 || 60 < endMinute){
-		Send,{Down}
 		return
 	}
 
-	;時間フォーマットを作成
-	time := strEndHour . ":" . strEndMinute . "-" . strEndHour . ":" . strEndMinute . "    "
-
-	Send,{Down}
-	;フォーマット入力
-	directInput(time)
-	;フォーマット形式で選択
-	Send,+{Home}
+	;時間フォーマットの入力
+	directInput(strEndHour . ":" . strEndMinute . "-" . strEndHour . ":" . strEndMinute . "    ")
 }
 
