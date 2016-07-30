@@ -34,12 +34,6 @@ HistoricalClip_openWindow(){
 
 	;HistoricalClip_index値取得・調整
 	global HistoricalClip_index
-	;枠内調整
-	if(HistoricalClip_index<1){
-		HistoricalClip_index:=1
-	}else if(HistoricalClip_index>10){
-		HistoricalClip_index:=10
-	}
 
 	;GUI初期化
 	Gui, Destroy
@@ -94,6 +88,8 @@ HistoricalClip_openWindow(){
 HistoricalClip_up(){
 	global HistoricalClip_index
 	HistoricalClip_index--
+	if(HistoricalClip_index < 1)
+		HistoricalClip_index := 1
 	HistoricalClip_openWindow()
 }
 
@@ -101,15 +97,15 @@ HistoricalClip_up(){
 HistoricalClip_down(){
 	global HistoricalClip_index
 	HistoricalClip_index++
+	if(HistoricalClip_index > 10)
+		HistoricalClip_index := 10
 	HistoricalClip_openWindow()
 }
 
 ;貼り付け（index指定がなければ、現在選択中のindexで出力される）
 HistoricalClip_paste(index = 0){
-	;GUI非表示
-	Gui, show, Hide
-	global HistoricalClip_isDisplayed
-	HistoricalClip_isDisplayed = 0
+	;Window削除
+	HistoricalClip_closeWindow()
 
 	;パラメータ取得
 	global HistoricalClip_index
