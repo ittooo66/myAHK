@@ -109,7 +109,7 @@ directInput(string){
 	Send,^v
 }
 
-;ショートカット生成)
+;ショートカット生成
 addAlias(num){
 	;Explorer画面以外で暴発しないように
 	WinGetClass, class, A
@@ -159,7 +159,7 @@ guiIsOn(){
 ;一行消し。direction(="HOME"|"END")で消す方向を指定
 lineDel(direction){
 	Send,+{%direction%}
-	HistoricalClip_stackCopy()
+	HistoricalClip_copy()
 	Send,{BackSpace}
 }
 

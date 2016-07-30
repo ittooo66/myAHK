@@ -7,7 +7,7 @@ HistoricalClip_isDisplayed := 0
 ;ReturnにGUIフック
 ~Return::
 	if HistoricalClip_isDisplayed()
-		HistoricalClip_return()
+		HistoricalClip_paste()
 return
 
 ;GUIが表示されているかどうか
@@ -19,6 +19,7 @@ HistoricalClip_isDisplayed(){
 		return false
 }
 
+;Windowを閉じる
 HistoricalClip_closeWindow(){
 	global HistoricalClip_isDisplayed
 	HistoricalClip_isDisplayed = 0
@@ -103,19 +104,26 @@ HistoricalClip_down(){
 	HistoricalClip_openWindow()
 }
 
-;決定
-HistoricalClip_return(){
-	global HistoricalClip_index
+;貼り付け（index指定がなければ、現在選択中のindexで出力される）
+HistoricalClip_paste(index = 0){
+	;GUI非表示
 	Gui, show, Hide
-	FileRead, content , %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.txt
-	directInput(content)
-	;historicalClipフラグを下げる
 	global HistoricalClip_isDisplayed
 	HistoricalClip_isDisplayed = 0
+
+	;パラメータ取得
+	global HistoricalClip_index
+	if(index == 0)
+		FileRead, content, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.txt
+	else
+		FileRead, content, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%index%.txt
+
+	;貼り付け
+	directInput(content)
 }
 
-;コピーをスタックする
-HistoricalClip_stackCopy(){
+;コピー(履歴の最初にスタックされる)
+HistoricalClip_copy(){
 	;clipboardにCopy
 	Send,^c
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)

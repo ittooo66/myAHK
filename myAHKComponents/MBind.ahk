@@ -27,7 +27,7 @@ mbind_c(){
 	else if RCMD() || CAPS()
 		TempMacro_do("C")
 	else if LCMD()
-		HistoricalClip_stackCopy()
+		HistoricalClip_copy()
 	else if SPACE() && SHIFT()
 		copyTo("SC")
 	else if SPACE()
@@ -315,7 +315,7 @@ mbind_t(){
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 	}else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed()
-			HistoricalClip_return()
+			HistoricalClip_paste()
 		else
 			press("{return}")
 	}else if SPACE() && SHIFT()
@@ -350,6 +350,8 @@ mbind_v(){
 		copyTo("SV")
 	else if SPACE()
 		pasteFrom("SV")
+	else if LCMD()
+		HistoricalClip_paste(1)
 	else
 		press("v")
 }
@@ -371,7 +373,7 @@ mbind_x(){
 	else if RCMD() || CAPS()
 		TempMacro_do("X")
 	else if LCMD(){
-		HistoricalClip_stackCopy()
+		HistoricalClip_copy()
 		press("x")
 	}else if SPACE() && SHIFT()
 		copyTo("SX")
