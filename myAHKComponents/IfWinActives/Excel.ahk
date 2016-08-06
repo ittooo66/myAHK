@@ -22,10 +22,9 @@
 
 	;貼り付けオプションを離脱する
 	vkEBsc07B & v::
-		if LCMD(){
-			Send,^{v}
-			Send,^{c}
-		}else
+		if LCMD()
+			HistoricalClip_paste(1)
+		else
 			mbind_v()
 	return
 

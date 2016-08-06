@@ -110,9 +110,9 @@ HistoricalClip_paste(index = 0){
 	;パラメータ取得
 	global HistoricalClip_index
 	if(index == 0)
-		FileRead, content, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.txt
+		FileRead, content,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.dat
 	else
-		FileRead, content, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%index%.txt
+		FileRead, content,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%index%.dat
 
 	;貼り付け
 	directInput(content)
@@ -136,8 +136,38 @@ HistoricalClip_copy(){
 		i := 11 - A_Index
 		j := i-1
 		FileDelete, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%i%.txt
+		FileDelete, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%i%.dat
 		FileMoveDir, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%j%.txt, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%i%.txt, R
+		FileMoveDir, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%j%.dat, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%i%.dat, R
 	}
 	;最新履歴をClipboardから取得
 	FileAppend, %Clipboard%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\1.txt
+	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\1.dat
+}
+
+;切り取り（基本的にCopyと同様の仕様）
+HistoricalClip_cut(){
+	;clipboardにCopy
+	Send,^x
+	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
+	ClipWait 0.5, 1
+	;クリップボードに何も入ってこないとき
+	if ErrorLevel <> 0
+	{
+		;終了
+		return
+	}
+	;履歴更新
+	Loop, 10
+	{
+		i := 11 - A_Index
+		j := i-1
+		FileDelete, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%i%.txt
+		FileDelete, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%i%.dat
+		FileMoveDir, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%j%.txt, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%i%.txt, R
+		FileMoveDir, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%j%.dat, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%i%.dat, R
+	}
+	;最新履歴をClipboardから取得
+	FileAppend, %Clipboard%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\1.txt
+	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\1.dat
 }

@@ -26,10 +26,9 @@ mbind_c(){
 		TempMacro_open("C")
 	else if RCMD() || CAPS()
 		TempMacro_do("C")
-	else if LCMD(){
-		copyTo("C")
+	else if LCMD()
 		HistoricalClip_copy()
-	}else if SPACE() && SHIFT()
+	else if SPACE() && SHIFT()
 		copyTo("SC")
 	else if SPACE()
 		pasteFrom("SC")
@@ -352,7 +351,7 @@ mbind_v(){
 	else if SPACE()
 		pasteFrom("SV")
 	else if LCMD()
-		pasteFrom("C")
+		HistoricalClip_paste(1)
 	else
 		press("v")
 }
@@ -373,10 +372,9 @@ mbind_x(){
 		TempMacro_open("X")
 	else if RCMD() || CAPS()
 		TempMacro_do("X")
-	else if LCMD(){
-		HistoricalClip_copy()
-		press("x")
-	}else if SPACE() && SHIFT()
+	else if LCMD()
+		HistoricalClip_cut()
+	else if SPACE() && SHIFT()
 		copyTo("SX")
 	else if SPACE()
 		pasteFrom("SX")
