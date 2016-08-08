@@ -1,10 +1,6 @@
 my[AHK][AHK]
 ======================
-### Reinvent Key Bindings !###
-
-    Main.ahk          :実行ファイル
-    MANUAL.pptx       :挙動一覧
-    README.md         :各AHKファイルについての解説
+ Reinvent Key Bindings !
 
 ### HOW TO USE ###
 
@@ -23,6 +19,7 @@ LWin              -> 無変換(vkEBsc07B)
 1. [AutoHotkey][AHK]をインストールします。
 
 1. 本RepoをDownloadして、Main.ahkを実行します。
+
 
 ### myAHKComponents/ ###
 本体（Main.ahk）が依存してるComponent集
@@ -71,7 +68,6 @@ Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipとかで�
     + `.git/config` ファイルにて `autoCRLF=false`
     + `git clone`はそのへん宜しくやってくれるっぽい
 
-
 1. AHKのフック負けリスト
   + IME周り：Alt+\`,Ctrl+\`には勝てなかった。
   + Win+L(画面ロック),Win+Enter(ナレーター), ともにレジストリいじってオフにはできる。
@@ -86,7 +82,7 @@ Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipとかで�
 
 
 [HHKB]: http://www.pfu.fujitsu.com/hhkeyboard/
-[AHK]: https://github.com/AutoHotkey/AutoHotkey
+[AHK]: https://github.com/Lexikos/AutoHotkey_L
 [WheelScroll.ahk]: http://blechmusik.hatenablog.jp/entry/20100529/1275141213
 [IME.ahk]: http://www6.atwiki.jp/eamat/pages/17.html
 [MouseGestureL]: http://hp.vector.co.jp/authors/VA018351/mglahk.html
