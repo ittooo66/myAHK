@@ -15,7 +15,6 @@ RWin              -> 変換(vkFFsc079)
 LWin              -> 無変換(vkEBsc07B)
 無変換(vkEBsc07B)  -> LWin
 ```
-
 1. [AutoHotkey][AHK]をインストールします。
 
 1. 本RepoをDownloadして、Main.ahkを実行します。
