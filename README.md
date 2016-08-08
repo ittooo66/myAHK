@@ -20,9 +20,14 @@ LWin              -> 無変換(vkEBsc07B)
 
 1. 本RepoをDownloadして、Main.ahkを実行します。
 
+### / ###
+実行ファイルと各種マニュアル
+
+    Main.ahk          :実行ファイル
+    MANUAL.pptx       :マニュアル。どこ押すと何が起きるか書いてあるだけだけど。
 
 ### myAHKComponents/ ###
-本体（Main.ahk）が依存してるComponent集
+実行ファイル（Main.ahk）が依存してるComponent集
 
     MBind.ahk           :ほぼ本体。全体的な挙動
     MBindListener.ahk   :MBindを当てるためのリスナ
