@@ -7,7 +7,7 @@ my[AHK][AHK]
 1. [HHKB][HHKB]を購入します。  
 ※DIPスイッチは2と6をONにしています。
 
-2. [Chgkey.exe][ChgKey.exe]を使用してRWin,LWin周りの修飾キーを弄ります。  
+1. [Chgkey.exe][ChgKey.exe]を使用してRWin,LWin周りの修飾キーを弄ります。  
     ※変換一覧
     ```
     RWin              -> 変換(vkFFsc079)
@@ -16,9 +16,9 @@ my[AHK][AHK]
     無変換(vkEBsc07B)  -> LWin
     ```
 
-3. [AutoHotkey][AHK]をインストールします。
+1. [AutoHotkey][AHK]をインストールします。
 
-4. 本RepoをDownloadして、Main.ahkを実行します。
+1. 本RepoをDownloadして、Main.ahkを実行します。
 
 ### / ###
 実行ファイルと各種マニュアル
