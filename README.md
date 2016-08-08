@@ -8,13 +8,13 @@ my[AHK][AHK]
 ※DIPスイッチは2と6をONにしています。
 
 2. [Chgkey.exe][ChgKey.exe]を使用してRWin,LWin周りの修飾キーを弄ります。  
-※変換一覧
-```
-RWin              -> 変換(vkFFsc079)
-変換(vkFFsc079)   -> RWin
-LWin              -> 無変換(vkEBsc07B)
-無変換(vkEBsc07B)  -> LWin
-```
+    ※変換一覧
+    ```
+    RWin              -> 変換(vkFFsc079)
+    変換(vkFFsc079)   -> RWin
+    LWin              -> 無変換(vkEBsc07B)
+    無変換(vkEBsc07B)  -> LWin
+    ```
 
 3. [AutoHotkey][AHK]をインストールします。
 
