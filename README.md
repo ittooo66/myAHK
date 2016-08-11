@@ -42,10 +42,10 @@ my[AHK][AHK]
     MouseBindings.ahk   :マウスの挙動
     GUILabel.ahk        :GUIのラベル系、起動時には実行されないやつら。
 
-### GamingAHK/ ###
+### gamingAHK/ ###
 ゲーム用のAHK集。本体と共存不可能になったので別個に起動。
 
-### Reference/ ###
+### \_souko/ ###
 
 なんかにつかえそうだなあAHK集。代表的なものは以下。
 
@@ -57,6 +57,9 @@ my[AHK][AHK]
 
 + [IME.ahk][IME.ahk]  
 IME切り替え用AHK。つよい。
+
++ MY_LEGACY_AHK  
+自作の旧AHK、不揮発変数使ったりSetTimerつかったり。
 
 など。
 
