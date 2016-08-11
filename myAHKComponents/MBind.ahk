@@ -240,9 +240,7 @@ mbind_o(){
 }
 
 mbind_p(){
-	if RCMD() && CAPS(){
-		;ModifierBrowser_toggle()
-	}else if RCMD() && LCMD(){
+	if RCMD() && LCMD(){
 		if !activateWindow("PPTFrameClass","","")
 			openApp("PowerPoint")
 	}else if LSHIFT() && RSHIFT()

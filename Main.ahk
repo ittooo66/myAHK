@@ -3,16 +3,6 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
 
-;SetTimer有効化
-;#Persistent
-;JoyPadの各スティックポーリング
-;SetTimer, WatchXY, 20  ;実際内部的には30ms毎くらいで回ってる模様
-;SetTimer, WatchZ, 20   ;実際内部的には30ms毎くらいで回ってる模様
-;SetTimer, WatchR, 20   ;実際内部的には30ms毎くらいで回ってる模様
-;SetTimer, WatchPOV, 20 ;実際内部的には30ms毎くらいで回ってる模様
-;各機能用のTimer
-;SetTimer, ModifierBrowser_CheckMods, 100 ;修飾キーブラウザ(ModifierBrowser.ahk)
-
 ;Base Bindings
 Delete::`
 RAlt::RWin
@@ -55,16 +45,8 @@ RAlt & [::ShiftAltTab
 #include IfWinActives\SakuraEditor.ahk
 ;Mouse設定
 #include MouseBindings.ahk
-;JoyPad設定
-;#include JoyPadControl\ButtonControl.ahk
 
-;初回起動の実行、ここまで。
+;GuiEscape:GUI画面において、Escが入力された時に実行
+GuiEscape:
+	historicalClip_closeWindow()
 return
-
-;以下、GUIのラベル等、初回起動では不要なやつら。SetTimerでポーリングした対象がメイン
-#include GUILabel.ahk
-;#include Library\ModifierBrowser.ahk
-;#include JoyPadControl\WheelControl.ahk
-;#include JoyPadControl\MouseControl.ahk
-;#include JoyPadControl\CrossControl.ahk
-
