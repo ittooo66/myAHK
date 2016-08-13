@@ -130,7 +130,7 @@ mbind_i(){
 		if !activateWindow("OpusApp","","")
 			openApp("Word")
 	}else if RCMD() && CAPS()
-		changeSoundDevice("3")
+		changeSoundDevice("2")
 	else if RCMD() || CAPS()
 		press("8")
 	else if SPACE() && SHIFT()
