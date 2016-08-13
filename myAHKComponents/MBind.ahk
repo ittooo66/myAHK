@@ -311,10 +311,16 @@ mbind_t(){
 	if LCMD() && RCMD(){
 		if !activateWindow("ConsoleWindowClass","","")
 			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+	}else if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
+		if HistoricalClip_isDisplayed(){
+			HistoricalClip_closeWindow()
+			HistoricalClip_paste(0,"txt")
+		}
 	}else if RCMD() || CAPS(){
-		if HistoricalClip_isDisplayed()
+		if HistoricalClip_isDisplayed(){
+			HistoricalClip_closeWindow()
 			HistoricalClip_paste()
-		else
+		}else
 			press("{return}")
 	}else if SPACE() && SHIFT()
 		copyTo("ST")

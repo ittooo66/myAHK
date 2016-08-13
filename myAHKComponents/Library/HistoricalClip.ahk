@@ -5,9 +5,16 @@ HistoricalClip_index := 1
 HistoricalClip_isDisplayed := 0
 
 ;ReturnにGUIフック
+~+Return::
 ~Return::
-	if HistoricalClip_isDisplayed()
-		HistoricalClip_paste()
+	if HistoricalClip_isDisplayed(){
+		HistoricalClip_closeWindow()
+		if SHIFT(){
+			HistoricalClip_paste(0,"txt")
+		}else{
+			HistoricalClip_paste()
+		}
+	}
 return
 
 ;GUIが表示されているかどうか
@@ -103,16 +110,18 @@ HistoricalClip_down(){
 }
 
 ;貼り付け（index指定がなければ、現在選択中のindexで出力される）
-HistoricalClip_paste(index = 0){
-	;Window削除
-	HistoricalClip_closeWindow()
-
+;(type = dat(Datオブジェクトの貼り付け)|txt(Text形式の貼り付け))
+HistoricalClip_paste(index = 0,type = "dat"){
 	;パラメータ取得
 	global HistoricalClip_index
-	if(index == 0)
+	if(index == 0 && type == "dat")
 		FileRead, content,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.dat
-	else
+	else if (index == 0 && type == "txt")
+		FileRead, content, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.txt
+	else if (type == "dat")
 		FileRead, content,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%index%.dat
+	else
+		FileRead, content, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%index%.txt
 
 	;貼り付け
 	directInput(content)
