@@ -1,3 +1,0 @@
-MacroB(){
-	Send,{b}
-}
