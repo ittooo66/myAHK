@@ -197,8 +197,6 @@ mbind_l(){
 mbind_m(){
 	if RCMD() || CAPS()
 		press("1")
-	else if RALT()
-		return ;最小化無効
 	else if SPACE() && SHIFT()
 		copyTo("SM")
 	else if SPACE()
