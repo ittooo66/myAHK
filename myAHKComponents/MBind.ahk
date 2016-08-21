@@ -281,7 +281,7 @@ mbind_q(){
 mbind_r(){
 	if RCMD() && LCMD(){
 		if !activateWindow("ApplicationFrameWindow","ApplicationFrameHost.exe","Microsoft Edge")
-			run "C:\Users\AHK\Dropbox\bcd\WinApp\Microsoft Edge.lnk"
+			openApp("Edge")
 	}else if RCMD() || CAPS()
 		press("{END}")
 	else if SPACE() && SHIFT()
@@ -293,10 +293,7 @@ mbind_r(){
 }
 
 mbind_s(){
-	if RCMD() && LCMD(){
-		if !activateWindow("tSkMainForm","","")
-			run "C:\Program Files (x86)\Skype\Phone\Skype.exe"
-	}else if LCMD() && CAPS()
+	if LCMD() && CAPS()
 		Send,^{PgUp}
 	else if RCMD() && CAPS()
 		Send,^#{Left}
