@@ -22,7 +22,14 @@ mbind_b(){
 }
 
 mbind_c(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if RCMD() && LCMD(){
+		if !activateWindow("ConsoleWindowClass","",""){
+			Send,{RWin}
+			sleep,100
+			directInput("cmd.exe")
+			Send,^+{Return}
+		}
+	}else if ( CAPS() || RCMD() )&& SHIFT()
 		TempMacro_open("C")
 	else if RCMD() || CAPS()
 		TempMacro_do("C")
@@ -307,8 +314,12 @@ mbind_s(){
 
 mbind_t(){
 	if LCMD() && RCMD(){
-		if !activateWindow("ConsoleWindowClass","","")
-			run, runas /user:administrator C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+		if !activateWindow("ConsoleWindowClass","",""){
+			Send,{RWin}
+			sleep,100
+			directInput("powershell.exe")
+			Send,^+{Return}
+		}
 	}else if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_closeWindow()
