@@ -5,7 +5,7 @@ my[AHK][AHK]
 ### HOW TO USE ###
 
 1. [HHKB][HHKB]を購入します。  
-※DIPスイッチは2と6をONにしています。
+※DIPスイッチは2をONにしています。
 
 1. [Chgkey.exe][ChgKey.exe]を使用してRWin,LWin周りの修飾キーを弄ります。  
     ※変換一覧
@@ -93,6 +93,8 @@ Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipとかで�
   + Pollingやってるせいなのか何なのかわからんけど、使ってるとFPS系のカーソルが荒ぶる？
   必要性が微妙なのであんまり使わないほうがいいかも
 
+1. HHKB認識不良
+  + DIPスイッチ6が原因？
 
 [HHKB]: http://www.pfu.fujitsu.com/hhkeyboard/
 [AHK]: https://github.com/Lexikos/AutoHotkey_L
