@@ -33,6 +33,8 @@ mbind_c(){
 		TempMacro_open("C")
 	else if RCMD() || CAPS()
 		TempMacro_do("C")
+	else if LCMD() && LSHIFT()
+		Send,^{c}
 	else if LCMD()
 		HistoricalClip_copy()
 	else if SPACE() && SHIFT()
@@ -360,6 +362,8 @@ mbind_v(){
 		copyTo("SV")
 	else if SPACE()
 		pasteFrom("SV")
+	else if LCMD() && LSHIFT()
+		Send,^{v}
 	else if LCMD()
 		HistoricalClip_paste(1)
 	else
