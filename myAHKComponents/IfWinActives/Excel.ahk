@@ -23,7 +23,7 @@
 	;貼り付けオプションを離脱する
 	vkEBsc07B & v::
 		if LCMD()
-			Send,^{v}
+			HistoricalClip_paste(1)
 		else
 			mbind_v()
 	return
@@ -120,8 +120,6 @@
 		if CAPS() && LCMD()
 			;印刷
 			Send,!{f}{p}{Alt}
-		else if LCMD()
-			Send,^{c}
 		else
 			mbind_c()
 	return
