@@ -7,8 +7,8 @@ XButton1::Send,{XButton1}
 MButton::winD()
 
 ;ウィンドウ変更
-XButton1 & WheelUp::windowChange("Left")
-XButton1 & WheelDown::windowChange("Right")
+XButton1 & WheelUp::ShiftAltTab
+XButton1 & WheelDown::AltTab
 ;横スクロール
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
