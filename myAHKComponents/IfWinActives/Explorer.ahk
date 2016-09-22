@@ -13,6 +13,6 @@
 			mbind_a()
 	return
 
-
+	vkEBsc07B & l::Send,!{d}
 
 #IfWinActive
