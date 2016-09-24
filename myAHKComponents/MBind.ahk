@@ -282,8 +282,8 @@ mbind_q(){
 
 mbind_r(){
 	if RCMD() && LCMD(){
-		if !activateWindow("ApplicationFrameWindow","ApplicationFrameHost.exe","Microsoft Edge")
-			openApp("Edge")
+		if !activateWindow("MozillaWindowClass","firefox.exe","")
+			openApp("FireFox")
 	}else if RCMD() || CAPS()
 		press("{END}")
 	else if SPACE() && SHIFT()
