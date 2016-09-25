@@ -25,6 +25,7 @@ RAlt & [::ShiftAltTab
 #include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
 #include Library\NippouMacro.ahk
+#include Library\FileLauncher.ahk
 ;TempMacroのInclude
 #include Library\TempMacro.ahk
 #include Resources\TempMacro\MacroZ.ahk
@@ -49,4 +50,5 @@ RAlt & [::ShiftAltTab
 ;GuiEscape:GUI画面において、Escが入力された時に実行
 GuiEscape:
 	HistoricalClip_closeWindow()
+	FileLauncher_closeWindow()
 return
