@@ -48,5 +48,5 @@ RAlt & [::ShiftAltTab
 
 ;GuiEscape:GUI画面において、Escが入力された時に実行
 GuiEscape:
-	historicalClip_closeWindow()
+	HistoricalClip_closeWindow()
 return

@@ -1,5 +1,16 @@
 ;選択中の履歴階層の値
 HistoricalClip_index := 1
+;Gui内容保持用変数
+HistoricalClipText1  :=
+HistoricalClipText2  :=
+HistoricalClipText3  :=
+HistoricalClipText4  :=
+HistoricalClipText5  :=
+HistoricalClipText6  :=
+HistoricalClipText7  :=
+HistoricalClipText8  :=
+HistoricalClipText9  :=
+HistoricalClipText10 :=
 
 ;GUIが表示されているかどうかのGlobal変数
 HistoricalClip_isDisplayed := 0
@@ -52,12 +63,61 @@ HistoricalClip_openWindow(){
 	;表示
 	Loop, 10
 	{
+		;file,indexを用意
+		file =
+		loopIndex := 0
+
+		;Clipboardファイルから１行づつ取得
+		Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%A_Index%.txt
+		{
+			;Clipboardファイルからfileに追加
+			file =%file%%A_LoopReadLine%
+			if (loopIndex = 5){
+				;5行以上は省略
+				file =%file%+[.....]
+				break
+			}else{
+				;改行追加してIndex加算
+				file =%file%`r`n
+				loopIndex++
+			}
+		}
+
 		;選択中か否かで配色設定の変更
 		if(HistoricalClip_index == A_Index){
+			file = => %file%
 			Gui, Font, s13 cRed
 		}else{
+			file = -- %file%
 			Gui, Font, s13 cWhite
 		}
+
+		Gui, Add, Text, vHistoricalClipText%A_Index% ,%file%
+	}
+
+	;Window周りの設定
+	Gui +LastFound
+	;Windowを透明に
+	Winset, Transparent, 210
+	;タイトルバー非表示
+	Gui, -Caption
+	;GUI表示
+	Gui, Show
+}
+
+;Window内容をリロード
+HistoricalClip_reloadWindow(){
+
+	;HistoricalClip_index値取得・調整
+	global HistoricalClip_index
+
+	;表示
+	Loop, 10
+	{
+
+		;変更対象のみ更新する
+		if (!(HistoricalClip_index + 1 == A_Index || HistoricalClip_index == A_Index || HistoricalClip_index -1 == A_Index ))
+			continue
 
 		;file,indexを用意
 		file =
@@ -78,17 +138,18 @@ HistoricalClip_openWindow(){
 				loopIndex++
 			}
 		}
-		Gui, Add, Text, ,%file%
-	}
 
-	;Window周りの設定
-	Gui +LastFound
-	;Windowを透明に
-	Winset, Transparent, 210
-	;タイトルバー非表示
-	Gui, -Caption
-	;GUI表示
-	Gui, Show
+		;選択中か否かで配色設定の変更
+		if(HistoricalClip_index == A_Index){
+			file = => %file%
+			GuiControl, , HistoricalClipText%A_Index%, %file%
+			GuiControl, +cRed +Redraw , HistoricalClipText%A_Index%
+		}else{
+			file = -- %file%
+			GuiControl, , HistoricalClipText%A_Index%, %file%
+			GuiControl, +cWhite +Redraw , HistoricalClipText%A_Index%
+		}
+	}
 }
 
 ;上に移動
@@ -97,7 +158,7 @@ HistoricalClip_up(){
 	HistoricalClip_index--
 	if(HistoricalClip_index < 1)
 		HistoricalClip_index := 1
-	HistoricalClip_openWindow()
+	HistoricalClip_reloadWindow()
 }
 
 ;下に移動
@@ -106,7 +167,7 @@ HistoricalClip_down(){
 	HistoricalClip_index++
 	if(HistoricalClip_index > 10)
 		HistoricalClip_index := 10
-	HistoricalClip_openWindow()
+	HistoricalClip_reloadWindow()
 }
 
 ;貼り付け（index指定がなければ、現在選択中のindexで出力される）
