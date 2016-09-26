@@ -1,16 +1,5 @@
 ;選択中の履歴階層の値
 HistoricalClip_index := 1
-;Gui内容保持用変数
-HistoricalClipText1  :=
-HistoricalClipText2  :=
-HistoricalClipText3  :=
-HistoricalClipText4  :=
-HistoricalClipText5  :=
-HistoricalClipText6  :=
-HistoricalClipText7  :=
-HistoricalClipText8  :=
-HistoricalClipText9  :=
-HistoricalClipText10 :=
 
 ;GUIが表示されているかどうかのGlobal変数
 HistoricalClip_isDisplayed := 0
@@ -241,3 +230,45 @@ HistoricalClip_cut(){
 	FileAppend, %Clipboard%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\1.txt
 	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\1.dat
 }
+
+;Gui内容保持用変数
+HistoricalClipText1  :=
+HistoricalClipText2  :=
+HistoricalClipText3  :=
+HistoricalClipText4  :=
+HistoricalClipText5  :=
+HistoricalClipText6  :=
+HistoricalClipText7  :=
+HistoricalClipText8  :=
+HistoricalClipText9  :=
+HistoricalClipText10 :=
+HistoricalClipText11 :=
+HistoricalClipText12 :=
+HistoricalClipText13 :=
+HistoricalClipText14 :=
+HistoricalClipText15 :=
+HistoricalClipText16 :=
+HistoricalClipText17 :=
+HistoricalClipText18 :=
+HistoricalClipText19 :=
+HistoricalClipText20 :=
+HistoricalClipText21 :=
+HistoricalClipText22 :=
+HistoricalClipText23 :=
+HistoricalClipText24 :=
+HistoricalClipText25 :=
+HistoricalClipText26 :=
+HistoricalClipText27 :=
+HistoricalClipText28 :=
+HistoricalClipText29 :=
+HistoricalClipText30 :=
+HistoricalClipText31 :=
+HistoricalClipText32 :=
+HistoricalClipText33 :=
+HistoricalClipText34 :=
+HistoricalClipText35 :=
+HistoricalClipText36 :=
+HistoricalClipText37 :=
+HistoricalClipText38 :=
+HistoricalClipText39 :=
+HistoricalClipText40 :=
