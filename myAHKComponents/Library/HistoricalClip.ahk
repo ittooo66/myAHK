@@ -145,8 +145,8 @@ HistoricalClip_reloadWindow(){
 HistoricalClip_up(){
 	global HistoricalClip_index
 	HistoricalClip_index--
-	if(HistoricalClip_index < 1)
-		HistoricalClip_index := 1
+	if(HistoricalClip_index < 0)
+		HistoricalClip_index := 0
 	HistoricalClip_reloadWindow()
 }
 
