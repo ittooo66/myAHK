@@ -18,6 +18,13 @@ WheelUp::
 		}else{
 			FileLauncher_openWindow()
 		}
+	}else if GetKeyState("Space","P"){
+		if HistoricalClip_isDisplayed(){
+			HistoricalClip_up()
+		}else{
+			HistoricalClip_openWindow()
+			consumeSpace()
+		}
 	}else{
 		Send,{WheelUp}
 	}
@@ -29,6 +36,13 @@ WheelDown::
 			FileLauncher_down()
 		}else{
 			FileLauncher_openWindow()
+		}
+	}else if GetKeyState("Space","P"){
+		if HistoricalClip_isDisplayed(){
+			HistoricalClip_down()
+		}else{
+			HistoricalClip_openWindow()
+			consumeSpace()
 		}
 	}else{
 		Send,{WheelDown}

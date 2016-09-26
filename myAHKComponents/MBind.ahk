@@ -766,8 +766,17 @@ mbind_space_up(){
 	;Spaceキー押下げ判定を解除
 	spaceDownFlag := 0
 	;Spaceバインドが消費済みならば、各バインド判定を無効にして終了
-	if (spaceConsumed == 1)
+	if (spaceConsumed == 1){
+		if HistoricalClip_isDisplayed(){
+			HistoricalClip_closeWindow()
+			if SHIFT(){
+				HistoricalClip_paste(0,"txt")
+			}else{
+				HistoricalClip_paste()
+			}
+		}
 		return
+	}
 
 	;各種Spaceバインド
 	if LCMD() || RCMD()
