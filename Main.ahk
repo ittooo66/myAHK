@@ -2,6 +2,7 @@
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
+#HotkeyInterval 100
 
 ;Base Bindings
 Delete::`
