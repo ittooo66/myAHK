@@ -164,6 +164,13 @@ HistoricalClip_down(){
 HistoricalClip_paste(index = 0,type = "dat"){
 	;パラメータ取得
 	global HistoricalClip_index
+	;パラメータ0のとき、何もしない
+	if HistoricalClip_index == 0
+		return
+
+	;GUIが消えるまで待つ
+	sleep,300
+
 	if(index == 0 && type == "dat")
 		FileRead, content,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%HistoricalClip_index%.dat
 	else if (index == 0 && type == "txt")
