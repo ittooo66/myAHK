@@ -1,41 +1,121 @@
 #IfWinActive,ahk_class rctrl_renwnd32
 
-	;æ¬¡ã®ãƒ¡ãƒ¼ãƒ«ã¸
+	;Ÿ‚Ìƒ[ƒ‹‚Ö
 	RButton & WheelDown::
 		send,^{>}
 	return
 
-	;å‰ã®ãƒ¡ãƒ¼ãƒ«ã¸
+	;‘O‚Ìƒ[ƒ‹‚Ö
 	RButton & WheelUp::
 		send,^{<}
 	return
 
-	;ãƒ¡ãƒ¼ãƒ«ã‚’Doneã—ã¦æ¬¡ã¸
+	;ƒ[ƒ‹‚ğDone‚µ‚ÄŸ‚Ö
 	RButton & LButton::
 		send,^+{1}
 		sleep,200
 		send,{return}
 	return
 
-	;ãƒ¡ãƒ¼ãƒ«ã‚’Doingã—ã¦æ¬¡ã¸
+	;ƒ[ƒ‹‚ğDoing‚µ‚ÄŸ‚Ö
 	RButton & XButton2::
 		send,^+{2}
 		sleep,200
 		send,{return}
 	return
 
-	;ãƒ¡ãƒ¼ãƒ«ã‚’é–‰ã˜ã‚‹
+	;ƒ[ƒ‹‚ğ•Â‚¶‚é
 	RButton & XButton1::
 		WinGetTitle, Title, A
 		IfInString, Title, Outlook , {
-			;Outlookã®ã‚³ã‚¢(ãƒ¡ãƒ¼ãƒ«ã¨äºˆå®šè¡¨)ã§ã¯ç„¡åŠ¹
+			;Outlook‚ÌƒRƒA(ƒ[ƒ‹‚Æ—\’è•\)‚Å‚Í–³Œø
 		}else{
 			Send,!{F4}
 		}
 	return
 
-	;é€²ã‚€ã€æˆ»ã‚‹
+	;i‚ŞA–ß‚é
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
+
+
+	;—\’è•\‚ğICS‚Å•Û‘¶
+	vkEBsc07B & s::
+	LControl & s::
+		if CAPS() && LCMD(){
+			;
+			Send,!{f}{c}
+
+			;ƒAƒhƒŒƒXƒo[‚ÉƒfƒXƒNƒgƒbƒv‚Æ“ü—Í
+			Send,!{d}
+			directInput("ƒfƒXƒNƒgƒbƒv")
+			Send,{return}
+
+			;—\’è•\‚ÌÚ×“x‚ğİ’è
+			Send,!{m}
+			Send,{Tab}
+			Send,{Down}
+
+			;“úw’è—“‚ÉˆÚ“®
+			Send,+{Tab}
+			Send,{Down}{Down}{Down}{Down}{Down}
+		}else
+			mbind_s()
+	return
+
+	;—\’è•\‚ğICS‚Å•Û‘¶(¡“ú)
+	vkEBsc07B & a::
+	LControl & a::
+		if CAPS() && LCMD(){
+			;
+			Send,!{f}{c}
+
+			;ƒAƒhƒŒƒXƒo[‚ÉƒfƒXƒNƒgƒbƒv‚Æ“ü—Í
+			Send,!{d}
+			directInput("ƒfƒXƒNƒgƒbƒv")
+			Send,{return}
+
+			;—\’è•\‚ÌÚ×“x‚ğİ’è
+			Send,!{m}
+			Send,{Tab}
+			Send,{Down}
+
+			;“úw’è—“‚ÉˆÚ“®
+			Send,!{o}
+			Send,!{s}
+			Send,!{y}
+		}else
+			mbind_a()
+	return
+
+	;—\’è•\‚ğICS‚Å•Û‘¶(–¾“ú)
+	vkEBsc07B & d::
+	LControl & d::
+		if CAPS() && LCMD(){
+			;
+			Send,!{f}{c}
+
+			;ƒAƒhƒŒƒXƒo[‚ÉƒfƒXƒNƒgƒbƒv‚Æ“ü—Í
+			Send,!{d}
+			directInput("ƒfƒXƒNƒgƒbƒv")
+			Send,{return}
+
+			;‚»‚Ì‘¼‚ÌƒIƒvƒVƒ‡ƒ“
+			Send,!{m}
+
+			;–¾“ú‚Ì—\’è‚Éİ’è
+			Send,{Down}
+
+			;—\’è•\‚ÌÚ×“x‚ğİ’è
+			Send,{Tab}
+			Send,{Down}
+
+			;“úw’è—“‚ÉˆÚ“®
+			Send,!{o}
+			Send,!{s}
+			Send,!{y}
+		}else
+			mbind_d()
+	return
 
 #IfWinActive
