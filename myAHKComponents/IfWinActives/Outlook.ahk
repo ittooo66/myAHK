@@ -42,7 +42,7 @@
 Outlook_icsInit(string){
 	;ファイル名をつけて保存を開く
 	Send,!{f}{c}
-	sleep,400
+	sleep,600
 
 	;ファイル名指定
 	directInput(string)
