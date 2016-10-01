@@ -1,21 +1,18 @@
 ;日報の作成
 NippouMacro_makeNippou(){
-	;日報本体
-	nippou := ""
 
-	;本日の日付
-	taskWasDate := Nippoumacro_getTaskWasDate()
 	;本日の作業内容
 	taskWas := NippouMacro_parseTaskWas()
-	;icsファイル(今日)を日報形式に変換して追加
-	nippou := nippou . NippouMacro_writeHeader(taskWasDate,taskWas)
+	;本日の日付
+	taskWasDate := Nippoumacro_getTaskWasDate()
 
-	;翌営業日の日付
-	taskWillDate := Nippoumacro_getTaskWillDate()
 	;翌営業日の作業内容
 	taskWill := NippouMacro_parseTaskWill()
+	;翌営業日の日付
+	taskWillDate := Nippoumacro_getTaskWillDate()
+
 	;icsファイル(明日)を日報形式に変換して追加
-	nippou := nippou . NippouMacro_writeFooter(taskWillDate,taskWill)
+	nippou := NippouMacro_writeHeader(taskWasDate,taskWas) . NippouMacro_writeFooter(taskWillDate,taskWill)
 
 	;日報の出力
 	directInput(nippou)
