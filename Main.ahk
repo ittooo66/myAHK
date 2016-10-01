@@ -23,6 +23,7 @@ RAlt & [::ShiftAltTab
 ;Library(バインドは持たないがグローバル変数の干渉に注意)
 #include Library\HistoricalClip.ahk
 #include Library\_STD.ahk
+#include Library\_STRING.ahk
 #include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
 #include Library\NippouMacro.ahk
