@@ -1,119 +1,111 @@
 #IfWinActive,ahk_class rctrl_renwnd32
 
-	;Ÿ‚Ìƒ[ƒ‹‚Ö
+	;æ¬¡ã®ãƒ¡ãƒ¼ãƒ«ã¸
 	RButton & WheelDown::
 		send,^{>}
 	return
 
-	;‘O‚Ìƒ[ƒ‹‚Ö
+	;å‰ã®ãƒ¡ãƒ¼ãƒ«ã¸
 	RButton & WheelUp::
 		send,^{<}
 	return
 
-	;ƒ[ƒ‹‚ğDone‚µ‚ÄŸ‚Ö
+	;ãƒ¡ãƒ¼ãƒ«ã‚’Doneã—ã¦æ¬¡ã¸
 	RButton & LButton::
 		send,^+{1}
 		sleep,200
 		send,{return}
 	return
 
-	;ƒ[ƒ‹‚ğDoing‚µ‚ÄŸ‚Ö
+	;ãƒ¡ãƒ¼ãƒ«ã‚’Doingã—ã¦æ¬¡ã¸
 	RButton & XButton2::
 		send,^+{2}
 		sleep,200
 		send,{return}
 	return
 
-	;ƒ[ƒ‹‚ğ•Â‚¶‚é
+	;ãƒ¡ãƒ¼ãƒ«ã‚’é–‰ã˜ã‚‹
 	RButton & XButton1::
 		WinGetTitle, Title, A
 		IfInString, Title, Outlook , {
-			;Outlook‚ÌƒRƒA(ƒ[ƒ‹‚Æ—\’è•\)‚Å‚Í–³Œø
+			;Outlookã®ã‚³ã‚¢(ãƒ¡ãƒ¼ãƒ«ã¨äºˆå®šè¡¨)ã§ã¯ç„¡åŠ¹
 		}else{
 			Send,!{F4}
 		}
 	return
 
-	;i‚ŞA–ß‚é
+	;é€²ã‚€ã€æˆ»ã‚‹
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
 
+;icsãƒ•ã‚¡ã‚¤ãƒ«ä¿å­˜æ–¹å¼ã®åˆæœŸåŒ–
+Outlook_icsInit(string){
+	;ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ã¤ã‘ã¦ä¿å­˜ã‚’é–‹ã
+	Send,!{f}{c}
+	sleep,400
 
-	;—\’è•\‚ğICS‚Å•Û‘¶
+	;ãƒ•ã‚¡ã‚¤ãƒ«åæŒ‡å®š
+	directInput(string)
+	sleep,400
+
+	;ã‚¢ãƒ‰ãƒ¬ã‚¹ãƒãƒ¼ã«ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã¨å…¥åŠ›
+	Send,!{d}
+	dir = %A_WorkingDir%\myAHKComponents\Resources\Nippou
+	directInput(dir)
+	Send,{return}
+	sleep,400
+
+	;ãã®ä»–ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³
+	Send,!{m}
+	;äºˆå®šè¡¨ã®è©³ç´°åº¦ã‚’è¨­å®š
+	Send,{Tab}
+	Send,{Down}
+}
+
+;icsãƒ•ã‚¡ã‚¤ãƒ«ä¿å­˜
+Outlook_icsSave(){
+	;ãã®ä»–ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³_æ±ºå®š
+	Send,!{o}
+
+	;icsã®ä¿å­˜
+	Send,!{s}
+	Send,!{y}
+}
+
+	;äºˆå®šè¡¨ã‚’ICSã§ä¿å­˜(æ—¥ä»˜æŒ‡å®šã‚ã‚Š)
 	vkEBsc07B & s::
 	LControl & s::
 		if CAPS() && LCMD(){
-			;
-			Send,!{f}{c}
+			Outlook_icsInit("ICSWill.ics")
 
-			;ƒAƒhƒŒƒXƒo[‚ÉƒfƒXƒNƒgƒbƒv‚Æ“ü—Í
-			Send,!{d}
-			directInput("ƒfƒXƒNƒgƒbƒv")
-			Send,{return}
-
-			;—\’è•\‚ÌÚ×“x‚ğİ’è
-			Send,!{m}
-			Send,{Tab}
-			Send,{Down}
-
-			;“úw’è—“‚ÉˆÚ“®
+			;æ—¥æ™‚æŒ‡å®šæ¬„ã«ç§»å‹•
 			Send,+{Tab}
 			Send,{Down}{Down}{Down}{Down}{Down}
 		}else
 			mbind_s()
 	return
 
-	;—\’è•\‚ğICS‚Å•Û‘¶(¡“ú)
+	;äºˆå®šè¡¨ã‚’ICSã§ä¿å­˜(ä»Šæ—¥)
 	vkEBsc07B & a::
 	LControl & a::
 		if CAPS() && LCMD(){
-			;
-			Send,!{f}{c}
-
-			;ƒAƒhƒŒƒXƒo[‚ÉƒfƒXƒNƒgƒbƒv‚Æ“ü—Í
-			Send,!{d}
-			directInput("ƒfƒXƒNƒgƒbƒv")
-			Send,{return}
-
-			;—\’è•\‚ÌÚ×“x‚ğİ’è
-			Send,!{m}
-			Send,{Tab}
-			Send,{Down}
-
-			;“úw’è—“‚ÉˆÚ“®
-			Send,!{o}
-			Send,!{s}
-			Send,!{y}
+			Outlook_icsInit("ICSWas.ics")
+			Outlook_icsSave()
 		}else
 			mbind_a()
 	return
 
-	;—\’è•\‚ğICS‚Å•Û‘¶(–¾“ú)
+	;äºˆå®šè¡¨ã‚’ICSã§ä¿å­˜(æ˜æ—¥)
 	vkEBsc07B & d::
 	LControl & d::
 		if CAPS() && LCMD(){
-			;
-			Send,!{f}{c}
+			Outlook_icsInit("ICSWill.ics")
 
-			;ƒAƒhƒŒƒXƒo[‚ÉƒfƒXƒNƒgƒbƒv‚Æ“ü—Í
-			Send,!{d}
-			directInput("ƒfƒXƒNƒgƒbƒv")
-			Send,{return}
-
-			;‚»‚Ì‘¼‚ÌƒIƒvƒVƒ‡ƒ“
-			Send,!{m}
-
-			;–¾“ú‚Ì—\’è‚Éİ’è
+			;æ˜æ—¥ã®äºˆå®šã«è¨­å®š
+			Send,+{Tab}
 			Send,{Down}
 
-			;—\’è•\‚ÌÚ×“x‚ğİ’è
-			Send,{Tab}
-			Send,{Down}
-
-			;“úw’è—“‚ÉˆÚ“®
-			Send,!{o}
-			Send,!{s}
-			Send,!{y}
+			Outlook_icsSave()
 		}else
 			mbind_d()
 	return
