@@ -42,24 +42,15 @@ NippouMacro_getTaskWasDate(){
 	;ICSファイルを行ごとに読み込み
 	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\ICSWas.ics
 	{
-		line = %A_LoopReadLine%
-		match = X-CALSTART:
-		;行にカレンダーの日付情報がある場合
-		ifInString, line, %match%
-		{
-			;月日情報を取得して返す
-			StringMid, month, line, 16, 2
-			StringMid, day, line, 18, 2
-			msgBox, %match% in %line%=>%month%/%day%
-			;return %month%/%day%
-		}
-
 		Haystack = %A_LoopReadLine%
 		Needle = X-CALSTART:
 		IfInString, Haystack, %Needle%
 		{
-			MsgBox, The string was found.
-			Return
+			;月日情報を取得して返す
+			StringMid, month, Haystack, 16, 2
+			StringMid, day, Haystack, 18, 2
+			strDate = %month%/%day%
+			return strDate
 		}
 	}
 	return "null"
@@ -67,6 +58,20 @@ NippouMacro_getTaskWasDate(){
 
 ;翌営業日の日付を取得
 NippouMacro_getTaskWillDate(){
+	;ICSファイルを行ごとに読み込み
+	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\ICSWill.ics
+	{
+		Haystack = %A_LoopReadLine%
+		Needle = X-CALSTART:
+		IfInString, Haystack, %Needle%
+		{
+			;月日情報を取得して返す
+			StringMid, month, Haystack, 16, 2
+			StringMid, day, Haystack, 18, 2
+			strDate = %month%/%day%
+			return strDate
+		}
+	}
 	return "null"
 }
 
