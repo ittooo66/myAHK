@@ -218,7 +218,9 @@ mbind_n(){
 	if RCMD() && LCMD(){
 		if !activateWindow("IEFrame","","")
 			openApp("Internet Explorer")
-	}else if RCMD() || CAPS()
+	}else if RCMD() && CAPS()
+		NippouMacro_makeNippou()
+	else if RCMD() || CAPS()
 		press("0")
 	else if SPACE() && SHIFT()
 		copyTo("SN")
