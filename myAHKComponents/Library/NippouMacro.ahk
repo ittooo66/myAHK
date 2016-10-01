@@ -77,8 +77,91 @@ NippouMacro_getTaskWillDate(){
 
 ;本日の作業内容を日報形式で取得
 NippouMacro_parseTaskWas(){
-	taskWas := "*honjitu no sagyou naiyou*"
-	;TODO
+	;本日の作業内容
+	taskWas := ""
+	;イベントの個数
+	eventIndex := 0
+
+	;ICSファイルを行ごとに読み込み
+	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\ICSWas.ics
+	{
+		icsLine = %A_LoopReadLine%
+
+		;DTENDを引っ掛ける
+		if(inStr(icsLine,"DTEND")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"Tokyo Standard Time")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"VALUE")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"Z")){
+				StringRight, time, icsLine, 7
+			}
+			;時間と分を取得
+			StringLeft, hour, time, 2
+			StringMid, minute, time, 3, 2
+			;一時変数に格納
+			DTEND_temp = %hour%:%minute%
+		}
+
+		;DTSTARTを引っ掛ける
+		if(inStr(icsLine,"START")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"Tokyo Standard Time")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"VALUE")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"Z")){
+				StringRight, time, icsLine, 7
+			}
+			;時間と分を取得
+			StringLeft, hour, time, 2
+			StringMid, minute, time, 3, 2
+			;一時変数に格納
+			DTSTART_temp = %hour%:%minute%
+		}
+
+		;SUMMARYを引っ掛ける
+		if(inStr(icsLine,"SUMMARY")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"LANGUAGE")){
+				StringTrimLeft, summary, icsLine, 20
+			}else{
+				StringTrimLeft, summary, icsLine, 8
+			}
+			;一時変数に格納
+			SUMMARY_temp = %summary%
+		}
+
+		;イベント記述終了時
+		IfInString, icsLine, END:VEVENT
+		{
+			;Index増加
+			eventIndex++
+
+			;配列にイベント情報を入れる
+			DTSTART%eventIndex% = %DTSTART_temp%
+			DTEND%eventIndex% = %DTEND_temp%
+			SUMMARY%eventIndex% = %SUMMARY_temp%
+
+			start := DTSTART%eventIndex%
+			end := DTEND%eventIndex%
+			summary := SUMMARY%eventIndex%
+		}
+	}
+
+	Loop, 100
+	{
+		if(inStr(DTSTART%A_Index%,":")){
+			start := DTSTART%A_Index%
+			end := DTEND%A_Index%
+			summary := SUMMARY%A_Index%
+			taskWas := taskWas . start . "-" . end . "    " . summary . "`n"
+		}
+	}
+
+	msgBox, %taskWas%
+
 	return taskWas
 }
 
