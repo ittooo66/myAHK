@@ -21,4 +21,22 @@
 	RButton & XButton2::Send,^+{z}
 	RButton & LButton::Send,{}
 
+	;TAB切り替え
+	vkEBsc07B & s::
+	LControl & s::
+		if CAPS() && LCMD()
+			Send,^+{Tab}
+		else
+			mbind_s()
+	return
+
+	;TAB切り替え
+	vkEBsc07B & f::
+	LControl & f::
+		if CAPS() && LCMD()
+			Send,^{Tab}
+		else
+			mbind_f()
+	return
+
 #IfWinActive
