@@ -50,7 +50,7 @@ Outlook_icsInit(string){
 
 	;アドレスバーにデスクトップと入力
 	Send,!{d}
-	dir = %A_WorkingDir%\myAHKComponents\Resources\Nippou
+	dir = %A_WorkingDir%\myAHKComponents\Resources\Nippou\Convert
 	directInput(dir)
 	Send,{return}
 	sleep,400

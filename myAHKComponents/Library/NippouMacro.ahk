@@ -1,5 +1,11 @@
 ;日報の作成
 NippouMacro_makeNippou(){
+	;ICSファイルの変換
+	psScript := A_WorkingDir . "\myAHKComponents\Resources\Nippou\FileConvert.ps1"
+	psTextInDir := A_WorkingDir . "\myAHKComponents\Resources\Nippou\Convert"
+	psTextOutDir := A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted"
+	run, powershell.exe %psScript% %psTextInDir% %psTextOutDir%
+	sleep,1000
 
 	;本日の作業内容
 	taskWas := NippouMacro_parseTaskWas()
@@ -40,7 +46,7 @@ NippouMacro_writeFooter(taskWillDate,taskWill){
 ;本日の日付を取得
 NippouMacro_getTaskWasDate(){
 	;ICSファイルを行ごとに読み込み
-	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\ICSWas.ics
+	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\Converted\ICSWas.ics
 	{
 		Haystack = %A_LoopReadLine%
 		Needle = X-CALSTART:
@@ -59,7 +65,7 @@ NippouMacro_getTaskWasDate(){
 ;翌営業日の日付を取得
 NippouMacro_getTaskWillDate(){
 	;ICSファイルを行ごとに読み込み
-	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\ICSWill.ics
+	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\Converted\ICSWill.ics
 	{
 		Haystack = %A_LoopReadLine%
 		Needle = X-CALSTART:
@@ -83,7 +89,7 @@ NippouMacro_parseTaskWas(){
 	eventIndex := 0
 
 	;ICSファイルを行ごとに読み込み
-	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\ICSWas.ics
+	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\Converted\ICSWas.ics
 	{
 		icsLine = %A_LoopReadLine%
 
@@ -160,14 +166,93 @@ NippouMacro_parseTaskWas(){
 		}
 	}
 
-	msgBox, %taskWas%
-
 	return taskWas
 }
 
 ;翌営業日の作業内容を日報形式で取得
 NippouMacro_parseTaskWill(){
-	taskWill := "*yoku eigyoubi no sagyou naiyou*"
-	;TODO
+	;本日の作業内容
+	taskWill := ""
+	;イベントの個数
+	eventIndex := 0
+
+	;ICSファイルを行ごとに読み込み
+	Loop, Read, %A_WorkingDir%\myAHKComponents\Resources\Nippou\Converted\ICSWill.ics
+	{
+		icsLine = %A_LoopReadLine%
+
+		;DTENDを引っ掛ける
+		if(inStr(icsLine,"DTEND")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"Tokyo Standard Time")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"VALUE")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"Z")){
+				StringRight, time, icsLine, 7
+			}
+			;時間と分を取得
+			StringLeft, hour, time, 2
+			StringMid, minute, time, 3, 2
+			;一時変数に格納
+			DTEND_temp = %hour%:%minute%
+		}
+
+		;DTSTARTを引っ掛ける
+		if(inStr(icsLine,"START")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"Tokyo Standard Time")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"VALUE")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"Z")){
+				StringRight, time, icsLine, 7
+			}
+			;時間と分を取得
+			StringLeft, hour, time, 2
+			StringMid, minute, time, 3, 2
+			;一時変数に格納
+			DTSTART_temp = %hour%:%minute%
+		}
+
+		;SUMMARYを引っ掛ける
+		if(inStr(icsLine,"SUMMARY")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"LANGUAGE")){
+				StringTrimLeft, summary, icsLine, 20
+			}else{
+				StringTrimLeft, summary, icsLine, 8
+			}
+			;一時変数に格納
+			SUMMARY_temp = %summary%
+		}
+
+		;イベント記述終了時
+		IfInString, icsLine, END:VEVENT
+		{
+			;Index増加
+			eventIndex++
+
+			;配列にイベント情報を入れる
+			DTSTART%eventIndex% = %DTSTART_temp%
+			DTEND%eventIndex% = %DTEND_temp%
+			SUMMARY%eventIndex% = %SUMMARY_temp%
+
+			start := DTSTART%eventIndex%
+			end := DTEND%eventIndex%
+			summary := SUMMARY%eventIndex%
+		}
+	}
+
+	Loop, 100
+	{
+		if(inStr(DTSTART%A_Index%,":")){
+			start := DTSTART%A_Index%
+			end := DTEND%A_Index%
+			summary := SUMMARY%A_Index%
+			taskWill := taskWill . start . "-" . end . "    " . summary . "`n"
+		}
+	}
+
 	return taskWill
 }
