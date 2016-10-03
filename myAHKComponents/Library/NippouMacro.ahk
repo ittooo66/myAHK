@@ -202,7 +202,23 @@ NippouMacro_parseTaskWas(){
 		}
 	}
 
-	Loop, 100
+	;10分以内の予定を間引く
+	Loop, 50
+	{
+		if(inStr(DTSTART%A_Index%,":")){
+			tmp := time_Minus(DTEND%A_Index%,DTSTART%A_Index%)
+			StringLeft, tmHour, tmp, 2
+			StringRight, tmMinute, tmp, 2
+			if(tmHour == "00" && tmMinute == "00"){
+				DTSTART%A_Index% = null
+			}else if(tmHour == "00" && tmMinute < 10){
+				DTSTART%A_Index% = null
+			}
+
+		}
+	}
+
+	Loop, 50
 	{
 		if(inStr(DTSTART%A_Index%,":")){
 			start := DTSTART%A_Index%
@@ -336,7 +352,23 @@ NippouMacro_parseTaskWill(){
 		}
 	}
 
-	Loop, 100
+	;10分以内の予定を間引く
+	Loop, 50
+	{
+		if(inStr(DTSTART%A_Index%,":")){
+			tmp := time_Minus(DTEND%A_Index%,DTSTART%A_Index%)
+			StringLeft, tmHour, tmp, 2
+			StringRight, tmMinute, tmp, 2
+			if(tmHour == "00" && tmMinute == "00"){
+				DTSTART%A_Index% = null
+			}else if(tmHour == "00" && tmMinute < 10){
+				DTSTART%A_Index% = null
+			}
+
+		}
+	}
+
+	Loop, 50
 	{
 		if(inStr(DTSTART%A_Index%,":")){
 			start := DTSTART%A_Index%
