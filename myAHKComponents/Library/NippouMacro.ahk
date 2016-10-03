@@ -248,6 +248,27 @@ NippouMacro_parseTaskWill(){
 			SUMMARY_temp = %summary%
 		}
 
+		;RDATEに反応して日時情報を修正
+		if(inStr(icsLine,"RDATE")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"Tokyo Standard Time")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"VALUE")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"Z")){
+				StringRight, time, icsLine, 7
+			}
+			;時間と分を取得
+			StringLeft, hour, time, 2
+			StringMid, minute, time, 3, 2
+			;一時変数に格納
+			RDATE = %hour%:%minute%
+
+			;開始終了時刻を再計算
+			DTEND_temp := time_Plus(RDATE,time_Minus(DTEND_temp,DTSTART_temp))
+			DTSTART_temp := RDATE
+		}
+
 		;イベント記述終了時
 		IfInString, icsLine, END:VEVENT
 		{
