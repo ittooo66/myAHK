@@ -218,6 +218,36 @@ NippouMacro_parseTaskWas(){
 		}
 	}
 
+	;ソートを行う
+	sort_i := 1
+	sort_j := 1
+	Loop, 50
+	{
+		if(inStr(DTSTART%sort_i%,":")){
+			sort_j := 1
+			Loop, 50
+			{
+				if(inStr(DTSTART%sort_j%,":")){
+					dtsi := DTSTART%sort_i%
+					dtsj := DTSTART%sort_j%
+					if(!time_GreaterThan(DTSTART%sort_i%,DTSTART%sort_j%)){
+						dts_temp := DTSTART%sort_i%
+						dte_temp := DTEND%sort_i%
+						sum_temp := SUMMARY%sort_i%
+						DTSTART%sort_i% := DTSTART%sort_j%
+						DTEND%sort_i% := DTEND%sort_j%
+						SUMMARY%sort_i% := SUMMARY%sort_j%
+						DTSTART%sort_j% := dts_temp
+						DTEND%sort_j% := dte_temp
+						SUMMARY%sort_j% := sum_temp
+					}
+				}
+				sort_j++
+			}
+		}
+		sort_i++
+	}
+
 	Loop, 50
 	{
 		if(inStr(DTSTART%A_Index%,":")){
@@ -366,6 +396,36 @@ NippouMacro_parseTaskWill(){
 			}
 
 		}
+	}
+
+	;ソートを行う
+	sort_i := 1
+	sort_j := 1
+	Loop, 50
+	{
+		if(inStr(DTSTART%sort_i%,":")){
+			sort_j := 1
+			Loop, 50
+			{
+				if(inStr(DTSTART%sort_j%,":")){
+					dtsi := DTSTART%sort_i%
+					dtsj := DTSTART%sort_j%
+					if(!time_GreaterThan(DTSTART%sort_i%,DTSTART%sort_j%)){
+						dts_temp := DTSTART%sort_i%
+						dte_temp := DTEND%sort_i%
+						sum_temp := SUMMARY%sort_i%
+						DTSTART%sort_i% := DTSTART%sort_j%
+						DTEND%sort_i% := DTEND%sort_j%
+						SUMMARY%sort_i% := SUMMARY%sort_j%
+						DTSTART%sort_j% := dts_temp
+						DTEND%sort_j% := dte_temp
+						SUMMARY%sort_j% := sum_temp
+					}
+				}
+				sort_j++
+			}
+		}
+		sort_i++
 	}
 
 	Loop, 50
