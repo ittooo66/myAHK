@@ -160,6 +160,31 @@ NippouMacro_parseTaskWas(){
 			DTSTART_temp := RDATE
 		}
 
+		;RECURRENCE-IDに反応して日時情報を修正
+		if(inStr(icsLine,"RECURRENCE-ID")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"Tokyo Standard Time")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"VALUE")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"Z")){
+				StringRight, time, icsLine, 7
+			}
+			;時間と分を取得
+			StringLeft, hour, time, 2
+			StringMid, minute, time, 3, 2
+			;一時変数に格納
+			RID = %hour%:%minute%
+
+			;一個前のイベントを対象とする
+			dtst := DTSTART_temp
+			DTSTART_temp := time_Minus(time_Plus(DTSTART%eventIndex%,DTSTART_temp),RID)
+			DTEND_temp := time_Plus(DTSTART_temp,time_Minus(DTEND_temp,dtst))
+
+			;一個後ろにする
+			eventIndex--
+		}
+
 		;イベント記述終了時
 		IfInString, icsLine, END:VEVENT
 		{
@@ -267,6 +292,31 @@ NippouMacro_parseTaskWill(){
 			;開始終了時刻を再計算
 			DTEND_temp := time_Plus(RDATE,time_Minus(DTEND_temp,DTSTART_temp))
 			DTSTART_temp := RDATE
+		}
+
+		;RECURRENCE-IDに反応して日時情報を修正
+		if(inStr(icsLine,"RECURRENCE-ID")){
+			;記法に応じて時間情報を取得
+			if (inStr(icsLine,"Tokyo Standard Time")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"VALUE")){
+				StringRight, time, icsLine, 6
+			}else if(inStr(icsLine,"Z")){
+				StringRight, time, icsLine, 7
+			}
+			;時間と分を取得
+			StringLeft, hour, time, 2
+			StringMid, minute, time, 3, 2
+			;一時変数に格納
+			RID = %hour%:%minute%
+
+			;一個前のイベントを対象とする
+			dtst := DTSTART_temp
+			DTSTART_temp := time_Minus(time_Plus(DTSTART%eventIndex%,DTSTART_temp),RID)
+			DTEND_temp := time_Plus(DTSTART_temp,time_Minus(DTEND_temp,dtst))
+
+			;一個後ろにする
+			eventIndex--
 		}
 
 		;イベント記述終了時
