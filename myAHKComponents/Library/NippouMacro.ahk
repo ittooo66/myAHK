@@ -5,17 +5,15 @@ NippouMacro_makeNippou(){
 	psTextInDir := A_WorkingDir . "\myAHKComponents\Resources\Nippou\Convert"
 	psTextOutDir := A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted"
 	run, powershell.exe %psScript% %psTextInDir% %psTextOutDir%
-	sleep,1000
+	sleep,2000
 
-	;本日の作業内容
-	taskWas := NippouMacro_parseTaskWas()
-	;本日の日付
-	taskWasDate := Nippoumacro_getTaskWasDate()
+	;本日の作業内容と日付
+	taskWas := NippouMacro_parseICS(A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted\ICSWas.ics")
+	taskWasDate := NippouMacro_getDate(A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted\ICSWas.ics")
 
-	;翌営業日の作業内容
-	taskWill := NippouMacro_parseTaskWill()
-	;翌営業日の日付
-	taskWillDate := Nippoumacro_getTaskWillDate()
+	;翌営業日の作業内容と日付
+	taskWill := NippouMacro_parseICS(A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted\ICSWill.ics")
+	taskWillDate := NippouMacro_getDate(A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted\ICSWill.ics")
 
 	;icsファイル(明日)を日報形式に変換して追加
 	nippou := NippouMacro_writeHeader(taskWasDate,taskWas) . NippouMacro_writeFooter(taskWillDate,taskWill)
@@ -43,16 +41,6 @@ NippouMacro_writeFooter(taskWillDate,taskWill){
 	return nippouFooter
 }
 
-;本日の日付を取得
-NippouMacro_getTaskWasDate(){
-	return NippouMacro_getDate(A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted\ICSWas.ics")
-}
-
-;翌営業日の日付を取得
-NippouMacro_getTaskWillDate(){
-	return NippouMacro_getDate(A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted\ICSWill.ics")
-}
-
 ;ICSファイルから日時情報を取得
 NippouMacro_getDate(icsLocation){
 	;ICSファイルを行ごとに読み込み
@@ -70,16 +58,6 @@ NippouMacro_getDate(icsLocation){
 		}
 	}
 	return "null"
-}
-
-;本日の作業内容を日報形式で取得
-NippouMacro_parseTaskWas(){
-	return NippouMacro_parseICS(A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted\ICSWas.ics")
-}
-
-;翌営業日の作業内容を日報形式で取得
-NippouMacro_parseTaskWill(){
-	return NippouMacro_parseICS(A_WorkingDir . "\myAHKComponents\Resources\Nippou\Converted\ICSWill.ics")
 }
 
 ;ICSファイルを日報形式に変換
@@ -196,10 +174,6 @@ NippouMacro_parseICS(icsLocation){
 			DTSTART%eventIndex% = %DTSTART_temp%
 			DTEND%eventIndex% = %DTEND_temp%
 			SUMMARY%eventIndex% = %SUMMARY_temp%
-
-			start := DTSTART%eventIndex%
-			end := DTEND%eventIndex%
-			summary := SUMMARY%eventIndex%
 		}
 	}
 
@@ -221,7 +195,6 @@ NippouMacro_parseICS(icsLocation){
 
 	;ソートを行う
 	sort_i := 1
-	sort_j := 1
 	Loop, 50
 	{
 		if(inStr(DTSTART%sort_i%,":")){
