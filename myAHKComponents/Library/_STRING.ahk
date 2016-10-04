@@ -35,7 +35,7 @@ time_Plus(time1,time2){
 	;時間と分を加算
 	hour := time1hour + time2hour
 	minute := time1minute + time2minute
-	if(time1minute >= 60){
+	if(minute >= 60){
 		minute := minute - 60
 		hour := hour + 1
 	}
