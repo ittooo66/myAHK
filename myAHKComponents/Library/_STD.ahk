@@ -220,6 +220,7 @@ setStringWriter(name, param){
 	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\Variables\%name%.txt
 	FileAppend,	%param% , %A_WorkingDir%\myAHKComponents\Resources\Variables\%name%.txt
 }
+
 ;外部変数の読み込み
 ;揮発性なし（Reload,再起動でも値は普遍）
 ;書き方：getStringWriter("var")でvar.txt内部の文字列を取得する
