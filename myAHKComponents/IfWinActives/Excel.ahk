@@ -124,12 +124,11 @@
 			mbind_c()
 	return
 
-	XButton2 & WheelUp::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
-	XButton2 & WheelDown::ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
-
-	XButton2 & LButton::intelliScrollOnExcel()
+	XButton2 & WheelUp::Excel_scrollRight()
+	XButton2 & WheelDown::Excel_scrollLeft()
+	XButton2 & LButton::Excel_intelliScroll()
 	;よさげなスクロール
-	intelliScrollOnExcel(){
+	Excel_intelliScroll(){
 		;初期マウス位置の取得
 		MouseGetPos, preMouseX, preMouseY
 		while(GetKeyState("LButton","P")){
@@ -162,9 +161,9 @@
 				;X方向適用
 				while(absDiffPointX > 0){
 					if(diffPointX>0)
-						ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
+						Excel_scrollRight()
 					else
-						ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
+						Excel_scrollLeft()
 
 					;スタック溜まったらSleep（１ミリSleepはまともに挙動しないので20程度見る）
 					sleepStack +=sleepCount
@@ -200,4 +199,22 @@
 		}
 	}
 
+	Excel_scrollLeft(){
+		try {
+			ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
+		}catch e{
+			;WindowのフォーカスをExcel以外に切り替えてExcelをROTに登録させる
+			gui,Show
+			gui,Destroy
+		}
+	}
+	Excel_scrollRight(){
+		try {
+			ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
+		}catch e {
+			;WindowのフォーカスをExcel以外に切り替えてExcelをROTに登録させる
+			gui,Show
+			gui,Destroy
+		}
+	}
 #IfWinActive
