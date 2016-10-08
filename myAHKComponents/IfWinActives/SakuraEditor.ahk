@@ -17,7 +17,7 @@
 	LControl & d::
 	vkEBsc07B & d::
 		if CAPS() && LCMD()
-			NippouMacro_initTime()
+			NippouMacroOnSakura_initTime()
 		else
 			mbind_d()
 	return
@@ -193,7 +193,7 @@
 	}
 
 	;日報マクロの初期時間の入力
-	NippouMacro_initTime(){
+	NippouMacroOnSakura_initTime(){
 		;前行に戻る
 		Send,{Up}
 

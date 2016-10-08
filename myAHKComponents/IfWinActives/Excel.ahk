@@ -208,6 +208,7 @@
 			gui,Destroy
 		}
 	}
+
 	Excel_scrollRight(){
 		try {
 			ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
