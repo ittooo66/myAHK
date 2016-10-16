@@ -20,14 +20,6 @@
 			mbind_z()
 	return
 
-	;貼り付けオプションを離脱する
-	vkEBsc07B & v::
-		if LCMD()
-			HistoricalClip_paste(1)
-		else
-			mbind_v()
-	return
-
 	;セル背景色変更
 	vkEBsc07B & d::
 	LControl & d::
@@ -53,66 +45,71 @@
 			mbind_camma()
 	return
 
-	;文字色変更（赤）
 	vkEBsc07B & r::
 	LControl & r::
-		if CAPS() && LCMD()
+		if CAPS() && LCMD(){
+			;文字色変更（赤）
 			Send, !{h}{f}{c}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Left}{Left}{Left}{Left}{return}
-		else
+		}else if LCMD(){
+			;右寄せ
+			Send, !{h}{a}{r}
+		}else
 			mbind_r()
 	return
 
-	;文字色変更（自動）
+	vkEBsc07B & e::
+	LControl & e::
+		if CAPS() && LCMD(){
+			;背景色変更（黄）
+			Send, !{h}{h}{Down}{Down}{Down}{Down}{Down}{Down}{Right}{Right}{Right}{return}
+		}else if LCMD()	{
+			;中央寄せ
+			Send, !{h}{a}{c}
+		}else{
+			mbind_e()
+		}
+	return
+
+	vkEBsc07B & w::
+	LControl & w::
+		if CAPS() && LCMD(){
+			;背景色変更（自動）
+			Send, !{h}{h}{n}
+		}else if LCMD()	{
+			;左寄せ
+			Send, !{h}{a}{l}
+		}else{
+			mbind_w()
+		}
+	return
+
 	vkEBsc07B & q::
 	LControl & q::
-		if CAPS() && LCMD()
+		if CAPS() && LCMD(){
+			;文字色変更（自動）
 			Send, !{h}{f}{c}{return}
-		else
+		}else
 			mbind_q()
 	return
 
 	;文字配置マクロ（上下中央配置）
-	vkEBsc07B & u::
-	LControl & u::
-		if CAPS() && LCMD()
+	vkEBsc07B & 2::
+		if LCMD()
 			Send, !{h}{a}{t}
 		else
-			mbind_u()
+			mbind_2()
 	return
-	vkEBsc07B & i::
-	LControl & i::
-		if CAPS() && LCMD()
+	vkEBsc07B & 3::
+		if LCMD(){
 			Send, !{h}{a}{m}
-		else
-			mbind_i()
+		}else
+			mbind_3()
 	return
-	vkEBsc07B & o::
-	LControl & o::
-		if CAPS() && LCMD()
+	vkEBsc07B & 4::
+		if LCMD()
 			Send, !{h}{a}{b}
 		else
-			mbind_o()
-	return
-	vkEBsc07B & j::
-	LControl & j::
-		if CAPS() && LCMD()
-			Send, !{h}{a}{l}
-		else
-			mbind_j()
-	return
-	vkEBsc07B & k::
-	LControl & k::
-		if CAPS() && LCMD()
-			Send, !{h}{a}{c}
-		else
-			mbind_k()
-	return
-	vkEBsc07B & l::
-	LControl & l::
-		if CAPS() && LCMD()
-			Send, !{h}{a}{r}
-		else
-			mbind_l()
+			mbind_4()
 	return
 
 	vkEBsc07B & c::
