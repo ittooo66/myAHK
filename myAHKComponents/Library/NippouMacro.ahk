@@ -110,16 +110,10 @@ NippouMacro_parseICS(icsLocation){
 
 		;Summary二行目に対応
 		if(summary2flag == 1){
-			;先頭1文字のAsciiコードを取得
-			StringLeft, header, icsLine, 1
-			header := Asc(header)
-
 			;タブ文字を検知して対応する
-			if(header = "9675"){
-				StringTrimLeft, summary2, icsLine, 1
-				SUMMARY_temp := SUMMARY_temp . summary2
+			if(!inStr(icsLine,":")){
+				SUMMARY_temp := SUMMARY_temp . icsLine
 			}
-
 			;フラグを下ろす
 			summary2flag := 0
 		}
