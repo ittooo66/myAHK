@@ -66,6 +66,8 @@ NippouMacro_parseICS(icsLocation){
 	nippouFormat := ""
 	;イベントの個数
 	eventIndex := 0
+	;Summary二行目フラグ
+	summary2flag := 0
 
 	;ICSファイルを行ごとに読み込み
 	Loop, Read, %icsLocation%
@@ -106,6 +108,22 @@ NippouMacro_parseICS(icsLocation){
 			DTSTART_temp = %hour%:%minute%
 		}
 
+		;Summary二行目に対応
+		if(summary2flag == 1){
+			;先頭1文字のAsciiコードを取得
+			StringLeft, header, icsLine, 1
+			header := Asc(header)
+
+			;タブ文字を検知して対応する
+			if(header = "9675"){
+				StringTrimLeft, summary2, icsLine, 1
+				SUMMARY_temp := SUMMARY_temp . summary2
+			}
+
+			;フラグを下ろす
+			summary2flag := 0
+		}
+
 		;SUMMARYを引っ掛ける
 		if(inStr(icsLine,"SUMMARY")){
 			;記法に応じて時間情報を取得
@@ -114,6 +132,8 @@ NippouMacro_parseICS(icsLocation){
 			}else{
 				StringTrimLeft, summary, icsLine, 8
 			}
+			;サマリ二行目検討フラグを立てる
+			summary2flag := 1
 			;一時変数に格納
 			SUMMARY_temp = %summary%
 		}
