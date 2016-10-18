@@ -110,8 +110,8 @@ NippouMacro_parseICS(icsLocation){
 
 		;Summary二行目に対応
 		if(summary2flag == 1){
-			;タブ文字を検知して対応する
-			if(!inStr(icsLine,":")){
+			;タグ系の文字（":"、";"を含まない）でない場合、改行とみなして対応する
+			if(!inStr(icsLine,":") && !inStr(icsLine,";")){
 				SUMMARY_temp := SUMMARY_temp . icsLine
 			}
 			;フラグを下ろす
