@@ -28,6 +28,7 @@ RAlt & [::ShiftAltTab
 #include Library\MouseControl.ahk
 #include Library\NippouMacro.ahk
 #include Library\FileLauncher.ahk
+#include Library\IntoRemoteDesktop.ahk
 ;TempMacroのInclude
 #include Library\TempMacro.ahk
 #include Resources\TempMacro\MacroZ.ahk

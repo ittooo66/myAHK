@@ -350,6 +350,8 @@ mbind_v(){
 		pasteFrom("SV")
 	else if LCMD() && LSHIFT()
 		Send,^{v}
+	else if LCMD() && LALT()
+		IntoRemoteDesktop()
 	else if LCMD()
 		HistoricalClip_paste(1)
 	else
