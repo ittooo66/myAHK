@@ -1,8 +1,8 @@
 mbind_a(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
 			run, C:\Users\66\AppData\Local\atom\update.exe --processStart atom.exe
-	}if RCMD() || CAPS()
+	}else if RCMD() || CAPS()
 		press("^{LEFT}")
 	else if SPACE() && SHIFT()
 		copyTo("SA")
@@ -22,13 +22,9 @@ mbind_b(){
 }
 
 mbind_c(){
-	if RCMD() && LCMD(){
-		if !activateWindow("ConsoleWindowClass","",""){
-			Send,{RWin}
-			sleep,100
-			directInput("cmd.exe")
-			Send,^+{Return}
-		}
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
+		if !activateWindow("PPTFrameClass","","")
+			openApp("PowerPoint")
 	}else if ( CAPS() || RCMD() )&& SHIFT()
 		TempMacro_open("C")
 	else if RCMD() || CAPS()
@@ -46,7 +42,7 @@ mbind_c(){
 }
 
 mbind_d(){
-	if RCMD() && LCMD()
+	if (RCMD() && LCMD()) || (SPACE() && LALT())
 		winD()
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
@@ -64,7 +60,7 @@ mbind_d(){
 }
 
 mbind_e(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
 	}else if CAPS() && RCMD()
@@ -85,7 +81,7 @@ mbind_e(){
 }
 
 mbind_f(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
 	}else if RCMD() && CAPS()
@@ -105,7 +101,7 @@ mbind_f(){
 }
 
 mbind_g(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
 			openApp("Chrome")
 	}else if RCMD() && CAPS()
@@ -121,7 +117,7 @@ mbind_g(){
 }
 
 mbind_h(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("HwndWrapper","","")
 			run "C:\Users\66\AppData\Local\GitHub\GitHub.appref-ms"
 	}else if RCMD() || CAPS()
@@ -135,7 +131,7 @@ mbind_h(){
 }
 
 mbind_i(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("OpusApp","","")
 			openApp("Word")
 	}else if RCMD() && CAPS()
@@ -151,7 +147,7 @@ mbind_i(){
 }
 
 mbind_j(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("SunAwtFrame","idea.exe","")
 			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 15.0.1\bin\idea.exe"
 	}else if RSHIFT() && LSHIFT()
@@ -169,7 +165,7 @@ mbind_j(){
 }
 
 mbind_k(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("SunAwtFrame","javaw.exe","")
 			run, "C:\Program Files\Processing\processing-2.2.1\processing.exe"
 	}else if RSHIFT() && LSHIFT()
@@ -185,13 +181,7 @@ mbind_k(){
 }
 
 mbind_l(){
-	if RCMD() &&LCMD(){
-		if !activateWindow("ApolloRuntimeContentWindow","",""){
-			if !activateWindow("RiotWindowClass","",""){
-				run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\League of Legends\League of Legends"
-			}
-		}
-	}else if LSHIFT() && RSHIFT()
+	if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
 	else if RCMD() || CAPS()
 		press("6")
@@ -215,7 +205,7 @@ mbind_m(){
 }
 
 mbind_n(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("IEFrame","","")
 			openApp("Internet Explorer")
 	}else if RCMD() && CAPS()
@@ -231,10 +221,7 @@ mbind_n(){
 }
 
 mbind_o(){
-	if RCMD() && LCMD(){
-		if !activateWindow("XLMAIN","","")
-			openApp("Excel")
-	}else if RCMD() && CAPS()
+	if RCMD() && CAPS()
 		changeSoundDevice("0")
 	else if RSHIFT() && LSHIFT()
 		Send,{WheelLeft}
@@ -249,10 +236,7 @@ mbind_o(){
 }
 
 mbind_p(){
-	if RCMD() && LCMD(){
-		if !activateWindow("PPTFrameClass","","")
-			openApp("PowerPoint")
-	}else if LSHIFT() && RSHIFT()
+	if LSHIFT() && RSHIFT()
 		Send,{WheelRight}
 	else if RCMD() || CAPS()
 		press("{-}")
@@ -265,7 +249,7 @@ mbind_p(){
 }
 
 mbind_q(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("TaskManagerWindow","","")
 			run "C:\Windows\System32\Taskmgr.exe"
 	}else if RCMD() || CAPS()
@@ -283,7 +267,7 @@ mbind_q(){
 }
 
 mbind_r(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("MozillaWindowClass","firefox.exe","")
 			openApp("FireFox")
 	}else if RCMD() || CAPS()
@@ -297,7 +281,10 @@ mbind_r(){
 }
 
 mbind_s(){
-	if LCMD() && CAPS()
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
+		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
+			openApp("Outlook")
+	}else if LCMD() && CAPS()
 		Send,^{PgUp}
 	else if RCMD() && CAPS()
 		Send,^#{Left}
@@ -314,7 +301,7 @@ mbind_s(){
 }
 
 mbind_t(){
-	if LCMD() && RCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("ConsoleWindowClass","",""){
 			Send,{RWin}
 			sleep,100
@@ -341,10 +328,7 @@ mbind_t(){
 }
 
 mbind_u(){
-	if RCMD() && LCMD(){
-		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
-			openApp("Outlook")
-	}if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("7")
 	else if SPACE() && SHIFT()
 		copyTo("SU")
@@ -355,7 +339,7 @@ mbind_u(){
 }
 
 mbind_v(){
-	if RCMD() && LCMD(){
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("VISIOA","VISIO.EXE","")
 			openApp("Visio")
 	}else if RCMD() || CAPS()
@@ -384,7 +368,10 @@ mbind_w(){
 }
 
 mbind_x(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
+		if !activateWindow("XLMAIN","","")
+			openApp("Excel")
+	}else if ( CAPS() || RCMD() )&& SHIFT()
 		TempMacro_open("X")
 	else if RCMD() || CAPS()
 		TempMacro_do("X")
@@ -410,7 +397,10 @@ mbind_y(){
 }
 
 mbind_z(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
+		if !activateWindow("OpusApp","","")
+			openApp("Word")
+	}else if ( CAPS() || RCMD() )&& SHIFT()
 		TempMacro_open("Z")
 	else if RCMD() || CAPS()
 		TempMacro_do("Z")
@@ -785,6 +775,8 @@ mbind_space_up(){
 		Send,!{``}
 	else if CAPS()
 		press("^{Space}")
+	else if LALT()
+		Send,{}
 	else{
 		if(A_TickCount - spaceDownTime < 400)
 			press("{Space}")
