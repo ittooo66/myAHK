@@ -71,6 +71,15 @@ Outlook_icsSave(){
 	Send,!{s}
 	Send,!{y}
 }
+	;Shift押しZですすめるようにした
+	RShift & z::
+	LShift & z::
+	vkEBsc07B & z::
+		if SHIFT() && LCMD()
+			Send,^{y}
+		else
+			mbind_z()
+	return
 
 	;予定表をICSで保存(日付指定あり)
 	vkEBsc07B & s::
