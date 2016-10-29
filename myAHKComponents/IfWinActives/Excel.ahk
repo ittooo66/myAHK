@@ -70,6 +70,16 @@
 		}
 	return
 
+	vkEBsc07B & g::
+	LControl & g::
+		if CAPS() && LCMD(){
+			;セル結合
+			Send,!{h}{m}{c}
+		}else{
+			mbind_g()
+		}
+	return
+
 	vkEBsc07B & w::
 	LControl & w::
 		if CAPS() && LCMD(){
