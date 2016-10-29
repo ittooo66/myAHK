@@ -29,6 +29,7 @@
 		WinGetTitle, Title, A
 		IfInString, Title, Outlook , {
 			;Outlookのコア(メールと予定表)では無効
+			return
 		}else{
 			Send,!{F4}
 		}
@@ -38,39 +39,6 @@
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
 
-;icsファイル保存方式の初期化
-Outlook_icsInit(string){
-	;ファイル名をつけて保存を開く
-	Send,!{f}{c}
-	sleep,600
-
-	;ファイル名指定
-	directInput(string)
-	sleep,400
-
-	;アドレスバーにデスクトップと入力
-	Send,!{d}
-	dir = %A_WorkingDir%\myAHKComponents\Resources\Nippou\Convert
-	directInput(dir)
-	Send,{return}
-	sleep,400
-
-	;その他のオプション
-	Send,!{m}
-	;予定表の詳細度を設定
-	Send,{Tab}
-	Send,{Down}
-}
-
-;icsファイル保存
-Outlook_icsSave(){
-	;その他のオプション_決定
-	Send,!{o}
-
-	;icsの保存
-	Send,!{s}
-	Send,!{y}
-}
 	;Shift押しZですすめるようにした
 	RShift & z::
 	LShift & z::
@@ -118,5 +86,39 @@ Outlook_icsSave(){
 		}else
 			mbind_d()
 	return
+
+	;icsファイル保存方式の初期化
+	Outlook_icsInit(string){
+		;ファイル名をつけて保存を開く
+		Send,!{f}{c}
+		sleep,600
+
+		;ファイル名指定
+		directInput(string)
+		sleep,400
+
+		;アドレスバーにデスクトップと入力
+		Send,!{d}
+		dir = %A_WorkingDir%\myAHKComponents\Resources\Nippou\Convert
+		directInput(dir)
+		Send,{return}
+		sleep,400
+
+		;その他のオプション
+		Send,!{m}
+		;予定表の詳細度を設定
+		Send,{Tab}
+		Send,{Down}
+	}
+
+	;icsファイル保存
+	Outlook_icsSave(){
+		;その他のオプション_決定
+		Send,!{o}
+
+		;icsの保存
+		Send,!{s}
+		Send,!{y}
+	}
 
 #IfWinActive
