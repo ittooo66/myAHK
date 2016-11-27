@@ -6,12 +6,15 @@ XButton2::Send,{XButton2}
 XButton1::Send,{XButton1}
 MButton::
 	if GetKeyState("vkEBsc07B","P"){
+		if WinActive("ahk_class CabinetWClass")
+			Send,!{Up}
 	}else{
 		winD()
 	}
 return
 WheelUp::
 	if GetKeyState("vkEBsc07B","P") {
+		;TODO:Toggleがいい感じに動くバインドをつくる
 	}else if GetKeyState("Space","P"){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_up()
@@ -26,6 +29,7 @@ return
 
 WheelDown::
 	if GetKeyState("vkEBsc07B","P") {
+		;TODO:Toggleがいい感じに動くバインドをつくる
 	}else if GetKeyState("Space","P"){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_down()
