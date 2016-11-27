@@ -14,7 +14,7 @@ MButton::
 return
 WheelUp::
 	if GetKeyState("vkEBsc07B","P") {
-		;TODO:Toggleがいい感じに動くバインドをつくる
+		Send,!+{Tab}
 	}else if GetKeyState("Space","P"){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_up()
@@ -29,7 +29,7 @@ return
 
 WheelDown::
 	if GetKeyState("vkEBsc07B","P") {
-		;TODO:Toggleがいい感じに動くバインドをつくる
+		Send,!+{Tab}
 	}else if GetKeyState("Space","P"){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_down()
