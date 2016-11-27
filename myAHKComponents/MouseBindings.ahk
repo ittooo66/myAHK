@@ -6,18 +6,12 @@ XButton2::Send,{XButton2}
 XButton1::Send,{XButton1}
 MButton::
 	if GetKeyState("vkEBsc07B","P"){
-		run C:\Program Files\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
 	}else{
 		winD()
 	}
 return
 WheelUp::
 	if GetKeyState("vkEBsc07B","P") {
-		if FileLauncher_isDisplayed(){
-			FileLauncher_up()
-		}else{
-			FileLauncher_openWindow()
-		}
 	}else if GetKeyState("Space","P"){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_up()
@@ -32,11 +26,6 @@ return
 
 WheelDown::
 	if GetKeyState("vkEBsc07B","P") {
-		if FileLauncher_isDisplayed(){
-			FileLauncher_down()
-		}else{
-			FileLauncher_openWindow()
-		}
 	}else if GetKeyState("Space","P"){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_down()
