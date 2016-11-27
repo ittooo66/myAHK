@@ -212,8 +212,10 @@ changeSoundDevice(num){
 }
 
 ;StartMenuの場所にある各種Appを開く
+;事前準備：setStringWriter("myUserName","%自分のユーザ名%")
 openApp(appName){
-	fileDir = C:\Users\4872870\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\StartMenu\
+	myUserName := getStringWriter("myUserName")
+	fileDir = C:\Users\%myUserName%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\StartMenu\
 	fileDir := fileDir . appName
 	run, %fileDir%
 }
