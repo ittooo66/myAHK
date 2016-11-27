@@ -9,7 +9,7 @@ IntoRemoteDesktop(){
 		;contentから頭を削除
 		StringTrimLeft , content, content, 1
 
-		;500文字以上ある場合、止めておく
+		;1500文字以上ある場合、止めておく
 		if( strLen(content) > 1500 ){
 			MsgBox,TooMuchChars!
 			return
