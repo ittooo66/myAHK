@@ -359,7 +359,10 @@ mbind_v(){
 }
 
 mbind_w(){
-	if RCMD() || CAPS()
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
+		if !activateWindow("","mstsc.exe","")
+			openApp("RemoteDesktop")
+	}if RCMD() || CAPS()
 		press("{HOME}")
 	else if SPACE() && SHIFT()
 		copyTo("SW")
