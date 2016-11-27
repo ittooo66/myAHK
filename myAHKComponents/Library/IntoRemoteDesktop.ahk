@@ -204,6 +204,8 @@ IntoRemoteDesktop(){
 			Send,{\}
 		}else if(inStr(prefix,"``")){
 			Send,{``}
+		}else if(inStr(prefix,"~")){
+			Send,{~}
 		}else{
 			send,{Space}
 		}
