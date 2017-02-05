@@ -1,7 +1,7 @@
 mbind_a(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
-			run, C:\Users\66\AppData\Local\atom\update.exe --processStart atom.exe
+			openApp("Atom")
 	}else if RCMD() || CAPS()
 		press("^{LEFT}")
 	else if SPACE() && SHIFT()
@@ -135,7 +135,7 @@ mbind_i(){
 		if !activateWindow("OpusApp","","")
 			openApp("Word")
 	}else if RCMD() && CAPS()
-		changeSoundDevice("2")
+		changeSoundDevice("1")
 	else if RCMD() || CAPS()
 		press("8")
 	else if SPACE() && SHIFT()
