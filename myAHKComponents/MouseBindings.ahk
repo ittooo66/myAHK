@@ -6,15 +6,18 @@ XButton2::Send,{XButton2}
 XButton1::Send,{XButton1}
 MButton::
 	if GetKeyState("vkEBsc07B","P"){
-		if WinActive("ahk_class CabinetWClass")
-			Send,!{Up}
+		run C:\Program Files\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
 	}else{
 		winD()
 	}
 return
 WheelUp::
 	if GetKeyState("vkEBsc07B","P") {
-		Send,!+{Tab}
+		if FileLauncher_isDisplayed(){
+			FileLauncher_up()
+		}else{
+			FileLauncher_openWindow()
+		}
 	}else if GetKeyState("Space","P"){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_up()
@@ -29,7 +32,11 @@ return
 
 WheelDown::
 	if GetKeyState("vkEBsc07B","P") {
-		Send,!+{Tab}
+		if FileLauncher_isDisplayed(){
+			FileLauncher_down()
+		}else{
+			FileLauncher_openWindow()
+		}
 	}else if GetKeyState("Space","P"){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_down()
@@ -74,7 +81,7 @@ XButton2 & LButton::intelliScroll()
 ;Winキー
 XButton1 & RButton::Send,{RWin}
 ;Explorer起動
-XButton1 & LButton::openApp("Entrance")
+XButton1 & LButton::openApp("PC")
 
 ;MButton
 XButton2 & RButton::
