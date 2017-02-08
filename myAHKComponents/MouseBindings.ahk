@@ -81,7 +81,7 @@ XButton2 & LButton::intelliScroll()
 ;Winキー
 XButton1 & RButton::Send,{RWin}
 ;Explorer起動
-XButton1 & LButton::openApp("PC")
+XButton1 & LButton::openApp("Entrance")
 
 ;MButton
 XButton2 & RButton::
