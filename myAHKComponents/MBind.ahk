@@ -103,7 +103,7 @@ mbind_f(){
 mbind_g(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-			openApp("Chrome")
+			openApp("Google Chrome")
 	}else if RCMD() && CAPS()
 		search()
 	else if RCMD() || CAPS()
@@ -119,7 +119,7 @@ mbind_g(){
 mbind_h(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("HwndWrapper","","")
-			run "C:\Users\66\AppData\Local\GitHub\GitHub.appref-ms"
+			run "C:\Users\ittoo\AppData\Local\GitHub\GitHub.appref-ms"
 	}else if RCMD() || CAPS()
 		press("{BackSpace}")
 	else if SPACE() && SHIFT()
@@ -149,7 +149,7 @@ mbind_i(){
 mbind_j(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("SunAwtFrame","idea.exe","")
-			run, "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 15.0.1\bin\idea.exe"
+			openApp("IntelliJ IDEA")
 	}else if RSHIFT() && LSHIFT()
 		mouseDrag("j")
 	else if CAPS() && RCMD()
@@ -167,7 +167,7 @@ mbind_j(){
 mbind_k(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("SunAwtFrame","javaw.exe","")
-			run, "C:\Program Files\Processing\processing-2.2.1\processing.exe"
+			openApp("Processing")
 	}else if RSHIFT() && LSHIFT()
 		Send,{RButton}
 	else if RCMD() || CAPS()
