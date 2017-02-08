@@ -136,8 +136,10 @@ mbind_i(){
 			openApp("Word")
 	}else if RCMD() && CAPS()
 		changeSoundDevice("1")
-	else if RCMD() || CAPS()
+	else if RCMD()
 		press("8")
+	else if CAPS()
+		press("{numpad8}")
 	else if SPACE() && SHIFT()
 		copyTo("SI")
 	else if SPACE()
@@ -154,8 +156,10 @@ mbind_j(){
 		mouseDrag("j")
 	else if CAPS() && RCMD()
 		download()
-	else if RCMD() || CAPS()
+	else if RCMD()
 		press("4")
+	else if CAPS()
+		press("{numpad4}")
 	else if SPACE() && SHIFT()
 		copyTo("SJ")
 	else if SPACE()
@@ -170,8 +174,10 @@ mbind_k(){
 			openApp("Processing")
 	}else if RSHIFT() && LSHIFT()
 		Send,{RButton}
-	else if RCMD() || CAPS()
+	else if RCMD()
 		press("5")
+	else if CAPS()
+		press("{numpad5}")
 	else if SPACE() && SHIFT()
 		copyTo("SK")
 	else if SPACE()
@@ -183,8 +189,10 @@ mbind_k(){
 mbind_l(){
 	if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
-	else if RCMD() || CAPS()
+	else if RCMD()
 		press("6")
+	else if CAPS()
+		press("{numpad6}")
 	else if SPACE() && SHIFT()
 		copyTo("SL")
 	else if SPACE()
@@ -194,8 +202,10 @@ mbind_l(){
 }
 
 mbind_m(){
-	if RCMD() || CAPS()
+	if RCMD()
 		press("1")
+	else if CAPS()
+		press("{numpad1}")
 	else if SPACE() && SHIFT()
 		copyTo("SM")
 	else if SPACE()
@@ -210,8 +220,10 @@ mbind_n(){
 			openApp("Internet Explorer")
 	}else if RCMD() && CAPS()
 		NippouMacro_makeNippou()
-	else if RCMD() || CAPS()
+	else if RCMD()
 		press("0")
+	else if CAPS()
+		press("{numpad0}")
 	else if SPACE() && SHIFT()
 		copyTo("SN")
 	else if SPACE()
@@ -225,8 +237,10 @@ mbind_o(){
 		changeSoundDevice("0")
 	else if RSHIFT() && LSHIFT()
 		Send,{WheelLeft}
-	else if RCMD() || CAPS()
+	else if RCMD()
 		press("9")
+	else if CAPS()
+		press("{numpad9}")
 	else if SPACE() && SHIFT()
 		copyTo("SO")
 	else if SPACE()
@@ -337,8 +351,10 @@ mbind_t(){
 }
 
 mbind_u(){
-	if RCMD() || CAPS()
+	if RCMD()
 		press("7")
+	else if CAPS()
+		press("{numpad7}")
 	else if SPACE() && SHIFT()
 		copyTo("SU")
 	else if SPACE()
@@ -667,9 +683,11 @@ mbind_quote(){
 }
 
 mbind_period(){
-	if RCMD() || CAPS(){
+	if RCMD()
 		press("3")
-	}else if RSHIFT() && LSHIFT()
+	else if CAPS()
+		press("{numpad3}")
+	else if RSHIFT() && LSHIFT()
 		Send, {PgUp}
 	else if SPACE() && SHIFT()
 		copyTo("SPeriod")
@@ -680,8 +698,10 @@ mbind_period(){
 }
 
 mbind_camma(){
-	if RCMD() || CAPS()
+	if RCMD()
 		press("2")
+	else if CAPS()
+		press("{numpad2}")
 	else if SPACE() && SHIFT()
 		copyTo("SCamma")
 	else if SPACE()
