@@ -115,6 +115,15 @@
 			mbind_w()
 	return
 
+	;予定の分類
+	vkEBsc07B & g::
+	LControl & g::
+		if CAPS() && LCMD(){
+			Send,!{h}{g}
+		}else
+			mbind_g()
+	return
+
 	;icsファイル保存方式の初期化
 	Outlook_icsInit(string){
 		;ファイル名をつけて保存を開く
