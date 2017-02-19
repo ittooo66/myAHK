@@ -55,6 +55,8 @@ mbind_d(){
 		copyTo("SD")
 	else if SPACE()
 		pasteFrom("SD")
+	else if RALT()
+		Send,#{d}
 	else
 		press("d")
 }
@@ -290,6 +292,8 @@ mbind_r(){
 		copyTo("SR")
 	else if SPACE()
 		pasteFrom("SR")
+	else if RALT()
+		Send,#{r}
 	else
 		press("r")
 }
