@@ -8,7 +8,11 @@ MButton::
 	if GetKeyState("vkEBsc07B","P"){
 		run C:\Program Files\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
 	}else{
-		winD()
+		Send,{MButton Down}
+		while(GetKeyState("MButton","P")){
+			sleep,50
+		}
+		Send,{MButton Up}
 	}
 return
 WheelUp::

@@ -43,7 +43,7 @@ mbind_c(){
 
 mbind_d(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT())
-		winD()
+		openApp("")
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if RCMD() || CAPS(){
