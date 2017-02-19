@@ -337,20 +337,11 @@ mbind_t(){
 			HistoricalClip_paste()
 		}else
 			press("{return}")
-	}else if SPACE() && SHIFT(){
-		FormatTime,hour,,HH
-		FormatTime,minute,,mm
-		time := hour . ":" . minute
-		directInput(time)
-		consumeSpace()
-	}else if SPACE(){
-		FormatTime,year,,yyyy
-		FormatTime,month,,MM
-		FormatTime,day,,dd
-		date := year . "/" . month . "/" . day
-		directInput(date)
-		consumeSpace()
-	}else
+	}else if SPACE() && SHIFT()
+		copyTo("ST")
+	else if SPACE()
+		pasteFrom("ST")
+	else
 		press("t")
 }
 
@@ -669,7 +660,18 @@ mbind_semicolon(){
 		copyTo("SSemicolon")
 	else if SPACE()
 		pasteFrom("SSemicolon")
-	else
+	else if LCMD() && SHIFT(){
+		FormatTime,hour,,HH
+		FormatTime,minute,,mm
+		time := hour . ":" . minute
+		directInput(time)
+	}else if LCMD(){
+		FormatTime,year,,yyyy
+		FormatTime,month,,MM
+		FormatTime,day,,dd
+		date := year . "/" . month . "/" . day
+		directInput(date)
+	}else
 		press("`;")
 }
 
