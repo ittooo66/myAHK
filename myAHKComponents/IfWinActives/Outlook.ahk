@@ -87,6 +87,34 @@
 			mbind_d()
 	return
 
+	;(今日に移動)
+	vkEBsc07B & t::
+	LControl & t::
+		if CAPS() && LCMD(){
+			Send,!{h}{1}{o}{d}
+		}else
+			mbind_t()
+	return
+
+	;週の表示形式
+	vkEBsc07B & q::
+	LControl & q::
+		if CAPS() && LCMD(){
+			Send,!{v}{w}{1}
+		}else
+			mbind_q()
+	return
+
+	;グループスケジュールの表示形式
+	vkEBsc07B & w::
+	LControl & w::
+		if CAPS() && LCMD(){
+			Send,!{v}{r}
+			Send,!{v}{s}{v}
+		}else
+			mbind_w()
+	return
+
 	;icsファイル保存方式の初期化
 	Outlook_icsInit(string){
 		;ファイル名をつけて保存を開く
