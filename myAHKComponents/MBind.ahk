@@ -136,7 +136,7 @@ mbind_i(){
 			openApp("Word")
 	}else if RCMD() && CAPS()
 		changeSoundDevice("1")
-	else if RCMD()
+	else if RCMD() || (CAPS() && SHIFT())
 		press("8")
 	else if CAPS()
 		press("{numpad8}")
@@ -156,7 +156,7 @@ mbind_j(){
 		mouseDrag("j")
 	else if CAPS() && RCMD()
 		download()
-	else if RCMD()
+	else if RCMD() || (CAPS() && SHIFT())
 		press("4")
 	else if CAPS()
 		press("{numpad4}")
@@ -174,7 +174,7 @@ mbind_k(){
 			openApp("Processing")
 	}else if RSHIFT() && LSHIFT()
 		Send,{RButton}
-	else if RCMD()
+	else if RCMD() || (CAPS() && SHIFT())
 		press("5")
 	else if CAPS()
 		press("{numpad5}")
@@ -189,7 +189,7 @@ mbind_k(){
 mbind_l(){
 	if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
-	else if RCMD()
+	else if RCMD() || (CAPS() && SHIFT())
 		press("6")
 	else if CAPS()
 		press("{numpad6}")
@@ -202,7 +202,7 @@ mbind_l(){
 }
 
 mbind_m(){
-	if RCMD()
+	if RCMD() || (CAPS() && SHIFT())
 		press("1")
 	else if CAPS()
 		press("{numpad1}")
@@ -220,7 +220,7 @@ mbind_n(){
 			openApp("Internet Explorer")
 	}else if RCMD() && CAPS()
 		NippouMacro_makeNippou()
-	else if RCMD()
+	else if RCMD() || (CAPS() && SHIFT())
 		press("0")
 	else if CAPS()
 		press("{numpad0}")
@@ -237,7 +237,7 @@ mbind_o(){
 		changeSoundDevice("0")
 	else if RSHIFT() && LSHIFT()
 		Send,{WheelLeft}
-	else if RCMD()
+	else if RCMD() || (CAPS() && SHIFT())
 		press("9")
 	else if CAPS()
 		press("{numpad9}")
@@ -342,7 +342,7 @@ mbind_t(){
 }
 
 mbind_u(){
-	if RCMD()
+	if RCMD() || (CAPS() && SHIFT())
 		press("7")
 	else if CAPS()
 		press("{numpad7}")
@@ -685,7 +685,7 @@ mbind_quote(){
 }
 
 mbind_period(){
-	if RCMD()
+	if RCMD() || (CAPS() && SHIFT())
 		press("3")
 	else if CAPS()
 		press("{numpad3}")
@@ -700,7 +700,7 @@ mbind_period(){
 }
 
 mbind_camma(){
-	if RCMD()
+	if RCMD() || (CAPS() && SHIFT())
 		press("2")
 	else if CAPS()
 		press("{numpad2}")
