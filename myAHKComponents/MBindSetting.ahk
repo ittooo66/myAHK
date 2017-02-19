@@ -25,7 +25,7 @@ ALT(){ ;HHKB_両Alt
 	return RALT() || LALT()
 }
 RALT(){ ;HHKB_右Alt
-	return GetKeyState("RWin","P")
+	return GetKeyState("RAlt","P")
 }
 LALT(){ ;HHKB_左Alt
 	return GetKeyState("LAlt","P")
