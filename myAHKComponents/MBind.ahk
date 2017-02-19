@@ -52,9 +52,9 @@ mbind_d(){
 		else
 			press("{DOWN}")
 	}else if SPACE() && SHIFT()
-			copyTo("SD")
+		copyTo("SD")
 	else if SPACE()
-			pasteFrom("SD")
+		pasteFrom("SD")
 	else
 		press("d")
 }
