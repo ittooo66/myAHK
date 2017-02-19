@@ -33,7 +33,9 @@ LALT(){ ;HHKB_左Alt
 
 ;修飾キー付きのkeypress
 press(key){
+	;修飾キー変数
 	modifiers := ""
+	;修飾キー検知して追加
 	if LCMD()
 		modifiers = %modifiers%^
 	if SHIFT()
@@ -41,7 +43,7 @@ press(key){
 	if LALT()
 		modifiers = %modifiers%!
 	if RALT()
-		Send,{RWin down}%modifiers%%key%{RWin up}
-	else
-		Send,%modifiers%%key%
+		modifiers = %modifiers%#
+	;修飾キーつきkeyPress
+	Send,%modifiers%%key%
 }
