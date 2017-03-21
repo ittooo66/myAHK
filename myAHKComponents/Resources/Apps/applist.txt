@@ -1,0 +1,37 @@
+Nautilus
+	Q:	TaskManager
+	W:	RemoteDesktop (in Teamviewer)
+	E:	SakuraEditor
+	R:	Internet Explorer
+	A:	Atom
+	S:	Outlook
+	D:	Apps
+	F:	Entrance
+		->PC.lnk
+		->Drobox.lnk
+		->Apps.lnk
+	G:	Google Chrome
+	H:	GitHub
+	Z:	Word
+	X:	Excel
+	C:	PowerPoint
+	V:	Visio (in TrueCrypt)
+	J:	IntelliJ
+ITOUSUL
+	Q:	TaskManager
+	W:	RemoteDesktop
+	E:	SakuraEditor
+	R:	Internet Explorer
+	A:	Atom (in ○○○)
+	S:	Outlook
+	D:	Apps
+	F:	Entrance
+		...
+	G:	Google Chrome
+	H:	GitHub
+	Z:	Word
+	X:	Excel
+	C:	PowerPoint
+	V:	Visio
+	J:	IntelliJ
+
