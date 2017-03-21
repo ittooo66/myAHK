@@ -215,10 +215,7 @@ mbind_m(){
 }
 
 mbind_n(){
-	if (RCMD() && LCMD()) || (SPACE() && LALT()){
-		if !activateWindow("IEFrame","","")
-			openApp("Internet Explorer")
-	}else if RCMD() && CAPS()
+	if RCMD() && CAPS()
 		NippouMacro_makeNippou()
 	else if RCMD() || (CAPS() && SHIFT())
 		press("0")
@@ -282,8 +279,8 @@ mbind_q(){
 
 mbind_r(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
-		if !activateWindow("MozillaWindowClass","firefox.exe","")
-			openApp("FireFox")
+		if !activateWindow("IEFrame","","")
+			openApp("Internet Explorer")
 	}else if RCMD() || CAPS()
 		press("{END}")
 	else if SPACE() && SHIFT()
