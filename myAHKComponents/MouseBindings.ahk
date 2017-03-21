@@ -29,6 +29,9 @@ WheelUp::
 			HistoricalClip_openWindow()
 			consumeSpace()
 		}
+	}else if GetKeyState("MButton","P"){
+		if !activateWindow("CabinetWClass","explorer.exe","")
+			openApp("Entrance")
 	}else{
 		Send,{WheelUp}
 	}
@@ -48,6 +51,9 @@ WheelDown::
 			HistoricalClip_openWindow()
 			consumeSpace()
 		}
+	}else if GetKeyState("MButton","P"){
+		if !activateWindow("CabinetWClass","explorer.exe","")
+			openApp("Entrance")
 	}else{
 		Send,{WheelDown}
 	}
