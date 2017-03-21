@@ -131,10 +131,7 @@ mbind_h(){
 }
 
 mbind_i(){
-	if (RCMD() && LCMD()) || (SPACE() && LALT()){
-		if !activateWindow("OpusApp","","")
-			openApp("Word")
-	}else if RCMD() && CAPS()
+	if RCMD() && CAPS()
 		changeSoundDevice("1")
 	else if RCMD() || (CAPS() && SHIFT())
 		press("8")
@@ -169,10 +166,7 @@ mbind_j(){
 }
 
 mbind_k(){
-	if (RCMD() && LCMD()) || (SPACE() && LALT()){
-		if !activateWindow("SunAwtFrame","javaw.exe","")
-			openApp("Processing")
-	}else if RSHIFT() && LSHIFT()
+	if RSHIFT() && LSHIFT()
 		Send,{RButton}
 	else if RCMD() || (CAPS() && SHIFT())
 		press("5")
@@ -312,14 +306,7 @@ mbind_s(){
 }
 
 mbind_t(){
-	if (RCMD() && LCMD()) || (SPACE() && LALT()){
-		if !activateWindow("ConsoleWindowClass","",""){
-			Send,{RWin}
-			sleep,100
-			directInput("powershell.exe")
-			Send,^+{Return}
-		}
-	}else if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
+	if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_closeWindow()
 			HistoricalClip_paste(0,"txt")
