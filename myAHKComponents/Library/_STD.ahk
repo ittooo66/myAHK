@@ -191,11 +191,9 @@ changeSoundDevice(num){
 	Send,{Return}
 }
 
-;StartMenuの場所にある各種Appを開く
-;事前準備：setStringWriter("myUserName","%自分のユーザ名%")
+;各種Appを開く
 openApp(appName){
-	myUserName := getStringWriter("myUserName")
-	fileDir = C:\Users\%myUserName%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\StartMenu\
+	fileDir = %A_WorkingDir%\myAHKComponents\Resources\Apps\
 	fileDir := fileDir . appName
 	run, %fileDir%
 }
