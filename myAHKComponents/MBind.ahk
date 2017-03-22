@@ -768,6 +768,12 @@ mbind_space_down(){
 		;Spaceバインド未消費判定付与
 		spaceConsumed := 0
 	}
+
+	;IME切り替え（即時発動）
+	if LCMD() || RCMD(){
+		Send,!{``}
+		spaceConsumed := 1
+	}
 }
 
 mbind_space_up(){
@@ -791,9 +797,7 @@ mbind_space_up(){
 	}
 
 	;各種Spaceバインド
-	if LCMD() || RCMD()
-		Send,!{``}
-	else if CAPS()
+	if CAPS()
 		press("^{Space}")
 	else if LALT()
 		Send,{}
