@@ -260,9 +260,16 @@ mbind_q(){
 	}else if RCMD() || CAPS()
 		Send,{BackSpace}
 	else if LCMD(){
-		MsgBox , 1 , Confirm, Really?
-		ifMsgBox, OK
+		static windowCloseDownTime
+		;前回押し下げが400ms以内に行われていた場合
+		if (A_TickCount - windowCloseDownTime < 400){
 			Send,!{F4}
+			;今回の押し下げ時間を記録(暴発防止で-400)
+			windowCloseDownTime := A_TickCount - 400
+		}else{
+			;今回の押し下げ時間を記録
+			windowCloseDownTime := A_TickCount
+		}
 	}else if SPACE() && SHIFT()
 		copyTo("SQ")
 	else if SPACE()
