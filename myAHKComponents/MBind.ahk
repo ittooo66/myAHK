@@ -209,9 +209,7 @@ mbind_m(){
 }
 
 mbind_n(){
-	if RCMD() && CAPS()
-		NippouMacro_makeNippou()
-	else if RCMD() || (CAPS() && SHIFT())
+	if RCMD() || (CAPS() && SHIFT())
 		press("0")
 	else if CAPS()
 		press("{numpad0}")
