@@ -801,8 +801,7 @@ mbind_space_up(){
 		press("^{Space}")
 	else if LALT()
 		Send,{}
-	else{
-		if(A_TickCount - spaceDownTime < 400)
+	else if(A_TickCount - spaceDownTime < 400){
 			press("{Space}")
 	}
 }
