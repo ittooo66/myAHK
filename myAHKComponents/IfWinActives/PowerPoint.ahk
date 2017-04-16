@@ -152,16 +152,16 @@
 	vkEBsc07B & c::
 	LControl & c::
 		if CAPS() && LCMD()
-			;印刷
-			Send,!{f}{p}{Alt}
+			;Group化解除
+			Send,!{j}{d}{a}{g}{u}
 		else
 			mbind_c()
 	return
 	vkEBsc07B & v::
 	LControl & v::
 		if CAPS() && LCMD()
-			;View
-			Send, +{F5}
+			;Group化
+			Send, !{j}{d}{a}{g}{g}
 		else
 			mbind_v()
 	return
@@ -172,6 +172,16 @@
 			Send, !{j}{d}{s}{o}{w}
 		else
 			mbind_b()
+	return
+
+	vkEBsc07B & Tab::
+	LControl & Tab::
+		if CAPS() && LCMD() {
+			;オブジェクトの配置
+			Send, !{j}{d}{a}{a}
+		}else{
+			press("{Tab}")
+		}
 	return
 
 	;文字サイズ変更
