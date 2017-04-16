@@ -4,6 +4,8 @@
 RButton::Send,{RButton}
 XButton2::Send,{XButton2}
 XButton1::Send,{XButton1}
+
+;Sakura Editorでファイルリストを開く
 MButton::
 	if GetKeyState("vkEBsc07B","P"){
 		run C:\Program Files\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
