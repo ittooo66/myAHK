@@ -9,12 +9,6 @@ XButton1::Send,{XButton1}
 MButton::
 	if GetKeyState("vkEBsc07B","P"){
 		run C:\Program Files\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
-	}else{
-		Send,{MButton Down}
-		while(GetKeyState("MButton","P")){
-			sleep,30
-		}
-		Send,{MButton Up}
 	}
 return
 WheelUp::
@@ -35,6 +29,12 @@ WheelUp::
 		Send,{WheelUp}
 	}
 return
+
+;IoT
+MButton & LButton::IoT_keikouOn()
+MButton & RButton::IoT_keikouOff()
+MButton & XButton2::IoT_coolerOn()
+MButton & XButton1::IoT_coolerOff()
 
 ;Explorer起動
 XButton1 & LButton::
@@ -92,3 +92,10 @@ RButton & LButton::Send,!{p}
 XButton2 & LButton::intelliScroll()
 ;Winキー
 XButton1 & RButton::Send,{RWin}
+XButton2 & RButton::
+	Send,{MButton Down}
+	while(GetKeyState("XButton2","P")&&GetKeyState("RButton","P")){
+		sleep,30
+	}
+	Send,{MButton Up}
+return

@@ -46,6 +46,8 @@ mbind_d(){
 		openApp("")
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
+	else if CAPS() && RCMD()
+		IoT_keikouOff()
 	else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed()
 			HistoricalClip_down()
@@ -63,7 +65,9 @@ mbind_e(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
-	}else if LSHIFT() && RSHIFT()
+	}else if CAPS() && RCMD()
+		IoT_keikouOn()
+	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
 		if HistoricalClip_isDisplayed()
@@ -82,7 +86,9 @@ mbind_f(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
-	}else if LCMD() && CAPS()
+	}else if CAPS() && RCMD()
+		IoT_keikouChoukou()
+	else if LCMD() && CAPS()
 		Send,^{PgDn}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
@@ -292,7 +298,9 @@ mbind_s(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
 			openApp("Outlook")
-	}else if LCMD() && CAPS()
+	}else if CAPS() && RCMD()
+		IoT_keikouJouya()
+	else if LCMD() && CAPS()
 		Send,^{PgUp}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
@@ -312,7 +320,9 @@ mbind_t(){
 			HistoricalClip_closeWindow()
 			HistoricalClip_paste(0,"txt")
 		}
-	}else if RCMD() || CAPS(){
+	}else if CAPS() && RCMD()
+		IoT_keikouTimer30()
+	else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_closeWindow()
 			HistoricalClip_paste()
