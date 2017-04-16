@@ -63,9 +63,7 @@ mbind_e(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
-	}else if CAPS() && RCMD()
-		Send,#{Tab}
-	else if LSHIFT() && RSHIFT()
+	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
 		if HistoricalClip_isDisplayed()
@@ -84,9 +82,7 @@ mbind_f(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
-	}else if RCMD() && CAPS()
-		Send,^#{Right}
-	else if LCMD() && CAPS()
+	}else if LCMD() && CAPS()
 		Send,^{PgDn}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
@@ -296,8 +292,6 @@ mbind_s(){
 			openApp("Outlook")
 	}else if LCMD() && CAPS()
 		Send,^{PgUp}
-	else if RCMD() && CAPS()
-		Send,^#{Left}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if RCMD() || CAPS()
