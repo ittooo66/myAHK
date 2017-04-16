@@ -37,6 +37,31 @@ WheelUp::
 	}
 return
 
+;APP起動バインド
+MButton & LButton::
+	if !activateWindow("PPTFrameClass","","")
+		openApp("PowerPoint")
+return
+MButton & XButton1::
+	if !activateWindow("XLMAIN","","")
+		openApp("Excel")
+return
+MButton & XButton2::
+	if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
+		openApp("Outlook")
+return
+MButton & RButton::
+	if !activateWindow("OpusApp","","")
+		openApp("Word")
+return
+XButton1 & LButton::
+if !activateWindow("CabinetWClass","explorer.exe","")
+	openApp("Entrance")
+return
+;以下、誤動作防止
+MButton & WheelUp::return
+MButton & WheelDown::return
+
 WheelDown::
 	if GetKeyState("vkEBsc07B","P") {
 		if FileLauncher_isDisplayed(){
