@@ -122,15 +122,6 @@
 			mbind_4()
 	return
 
-	vkEBsc07B & c::
-	LControl & c::
-		if CAPS() && LCMD()
-			;印刷
-			Send,!{f}{p}{Alt}
-		else
-			mbind_c()
-	return
-
 	XButton2 & WheelUp::Excel_scrollRight()
 	XButton2 & WheelDown::Excel_scrollLeft()
 	XButton2 & LButton::Excel_intelliScroll()
