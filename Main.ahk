@@ -29,6 +29,7 @@ RAlt & [::ShiftAltTab
 #include Library\NippouMacro.ahk
 #include Library\FileLauncher.ahk
 #include Library\IntoRemoteDesktop.ahk
+#include Library\IoT.ahk
 ;TempMacroのInclude
 #include Library\TempMacro.ahk
 #include Resources\TempMacro\MacroZ.ahk

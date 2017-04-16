@@ -276,7 +276,9 @@ mbind_r(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("IEFrame","","")
 			openApp("Internet Explorer")
-	}else if RCMD() || CAPS()
+	}else if RCMD() && CAPS()
+		IoT_coolerOn()
+	else if RCMD() || CAPS()
 		press("{END}")
 	else if SPACE() && SHIFT()
 		copyTo("SR")
@@ -361,7 +363,9 @@ mbind_w(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("","mstsc.exe","")
 			openApp("RemoteDesktop")
-	}if RCMD() || CAPS()
+	}else if RCMD() && CAPS()
+		IoT_coolerOff()
+	else if RCMD() || CAPS()
 		press("{HOME}")
 	else if SPACE() && SHIFT()
 		copyTo("SW")
