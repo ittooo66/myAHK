@@ -12,7 +12,7 @@ MButton::
 	}else{
 		Send,{MButton Down}
 		while(GetKeyState("MButton","P")){
-			sleep,50
+			sleep,30
 		}
 		Send,{MButton Up}
 	}
@@ -95,11 +95,3 @@ XButton1 & RButton::Send,{RWin}
 ;Explorer起動
 XButton1 & LButton::openApp("Entrance")
 
-;MButton
-XButton2 & RButton::
-	Send,{MButton Down}
-	while(GetKeyState("XButton2","P")&&GetKeyState("RButton","P")){
-		sleep,30
-	}
-	Send,{MButton Up}
-return
