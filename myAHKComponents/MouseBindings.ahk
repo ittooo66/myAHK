@@ -36,6 +36,12 @@ WheelUp::
 	}
 return
 
+;Explorer起動
+XButton1 & LButton::
+if !activateWindow("CabinetWClass","explorer.exe","")
+	openApp("Entrance")
+return
+
 WheelDown::
 	if GetKeyState("vkEBsc07B","P") {
 		if FileLauncher_isDisplayed(){
@@ -86,6 +92,3 @@ RButton & LButton::Send,!{p}
 XButton2 & LButton::intelliScroll()
 ;Winキー
 XButton1 & RButton::Send,{RWin}
-;Explorer起動
-XButton1 & LButton::openApp("Entrance")
-
