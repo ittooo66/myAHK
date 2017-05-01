@@ -2,7 +2,9 @@ mbind_a(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
 			openApp("Atom")
-	}else if RCMD() || CAPS()
+	}else if RCMD() && CAPS()
+		Send,{Volume_Down}
+	else if RCMD() || CAPS()
 		press("^{LEFT}")
 	else if SPACE() && SHIFT()
 		copyTo("SA")
@@ -257,7 +259,9 @@ mbind_q(){
 	if (RCMD() && LCMD()) || (SPACE() && LALT()){
 		if !activateWindow("TaskManagerWindow","","")
 			run "C:\Windows\System32\Taskmgr.exe"
-	}else if RCMD() || CAPS()
+	}else if RCMD() && CAPS()
+		Send,{Volume_Up}
+	else if RCMD() || CAPS()
 		Send,{BackSpace}
 	else if LCMD(){
 		static windowCloseDownTime
