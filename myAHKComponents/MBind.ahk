@@ -264,12 +264,15 @@ mbind_q(){
 	else if RCMD() || CAPS()
 		Send,{BackSpace}
 	else if LCMD(){
-		static windowCloseDownTime
-		;前回押し下げが400ms以内に行われていた場合
-		if (A_TickCount - windowCloseDownTime < 400){
+		;遅延時間の定義
+		static CLOSE_TIME_DELAY := 400
+		;変数初期化
+		static windowCloseDownTime := A_TickCount - CLOSE_TIME_DELAY
+		;前回押し下げが遅延時間(ms)以内に行われていた場合
+		if (A_TickCount - windowCloseDownTime < CLOSE_TIME_DELAY){
 			Send,!{F4}
-			;今回の押し下げ時間を記録(暴発防止で-400)
-			windowCloseDownTime := A_TickCount - 400
+			;今回の押し下げ時間を記録(暴発防止で遅延時間も加算)
+			windowCloseDownTime := A_TickCount - CLOSE_TIME_DELAY
 		}else{
 			;今回の押し下げ時間を記録
 			windowCloseDownTime := A_TickCount
