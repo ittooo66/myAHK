@@ -136,7 +136,7 @@ mbind_h(){
 
 mbind_i(){
 	if RCMD() && CAPS()
-		changeSoundDevice("1")
+		changeSoundDevice("2")
 	else if RCMD() || (CAPS() && SHIFT())
 		press("8")
 	else if CAPS()
