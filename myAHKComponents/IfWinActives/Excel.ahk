@@ -57,6 +57,15 @@
 			mbind_r()
 	return
 
+	vkEBsc07B & f::
+	LControl & f::
+		if CAPS() && LCMD(){
+			;マクロ実行
+			Send, !{w}{m}{v}
+		}else
+			mbind_f()
+	return
+
 	vkEBsc07B & e::
 	LControl & e::
 		if CAPS() && LCMD(){
