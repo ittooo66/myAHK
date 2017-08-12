@@ -1,9 +1,16 @@
 #IfWinActive,ahk_class PPTFrameClass
+
+	;F1無効
+	F1::return
+	vkFFsc079 & 1::return
+
 	LControl & 1::
 	vkEBsc07B & 1::
 		if CAPS() && LCMD()
 			;文字色変更（橙）
 			Send, !{j}{d}{s}{o}{Right}{Right}{Right}{Right}{Right}{Down}{Down}{Down}{Down}{return}
+		else if CAPS()
+			Send,{1}
 		else
 			mbind_1()
 	return
