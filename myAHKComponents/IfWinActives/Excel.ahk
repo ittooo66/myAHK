@@ -66,6 +66,24 @@
 			mbind_a()
 	return
 
+	vkEBsc07B & n::
+	LControl & n::
+		if CAPS() && LCMD(){
+			;新規タブ
+			Send,+{F11}
+		}else
+			mbind_n()
+	return
+
+	vkEBsc07B & BackSpace::
+	LControl & BackSpace::
+		if CAPS() && LCMD(){
+			;タブ削除
+			Send,!{h}{d}{s}
+		}else
+			mbind_backspace()
+	return
+
 	vkEBsc07B & e::
 	LControl & e::
 		if CAPS() && LCMD(){
