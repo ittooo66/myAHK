@@ -1,5 +1,5 @@
 IoT_coolerOn(){
-	script := A_WorkingDir . "\myAHKComponents\Resources\IoT\CoolerOn.bat"
+	script := A_WorkingDir . "\myAHKComponents\Resources\IoT\AirOn_26_Cool_Auto.bat"
 	run, %script%
 }
 IoT_coolerOff(){
