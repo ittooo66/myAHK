@@ -442,6 +442,8 @@ mbind_1(){
 		addAlias("1")
 	else if RCMD() && LCMD()
 		openAlias("1")
+	else if RCMD() && CAPS()
+		Send,^+{F8}
 	else if RCMD() || CAPS()
 		press("{F1}")
 	else if SPACE() && SHIFT()
@@ -457,6 +459,8 @@ mbind_2(){
 		addAlias("2")
 	else if RCMD() && LCMD()
 		openAlias("2")
+	else if RCMD() && CAPS()
+		Send,^+{F9}
 	else if RCMD() || CAPS()
 		press("{F2}")
 	else if SPACE() && SHIFT()
@@ -474,6 +478,8 @@ mbind_3(){
 		openAlias("3")
 	else if LCMD() && SHIFT()
 		Send,{PrintScreen}
+	else if RCMD() && CAPS()
+		Send,^+{F10}
 	else if RCMD() || CAPS()
 		press("{F3}")
 	else if SPACE() && SHIFT()
