@@ -15,12 +15,6 @@
 
 	vkEBsc07B & l::Send,!{d}
 
-	;Need　QTTB
-	RButton & WheelUp::Send,^+{Tab}
-	RButton & WheelDown::Send,^{Tab}
-	RButton & XButton2::Send,^+{z}
-	RButton & LButton::Send,{}
-
 	;TAB切り替え
 	vkEBsc07B & s::
 	LControl & s::
