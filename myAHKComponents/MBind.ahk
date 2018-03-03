@@ -497,6 +497,8 @@ mbind_4(){
 		openAlias("4")
 	else if LCMD() && SHIFT()
 		Send,!{PrintScreen}
+	else if RCMD() && CAPS()
+		Send,^+{F11}
 	else if RCMD() || CAPS()
 		press("{F4}")
 	else if SPACE() && SHIFT()
@@ -512,6 +514,8 @@ mbind_5(){
 		addAlias("5")
 	else if RCMD() && LCMD()
 		openAlias("5")
+	else if RCMD() && CAPS()
+		Send,^+{F12}
 	else if RCMD() || CAPS()
 		press("{F5}")
 	else if SPACE() && SHIFT()
