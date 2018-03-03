@@ -66,7 +66,7 @@ download(){
 	clipboard =
 	Send, ^c
 	ClipWait
-	Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "http://www.youtube-mp3.org/?url=%clipboard%"
+	Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "http://www.flvto.biz/?url=%clipboard%"
 }
 
 ;拡張クリップボード(copy)
