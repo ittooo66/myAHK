@@ -48,6 +48,7 @@ RAlt & [::ShiftAltTab
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
 #include IfWinActives\SakuraEditor.ahk
+#include IfWinActives\TablacusExplorer.ahk
 ;Mouse設定
 #include MouseBindings.ahk
 

@@ -38,8 +38,8 @@ MButton & XButton1::IoT_coolerOff()
 
 ;Explorer起動
 XButton1 & LButton::
-if !activateWindow("CabinetWClass","explorer.exe","")
-	openApp("Entrance")
+	if !activateWindow("TablacusExplorer","","")
+		openApp("TE64")
 return
 
 WheelDown::
