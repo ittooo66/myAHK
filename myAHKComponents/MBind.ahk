@@ -105,7 +105,10 @@ mbind_f(){
 }
 
 mbind_g(){
-	if RCMD() && CAPS()
+	if (RCMD() && LCMD()) || (SPACE() && LALT()){
+		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
+			openApp("Google Chrome")
+	}else if RCMD() && CAPS()
 		search()
 	else if RCMD() || CAPS()
 		press("^{RIGHT}")
@@ -118,10 +121,7 @@ mbind_g(){
 }
 
 mbind_h(){
-	if (RCMD() && LCMD()) || (SPACE() && LALT()){
-		if !activateWindow("HwndWrapper","","")
-			run "C:\Users\ittoo\AppData\Local\GitHub\GitHub.appref-ms"
-	}else if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{BackSpace}")
 	else if SPACE() && SHIFT()
 		copyTo("SH")
