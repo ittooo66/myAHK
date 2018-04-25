@@ -105,10 +105,7 @@ mbind_f(){
 }
 
 mbind_g(){
-	if (RCMD() && LCMD()) || (SPACE() && LALT()){
-		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-			openApp("Google Chrome")
-	}else if RCMD() && CAPS()
+	if RCMD() && CAPS()
 		search()
 	else if RCMD() || CAPS()
 		press("^{RIGHT}")
@@ -150,10 +147,7 @@ mbind_i(){
 }
 
 mbind_j(){
-	if (RCMD() && LCMD()) || (SPACE() && LALT()){
-		if !activateWindow("SunAwtFrame","idea.exe","")
-			openApp("IntelliJ IDEA")
-	}else if RSHIFT() && LSHIFT()
+	if RSHIFT() && LSHIFT()
 		mouseDrag("j")
 	else if CAPS() && RCMD()
 		download()
