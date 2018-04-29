@@ -46,9 +46,10 @@ mbind_c(){
 }
 
 mbind_d(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS())
-		openApp("")
-	else if LSHIFT() && RSHIFT()
+	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+		if !activateWindow("XLMAIN","","")
+			openApp("Excel")
+	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() && RCMD()
 		IoT_keikouOff()
@@ -255,8 +256,8 @@ mbind_p(){
 
 mbind_q(){
 	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
-		if !activateWindow("TaskManagerWindow","","")
-			run "C:\Windows\System32\Taskmgr.exe"
+		if !activateWindow("PPTFrameClass","","")
+			openApp("PowerPoint")
 	}else if LSHIFT() && RSHIFT()
 		mouseCursorResetToCenter()
 	else if RCMD() && CAPS()
@@ -324,7 +325,10 @@ mbind_s(){
 }
 
 mbind_t(){
-	if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
+	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+		if !activateWindow("VTWin32","ttermpro.exe","")
+			openApp("TeraTerm")
+	}else	if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_closeWindow()
 			HistoricalClip_paste(0,"txt")
@@ -379,10 +383,7 @@ mbind_v(){
 }
 
 mbind_w(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
-		if !activateWindow("","mstsc.exe","")
-			openApp("RemoteDesktop")
-	}else if LSHIFT() && RSHIFT()
+	if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() && CAPS()
 		IoT_coolerOff()
@@ -806,7 +807,10 @@ mbind_space_down(){
 	;IME切り替え（即時発動）
 	if LCMD() || RCMD(){
 		Send,!{``}
-		spaceConsumed := 1
+		consumeSpace()
+	}else if LALT() || RALT(){
+		Send,!{Space}
+		consumeSpace()
 	}
 }
 
@@ -833,9 +837,7 @@ mbind_space_up(){
 	;各種Spaceバインド
 	if CAPS()
 		press("^{Space}")
-	else if LALT()
-		Send,{}
 	else if(A_TickCount - spaceDownTime < 400){
-			press("{Space}")
+		press("{Space}")
 	}
 }

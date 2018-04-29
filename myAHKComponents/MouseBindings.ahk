@@ -8,7 +8,7 @@ XButton1::Send,{XButton1}
 ;Sakura Editorでファイルリストを開く
 MButton::
 	if GetKeyState("vkEBsc07B","P"){
-		run C:\Program Files\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
+		run %A_WorkingDir%\myAHKComponents\Resources\Apps\SakuraEditor.lnk %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
 	}
 return
 WheelUp::
@@ -38,8 +38,8 @@ MButton & XButton1::IoT_coolerOff()
 
 ;Explorer起動
 XButton1 & LButton::
-	if !activateWindow("TablacusExplorer","","")
-		openApp("TE64")
+	if !activateWindow("CabinetWClass","explorer.exe","")
+		openApp("Entrance")
 return
 
 WheelDown::
