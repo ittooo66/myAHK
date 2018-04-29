@@ -6,6 +6,10 @@
 ;true:引っ張ってこれた
 ;false:存在しなかった
 activateWindow(className, processName, titleName){
+	;Spaceバインドで呼び出している場合、Spaceキーを消費
+	if(SPACE())
+		consumeSpace()
+
 	;配列idに現在稼働中のWindowを突っ込む
 	WinGet, id, list, , , Program Manager
 	;for(int A_Index=1;A_Index<N(id);A_Index++)
