@@ -14,7 +14,10 @@
 	RShift & z::
 	LShift & z::
 	vkEBsc07B & z::
-		if SHIFT() && LCMD()
+	LControl & z::
+		if CAPS() & LCMD(){
+			Send,!{h}{b}{s}
+		}else	if SHIFT() && LCMD()
 			Send,^{y}
 		else
 			mbind_z()
@@ -27,6 +30,51 @@
 			Send, !{h}{h}
 		else
 			mbind_d()
+	return
+
+	;フィルタ有効化・無効化
+	vkEBsc07B & q::
+	LControl & q::
+		if CAPS() && LCMD()
+			Send,^+{l}
+		else
+			mbind_q()
+	return
+
+	;フィルタ有効化・無効化
+	vkEBsc07B & v::
+	LControl & v::
+		if CAPS() && LCMD()
+			Send,!{w}{f}{f}
+		else
+			mbind_v()
+	return
+
+	;罫線（格子）
+	vkEBsc07B & x::
+	LControl & x::
+		if CAPS() && LCMD()
+			Send,!{h}{b}{a}
+		else
+			mbind_x()
+	return
+
+	;罫線（解除）
+	vkEBsc07B & c::
+	LControl & c::
+		if CAPS() && LCMD()
+			Send,!{h}{b}{n}
+		else
+			mbind_c()
+	return
+
+	;取り消し線
+	vkEBsc07B & b::
+	LControl & b::
+		if CAPS() && LCMD()
+			Send,!{h}{f}{n}!{k}{return}
+		else
+			mbind_b()
 	return
 
 	;セル内文字サイズ変更
@@ -45,16 +93,13 @@
 			mbind_camma()
 	return
 
-	vkEBsc07B & r::
-	LControl & r::
+	vkEBsc07B & t::
+	LControl & t::
 		if CAPS() && LCMD(){
-			;文字色変更（赤）
-			Send, !{h}{f}{c}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Left}{Left}{Left}{Left}{return}
-		}else if LCMD(){
-			;右寄せ
-			Send, !{h}{a}{r}
+			;文字色変更（任意）
+			Send, !{h}{f}{c}
 		}else
-			mbind_r()
+			mbind_t()
 	return
 
 	vkEBsc07B & a::
@@ -66,34 +111,54 @@
 			mbind_a()
 	return
 
-	vkEBsc07B & n::
-	LControl & n::
+	vkEBsc07B & Return::
+	LControl & Return::
 		if CAPS() && LCMD(){
 			;新規タブ
 			Send,+{F11}
-		}else
-			mbind_n()
+		}else{
+			Send,^{Return}
+		}
 	return
 
-	vkEBsc07B & BackSpace::
-	LControl & BackSpace::
+	vkEBsc07B & Backspace::
+	LControl & Backspace::
 		if CAPS() && LCMD(){
 			;タブ削除
 			Send,!{h}{d}{s}
 		}else
-			mbind_backspace()
+			mbind_delete()
+	return
+
+	vkEBsc07B & r::
+	LControl & r::
+		if CAPS() && LCMD(){
+			;右寄せ
+			Send, !{h}{a}{r}
+		}else
+			mbind_r()
 	return
 
 	vkEBsc07B & e::
 	LControl & e::
 		if CAPS() && LCMD(){
-			;背景色変更（黄）
-			Send, !{h}{h}{Down}{Down}{Down}{Down}{Down}{Down}{Right}{Right}{Right}{return}
-		}else if LCMD()	{
 			;中央寄せ
-			Send, !{h}{a}{c}
+			Send,!{h}{a}{c}
 		}else{
 			mbind_e()
+		}
+	return
+
+	vkEBsc07B & w::
+	LControl & w::
+		if CAPS() && LCMD(){
+			;左寄せ
+			Send, !{h}{a}{l}
+		}else if LCMD(){
+			;閉じるを無効化
+			directinput("disabled by ahk")
+		}else{
+			mbind_w()
 		}
 	return
 
@@ -105,48 +170,6 @@
 		}else{
 			mbind_g()
 		}
-	return
-
-	vkEBsc07B & w::
-	LControl & w::
-		if CAPS() && LCMD(){
-			;背景色変更（自動）
-			Send, !{h}{h}{n}
-		}else if LCMD()	{
-			;左寄せ
-			Send, !{h}{a}{l}
-		}else{
-			mbind_w()
-		}
-	return
-
-	vkEBsc07B & q::
-	LControl & q::
-		if CAPS() && LCMD(){
-			;文字色変更（自動）
-			Send, !{h}{f}{c}{return}
-		}else
-			mbind_q()
-	return
-
-	;文字配置マクロ（上下中央配置）
-	vkEBsc07B & 2::
-		if LCMD()
-			Send, !{h}{a}{t}
-		else
-			mbind_2()
-	return
-	vkEBsc07B & 3::
-		if LCMD(){
-			Send, !{h}{a}{m}
-		}else
-			mbind_3()
-	return
-	vkEBsc07B & 4::
-		if LCMD()
-			Send, !{h}{a}{b}
-		else
-			mbind_4()
 	return
 
 	XButton2 & WheelUp::Excel_scrollRight()
