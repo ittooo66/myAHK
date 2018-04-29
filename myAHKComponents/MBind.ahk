@@ -2,7 +2,9 @@ mbind_a(){
 	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
 		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
 			openApp("Atom")
-	}else if RCMD() && CAPS()
+	}else if LSHIFT() && RSHIFT()
+		mouseMoveFast("w","r","a","g")
+	else if RCMD() && CAPS()
 		Send,{Volume_Down}
 	else if RCMD() || CAPS()
 		press("^{LEFT}")
@@ -108,7 +110,9 @@ mbind_g(){
 	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
 		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
 			openApp("Google Chrome")
-	}else if RCMD() && CAPS()
+	}else if LSHIFT() && RSHIFT()
+		mouseMoveFast("w","r","a","g")
+	else if RCMD() && CAPS()
 		search()
 	else if RCMD() || CAPS()
 		press("^{RIGHT}")
@@ -253,7 +257,9 @@ mbind_q(){
 	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
 		if !activateWindow("TaskManagerWindow","","")
 			run "C:\Windows\System32\Taskmgr.exe"
-	}else if RCMD() && CAPS()
+	}else if LSHIFT() && RSHIFT()
+		mouseCursorResetToCenter()
+	else if RCMD() && CAPS()
 		Send,{Volume_Up}
 	else if RCMD() || CAPS()
 		Send,{BackSpace}
@@ -283,7 +289,9 @@ mbind_r(){
 	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
 		if !activateWindow("IEFrame","","")
 			openApp("Internet Explorer")
-	}else if RCMD() && CAPS()
+	}else if LSHIFT() && RSHIFT()
+		mouseMoveFast("w","r","a","g")
+	else if RCMD() && CAPS()
 		IoT_coolerOn()
 	else if RCMD() || CAPS()
 		press("{END}")
@@ -374,7 +382,9 @@ mbind_w(){
 	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
 		if !activateWindow("","mstsc.exe","")
 			openApp("RemoteDesktop")
-	}else if RCMD() && CAPS()
+	}else if LSHIFT() && RSHIFT()
+		mouseMoveFast("w","r","a","g")
+	else if RCMD() && CAPS()
 		IoT_coolerOff()
 	else if RCMD() || CAPS()
 		press("{HOME}")
