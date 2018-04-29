@@ -3,7 +3,6 @@
 	;F1無効
 	F1::return
 	vkFFsc079 & 1::return
-	LControl & 1::return
 
 	LControl & 1::
 	vkEBsc07B & 1::
