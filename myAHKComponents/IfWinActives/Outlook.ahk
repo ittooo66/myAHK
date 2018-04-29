@@ -1,5 +1,10 @@
 #IfWinActive,ahk_class rctrl_renwnd32
 
+	;F1無効
+	F1::return
+	vkFFsc079 & 1::return
+	LControl & 1::return
+
 	;次のメールへ
 	RButton & WheelDown::
 		send,^{>}
