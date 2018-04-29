@@ -3,6 +3,8 @@
 
 	;新規Window作成
 	RButton & MButton::Send,^{n}
+	;上へ戻る
+	RButton & LButton::Send,!{Up}
 
 	;ショートカット作成
 	vkEBsc07B & a::
@@ -13,24 +15,13 @@
 			mbind_a()
 	return
 
-	vkEBsc07B & l::Send,!{d}
-
-	;TAB切り替え
-	vkEBsc07B & s::
-	LControl & s::
-		if CAPS() && LCMD()
-			Send,^+{Tab}
-		else
-			mbind_s()
-	return
-
-	;TAB切り替え
-	vkEBsc07B & f::
-	LControl & f::
-		if CAPS() && LCMD()
-			Send,^{Tab}
-		else
-			mbind_f()
+	;表示
+	vkEBsc07B & q::
+	LControl & q::
+		if CAPS() && LCMD(){
+			Send,^{NumpadAdd}
+		}else
+			mbind_q()
 	return
 
 #IfWinActive
