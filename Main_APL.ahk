@@ -1,6 +1,6 @@
 ;アイコン設定
-Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
-;おまじない
+Menu, Tray, Icon, %A_WinDir%\System32\irftp.exe, 1
+;おまじない,
 #InstallKeybdHook
 #HotkeyInterval 100
 
