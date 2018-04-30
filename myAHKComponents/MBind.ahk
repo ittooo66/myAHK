@@ -245,7 +245,7 @@ mbind_p(){
 	if LSHIFT() && RSHIFT()
 		Send,{WheelRight}
 	else if RCMD() || CAPS()
-		press("{-}")
+		press("{PrintScreen}")
 	else if SPACE() && SHIFT()
 		copyTo("SP")
 	else if SPACE()
