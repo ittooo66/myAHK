@@ -4,7 +4,6 @@
 	;F1無効
 	F1::return
 	vkFFsc079 & 1::return
-	LControl & 1::return
 
 	;進む、戻る
 	XButton2::Send,^{y}
