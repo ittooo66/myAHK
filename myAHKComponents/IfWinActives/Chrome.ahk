@@ -1,5 +1,9 @@
 ;chrome設定
 #IfWinActive, ahk_exe chrome.exe
+
+	;Pin Tab
+	RButton & LButton::Send,{}
+
 	>^q::
 	<^q::
 	LControl & q::
