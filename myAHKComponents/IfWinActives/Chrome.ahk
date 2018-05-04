@@ -2,7 +2,7 @@
 #IfWinActive, ahk_exe chrome.exe
 
 	;Pin Tab
-	RButton & LButton::Send,{}
+	RButton & LButton::Send,!{p}
 
 	>^q::
 	<^q::
