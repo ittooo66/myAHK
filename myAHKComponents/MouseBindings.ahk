@@ -5,10 +5,17 @@ RButton::Send,{RButton}
 XButton2::Send,{XButton2}
 XButton1::Send,{XButton1}
 
-;Sakura Editorでファイルリストを開く
 MButton::
 	if GetKeyState("vkEBsc07B","P"){
+		;Sakura Editorでファイルリストを開く
 		run %A_WorkingDir%\myAHKComponents\Resources\Apps\SakuraEditor.lnk %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
+	}else{
+		;Window位置を移動する
+		Send,!{Space}
+		Sleep,150
+		Send,{m}
+		Send,{Left}
+		Send,{Right}
 	}
 return
 WheelUp::
@@ -33,8 +40,11 @@ return
 ;IoT
 MButton & LButton::IoT_keikouOn()
 MButton & RButton::IoT_keikouOff()
-MButton & XButton2::IoT_coolerOn()
-MButton & XButton1::IoT_coolerOff()
+;Null
+MButton & XButton2::return
+MButton & XButton1::return
+MButton & WheelUp::return
+MButton & WheelDown::return
 
 ;Explorer起動
 XButton1 & LButton::
@@ -68,8 +78,18 @@ XButton1 & WheelDown::AltTab
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
 ;ウィンドウ選択画面
-XButton1 & XButton2::Send,#{Tab}
-XButton2 & XButton1::Send,#{Tab}
+XButton1 & XButton2::
+XButton2 & XButton1::
+	WinGetActiveStats, Title, Width, Height, X, Y
+	touchW:=Width-4
+	touchH:=Height-4
+	Mousemove,%touchW%,%touchH%,0
+	Send,{LButton Down}
+	while(GetKeyState("XButton2","P")&&GetKeyState("XButton1","P")){
+		sleep,30
+	}
+	Send,{LButton Up}
+return
 ;Reload/Suspend bindings(for gaming)
 XButton1 & MButton::Suspend
 XButton2 & MButton::Reload
@@ -84,9 +104,8 @@ RButton & XButton1::Send,^{w}
 RButton & XButton2::Send,^+{t}
 ;New tab
 RButton & MButton::Send,^{t}
-;Pin tab
-RButton & LButton::Send,!{p}
-
+;Null
+RButton & LButton::return
 
 ;ホイールクリック
 XButton2 & LButton::intelliScroll()
