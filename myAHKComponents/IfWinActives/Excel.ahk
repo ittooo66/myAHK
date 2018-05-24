@@ -171,6 +171,86 @@
 		}
 	return
 
+	vkEBsc07B & h::
+	LControl & h::
+		if CAPS() && LCMD(){
+			;罫線削除
+			Send,!{h}{b}{n}
+		}else{
+			mbind_h()
+		}
+	return
+
+	vkEBsc07B & u::
+	LControl & u::
+		if CAPS() && LCMD(){
+			;格子罫線
+			Send,!{h}{b}{a}
+		}else{
+			mbind_u()
+		}
+	return
+
+	vkEBsc07B & i::
+	LControl & i::
+		if CAPS() && LCMD(){
+			;上罫線
+			Send,!{h}{b}{p}
+		}else{
+			mbind_i()
+		}
+	return
+
+	vkEBsc07B & o::
+	LControl & o::
+		if CAPS() && LCMD(){
+			;外枠罫線
+			Send,!{h}{b}{s}
+		}else{
+			mbind_o()
+		}
+	return
+
+	vkEBsc07B & j::
+	LControl & j::
+		if CAPS() && LCMD(){
+			;左罫線
+			Send,!{h}{b}{l}
+		}else{
+			mbind_j()
+		}
+	return
+
+	vkEBsc07B & k::
+	LControl & k::
+		if CAPS() && LCMD(){
+			;下罫線
+			Send,!{h}{b}{o}
+		}else{
+			mbind_k()
+		}
+	return
+
+	vkEBsc07B & l::
+	LControl & l::
+		if CAPS() && LCMD(){
+			;右罫線
+			Send,!{h}{b}{r}
+		}else{
+			mbind_l()
+		}
+	return
+
+	vkEBsc07B & n::
+	LControl & n::
+		if CAPS() && LCMD(){
+			;線のスタイル
+			Send,!{h}{b}{y}
+		}else{
+			mbind_n()
+		}
+	return
+
 	XButton2 & WheelUp::Excel_scrollRight()
 	XButton2 & WheelDown::Excel_scrollLeft()
 	XButton2 & LButton::Excel_intelliScroll()
