@@ -11,8 +11,8 @@ RAlt::RWin
 RAlt & ,::Reload
 RAlt & .::Suspend
 ;AltTab
-RAlt & ]::AltTab
-RAlt & [::ShiftAltTab
+vkEBsc07B & Tab::AltTab
+RWin & Tab::AltTab
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
