@@ -39,15 +39,15 @@ RWin & Tab::AltTab
 #include IfWinActives\_General.ahk
 #include IfWinActives\Explorer.ahk
 #include IfWinActives\InternetExplorer.ahk
-#include IfWinActives\Outlook.ahk
-#include IfWinActives\Word.ahk
-#include IfWinActives\Excel.ahk
-#include IfWinActives\PowerPoint.ahk
-#include IfWinActives\Visio.ahk
 #include IfWinActives\Chrome.ahk
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
 #include IfWinActives\SakuraEditor.ahk
+#include IfWinActives\MS_Outlook.ahk
+#include IfWinActives\MS_Word.ahk
+#include IfWinActives\MS_Excel.ahk
+#include IfWinActives\MS_PowerPoint.ahk
+#include IfWinActives\MS_Visio.ahk
 ;Mouse設定
 #include MouseBindings.ahk
 
