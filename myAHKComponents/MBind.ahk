@@ -302,10 +302,7 @@ mbind_r(){
 }
 
 mbind_s(){
-	if (SPACE() && CAPS()){
-		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
-			openApp("Outlook")
-	}else if CAPS() && RCMD()
+	if CAPS() && RCMD()
 		IoT_keikouJouya()
 	else if LCMD() && CAPS()
 		Send,^{PgUp}
@@ -380,7 +377,10 @@ mbind_v(){
 }
 
 mbind_w(){
-	if LSHIFT() && RSHIFT()
+	if (SPACE() && CAPS()){
+		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
+			openApp("Outlook")
+	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() && CAPS()
 		IoT_coolerOff()
