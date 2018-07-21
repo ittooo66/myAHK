@@ -1,5 +1,5 @@
 mbind_a(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
 			openApp("Atom")
 	}else if LSHIFT() && RSHIFT()
@@ -26,7 +26,7 @@ mbind_b(){
 }
 
 mbind_c(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("PPTFrameClass","","")
 			openApp("PowerPoint")
 	}else if ( CAPS() || RCMD() )&& SHIFT()
@@ -46,7 +46,7 @@ mbind_c(){
 }
 
 mbind_d(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("XLMAIN","","")
 			openApp("Excel")
 	}else if LSHIFT() && RSHIFT()
@@ -67,7 +67,7 @@ mbind_d(){
 }
 
 mbind_e(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
 	}else if CAPS() && RCMD()
@@ -88,7 +88,7 @@ mbind_e(){
 }
 
 mbind_f(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
 	}else if CAPS() && RCMD()
@@ -108,7 +108,7 @@ mbind_f(){
 }
 
 mbind_g(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
 			openApp("Google Chrome")
 	}else if LSHIFT() && RSHIFT()
@@ -255,7 +255,7 @@ mbind_p(){
 }
 
 mbind_q(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("PPTFrameClass","","")
 			openApp("PowerPoint")
 	}else if LSHIFT() && RSHIFT()
@@ -287,7 +287,7 @@ mbind_q(){
 }
 
 mbind_r(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("IEFrame","","")
 			openApp("Internet Explorer")
 	}else if LSHIFT() && RSHIFT()
@@ -305,7 +305,7 @@ mbind_r(){
 }
 
 mbind_s(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
 			openApp("Outlook")
 	}else if CAPS() && RCMD()
@@ -325,7 +325,7 @@ mbind_s(){
 }
 
 mbind_t(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("VTWin32","ttermpro.exe","")
 			openApp("TeraTerm")
 	}else	if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
@@ -363,7 +363,7 @@ mbind_u(){
 }
 
 mbind_v(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("VISIOA","VISIO.EXE","")
 			openApp("Visio")
 	}else if RCMD() || CAPS()
@@ -398,7 +398,7 @@ mbind_w(){
 }
 
 mbind_x(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("XLMAIN","","")
 			openApp("Excel")
 	}else if ( CAPS() || RCMD() )&& SHIFT()
@@ -427,7 +427,7 @@ mbind_y(){
 }
 
 mbind_z(){
-	if (RCMD() && LCMD()) || (SPACE() && CAPS()){
+	if (SPACE() && CAPS()){
 		if !activateWindow("OpusApp","","")
 			openApp("Word")
 	}else if ( CAPS() || RCMD() )&& SHIFT()
