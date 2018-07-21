@@ -31,16 +31,25 @@
 			mbind_d()
 	return
 
-	;フィルタ有効化・無効化
+	;セル幅調整
 	vkEBsc07B & q::
 	LControl & q::
 		if CAPS() && LCMD()
-			Send,^+{l}
+			Send,!{o}{c}{a}
 		else
 			mbind_q()
 	return
 
 	;フィルタ有効化・無効化
+	vkEBsc07B & 1::
+	LControl & 1::
+		if CAPS() && LCMD()
+			Send,^+{l}
+		else
+			mbind_1()
+	return
+
+	;ウィンドウ枠の固定
 	vkEBsc07B & v::
 	LControl & v::
 		if CAPS() && LCMD()
