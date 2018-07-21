@@ -634,7 +634,7 @@ mbind_equal(){
 
 mbind_bracket_left(){
 	if RCMD() || CAPS()
-		press("/")
+		Send,^{c}
 	else if SPACE() && SHIFT()
 		copyTo("SLBracket")
 	else if SPACE()
@@ -648,7 +648,7 @@ mbind_bracket_left(){
 
 mbind_bracket_right(){
 	if RCMD() || CAPS()
-		press("=")
+		Send,^{v}
 	else if SPACE() && SHIFT()
 		copyTo("SRBracket")
 	else if SPACE()
