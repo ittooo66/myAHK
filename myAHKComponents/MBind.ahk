@@ -26,10 +26,7 @@ mbind_b(){
 }
 
 mbind_c(){
-	if (SPACE() && CAPS()){
-		if !activateWindow("PPTFrameClass","","")
-			openApp("PowerPoint")
-	}else if ( CAPS() || RCMD() )&& SHIFT()
+	if ( CAPS() || RCMD() )&& SHIFT()
 		TempMacro_open("C")
 	else if RCMD() || CAPS()
 		TempMacro_do("C")
@@ -398,10 +395,7 @@ mbind_w(){
 }
 
 mbind_x(){
-	if (SPACE() && CAPS()){
-		if !activateWindow("XLMAIN","","")
-			openApp("Excel")
-	}else if ( CAPS() || RCMD() )&& SHIFT()
+	if ( CAPS() || RCMD() )&& SHIFT()
 		TempMacro_open("X")
 	else if RCMD() || CAPS()
 		TempMacro_do("X")
