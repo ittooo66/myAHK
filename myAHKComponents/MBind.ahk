@@ -416,9 +416,7 @@ mbind_x(){
 }
 
 mbind_y(){
-	if RCMD() || CAPS()
-		press("{Tab}")
-	else if SPACE() && SHIFT()
+	if SPACE() && SHIFT()
 		copyTo("SY")
 	else if SPACE()
 		pasteFrom("SY")
