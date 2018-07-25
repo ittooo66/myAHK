@@ -13,6 +13,8 @@ RAlt & .::Suspend
 ;AltTab
 vkEBsc07B & Tab::AltTab
 RWin & Tab::AltTab
+;IME Change
+RAlt & LAlt::Send,#{Space}
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
