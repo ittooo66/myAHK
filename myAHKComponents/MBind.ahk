@@ -49,7 +49,7 @@ mbind_d(){
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() && RCMD()
-		IoT_keikouOff()
+		IoT_PhilipsHueOff()
 	else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed()
 			HistoricalClip_down()
@@ -68,7 +68,7 @@ mbind_e(){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
 	}else if CAPS() && RCMD()
-		IoT_keikouOn()
+		IoT_PhilipsHueOn()
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
@@ -88,9 +88,7 @@ mbind_f(){
 	if (SPACE() && CAPS()){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
-	}else if CAPS() && RCMD()
-		IoT_keikouChoukou()
-	else if LCMD() && CAPS()
+	}else if LCMD() && CAPS()
 		Send,^{PgDn}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
@@ -289,8 +287,6 @@ mbind_r(){
 			openApp("Internet Explorer")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
-	else if RCMD() && CAPS()
-		IoT_coolerOn()
 	else if RCMD() || CAPS()
 		press("{END}")
 	else if SPACE() && SHIFT()
@@ -302,9 +298,7 @@ mbind_r(){
 }
 
 mbind_s(){
-	if CAPS() && RCMD()
-		IoT_keikouJouya()
-	else if LCMD() && CAPS()
+	if LCMD() && CAPS()
 		Send,^{PgUp}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
@@ -327,9 +321,7 @@ mbind_t(){
 			HistoricalClip_closeWindow()
 			HistoricalClip_paste(0,"txt")
 		}
-	}else if CAPS() && RCMD()
-		IoT_keikouTimer30()
-	else if RCMD() || CAPS(){
+	}else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed(){
 			HistoricalClip_closeWindow()
 			HistoricalClip_paste()
@@ -382,8 +374,6 @@ mbind_w(){
 			openApp("Outlook")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
-	else if RCMD() && CAPS()
-		IoT_coolerOff()
 	else if RCMD() || CAPS()
 		press("{HOME}")
 	else if SPACE() && SHIFT()

@@ -38,8 +38,8 @@ WheelUp::
 return
 
 ;IoT
-MButton & LButton::IoT_keikouOn()
-MButton & RButton::IoT_keikouOff()
+MButton & LButton::IoT_PhilipsHueOn()
+MButton & RButton::IoT_PhilipsHueOff()
 ;Null
 MButton & XButton2::return
 MButton & XButton1::return
