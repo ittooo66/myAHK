@@ -50,7 +50,7 @@
 	LControl & q::
 		if CAPS() && LCMD()
 			;文字色変更（橙）
-			Send, !{h}{f}{c}{Left}{Left}{Left}{Left}{Left}{Down}{Down}{Down}{Down}{return}
+			Send, !{h}{f}{1}{Left}{Left}{Left}{Left}{Left}{Down}{Down}{Down}{Down}{return}
 		else{
 			;パワポの特性上Alt?刺さないと^BSで認識されるため
 			Send,{Alt}
@@ -61,7 +61,7 @@
 	LControl & w::
 		if CAPS() && LCMD()
 			;文字色変更（青）
-			Send, !{h}{f}{c}{Left}{Left}{Down}{Down}{Down}{Down}{return}
+			Send, !{h}{f}{1}{Left}{Left}{Down}{Down}{Down}{Down}{return}
 		else if GetKeyState("vkEBsc07B", "P")
 			Send, ^{l}
 		else
@@ -71,7 +71,7 @@
 	LControl & e::
 		if CAPS() && LCMD()
 			;文字色変更（緑）
-			Send, !{h}{f}{c}{Left}{Down}{Down}{Down}{Down}{return}
+			Send, !{h}{f}{1}{Left}{Down}{Down}{Down}{Down}{return}
 		else
 			mbind_e()
 	return
@@ -79,7 +79,7 @@
 	LControl & r::
 		if CAPS() && LCMD()
 			;文字色変更（赤）
-			Send, !{h}{f}{c}{Down}{Down}{Down}{Down}{Down}{Down}{return}
+			Send, !{h}{f}{1}{Down}{Down}{Down}{Down}{Down}{Down}{return}
 		else
 			mbind_r()
 	return
@@ -87,7 +87,7 @@
 	LControl & t::
 		if CAPS() && LCMD()
 			;文字色選択
-			Send, !{h}{f}{c}
+			Send, !{h}{f}{1}
 		else{
 			;パワポの特性上Alt?刺さないと^BSで認識されるため
 			Send,{Alt}
