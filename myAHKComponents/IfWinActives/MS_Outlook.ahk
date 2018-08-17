@@ -5,14 +5,14 @@
 	vkFFsc079 & 1::return
 	LControl & 1::return
 
-	;次のメールへ
+	;次の週に移動
 	RButton & WheelDown::
-		send,^{>}
+		send,!{Down}
 	return
 
-	;前のメールへ
+	;前の週に移動
 	RButton & WheelUp::
-		send,^{<}
+		send,!{Up}
 	return
 
 	;メールをDoneして次へ
@@ -80,15 +80,6 @@
 			Send,!{v}{s}{v}
 		}else
 			mbind_w()
-	return
-
-	;予定の分類
-	vkEBsc07B & g::
-	LControl & g::
-		if CAPS() && LCMD(){
-			Send,!{h}{g}
-		}else
-			mbind_g()
 	return
 
 #IfWinActive
