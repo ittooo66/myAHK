@@ -45,6 +45,7 @@ RAlt & LAlt::Send,#{Space}
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
 #include IfWinActives\SakuraEditor.ahk
+#include IfWinActives\MPC.ahk
 #include IfWinActives\MS_Outlook.ahk
 #include IfWinActives\MS_Word.ahk
 #include IfWinActives\MS_Excel.ahk
