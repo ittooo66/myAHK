@@ -5,4 +5,3 @@ IoT_PhilipsHueOn(){
 	script := A_WorkingDir . "\myAHKComponents\Resources\IoT\PhilipsHueOff.bat"
 	run, %script%
 }
-
