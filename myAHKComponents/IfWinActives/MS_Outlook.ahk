@@ -6,12 +6,12 @@
 	LControl & 1::return
 
 	;次の週に移動
-	RButton & WheelDown::
+	XButton2 & WheelDown::
 		send,!{Down}
 	return
 
 	;前の週に移動
-	RButton & WheelUp::
+	XButton2 & WheelUp::
 		send,!{Up}
 	return
 
