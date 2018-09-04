@@ -43,8 +43,8 @@ return
 MButton & LButton::IoT_PhilipsHueOn()
 MButton & RButton::IoT_PhilipsHueOff()
 ;Null
-MButton & XButton2::return
-MButton & XButton1::return
+MButton & XButton2::changeSoundDevice("1")
+MButton & XButton1::changeSoundDevice("0")
 MButton & WheelUp::return
 MButton & WheelDown::return
 
