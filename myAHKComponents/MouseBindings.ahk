@@ -11,11 +11,13 @@ MButton::
 		run %A_WorkingDir%\myAHKComponents\Resources\Apps\SakuraEditor.lnk %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
 	}else{
 		;Window位置を移動する
-		Send,!{Space}
-		Sleep,150
-		Send,{m}
-		Send,{Left}
-		Send,{Right}
+		WinGetActiveStats, Title, Width, Height, X, Y
+		touchW:=Width/2
+		touchH:=10
+		BlockInput, MouseMove
+		Mousemove,%touchW%,%touchH%,0
+		Send,{LButton Down}
+		BlockInput, MouseMoveOff
 	}
 return
 WheelUp::
@@ -83,8 +85,10 @@ XButton2 & XButton1::
 	WinGetActiveStats, Title, Width, Height, X, Y
 	touchW:=Width-4
 	touchH:=Height-4
+	BlockInput, MouseMove
 	Mousemove,%touchW%,%touchH%,0
 	Send,{LButton Down}
+	BlockInput, MouseMoveOff
 	while(GetKeyState("XButton2","P")&&GetKeyState("XButton1","P")){
 		sleep,30
 	}
