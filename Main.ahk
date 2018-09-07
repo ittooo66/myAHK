@@ -28,7 +28,6 @@ RAlt & LAlt::Send,#{Space}
 #include Library\_STRING.ahk
 #include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
-#include Library\NippouMacro.ahk
 #include Library\FileLauncher.ahk
 #include Library\IntoRemoteDesktop.ahk
 #include Library\IoT.ahk
