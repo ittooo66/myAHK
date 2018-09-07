@@ -30,20 +30,3 @@ RALT(){ ;HHKB_右Alt
 LALT(){ ;HHKB_左Alt
 	return GetKeyState("LAlt","P")
 }
-
-;修飾キー付きのkeypress
-press(key){
-	;修飾キー変数
-	modifiers := ""
-	;修飾キー検知して追加
-	if LCMD()
-		modifiers = %modifiers%^
-	if SHIFT()
-		modifiers = %modifiers%+
-	if LALT()
-		modifiers = %modifiers%!
-	if RALT()
-		modifiers = %modifiers%#
-	;修飾キーつきkeyPress
-	Send,%modifiers%%key%
-}

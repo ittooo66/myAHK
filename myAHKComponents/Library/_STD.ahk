@@ -39,6 +39,23 @@ activateWindow(className, processName, titleName){
 	return false
 }
 
+;修飾キー付きのkeypress
+press(key){
+	;修飾キー変数
+	modifiers := ""
+	;修飾キー検知して追加
+	if LCMD()
+		modifiers = %modifiers%^
+	if SHIFT()
+		modifiers = %modifiers%+
+	if LALT()
+		modifiers = %modifiers%!
+	if RALT()
+		modifiers = %modifiers%#
+	;修飾キーつきkeyPress
+	Send,%modifiers%%key%
+}
+
 ;検索機能など
 search(){
 	InputBox, InputVar, Search
