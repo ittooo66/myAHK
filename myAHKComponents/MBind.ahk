@@ -425,11 +425,7 @@ mbind_z(){
 }
 
 mbind_1(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("1")
-	else if RCMD() && LCMD()
-		openAlias("1")
-	else if RCMD() && CAPS()
+	if RCMD() && CAPS()
 		Send,^+{F8}
 	else if RCMD() || CAPS()
 		press("{F1}")
@@ -442,11 +438,7 @@ mbind_1(){
 }
 
 mbind_2(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("2")
-	else if RCMD() && LCMD()
-		openAlias("2")
-	else if RCMD() && CAPS()
+	if RCMD() && CAPS()
 		Send,^+{F9}
 	else if RCMD() || CAPS()
 		press("{F2}")
@@ -459,11 +451,7 @@ mbind_2(){
 }
 
 mbind_3(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("3")
-	else if RCMD() && LCMD()
-		openAlias("3")
-	else if LCMD() && SHIFT()
+	if LCMD() && SHIFT()
 		Send,{PrintScreen}
 	else if RCMD() && CAPS()
 		Send,^+{F10}
@@ -478,11 +466,7 @@ mbind_3(){
 }
 
 mbind_4(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("4")
-	else if RCMD() && LCMD()
-		openAlias("4")
-	else if LCMD() && SHIFT()
+	if LCMD() && SHIFT()
 		Send,!{PrintScreen}
 	else if RCMD() && CAPS()
 		Send,^+{F11}
@@ -497,11 +481,7 @@ mbind_4(){
 }
 
 mbind_5(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("5")
-	else if RCMD() && LCMD()
-		openAlias("5")
-	else if RCMD() && CAPS()
+	if RCMD() && CAPS()
 		Send,^+{F12}
 	else if RCMD() || CAPS()
 		press("{F5}")
@@ -514,11 +494,7 @@ mbind_5(){
 }
 
 mbind_6(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("6")
-	else if RCMD() && LCMD()
-		openAlias("6")
-	else if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{F6}")
 	else if SPACE() && SHIFT()
 		copyTo("S6")
@@ -529,11 +505,7 @@ mbind_6(){
 }
 
 mbind_7(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("7")
-	else if RCMD() && LCMD()
-		openAlias("7")
-	else if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{F7}")
 	else if SPACE() && SHIFT()
 		copyTo("S7")
@@ -544,11 +516,7 @@ mbind_7(){
 }
 
 mbind_8(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("8")
-	else if RCMD() && LCMD()
-		openAlias("8")
-	else if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{F8}")
 	else if SPACE() && SHIFT()
 		copyTo("S8")
@@ -559,11 +527,7 @@ mbind_8(){
 }
 
 mbind_9(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("9")
-	else if RCMD() && LCMD()
-		openAlias("9")
-	else if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{F9}")
 	else if SPACE() && SHIFT()
 		copyTo("S9")
@@ -578,11 +542,7 @@ mbind_9(){
 }
 
 mbind_0(){
-	if RCMD() && LCMD() && SHIFT()
-		addAlias("0")
-	else if RCMD() && LCMD()
-		openAlias("0")
-	else if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{F10}")
 	else if SPACE() && SHIFT()
 		copyTo("S0")
