@@ -1,10 +1,10 @@
 ;仮想修飾キー一覧
 
 LCMD(){ ;HHKB_左ダイヤ
-	return GetKeyState("vkEBsc07B", "P")
+	return GetKeyState("vkEBsc07B", "P") | GetKeyState("LWin","P")
 }
 RCMD(){ ;HHKB_右ダイヤ
-	return GetKeyState("vkFFsc079", "P")
+	return GetKeyState("vkFFsc079", "P") | GetKeyState("RWin","P")
 }
 CAPS(){ ;HHKB_Control
 	return GetKeyState("LControl","P")
