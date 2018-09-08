@@ -10,9 +10,16 @@ XButton1 & WheelDown::AltTab
 ;横スクロール
 XButton2 & WheelUp::Send,{WheelLeft}
 XButton2 & WheelDown::Send,{WheelRight}
-;Reload/Suspend bindings
-XButton1 & MButton::Suspend
-XButton2 & MButton::Reload
+;Reload/Suspend AHK
+XButton2 & MButton::
+	Suspend, Permit
+	reloadAHK()
+return
+XButton1 & MButton::
+	Suspend, Permit
+	suspendAHK()
+return
+
 ;ホイールクリック
 XButton2 & LButton::intelliScroll()
 ;Winキー

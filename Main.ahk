@@ -8,8 +8,15 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 Delete::`
 RAlt::RWin
 ;Reload/Suspend AHK
-RAlt & ,::Reload
-RAlt & .::Suspend
+RAlt & ,::
+	Suspend, Permit
+	reloadAHK()
+return
+RAlt & .::
+	Suspend, Permit
+	suspendAHK()
+return
+
 ;AltTab
 vkEBsc07B & Tab::AltTab
 RWin & Tab::AltTab

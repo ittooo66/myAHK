@@ -207,3 +207,19 @@ getStringWriter(name){
 	FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\Variables\%name%.txt
 	return %file%
 }
+
+;AHKリロード
+reloadAHK(){
+	tooltip, AHK reloading
+	sleep 300
+	tooltip
+	Reload
+}
+
+;AHKサスペンド
+suspendAHK(){
+	Suspend, ON
+	tooltip, AHK suspended
+	sleep 800
+	tooltip
+}
