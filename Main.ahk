@@ -38,6 +38,7 @@ RAlt & LAlt::Send,#{Space}
 #include Library\FileLauncher.ahk
 #include Library\IntoRemoteDesktop.ahk
 #include Library\IoT.ahk
+#include Library\Logger.ahk
 ;TempMacroのInclude
 #include Library\TempMacro.ahk
 #include Resources\TempMacro\MacroZ.ahk

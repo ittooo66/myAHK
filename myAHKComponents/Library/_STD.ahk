@@ -130,11 +130,6 @@ directInput(string){
 	Send,^v
 }
 
-;ログ出力 => ./log.txt
-print(log){
-	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\Resources\Log\log.txt
-}
-
 ;GUIウィンドウが出力されているか、どうか
 guiIsOn(){
 	;配列idに現在稼働中のWindowを突っ込む
@@ -200,6 +195,7 @@ reloadAHK(){
 	tooltip, AHK reloading
 	sleep 300
 	tooltip
+	logger_out("(INFO) AHK RELOADED`n")
 	Reload
 }
 
@@ -209,4 +205,5 @@ suspendAHK(){
 	tooltip, AHK suspended
 	sleep 800
 	tooltip
+	logger_out("(INFO) AHK SUSPENDED`n")
 }
