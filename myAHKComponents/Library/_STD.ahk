@@ -157,19 +157,6 @@ lineDel(direction){
 	Send,{BackSpace}
 }
 
-;window変更中フラグ,押しっぱなし病起きてる？ので防止用
-_STDWindowChanging := false
-;window変更
-windowChange(direction){
-	global _STDWindowChanging
-	if(!_STDWindowChanging){
-		_STDWindowChanging := true
-		Send,^#{%direction%}
-		sleep,100
-		_STDWindowChanging := false
-	}
-}
-
 ;サウンドデバイス変更
 ;（イヤホン：num=0、スピーカ：num=1）
 changeSoundDevice(num){
