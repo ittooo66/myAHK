@@ -126,7 +126,8 @@ MButton & RButton::IoT_PhilipsHueOff()
 ;SoundDevice変更
 MButton & XButton2::changeSoundDevice("1")
 MButton & XButton1::changeSoundDevice("0")
-
+;App Specific
 RButton & LButton::return
+;未使用
 MButton & WheelUp::return
 MButton & WheelDown::return
