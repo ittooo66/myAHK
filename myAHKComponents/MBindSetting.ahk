@@ -37,6 +37,9 @@ MLB(){ ;Mouse_LeftButton
 MRB(){ ;Mouse_RightButton
 	return GetKeyState("RButton","P")
 }
+MMB(){ ;Mouse_MidButton
+	return GetKeyState("MButton","P")
+}
 MB1(){ ;Mouse_LeftSideButton1
 	return GetKeyState("XButton1","P")
 }
