@@ -72,6 +72,9 @@ search(){
 		}else if (prefix = "gm "){
 			StringTrimLeft, query, InputVar, 3
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/maps/search/%query%"
+		}else if (prefix = "bg "){
+			StringTrimLeft, query, InputVar, 3
+			Run,http://www.bing.com/translator/?from=en&to=ja&text=%query%
 		;htt:URL打ち込みとして処理
 		}else if (prefix = "htt"){
 			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "%InputVar%"
