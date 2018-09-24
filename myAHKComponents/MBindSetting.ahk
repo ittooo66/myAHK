@@ -30,3 +30,22 @@ RALT(){ ;HHKB_右Alt
 LALT(){ ;HHKB_左Alt
 	return GetKeyState("LAlt","P")
 }
+
+MLB(){ ;Mouse_LeftButton
+	return GetKeyState("LButton","P")
+}
+MRB(){ ;Mouse_RightButton
+	return GetKeyState("RButton","P")
+}
+MB1(){ ;Mouse_LeftSideButton1
+	return GetKeyState("XButton1","P")
+}
+MB2(){ ;Mouse_LeftSideButton2
+	return GetKeyState("XButton2","P")
+}
+MB3(){ ;Mouse_RightSideButton1
+	return GetKeyState("Appskey","P")
+}
+MB4(){ ;Mouse_RightSideButton2
+	return GetKeyState("F20","P")
+}
