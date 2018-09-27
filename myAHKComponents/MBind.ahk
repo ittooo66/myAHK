@@ -12,6 +12,8 @@ mbind_a(){
 		copyTo("SA")
 	else if SPACE()
 		pasteFrom("SA")
+	else if MB3()
+		press("h")
 	else
 		press("a")
 }
@@ -21,6 +23,8 @@ mbind_b(){
 		copyTo("SB")
 	else if SPACE()
 		pasteFrom("SB")
+	else if MB3()
+		press("/")
 	else
 		press("b")
 }
@@ -38,6 +42,8 @@ mbind_c(){
 		copyTo("SC")
 	else if SPACE()
 		pasteFrom("SC")
+	else if MB3()
+		press(",")
 	else
 		press("c")
 }
@@ -59,6 +65,8 @@ mbind_d(){
 		copyTo("SD")
 	else if SPACE()
 		pasteFrom("SD")
+	else if MB3()
+		press("k")
 	else
 		press("d")
 }
@@ -80,6 +88,8 @@ mbind_e(){
 		copyTo("SE")
 	else if SPACE()
 		pasteFrom("SE")
+	else if MB3()
+		press("i")
 	else
 		press("e")
 }
@@ -98,6 +108,8 @@ mbind_f(){
 		copyTo("SF")
 	else if SPACE()
 		pasteFrom("SF")
+	else if MB3()
+		press("l")
 	else
 		press("f")
 }
@@ -116,6 +128,8 @@ mbind_g(){
 		copyTo("SG")
 	else if SPACE()
 		pasteFrom("SG")
+	else if MB3()
+		press(";")
 	else
 		press("g")
 }
@@ -127,6 +141,8 @@ mbind_h(){
 		copyTo("SH")
 	else if SPACE()
 		pasteFrom("SH")
+	else if MB3()
+		press("'")
 	else
 		press("h")
 }
@@ -277,6 +293,8 @@ mbind_q(){
 		copyTo("SQ")
 	else if SPACE()
 		pasteFrom("SQ")
+	else if MB3()
+		press("y")
 	else
 		press("q")
 }
@@ -293,6 +311,8 @@ mbind_r(){
 		copyTo("SR")
 	else if SPACE()
 		pasteFrom("SR")
+	else if MB3()
+		press("o")
 	else
 		press("r")
 }
@@ -308,6 +328,8 @@ mbind_s(){
 		copyTo("SS")
 	else if SPACE()
 		pasteFrom("SS")
+	else if MB3()
+		press("j")
 	else
 		press("s")
 }
@@ -331,6 +353,8 @@ mbind_t(){
 		copyTo("ST")
 	else if SPACE()
 		pasteFrom("ST")
+	else if MB3()
+		press("p")
 	else
 		press("t")
 }
@@ -344,6 +368,8 @@ mbind_u(){
 		copyTo("SU")
 	else if SPACE()
 		pasteFrom("SU")
+	else if MB3()
+		press("]")
 	else
 		press("u")
 }
@@ -364,6 +390,8 @@ mbind_v(){
 		IntoRemoteDesktop()
 	else if LCMD()
 		HistoricalClip_paste(1)
+	else if MB3()
+		press(".")
 	else
 		press("v")
 }
@@ -380,6 +408,8 @@ mbind_w(){
 		copyTo("SW")
 	else if SPACE()
 		pasteFrom("SW")
+	else if MB3()
+		press("u")
 	else
 		press("w")
 }
@@ -395,6 +425,8 @@ mbind_x(){
 		copyTo("SX")
 	else if SPACE()
 		pasteFrom("SX")
+	else if MB3()
+		press("m")
 	else
 		press("x")
 }
@@ -404,6 +436,8 @@ mbind_y(){
 		copyTo("SY")
 	else if SPACE()
 		pasteFrom("SY")
+	else if MB3()
+		press("[")
 	else
 		press("y")
 }
@@ -420,6 +454,8 @@ mbind_z(){
 		copyTo("SZ")
 	else if SPACE()
 		pasteFrom("SZ")
+	else if MB3()
+		press("n")
 	else
 		press("z")
 }
