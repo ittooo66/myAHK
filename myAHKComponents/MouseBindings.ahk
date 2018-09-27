@@ -27,7 +27,7 @@ XButton1 & RButton::Send,{RWin}
 ;MButton
 XButton2 & RButton::
 	Send,{MButton Down}
-	while(GetKeyState("XButton2","P")&&GetKeyState("RButton","P")){
+	while( MB2() && MRB() ){
 		sleep,30
 	}
 	Send,{MButton Up}
@@ -49,7 +49,7 @@ XButton2 & XButton1::
 	Mousemove,%touchW%,%touchH%,0
 	Send,{LButton Down}
 	BlockInput, MouseMoveOff
-	while(GetKeyState("XButton2","P")&&GetKeyState("XButton1","P")){
+	while(MB1() && MB2()){
 		sleep,30
 	}
 	Send,{LButton Up}
@@ -123,11 +123,31 @@ return
 ;IoT
 MButton & LButton::IoT_PhilipsHueOn()
 MButton & RButton::IoT_PhilipsHueOff()
-;SoundDevice変更
-MButton & XButton2::changeSoundDevice("1")
-MButton & XButton1::changeSoundDevice("0")
 ;App Specific
 RButton & LButton::return
+
 ;未使用
 MButton & WheelUp::return
 MButton & WheelDown::return
+MButton & XButton2::return
+MButton & XButton1::return
+
+F20::return
+F20 & WheelUp::Send,#^{Left}
+F20 & WheelDown::Send,#^{Right}
+F20 & MButton::return
+F20 & RButton::return
+F20 & LButton::Send,#{Tab}
+F20 & XButton1::return
+F20 & XButton2::return
+F20 & AppsKey::return
+
+AppsKey::return
+AppsKey & WheelUp::Send,{Volume_Up}
+AppsKey & WheelDown::Send,{Volume_Down}
+AppsKey & MButton::return
+AppsKey & LButton::Send,^+{q}
+AppsKey & RButton::muneNMin()
+AppsKey & XButton1::changeSoundDevice("1")
+AppsKey & XButton2::changeSoundDevice("0")
+AppsKey & F20::return
