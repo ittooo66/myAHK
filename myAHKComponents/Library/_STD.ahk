@@ -210,3 +210,25 @@ suspendAHK(){
 	tooltip
 	logger_out("(INFO) AHK SUSPENDED`n")
 }
+
+;ミュートタイマー機能
+muneNMin(){
+	InputBox, muteMinute , Delayed Mute, Mute After N minute,, 200, 130,,,,,60
+	if ErrorLevel <> 0
+		return
+	else {
+		If muteMinute is integer
+		{
+			msgbox, Mute After %muteMinute% Minute
+			Loop, %muteMinute%
+			{
+				sleep, 60000
+			}
+			Loop, 50
+			{
+				Send,{Volume_Down}
+			}
+		}else
+			msgbox, Invalid Input Number
+	}
+}
