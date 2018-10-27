@@ -98,7 +98,7 @@
 	LControl & a::
 		if CAPS() && LCMD()
 			;箇条書き
-			Send, !{h}{u}
+			Send, !{h}{u}{2}
 		else
 			mbind_a()
 	return
