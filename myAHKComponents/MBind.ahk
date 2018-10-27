@@ -300,7 +300,10 @@ mbind_q(){
 }
 
 mbind_r(){
-	if (SPACE() && CAPS()){
+	if RCMD() && CAPS(){
+		script := A_WorkingDir . "\myAHKComponents\Resources\Bat\explorer_restart.bat"
+		run, %script%
+	}else if SPACE() && CAPS(){
 		if !activateWindow("IEFrame","","")
 			openApp("Internet Explorer")
 	}else if LSHIFT() && RSHIFT()
