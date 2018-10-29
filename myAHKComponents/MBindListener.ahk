@@ -756,3 +756,21 @@ AppsKey & XButton2::
 F20 & XButton2::
 	mbind_msblf()
 return
+
+AppsKey::
+RButton & AppsKey::
+MButton & AppsKey::
+XButton1 & AppsKey::
+XButton2 & AppsKey::
+F20 & AppsKey::
+	mbind_msbrf()
+return
+
+F20::
+RButton & F20::
+MButton & F20::
+XButton1 & F20::
+XButton2 & F20::
+AppsKey & F20::
+	mbind_msbrb()
+return
