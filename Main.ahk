@@ -7,8 +7,13 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;Base Bindings
 Delete::`
 RAlt::RWin
+
 ;Reload/Suspend AHK
 RAlt & ,::
+	Suspend, Permit
+	reloadAHK()
+return
+XButton2 & MButton::
 	Suspend, Permit
 	reloadAHK()
 return
@@ -16,10 +21,17 @@ RAlt & .::
 	Suspend, Permit
 	suspendAHK()
 return
+XButton1 & MButton::
+	Suspend, Permit
+	suspendAHK()
+return
 
 ;AltTab
 vkEBsc07B & Tab::AltTab
 RWin & Tab::AltTab
+XButton1 & WheelUp::ShiftAltTab
+XButton1 & WheelDown::AltTab
+
 ;IME Change
 RAlt & LAlt::Send,#{Space}
 
