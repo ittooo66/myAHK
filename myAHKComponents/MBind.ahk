@@ -12,7 +12,7 @@ mbind_a(){
 		copyTo("SA")
 	else if SPACE()
 		pasteFrom("SA")
-	else if MB3()
+	else if MSBRF()
 		press("h")
 	else
 		press("a")
@@ -23,7 +23,7 @@ mbind_b(){
 		copyTo("SB")
 	else if SPACE()
 		pasteFrom("SB")
-	else if MB3()
+	else if MSBRF()
 		press("/")
 	else
 		press("b")
@@ -42,7 +42,7 @@ mbind_c(){
 		copyTo("SC")
 	else if SPACE()
 		pasteFrom("SC")
-	else if MB3()
+	else if MSBRF()
 		press(",")
 	else
 		press("c")
@@ -65,7 +65,7 @@ mbind_d(){
 		copyTo("SD")
 	else if SPACE()
 		pasteFrom("SD")
-	else if MB3()
+	else if MSBRF()
 		press("k")
 	else
 		press("d")
@@ -88,7 +88,7 @@ mbind_e(){
 		copyTo("SE")
 	else if SPACE()
 		pasteFrom("SE")
-	else if MB3()
+	else if MSBRF()
 		press("i")
 	else
 		press("e")
@@ -108,7 +108,7 @@ mbind_f(){
 		copyTo("SF")
 	else if SPACE()
 		pasteFrom("SF")
-	else if MB3()
+	else if MSBRF()
 		press("l")
 	else
 		press("f")
@@ -128,7 +128,7 @@ mbind_g(){
 		copyTo("SG")
 	else if SPACE()
 		pasteFrom("SG")
-	else if MB3()
+	else if MSBRF()
 		press(";")
 	else
 		press("g")
@@ -141,7 +141,7 @@ mbind_h(){
 		copyTo("SH")
 	else if SPACE()
 		pasteFrom("SH")
-	else if MB3()
+	else if MSBRF()
 		press("'")
 	else
 		press("h")
@@ -293,7 +293,7 @@ mbind_q(){
 		copyTo("SQ")
 	else if SPACE()
 		pasteFrom("SQ")
-	else if MB3()
+	else if MSBRF()
 		press("y")
 	else
 		press("q")
@@ -314,7 +314,7 @@ mbind_r(){
 		copyTo("SR")
 	else if SPACE()
 		pasteFrom("SR")
-	else if MB3()
+	else if MSBRF()
 		press("o")
 	else
 		press("r")
@@ -331,7 +331,7 @@ mbind_s(){
 		copyTo("SS")
 	else if SPACE()
 		pasteFrom("SS")
-	else if MB3()
+	else if MSBRF()
 		press("j")
 	else
 		press("s")
@@ -356,7 +356,7 @@ mbind_t(){
 		copyTo("ST")
 	else if SPACE()
 		pasteFrom("ST")
-	else if MB3()
+	else if MSBRF()
 		press("p")
 	else
 		press("t")
@@ -371,7 +371,7 @@ mbind_u(){
 		copyTo("SU")
 	else if SPACE()
 		pasteFrom("SU")
-	else if MB3()
+	else if MSBRF()
 		press("]")
 	else
 		press("u")
@@ -393,7 +393,7 @@ mbind_v(){
 		IntoRemoteDesktop()
 	else if LCMD()
 		HistoricalClip_paste(1)
-	else if MB3()
+	else if MSBRF()
 		press(".")
 	else
 		press("v")
@@ -411,7 +411,7 @@ mbind_w(){
 		copyTo("SW")
 	else if SPACE()
 		pasteFrom("SW")
-	else if MB3()
+	else if MSBRF()
 		press("u")
 	else
 		press("w")
@@ -428,7 +428,7 @@ mbind_x(){
 		copyTo("SX")
 	else if SPACE()
 		pasteFrom("SX")
-	else if MB3()
+	else if MSBRF()
 		press("m")
 	else
 		press("x")
@@ -439,7 +439,7 @@ mbind_y(){
 		copyTo("SY")
 	else if SPACE()
 		pasteFrom("SY")
-	else if MB3()
+	else if MSBRF()
 		press("[")
 	else
 		press("y")
@@ -457,7 +457,7 @@ mbind_z(){
 		copyTo("SZ")
 	else if SPACE()
 		pasteFrom("SZ")
-	else if MB3()
+	else if MSBRF()
 		press("n")
 	else
 		press("z")
@@ -820,5 +820,164 @@ mbind_space_up(){
 		press("^{Space}")
 	else if(A_TickCount - spaceDownTime < 400){
 		press("{Space}")
+	}
+}
+
+
+mbind_mlb(){
+	if MMB(){
+		IoT_PhilipsHueOn()
+	}else if MSBLF(){
+		intelliScroll()
+	}else if MSBLB(){
+		if !activateWindow("CabinetWClass","explorer.exe","")
+			openApp("Entrance")
+	}else if MSBRB(){
+		Send,#{Tab}
+	}else if MSBRF(){
+		Send,^+{q}
+	}else{
+		Send,{LButton}
+	}
+
+}
+
+mbind_mrb(){
+	if MMB(){
+		IoT_PhilipsHueOff()
+	}else if MSBLB(){
+		Send,{RWin}
+	}else if MSBLF(){
+		Send,{MButton Down}
+		while( MSBLF() && MRB() ){
+			sleep,30
+		}
+		Send,{MButton Up}
+	}else{
+		Send,{RButton}
+	}
+}
+
+mbind_mmb(){
+	if MRB(){
+		Send,^{t}
+	}else	if LCMD(){
+		;Sakura Editorでファイルリストを開く
+		run %A_WorkingDir%\myAHKComponents\Resources\Apps\SakuraEditor.lnk %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
+	}else{
+		;Window位置を移動する
+		WinGetActiveStats, Title, Width, Height, X, Y
+		touchW:=Width/2
+		touchH:=10
+		BlockInput, MouseMove
+		Mousemove,%touchW%,%touchH%,0
+		Send,{LButton Down}
+		BlockInput, MouseMoveOff
+	}
+}
+
+mbind_msblb(){
+	if MRB(){
+		Send,^{w}
+	}else if MSBLF(){
+		WinGetActiveStats, Title, Width, Height, X, Y
+		touchW:=Width-4
+		touchH:=Height-4
+		BlockInput, MouseMove
+		Mousemove,%touchW%,%touchH%,0
+		Send,{LButton Down}
+		BlockInput, MouseMoveOff
+		while(MSBLF() && MSBLB()){
+			sleep,30
+		}
+		Send,{LButton Up}
+	}else if MSBRF(){
+		changeSoundDevice("1")
+	}else{
+		Send,{XButton1}
+	}
+}
+
+mbind_msblf(){
+	if MRB(){
+		Send,^+{t}
+	}else if MSBLB(){
+		WinGetActiveStats, Title, Width, Height, X, Y
+		touchW:=Width-4
+		touchH:=Height-4
+		BlockInput, MouseMove
+		Mousemove,%touchW%,%touchH%,0
+		Send,{LButton Down}
+		BlockInput, MouseMoveOff
+		while(MSBLF() && MSBLB()){
+			sleep,30
+		}
+		Send,{LButton Up}
+	}else if MSBRF(){
+		changeSoundDevice("0")
+	}else{
+		Send,{XButton2}
+	}
+}
+
+mbind_msbrb(){
+
+}
+
+mbind_msbrf(){
+
+}
+
+mbind_wheelup(){
+	if MRB(){
+		Send,^{PgUp}
+	}else if MSBLF(){
+		Send,{WheelLeft}
+	}else if MSBRF(){
+		Send,#^{Volume_Up}
+	}else if MSBRB(){
+		Send,#^{Left}
+	}else	if LCMD(){
+		if FileLauncher_isDisplayed(){
+			FileLauncher_up()
+		}else{
+			FileLauncher_openWindow()
+		}
+	}else if SPACE(){
+		if HistoricalClip_isDisplayed(){
+			HistoricalClip_up()
+		}else{
+			HistoricalClip_openWindow()
+			consumeSpace()
+		}
+	}else{
+		Send,{WheelUp}
+	}
+}
+
+mbind_wheeldown(){
+	if MRB(){
+		Send,^{PgDn}
+	}else if MSBLF(){
+		Send,{WheelRight}
+	}else if MSBRF(){
+		Send,#^{Volume_Down}
+	}else if MSBRB(){
+		Send,#^{Right}
+	}else	if LCMD(){
+		if FileLauncher_isDisplayed(){
+			FileLauncher_down()
+		}else{
+			FileLauncher_openWindow()
+		}
+	}else if SPACE(){
+		if HistoricalClip_isDisplayed(){
+			HistoricalClip_down()
+		}else{
+			HistoricalClip_openWindow()
+			consumeSpace()
+		}
+	}else{
+		Send,{WheelDown}
 	}
 }
