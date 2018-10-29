@@ -853,6 +853,8 @@ mbind_mrb(){
 			sleep,30
 		}
 		Send,{MButton Up}
+	}else if MSBRF(){
+		muneNMin()
 	}else{
 		Send,{RButton}
 	}
