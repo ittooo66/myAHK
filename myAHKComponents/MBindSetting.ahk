@@ -40,15 +40,15 @@ MRB(){ ;Mouse_RightButton
 MMB(){ ;Mouse_MidButton
 	return GetKeyState("MButton","P")
 }
-MB1(){ ;Mouse_LeftSideButton1
+MSBLB(){ ;Mouse_SideButton_LeftBack
 	return GetKeyState("XButton1","P")
 }
-MB2(){ ;Mouse_LeftSideButton2
+MSBLF(){ ;Mouse_SideButton_LeftFront
 	return GetKeyState("XButton2","P")
 }
-MB3(){ ;Mouse_RightSideButton1
+MSBRF(){ ;Mouse_SideButton_RightForward
 	return GetKeyState("Appskey","P")
 }
-MB4(){ ;Mouse_RightSideButton2
+MSBRB(){ ;Mouse_SideButton_RightBack
 	return GetKeyState("F20","P")
 }
