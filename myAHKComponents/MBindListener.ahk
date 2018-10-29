@@ -692,3 +692,67 @@ return
 ;Space機能
 *Space::mbind_space_down()
 *Space Up::mbind_space_up()
+
+;LButton::ここだけはバインドしない。生命線。
+RButton & LButton::
+MButton & LButton::
+XButton1 & LButton::
+XButton2 & LButton::
+AppsKey & LButton::
+F20 & LButton::
+	mbind_mlb()
+return
+
+RButton::
+MButton & RButton::
+XButton1 & RButton::
+XButton2 & RButton::
+AppsKey & RButton::
+F20 & RButton::
+	mbind_mrb()
+return
+
+MButton::
+RButton & MButton::
+;XButton1 & MButton::AHK RELOADで利用
+;XButton2 & MButton::AHK SUSPENDで利用
+AppsKey & MButton::
+F20 & MButton::
+	mbind_mmb()
+return
+
+WheelUp::
+RButton & WheelUp::
+;XButton1 & WheelUp::ALTTABで利用
+XButton2 & WheelUp::
+F20 & WheelUp::
+AppsKey & WheelUp::
+	mbind_wheelup()
+return
+
+WheelDown::
+RButton & WheelDown::
+;XButton1 & WheelDown::ALTTABで利用
+XButton2 & WheelDown::
+F20 & WheelDown::
+AppsKey & WheelDown::
+	mbind_wheeldown()
+return
+
+XButton1::
+RButton & XButton1::
+MButton & XButton1::
+XButton2 & XButton1::
+AppsKey & XButton1::
+F20 & XButton1::
+	mbind_msblb()
+return
+
+XButton2::
+RButton & XButton2::
+MButton & XButton2::
+XButton1 & XButton2::
+AppsKey & XButton2::
+F20 & XButton2::
+	mbind_msblf()
+return
