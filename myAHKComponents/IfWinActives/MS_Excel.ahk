@@ -14,9 +14,7 @@
 	LShift & z::
 	vkEBsc07B & z::
 	LControl & z::
-		if CAPS() & LCMD(){
-			Send,!{h}{b}{s}
-		}else	if SHIFT() && LCMD()
+		if SHIFT() && LCMD()
 			Send,^{y}
 		else
 			mbind_z()
@@ -60,24 +58,6 @@
 			mbind_v()
 	return
 
-	;罫線（格子）
-	vkEBsc07B & x::
-	LControl & x::
-		if CAPS() && LCMD()
-			Send,!{h}{b}{a}
-		else
-			mbind_x()
-	return
-
-	;罫線（解除）
-	vkEBsc07B & c::
-	LControl & c::
-		if CAPS() && LCMD()
-			Send,!{h}{b}{n}
-		else
-			mbind_c()
-	return
-
 	;取り消し線
 	vkEBsc07B & b::
 	LControl & b::
@@ -107,7 +87,7 @@
 	LControl & t::
 		if CAPS() && LCMD(){
 			;文字色変更（任意）
-			Send, !{h}{f}{c}
+			Send, !{h}{f}{1}
 		}else
 			mbind_t()
 	return
@@ -144,7 +124,7 @@
 	LControl & r::
 		if CAPS() && LCMD(){
 			;右寄せ
-			Send, !{h}{a}{r}
+			Send, !{h}{r}
 		}else
 			mbind_r()
 	return
@@ -163,10 +143,9 @@
 	LControl & w::
 		if CAPS() && LCMD(){
 			;左寄せ
-			Send, !{h}{a}{l}
+			Send, !{h}{l}{1}
 		}else if LCMD(){
 			;閉じるを無効化
-			directinput("disabled by ahk")
 		}else{
 			mbind_w()
 		}
