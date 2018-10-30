@@ -30,7 +30,10 @@ mbind_b(){
 }
 
 mbind_c(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if CAPS() && SPACE(){
+		if !activateWindow("","Trello.exe","")
+			openApp("Trello")
+	}else if ( CAPS() || RCMD() )&& SHIFT()
 		TempMacro_open("C")
 	else if RCMD() || CAPS()
 		TempMacro_do("C")
