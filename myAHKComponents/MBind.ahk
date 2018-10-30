@@ -807,15 +807,8 @@ mbind_space_up(){
 	spaceDownFlag := 0
 	;Spaceバインドが消費済みならば、各バインド判定を無効にして終了
 	if (spaceConsumed == 1){
-		if HistoricalClip_isDisplayed(){
-			HistoricalClip_closeWindow()
-			if SHIFT(){
-				HistoricalClip_paste(0,"txt")
-			}else{
-				HistoricalClip_paste()
-			}
-		}
-		return
+		if FileLauncher_isDisplayed()
+			FileLauncher_openFile()
 	}
 
 	;各種Spaceバインド
@@ -866,7 +859,7 @@ mbind_mrb(){
 mbind_mmb(){
 	if MRB(){
 		Send,^{t}
-	}else	if LCMD(){
+	}else	if LCMD() || SPACE() {
 		;Sakura Editorでファイルリストを開く
 		run %A_WorkingDir%\myAHKComponents\Resources\Apps\SakuraEditor.lnk %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
 	}else{
@@ -949,10 +942,10 @@ mbind_wheelup(){
 			FileLauncher_openWindow()
 		}
 	}else if SPACE(){
-		if HistoricalClip_isDisplayed(){
-			HistoricalClip_up()
+		if FileLauncher_isDisplayed(){
+			FileLauncher_up()
 		}else{
-			HistoricalClip_openWindow()
+			FileLauncher_openWindow()
 			consumeSpace()
 		}
 	}else{
@@ -976,10 +969,10 @@ mbind_wheeldown(){
 			FileLauncher_openWindow()
 		}
 	}else if SPACE(){
-		if HistoricalClip_isDisplayed(){
-			HistoricalClip_down()
+		if FileLauncher_isDisplayed(){
+			FileLauncher_down()
 		}else{
-			HistoricalClip_openWindow()
+			FileLauncher_openWindow()
 			consumeSpace()
 		}
 	}else{
