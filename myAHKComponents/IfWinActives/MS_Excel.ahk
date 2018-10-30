@@ -45,7 +45,9 @@
 	LControl & 1::
 		if CAPS() && LCMD()
 			Send,^+{l}
-		else
+		else if CAPS() && !LCMD()  && !RCMD() && !SHIFT() && !SPACE() && !ALT(){
+			;F1無効化
+		}else
 			mbind_1()
 	return
 

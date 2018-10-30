@@ -6,7 +6,9 @@
 
 	LControl & 1::
 	vkEBsc07B & 1::
-		if CAPS() && LCMD()
+		if CAPS() && !LCMD()  && !RCMD() && !SHIFT() && !SPACE() && !ALT(){
+			;F1無効化
+		}else	if CAPS() && LCMD()
 			;文字色変更（橙）
 			Send, !{j}{d}{s}{o}{Right}{Right}{Right}{Right}{Right}{Down}{Down}{Down}{Down}{return}
 		else if CAPS()
