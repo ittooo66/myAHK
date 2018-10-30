@@ -805,13 +805,17 @@ mbind_space_up(){
 
 	;Spaceキー押下げ判定を解除
 	spaceDownFlag := 0
+
 	;Spaceバインドが消費済みならば、各バインド判定を無効にして終了
 	if (spaceConsumed == 1){
-		if FileLauncher_isDisplayed()
+		if FileLauncher_isDisplayed(){
 			FileLauncher_openFile()
+		}
+		return
 	}
 
 	;各種Spaceバインド
+	;※一定時間経過後のスペースキーを修飾キー(入力なし)として扱う
 	if CAPS()
 		press("^{Space}")
 	else if(A_TickCount - spaceDownTime < 400){
