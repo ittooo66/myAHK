@@ -9,17 +9,15 @@
 		if CAPS() && !LCMD()  && !RCMD() && !SHIFT() && !SPACE() && !ALT(){
 			;F1無効化
 		}else	if CAPS() && LCMD()
-			;文字色変更（橙）
+			;枠色変更（橙）
 			Send, !{j}{d}{s}{o}{Right}{Right}{Right}{Right}{Right}{Down}{Down}{Down}{Down}{return}
-		else if CAPS()
-			Send,{1}
 		else
 			mbind_1()
 	return
 	vkEBsc07B & 2::
 	LControl & 2::
 		if CAPS() && LCMD()
-			;文字色変更（青）
+			;枠色変更（青）
 			Send, !{j}{d}{s}{o}{Left}{Left}{Down}{Down}{Down}{Down}{return}
 		else
 			mbind_2()
@@ -27,7 +25,7 @@
 	vkEBsc07B & 3::
 	LControl & 3::
 		if CAPS() && LCMD()
-			;文字色変更（緑）
+			;枠色変更（緑）
 			Send, !{j}{d}{s}{o}{Left}{Down}{Down}{Down}{Down}{return}
 		else
 			mbind_3()
@@ -35,7 +33,7 @@
 	vkEBsc07B & 4::
 	LControl & 4::
 		if CAPS() && LCMD()
-			;文字色変更（赤）
+			;枠色変更（赤）
 			Send, !{j}{d}{s}{o}{Down}{Down}{Down}{Down}{Down}{Down}{return}
 		else
 			mbind_4()
@@ -43,7 +41,7 @@
 	vkEBsc07B & 5::
 	LControl & 5::
 		if CAPS() && LCMD()
-			;文字色変更（青）
+			;枠色変更（パレット）
 			Send, !{j}{d}{s}{o}
 		else
 			mbind_5()
