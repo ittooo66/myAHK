@@ -835,7 +835,6 @@ mbind_mlb(){
 	}else{
 		Send,{LButton}
 	}
-
 }
 
 mbind_mrb(){
@@ -919,11 +918,9 @@ mbind_msblf(){
 }
 
 mbind_msbrb(){
-
 }
 
 mbind_msbrf(){
-
 }
 
 mbind_wheelup(){
