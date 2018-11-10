@@ -722,6 +722,7 @@ F20 & MButton::
 return
 
 WheelUp::
+MButton & WheelUp::
 RButton & WheelUp::
 ;XButton1 & WheelUp::ALTTABで利用
 XButton2 & WheelUp::
@@ -731,6 +732,7 @@ AppsKey & WheelUp::
 return
 
 WheelDown::
+MButton & WheelDown::
 RButton & WheelDown::
 ;XButton1 & WheelDown::ALTTABで利用
 XButton2 & WheelDown::
