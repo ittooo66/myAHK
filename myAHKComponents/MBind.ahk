@@ -57,9 +57,9 @@ mbind_d(){
 			openApp("Excel")
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
-	else if CAPS() && RCMD()
-		IoT_PhilipsHueOff()
-	else if RCMD() || CAPS(){
+	else if CAPS() && RCMD(){
+		execScripts("PhilipsHueOff.bat")
+	}else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed()
 			HistoricalClip_down()
 		else
@@ -78,9 +78,9 @@ mbind_e(){
 	if (SPACE() && CAPS()){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
-	}else if CAPS() && RCMD()
-		IoT_PhilipsHueOn()
-	else if LSHIFT() && RSHIFT()
+	}else if CAPS() && RCMD(){
+		execScripts("PhilipsHueOn.bat")
+	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
 		if HistoricalClip_isDisplayed()
@@ -304,8 +304,7 @@ mbind_q(){
 
 mbind_r(){
 	if RCMD() && CAPS(){
-		script := A_WorkingDir . "\myAHKComponents\Resources\Bat\explorer_restart.bat"
-		run, %script%
+		execScripts("explorer_restart.bat")
 	}else if SPACE() && CAPS(){
 		if !activateWindow("IEFrame","","")
 			openApp("Internet Explorer")
@@ -826,7 +825,7 @@ mbind_space_up(){
 
 mbind_mlb(){
 	if MSBRB(){
-		IoT_PhilipsHueOn()
+		execScripts("PhilipsHueOn.bat")
 	}else if MSBLF(){
 		intelliScroll()
 	}else if MSBLB(){
@@ -843,7 +842,7 @@ mbind_mlb(){
 
 mbind_mrb(){
 	if MSBRB(){
-		IoT_PhilipsHueOff()
+		execScripts("PhilipsHueOff.bat")
 	}else if MSBLB(){
 		Send,{RWin}
 	}else if MSBLF(){
