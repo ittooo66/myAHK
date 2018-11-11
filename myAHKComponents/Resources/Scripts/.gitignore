@@ -1,0 +1,2 @@
+#SSH接続用のbatを無視
+exec_shell_*.bat
