@@ -49,7 +49,6 @@ RAlt & LAlt::Send,#{Space}
 #include Library\MouseControl.ahk
 #include Library\FileLauncher.ahk
 #include Library\IntoRemoteDesktop.ahk
-#include Library\IoT.ahk
 #include Library\Logger.ahk
 ;TempMacroのInclude
 #include Library\TempMacro.ahk
