@@ -232,3 +232,18 @@ muneNMin(){
 			msgbox, Invalid Input Number
 	}
 }
+
+;特定VM上に存在するシェルを実行する
+;vmName:"VM名称"
+;shellPath:"VM上に存在するシェルのPATH"
+execVMShell(vmName, shellPath){
+	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\exec_shell_" . vmName . ".bat " . shellPath
+	run, %script%
+}
+
+;Scripts配下のバッチファイルを実行する
+;scriptName:"バッチファイル名"
+execScripts(scriptName){
+	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\" . scriptName
+	run, %script%
+}
