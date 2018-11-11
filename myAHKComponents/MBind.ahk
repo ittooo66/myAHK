@@ -825,7 +825,7 @@ mbind_space_up(){
 
 
 mbind_mlb(){
-	if MMB(){
+	if MSBRB(){
 		IoT_PhilipsHueOn()
 	}else if MSBLF(){
 		intelliScroll()
@@ -842,7 +842,7 @@ mbind_mlb(){
 }
 
 mbind_mrb(){
-	if MMB(){
+	if MSBRB(){
 		IoT_PhilipsHueOff()
 	}else if MSBLB(){
 		Send,{RWin}
