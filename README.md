@@ -37,11 +37,6 @@ my[AHK][AHK]
     Library/            :ライブラリです。仕様は各AHKCodeのコメントを参考に…
     Resources/          :Libraryで用いるリソース置き場。履歴コピペのdatとか登録済みランチャのディレクトリとか。
 
-    JoyPadControl/      :Joypad周りのAHK。副作用が大きいので現状はDisableしてる。
-
-    MouseBindings.ahk   :マウスの挙動
-    GUILabel.ahk        :GUIのラベル系、起動時には実行されないやつら。
-
 ### gamingAHK/ ###
 ゲーム用のAHK集。本体と共存不可能になったので別個に起動。
 
