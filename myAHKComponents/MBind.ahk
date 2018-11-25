@@ -824,15 +824,15 @@ mbind_space_up(){
 
 
 mbind_mlb(){
-	if MSBRB(){
+	if MMB(){
+		Send,#{Tab}
+	}else if MSBRB(){
 		execScripts("PhilipsHueOn.bat")
 	}else if MSBLF(){
 		intelliScroll()
 	}else if MSBLB(){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
-	}else if MSBRB(){
-		Send,#{Tab}
 	}else if MSBRF(){
 		Send,^+{q}
 	}else{
