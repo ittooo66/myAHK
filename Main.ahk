@@ -34,6 +34,8 @@ XButton1 & WheelDown::AltTab
 
 ;IME Change
 RAlt & LAlt::Send,#{Space}
+vkEBsc07B::IME_SET(0)
+vkFFsc079::IME_SET(1)
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
@@ -50,6 +52,7 @@ RAlt & LAlt::Send,#{Space}
 #include Library\FileLauncher.ahk
 #include Library\IntoRemoteDesktop.ahk
 #include Library\Logger.ahk
+#include Library\IME.ahk
 ;TempMacroのInclude
 #include Library\TempMacro.ahk
 #include Resources\TempMacro\MacroZ.ahk
