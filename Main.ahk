@@ -7,6 +7,13 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;Base Bindings
 Delete::`
 RAlt::RWin
+;Disable WindowsKey
+LWin & RWin Up::return
+RWin & LWin Up::return
+RWin::return
+LWin::return
+RWin & Return::Send,{Return}{Left}
+LWin & Return::Send,^{Return}
 
 ;Reload/Suspend AHK
 RAlt & ,::
@@ -27,15 +34,13 @@ XButton1 & MButton::
 return
 
 ;AltTab
-vkEBsc07B & Tab::AltTab
-RWin & Tab::AltTab
 XButton1 & WheelUp::ShiftAltTab
 XButton1 & WheelDown::AltTab
 
 ;IME Change
 RAlt & LAlt::Send,#{Space}
-vkEBsc07B::IME_SET(0)
-vkFFsc079::IME_SET(1)
+LWin Up::IME_SET(0)
+RWin Up::IME_SET(1)
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
