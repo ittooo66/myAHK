@@ -3,6 +3,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 ;おまじない
 #InstallKeybdHook
 #HotkeyInterval 100
+#UseHook
 
 ;Base Bindings
 Delete::`
@@ -12,6 +13,8 @@ LWin & RWin Up::return
 RWin & LWin Up::return
 RWin::return
 LWin::return
+RWin Up::return
+LWin Up::return
 RWin & Return::Send,{Return}{Left}
 LWin & Return::Send,^{Return}
 
@@ -39,8 +42,8 @@ XButton1 & WheelDown::AltTab
 
 ;IME Change
 RAlt & LAlt::Send,#{Space}
-LWin Up::IME_SET(0)
-RWin Up::IME_SET(1)
+LShift::IME_SET(0)
+RShift::IME_SET(1)
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents
