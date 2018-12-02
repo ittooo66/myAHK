@@ -700,6 +700,8 @@ XButton1 & LButton::
 XButton2 & LButton::
 AppsKey & LButton::
 F20 & LButton::
+LWin & LButton::
+RWin & LButton::
 	mbind_mlb()
 return
 
@@ -709,6 +711,8 @@ XButton1 & RButton::
 XButton2 & RButton::
 AppsKey & RButton::
 F20 & RButton::
+LWin & RButton::
+RWin & RButton::
 	mbind_mrb()
 return
 
@@ -718,6 +722,8 @@ RButton & MButton::
 ;XButton2 & MButton::AHK SUSPENDで利用
 AppsKey & MButton::
 F20 & MButton::
+LWin & MButton::
+RWin & MButton::
 	mbind_mmb()
 return
 
@@ -728,6 +734,8 @@ RButton & WheelUp::
 XButton2 & WheelUp::
 F20 & WheelUp::
 AppsKey & WheelUp::
+LWin & WheelUp::
+RWin & WheelUp::
 	mbind_wheelup()
 return
 
@@ -738,6 +746,8 @@ RButton & WheelDown::
 XButton2 & WheelDown::
 F20 & WheelDown::
 AppsKey & WheelDown::
+LWin & WheelDown::
+RWin & WheelDown::
 	mbind_wheeldown()
 return
 
@@ -747,6 +757,8 @@ MButton & XButton1::
 XButton2 & XButton1::
 AppsKey & XButton1::
 F20 & XButton1::
+LWin & XButton1::
+RWin & XButton1::
 	mbind_msblb()
 return
 
@@ -756,6 +768,8 @@ MButton & XButton2::
 XButton1 & XButton2::
 AppsKey & XButton2::
 F20 & XButton2::
+LWin & XButton2::
+RWin & XButton2::
 	mbind_msblf()
 return
 
@@ -765,6 +779,8 @@ MButton & AppsKey::
 XButton1 & AppsKey::
 XButton2 & AppsKey::
 F20 & AppsKey::
+LWin & AppsKey::
+RWin & AppsKey::
 	mbind_msbrf()
 return
 
@@ -774,5 +790,7 @@ MButton & F20::
 XButton1 & F20::
 XButton2 & F20::
 AppsKey & F20::
+LWin & F20::
+RWin & F20::
 	mbind_msbrb()
 return
