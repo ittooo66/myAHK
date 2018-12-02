@@ -487,6 +487,8 @@ mbind_2(){
 		copyTo("S2")
 	else if SPACE()
 		pasteFrom("S2")
+	else if SHIFT()
+		Send,{@}
 	else
 		press("2")
 }
@@ -541,6 +543,8 @@ mbind_6(){
 		copyTo("S6")
 	else if SPACE()
 		pasteFrom("S6")
+	else if SHIFT()
+		Send,{^}
 	else
 		press("6")
 }
@@ -552,6 +556,8 @@ mbind_7(){
 		copyTo("S7")
 	else if SPACE()
 		pasteFrom("S7")
+	else if SHIFT()
+		Send,{&}
 	else
 		press("7")
 }
@@ -563,6 +569,8 @@ mbind_8(){
 		copyTo("S8")
 	else if SPACE()
 		pasteFrom("S8")
+	else if SHIFT()
+		Send,{*}
 	else
 		press("8")
 }
@@ -575,9 +583,9 @@ mbind_9(){
 	else if SPACE()
 		pasteFrom("S9")
 	else if SHIFT(){
-		press("9")
-		press("0")
-		send,{Left}
+		Send,{(}
+		Send,{)}
+		Send,{Left}
 	}else
 		press("9")
 }
@@ -589,6 +597,8 @@ mbind_0(){
 		copyTo("S0")
 	else if SPACE()
 		pasteFrom("S0")
+	else if SHIFT()
+		send,{)}
 	else
 		press("0")
 }
@@ -600,6 +610,8 @@ mbind_minus(){
 		copyTo("SMinus")
 	else if SPACE()
 		pasteFrom("SMinus")
+	else if SHIFT()
+		Send,{_}
 	else
 		press("-")
 }
@@ -669,7 +681,9 @@ mbind_semicolon(){
 		FormatTime,day,,dd
 		date := year . "/" . month . "/" . day
 		directInput(date)
-	}else
+	}else if SHIFT()
+		Send,{:}
+	else
 		press("`;")
 }
 
