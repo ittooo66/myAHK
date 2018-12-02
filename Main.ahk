@@ -20,17 +20,11 @@ LWin & Return::Send,^{Return}
 
 ;Reload/Suspend AHK
 RAlt & ,::
-	Suspend, Permit
-	reloadAHK()
-return
 XButton2 & MButton::
 	Suspend, Permit
 	reloadAHK()
 return
 RAlt & .::
-	Suspend, Permit
-	suspendAHK()
-return
 XButton1 & MButton::
 	Suspend, Permit
 	suspendAHK()
