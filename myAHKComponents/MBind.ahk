@@ -949,12 +949,6 @@ mbind_wheelup(){
 		Send,#^{Volume_Up}
 	}else if MSBRB(){
 		Send,#^{Left}
-	}else	if LCMD(){
-		if FileLauncher_isDisplayed(){
-			FileLauncher_up()
-		}else{
-			FileLauncher_openWindow()
-		}
 	}else if SPACE(){
 		if FileLauncher_isDisplayed(){
 			FileLauncher_up()
@@ -976,12 +970,6 @@ mbind_wheeldown(){
 		Send,#^{Volume_Down}
 	}else if MSBRB(){
 		Send,#^{Right}
-	}else	if LCMD(){
-		if FileLauncher_isDisplayed(){
-			FileLauncher_down()
-		}else{
-			FileLauncher_openWindow()
-		}
 	}else if SPACE(){
 		if FileLauncher_isDisplayed(){
 			FileLauncher_down()
