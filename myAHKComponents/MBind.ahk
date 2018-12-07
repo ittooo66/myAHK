@@ -119,8 +119,8 @@ mbind_f(){
 
 mbind_g(){
 	if (SPACE() && CAPS()){
-		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-			openApp("Google Chrome")
+		if !activateWindow("Chrome_WidgetWin_1","vivaldi.exe","")
+			openApp("Vivaldi")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() && CAPS()

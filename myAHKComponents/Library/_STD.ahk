@@ -90,7 +90,7 @@ download(){
 	clipboard =
 	Send, ^c
 	ClipWait
-	Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "http://www.flvto.biz/?url=%clipboard%"
+	Run, C:\Users\ittoo\AppData\Local\Vivaldi\Application\vivaldi.exe "http://www.flvto.biz/?url=%clipboard%"
 }
 
 ;拡張クリップボード(copy)
