@@ -869,7 +869,7 @@ mbind_mrb(){
 		}
 		Send,{MButton Up}
 	}else if MSBRF(){
-		muneNMin()
+		muteNMin()
 	}else{
 		Send,{RButton}
 	}

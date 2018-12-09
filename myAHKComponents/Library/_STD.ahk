@@ -212,7 +212,7 @@ suspendAHK(){
 }
 
 ;ミュートタイマー機能
-muneNMin(){
+muteNMin(){
 	InputBox, muteMinute , Delayed Mute, Mute After N minute,, 200, 130,,,,,60
 	if ErrorLevel <> 0
 		return
