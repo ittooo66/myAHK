@@ -734,9 +734,7 @@ mbind_camma(){
 }
 
 mbind_slash(){
-	if RCMD() || CAPS()
-		press(".")
-	else if RSHIFT() && LSHIFT()
+	if RSHIFT() && LSHIFT()
 		Send, {PgDn}
 	else if SPACE() && SHIFT()
 		copyTo("SSlash")
