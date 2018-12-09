@@ -202,13 +202,18 @@ mbind_l(){
 		Send,{WheelUp}
 	else if RCMD() || (CAPS() && SHIFT())
 		press("6")
+	else if CAPS() & LCMD()
+		Send,^{l}
 	else if CAPS()
 		press("{numpad6}")
 	else if SPACE() && SHIFT()
 		copyTo("SL")
 	else if SPACE()
 		pasteFrom("SL")
-	else
+	else if LCMD(){
+		;Win+L問題のため無効化。Lキーと組み合わせたとたんダメになる。
+		;上で書いてる通り、CAPS付きで入力すること。
+	}else
 		press("l")
 }
 
