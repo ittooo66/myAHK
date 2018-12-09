@@ -1,8 +1,11 @@
 ﻿;アイコン
 Menu, Tray, Icon, %A_ScriptDir%\League of Legends.ico, 1
 
-;UACに注意、LoL等の管理者権限で動くAppに当てる時は管理者権限で起動すること
 #IfWinActive,ahk_class RiotWindowClass
-    vkEBsc07B::Alt
-    XButton2::Tab
+    ;以下の組み合わせでLCMD+W→Alt+Wを実現。
+    ;要:セルフキャストスキル2にAlt+Nの追加
+    LWin::LAlt
+    !w::n
+    XButton2::3
+    XButton1::p
 #IfWinActive
