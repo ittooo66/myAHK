@@ -155,7 +155,10 @@ mbind_i(){
 		changeSoundDevice("1")
 	else if RCMD() || (CAPS() && SHIFT())
 		press("8")
-	else if CAPS()
+	else if CAPS() & SPACE(){
+		consumeSpace()
+		addTaskToTrello()
+	}else if CAPS()
 		press("{numpad8}")
 	else if SPACE() && SHIFT()
 		copyTo("SI")
