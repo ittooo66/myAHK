@@ -261,4 +261,4 @@ Add-Type $Code
 [Resolution.ScreenResolution]::ChangeResolution($width,$height,$DeviceID)  
 } 
 
-Set-ScreenResolutionEx -Width 1024 -Height 768 -DeviceID 1
+Set-ScreenResolutionEx -Width 1280 -Height 960 -DeviceID 1

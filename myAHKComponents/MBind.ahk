@@ -415,6 +415,8 @@ mbind_w(){
 			openApp("Outlook")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
+	else if RCMD() && CAPS()
+		execScripts("monitor_setting.bat")
 	else if RCMD() || CAPS()
 		press("{HOME}")
 	else if SPACE() && SHIFT()
