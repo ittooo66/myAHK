@@ -39,6 +39,26 @@ activateWindow(className, processName, titleName){
 	return false
 }
 
+;最小化されているウィンドウをすべてアクティブにする
+activeAllWindow(){
+	;配列idに現在稼働中のWindowを突っ込む
+	WinGet, id, list, , , Program Manager
+	;for(int A_Index=1;A_Index<N(id);A_Index++)
+	Loop, %id%
+	{
+		;this_idに現在なめてるWindowIDを入れる
+		this_id := id%A_Index%
+		;this_idのTitleを取得
+		WinGetTitle, this_title, ahk_id %this_id%
+		;Window位置の取得（最小化）
+		WinGetPos,X,Y,Width,Height,%this_title%
+
+		;最小化されているウィンドウを最前面に表示(最小化時はX,Yが-32000になるため、それをフックする)
+		if ( X = "-32000" )
+			WinActivate, ahk_id %this_id%
+	}
+}
+
 ;修飾キー付きのkeypress
 press(key){
 	;修飾キー変数

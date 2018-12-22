@@ -865,6 +865,8 @@ mbind_mlb(){
 mbind_mrb(){
 	if MSBRB(){
 		execScripts("PhilipsHueOff.bat")
+	}else if MMB(){
+		activeAllWindow()
 	}else if MSBLB(){
 		Send,{RWin}
 	}else if MSBLF(){
