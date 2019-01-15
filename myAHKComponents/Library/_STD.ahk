@@ -110,7 +110,7 @@ download(){
 	clipboard =
 	Send, ^c
 	ClipWait
-	Run, C:\Users\ittoo\AppData\Local\Vivaldi\Application\vivaldi.exe "http://www.flvto.biz/?url=%clipboard%"
+	Run, C:\Users\ittoo\AppData\Local\Vivaldi\Application\vivaldi.exe "https://www.onlinevideoconverter.com/ja/mp3-converter?url=%clipboard%"
 }
 
 ;拡張クリップボード(copy)
