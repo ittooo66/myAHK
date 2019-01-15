@@ -151,7 +151,9 @@ mbind_h(){
 }
 
 mbind_i(){
-	if RCMD() && CAPS()
+	if LSHIFT() && RSHIFT()
+		Send,{MButton}
+	else if RCMD() && CAPS()
 		changeSoundDevice("1")
 	else if RCMD() || (CAPS() && SHIFT())
 		press("8")
@@ -169,7 +171,7 @@ mbind_i(){
 }
 
 mbind_j(){
-	if RSHIFT() && LSHIFT()
+	if LSHIFT() && RSHIFT()
 		mouseDrag("j")
 	else if CAPS() && RCMD()
 		download()
@@ -186,7 +188,7 @@ mbind_j(){
 }
 
 mbind_k(){
-	if RSHIFT() && LSHIFT()
+	if LSHIFT() && RSHIFT()
 		Send,{RButton}
 	else if RCMD() || (CAPS() && SHIFT())
 		press("5")
@@ -249,8 +251,6 @@ mbind_n(){
 mbind_o(){
 	if RCMD() && CAPS()
 		changeSoundDevice("0")
-	else if RSHIFT() && LSHIFT()
-		Send,{WheelLeft}
 	else if RCMD() || (CAPS() && SHIFT())
 		press("9")
 	else if CAPS()
@@ -264,9 +264,7 @@ mbind_o(){
 }
 
 mbind_p(){
-	if LSHIFT() && RSHIFT()
-		Send,{WheelRight}
-	else if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{PrintScreen}")
 	else if SPACE() && SHIFT()
 		copyTo("SP")
@@ -672,7 +670,7 @@ mbind_backslash(){
 }
 
 mbind_semicolon(){
-	if RSHIFT() && LSHIFT()
+	if LSHIFT() && RSHIFT()
 		Send,{WheelDown}
 	else if RCMD() || CAPS()
 		press("{+}")
@@ -698,9 +696,7 @@ mbind_semicolon(){
 }
 
 mbind_quote(){
-	if RSHIFT() && LSHIFT()
-		Send,{MButton}
-	else if RCMD() || CAPS()
+	if RCMD() || CAPS()
 		press("{*}")
 	else if SPACE() && SHIFT()
 		copyTo("SQuote")
@@ -715,8 +711,6 @@ mbind_period(){
 		press("3")
 	else if CAPS()
 		press("{numpad3}")
-	else if RSHIFT() && LSHIFT()
-		Send, {PgUp}
 	else if SPACE() && SHIFT()
 		copyTo("SPeriod")
 	else if SPACE()
@@ -739,9 +733,7 @@ mbind_camma(){
 }
 
 mbind_slash(){
-	if RSHIFT() && LSHIFT()
-		Send, {PgDn}
-	else if SPACE() && SHIFT()
+	if SPACE() && SHIFT()
 		copyTo("SSlash")
 	else if SPACE()
 		pasteFrom("SSlash")
