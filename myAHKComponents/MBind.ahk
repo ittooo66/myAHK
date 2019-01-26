@@ -57,9 +57,7 @@ mbind_d(){
 			openApp("Excel")
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
-	else if CAPS() && RCMD(){
-		execScripts("PhilipsHueOff.bat")
-	}else if RCMD() || CAPS(){
+	else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed()
 			HistoricalClip_down()
 		else
@@ -78,8 +76,6 @@ mbind_e(){
 	if (SPACE() && CAPS()){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
-	}else if CAPS() && RCMD(){
-		execScripts("PhilipsHueOn.bat")
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
@@ -190,6 +186,8 @@ mbind_j(){
 mbind_k(){
 	if LSHIFT() && RSHIFT()
 		Send,{RButton}
+	else if CAPS() && RCMD()
+		execScripts("PhilipsHueOff.bat")
 	else if RCMD() || (CAPS() && SHIFT())
 		press("5")
 	else if CAPS()
@@ -205,6 +203,8 @@ mbind_k(){
 mbind_l(){
 	if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
+	else if CAPS() && RCMD()
+		execScripts("PhilipsHueOn.bat")
 	else if RCMD() || (CAPS() && SHIFT())
 		press("6")
 	else if CAPS() & LCMD()
