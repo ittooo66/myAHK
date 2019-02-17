@@ -73,7 +73,10 @@ mbind_d(){
 }
 
 mbind_e(){
-	if (SPACE() && CAPS()){
+	if LSHIFT() && RSHIFT() && LCMD() && RCMD(){
+		MsgBox, ExitApp
+		ExitApp
+	}else if (SPACE() && CAPS()){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
 	}else if LSHIFT() && RSHIFT()
