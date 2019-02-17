@@ -1,5 +1,5 @@
 ﻿;アイコン
-Menu, Tray, Icon, %A_ScriptDir%\League of Legends.ico, 1
+Menu, Tray, Icon, %A_ScriptDir%\icon\League of Legends.ico, 1
 
 #IfWinActive,ahk_class RiotWindowClass
     ;以下の組み合わせでLCMD+W→Alt+Wを実現。
