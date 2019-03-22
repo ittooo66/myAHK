@@ -179,7 +179,7 @@ lineDel(direction){
 ;（イヤホン：num=0、スピーカ：num=1）
 changeSoundDevice(num){
 	run, control mmsys.cpl
-	sleep,800
+	sleep,1200
 	activateWindow("#32770","","")
 	Send,{Up}{Up}{Up}{Up}
 	Loop, %num%
@@ -187,7 +187,7 @@ changeSoundDevice(num){
 		Send,{Down}
 	}
 	Send,!{s}
-	Send,{Return}
+	Send,{Esc}
 }
 
 ;各種Appを開く
