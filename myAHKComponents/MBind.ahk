@@ -1,5 +1,7 @@
 mbind_a(){
-	if (SPACE() && CAPS()){
+	if (SPACE() && CAPS() && SHIFT())
+		activateWindow("Chrome_WidgetWin_1","atom.exe","", 1 )
+	else if (SPACE() && CAPS()){
 		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
 			openApp("Atom")
 	}else if LSHIFT() && RSHIFT()
@@ -52,7 +54,9 @@ mbind_c(){
 }
 
 mbind_d(){
-	if (SPACE() && CAPS()){
+	if (SPACE() && CAPS() && SHIFT())
+		activateWindow("XLMAIN","","", 1 )
+	else if (SPACE() && CAPS()){
 		if !activateWindow("XLMAIN","","")
 			openApp("Excel")
 	}else if LSHIFT() && RSHIFT()
@@ -76,7 +80,9 @@ mbind_e(){
 	if LSHIFT() && RSHIFT() && LCMD() && RCMD(){
 		MsgBox, ExitApp
 		ExitApp
-	}else if (SPACE() && CAPS()){
+	}else if (SPACE() && CAPS() && SHIFT())
+		activateWindow("TextEditorWindowW166","","", 1 )
+	else if (SPACE() && CAPS()){
 		if !activateWindow("TextEditorWindowW166","","")
 			openApp("SakuraEditor")
 	}else if LSHIFT() && RSHIFT()
@@ -97,7 +103,9 @@ mbind_e(){
 }
 
 mbind_f(){
-	if (SPACE() && CAPS()){
+	if (SPACE() && CAPS() && SHIFT()){
+		activateWindow("CabinetWClass","explorer.exe","", 1 )
+	}else	if (SPACE() && CAPS()){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
 	}else if LCMD() && CAPS()
@@ -117,9 +125,10 @@ mbind_f(){
 }
 
 mbind_g(){
-	if (SPACE() && CAPS()){
-		;ChromeかVivaldiウィンドウが存在しない場合
-		if !activateWindow("Chrome_WidgetWin_1","vivaldi.exe","") && !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
+	if (SPACE() && CAPS() && SHIFT()){
+		activateWindow("Chrome_WidgetWin_1","chrome.exe","", 1 )
+	}else if (SPACE() && CAPS()){
+		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
 			openApp("Chrome")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
@@ -279,7 +288,9 @@ mbind_p(){
 }
 
 mbind_q(){
-	if (SPACE() && CAPS()){
+	if (SPACE() && CAPS() && SHIFT())
+		activateWindow("PPTFrameClass","","", 1 )
+	else if (SPACE() && CAPS()){
 		if !activateWindow("PPTFrameClass","","")
 			openApp("PowerPoint")
 	}else if LSHIFT() && RSHIFT()
@@ -315,9 +326,11 @@ mbind_q(){
 mbind_r(){
 	if RCMD() && CAPS(){
 		execScripts("explorer_restart.bat")
-	}else if SPACE() && CAPS(){
+	}else if SPACE() && CAPS() && SHIFT()
+		activateWindow("IEFrame","","", 1 )
+	else if SPACE() && CAPS(){
 		if !activateWindow("IEFrame","","")
-			openApp("Internet Explorer")
+			openApp("Internet Explorer")eee
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
@@ -352,7 +365,9 @@ mbind_s(){
 }
 
 mbind_t(){
-	if (SPACE() && CAPS()){
+	if SPACE() && CAPS() && SHIFT()
+		activateWindow("VTWin32","ttermpro.exe","", 1 )
+	else if (SPACE() && CAPS()){
 		if !activateWindow("VTWin32","ttermpro.exe","")
 			openApp("TeraTerm")
 	}else	if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
@@ -414,7 +429,9 @@ mbind_v(){
 }
 
 mbind_w(){
-	if (SPACE() && CAPS()){
+	if (SPACE() && CAPS() & SHIFT())
+		activateWindow("rctrl_renwnd32","OUTLOOK.EXE","", 1 )
+	else if (SPACE() && CAPS()){
 		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
 			openApp("Outlook")
 	}else if LSHIFT() && RSHIFT()
@@ -464,7 +481,9 @@ mbind_y(){
 }
 
 mbind_z(){
-	if (SPACE() && CAPS()){
+	if (SPACE() && CAPS() && SHIFT())
+		activateWindow("OpusApp","","", 1 )
+	else if (SPACE() && CAPS()){
 		if !activateWindow("OpusApp","","")
 			openApp("Word")
 	}else if ( CAPS() || RCMD() )&& SHIFT()
@@ -855,6 +874,7 @@ mbind_mlb(){
 	}else if MSBLB(){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
+		activateWindow("CabinetWClass","explorer.exe","", 1 )
 	}else if MSBRF(){
 		Send,^+{q}
 	}else{

@@ -2,10 +2,11 @@
 ;className:クラス名。空指定（""）の場合、Class指定なし
 ;processName:プロセス名。idea.exeとかそういうやつ。空指定（""）の場合、Process指定なし
 ;titleName:タイトル。空指定（""）の場合、Title指定なし
+;multi:該当Windowの複数フックモード、デフォルトは無効(0)
 ;===返り値===
 ;true:引っ張ってこれた
 ;false:存在しなかった
-activateWindow(className, processName, titleName){
+activateWindow(className, processName, titleName, multi=0){
 	;Spaceバインドで呼び出している場合、Spaceキーを消費
 	if(SPACE())
 		consumeSpace()
@@ -31,7 +32,9 @@ activateWindow(className, processName, titleName){
 				ifInString, this_process , %processName%, {
 					;最前面に表示
 					WinActivate, ahk_id %this_id%
-					return true
+					if (multi = 0){
+						return true
+					}
 				}
 			}
 		}
