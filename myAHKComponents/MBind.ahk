@@ -120,7 +120,7 @@ mbind_g(){
 	if (SPACE() && CAPS()){
 		;ChromeかVivaldiウィンドウが存在しない場合
 		if !activateWindow("Chrome_WidgetWin_1","vivaldi.exe","") && !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-			openApp("Vivaldi")
+			openApp("Chrome")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() && CAPS()
