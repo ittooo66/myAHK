@@ -889,14 +889,7 @@ mbind_mmb(){
 		;Sakura Editorでファイルリストを開く
 		run %A_WorkingDir%\myAHKComponents\Resources\Apps\SakuraEditor.lnk %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
 	}else{
-		;Window位置を移動する
-		WinGetActiveStats, Title, Width, Height, X, Y
-		touchW:=Width/2
-		touchH:=10
-		BlockInput, MouseMove
-		Mousemove,%touchW%,%touchH%,0
-		Send,{LButton Down}
-		BlockInput, MouseMoveOff
+		moveWindow()
 	}
 }
 
@@ -904,17 +897,7 @@ mbind_msblb(){
 	if MRB(){
 		Send,^{w}
 	}else if MSBLF(){
-		WinGetActiveStats, Title, Width, Height, X, Y
-		touchW:=Width-4
-		touchH:=Height-4
-		BlockInput, MouseMove
-		Mousemove,%touchW%,%touchH%,0
-		Send,{LButton Down}
-		BlockInput, MouseMoveOff
-		while(MSBLF() && MSBLB()){
-			sleep,30
-		}
-		Send,{LButton Up}
+		changeWindowSize()
 	}else if MSBRF(){
 		changeSoundDevice("1")
 	}else{
@@ -926,17 +909,7 @@ mbind_msblf(){
 	if MRB(){
 		Send,^+{t}
 	}else if MSBLB(){
-		WinGetActiveStats, Title, Width, Height, X, Y
-		touchW:=Width-4
-		touchH:=Height-4
-		BlockInput, MouseMove
-		Mousemove,%touchW%,%touchH%,0
-		Send,{LButton Down}
-		BlockInput, MouseMoveOff
-		while(MSBLF() && MSBLB()){
-			sleep,30
-		}
-		Send,{LButton Up}
+		changeWindowSize()
 	}else if MSBRF(){
 		changeSoundDevice("0")
 	}else{
