@@ -918,7 +918,7 @@ mbind_msblb(){
 		Send,^{w}
 	}else if MMB(){
 		Send,!{Space}
-		Sleep, 100
+		Sleep, 300
 		Send,{n}
 	}else if MSBLF(){
 		changeWindowSize()
