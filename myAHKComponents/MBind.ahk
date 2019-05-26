@@ -916,6 +916,10 @@ mbind_mmb(){
 mbind_msblb(){
 	if MRB(){
 		Send,^{w}
+	}else if MMB(){
+		Send,!{Space}
+		Sleep, 100
+		Send,{n}
 	}else if MSBLF(){
 		changeWindowSize()
 	}else if MSBRF(){
