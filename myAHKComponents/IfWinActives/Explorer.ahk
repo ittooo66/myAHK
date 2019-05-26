@@ -6,6 +6,33 @@
 	;上へ戻る
 	RButton & LButton::Send,!{Up}
 
+	XButton2 & WheelUp::Send,{XButton1}
+	XButton2 & WheelDown::Send,{LButton}{Return}
+
+	RButton & WheelUp::changeExplorerView(0)
+	RButton & WheelDown::changeExplorerView(1)
+
+	changeExplorerView(direction){
+		static EXPLORER_VIEWMODE:=1
+
+		;directionに応じて正負にローテート
+		if direction = 1
+			EXPLORER_VIEWMODE := EXPLORER_VIEWMODE + 1
+		else
+			EXPLORER_VIEWMODE := EXPLORER_VIEWMODE - 1
+
+		;1~8の間に収まるように調整
+		if EXPLORER_VIEWMODE > 8
+			EXPLORER_VIEWMODE := 8
+		if EXPLORER_VIEWMODE < 1
+			EXPLORER_VIEWMODE := 1
+
+		;バインド入力
+		Send,^+{%EXPLORER_VIEWMODE%}
+	}
+
+	RButton & XButton2::Send,!{v}{n}{Return}
+
 	;ショートカット作成
 	vkEBsc07B & a::
 	LControl & a::
