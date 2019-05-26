@@ -74,6 +74,7 @@ RShift::IME_SET(1)
 #include IfWinActives\MS_Excel.ahk
 #include IfWinActives\MS_PowerPoint.ahk
 #include IfWinActives\MS_Visio.ahk
+#include IfWinActives\TTM.ahk
 
 ;GuiEscape:GUI画面において、Escが入力された時に実行
 GuiEscape:
