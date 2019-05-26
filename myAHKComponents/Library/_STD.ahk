@@ -225,7 +225,7 @@ reloadAHK(){
 	tooltip, AHK reloading
 	sleep 300
 	tooltip
-	logger_out("(INFO) AHK RELOADED`n")
+	logger_info("AHK RELOADED")
 	Reload
 }
 
@@ -235,7 +235,7 @@ suspendAHK(){
 	tooltip, AHK suspended
 	sleep 800
 	tooltip
-	logger_out("(INFO) AHK SUSPENDED`n")
+	logger_info("AHK SUSPENDED")
 }
 
 ;ミュートタイマー機能
