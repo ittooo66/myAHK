@@ -917,9 +917,7 @@ mbind_msblb(){
 	if MRB(){
 		Send,^{w}
 	}else if MMB(){
-		Send,!{Space}
-		Sleep, 300
-		Send,{n}
+		WinMinimize, A
 	}else if MSBLF(){
 		changeWindowSize()
 	}else if MSBRF(){
