@@ -948,6 +948,8 @@ mbind_msbrf(){
 mbind_wheelup(){
 	if MRB(){
 		Send,^{PgUp}
+	}else if MMB(){
+		Send,!{Esc}
 	}else if MSBLF(){
 		Send,{WheelLeft}
 	}else if MSBRF(){
@@ -969,6 +971,8 @@ mbind_wheelup(){
 mbind_wheeldown(){
 	if MRB(){
 		Send,^{PgDn}
+	}else if MMB(){
+		Send,!+{Esc}
 	}else if MSBLF(){
 		Send,{WheelRight}
 	}else if MSBRF(){
