@@ -874,7 +874,6 @@ mbind_mlb(){
 	}else if MSBLB(){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			openApp("Entrance")
-		activateWindow("CabinetWClass","explorer.exe","", 1 )
 	}else if MSBRF(){
 		Send,^+{q}
 	}else{
