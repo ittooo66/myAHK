@@ -902,7 +902,10 @@ mbind_mrb(){
 }
 
 mbind_mmb(){
-	if MRB(){
+	if MSBRB() {
+		MsgBox, ExitApp
+		ExitApp
+	}else if MRB(){
 		Send,^{t}
 	}else	if LCMD() || SPACE() {
 		;Sakura Editorでファイルリストを開く
