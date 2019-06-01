@@ -5,9 +5,10 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #HotkeyInterval 100
 #UseHook
 
-;Base Bindings
+;Change Base Bindings
 Delete::`
 RAlt::RWin
+
 ;Disable WindowsKey
 LWin & RWin Up::return
 RWin & LWin Up::return
