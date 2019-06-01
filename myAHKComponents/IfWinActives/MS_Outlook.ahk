@@ -82,20 +82,4 @@
 			mbind_w()
 	return
 
-	;ウィンドウサイズ変更(Window位置を縮める)
-	XButton1 & XButton2::
-	XButton2 & XButton1::
-		WinGetActiveStats, Title, Width, Height, X, Y
-		touchW:=Width-1
-		touchH:=Height-1
-		BlockInput, MouseMove
-		Mousemove,%touchW%,%touchH%,0
-		Send,{LButton Down}
-		BlockInput, MouseMoveOff
-		while(GetKeyState("XButton2","P")&&GetKeyState("XButton1","P")){
-			sleep,30
-		}
-		Send,{LButton Up}
-	return
-
 #IfWinActive
