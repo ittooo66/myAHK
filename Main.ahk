@@ -19,7 +19,7 @@ LWin Up::return
 RWin & Return::Send,{Return}{Left}
 LWin & Return::Send,^{Return}
 
-;Reload/Suspend AHK
+;Reload/Suspend/Exit AHK
 RAlt & ,::
 XButton2 & MButton::
 	Suspend, Permit
@@ -29,6 +29,11 @@ RAlt & .::
 XButton1 & MButton::
 	Suspend, Permit
 	suspendAHK()
+return
+RAlt & /::
+F20 & MButton::
+	Suspend, Permit
+	exitAHK()
 return
 
 ;AltTab

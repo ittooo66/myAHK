@@ -77,10 +77,7 @@ mbind_d(){
 }
 
 mbind_e(){
-	if LSHIFT() && RSHIFT() && LCMD() && RCMD(){
-		MsgBox, ExitApp
-		ExitApp
-	}else if (SPACE() && CAPS() && SHIFT())
+	if (SPACE() && CAPS() && SHIFT())
 		activateWindow("TextEditorWindowW166","","", 1 )
 	else if (SPACE() && CAPS()){
 		if !activateWindow("TextEditorWindowW166","","")
@@ -902,10 +899,7 @@ mbind_mrb(){
 }
 
 mbind_mmb(){
-	if MSBRB() {
-		MsgBox, ExitApp
-		ExitApp
-	}else if MRB(){
+	if MRB(){
 		Send,^{t}
 	}else	if LCMD() || SPACE() {
 		;Sakura Editorでファイルリストを開く

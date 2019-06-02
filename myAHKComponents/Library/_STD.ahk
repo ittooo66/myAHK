@@ -238,6 +238,20 @@ suspendAHK(){
 	logger_info("AHK SUSPENDED")
 }
 
+;SHUTDOWN AHK
+exitAHK(){
+	tooltip, AHK shutting down
+	sleep 400
+	tooltip, AHK shutting down.
+	sleep 400
+	tooltip, AHK shutting down..
+	sleep 400
+	tooltip, AHK shutting down...
+	sleep 400
+	logger_info("AHK EXIT")
+	ExitApp
+}
+
 ;ミュートタイマー機能
 muteNMin(){
 	InputBox, muteMinute , Delayed Mute, Mute After N minute,, 200, 130,,,,,60

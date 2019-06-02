@@ -721,7 +721,7 @@ RButton & MButton::
 ;XButton1 & MButton::AHK RELOADで利用
 ;XButton2 & MButton::AHK SUSPENDで利用
 AppsKey & MButton::
-F20 & MButton::
+;F20 & MButton::AHK EXITで利用
 LWin & MButton::
 RWin & MButton::
 	mbind_mmb()
