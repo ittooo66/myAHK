@@ -78,10 +78,10 @@ mbind_d(){
 
 mbind_e(){
 	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("TextEditorWindowW166","","", 1 )
+		activateWindow("Notepad","","", 1 )
 	else if (SPACE() && CAPS()){
-		if !activateWindow("TextEditorWindowW166","","")
-			openApp("SakuraEditor")
+		if !activateWindow("Notepad","","")
+			openApp("Notepad")
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
