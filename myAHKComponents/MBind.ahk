@@ -323,11 +323,11 @@ mbind_q(){
 mbind_r(){
 	if RCMD() && CAPS(){
 		execScripts("explorer_restart.bat")
-	}else if SPACE() && CAPS() && SHIFT()
-		activateWindow("IEFrame","","", 1 )
-	else if SPACE() && CAPS(){
-		if !activateWindow("IEFrame","","")
-			openApp("Internet Explorer")eee
+	}else if SPACE() && CAPS() && SHIFT(){
+		;activateWindow("IEFrame","","", 1 )
+	}else if SPACE() && CAPS(){
+		;if !activateWindow("IEFrame","","")
+		;	openApp("Internet Explorer")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
