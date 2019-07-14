@@ -70,7 +70,6 @@ RShift::IME_SET(1)
 #include IfWinActives\_General.ahk
 #include IfWinActives\Explorer.ahk
 #include IfWinActives\InternetExplorer.ahk
-#include IfWinActives\Chrome.ahk
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
 #include IfWinActives\SakuraEditor.ahk

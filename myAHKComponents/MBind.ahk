@@ -123,10 +123,10 @@ mbind_f(){
 
 mbind_g(){
 	if (SPACE() && CAPS() && SHIFT()){
-		activateWindow("Chrome_WidgetWin_1","chrome.exe","", 1 )
+		activateWindow("Chrome_WidgetWin_1","opera.exe","", 1 )
 	}else if (SPACE() && CAPS()){
-		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-			openApp("Chrome")
+		if !activateWindow("Chrome_WidgetWin_1","opera.exe","")
+			openApp("GBrowser")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() && CAPS()
