@@ -67,7 +67,6 @@ RShift::IME_SET(1)
 ;IfWinActives(特定Window/App上で有効になるバインドセット)
 #include IfWinActives\_General.ahk
 #include IfWinActives\Explorer.ahk
-#include IfWinActives\InternetExplorer.ahk
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\Atom.ahk
 #include IfWinActives\SakuraEditor.ahk
