@@ -80,6 +80,7 @@ RShift::IME_SET(1)
 #include IfWinActives\MS_PowerPoint.ahk
 #include IfWinActives\MS_Visio.ahk
 #include IfWinActives\TTM.ahk
+#include IfWinActives\G_LeagueOfLegends.ahk
 
 ;GuiEscape:GUI画面において、Escが入力された時に実行
 GuiEscape:
