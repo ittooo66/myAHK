@@ -54,7 +54,6 @@ RShift::IME_SET(1)
 ;Library(バインドは持たないがグローバル変数の干渉に注意)
 #include Library\ClipExt.ahk
 #include Library\_STD.ahk
-#include Library\IntelliScroll.ahk
 #include Library\MouseControl.ahk
 #include Library\FileLauncher.ahk
 #include Library\IntoRemoteDesktop.ahk
