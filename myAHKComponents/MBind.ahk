@@ -39,8 +39,6 @@ mbind_c(){
 		TempMacro_open("C")
 	else if RCMD() || CAPS()
 		TempMacro_do("C")
-	else if LCMD() && LSHIFT()
-		Send,^{c}
 	else if LCMD()
 		HistoricalClip_copy()
 	else if SPACE() && SHIFT()
@@ -64,10 +62,7 @@ mbind_d(){
 	else if RCMD() && CAPS(){
 		execPs1Scripts("displayoff.ps1")
 	}else if RCMD() || CAPS(){
-		if HistoricalClip_isDisplayed()
-			HistoricalClip_down()
-		else
-			press("{DOWN}")
+		press("{DOWN}")
 	}else if SPACE() && SHIFT()
 		copyTo("SD")
 	else if SPACE()
@@ -87,10 +82,7 @@ mbind_e(){
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
-		if HistoricalClip_isDisplayed()
-			HistoricalClip_up()
-		else
-			press("{UP}")
+		press("{UP}")
 	}else if SPACE() && SHIFT()
 		copyTo("SE")
 	else if SPACE()
@@ -369,17 +361,8 @@ mbind_t(){
 	else if (SPACE() && CAPS()){
 		if !activateWindow("VTWin32","ttermpro.exe","")
 			openApp("TeraTerm")
-	}else	if ( RCMD() && SHIFT() )|| (CAPS() && SHIFT() ){
-		if HistoricalClip_isDisplayed(){
-			HistoricalClip_closeWindow()
-			HistoricalClip_paste(0,"txt")
-		}
 	}else if RCMD() || CAPS(){
-		if HistoricalClip_isDisplayed(){
-			HistoricalClip_closeWindow()
-			HistoricalClip_paste()
-		}else
-			press("{return}")
+		press("{return}")
 	}else if SPACE() && SHIFT()
 		copyTo("ST")
 	else if SPACE()
@@ -410,17 +393,13 @@ mbind_v(){
 		if !activateWindow("VISIOA","VISIO.EXE","")
 			openApp("Visio")
 	}else if RCMD() || CAPS()
-		HistoricalClip_openWindow()
+		HistoricalClip_openLog()
 	else if SPACE() && SHIFT()
 		copyTo("SV")
 	else if SPACE()
 		pasteFrom("SV")
-	else if LCMD() && LSHIFT()
-		Send,^{v}
 	else if LCMD() && LALT()
 		IntoRemoteDesktop()
-	else if LCMD()
-		HistoricalClip_paste(1)
 	else if MSBRF()
 		press(".")
 	else
@@ -904,8 +883,7 @@ mbind_mmb(){
 	if MRB(){
 		Send,^{t}
 	}else	if LCMD() || SPACE() {
-		;Sakura Editorでファイルリストを開く
-		run %A_WorkingDir%\myAHKComponents\Resources\Apps\SakuraEditor.lnk %A_WorkingDir%\myAHKComponents\Resources\FileAlias\FileAliases.txt
+		HistoricalClip_openLog()
 	}else{
 		moveWindow()
 	}
