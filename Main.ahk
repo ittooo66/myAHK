@@ -52,7 +52,7 @@ RShift::IME_SET(1)
 #include MBindSetting.ahk
 #include MBind.ahk
 ;Library(バインドは持たないがグローバル変数の干渉に注意)
-#include Library\HistoricalClip.ahk
+#include Library\ClipExt.ahk
 #include Library\_STD.ahk
 #include Library\_STRING.ahk
 #include Library\IntelliScroll.ahk

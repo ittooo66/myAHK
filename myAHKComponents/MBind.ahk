@@ -40,7 +40,7 @@ mbind_c(){
 	else if RCMD() || CAPS()
 		TempMacro_do("C")
 	else if LCMD()
-		HistoricalClip_copy()
+		ClipExt_copy()
 	else if SPACE() && SHIFT()
 		copyTo("SC")
 	else if SPACE()
@@ -393,7 +393,7 @@ mbind_v(){
 		if !activateWindow("VISIOA","VISIO.EXE","")
 			openApp("Visio")
 	}else if RCMD() || CAPS()
-		HistoricalClip_openLog()
+		ClipExt_openLog()
 	else if SPACE() && SHIFT()
 		copyTo("SV")
 	else if SPACE()
@@ -436,7 +436,7 @@ mbind_x(){
 	else if RCMD() || CAPS()
 		TempMacro_do("X")
 	else if LCMD()
-		HistoricalClip_cut()
+		ClipExt_cut()
 	else if SPACE() && SHIFT()
 		copyTo("SX")
 	else if SPACE()
@@ -883,7 +883,7 @@ mbind_mmb(){
 	if MRB(){
 		Send,^{t}
 	}else	if LCMD() || SPACE() {
-		HistoricalClip_openLog()
+		ClipExt_openLog()
 	}else{
 		moveWindow()
 	}

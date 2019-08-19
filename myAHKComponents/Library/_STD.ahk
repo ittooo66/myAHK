@@ -178,7 +178,7 @@ guiIsOn(){
 ;一行消し。direction(="HOME"|"END")で消す方向を指定
 lineDel(direction){
 	Send,+{%direction%}
-	HistoricalClip_copy()
+	ClipExt_copy()
 	Send,{BackSpace}
 }
 
