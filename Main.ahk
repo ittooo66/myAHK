@@ -84,6 +84,5 @@ RShift::IME_SET(1)
 
 ;GuiEscape:GUI画面において、Escが入力された時に実行
 GuiEscape:
-	HistoricalClip_closeWindow()
 	FileLauncher_closeWindow()
 return
