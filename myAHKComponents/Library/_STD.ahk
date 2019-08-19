@@ -120,40 +120,6 @@ download(){
 	Run, "https://www.onlinevideoconverter.com/ja/mp3-converter?url=%clipboard%"
 }
 
-;拡張クリップボード(copy)
-copyTo(num){
-	;Spaceキーのスタックを消費
-	consumeSpace()
-	;cb_bkに中身を退避
-	cb_bk = %ClipboardAll%
-	;一旦clipboardを空にする
-	clipboard =
-	;clipboardにCopy
-	Send,^c
-	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
-	ClipWait 0.5, 1
-	;クリップボードに何も入ってこないとき
-	if ErrorLevel <> 0
-	{
-		;終了
-		return
-	}
-	;ファイルにClipboardを保存
-	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
-	;cb_bkから取得
-	Clipboard = %cb_bk%
-}
-
-;拡張クリップボード(paste)
-pasteFrom(num){
-	;Spaceキーのスタックを消費
-	consumeSpace()
-	;content取得
-	FileRead, content ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
-	;content出力
-	directInput(content)
-}
-
 ;直接入力、IME無視で文字列(string)(dat可)を入力する
 directInput(string){
 	Clipboard := string
