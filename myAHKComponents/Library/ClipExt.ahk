@@ -68,6 +68,33 @@ ClipExt_pasteFrom(num){
 	directInput(content)
 }
 
+;ショートカット生成
+ClipExt_addAlias(num){
+	;Explorer画面以外で暴発しないように
+	WinGetClass, class, A
+	if(class != "CabinetWClass"){
+		return
+	}
+	;Clipboard退避
+	cb_bk = %ClipboardAll%
+	;clipboardにコピー
+	clipboard =
+	Send, ^c
+	ClipWait 1
+	;ディレクトリ位置の再構成
+	filename = %clipboard%
+	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+	FileAppend,	%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+	;Clipboard復帰
+	Clipboard = %cb_bk%
+}
+
+;ショートカットを開く
+ClipExt_openAlias(num){
+	FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+	run, %file%
+}
+
 ;ClipBoard履歴ログの表示
 ClipExt_openLog(){
 	run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\Log\clip.log

@@ -55,7 +55,6 @@ RShift::IME_SET(1)
 #include Library\ClipExt.ahk
 #include Library\_STD.ahk
 #include Library\MouseControl.ahk
-#include Library\FileLauncher.ahk
 #include Library\IntoRemoteDesktop.ahk
 #include Library\Logger.ahk
 #include Library\IME.ahk
@@ -79,8 +78,3 @@ RShift::IME_SET(1)
 #include IfWinActives\MS_Visio.ahk
 #include IfWinActives\TTM.ahk
 #include IfWinActives\G_LeagueOfLegends.ahk
-
-;GuiEscape:GUI画面において、Escが入力された時に実行
-GuiEscape:
-	FileLauncher_closeWindow()
-return

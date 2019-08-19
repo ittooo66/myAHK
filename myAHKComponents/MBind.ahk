@@ -481,6 +481,10 @@ mbind_z(){
 mbind_1(){
 	if RCMD() && CAPS()
 		Send,^+{F8}
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("1")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("1")
 	else if RCMD() || CAPS()
 		press("{F1}")
 	else if SPACE() && SHIFT()
@@ -494,6 +498,10 @@ mbind_1(){
 mbind_2(){
 	if RCMD() && CAPS()
 		Send,^+{F9}
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("2")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("2")
 	else if RCMD() || CAPS()
 		press("{F2}")
 	else if SPACE() && SHIFT()
@@ -511,6 +519,10 @@ mbind_3(){
 		Send,{PrintScreen}
 	else if RCMD() && CAPS()
 		Send,^+{F10}
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("3")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("3")
 	else if RCMD() || CAPS()
 		press("{F3}")
 	else if SPACE() && SHIFT()
@@ -526,6 +538,10 @@ mbind_4(){
 		Send,!{PrintScreen}
 	else if RCMD() && CAPS()
 		Send,^+{F11}
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("4")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("4")
 	else if RCMD() || CAPS()
 		press("{F4}")
 	else if SPACE() && SHIFT()
@@ -539,6 +555,10 @@ mbind_4(){
 mbind_5(){
 	if RCMD() && CAPS()
 		Send,^+{F12}
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("5")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("5")
 	else if RCMD() || CAPS()
 		press("{F5}")
 	else if SPACE() && SHIFT()
@@ -552,6 +572,10 @@ mbind_5(){
 mbind_6(){
 	if RCMD() || CAPS()
 		press("{F6}")
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("6")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("6")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("S6")
 	else if SPACE()
@@ -565,6 +589,10 @@ mbind_6(){
 mbind_7(){
 	if RCMD() || CAPS()
 		press("{F7}")
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("7")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("7")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("S7")
 	else if SPACE()
@@ -578,6 +606,10 @@ mbind_7(){
 mbind_8(){
 	if RCMD() || CAPS()
 		press("{F8}")
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("8")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("8")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("S8")
 	else if SPACE()
@@ -591,6 +623,10 @@ mbind_8(){
 mbind_9(){
 	if RCMD() || CAPS()
 		press("{F9}")
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("9")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("9")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("S9")
 	else if SPACE()
@@ -606,6 +642,10 @@ mbind_9(){
 mbind_0(){
 	if RCMD() || CAPS()
 		press("{F10}")
+	else if SPACE() && CAPS() && SHIFT()
+		ClipExt_addAlias("0")
+	else if SPACE() && CAPS()
+		ClipExt_openAlias("0")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("S0")
 	else if SPACE()
@@ -826,9 +866,6 @@ mbind_space_up(){
 
 	;Spaceバインドが消費済みならば、各バインド判定を無効にして終了
 	if (spaceConsumed == 1){
-		if FileLauncher_isDisplayed(){
-			FileLauncher_openFile()
-		}
 		return
 	}
 
@@ -932,13 +969,6 @@ mbind_wheelup(){
 		Send,#^{Volume_Up}
 	}else if MSBRB(){
 		Send,#^{Left}
-	}else if SPACE(){
-		if FileLauncher_isDisplayed(){
-			FileLauncher_up()
-		}else{
-			FileLauncher_openWindow()
-			consumeSpace()
-		}
 	}else{
 		Send,{WheelUp}
 	}
@@ -955,13 +985,6 @@ mbind_wheeldown(){
 		Send,#^{Volume_Down}
 	}else if MSBRB(){
 		Send,#^{Right}
-	}else if SPACE(){
-		if FileLauncher_isDisplayed(){
-			FileLauncher_down()
-		}else{
-			FileLauncher_openWindow()
-			consumeSpace()
-		}
 	}else{
 		Send,{WheelDown}
 	}
