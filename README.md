@@ -1,35 +1,31 @@
 my[AHK][AHK]
 ======================
- Reinvent Key Bindings !
+my AHK Key Bindings
 
 ### HOW TO USE ###
 
-1. [HHKB][HHKB]を購入します。  
+1. [HHKB][HHKB]を購入
 ※DIPスイッチは2をONにしています。
 
-1. [AutoHotkey][AHK]をインストールします。
+1. [AutoHotkey][AHK]をインストール
 
-1. 本RepoをDownloadして、Main.ahkを実行します。
+1. RepositoryをDownloadして、Main.ahkを実行
 
 ### / ###
-実行ファイルと各種マニュアル
 
     Main.ahk          :実行ファイル
     MANUAL.pptx       :マニュアル
 
 ### myAHKComponents/ ###
-実行ファイル（Main.ahk）がロードするComponent集
+実行ファイル（Main.ahk）がロードするComponent群
 
     MBind.ahk           :myAHK本体。全体的な挙動を記載。
     MBindListener.ahk   :MBindを当てるためのリスナ
     MbindSetting.ahk    :MBindの仮想修飾キーの設定ファイル
 
-    IfWinActives/       :特定Window下におけるバインドセット
+    IfWinActives/       :特定Window下におけるバインドセット。ゲーミングバインドもここにいれた。
     Library/            :ライブラリ。仕様はコメントに記載
     Resources/          :Libraryで用いるリソース置き場。履歴コピペのdatとか登録済みランチャのディレクトリとか。
-
-### gamingAHK/ ###
-ゲーム用のAHK集。本体と共存不可能になったので別個に起動。
 
 ### \_souko/ ###
 
