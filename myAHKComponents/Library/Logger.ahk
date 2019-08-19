@@ -15,6 +15,11 @@ logger_debug(message){
 	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\Resources\Log\debug.log
 }
 
+logger_clip(message){
+	log:="*** " . logger_date() . "***`n" . message . "`n"
+	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\Resources\Log\clip.log
+}
+
 logger_date(){
 	FormatTime,year,,yyyy
 	FormatTime,month,,MM
