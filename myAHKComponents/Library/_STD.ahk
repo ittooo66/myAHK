@@ -371,6 +371,18 @@ moveWindow(){
 	Send,{LButton Down}
 	BlockInput, MouseMoveOff
 }
+
+;IfinStringのラッパー、IfInStringの動作が安定しなかったので作った
+;=>stringにkeyが入ってるとき　true
+;=>stringにkeyが入っていないとき　false
+inStr(string,key){
+	IfInString, string, %key%
+	{
+		return true
+	}
+	return false
+}
+
 ;よさげなスクロール
 intelliScroll(){
 	;初期マウス位置の取得
