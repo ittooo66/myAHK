@@ -283,6 +283,13 @@ execScripts(scriptName){
 	run, %script%
 }
 
+;Scripts配下のPS1ファイルを実行する
+;scriptName:"PS1ファイル名"
+execPs1Scripts(scriptName){
+	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\" . scriptName
+	run, powershell.exe %script%
+}
+
 ;タスク追加(Trello)
 addTaskToTrello(){
 	InputBox, taskname , Add task to trello, Please input task name,, 200, 130,,,,,
