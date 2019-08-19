@@ -1,4 +1,4 @@
-;特定のマクロを開く
+;マクロを開く
 TempMacro_open(id){
 	run C:\Program Files\sakura\sakura.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\Macro%id%.ahk
 }
@@ -11,4 +11,6 @@ TempMacro_do(id){
 		MacroX()
 	else if(id == "C")
 		MacroC()
+	else if(id == "V")
+		MacroV()
 }

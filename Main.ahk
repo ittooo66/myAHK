@@ -63,6 +63,7 @@ RShift::IME_SET(1)
 #include Resources\TempMacro\MacroZ.ahk
 #include Resources\TempMacro\MacroX.ahk
 #include Resources\TempMacro\MacroC.ahk
+#include Resources\TempMacro\MacroV.ahk
 ;IfWinActives(特定Window/App上で有効になるバインドセット)
 #include IfWinActives\_General.ahk
 #include IfWinActives\Explorer.ahk
