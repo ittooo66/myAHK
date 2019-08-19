@@ -94,20 +94,20 @@ search(){
 		;wl:Weblioで単語検索
 		if (prefix = "wl "){
 			StringTrimLeft, query, InputVar, 3
-			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "http://ejje.weblio.jp/content_find?query=%query%&searchType=exact&x=0&y=0"
+			run, "http://ejje.weblio.jp/content_find?query=%query%&searchType=exact&x=0&y=0"
 		;gm:Googlamap検索
 		}else if (prefix = "gm "){
 			StringTrimLeft, query, InputVar, 3
-			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/maps/search/%query%"
+			run, "https://www.google.co.jp/maps/search/%query%"
 		}else if (prefix = "bg "){
 			StringTrimLeft, query, InputVar, 3
-			Run,http://www.bing.com/translator/?from=en&to=ja&text=%query%
+			run, "http://www.bing.com/translator/?from=en&to=ja&text=%query%"
 		;htt:URL打ち込みとして処理
 		}else if (prefix = "htt"){
-			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "%InputVar%"
+			run, "%InputVar%"
 		;通常:google検索
 		}else if var > 0
-			Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe "https://www.google.co.jp/search?hl=ja&q=%InputVar%"
+			run, "https://www.google.co.jp/search?hl=ja&q=%InputVar%"
 	}
 }
 
