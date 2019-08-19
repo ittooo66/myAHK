@@ -14,8 +14,6 @@ mbind_a(){
 		ClipExt_copyTo("SA")
 	else if SPACE()
 		ClipExt_pasteFrom("SA")
-	else if MSBRF()
-		press("h")
 	else
 		press("a")
 }
@@ -25,8 +23,6 @@ mbind_b(){
 		ClipExt_copyTo("SB")
 	else if SPACE()
 		ClipExt_pasteFrom("SB")
-	else if MSBRF()
-		press("/")
 	else
 		press("b")
 }
@@ -45,8 +41,6 @@ mbind_c(){
 		ClipExt_copyTo("SC")
 	else if SPACE()
 		ClipExt_pasteFrom("SC")
-	else if MSBRF()
-		press(",")
 	else
 		press("c")
 }
@@ -67,8 +61,6 @@ mbind_d(){
 		ClipExt_copyTo("SD")
 	else if SPACE()
 		ClipExt_pasteFrom("SD")
-	else if MSBRF()
-		press("k")
 	else
 		press("d")
 }
@@ -87,8 +79,6 @@ mbind_e(){
 		ClipExt_copyTo("SE")
 	else if SPACE()
 		ClipExt_pasteFrom("SE")
-	else if MSBRF()
-		press("i")
 	else
 		press("e")
 }
@@ -109,8 +99,6 @@ mbind_f(){
 		ClipExt_copyTo("SF")
 	else if SPACE()
 		ClipExt_pasteFrom("SF")
-	else if MSBRF()
-		press("l")
 	else
 		press("f")
 }
@@ -131,8 +119,6 @@ mbind_g(){
 		ClipExt_copyTo("SG")
 	else if SPACE()
 		ClipExt_pasteFrom("SG")
-	else if MSBRF()
-		press(";")
 	else
 		press("g")
 }
@@ -144,8 +130,6 @@ mbind_h(){
 		ClipExt_copyTo("SH")
 	else if SPACE()
 		ClipExt_pasteFrom("SH")
-	else if MSBRF()
-		press("'")
 	else
 		press("h")
 }
@@ -308,8 +292,6 @@ mbind_q(){
 		ClipExt_copyTo("SQ")
 	else if SPACE()
 		ClipExt_pasteFrom("SQ")
-	else if MSBRF()
-		press("y")
 	else
 		press("q")
 }
@@ -330,8 +312,6 @@ mbind_r(){
 		ClipExt_copyTo("SR")
 	else if SPACE()
 		ClipExt_pasteFrom("SR")
-	else if MSBRF()
-		press("o")
 	else
 		press("r")
 }
@@ -349,8 +329,6 @@ mbind_s(){
 		ClipExt_copyTo("SS")
 	else if SPACE()
 		ClipExt_pasteFrom("SS")
-	else if MSBRF()
-		press("j")
 	else
 		press("s")
 }
@@ -367,8 +345,6 @@ mbind_t(){
 		ClipExt_copyTo("ST")
 	else if SPACE()
 		ClipExt_pasteFrom("ST")
-	else if MSBRF()
-		press("p")
 	else
 		press("t")
 }
@@ -382,8 +358,6 @@ mbind_u(){
 		ClipExt_copyTo("SU")
 	else if SPACE()
 		ClipExt_pasteFrom("SU")
-	else if MSBRF()
-		press("]")
 	else
 		press("u")
 }
@@ -400,8 +374,6 @@ mbind_v(){
 		ClipExt_pasteFrom("SV")
 	else if LCMD() && LALT()
 		IntoRemoteDesktop()
-	else if MSBRF()
-		press(".")
 	else
 		press("v")
 }
@@ -422,8 +394,6 @@ mbind_w(){
 		ClipExt_copyTo("SW")
 	else if SPACE()
 		ClipExt_pasteFrom("SW")
-	else if MSBRF()
-		press("u")
 	else
 		press("w")
 }
@@ -441,8 +411,6 @@ mbind_x(){
 		ClipExt_copyTo("SX")
 	else if SPACE()
 		ClipExt_pasteFrom("SX")
-	else if MSBRF()
-		press("m")
 	else
 		press("x")
 }
@@ -452,8 +420,6 @@ mbind_y(){
 		ClipExt_copyTo("SY")
 	else if SPACE()
 		ClipExt_pasteFrom("SY")
-	else if MSBRF()
-		press("[")
 	else
 		press("y")
 }
@@ -472,8 +438,6 @@ mbind_z(){
 		ClipExt_copyTo("SZ")
 	else if SPACE()
 		ClipExt_pasteFrom("SZ")
-	else if MSBRF()
-		press("n")
 	else
 		press("z")
 }
