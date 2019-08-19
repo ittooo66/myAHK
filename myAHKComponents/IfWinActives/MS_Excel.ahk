@@ -1,24 +1,9 @@
 ;Excel
 #IfWinActive,ahk_class XLMAIN
 
-	;F1無効
-	F1::return
-	vkFFsc079 & 1::return
-
 	;進む、戻る
 	XButton2::Send,^{y}
 	XButton1::Send,^{z}
-
-	;Shift押しZですすめるようにした
-	RShift & z::
-	LShift & z::
-	vkEBsc07B & z::
-	LControl & z::
-		if SHIFT() && LCMD()
-			Send,^{y}
-		else
-			mbind_z()
-	return
 
 	;セル背景色変更
 	vkEBsc07B & d::

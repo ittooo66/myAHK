@@ -1,10 +1,5 @@
 #IfWinActive,ahk_class rctrl_renwnd32
 
-	;F1無効
-	F1::return
-	vkFFsc079 & 1::return
-	LControl & 1::return
-
 	;次の週に移動
 	XButton2 & WheelDown::
 		send,!{Down}

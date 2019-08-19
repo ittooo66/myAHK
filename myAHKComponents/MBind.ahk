@@ -438,6 +438,9 @@ mbind_z(){
 		ClipExt_copyTo("SZ")
 	else if SPACE()
 		ClipExt_pasteFrom("SZ")
+	else if SHIFT() && LCMD()
+		;Shift押しで「進む」
+		Send,^{y}
 	else
 		press("z")
 }
@@ -449,9 +452,10 @@ mbind_1(){
 		ClipExt_addAlias("1")
 	else if SPACE() && CAPS()
 		ClipExt_openAlias("1")
-	else if RCMD() || CAPS()
-		press("{F1}")
-	else if SPACE() && SHIFT()
+	else if RCMD() || CAPS(){
+		;F1無効化
+		Send,{}
+	}else if SPACE() && SHIFT()
 		ClipExt_copyTo("S1")
 	else if SPACE()
 		ClipExt_pasteFrom("S1")
