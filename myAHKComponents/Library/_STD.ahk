@@ -241,13 +241,7 @@ suspendAHK(){
 ;SHUTDOWN AHK
 exitAHK(){
 	tooltip, AHK shutting down
-	sleep 400
-	tooltip, AHK shutting down.
-	sleep 400
-	tooltip, AHK shutting down..
-	sleep 400
-	tooltip, AHK shutting down...
-	sleep 400
+	sleep 800
 	logger_info("AHK EXIT")
 	ExitApp
 }
