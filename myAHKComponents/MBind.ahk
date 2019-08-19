@@ -61,7 +61,9 @@ mbind_d(){
 			openApp("Excel")
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
-	else if RCMD() || CAPS(){
+	else if RCMD() && CAPS(){
+		execPs1Scripts("displayoff.ps1")
+	}else if RCMD() || CAPS(){
 		if HistoricalClip_isDisplayed()
 			HistoricalClip_down()
 		else
