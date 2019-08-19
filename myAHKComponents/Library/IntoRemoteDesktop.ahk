@@ -1,7 +1,7 @@
 ;Remote等の環境へClipboard内容を入力していく
 IntoRemoteDesktop(){
 	StringCaseSense, On
-	FileRead, content, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\1.txt
+	content = %Clipboard%
 
 	while(true){
 		;prefixに頭を取得
