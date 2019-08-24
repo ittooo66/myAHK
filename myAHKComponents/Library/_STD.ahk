@@ -95,8 +95,14 @@ download(){
 
 ;直接入力、IME無視で文字列(string)(dat可)を入力する
 directInput(string){
+	;cb_bkに中身を退避
+	cb_bk = %ClipboardAll%
+	;Clipboard経由で文字列一括入力
 	Clipboard := string
 	Send,^v
+	;入力完了を待ってClipboard内容を復元
+	sleep,100
+	Clipboard = %cb_bk%
 }
 
 ;サウンドデバイス変更
