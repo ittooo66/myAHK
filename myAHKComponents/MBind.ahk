@@ -791,64 +791,6 @@ mbind_escape(){
 		press("{Esc}")
 }
 
-;Spaceキーバインド消費判定(拡張ClipboardのSpace消費フラグ)
-spaceConsumed := 0
-consumeSpace(){
-	global spaceConsumed
-	spaceConsumed := 1
-}
-;Spaceキー押し下げ時のOS時間
-spaceDownTime := 0
-;Spaceキー押し下げ判定（Space連打防止）
-spaceDownFlag := 0
-mbind_space_down(){
-	global spaceConsumed
-	global spaceDownTime
-	global spaceDownFlag
-
-	;Spaceキー押し下げ判定がない場合（初回入力）
-	if(spaceDownFlag == 0){
-		;初回押し下げ時間の記録
-		spaceDownTime := A_TickCount
-		;押し下げ判定付与
-		spaceDownFlag := 1
-		;Spaceバインド未消費判定付与
-		spaceConsumed := 0
-	}
-
-	;IME切り替え（即時発動）
-	if LCMD() || RCMD(){
-		Send,!{``}
-		consumeSpace()
-	}else if LALT() || RALT(){
-		Send,!{Space}
-		consumeSpace()
-	}
-}
-
-mbind_space_up(){
-	global spaceDownFlag
-	global spaceDownTime
-	global spaceConsumed
-
-	;Spaceキー押下げ判定を解除
-	spaceDownFlag := 0
-
-	;Spaceバインドが消費済みならば、各バインド判定を無効にして終了
-	if (spaceConsumed == 1){
-		return
-	}
-
-	;各種Spaceバインド
-	;※一定時間経過後のスペースキーを修飾キー(入力なし)として扱う
-	if CAPS()
-		press("^{Space}")
-	else if(A_TickCount - spaceDownTime < 400){
-		press("{Space}")
-	}
-}
-
-
 mbind_mlb(){
 	if MMB(){
 		Send,#{Tab}
@@ -957,5 +899,63 @@ mbind_wheeldown(){
 		Send,#^{Right}
 	}else{
 		Send,{WheelDown}
+	}
+}
+
+;Spaceキーバインド消費判定(拡張ClipboardのSpace消費フラグ)
+spaceConsumed := 0
+consumeSpace(){
+	global spaceConsumed
+	spaceConsumed := 1
+}
+
+;Spaceキー押し下げ時のOS時間
+spaceDownTime := 0
+;Spaceキー押し下げ判定（Space連打防止）
+spaceDownFlag := 0
+mbind_space_down(){
+	global spaceConsumed
+	global spaceDownTime
+	global spaceDownFlag
+
+	;Spaceキー押し下げ判定がない場合（初回入力）
+	if(spaceDownFlag == 0){
+		;初回押し下げ時間の記録
+		spaceDownTime := A_TickCount
+		;押し下げ判定付与
+		spaceDownFlag := 1
+		;Spaceバインド未消費判定付与
+		spaceConsumed := 0
+	}
+
+	;IME切り替え（即時発動）
+	if LCMD() || RCMD(){
+		Send,!{``}
+		consumeSpace()
+	}else if LALT() || RALT(){
+		Send,!{Space}
+		consumeSpace()
+	}
+}
+
+mbind_space_up(){
+	global spaceDownFlag
+	global spaceDownTime
+	global spaceConsumed
+
+	;Spaceキー押下げ判定を解除
+	spaceDownFlag := 0
+
+	;Spaceバインドが消費済みならば、各バインド判定を無効にして終了
+	if (spaceConsumed == 1){
+		return
+	}
+
+	;各種Spaceバインド
+	;※一定時間経過後のスペースキーを修飾キー(入力なし)として扱う
+	if CAPS()
+		press("^{Space}")
+	else if(A_TickCount - spaceDownTime < 400){
+		press("{Space}")
 	}
 }
