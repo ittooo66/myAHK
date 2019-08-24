@@ -30,7 +30,6 @@ RALT(){ ;HHKB_右Alt
 LALT(){ ;HHKB_左Alt
 	return GetKeyState("LAlt","P")
 }
-
 MLB(){ ;Mouse_LeftButton
 	return GetKeyState("LButton","P")
 }
