@@ -111,8 +111,6 @@ mbind_g(){
 			openApp("GBrowser")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
-	else if RCMD() && CAPS()
-		search()
 	else if RCMD() || CAPS()
 		press("^{RIGHT}")
 	else if SPACE() && SHIFT()

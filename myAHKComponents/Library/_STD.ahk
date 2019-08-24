@@ -83,34 +83,6 @@ press(key){
 	Send,%modifiers%%key%
 }
 
-;検索機能など
-search(){
-	InputBox, InputVar, Search
-	if ErrorLevel <> 0
-		return
-	else{
-		StringLen, var, InputVar
-		StringLeft, prefix, InputVar, 3
-		;wl:Weblioで単語検索
-		if (prefix = "wl "){
-			StringTrimLeft, query, InputVar, 3
-			run, "http://ejje.weblio.jp/content_find?query=%query%&searchType=exact&x=0&y=0"
-		;gm:Googlamap検索
-		}else if (prefix = "gm "){
-			StringTrimLeft, query, InputVar, 3
-			run, "https://www.google.co.jp/maps/search/%query%"
-		}else if (prefix = "bg "){
-			StringTrimLeft, query, InputVar, 3
-			run, "http://www.bing.com/translator/?from=en&to=ja&text=%query%"
-		;htt:URL打ち込みとして処理
-		}else if (prefix = "htt"){
-			run, "%InputVar%"
-		;通常:google検索
-		}else if var > 0
-			run, "https://www.google.co.jp/search?hl=ja&q=%InputVar%"
-	}
-}
-
 ;youtube動画DL
 download(){
 	Send, ^l
