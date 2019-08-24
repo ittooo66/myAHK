@@ -755,7 +755,9 @@ mbind_slash(){
 mbind_backspace(){
 	if RCMD(){
 		;一行消し
-		lineDel("HOME")
+		Send,+{Home}
+		ClipExt_copy()
+		Send,{BackSpace}
 	}else if SPACE() && SHIFT()
 		ClipExt_copyTo("SBackspace")
 	else if SPACE()
@@ -767,7 +769,9 @@ mbind_backspace(){
 mbind_delete(){
 	if RCMD(){
 		;一行消し
-		lineDel("END")
+		Send,+{End}
+		ClipExt_copy()
+		Send,{BackSpace}
 	}else if SPACE() && SHIFT()
 		ClipExt_copyTo("SDelete")
 	else if SPACE()
