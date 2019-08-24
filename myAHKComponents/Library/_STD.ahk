@@ -81,6 +81,7 @@ press(key){
 		modifiers = %modifiers%#
 	;修飾キーつきkeyPress
 	Send,%modifiers%%key%
+	logger_key(key)
 }
 
 ;youtube動画DL
