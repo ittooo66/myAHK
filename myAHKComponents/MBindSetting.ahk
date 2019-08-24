@@ -7,7 +7,7 @@ RCMD(){ ;HHKB_右ダイヤ
 	return GetKeyState("vkFFsc079", "P") | GetKeyState("RWin","P")
 }
 CAPS(){ ;HHKB_Control
-	return GetKeyState("LControl","P") | GetKeyState("RControl","P")
+	return GetKeyState("LControl","P") | GetKeyState("RControl","P") | GetKeyState("sc03a","P")
 }
 SHIFT(){ ;HHKB_両Shift
 	return LSHIFT() || RSHIFT()
