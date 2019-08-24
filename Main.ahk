@@ -40,10 +40,9 @@ return
 XButton1 & WheelUp::ShiftAltTab
 XButton1 & WheelDown::AltTab
 
-;IME Change
-RAlt & LAlt::Send,#{Space}
-LShift::IME_SET(0)
-RShift::IME_SET(1)
+;IME切替(英語)
+LShift Up::IME_EN()
+RShift Up::IME_JP()
 
 ;include参照先をmyAHKComponents直下に
 #include %A_ScriptDir%\myAHKComponents

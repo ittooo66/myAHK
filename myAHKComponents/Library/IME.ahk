@@ -1,3 +1,29 @@
+IME_JP(){
+  ;日本語(日本) - Microsoft IMEへ 変更するバインド
+  ;要設定変更：https://qiita.com/ynott/items/5c97453fcc9bdf845636
+  Send,^+{0}
+  ;IME切替（半角英数＜＞全角ひらがな）
+  Send,+{Capslock}
+  Send,+{Capslock}
+  ;IME_ON(日本語)
+  IME_SET(1)
+  ;Capslock無効化
+  SetCapsLockState, AlwaysOff
+}
+
+IME_EN(){
+  ;日本語(日本) - Microsoft IMEへ 変更するバインド
+  ;要設定変更：https://qiita.com/ynott/items/5c97453fcc9bdf845636
+  Send,^+{0}
+  ;IME切替（半角英数＜＞全角ひらがな）
+  Send,+{Capslock}
+  Send,+{Capslock}
+  ;IME_ON(日本語)
+  IME_SET(0)
+  ;Capslock無効化
+  SetCapsLockState, AlwaysOff
+}
+
 /*----------------------------------------------------------------------------
   IME 制御用 Functuion (コピペ用)
    動作確認環境  2005/09/12
