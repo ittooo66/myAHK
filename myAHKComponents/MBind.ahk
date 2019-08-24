@@ -319,8 +319,6 @@ mbind_s(){
 		Send,^{PgUp}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
-	else if RCMD() && CAPS()
-		execScripts("monitor_setting_uc1.bat")
 	else if RCMD() || CAPS()
 		press("{LEFT}")
 	else if SPACE() && SHIFT()
@@ -384,8 +382,6 @@ mbind_w(){
 			openApp("Outlook")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
-	else if RCMD() && CAPS()
-		execScripts("monitor_setting_uc0.bat")
 	else if RCMD() || CAPS()
 		press("{HOME}")
 	else if SPACE() && SHIFT()
@@ -399,8 +395,6 @@ mbind_w(){
 mbind_x(){
 	if ( CAPS() || RCMD() )&& SHIFT()
 		TempMacro_open("X")
-	else if RCMD() && CAPS()
-		execScripts("monitor_setting_uc2.bat")
 	else if RCMD() || CAPS()
 		TempMacro_do("X")
 	else if LCMD()
