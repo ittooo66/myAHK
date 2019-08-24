@@ -135,8 +135,6 @@ mbind_h(){
 mbind_i(){
 	if LSHIFT() && RSHIFT()
 		Send,{MButton}
-	else if RCMD() && CAPS()
-		changeSoundDevice("1")
 	else if RCMD() || (CAPS() && SHIFT())
 		press("8")
 	else if CAPS() & SPACE(){
@@ -235,9 +233,7 @@ mbind_n(){
 }
 
 mbind_o(){
-	if RCMD() && CAPS()
-		changeSoundDevice("0")
-	else if RCMD() || (CAPS() && SHIFT())
+	if RCMD() || (CAPS() && SHIFT())
 		press("9")
 	else if CAPS()
 		press("{numpad9}")
@@ -839,8 +835,6 @@ mbind_msblb(){
 		WinMinimize, A
 	}else if MSBLF(){
 		changeWindowSize()
-	}else if MSBRF(){
-		changeSoundDevice("1")
 	}else{
 		Send,{XButton1}
 	}
@@ -851,8 +845,6 @@ mbind_msblf(){
 		Send,^+{t}
 	}else if MSBLB(){
 		changeWindowSize()
-	}else if MSBRF(){
-		changeSoundDevice("0")
 	}else{
 		Send,{XButton2}
 	}

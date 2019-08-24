@@ -105,21 +105,6 @@ directInput(string){
 	Clipboard = %cb_bk%
 }
 
-;サウンドデバイス変更
-;（イヤホン：num=0、スピーカ：num=1）
-changeSoundDevice(num){
-	run, control mmsys.cpl
-	sleep,1200
-	activateWindow("#32770","","")
-	Send,{Up}{Up}{Up}{Up}
-	Loop, %num%
-	{
-		Send,{Down}
-	}
-	Send,!{s}
-	Send,{Esc}
-}
-
 ;各種Appを開く
 openApp(appName){
 	fileDir = %A_WorkingDir%\myAHKComponents\Resources\Apps\
