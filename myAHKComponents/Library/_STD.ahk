@@ -317,7 +317,7 @@ moveWindow(){
 	;4Kモニタ側の場合
 	if(X<0){
 		touchW:=(W*1.5/2)+(3840+X)*0.5
-		touchH:=Y*0.5+10
+		touchH:=Y*0.5+15
 	}else{
 		touchW:=W/2
 		touchH:=10
