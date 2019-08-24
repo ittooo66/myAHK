@@ -463,8 +463,6 @@ mbind_2(){
 		ClipExt_copyTo("S2")
 	else if SPACE()
 		ClipExt_pasteFrom("S2")
-	else if SHIFT()
-		Send,{@}
 	else
 		press("2")
 }
@@ -535,8 +533,6 @@ mbind_6(){
 		ClipExt_copyTo("S6")
 	else if SPACE()
 		ClipExt_pasteFrom("S6")
-	else if SHIFT()
-		Send,{^}
 	else
 		press("6")
 }
@@ -552,8 +548,6 @@ mbind_7(){
 		ClipExt_copyTo("S7")
 	else if SPACE()
 		ClipExt_pasteFrom("S7")
-	else if SHIFT()
-		Send,{&}
 	else
 		press("7")
 }
@@ -569,8 +563,6 @@ mbind_8(){
 		ClipExt_copyTo("S8")
 	else if SPACE()
 		ClipExt_pasteFrom("S8")
-	else if SHIFT()
-		Send,{*}
 	else
 		press("8")
 }
@@ -605,8 +597,6 @@ mbind_0(){
 		ClipExt_copyTo("S0")
 	else if SPACE()
 		ClipExt_pasteFrom("S0")
-	else if SHIFT()
-		send,{)}
 	else
 		press("0")
 }
@@ -618,8 +608,6 @@ mbind_minus(){
 		ClipExt_copyTo("SMinus")
 	else if SPACE()
 		ClipExt_pasteFrom("SMinus")
-	else if SHIFT()
-		Send,{_}
 	else
 		press("-")
 }
