@@ -40,7 +40,7 @@ return
 XButton1 & WheelUp::ShiftAltTab
 XButton1 & WheelDown::AltTab
 
-;IME切替(英語)
+;IME切替
 LShift Up::IME_EN()
 RShift Up::IME_JP()
 
