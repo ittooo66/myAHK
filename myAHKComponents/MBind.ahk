@@ -442,7 +442,6 @@ mbind_1(){
 		ClipExt_openAlias("1")
 	else if RCMD() || CAPS(){
 		;F1無効化
-		Send,{}
 	}else if SPACE() && SHIFT()
 		ClipExt_copyTo("S1")
 	else if SPACE()
