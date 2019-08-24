@@ -239,8 +239,7 @@ addTaskToTrello(){
 }
 
 ;URIエンコード用
-UriEncode(Uri, Enc = "UTF-8")
-{
+UriEncode(Uri, Enc = "UTF-8"){
 	StrPutVar(Uri, Var, Enc)
 	f := A_FormatInteger
 	SetFormat, IntegerFast, H
@@ -259,9 +258,9 @@ UriEncode(Uri, Enc = "UTF-8")
 	SetFormat, IntegerFast, %f%
 	Return, Res
 }
+
 ;URIエンコード用
-StrPutVar(Str, ByRef Var, Enc = "")
-{
+StrPutVar(Str, ByRef Var, Enc = ""){
 	Len := StrPut(Str, Enc) * (Enc = "UTF-16" || Enc = "CP1200" ? 2 : 1)
 	VarSetCapacity(Var, Len, 0)
 	Return, StrPut(Str, &Var, Enc)
