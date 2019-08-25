@@ -88,7 +88,7 @@ mbind_f(){
 		activateWindow("CabinetWClass","explorer.exe","", 1 )
 	}else	if (SPACE() && CAPS()){
 		if !activateWindow("CabinetWClass","explorer.exe","")
-			openApp("Entrance")
+			Send,#{e}
 	}else if LCMD() && CAPS()
 		Send,^{PgDn}
 	else if LSHIFT() && RSHIFT()
