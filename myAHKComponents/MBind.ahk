@@ -844,35 +844,29 @@ mbind_msbrf(){
 }
 
 mbind_wheelup(){
-	if MRB(){
+	if MRB()
 		Send,^{PgUp}
-	}else if MMB(){
-		Send,!{Esc}
-	}else if MSBLF(){
+	else if MSBLF()
 		Send,{WheelLeft}
-	}else if MSBRF(){
+	else if MSBRF()
 		Send,#^{Volume_Up}
-	}else if MSBRB(){
+	else if MSBRB()
 		Send,#^{Left}
-	}else{
+	else
 		Send,{WheelUp}
-	}
 }
 
 mbind_wheeldown(){
-	if MRB(){
+	if MRB()
 		Send,^{PgDn}
-	}else if MMB(){
-		Send,!+{Esc}
-	}else if MSBLF(){
+	else if MSBLF()
 		Send,{WheelRight}
-	}else if MSBRF(){
+	else if MSBRF()
 		Send,#^{Volume_Down}
-	}else if MSBRB(){
+	else if MSBRB()
 		Send,#^{Right}
-	}else{
+	else
 		Send,{WheelDown}
-	}
 }
 
 ;Spaceキーバインド消費判定(拡張ClipboardのSpace消費フラグ)
