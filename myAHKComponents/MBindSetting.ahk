@@ -10,7 +10,7 @@ CAPS(){ ;HHKB_Control
 	return GetKeyState("LControl","P") | GetKeyState("RControl","P") | GetKeyState("sc03a","P")
 }
 SHIFT(){ ;HHKB_両Shift
-	return LSHIFT() || RSHIFT()
+	return LSHIFT() | RSHIFT()
 }
 LSHIFT(){ ;HHKB_左シフト
 	return GetKeyState("LShift","P")
@@ -22,7 +22,7 @@ SPACE(){ ;HHKB_スペース
 	return GetKeyState("Space","P")
 }
 ALT(){ ;HHKB_両Alt
-	return RALT() || LALT()
+	return RALT() | LALT()
 }
 RALT(){ ;HHKB_右Alt
 	return GetKeyState("RAlt","P")
