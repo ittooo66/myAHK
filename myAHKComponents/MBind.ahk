@@ -777,7 +777,7 @@ mbind_mlb(){
 		intelliScroll()
 	}else if MSBLB(){
 		if !activateWindow("CabinetWClass","explorer.exe","")
-			openApp("Entrance")
+			Send,#{e}
 	}else if MSBRF(){
 		Send,^+{q}
 	}else{
