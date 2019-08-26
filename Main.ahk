@@ -5,6 +5,9 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #HotkeyInterval 100
 #UseHook
 
+;disable CAPSLOCK
+SetCapsLockState, AlwaysOff
+
 ;Change Base Bindings
 Delete::`
 RAlt::RWin

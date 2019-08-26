@@ -10,17 +10,11 @@ IME_JP(){
     IME_SET(1)
     IME_SetConvMode( "A", 25 )
   }
-
-  ;Capslock無効化
-  SetCapsLockState, AlwaysOff
 }
 
 IME_EN(){
   ;IME_OFF(ENG)
   IME_SET(0)
-
-  ;Capslock無効化
-  SetCapsLockState, AlwaysOff
 }
 
 /*----------------------------------------------------------------------------
