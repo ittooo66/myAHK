@@ -1,25 +1,24 @@
 IME_JP(){
-  ;日本語(日本) - Microsoft IMEへ 変更するバインド
-  ;要設定変更：https://qiita.com/ynott/items/5c97453fcc9bdf845636
-  Send,^+{0}
-  ;IME切替（半角英数＜＞全角ひらがな）
-  Send,+{Capslock}
-  Send,+{Capslock}
-  ;IME_ON(日本語)
+  ;IME_ON(日本語 - ひらがな)
   IME_SET(1)
+  IME_SetConvMode( "A", 25 )
+
+  ;ENGだった場合、Alt+Shift押して再チャレンジ
+  if ( IME_GetConvMode() != "25" ){
+    Send,{Alt Down}{Shift Down}{Shift Up}{Alt Up}
+    ;IME_ON(日本語 - ひらがな)
+    IME_SET(1)
+    IME_SetConvMode( "A", 25 )
+  }
+
   ;Capslock無効化
   SetCapsLockState, AlwaysOff
 }
 
 IME_EN(){
-  ;日本語(日本) - Microsoft IMEへ 変更するバインド
-  ;要設定変更：https://qiita.com/ynott/items/5c97453fcc9bdf845636
-  Send,^+{0}
-  ;IME切替（半角英数＜＞全角ひらがな）
-  Send,+{Capslock}
-  Send,+{Capslock}
-  ;IME_ON(日本語)
+  ;IME_OFF(ENG)
   IME_SET(0)
+
   ;Capslock無効化
   SetCapsLockState, AlwaysOff
 }
