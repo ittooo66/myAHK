@@ -81,18 +81,16 @@ ClipExt_addAlias(num){
 	clipboard =
 	Send, ^c
 	ClipWait 1
-	;ディレクトリ位置の再構成
-	filename = %clipboard%
-	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
-	FileAppend,	%filename% , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
+	;filepathの書き出し
+	setStringWriter(num,clipboard)
 	;Clipboard復帰
 	Clipboard = %cb_bk%
 }
 
 ;ショートカットを開く
 ClipExt_openAlias(num){
-	FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\FileAlias\%num%.txt
-	run, %file%
+	filepath := getStringWriter(num)
+	run, %filepath%
 }
 
 ;ClipBoard履歴ログの表示
