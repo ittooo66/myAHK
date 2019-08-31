@@ -82,14 +82,16 @@ ClipExt_addAlias(num){
 	Send, ^c
 	ClipWait 1
 	;filepathの書き出し
-	setStringWriter(num,clipboard)
+	param := "CLIPEXT_ALIAS_" . num
+	setStringWriter(param,clipboard)
 	;Clipboard復帰
 	Clipboard = %cb_bk%
 }
 
 ;ショートカットを開く
 ClipExt_openAlias(num){
-	filepath := getStringWriter(num)
+	param := "CLIPEXT_ALIAS_" . num 
+	filepath := getStringWriter(param)
 	run, %filepath%
 }
 
