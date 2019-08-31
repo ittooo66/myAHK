@@ -793,11 +793,18 @@ mbind_mrb(){
 	}else if MSBLB(){
 		Send,{RWin}
 	}else if MSBLF(){
-		Send,{MButton Down}
-		while( MSBLF() && MRB() ){
-			sleep,30
+		MouseGetPos,mx,my
+		WinGetPos,wx,wy,,,a
+		mx+=wx
+		my+=wy
+		Loop, 3 {
+			FormatTime,hour,,HH
+			FormatTime,minute,,mm
+			FormatTime,second,,ss
+			SplashImage,,B1 FM18 W110 X%mx% Y%my%,,%hour%:%minute%:%second%
+			sleep , 1000
 		}
-		Send,{MButton Up}
+		SplashImage,off
 	}else if MSBRF(){
 		muteNMin()
 	}else{
