@@ -54,14 +54,14 @@ RShift Up::IME_JP()
 #include MBindSetting.ahk
 #include MBind.ahk
 ;Library(バインドは持たないがグローバル変数の干渉に注意)
-#include Library\ClipExt.ahk
 #include Library\_STD.ahk
-#include Library\MouseControl.ahk
+#include Library\Clip.ahk
+#include Library\Mouse.ahk
+#include Library\Web.ahk
 #include Library\IntoRemoteDesktop.ahk
 #include Library\Logger.ahk
 #include Library\IME.ahk
 ;TempMacroのInclude
-#include Library\TempMacro.ahk
 #include Resources\TempMacro\MacroZ.ahk
 #include Resources\TempMacro\MacroX.ahk
 #include Resources\TempMacro\MacroC.ahk

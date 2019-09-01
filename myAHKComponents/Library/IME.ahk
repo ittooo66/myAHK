@@ -1,3 +1,6 @@
+;IME操作関係
+
+;JPに切替
 IME_JP(){
   ;IME_ON(日本語 - ひらがな)
   IME_SET(1)
@@ -12,6 +15,7 @@ IME_JP(){
   }
 }
 
+;ENに切替
 IME_EN(){
   ;IME_OFF(ENG)
   IME_SET(0)

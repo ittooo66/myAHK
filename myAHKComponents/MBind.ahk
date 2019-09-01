@@ -152,7 +152,7 @@ mbind_i(){
 
 mbind_j(){
 	if LSHIFT() && RSHIFT()
-		mouseDrag("j")
+		mousePress("j")
 	else if CAPS() && RCMD()
 		download()
 	else if RCMD() || (CAPS() && SHIFT())

@@ -1,4 +1,4 @@
-;Loggerライブラリ
+;LOG操作関係
 
 logger_info(message){
 	log:=logger_date() . message . "`n"

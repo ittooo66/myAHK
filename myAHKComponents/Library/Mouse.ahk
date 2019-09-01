@@ -1,5 +1,60 @@
 ;マウス操作関係
 
+;ウィンドウサイズ変更
+;ディスプレイ設定(DPIスケール、モニタ配置)に大幅に依存してるので、注意
+changeWindowSize(){
+
+	;画面情報を取得
+	;X,Y:スケーリング後のアクティブウインドウの左上のピクセル位置（モニタ1の左上(0,0)からのX:Y座標）
+	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
+	WinGetActiveStats, Title, W, H, X, Y
+
+	;4Kモニタ側の設定の場合
+	if(X<0){
+		dpiW:=(3840+X)*0.5
+		dpiH:=Y*0.5
+		touchW:=W*1.5+dpiW-4
+		touchH:=H*1.5+dpiH-4
+		;スケーリング後のアクティブウィンドウ左上からtouchW,touchH分絶対ピクセルでmouseMoveさせる
+		;上記設定はDPIスケール150%,メインモニタが右上にある状態で左の4Kモニタに対してのみ有効
+
+	;FHDモニタ側の設定の場合
+	}else{
+		touchW:=W-4
+		touchH:=H-4
+	}
+
+	BlockInput, MouseMove
+	Mousemove,%touchW%,%touchH%,0
+	Send,{LButton Down}
+	BlockInput, MouseMoveOff
+	while(MSBLF() && MSBLB()){
+		sleep,30
+	}
+	Send,{LButton Up}
+}
+
+;ウィンドウの移動
+moveWindow(){
+
+	;画面情報を取得
+	;X,Y:スケーリング後のアクティブウインドウの左上のピクセル位置（モニタ1の左上(0,0)からのX:Y座標）
+	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
+	WinGetActiveStats, Title, W, H, X, Y
+	;4Kモニタ側の場合
+	if(X<0){
+		touchW:=(W*1.5/2)+(3840+X)*0.5
+		touchH:=Y*0.5+15
+	}else{
+		touchW:=W/2
+		touchH:=10
+	}
+	BlockInput, MouseMove
+	Mousemove,%touchW%,%touchH%,0
+	Send,{LButton Down}
+	BlockInput, MouseMoveOff
+}
+
 ;key: イベント対象のキー4つ
 mouseMove(keyUp,keyDown,keyLeft,keyRight,val=1,slp=10){
 
@@ -96,7 +151,7 @@ mouseCursorResetToCenter(){
 }
 
 ;マウスの左クリックエミュレート
-mouseDrag(leftButtonKey){
+mousePress(leftButtonKey){
 	Send,{LButton Down}
 	while(GetKeyState(leftButtonKey,"P")){
 		Sleep,100

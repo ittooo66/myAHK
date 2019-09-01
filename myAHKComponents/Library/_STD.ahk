@@ -84,15 +84,6 @@ press(key){
 	logger_key(key)
 }
 
-;youtube動画DL
-download(){
-	Send, ^l
-	clipboard =
-	Send, ^c
-	ClipWait
-	Run, "https://www.onlinevideoconverter.com/ja/mp3-converter?url=%clipboard%"
-}
-
 ;直接入力、IME無視で文字列(string)(dat可)を入力する
 directInput(string){
 	;cb_bkに中身を退避
@@ -146,7 +137,7 @@ suspendAHK(){
 	logger_info("AHK SUSPENDED")
 }
 
-;SHUTDOWN AHK
+;AHKシャットダウン
 exitAHK(){
 	tooltip, AHK shutting down
 	sleep 800
@@ -196,121 +187,6 @@ execScripts(scriptName){
 execPs1Scripts(scriptName){
 	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\" . scriptName
 	run, powershell.exe %script%
-}
-
-;タスク追加(Trello)
-addTaskToTrello(){
-	InputBox, taskname , Add task to trello, Please input task name,, 200, 130,,,,,
-	if ErrorLevel <> 0
-		return
-	else {
-
-		;ComObjを利用
-		oHttp := ComObjCreate("WinHttp.Winhttprequest.5.1")
-
-		;直近のworkボードから最左にあるリストのIDをlatestListIdとして取得
-		GET_URL := "https://trello.com/1/boards/" . getStringWriter("TRELLO_WORK_BOARD_ID") . "/lists?key=" . getStringWriter("TRELLO_API_KEY") . "&token=" . getStringWriter("TRELLO_API_TOKEN")
-		oHttp.open("GET", GET_URL)
-		oHttp.send()
-		res := oHTTP.responseText
-		StringGetPos, index, res, ":"
-		beginIndex := index + 4
-		StringMid, latestListId, res, beginIndex , 24
-
-		;タスク名をエンコード
-		enc_taskname := UriEncode(taskname)
-
-		;最左のリストを指定してタスクを追加
-		POST_URL := "https://trello.com/1/cards?key=" . getStringWriter("TRELLO_API_KEY") . "&token=" . getStringWriter("TRELLO_API_TOKEN") . "&idList=" . latestListId . "&name=" . enc_taskname
-
-		oHTTP.Open("POST", POST_URL, 0)
-		oHTTP.Send()
-		msgBox, Task added.
-
-	}
-}
-
-;URIエンコード用
-UriEncode(Uri, Enc = "UTF-8"){
-	StrPutVar(Uri, Var, Enc)
-	f := A_FormatInteger
-	SetFormat, IntegerFast, H
-	Loop
-	{
-		Code := NumGet(Var, A_Index - 1, "UChar")
-		If (!Code)
-			Break
-		If (Code >= 0x30 && Code <= 0x39 ; 0-9
-			|| Code >= 0x41 && Code <= 0x5A ; A-Z
-			|| Code >= 0x61 && Code <= 0x7A) ; a-z
-			Res .= Chr(Code)
-		Else
-			Res .= "%" . SubStr(Code + 0x100, -1)
-	}
-	SetFormat, IntegerFast, %f%
-	Return, Res
-}
-
-;URIエンコード用
-StrPutVar(Str, ByRef Var, Enc = ""){
-	Len := StrPut(Str, Enc) * (Enc = "UTF-16" || Enc = "CP1200" ? 2 : 1)
-	VarSetCapacity(Var, Len, 0)
-	Return, StrPut(Str, &Var, Enc)
-}
-
-;ウィンドウサイズ変更
-;ディスプレイ設定(DPIスケール、モニタ配置)に大幅に依存してるので、注意
-changeWindowSize(){
-
-	;画面情報を取得
-	;X,Y:スケーリング後のアクティブウインドウの左上のピクセル位置（モニタ1の左上(0,0)からのX:Y座標）
-	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
-	WinGetActiveStats, Title, W, H, X, Y
-
-	;4Kモニタ側の設定の場合
-	if(X<0){
-		dpiW:=(3840+X)*0.5
-		dpiH:=Y*0.5
-		touchW:=W*1.5+dpiW-4
-		touchH:=H*1.5+dpiH-4
-		;スケーリング後のアクティブウィンドウ左上からtouchW,touchH分絶対ピクセルでmouseMoveさせる
-		;上記設定はDPIスケール150%,メインモニタが右上にある状態で左の4Kモニタに対してのみ有効
-
-	;FHDモニタ側の設定の場合
-	}else{
-		touchW:=W-4
-		touchH:=H-4
-	}
-
-	BlockInput, MouseMove
-	Mousemove,%touchW%,%touchH%,0
-	Send,{LButton Down}
-	BlockInput, MouseMoveOff
-	while(MSBLF() && MSBLB()){
-		sleep,30
-	}
-	Send,{LButton Up}
-}
-
-;ウィンドウの移動
-moveWindow(){
-
-	;画面情報を取得
-	;X,Y:スケーリング後のアクティブウインドウの左上のピクセル位置（モニタ1の左上(0,0)からのX:Y座標）
-	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
-	WinGetActiveStats, Title, W, H, X, Y
-	;4Kモニタ側の場合
-	if(X<0){
-		touchW:=(W*1.5/2)+(3840+X)*0.5
-		touchH:=Y*0.5+15
-	}else{
-		touchW:=W/2
-		touchH:=10
-	}
-	BlockInput, MouseMove
-	Mousemove,%touchW%,%touchH%,0
-	Send,{LButton Down}
-	BlockInput, MouseMoveOff
 }
 
 ;IfinStringのラッパー、IfInStringの動作が安定しなかったので作った
@@ -394,4 +270,19 @@ intelliScroll(){
 			}
 		}
 	}
+}
+
+;マクロを開く
+TempMacro_open(id){
+	run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\Macro%id%.ahk
+}
+
+;マクロ実行
+TempMacro_do(id){
+	if(id == "Z")
+		MacroZ()
+	else if(id == "X")
+		MacroX()
+	else if(id == "C")
+		MacroC()
 }
