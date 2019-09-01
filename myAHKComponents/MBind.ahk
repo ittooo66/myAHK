@@ -32,9 +32,9 @@ mbind_c(){
 		if !activateWindow("","Trello.exe","")
 			openApp("Trello")
 	}else if ( CAPS() || RCMD() )&& SHIFT()
-		TempMacro_open("C")
+		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroC.ahk
 	else if RCMD() || CAPS()
-		TempMacro_do("C")
+		MacroC()
 	else if LCMD()
 		ClipExt_copy()
 	else if SPACE() && SHIFT()
@@ -390,9 +390,9 @@ mbind_w(){
 
 mbind_x(){
 	if ( CAPS() || RCMD() )&& SHIFT()
-		TempMacro_open("X")
+		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroX.ahk
 	else if RCMD() || CAPS()
-		TempMacro_do("X")
+		MacroX()
 	else if LCMD()
 		ClipExt_cut()
 	else if SPACE() && SHIFT()
@@ -419,9 +419,9 @@ mbind_z(){
 		if !activateWindow("OpusApp","","")
 			openApp("Word")
 	}else if ( CAPS() || RCMD() )&& SHIFT()
-		TempMacro_open("Z")
+		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroZ.ahk
 	else if RCMD() || CAPS()
-		TempMacro_do("Z")
+		MacroZ()
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SZ")
 	else if SPACE()
