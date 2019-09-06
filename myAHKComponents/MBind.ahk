@@ -29,8 +29,13 @@ mbind_b(){
 
 mbind_c(){
 	if CAPS() && SPACE(){
-		if !activateWindow("","Trello.exe","")
-			openApp("Trello")
+		if !activateWindow("Chrome_WidgetWin_1","opera.exe",""){
+			openApp("GBrowser")
+			sleep, 2000
+		}
+		Send,^{t}
+		directInput("https://trello.com/shit32/boards")
+		Send,{return}
 	}else if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroC.ahk
 	else if RCMD() || CAPS()
