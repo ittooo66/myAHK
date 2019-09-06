@@ -67,15 +67,10 @@ RShift Up::IME_JP()
 #include Resources\TempMacro\MacroC.ahk
 ;IfWinActives(特定Window/App上で有効になるバインドセット)
 #include IfWinActives\_General.ahk
-#include IfWinActives\Explorer.ahk
-#include IfWinActives\IntelliJ.ahk
-#include IfWinActives\Atom.ahk
-#include IfWinActives\SakuraEditor.ahk
-#include IfWinActives\MPC.ahk
+#include IfWinActives\MS_Code.ahk
 #include IfWinActives\MS_Outlook.ahk
-#include IfWinActives\MS_Word.ahk
 #include IfWinActives\MS_Excel.ahk
-#include IfWinActives\MS_PowerPoint.ahk
-#include IfWinActives\MS_Visio.ahk
+#include IfWinActives\IntelliJ.ahk
+#include IfWinActives\MPC.ahk
 #include IfWinActives\TTM.ahk
 #include IfWinActives\G_LeagueOfLegends.ahk
