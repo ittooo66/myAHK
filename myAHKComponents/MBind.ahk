@@ -1,9 +1,9 @@
 mbind_a(){
 	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("Chrome_WidgetWin_1","atom.exe","", 1 )
+		activateWindow("Chrome_WidgetWin_1","Code.exe","", 1 )
 	else if (SPACE() && CAPS()){
-		if !activateWindow("Chrome_WidgetWin_1","atom.exe","")
-			openApp("Atom")
+		if !activateWindow("Chrome_WidgetWin_1","Code.exe","")
+			openApp("Code")
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() && CAPS()
