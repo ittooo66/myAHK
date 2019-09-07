@@ -1,8 +1,3 @@
-my[AHK][AHK]
-======================
-my Key Bindings
-
-
 ### HOW TO USE ###
 ---
 
