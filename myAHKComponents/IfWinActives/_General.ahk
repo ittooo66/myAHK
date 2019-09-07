@@ -10,7 +10,7 @@
 	RButton & LButton::Send,!{Up}
 #IfWinActive
 
-;InternetExplorer
+;Internet Explorer
 #IfWinActive,ahk_class IEFrame
 	RButton & WheelUp::
 		Send,^+{Tab}

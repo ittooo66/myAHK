@@ -73,4 +73,3 @@ RShift Up::IME_JP()
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\MPC.ahk
 #include IfWinActives\TTM.ahk
-#include IfWinActives\G_LeagueOfLegends.ahk
