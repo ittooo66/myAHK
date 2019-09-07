@@ -19,8 +19,6 @@ RWin::return
 LWin::return
 RWin Up::return
 LWin Up::return
-RWin & Return::Send,{Return}{Left}
-LWin & Return::Send,^{Return}
 
 ;Reload/Suspend/Exit AHK
 RAlt & ,::
