@@ -1,38 +1,29 @@
 ;Command Prompt,Powershell
 #IfWinActive,ahk_class ConsoleWindowClass
-	^L::SendInput , {Esc}cls{Enter}
-	vkEBsc07B & q::SendInput , {Esc}exit{Enter}
+	^L::SendInput , {Esc}cls{Enter}					;
+	vkEBsc07B & q::SendInput , {Esc}exit{Enter}		;
 #IfWinActive
 
 ;ファイル保存ウィンドウ
 #IfWinActive,ahk_class #32770
-	;上へ戻る
-	RButton & LButton::Send,!{Up}
+	RButton & LButton::Send,!{Up}					;上へ戻る
 #IfWinActive
 
 ;Internet Explorer
 #IfWinActive,ahk_class IEFrame
-	RButton & WheelUp::
-		Send,^+{Tab}
-	return
-	RButton & WheelDown::
-		Send,^{Tab}
-	return
+	RButton & WheelUp::Send,^+{Tab}					;タブ切替(逆)
+	RButton & WheelDown::Send,^{Tab}				;タブ切替(順)
 #IfWinActive
 
 ;Windows Explorer
 #IfWinActive,ahk_class CabinetWClass
-
-	;新規Window作成
-	RButton & MButton::Send,^{n}
-	;上へ戻る
-	RButton & LButton::Send,!{Up}
-
-	XButton2 & WheelUp::Send,{XButton1}
-	XButton2 & WheelDown::Send,{LButton}{Return}
-
-	RButton & WheelUp::changeExplorerView(0)
-	RButton & WheelDown::changeExplorerView(1)
+	RButton & MButton::Send,^{n}					;新規Window作成	
+	RButton & LButton::Send,!{Up}					;上へ戻る
+	XButton2 & WheelUp::Send,{XButton1}				;
+	XButton2 & WheelDown::Send,{LButton}{Return}	;
+	RButton & WheelUp::changeExplorerView(0)		;
+	RButton & WheelDown::changeExplorerView(1)		;
+	RButton & XButton2::Send,!{v}{n}{Return}		;ナビゲーションウィンドウ表示切替
 
 	changeExplorerView(direction){
 		static EXPLORER_VIEWMODE:=1
@@ -52,8 +43,6 @@
 		;バインド入力
 		Send,^+{%EXPLORER_VIEWMODE%}
 	}
-
-	RButton & XButton2::Send,!{v}{n}{Return}
 
 	;ショートカット作成
 	vkEBsc07B & a::
