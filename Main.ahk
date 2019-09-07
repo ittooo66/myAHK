@@ -68,6 +68,7 @@ RShift Up::IME_JP()
 #include IfWinActives\_General.ahk
 #include IfWinActives\MS_Code.ahk
 #include IfWinActives\MS_Outlook.ahk
+#include IfWinActives\MS_Powerpoint.ahk
 #include IfWinActives\MS_Excel.ahk
 #include IfWinActives\IntelliJ.ahk
 #include IfWinActives\MPC.ahk
