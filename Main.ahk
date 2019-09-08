@@ -7,7 +7,6 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #UseHook
 
 ;イベントハンドラの呼び出し
-#include %A_ScriptDir%\myAHKComponents\Library\EventHook.ahk
 #include %A_ScriptDir%\myAHKComponents\Library\EventHookDef.ahk
 
 ;disable CAPSLOCK
@@ -64,6 +63,7 @@ RShift Up::IME_JP()
 #include Library\IntoRemoteDesktop.ahk
 #include Library\Logger.ahk
 #include Library\IME.ahk
+#include Library\EventHook.ahk
 ;TempMacroのInclude
 #include Resources\TempMacro\MacroZ.ahk
 #include Resources\TempMacro\MacroX.ahk
