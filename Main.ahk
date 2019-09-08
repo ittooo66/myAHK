@@ -8,6 +8,7 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 
 ;イベントハンドラの呼び出し
 #include %A_ScriptDir%\myAHKComponents\Library\EventHook.ahk
+#include %A_ScriptDir%\myAHKComponents\Library\EventHookDef.ahk
 
 ;disable CAPSLOCK
 SetCapsLockState, AlwaysOff
