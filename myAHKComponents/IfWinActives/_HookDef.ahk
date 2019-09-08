@@ -56,6 +56,61 @@
 	return
 #IfWinActive
 
+; ################# Outlook フック用定義一式 ################# 
+#IfWinActive,ahk_class rctrl_renwnd32
+
+	*t::
+	<^t::
+	>^t::
+	>+t::
+	<+t::
+	vkFFsc079 & t::
+	vkEBsc07B & t::
+	LControl & t::
+	RControl & t::
+	LShift & t::
+	RShift & t::
+		if LCMD() && CAPS()
+			outlook_bind_t()
+		else
+			mbind_t()
+	return
+
+	*q::
+	<^q::
+	>^q::
+	>+q::
+	<+q::
+	vkFFsc079 & q::
+	vkEBsc07B & q::
+	LControl & q::
+	RControl & q::
+	LShift & q::
+	RShift & q::
+		if LCMD() && CAPS()
+			outlook_bind_q()
+		else
+			mbind_q()
+	return
+
+	*w::
+	<^w::
+	>^w::
+	>+w::
+	<+w::
+	vkFFsc079 & w::
+	vkEBsc07B & w::
+	LControl & w::
+	RControl & w::
+	LShift & w::
+	RShift & w::
+		if LCMD() && CAPS()
+			outlook_bind_w()
+		else
+			mbind_w()
+	return
+
+#IfWinActive
 
 ; ################# Excel フック用定義一式 ################# 
 #IfWinActive,ahk_class XLMAIN
