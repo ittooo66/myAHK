@@ -6,6 +6,9 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #HotkeyInterval 100
 #UseHook
 
+;イベントハンドラの呼び出し
+#include %A_ScriptDir%\myAHKComponents\Library\EventHook.ahk
+
 ;disable CAPSLOCK
 SetCapsLockState, AlwaysOff
 
