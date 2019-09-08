@@ -1,4 +1,5 @@
-;AP個別のフック定義一式
+; AP個別のフック定義一式
+; IfWinActive定義内でMbindListener.ahkのフック定義を盛大に上書く。
 
 ; ################# Windows Explorer フック定義 一式 ################# 
 #IfWinActive,ahk_class CabinetWClass
