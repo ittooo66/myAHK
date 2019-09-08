@@ -1,91 +1,98 @@
-;Command Prompt,Powershell
-#IfWinActive,ahk_class ConsoleWindowClass
-	^L::SendInput , {Esc}cls{Enter}					;
-	vkEBsc07B & q::SendInput , {Esc}exit{Enter}		;
-#IfWinActive
+; AP個別定義
+; 重量級AP以外はここに雑多に追記していく方針にする
+; →定義部分だけ一覧できるようにすること。
+; →個別定義の管理がしんどいので、使わない定義はなるべく削除すること。
+; →AP個別のフック定義は_HookDef.ahkにまとめる
 
-;ファイル保存ウィンドウ
-#IfWinActive,ahk_class #32770
-	RButton & LButton::Send,!{Up}					;上へ戻る
-#IfWinActive
-
-;Internet Explorer
-#IfWinActive,ahk_class IEFrame
+#IfWinActive,ahk_class IEFrame						;Internet Explorer 個別定義 一式
 	RButton & WheelUp::Send,^+{Tab}					;タブ切替(逆)
 	RButton & WheelDown::Send,^{Tab}				;タブ切替(順)
 #IfWinActive
 
-;Windows Explorer
-#IfWinActive,ahk_class CabinetWClass
-	RButton & MButton::Send,^{n}					;新規Window作成	
-	RButton & LButton::Send,!{Up}					;上へ戻る
-	XButton2 & WheelUp::Send,{XButton1}				;
-	XButton2 & WheelDown::Send,{LButton}{Return}	;
-	RButton & WheelUp::changeExplorerView(0)		;
-	RButton & WheelDown::changeExplorerView(1)		;
-	RButton & XButton2::Send,!{v}{n}{Return}		;ナビゲーションウィンドウ表示切替
-
-	changeExplorerView(direction){
-		static EXPLORER_VIEWMODE:=1
-
-		;directionに応じて正負にローテート
-		if direction = 1
-			EXPLORER_VIEWMODE := EXPLORER_VIEWMODE + 1
-		else
-			EXPLORER_VIEWMODE := EXPLORER_VIEWMODE - 1
-
-		;1~8の間に収まるように調整
-		if EXPLORER_VIEWMODE > 8
-			EXPLORER_VIEWMODE := 8
-		if EXPLORER_VIEWMODE < 1
-			EXPLORER_VIEWMODE := 1
-
-		;バインド入力
-		Send,^+{%EXPLORER_VIEWMODE%}
-	}
-
-	;ショートカット作成
-	vkEBsc07B & a::
-	LControl & a::
-		if CAPS() && LCMD()
-			Send,{AppsKey}{UP}{UP}{UP}{UP}{Return}
-		else
-			mbind_a()
-	return
-
-	;表示
-	vkEBsc07B & q::
-	LControl & q::
-		if CAPS() && LCMD(){
-			Send,^{NumpadAdd}
-		}else
-			mbind_q()
-	return
-
+#IfWinActive,ahk_exe Code.exe						;Visual Studio Code 個別定義 一式
+	RButton & MButton::Send,^{n}					;新規Tab
+	RButton & LButton::Send,^+{n}					;新規Window
 #IfWinActive
 
-;Tera Term
-#IfWinActive,ahk_class VTWin32
+#IfWinActive,ahk_class #32770						;ファイル保存ウィンドウ 個別定義 一式
+	RButton & LButton::Send,!{Up}					;上へ戻る
+#IfWinActive
 
-	;FONT SIZE 変更
-  	vkEBsc07B & d::
-	LControl & d::
-		if CAPS() && LCMD(){
+#IfWinActive,ahk_class CabinetWClass				;Windows Explorer 個別定義 一式
+	RButton & MButton::Send,^{n}					;新規Window作成	
+	RButton & LButton::Send,!{Up}					;上へ戻る
+	RButton & XButton2::Send,!{v}{n}{Return}		;ナビゲーションウィンドウ表示切替
+	explorer_bind_a(){								;表示切替
+		Send,^{NumpadAdd}
+	}
+#IfWinActive
+
+#IfWinActive,ahk_class VTWin32						;Tera Term 個別定義 一式
+	teraterm_bind_d(){								;FONTSIZE変更（10）
 			Send, !{s}{f}!{s}
       		directInput("10")
       		Send, {Return}
-		}else
-			mbind_d()
-	return
-
-  	vkEBsc07B & e::
-	LControl & e::
-		if CAPS() && LCMD(){
+	}
+	teraterm_bind_e(){								;FONTSIZE変更（17）
 			Send, !{s}{f}!{s}
       		directInput("17")
 		    Send, {Return}
-		}else
-			mbind_e()
-	return
-
+	}
 #IfWinActive
+
+#IfWinActive,ahk_exe mpc-hc.exe						;MPC-HC 個別定義 一式
+  XButton2 & WheelUp::Send,{Left}
+  XButton2 & WheelDown::Send,{Right}
+  RButton & XButton1::Send,!{x}
+  RButton & LButton::Send,{Space}
+  XButton2 & LButton::MPC_intelliScroll()
+#IfWinActive
+
+#IfWinActive,ahk_exe mpc-be64.exe					;MPC-BE 個別定義 一式
+  XButton2 & WheelUp::Send,{Left}
+  XButton2 & WheelDown::Send,{Right}
+  RButton & XButton1::Send,!{x}
+  RButton & LButton::Send,{Space}
+  XButton2 & LButton::MPC_intelliScroll()
+#IfWinActive
+
+;よさげなスクロール(for MPC)
+MPC_intelliScroll(){
+	;初期マウス位置の取得
+	MouseGetPos, preMouseX, preMouseY
+	while(GetKeyState("LButton","P")){
+		;現在マウス位置の取得
+		MouseGetPos, mouseX, mouseY
+		;差分取得
+		mouseDiffX :=mouseX-preMouseX
+		;スクロール分量値調整
+		SetFormat, float, 0.0
+		diffPointX := (mouseDiffX/30)
+
+		;abs変換
+		absDiffPointX := diffPointX
+		if(diffPointX<0)
+			absDiffPointX := -diffPointX
+
+		;Count値、Stack用意
+		sleepCount := 100/absDiffPointX
+		sleepStack := 0
+
+		;X方向適用
+		while(absDiffPointX > 0){
+			if(diffPointX>0)
+				send,{Left}
+			else
+				send,{Right}
+
+			;スタック溜まったらSleep（１ミリSleepはまともに挙動しないので20程度見る）
+			sleepStack +=sleepCount
+			if(sleepStack > 20){
+				sleep, %sleepCount%
+				sleepStack := 0
+			}
+
+			absDiffPointX--
+		}
+	}
+}
