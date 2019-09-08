@@ -1,12 +1,7 @@
 #IfWinActive,ahk_class PPTFrameClass
 
-	;文字サイズ変更
-	LShift & WheelUp::Send, ^{]}
-	LShift & WheelDown::Send, ^{[}
-
-	;進む、戻る
-	XButton2::Send,^{y}
-	XButton1::Send,^{z}
+	LShift & WheelUp::Send, ^{]}			;文字サイズ変更
+	LShift & WheelDown::Send, ^{[}			;文字サイズ変更
 
 	;リボン切り替え
 	RButton & WheelUp::
@@ -20,16 +15,10 @@
 		Send,{Alt}
 	return
 
-	;閉じる
-	RButton & XButton1::
-		Send,!{F4}
-	return
-
-	;横スクロール
+	;スクロール機能一式
 	XButton2 & WheelUp::PowerPoint_scrollRight()
 	XButton2 & WheelDown::PowerPoint_scrollLeft()
 	XButton2 & LButton::PowerPoint_intelliScroll()
-	;よさげなスクロール
 	PowerPoint_intelliScroll(){
 		;初期マウス位置の取得
 		MouseGetPos, preMouseX, preMouseY
@@ -100,7 +89,6 @@
 			}
 		}
 	}
-
 	PowerPoint_scrollLeft(){
 		try {
 			ComObjActive("PowerPoint.Application").ActiveWindow.SmallScroll(0,0,3,0)
@@ -110,7 +98,6 @@
 			gui,Destroy
 		}
 	}
-
 	PowerPoint_scrollRight(){
 		try {
 			ComObjActive("PowerPoint.Application").ActiveWindow.SmallScroll(0,0,0,3)

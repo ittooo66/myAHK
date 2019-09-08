@@ -41,19 +41,19 @@
 #IfWinActive
 
 #IfWinActive,ahk_exe mpc-hc.exe						;MPC-HC 個別定義 一式
-  XButton2 & WheelUp::Send,{Left}
-  XButton2 & WheelDown::Send,{Right}
-  RButton & XButton1::Send,!{x}
-  RButton & LButton::Send,{Space}
-  XButton2 & LButton::MPC_intelliScroll()
+  XButton2 & WheelUp::Send,{Left}					;戻る
+  XButton2 & WheelDown::Send,{Right}				;進む
+  RButton & XButton1::Send,!{x}						;閉じる
+  RButton & LButton::Send,{Space}					;一時停止
+  XButton2 & LButton::MPC_intelliScroll()			;IntelliScroll
 #IfWinActive
 
 #IfWinActive,ahk_exe mpc-be64.exe					;MPC-BE 個別定義 一式
-  XButton2 & WheelUp::Send,{Left}
-  XButton2 & WheelDown::Send,{Right}
-  RButton & XButton1::Send,!{x}
-  RButton & LButton::Send,{Space}
-  XButton2 & LButton::MPC_intelliScroll()
+  XButton2 & WheelUp::Send,{Left}					;戻る
+  XButton2 & WheelDown::Send,{Right}				;進む
+  RButton & XButton1::Send,!{x}						;閉じる
+  RButton & LButton::Send,{Space}					;一時停止
+  XButton2 & LButton::MPC_intelliScroll()			;IntelliScroll
 #IfWinActive
 
 ;よさげなスクロール(for MPC)

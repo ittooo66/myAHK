@@ -1,14 +1,10 @@
 ;Excel
 #IfWinActive,ahk_class XLMAIN
 
-	;マウスバインド一式
-	XButton2::Send,^{y}
-	XButton1::Send,^{z}
+	;スクロール機能一式
 	XButton2 & WheelUp::Excel_scrollRight()
 	XButton2 & WheelDown::Excel_scrollLeft()
 	XButton2 & LButton::Excel_intelliScroll()
-
-	;Excelのスクロール機能
 	Excel_intelliScroll(){
 		;初期マウス位置の取得
 		MouseGetPos, preMouseX, preMouseY
@@ -79,7 +75,6 @@
 			}
 		}
 	}
-
 	Excel_scrollLeft(){
 		try {
 			ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
@@ -89,7 +84,6 @@
 			gui,Destroy
 		}
 	}
-
 	Excel_scrollRight(){
 		try {
 			ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
@@ -248,5 +242,5 @@
 	excel_bind_escape(){
 		
 	}
-	
+
 #IfWinActive
