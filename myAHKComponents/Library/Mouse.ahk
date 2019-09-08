@@ -36,23 +36,12 @@ changeWindowSize(){
 
 ;ウィンドウの移動
 moveWindow(){
-
-	;画面情報を取得
-	;X,Y:スケーリング後のアクティブウインドウの左上のピクセル位置（モニタ1の左上(0,0)からのX:Y座標）
-	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
-	WinGetActiveStats, Title, W, H, X, Y
-	;4Kモニタ側の場合
-	if(X<0){
-		touchW:=(W*1.5/2)+(3840+X)*0.5
-		touchH:=Y*0.5+15
-	}else{
-		touchW:=W/2
-		touchH:=10
-	}
-	BlockInput, MouseMove
-	Mousemove,%touchW%,%touchH%,0
-	Send,{LButton Down}
-	BlockInput, MouseMoveOff
+	Send,{Alt Down}
+	Send,{Space}
+	Sleep, 100
+	Send,{m}
+	Send,{Alt Up}
+	Send,{Left}{Right}
 }
 
 ;key: イベント対象のキー4つ
