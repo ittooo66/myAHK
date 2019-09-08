@@ -2,7 +2,7 @@
 ; Windowsの各イベントをフックしてイベントに応じた処理を実施するための定義一式。
 ; 処理内容はEventHook.ahkに記載
 ; returnが直接記載される前に呼んでおかないと機能しないので、上の方でincludeしておくこと。
-
+; https://sites.google.com/site/agkh6mze/howto/winevent
 
 ; ######### イベント変数一式 定義 #########
 EVENT_MIN                         = 0x00000001
