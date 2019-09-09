@@ -111,7 +111,7 @@
 		Send,!{h}{a}{c}						;中央寄せ
 	}
 	excel_bind_f(){
-		
+		Send,^{PgDn}						;タブ切替
 	}
 	excel_bind_g(){
 		Send,!{h}{m}{m}						;セル：結合
@@ -150,7 +150,7 @@
 		Send, !{h}{r}						;右寄せ
 	}
 	excel_bind_s(){
-		
+		Send,^{PgUp}						;タブ切替
 	}
 	excel_bind_t(){
 		Send, !{h}{f}{1}					;文字色変更（任意）
