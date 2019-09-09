@@ -6,9 +6,10 @@ Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 #HotkeyInterval 100
 #UseHook
 
-;preload eventhook def
+;preload eventhookdef/settimer
 #include %A_ScriptDir%\myAHKComponents
 #include Library\EventHookDef.ahk
+#include Library\SetTimer.ahk
 
 ;disable CAPSLOCK
 SetCapsLockState, AlwaysOff
