@@ -3,21 +3,21 @@
 
 ; ################# Windows Explorer フック定義 一式 ################# 
 #IfWinActive,ahk_class CabinetWClass
-	*a::
-	<^a::
-	>^a::
-	>+a::
-	<+a::
-	vkFFsc079 & a::
-	vkEBsc07B & a::
-	LControl & a::
-	RControl & a::
-	LShift & a::
-	RShift & a::
+	*q::
+	<^q::
+	>^q::
+	>+q::
+	<+q::
+	vkFFsc079 & q::
+	vkEBsc07B & q::
+	LControl & q::
+	RControl & q::
+	LShift & q::
+	RShift & q::
 		if CAPS() && LCMD()
 			explorer_bind_q()
 		else
-			mbind_a()
+			mbind_q()
 	return
 #IfWinActive
 
