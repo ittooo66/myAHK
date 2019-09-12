@@ -22,7 +22,7 @@
 	RButton & MButton::Send,^{n}					;新規Window作成	
 	RButton & LButton::Send,!{Up}					;上へ戻る
 	RButton & XButton2::Send,!{v}{n}{Return}		;ナビゲーションウィンドウ表示切替
-	explorer_bind_a(){								;表示切替
+	explorer_bind_q(){								;表示切替
 		Send,^{NumpadAdd}
 	}
 #IfWinActive

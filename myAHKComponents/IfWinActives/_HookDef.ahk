@@ -15,7 +15,7 @@
 	LShift & a::
 	RShift & a::
 		if CAPS() && LCMD()
-			explorer_bind_a()
+			explorer_bind_q()
 		else
 			mbind_a()
 	return
