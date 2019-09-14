@@ -852,6 +852,8 @@ mbind_msblb(){
 		WinMinimize, A
 	}else if MSBLF(){
 		changeWindowSize()
+	}else if MSBRB(){
+		MacroZ()
 	}else{
 		Send,{XButton1}
 	}
@@ -868,6 +870,9 @@ mbind_msblf(){
 }
 
 mbind_msbrb(){
+	if MSBLB(){
+		MacroZ()
+	}
 }
 
 mbind_msbrf(){
