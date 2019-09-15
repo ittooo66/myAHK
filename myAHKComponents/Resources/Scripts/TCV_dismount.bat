@@ -1,0 +1,1 @@
+"C:\Program Files\TrueCrypt\TrueCrypt.exe" /q /dr

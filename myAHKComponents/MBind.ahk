@@ -360,9 +360,10 @@ mbind_u(){
 }
 
 mbind_v(){
-	if (SPACE() && CAPS()){
-		if !activateWindow("VISIOA","VISIO.EXE","")
-			openApp("Visio")
+	if (SPACE() && CAPS() && SHIFT()){
+		execScripts("TCV_mount.bat")
+	}else if (SPACE() && CAPS()){
+		execScripts("TCV_dismount.bat")
 	}else if RCMD() || CAPS()
 		ClipExt_openLog()
 	else if SPACE() && SHIFT()

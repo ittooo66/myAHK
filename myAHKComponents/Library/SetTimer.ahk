@@ -18,6 +18,8 @@ Loop,C:\Users\ittoo\3D Objects\VirtualboxSFs\PCControlServer\watch\*
         Send,{Volume_Up}
     }else if (command=="win_minimize"){
         WinMinimizeAll
+    }else if (command=="tcv_dismount"){
+        execScripts("TCV_dismount.bat")
     }
 
     ;実行が終わり次第、削除
