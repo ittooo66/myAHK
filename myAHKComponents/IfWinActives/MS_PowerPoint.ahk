@@ -3,6 +3,9 @@
 	LShift & WheelUp::Send, ^{]}			;文字サイズ変更
 	LShift & WheelDown::Send, ^{[}			;文字サイズ変更
 
+	XButton1::Send,^{z}
+	XButton2::Send,^{y}
+
 	;リボン切り替え
 	RButton & WheelUp::
 		Send,{Alt}
