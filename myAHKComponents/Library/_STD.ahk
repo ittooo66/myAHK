@@ -81,6 +81,7 @@ press(key){
 		modifiers = %modifiers%#
 	;修飾キーつきkeyPress
 	Send,%modifiers%%key%
+	;log出力
 	logger_key(key)
 }
 

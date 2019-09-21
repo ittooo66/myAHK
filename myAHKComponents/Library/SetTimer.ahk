@@ -1,5 +1,8 @@
+;SetTimer処理 一式
 SetTimer, FileMonitor, 250
 Return
+
+;SetTimer処理 内容
 FileMonitor:
 Loop,C:\Users\ittoo\3D Objects\VirtualboxSFs\PCControlServer\watch\*
 {
