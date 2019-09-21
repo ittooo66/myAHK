@@ -1,6 +1,12 @@
 ;icon settings
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 
+;super global variable
+global A_ResourceDir := A_WorkingDir . "\myAHKComponents\Resources"
+global A_SpaceDownTime := 0
+global A_SpaceDownFlag := 0
+global A_SpaceConsumeFlag := 0
+
 ;Majinai
 #InstallKeybdHook
 #HotkeyInterval 100
@@ -25,23 +31,6 @@ RWin::return
 LWin::return
 RWin Up::return
 LWin Up::return
-
-;AHK Control
-RAlt & ,::
-XButton2 & MButton::
-	Suspend, Permit
-	reloadAHK()
-return
-RAlt & .::
-XButton1 & MButton::
-	Suspend, Permit
-	suspendAHK()
-return
-RAlt & /::
-F20 & MButton::
-	Suspend, Permit
-	exitAHK()
-return
 
 ;AltTab
 XButton1 & WheelUp::ShiftAltTab
@@ -73,3 +62,31 @@ RShift Up::IME_JP()
 #include IfWinActives\_General.ahk
 #include IfWinActives\MS_Powerpoint.ahk
 #include IfWinActives\MS_Excel.ahk
+
+;AHK Control
+RAlt & ,::
+XButton2 & MButton::
+	Suspend, Permit
+	tooltip, AHK reloading
+	sleep 300
+	tooltip
+	logger_info("AHK RELOADED")
+	Reload
+return
+RAlt & .::
+XButton1 & MButton::
+	Suspend, Permit
+	Suspend, ON
+	tooltip, AHK suspended
+	sleep 800
+	tooltip
+	logger_info("AHK SUSPENDED")
+return
+RAlt & /::
+F20 & MButton::
+	Suspend, Permit
+	tooltip, AHK shutting down
+	sleep 800
+	logger_info("AHK EXIT")
+	ExitApp
+return

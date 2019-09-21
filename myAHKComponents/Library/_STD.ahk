@@ -119,32 +119,6 @@ getStringWriter(name){
 	return %file%
 }
 
-;AHKリロード
-reloadAHK(){
-	tooltip, AHK reloading
-	sleep 300
-	tooltip
-	logger_info("AHK RELOADED")
-	Reload
-}
-
-;AHKサスペンド
-suspendAHK(){
-	Suspend, ON
-	tooltip, AHK suspended
-	sleep 800
-	tooltip
-	logger_info("AHK SUSPENDED")
-}
-
-;AHKシャットダウン
-exitAHK(){
-	tooltip, AHK shutting down
-	sleep 800
-	logger_info("AHK EXIT")
-	ExitApp
-}
-
 ;ミュートタイマー機能
 muteNMin(){
 	InputBox, muteMinute , Delayed Mute, Mute After N minute,, 200, 130,,,,,60
