@@ -2,32 +2,20 @@
 
 ;コピー
 ClipExt_copy(){
-	;clipboardにCopy
+	;ClipboardにCopy
 	Send,^c
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
 	ClipWait 0.5, 1
-	;クリップボードに何も入ってこないとき
-	if ErrorLevel <> 0
-	{
-		;終了
-		return
-	}
 	;ログ追記
 	logger_clip(Clipboard)
 }
 
 ;切り取り
 ClipExt_cut(){
-	;clipboardにCut
+	;ClipboardにCut
 	Send,^x
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
 	ClipWait 0.5, 1
-	;クリップボードに何も入ってこないとき
-	if ErrorLevel <> 0
-	{
-		;終了
-		return
-	}
 	;ログ追記
 	logger_clip(Clipboard)
 }
@@ -44,12 +32,6 @@ ClipExt_copyTo(num){
 	Send,^c
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
 	ClipWait 0.5, 1
-	;クリップボードに何も入ってこないとき
-	if ErrorLevel <> 0
-	{
-		;終了
-		return
-	}
 	;ログ追記
 	logger_clip(Clipboard)
 	;ファイルにClipboardを保存
