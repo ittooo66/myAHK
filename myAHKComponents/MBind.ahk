@@ -3,7 +3,7 @@ mbind_a(){
 		activateWindow("Chrome_WidgetWin_1","Code.exe","", 1 )
 	else if (SPACE() && CAPS()){
 		if !activateWindow("Chrome_WidgetWin_1","Code.exe","")
-			openApp("Code")
+			run, %A_AppDir%\Code
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() && CAPS()
@@ -30,7 +30,7 @@ mbind_b(){
 mbind_c(){
 	if CAPS() && SPACE(){
 		if !activateWindow("Chrome_WidgetWin_1","opera.exe",""){
-			openApp("GBrowser")
+			run, %A_AppDir%\GBrowser
 			sleep, 2000
 		}
 		Send,^{t}
@@ -55,7 +55,7 @@ mbind_d(){
 		activateWindow("XLMAIN","","", 1 )
 	else if (SPACE() && CAPS()){
 		if !activateWindow("XLMAIN","","")
-			openApp("Excel")
+			run, %A_AppDir%\Excel
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if RCMD() && CAPS(){
@@ -113,7 +113,7 @@ mbind_g(){
 		activateWindow("Chrome_WidgetWin_1","opera.exe","", 1 )
 	}else if (SPACE() && CAPS()){
 		if !activateWindow("Chrome_WidgetWin_1","opera.exe","")
-			openApp("GBrowser")
+			run, %A_AppDir%\GBrowser
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
@@ -266,7 +266,7 @@ mbind_q(){
 		activateWindow("PPTFrameClass","","", 1 )
 	else if (SPACE() && CAPS()){
 		if !activateWindow("PPTFrameClass","","")
-			openApp("PowerPoint")
+			run, %A_AppDir%\PowerPoint
 	}else if LSHIFT() && RSHIFT()
 		mouseCursorResetToCenter()
 	else if RCMD() && CAPS()
@@ -302,7 +302,7 @@ mbind_r(){
 		activateWindow("IEFrame","","", 1 )
 	}else if SPACE() && CAPS(){
 		if !activateWindow("IEFrame","","")
-			openApp("Internet Explorer")
+			run, %A_AppDir%\Internet Explorer
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
@@ -335,7 +335,7 @@ mbind_t(){
 		activateWindow("VTWin32","ttermpro.exe","", 1 )
 	else if (SPACE() && CAPS()){
 		if !activateWindow("VTWin32","ttermpro.exe","")
-			openApp("TeraTerm")
+			run, %A_AppDir%\TeraTerm
 	}else if RCMD() || CAPS(){
 		press("{return}")
 	}else if SPACE() && SHIFT()
@@ -381,7 +381,7 @@ mbind_w(){
 		activateWindow("rctrl_renwnd32","OUTLOOK.EXE","", 1 )
 	else if (SPACE() && CAPS()){
 		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
-			openApp("Outlook")
+			run, %A_AppDir%\Outlook
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
@@ -423,7 +423,7 @@ mbind_z(){
 		activateWindow("OpusApp","","", 1 )
 	else if (SPACE() && CAPS()){
 		if !activateWindow("OpusApp","","")
-			openApp("Word")
+			run, %A_AppDir%\Word
 	}else if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroZ.ahk
 	else if RCMD() || CAPS()

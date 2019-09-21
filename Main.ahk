@@ -2,7 +2,7 @@
 Menu, Tray, Icon, %A_WinDir%\System32\inetcpl.cpl, 1
 
 ;super global variable
-global A_ResourceDir := A_WorkingDir . "\myAHKComponents\Resources"
+global A_AppDir := A_WorkingDir . "\myAHKComponents\Resources\Apps"
 global A_SpaceDownTime := 0
 global A_SpaceDownFlag := 0
 global A_SpaceConsumeFlag := 0
