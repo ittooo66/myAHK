@@ -316,7 +316,12 @@ mbind_r(){
 }
 
 mbind_s(){
-	if LCMD() && CAPS()
+	if (SPACE() && CAPS() && SHIFT())
+		activateWindow("TextEditorWindowW166","sakura.exe","", 1 )
+	else if (SPACE() && CAPS()){
+		if !activateWindow("TextEditorWindowW166","sakura.exe","")
+			run, %A_AppDir%\SakuraEditor
+	}else if LCMD() && CAPS()
 		Send,^{PgUp}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
