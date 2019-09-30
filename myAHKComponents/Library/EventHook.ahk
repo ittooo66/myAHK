@@ -20,16 +20,18 @@ EventHandlerSystemForeGround(hWinEventHook, event, hwnd, idObject, idChild, thre
 
 	;WOMicの場合:設定画面を開く
 	ifInString, this_process , WOMicClient.exe, {
+		sleep,200
 		Send,{Alt}
 		Send,{c}
 		Send,{c}
-
+		return
 	}
 
 	;アレの場合：邪魔なので消す
 	ifInString, this_process , Dotima.exe, {
 		Send,{Down}
 		Send,!{o}
+		return
 	}
 
 	;LoLの場合:チートツール判定を受けるため、AHKを終了
