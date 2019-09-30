@@ -18,7 +18,7 @@ EventHandlerSystemForeGround(hWinEventHook, event, hwnd, idObject, idChild, thre
  	WinGetClass, class, ahk_id %hwnd%
 	WinGet, this_process, ProcessName, ahk_id %hwnd%
 
-	;WOMicの場合
+	;WOMicの場合:設定画面を開く
 	ifInString, this_process , WOMicClient.exe, {
 		Send,{Alt}
 		Send,{c}
@@ -26,10 +26,17 @@ EventHandlerSystemForeGround(hWinEventHook, event, hwnd, idObject, idChild, thre
 
 	}
 
-	;アレの場合
+	;アレの場合：邪魔なので消す
 	ifInString, this_process , Dotima.exe, {
 		Send,{Down}
 		Send,!{o}
+	}
+
+	;LoLの場合:チートツール判定を受けるため、AHKを終了
+	ifInString, this_process , League of Legends.exe, {
+		ToolTip, Shutting down ahk.....
+		sleep, 3000
+		ExitApp
 	}
 
 	return
