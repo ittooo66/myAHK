@@ -14,6 +14,24 @@ EventHandlerSystemAlert(hWinEventHook, event, hwnd, idObject, idChild, thread, t
 }
 ;EVENT_SYSTEM_FOREGROUND
 EventHandlerSystemForeGround(hWinEventHook, event, hwnd, idObject, idChild, thread, time) {
+	WinGetTitle, title, ahk_id %hwnd%
+ 	WinGetClass, class, ahk_id %hwnd%
+	WinGet, this_process, ProcessName, ahk_id %hwnd%
+
+	;WOMicの場合
+	ifInString, this_process , WOMicClient.exe, {
+		Send,{Alt}
+		Send,{c}
+		Send,{c}
+
+	}
+
+	;アレの場合
+	ifInString, this_process , Dotima.exe, {
+		Send,{Down}
+		Send,!{o}
+	}
+
 	return
 }
 ;EVENT_SYSTEM_MENUSTART
