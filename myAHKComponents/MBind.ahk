@@ -863,6 +863,8 @@ mbind_msblb(){
 		WinMinimize, A
 	}else if MSBLF(){
 		changeWindowSize()
+	}else if MSBRF(){
+		changeSoundDevice("1")
 	}else if MSBRB(){
 		MacroZ()
 	}else{
@@ -873,6 +875,8 @@ mbind_msblb(){
 mbind_msblf(){
 	if MRB(){
 		Send,^+{t}
+	}else if MSBRF(){
+		changeSoundDevice("0")
 	}else if MSBLB(){
 		changeWindowSize()
 	}else{

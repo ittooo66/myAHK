@@ -97,6 +97,21 @@ directInput(string){
 	Clipboard = %cb_bk%
 }
 
+;サウンドデバイス変更
+;（イヤホン：num=0、スピーカ：num=1）
+changeSoundDevice(num){
+	run, control mmsys.cpl
+	sleep,1200
+	activateWindow("#32770","","")
+	Send,{Up}{Up}{Up}{Up}
+	Loop, %num%
+	{
+		Send,{Down}
+	}
+	Send,!{s}
+	Send,{Esc}
+}
+
 ;外部変数への書き込み
 ;揮発性なし（Reload,再起動でも値は普遍）
 ;書き方：setStringWriter("var","true")でvar.txtにtrueが書き込まれる
