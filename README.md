@@ -69,26 +69,14 @@ Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipでDownload
       略記法(>+)と正式記法(RShift &)でフック力が違うのか等価の挙動にならない（略記のが低層フック？）。現状は`MBindListener.ahk`で仕様を吸収してはいるけど、使用の際は注意を。
 
 1. AHK Version
-    + PPT,EXCELのスクロールにCOMつかってるので、Lの方じゃないともう動かない。
+    + AHK 1.1.32.00 対応
 
 1. SetTimer機能
     + Pollingやってるせいなのか何なのかわからんけど、使ってるとFPS系のカーソルが荒ぶる？
     必要性が微妙なのであんまり使わないほうがいいかも
-
-1. [EnableUIAccess][EnableUIAccess]  
-
-    + UAC周りの問題対処用。
-    + 管理者実行の時にCOM周りが機能不全になる問題（PPT,Excelのスクロール問題）  
-      →PPT,Excelのスクロール機能だけ切り出して、当てていく？  
-      →無理っぽい。
-    + 非管理者実行では管理者権限APPにBindが刺さらない問題  
-      →解決策なし、ってかふつうに考えれば当たり前。非管理者実行を前提として用いるしかないかなあ。  
-    + EnableUIAccess不要説。無くても割と動いてくれてる。AHK_"L"のおかげ？
 
 
 [HHKB]: http://www.pfu.fujitsu.com/hhkeyboard/
 [AHK]: https://github.com/Lexikos/AutoHotkey_L
 [WheelScroll.ahk]: http://blechmusik.hatenablog.jp/entry/20100529/1275141213
 [IME.ahk]: http://www6.atwiki.jp/eamat/pages/17.html
-[MouseGestureL]: http://hp.vector.co.jp/authors/VA018351/mglahk.html
-[EnableUIAccess]: http://www.autohotkey.com/board/topic/70449-enable-interaction-with-administrative-programs/
