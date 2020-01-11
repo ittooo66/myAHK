@@ -13,8 +13,8 @@ changeWindowSize(){
 	if(X<-1280){
 		dpiW:=(3840+X)*0.5
 		dpiH:=Y*0.5
-		touchW:=W*1.5+dpiW-2
-		touchH:=H*1.5+dpiH-2
+		touchW:=W*1.5+dpiW-4
+		touchH:=H*1.5+dpiH-4
 		;スケーリング後のアクティブウィンドウ左上からtouchW,touchH分絶対ピクセルでmouseMoveさせる
 		;上記設定はDPIスケール150%,メインモニタが右上にある状態で左の4Kモニタに対してのみ有効
 
