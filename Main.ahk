@@ -17,8 +17,12 @@ global A_SpaceConsumeFlag := 0
 #include Library\EventHookDef.ahk
 #include Library\SetTimer.ahk
 
-;disable CAPSLOCK
-SetCapsLockState, AlwaysOff
+;Disable CAPSLOCK
+sc03a::return
+
+;Disable VKs
+vkFF::return
+vkEB::return
 
 ;Change Base Bindings
 Delete::`
