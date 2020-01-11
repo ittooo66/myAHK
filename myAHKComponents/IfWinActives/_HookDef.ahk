@@ -8,8 +8,8 @@
 	>^q::
 	>+q::
 	<+q::
-	vkFFsc079 & q::
-	vkEBsc07B & q::
+	vkFF & q::
+	vkEB & q::
 	LControl & q::
 	RControl & q::
 	LShift & q::
@@ -28,8 +28,8 @@
 	>^d::
 	>+d::
 	<+d::
-	vkFFsc079 & d::
-	vkEBsc07B & d::
+	vkFF & d::
+	vkEB & d::
 	LControl & d::
 	RControl & d::
 	LShift & d::
@@ -44,8 +44,8 @@
 	>^e::
 	>+e::
 	<+e::
-	vkFFsc079 & e::
-	vkEBsc07B & e::
+	vkFF & e::
+	vkEB & e::
 	LControl & e::
 	RControl & e::
 	LShift & e::
@@ -65,8 +65,8 @@
 	>^t::
 	>+t::
 	<+t::
-	vkFFsc079 & t::
-	vkEBsc07B & t::
+	vkFF & t::
+	vkEB & t::
 	LControl & t::
 	RControl & t::
 	LShift & t::
@@ -82,8 +82,8 @@
 	>^q::
 	>+q::
 	<+q::
-	vkFFsc079 & q::
-	vkEBsc07B & q::
+	vkFF & q::
+	vkEB & q::
 	LControl & q::
 	RControl & q::
 	LShift & q::
@@ -99,8 +99,8 @@
 	>^w::
 	>+w::
 	<+w::
-	vkFFsc079 & w::
-	vkEBsc07B & w::
+	vkFF & w::
+	vkEB & w::
 	LControl & w::
 	RControl & w::
 	LShift & w::
@@ -120,8 +120,8 @@
 	>^a::
 	>+a::
 	<+a::
-	vkFFsc079 & a::
-	vkEBsc07B & a::
+	vkFF & a::
+	vkEB & a::
 	LControl & a::
 	RControl & a::
 	LShift & a::
@@ -137,8 +137,8 @@
 	>^b::
 	>+b::
 	<+b::
-	vkFFsc079 & b::
-	vkEBsc07B & b::
+	vkFF & b::
+	vkEB & b::
 	LControl & b::
 	RControl & b::
 	LShift & b::
@@ -154,8 +154,8 @@
 	>^c::
 	>+c::
 	<+c::
-	vkFFsc079 & c::
-	vkEBsc07B & c::
+	vkFF & c::
+	vkEB & c::
 	LControl & c::
 	RControl & c::
 	LShift & c::
@@ -171,8 +171,8 @@
 	>^d::
 	>+d::
 	<+d::
-	vkFFsc079 & d::
-	vkEBsc07B & d::
+	vkFF & d::
+	vkEB & d::
 	LControl & d::
 	RControl & d::
 	LShift & d::
@@ -188,8 +188,8 @@
 	>^e::
 	>+e::
 	<+e::
-	vkFFsc079 & e::
-	vkEBsc07B & e::
+	vkFF & e::
+	vkEB & e::
 	LControl & e::
 	RControl & e::
 	LShift & e::
@@ -205,8 +205,8 @@
 	>^f::
 	>+f::
 	<+f::
-	vkFFsc079 & f::
-	vkEBsc07B & f::
+	vkFF & f::
+	vkEB & f::
 	LControl & f::
 	RControl & f::
 	LShift & f::
@@ -222,8 +222,8 @@
 	>^g::
 	>+g::
 	<+g::
-	vkFFsc079 & g::
-	vkEBsc07B & g::
+	vkFF & g::
+	vkEB & g::
 	LControl & g::
 	RControl & g::
 	LShift & g::
@@ -239,8 +239,8 @@
 	>^h::
 	>+h::
 	<+h::
-	vkFFsc079 & h::
-	vkEBsc07B & h::
+	vkFF & h::
+	vkEB & h::
 	LControl & h::
 	RControl & h::
 	LShift & h::
@@ -256,8 +256,8 @@
 	>^i::
 	>+i::
 	<+i::
-	vkFFsc079 & i::
-	vkEBsc07B & i::
+	vkFF & i::
+	vkEB & i::
 	LControl & i::
 	RControl & i::
 	LShift & i::
@@ -273,8 +273,8 @@
 	>^j::
 	>+j::
 	<+j::
-	vkFFsc079 & j::
-	vkEBsc07B & j::
+	vkFF & j::
+	vkEB & j::
 	LControl & j::
 	RControl & j::
 	LShift & j::
@@ -290,8 +290,8 @@
 	>^k::
 	>+k::
 	<+k::
-	vkFFsc079 & k::
-	vkEBsc07B & k::
+	vkFF & k::
+	vkEB & k::
 	LControl & k::
 	RControl & k::
 	LShift & k::
@@ -307,8 +307,8 @@
 	>^l::
 	>+l::
 	<+l::
-	vkFFsc079 & l::
-	vkEBsc07B & l::
+	vkFF & l::
+	vkEB & l::
 	LControl & l::
 	RControl & l::
 	LShift & l::
@@ -324,8 +324,8 @@
 	>^m::
 	>+m::
 	<+m::
-	vkFFsc079 & m::
-	vkEBsc07B & m::
+	vkFF & m::
+	vkEB & m::
 	LControl & m::
 	RControl & m::
 	LShift & m::
@@ -341,8 +341,8 @@
 	>^n::
 	>+n::
 	<+n::
-	vkFFsc079 & n::
-	vkEBsc07B & n::
+	vkFF & n::
+	vkEB & n::
 	LControl & n::
 	RControl & n::
 	LShift & n::
@@ -358,8 +358,8 @@
 	>^o::
 	>+o::
 	<+o::
-	vkFFsc079 & o::
-	vkEBsc07B & o::
+	vkFF & o::
+	vkEB & o::
 	LControl & o::
 	RControl & o::
 	LShift & o::
@@ -375,8 +375,8 @@
 	>^p::
 	>+p::
 	<+p::
-	vkFFsc079 & p::
-	vkEBsc07B & p::
+	vkFF & p::
+	vkEB & p::
 	LControl & p::
 	RControl & p::
 	LShift & p::
@@ -392,8 +392,8 @@
 	>^q::
 	>+q::
 	<+q::
-	vkFFsc079 & q::
-	vkEBsc07B & q::
+	vkFF & q::
+	vkEB & q::
 	LControl & q::
 	RControl & q::
 	LShift & q::
@@ -409,8 +409,8 @@
 	>^r::
 	>+r::
 	<+r::
-	vkFFsc079 & r::
-	vkEBsc07B & r::
+	vkFF & r::
+	vkEB & r::
 	LControl & r::
 	RControl & r::
 	LShift & r::
@@ -426,8 +426,8 @@
 	>^s::
 	>+s::
 	<+s::
-	vkFFsc079 & s::
-	vkEBsc07B & s::
+	vkFF & s::
+	vkEB & s::
 	LControl & s::
 	RControl & s::
 	LShift & s::
@@ -443,8 +443,8 @@
 	>^t::
 	>+t::
 	<+t::
-	vkFFsc079 & t::
-	vkEBsc07B & t::
+	vkFF & t::
+	vkEB & t::
 	LControl & t::
 	RControl & t::
 	LShift & t::
@@ -460,8 +460,8 @@
 	>^u::
 	>+u::
 	<+u::
-	vkFFsc079 & u::
-	vkEBsc07B & u::
+	vkFF & u::
+	vkEB & u::
 	LControl & u::
 	RControl & u::
 	LShift & u::
@@ -477,8 +477,8 @@
 	>^v::
 	>+v::
 	<+v::
-	vkFFsc079 & v::
-	vkEBsc07B & v::
+	vkFF & v::
+	vkEB & v::
 	LControl & v::
 	RControl & v::
 	LShift & v::
@@ -494,8 +494,8 @@
 	>^w::
 	>+w::
 	<+w::
-	vkFFsc079 & w::
-	vkEBsc07B & w::
+	vkFF & w::
+	vkEB & w::
 	LControl & w::
 	RControl & w::
 	LShift & w::
@@ -511,8 +511,8 @@
 	>^x::
 	>+x::
 	<+x::
-	vkFFsc079 & x::
-	vkEBsc07B & x::
+	vkFF & x::
+	vkEB & x::
 	LControl & x::
 	RControl & x::
 	LShift & x::
@@ -528,8 +528,8 @@
 	>^y::
 	>+y::
 	<+y::
-	vkFFsc079 & y::
-	vkEBsc07B & y::
+	vkFF & y::
+	vkEB & y::
 	LControl & y::
 	RControl & y::
 	LShift & y::
@@ -545,8 +545,8 @@
 	>^z::
 	>+z::
 	<+z::
-	vkFFsc079 & z::
-	vkEBsc07B & z::
+	vkFF & z::
+	vkEB & z::
 	LControl & z::
 	RControl & z::
 	LShift & z::
@@ -562,8 +562,8 @@
 	>^1::
 	>+1::
 	<+1::
-	vkFFsc079 & 1::
-	vkEBsc07B & 1::
+	vkFF & 1::
+	vkEB & 1::
 	LControl & 1::
 	RControl & 1::
 	LShift & 1::
@@ -579,8 +579,8 @@
 	>^2::
 	>+2::
 	<+2::
-	vkFFsc079 & 2::
-	vkEBsc07B & 2::
+	vkFF & 2::
+	vkEB & 2::
 	LControl & 2::
 	RControl & 2::
 	LShift & 2::
@@ -596,8 +596,8 @@
 	>^3::
 	>+3::
 	<+3::
-	vkFFsc079 & 3::
-	vkEBsc07B & 3::
+	vkFF & 3::
+	vkEB & 3::
 	LControl & 3::
 	RControl & 3::
 	LShift & 3::
@@ -613,8 +613,8 @@
 	>^4::
 	>+4::
 	<+4::
-	vkFFsc079 & 4::
-	vkEBsc07B & 4::
+	vkFF & 4::
+	vkEB & 4::
 	LControl & 4::
 	RControl & 4::
 	LShift & 4::
@@ -630,8 +630,8 @@
 	>^5::
 	>+5::
 	<+5::
-	vkFFsc079 & 5::
-	vkEBsc07B & 5::
+	vkFF & 5::
+	vkEB & 5::
 	LControl & 5::
 	RControl & 5::
 	LShift & 5::
@@ -647,8 +647,8 @@
 	>^6::
 	>+6::
 	<+6::
-	vkFFsc079 & 6::
-	vkEBsc07B & 6::
+	vkFF & 6::
+	vkEB & 6::
 	LControl & 6::
 	RControl & 6::
 	LShift & 6::
@@ -664,8 +664,8 @@
 	>^7::
 	>+7::
 	<+7::
-	vkFFsc079 & 7::
-	vkEBsc07B & 7::
+	vkFF & 7::
+	vkEB & 7::
 	LControl & 7::
 	RControl & 7::
 	LShift & 7::
@@ -681,8 +681,8 @@
 	>^8::
 	>+8::
 	<+8::
-	vkFFsc079 & 8::
-	vkEBsc07B & 8::
+	vkFF & 8::
+	vkEB & 8::
 	LControl & 8::
 	RControl & 8::
 	LShift & 8::
@@ -698,8 +698,8 @@
 	>^9::
 	>+9::
 	<+9::
-	vkFFsc079 & 9::
-	vkEBsc07B & 9::
+	vkFF & 9::
+	vkEB & 9::
 	LControl & 9::
 	RControl & 9::
 	LShift & 9::
@@ -715,8 +715,8 @@
 	>^0::
 	>+0::
 	<+0::
-	vkFFsc079 & 0::
-	vkEBsc07B & 0::
+	vkFF & 0::
+	vkEB & 0::
 	LControl & 0::
 	RControl & 0::
 	LShift & 0::
@@ -732,8 +732,8 @@
 	>^-::
 	>+-::
 	<+-::
-	vkFFsc079 & -::
-	vkEBsc07B & -::
+	vkFF & -::
+	vkEB & -::
 	LControl & -::
 	RControl & -::
 	LShift & -::
@@ -751,8 +751,8 @@
 	<+=::
 	>#=::
 	<#=::
-	vkFFsc079 & =::
-	vkEBsc07B & =::
+	vkFF & =::
+	vkEB & =::
 	LControl & =::
 	RControl & =::
 	LShift & =::
@@ -768,8 +768,8 @@
 	>^\::
 	>+\::
 	<+\::
-	vkFFsc079 & \::
-	vkEBsc07B & \::
+	vkFF & \::
+	vkEB & \::
 	LControl & \::
 	RControl & \::
 	LShift & \::
@@ -786,8 +786,8 @@
 	>^;::
 	>+;::
 	<+;::
-	vkFFsc079 & `;::
-	vkEBsc07B & `;::
+	vkFF & `;::
+	vkEB & `;::
 	LControl & `;::
 	RControl & `;::
 	LShift & `;::
@@ -803,8 +803,8 @@
 	>^'::
 	>+'::
 	<+'::
-	vkFFsc079 & '::
-	vkEBsc07B & '::
+	vkFF & '::
+	vkEB & '::
 	LControl & '::
 	RControl & '::
 	LShift & '::
@@ -820,8 +820,8 @@
 	>^.::
 	>+.::
 	<+.::
-	vkFFsc079 & .::
-	vkEBsc07B & .::
+	vkFF & .::
+	vkEB & .::
 	LControl & .::
 	RControl & .::
 	LShift & .::
@@ -837,8 +837,8 @@
 	>^,::
 	>+,::
 	<+,::
-	vkFFsc079 & ,::
-	vkEBsc07B & ,::
+	vkFF & ,::
+	vkEB & ,::
 	LControl & ,::
 	RControl & ,::
 	LShift & ,::
@@ -854,8 +854,8 @@
 	>^/::
 	>+/::
 	<+/::
-	vkFFsc079 & /::
-	vkEBsc07B & /::
+	vkFF & /::
+	vkEB & /::
 	LControl & /::
 	RControl & /::
 	LShift & /::
@@ -871,9 +871,9 @@
 	>^[::
 	>+[::
 	<+[::
-	vkFFsc079 & [::
+	vkFF & [::
 	LControl & [::
-	vkEBsc07B & [::
+	vkEB & [::
 	RControl & [::
 	RShift & [::
 	LShift & [::
@@ -888,9 +888,9 @@
 	>^]::
 	>+]::
 	<+]::
-	vkFFsc079 & ]::
+	vkFF & ]::
 	LControl & ]::
-	vkEBsc07B & ]::
+	vkEB & ]::
 	RControl & ]::
 	RShift & ]::
 	LShift & ]::
@@ -905,9 +905,9 @@
 	>^BackSpace::
 	>+BackSpace::
 	<+BackSpace::
-	vkFFsc079 & BackSpace::
+	vkFF & BackSpace::
 	LControl & BackSpace::
-	vkEBsc07B & BackSpace::
+	vkEB & BackSpace::
 	RControl & BackSpace::
 	RShift & BackSpace::
 	LShift & BackSpace::
@@ -922,9 +922,9 @@
 	>^`::
 	>+`::
 	<+`::
-	vkFFsc079 & `::
+	vkFF & `::
 	LControl & `::
-	vkEBsc07B & `::
+	vkEB & `::
 	RControl & `::
 	RShift & `::
 	LShift & `::
@@ -939,9 +939,9 @@
 	>^Esc::
 	>+Esc::
 	<+Esc::
-	vkFFsc079 & Esc::
+	vkFF & Esc::
 	LControl & Esc::
-	vkEBsc07B & Esc::
+	vkEB & Esc::
 	RControl & Esc::
 	RShift & Esc::
 	LShift & Esc::
@@ -960,8 +960,8 @@
 	>^a::
 	>+a::
 	<+a::
-	vkFFsc079 & a::
-	vkEBsc07B & a::
+	vkFF & a::
+	vkEB & a::
 	LControl & a::
 	RControl & a::
 	LShift & a::
@@ -977,8 +977,8 @@
 	>^b::
 	>+b::
 	<+b::
-	vkFFsc079 & b::
-	vkEBsc07B & b::
+	vkFF & b::
+	vkEB & b::
 	LControl & b::
 	RControl & b::
 	LShift & b::
@@ -994,8 +994,8 @@
 	>^c::
 	>+c::
 	<+c::
-	vkFFsc079 & c::
-	vkEBsc07B & c::
+	vkFF & c::
+	vkEB & c::
 	LControl & c::
 	RControl & c::
 	LShift & c::
@@ -1011,8 +1011,8 @@
 	>^d::
 	>+d::
 	<+d::
-	vkFFsc079 & d::
-	vkEBsc07B & d::
+	vkFF & d::
+	vkEB & d::
 	LControl & d::
 	RControl & d::
 	LShift & d::
@@ -1028,8 +1028,8 @@
 	>^e::
 	>+e::
 	<+e::
-	vkFFsc079 & e::
-	vkEBsc07B & e::
+	vkFF & e::
+	vkEB & e::
 	LControl & e::
 	RControl & e::
 	LShift & e::
@@ -1045,8 +1045,8 @@
 	>^f::
 	>+f::
 	<+f::
-	vkFFsc079 & f::
-	vkEBsc07B & f::
+	vkFF & f::
+	vkEB & f::
 	LControl & f::
 	RControl & f::
 	LShift & f::
@@ -1062,8 +1062,8 @@
 	>^g::
 	>+g::
 	<+g::
-	vkFFsc079 & g::
-	vkEBsc07B & g::
+	vkFF & g::
+	vkEB & g::
 	LControl & g::
 	RControl & g::
 	LShift & g::
@@ -1079,8 +1079,8 @@
 	>^h::
 	>+h::
 	<+h::
-	vkFFsc079 & h::
-	vkEBsc07B & h::
+	vkFF & h::
+	vkEB & h::
 	LControl & h::
 	RControl & h::
 	LShift & h::
@@ -1096,8 +1096,8 @@
 	>^i::
 	>+i::
 	<+i::
-	vkFFsc079 & i::
-	vkEBsc07B & i::
+	vkFF & i::
+	vkEB & i::
 	LControl & i::
 	RControl & i::
 	LShift & i::
@@ -1113,8 +1113,8 @@
 	>^j::
 	>+j::
 	<+j::
-	vkFFsc079 & j::
-	vkEBsc07B & j::
+	vkFF & j::
+	vkEB & j::
 	LControl & j::
 	RControl & j::
 	LShift & j::
@@ -1130,8 +1130,8 @@
 	>^k::
 	>+k::
 	<+k::
-	vkFFsc079 & k::
-	vkEBsc07B & k::
+	vkFF & k::
+	vkEB & k::
 	LControl & k::
 	RControl & k::
 	LShift & k::
@@ -1147,8 +1147,8 @@
 	>^l::
 	>+l::
 	<+l::
-	vkFFsc079 & l::
-	vkEBsc07B & l::
+	vkFF & l::
+	vkEB & l::
 	LControl & l::
 	RControl & l::
 	LShift & l::
@@ -1164,8 +1164,8 @@
 	>^m::
 	>+m::
 	<+m::
-	vkFFsc079 & m::
-	vkEBsc07B & m::
+	vkFF & m::
+	vkEB & m::
 	LControl & m::
 	RControl & m::
 	LShift & m::
@@ -1181,8 +1181,8 @@
 	>^n::
 	>+n::
 	<+n::
-	vkFFsc079 & n::
-	vkEBsc07B & n::
+	vkFF & n::
+	vkEB & n::
 	LControl & n::
 	RControl & n::
 	LShift & n::
@@ -1198,8 +1198,8 @@
 	>^o::
 	>+o::
 	<+o::
-	vkFFsc079 & o::
-	vkEBsc07B & o::
+	vkFF & o::
+	vkEB & o::
 	LControl & o::
 	RControl & o::
 	LShift & o::
@@ -1215,8 +1215,8 @@
 	>^p::
 	>+p::
 	<+p::
-	vkFFsc079 & p::
-	vkEBsc07B & p::
+	vkFF & p::
+	vkEB & p::
 	LControl & p::
 	RControl & p::
 	LShift & p::
@@ -1232,8 +1232,8 @@
 	>^q::
 	>+q::
 	<+q::
-	vkFFsc079 & q::
-	vkEBsc07B & q::
+	vkFF & q::
+	vkEB & q::
 	LControl & q::
 	RControl & q::
 	LShift & q::
@@ -1249,8 +1249,8 @@
 	>^r::
 	>+r::
 	<+r::
-	vkFFsc079 & r::
-	vkEBsc07B & r::
+	vkFF & r::
+	vkEB & r::
 	LControl & r::
 	RControl & r::
 	LShift & r::
@@ -1266,8 +1266,8 @@
 	>^s::
 	>+s::
 	<+s::
-	vkFFsc079 & s::
-	vkEBsc07B & s::
+	vkFF & s::
+	vkEB & s::
 	LControl & s::
 	RControl & s::
 	LShift & s::
@@ -1283,8 +1283,8 @@
 	>^t::
 	>+t::
 	<+t::
-	vkFFsc079 & t::
-	vkEBsc07B & t::
+	vkFF & t::
+	vkEB & t::
 	LControl & t::
 	RControl & t::
 	LShift & t::
@@ -1300,8 +1300,8 @@
 	>^u::
 	>+u::
 	<+u::
-	vkFFsc079 & u::
-	vkEBsc07B & u::
+	vkFF & u::
+	vkEB & u::
 	LControl & u::
 	RControl & u::
 	LShift & u::
@@ -1317,8 +1317,8 @@
 	>^v::
 	>+v::
 	<+v::
-	vkFFsc079 & v::
-	vkEBsc07B & v::
+	vkFF & v::
+	vkEB & v::
 	LControl & v::
 	RControl & v::
 	LShift & v::
@@ -1334,8 +1334,8 @@
 	>^w::
 	>+w::
 	<+w::
-	vkFFsc079 & w::
-	vkEBsc07B & w::
+	vkFF & w::
+	vkEB & w::
 	LControl & w::
 	RControl & w::
 	LShift & w::
@@ -1351,8 +1351,8 @@
 	>^x::
 	>+x::
 	<+x::
-	vkFFsc079 & x::
-	vkEBsc07B & x::
+	vkFF & x::
+	vkEB & x::
 	LControl & x::
 	RControl & x::
 	LShift & x::
@@ -1368,8 +1368,8 @@
 	>^y::
 	>+y::
 	<+y::
-	vkFFsc079 & y::
-	vkEBsc07B & y::
+	vkFF & y::
+	vkEB & y::
 	LControl & y::
 	RControl & y::
 	LShift & y::
@@ -1385,8 +1385,8 @@
 	>^z::
 	>+z::
 	<+z::
-	vkFFsc079 & z::
-	vkEBsc07B & z::
+	vkFF & z::
+	vkEB & z::
 	LControl & z::
 	RControl & z::
 	LShift & z::
@@ -1402,8 +1402,8 @@
 	>^1::
 	>+1::
 	<+1::
-	vkFFsc079 & 1::
-	vkEBsc07B & 1::
+	vkFF & 1::
+	vkEB & 1::
 	LControl & 1::
 	RControl & 1::
 	LShift & 1::
@@ -1419,8 +1419,8 @@
 	>^2::
 	>+2::
 	<+2::
-	vkFFsc079 & 2::
-	vkEBsc07B & 2::
+	vkFF & 2::
+	vkEB & 2::
 	LControl & 2::
 	RControl & 2::
 	LShift & 2::
@@ -1436,8 +1436,8 @@
 	>^3::
 	>+3::
 	<+3::
-	vkFFsc079 & 3::
-	vkEBsc07B & 3::
+	vkFF & 3::
+	vkEB & 3::
 	LControl & 3::
 	RControl & 3::
 	LShift & 3::
@@ -1453,8 +1453,8 @@
 	>^4::
 	>+4::
 	<+4::
-	vkFFsc079 & 4::
-	vkEBsc07B & 4::
+	vkFF & 4::
+	vkEB & 4::
 	LControl & 4::
 	RControl & 4::
 	LShift & 4::
@@ -1470,8 +1470,8 @@
 	>^5::
 	>+5::
 	<+5::
-	vkFFsc079 & 5::
-	vkEBsc07B & 5::
+	vkFF & 5::
+	vkEB & 5::
 	LControl & 5::
 	RControl & 5::
 	LShift & 5::
@@ -1487,8 +1487,8 @@
 	>^6::
 	>+6::
 	<+6::
-	vkFFsc079 & 6::
-	vkEBsc07B & 6::
+	vkFF & 6::
+	vkEB & 6::
 	LControl & 6::
 	RControl & 6::
 	LShift & 6::
@@ -1504,8 +1504,8 @@
 	>^7::
 	>+7::
 	<+7::
-	vkFFsc079 & 7::
-	vkEBsc07B & 7::
+	vkFF & 7::
+	vkEB & 7::
 	LControl & 7::
 	RControl & 7::
 	LShift & 7::
@@ -1521,8 +1521,8 @@
 	>^8::
 	>+8::
 	<+8::
-	vkFFsc079 & 8::
-	vkEBsc07B & 8::
+	vkFF & 8::
+	vkEB & 8::
 	LControl & 8::
 	RControl & 8::
 	LShift & 8::
@@ -1538,8 +1538,8 @@
 	>^9::
 	>+9::
 	<+9::
-	vkFFsc079 & 9::
-	vkEBsc07B & 9::
+	vkFF & 9::
+	vkEB & 9::
 	LControl & 9::
 	RControl & 9::
 	LShift & 9::
@@ -1555,8 +1555,8 @@
 	>^0::
 	>+0::
 	<+0::
-	vkFFsc079 & 0::
-	vkEBsc07B & 0::
+	vkFF & 0::
+	vkEB & 0::
 	LControl & 0::
 	RControl & 0::
 	LShift & 0::
@@ -1572,8 +1572,8 @@
 	>^-::
 	>+-::
 	<+-::
-	vkFFsc079 & -::
-	vkEBsc07B & -::
+	vkFF & -::
+	vkEB & -::
 	LControl & -::
 	RControl & -::
 	LShift & -::
@@ -1591,8 +1591,8 @@
 	<+=::
 	>#=::
 	<#=::
-	vkFFsc079 & =::
-	vkEBsc07B & =::
+	vkFF & =::
+	vkEB & =::
 	LControl & =::
 	RControl & =::
 	LShift & =::
@@ -1608,8 +1608,8 @@
 	>^\::
 	>+\::
 	<+\::
-	vkFFsc079 & \::
-	vkEBsc07B & \::
+	vkFF & \::
+	vkEB & \::
 	LControl & \::
 	RControl & \::
 	LShift & \::
@@ -1626,8 +1626,8 @@
 	>^;::
 	>+;::
 	<+;::
-	vkFFsc079 & `;::
-	vkEBsc07B & `;::
+	vkFF & `;::
+	vkEB & `;::
 	LControl & `;::
 	RControl & `;::
 	LShift & `;::
@@ -1643,8 +1643,8 @@
 	>^'::
 	>+'::
 	<+'::
-	vkFFsc079 & '::
-	vkEBsc07B & '::
+	vkFF & '::
+	vkEB & '::
 	LControl & '::
 	RControl & '::
 	LShift & '::
@@ -1660,8 +1660,8 @@
 	>^.::
 	>+.::
 	<+.::
-	vkFFsc079 & .::
-	vkEBsc07B & .::
+	vkFF & .::
+	vkEB & .::
 	LControl & .::
 	RControl & .::
 	LShift & .::
@@ -1677,8 +1677,8 @@
 	>^,::
 	>+,::
 	<+,::
-	vkFFsc079 & ,::
-	vkEBsc07B & ,::
+	vkFF & ,::
+	vkEB & ,::
 	LControl & ,::
 	RControl & ,::
 	LShift & ,::
@@ -1694,8 +1694,8 @@
 	>^/::
 	>+/::
 	<+/::
-	vkFFsc079 & /::
-	vkEBsc07B & /::
+	vkFF & /::
+	vkEB & /::
 	LControl & /::
 	RControl & /::
 	LShift & /::
@@ -1711,9 +1711,9 @@
 	>^[::
 	>+[::
 	<+[::
-	vkFFsc079 & [::
+	vkFF & [::
 	LControl & [::
-	vkEBsc07B & [::
+	vkEB & [::
 	RControl & [::
 	RShift & [::
 	LShift & [::
@@ -1728,9 +1728,9 @@
 	>^]::
 	>+]::
 	<+]::
-	vkFFsc079 & ]::
+	vkFF & ]::
 	LControl & ]::
-	vkEBsc07B & ]::
+	vkEB & ]::
 	RControl & ]::
 	RShift & ]::
 	LShift & ]::
@@ -1745,9 +1745,9 @@
 	>^BackSpace::
 	>+BackSpace::
 	<+BackSpace::
-	vkFFsc079 & BackSpace::
+	vkFF & BackSpace::
 	LControl & BackSpace::
-	vkEBsc07B & BackSpace::
+	vkEB & BackSpace::
 	RControl & BackSpace::
 	RShift & BackSpace::
 	LShift & BackSpace::
@@ -1762,9 +1762,9 @@
 	>^`::
 	>+`::
 	<+`::
-	vkFFsc079 & `::
+	vkFF & `::
 	LControl & `::
-	vkEBsc07B & `::
+	vkEB & `::
 	RControl & `::
 	RShift & `::
 	LShift & `::
@@ -1779,9 +1779,9 @@
 	>^Esc::
 	>+Esc::
 	<+Esc::
-	vkFFsc079 & Esc::
+	vkFF & Esc::
 	LControl & Esc::
-	vkEBsc07B & Esc::
+	vkEB & Esc::
 	RControl & Esc::
 	RShift & Esc::
 	LShift & Esc::
@@ -1796,9 +1796,9 @@
 	>^Tab::
 	>+Tab::
 	<+Tab::
-	vkFFsc079 & Tab::
+	vkFF & Tab::
 	LControl & Tab::
-	vkEBsc07B & Tab::
+	vkEB & Tab::
 	RControl & Tab::
 	RShift & Tab::
 	LShift & Tab::
