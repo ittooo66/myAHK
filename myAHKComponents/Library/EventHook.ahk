@@ -14,9 +14,8 @@ EventHandlerSystemAlert(hWinEventHook, event, hwnd, idObject, idChild, thread, t
 }
 ;EVENT_SYSTEM_FOREGROUND
 EventHandlerSystemForeGround(hWinEventHook, event, hwnd, idObject, idChild, thread, time) {
-	WinGetTitle, title, ahk_id %hwnd%
- 	WinGetClass, class, ahk_id %hwnd%
-	WinGet, this_process, ProcessName, ahk_id %hwnd%
+	;アクティブなプロセス名を取得
+	WinGet, this_process, ProcessName, A
 
 	;アレの場合：邪魔なので消す
 	ifInString, this_process , Dotima.exe, {
