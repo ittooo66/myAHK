@@ -20,6 +20,11 @@ logger_clip(message){
 	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\Resources\Log\clip.log
 }
 
+logger_window(process,name){
+	log:=logger_date() . "," . process . "," . name . "`n"
+	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\Resources\Log\window.log
+}
+
 keyPressSpan := 0
 logger_key(message){
 	global keyPressSpan
