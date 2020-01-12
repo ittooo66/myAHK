@@ -82,7 +82,7 @@ press(key){
 	;修飾キーつきkeyPress
 	Send,%modifiers%%key%
 	;log出力
-	logger_key(key)
+	;logger_key(key)
 }
 
 ;直接入力、IME無視で文字列(string)(dat可)を入力する
