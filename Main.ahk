@@ -80,15 +80,6 @@ return
 RAlt & .::
 XButton1 & MButton::
 	Suspend, Permit
-	Suspend, ON
-	tooltip, AHK suspended
-	sleep 800
-	tooltip
-	logger_info("AHK SUSPENDED")
-return
-RAlt & /::
-F20 & MButton::
-	Suspend, Permit
 	tooltip, AHK shutting down
 	sleep 800
 	logger_info("AHK EXIT")
