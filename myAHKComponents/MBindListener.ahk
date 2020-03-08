@@ -661,6 +661,20 @@ LShift & BackSpace::
 	mbind_backspace()
 return
 
+*Return::
+<^Return::
+>^Return::
+>+Return::
+<+Return::
+vkFF & Return::
+LControl & Return::
+vkEB & Return::
+RControl & Return::
+RShift & Return::
+LShift & Return::
+	mbind_return()
+return
+
 *`::
 <^`::
 >^`::
