@@ -777,6 +777,19 @@ mbind_backspace(){
 		press("{BackSpace}")
 }
 
+mbind_return(){
+	if (SPACE() && CAPS() && SHIFT())
+		activateWindow("ConsoleWindowClass","cmd.exe","", 1 )
+	else if (SPACE() && CAPS()){
+		if !activateWindow("ConsoleWindowClass","cmd.exe","")
+			run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
+	}else if CAPS(){
+		Send,^{Return}
+	}else{
+		press("{Return}")
+	}
+}
+
 mbind_delete(){
 	if RCMD(){
 		;一行消し
