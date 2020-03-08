@@ -1,0 +1,9 @@
+pwd=cd $*
+ll=dir $*
+cat=type $*
+
+cp=copy $*
+mv=move $*
+rm=del $*
+
+sl=C:\Users\ittoo\OneDrive\Documents\ÅyAHKÅz\myAHKComponents\Resources\Scripts\sl.bat
