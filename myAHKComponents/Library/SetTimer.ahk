@@ -31,7 +31,9 @@ Loop,C:\Users\ittoo\3D Objects\VirtualboxSFs\PCControlServer\watch\*
 }
 Return
 
+;Windowロガー
 GetWindowTitle:
+Return
 	WinGet, now_process, ProcessName, A
     WinGetTitle, now_title, A
     logger_window(now_process,now_title)
