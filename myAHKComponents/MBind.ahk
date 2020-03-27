@@ -779,7 +779,7 @@ mbind_backspace(){
 
 mbind_return(){
 	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("ConsoleWindowClass","cmd.exe","", 1 )
+		run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
 	else if (SPACE() && CAPS()){
 		if !activateWindow("ConsoleWindowClass","cmd.exe","")
 			run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
