@@ -92,8 +92,8 @@ directInput(string){
 	;Clipboard経由で文字列一括入力
 	Clipboard := string
 	Send,^v
-	;入力完了を待ってClipboard内容を復元
-	sleep,100
+	;入力完了を待ってClipboard内容を復元(要Tuning)
+	sleep,200
 	Clipboard = %cb_bk%
 }
 
