@@ -840,10 +840,13 @@ mbind_mrb(){
 		mx+=wx
 		my+=wy
 		Loop, 3 {
-			FormatTime,hour,,HH
+			FormatTime,month,,M
+			FormatTime,daily,,d
+			FormatTime,yb,,ddd
+			FormatTime,hour,,H
 			FormatTime,minute,,mm
 			FormatTime,second,,ss
-			SplashImage,,CW000000 CT66cdaa B1 FM18 W120 X%mx% Y%my%,,%hour%:%minute%:%second%
+			SplashImage,,CW000000 CT66cdaa B1 FM18 W120 X%mx% Y%my% ,,%month%/%daily%(%yb%)  %hour%:%minute%:%second%
 			sleep , 1000
 		}
 		SplashImage,off
