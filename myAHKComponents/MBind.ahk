@@ -336,12 +336,7 @@ mbind_s(){
 }
 
 mbind_t(){
-	if SPACE() && CAPS() && SHIFT()
-		activateWindow("VTWin32","ttermpro.exe","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("VTWin32","ttermpro.exe","")
-			run, %A_AppDir%\TeraTerm
-	}else if RCMD() || CAPS(){
+	if RCMD() || CAPS(){
 		press("{return}")
 	}else if SPACE() && SHIFT()
 		ClipExt_copyTo("ST")
