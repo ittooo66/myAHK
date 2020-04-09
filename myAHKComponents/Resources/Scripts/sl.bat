@@ -30,14 +30,10 @@ if %SVNAME% == "" (
 )
 
 echo %SVNAME%にSSH接続を実施します
-set SSH_BAT="C:\Users\ittoo\3D Objects\VirtualboxSFs\%SVNAME%\scripts\Server_SSH.bat"
+ssh %SVNAME%
 
-rem SSH接続バッチの存在確認
-if not exist %SSH_BAT% (
-	echo 以下のSSH接続用バッチファイルが存在しません。接続処理を終了します。
-	echo %SSH_BAT%
+if %ERRORLEVEL% NEQ 0 (
+	echo SSH接続エラーです。端末のSSH接続設定（~/.ssh/config）を確認してください
 	exit /B 0
-) 
+)
 
-rem SSH接続バッチの実行
-%SSH_BAT%
