@@ -903,9 +903,14 @@ mbind_wheelup(){
 		Send,{WheelLeft}
 	else if MSBRF()
 		Send,#^{Volume_Up}
-	else if MSBRB()
-		Send,#^{Left}
-	else
+	else if MSBRB() {
+		if ( A_HUE_BRI <= 254 ){
+			A_HUE_BRI := A_HUE_BRI + 20
+		} else {
+			A_HUE_BRI := 254
+		}
+		execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
+	}else
 		Send,{WheelUp}
 }
 
@@ -916,9 +921,14 @@ mbind_wheeldown(){
 		Send,{WheelRight}
 	else if MSBRF()
 		Send,#^{Volume_Down}
-	else if MSBRB()
-		Send,#^{Right}
-	else
+	else if MSBRB() {
+		if ( A_HUE_BRI >= 0 ){
+			A_HUE_BRI := A_HUE_BRI - 20
+		} else {
+			A_HUE_BRI := 0
+		}
+		execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
+	}else
 		Send,{WheelDown}
 }
 
@@ -928,7 +938,7 @@ consumeSpace(){
 
 mbind_space_down(){
 	;Spaceキー押し下げ判定がない場合（初回入力）
-	if(A_SpaceDownFlag == 0){
+	if (A_SpaceDownFlag == 0){
 		;押し下げ判定付与
 		A_SpaceDownFlag := 1
 		;初回押し下げ時間の記録

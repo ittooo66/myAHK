@@ -7,6 +7,7 @@ global A_ResDir := A_WorkingDir . "\myAHKComponents\Resources"
 global A_SpaceDownTime := 0
 global A_SpaceDownFlag := 0
 global A_SpaceConsumeFlag := 0
+global A_HUE_BRI := 0 ;0~254
 
 ;Majinai
 #InstallKeybdHook
