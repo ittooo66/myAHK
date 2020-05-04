@@ -909,7 +909,9 @@ mbind_wheelup(){
 			A_HUE_BRI := 254
 		}
 		execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
-	}else
+	}else if MMB()
+		Send,#^{Left}
+	else
 		Send,{WheelUp}
 }
 
@@ -927,7 +929,9 @@ mbind_wheeldown(){
 			A_HUE_BRI := 0
 		}
 		execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
-	}else
+	}else if MMB()
+		Send,#^{Right}
+	else
 		Send,{WheelDown}
 }
 
