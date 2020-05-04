@@ -21,42 +21,6 @@
 	return
 #IfWinActive
 
-; ################# Tera Term フック定義 一式 ################# 
-#IfWinActive,ahk_class VTWin32
-	*d::
-	<^d::
-	>^d::
-	>+d::
-	<+d::
-	vkFF & d::
-	vkEB & d::
-	LControl & d::
-	RControl & d::
-	LShift & d::
-	RShift & d::
-		if CAPS() && LCMD()
-			teraterm_bind_d()
-		else
-			mbind_d()
-	return
-	*e::
-	<^e::
-	>^e::
-	>+e::
-	<+e::
-	vkFF & e::
-	vkEB & e::
-	LControl & e::
-	RControl & e::
-	LShift & e::
-	RShift & e::
-		if CAPS() && LCMD()
-			teraterm_bind_e()
-		else
-			mbind_e()
-	return
-#IfWinActive
-
 ; ################# Outlook フック用定義一式 ################# 
 #IfWinActive,ahk_class rctrl_renwnd32
 
