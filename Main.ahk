@@ -41,6 +41,8 @@ LWin Up::return
 ;AltTab
 XButton1 & WheelUp::ShiftAltTab
 XButton1 & WheelDown::AltTab
+RWin & ]::AltTab
+RWin & [::ShiftAltTab
 
 ;IME
 LShift Up::IME_EN()
