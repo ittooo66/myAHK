@@ -785,7 +785,7 @@ mbind_return(){
 	else if (SPACE() && CAPS()){
 		if !activateWindow("ConsoleWindowClass","cmd.exe","")
 			run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
-	}else if CAPS(){
+	}else if CAPS() || RCMD() {
 		Send,^{Return}
 	}else{
 		press("{Return}")
@@ -867,7 +867,7 @@ mbind_mrb(){
 mbind_mmb(){
 	if MRB(){
 		Send,^{t}
-	}else	if LCMD() || SPACE() {
+	}else if LCMD() || SPACE() {
 		ClipExt_openLog()
 	}else{
 		moveWindow()
@@ -895,6 +895,8 @@ mbind_msblf(){
 		changeSoundDevice("0")
 	}else if MSBLB(){
 		changeWindowSize()
+	}else if MSBLF(){
+		activeAllWindow()
 	}else{
 		Send,{XButton2}
 	}
