@@ -27,19 +27,6 @@
 	}
 #IfWinActive
 
-#IfWinActive,ahk_class VTWin32						;Tera Term 個別定義 一式
-	teraterm_bind_d(){								;FONTSIZE変更（10）
-			Send, !{s}{f}!{s}
-      		directInput("10")
-      		Send, {Return}
-	}
-	teraterm_bind_e(){								;FONTSIZE変更（17）
-			Send, !{s}{f}!{s}
-      		directInput("17")
-		    Send, {Return}
-	}
-#IfWinActive
-
 #IfWinActive,ahk_class rctrl_renwnd32				;Outlook 個別定義 一式
 	XButton2 & WheelDown::send,!{Down}				;次の週に移動
 	XButton2 & WheelUp::send,!{Up}					;前の週に移動
