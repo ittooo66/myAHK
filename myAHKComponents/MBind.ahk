@@ -30,7 +30,17 @@ mbind_b(){
 }
 
 mbind_c(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if  (SPACE() && CAPS() & SHIFT())
+		execScripts("killWoMic.bat")
+	else if (SPACE() && CAPS()){
+		if !activateWindow("","WOMicClient.exe",""){
+			run, %A_AppDir%\WoMic
+		}
+		sleep, 250
+		Send,{Alt Down}
+		Send,{Alt Up}
+		Send,{c}
+	}else if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroC.ahk
 	else if RCMD() || CAPS()
 		MacroC()
@@ -389,12 +399,7 @@ mbind_w(){
 }
 
 mbind_x(){
-	if  (SPACE() && CAPS() & SHIFT())
-		execScripts("killWoMic.bat")
-	else if (SPACE() && CAPS()){
-		if !activateWindow("","WOMicClient.exe","")
-			run, %A_AppDir%\WoMic
-	}else if ( CAPS() || RCMD() )&& SHIFT()
+	if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroX.ahk
 	else if RCMD() || CAPS()
 		MacroX()
