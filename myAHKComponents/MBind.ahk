@@ -66,10 +66,10 @@ mbind_d(){
 
 mbind_e(){
 	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("Notepad","","", 1 )
+		activateWindow("","Mery.exe","", 1 )
 	else if (SPACE() && CAPS()){
-		if !activateWindow("Notepad","","")
-			run, notepad.exe
+		if !activateWindow("","Mery.exe","")
+			run, %A_AppDir%\Mery
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
