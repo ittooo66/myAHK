@@ -355,9 +355,9 @@ mbind_u(){
 
 mbind_v(){
 	if (SPACE() && CAPS() && SHIFT()){
-		execScripts("TCV_mount.bat")
-	}else if (SPACE() && CAPS()){
 		execScripts("TCV_dismount.bat")
+	}else if (SPACE() && CAPS()){
+		execScripts("TCV_mount.bat")
 	}else if RCMD() || CAPS()
 		ClipExt_openLog()
 	else if SPACE() && SHIFT()
