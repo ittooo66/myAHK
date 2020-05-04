@@ -872,8 +872,6 @@ mbind_msblb(){
 		changeWindowSize()
 	}else if MSBRF(){
 		changeSoundDevice("1")
-	}else if MSBRB(){
-		MacroZ()
 	}else{
 		Send,{XButton1}
 	}
@@ -892,9 +890,6 @@ mbind_msblf(){
 }
 
 mbind_msbrb(){
-	if MSBLB(){
-		MacroZ()
-	}
 }
 
 mbind_msbrf(){
