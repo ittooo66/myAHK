@@ -6,4 +6,4 @@ cp=copy $*
 mv=move $*
 rm=del $*
 
-sl=C:\Users\ittoo\OneDrive\Documents\yAHKz\myAHKComponents\Resources\Scripts\sl.bat
+sl=C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yAHKz\myAHKComponents\Resources\Scripts\sl.bat
