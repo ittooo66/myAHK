@@ -23,6 +23,8 @@ mbind_b(){
 		ClipExt_copyTo("SB")
 	else if SPACE()
 		ClipExt_pasteFrom("SB")
+	else if RCMD() || CAPS()
+		press("{PgDn}")
 	else
 		press("b")
 }
@@ -411,6 +413,8 @@ mbind_y(){
 		ClipExt_copyTo("SY")
 	else if SPACE()
 		ClipExt_pasteFrom("SY")
+	else if RCMD() || CAPS()
+		press("{PgUp}")
 	else
 		press("y")
 }
