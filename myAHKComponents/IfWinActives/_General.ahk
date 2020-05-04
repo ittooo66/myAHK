@@ -1,8 +1,7 @@
 ; AP個別定義
-; 重量級AP以外はここに雑多に追記していく方針にする
-; →定義部分だけ一覧できるようにすること。
-; →個別定義の管理がしんどいので、使わない定義はなるべく削除すること。
-; →AP個別のフック定義は_HookDef.ahkにまとめる
+; ・定義部分だけコメントで一覧できるようにすること
+; ・管理がしんどいので、使わない定義はなるべく削除すること
+; ・PowerpointとExcel以外はここに雑多に追記していくこと
 
 #IfWinActive,ahk_class IEFrame						;Internet Explorer 個別定義 一式
 	RButton & WheelUp::Send,^+{Tab}					;タブ切替(逆)
@@ -14,29 +13,35 @@
 	RButton & LButton::Send,^+{n}					;新規Window
 #IfWinActive
 
-#IfWinActive,ahk_class #32770						;ファイル保存ウィンドウ 個別定義 一式
-	RButton & LButton::Send,!{Up}					;上へ戻る
-#IfWinActive
-
 #IfWinActive,ahk_class CabinetWClass				;Windows Explorer 個別定義 一式
 	RButton & MButton::Send,^{n}					;新規Window作成	
 	RButton & LButton::Send,!{Up}					;上へ戻る
 	RButton & XButton2::Send,!{v}{n}{Return}		;ナビゲーションウィンドウ表示切替
-	explorer_bind_q(){								;表示切替
-		Send,^{NumpadAdd}
-	}
+	*q::
+	<^q::
+	>^q::
+	>+q::
+	<+q::
+	vkFF & q::
+	vkEB & q::
+	LControl & q::
+	RControl & q::
+	LShift & q::
+	RShift & q::
+		if CAPS() && LCMD()
+			Send,^{NumpadAdd}
+		else
+			mbind_q()
+	return
+#IfWinActive
+
+#IfWinActive,ahk_class #32770						;ファイル保存ウィンドウ 個別定義 一式
+	RButton & LButton::Send,!{Up}					;上へ戻る
 #IfWinActive
 
 #IfWinActive,ahk_class rctrl_renwnd32				;Outlook 個別定義 一式
-	XButton2 & WheelDown::send,!{Down}				;次の週に移動
-	XButton2 & WheelUp::send,!{Up}					;前の週に移動
 	RButton & LButton::								;メールをDoneして次へ
 		send,^+{1}
-		sleep,200
-		send,{return}
-	return
-	RButton & XButton2::							;メールをDoingして次へ
-		send,^+{2}
 		sleep,200
 		send,{return}
 	return
@@ -49,16 +54,6 @@
 			Send,!{F4}
 		}
 	return
-	outlook_bind_t(){								;今日に移動
-		Send,!{h}{1}{o}{d}
-	}
-	outlook_bind_q(){								;週の表示形式
-		Send,!{v}{w}{1}
-	}
-	outlook_bind_w(){								;グループスケジュールの表示形式
-		Send,!{v}{r}
-			Send,!{v}{s}{v}
-	}
 #IfWinActive
 
 #IfWinActive,ahk_exe mpc-hc.exe						;MPC-HC 個別定義 一式
