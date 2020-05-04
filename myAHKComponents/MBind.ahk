@@ -650,7 +650,7 @@ mbind_equal(){
 
 mbind_bracket_left(){
 	if RCMD() || CAPS()
-		Send,^{c}
+		Send,#^{Left}
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SLBracket")
 	else if SPACE()
@@ -664,7 +664,7 @@ mbind_bracket_left(){
 
 mbind_bracket_right(){
 	if RCMD() || CAPS()
-		Send,^{v}
+		Send,#^{Right}
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SRBracket")
 	else if SPACE()
