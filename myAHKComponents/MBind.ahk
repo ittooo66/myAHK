@@ -104,9 +104,9 @@ mbind_f(){
 
 mbind_g(){
 	if (SPACE() && CAPS() && SHIFT()){
-		activateWindow("Chrome_WidgetWin_1","opera.exe","", 1 )
+		activateWindow("Chrome_WidgetWin_1","chrome.exe","", 1 )
 	}else if (SPACE() && CAPS()){
-		if !activateWindow("Chrome_WidgetWin_1","opera.exe","")
+		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
 			run, %A_AppDir%\GBrowser
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
