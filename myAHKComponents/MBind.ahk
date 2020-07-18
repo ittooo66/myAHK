@@ -167,13 +167,7 @@ mbind_j(){
 }
 
 mbind_k(){
-	if (SPACE() && CAPS() && SHIFT()){
-		activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-		WinMinimize, A
-	}else if (SPACE() && CAPS()){
-		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-			run, %A_AppDir%\Trello
-	}else if LSHIFT() && RSHIFT()
+	if LSHIFT() && RSHIFT()
 		Send,{RButton}
 	else if CAPS() && RCMD()
 		execScripts("PhilipsHueOff.bat")
