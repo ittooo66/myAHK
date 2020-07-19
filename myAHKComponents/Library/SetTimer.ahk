@@ -1,40 +1,39 @@
-;SetTimerå‡¦ç† ä¸€å¼
+;SetTimerˆ— ˆê®
 SetTimer, FileMonitor, 250
-SetTimer, GetWindowTitle, 1000
 Return
 
-;SetTimerå‡¦ç† å†…å®¹
+;SetTimerˆ— “à—e
 FileMonitor:
-Loop,C:\Users\ittoo\3D Objects\VirtualboxSFs\PCControlServer\watch\*
+Loop,C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yVirtualboxz\SFs\PCControlServer\watch\*
 {
-    command := A_LoopFileName
-
-    ;commandã«å¿œã˜ã¦å‡¦ç†ã‚’å®Ÿè¡Œ
-    if (command=="hue_on"){
-        execScripts("PhilipsHueOn.bat")
-    }else if (command=="hue_off"){
-        execScripts("PhilipsHueOff.bat")
-    }else if (command=="display_off"){
-        execPs1Scripts("displayoff.ps1")
-    }else if (command=="volume_down"){
-        Send,{Volume_Down}
-    }else if (command=="volume_up"){
-        Send,{Volume_Up}
-    }else if (command=="win_minimize"){
-        WinMinimizeAll
-    }else if (command=="tcv_dismount"){
-        execScripts("TCV_dismount.bat")
-    }
-
-    ;å®Ÿè¡ŒãŒçµ‚ã‚ã‚Šæ¬¡ç¬¬ã€å‰Šé™¤
-    FileDelete, %A_LoopFileFullPath%
+	Switch A_LoopFileName
+	{
+		case "hue_on":			execScripts("PhilipsHueOn.bat")
+		case "hue_off":			execScripts("PhilipsHueOff.bat")
+		case "volume_down":		Send,{Volume_Down}
+		case "volume_up":		Send,{Volume_Up}
+		case "win_minimize":	WinMinimizeAll
+		case "tcv_dismount":	execScripts("TCV_dismount.bat")
+		case "display_off":		execPs1Scripts("displayoff.ps1")
+		case "win_viewall":		activeAllWindow()
+		case "hue_up":
+			if ( A_HUE_BRI <= 254 ){
+				A_HUE_BRI := A_HUE_BRI + 20
+			} else {
+				A_HUE_BRI := 254
+			}
+			execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
+		case "hue_down":
+			if ( A_HUE_BRI >= 0 ){
+				A_HUE_BRI := A_HUE_BRI - 20
+			} else {
+				A_HUE_BRI := 0
+			}
+			execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
+		case "start_cmd":		run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
+		
+	}
+	
+	FileDelete, %A_LoopFileFullPath%
 }
-Return
-
-;Windowãƒ­ã‚¬ãƒ¼
-GetWindowTitle:
-Return
-	WinGet, now_process, ProcessName, A
-    WinGetTitle, now_title, A
-    logger_window(now_process,now_title)
 Return
