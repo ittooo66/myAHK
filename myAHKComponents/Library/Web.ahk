@@ -6,7 +6,7 @@ download(){
 	clipboard =
 	Send, ^c
 	ClipWait
-	Run, "https://www.onlinevideoconverter.com/ja/mp3-converter?url=%clipboard%"
+	Run, "https://y2mate.guru/en3/?url=%clipboard%"
 }
 
 ;タスク追加(Trello)
