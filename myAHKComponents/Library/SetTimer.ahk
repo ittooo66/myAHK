@@ -1,10 +1,8 @@
-;SetTimer処理 一式
 SetTimer, FileMonitor, 250
 Return
 
-;SetTimer処理 内容
 FileMonitor:
-Loop,C:\Users\ittoo\OneDrive\ドキュメント\【Virtualbox】\SFs\PCControlServer\watch\*
+Loop,C:\Users\ittoo\OneDrive\ドキュメント\【Virtualbox】\SFs\PCControlServer\watch*
 {
 	Switch A_LoopFileName
 	{
@@ -34,6 +32,10 @@ Loop,C:\Users\ittoo\OneDrive\ドキュメント\【Virtualbox】\SFs\PCControlServer\wat
 			}
 			execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
 		case "start_cmd":		run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
+		case "playlist_liquicity":				Send,{l}
+		case "playlist_hospitalrecords":		Send,{a}
+		case "playlist_psychedelic":			Send,{g}
+		case "playlist_ids":					Send,{s}
 		
 	}
 	
