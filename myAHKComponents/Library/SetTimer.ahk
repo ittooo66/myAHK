@@ -8,14 +8,17 @@ Loop,C:\Users\ittoo\OneDrive\ÉhÉLÉÖÉÅÉìÉg\ÅyVirtualboxÅz\SFs\PCControlServer\wat
 {
 	Switch A_LoopFileName
 	{
-		case "hue_on":			execScripts("PhilipsHueOn.bat")
-		case "hue_off":			execScripts("PhilipsHueOff.bat")
-		case "volume_down":		Send,{Volume_Down}
-		case "volume_up":		Send,{Volume_Up}
-		case "win_minimize":	WinMinimizeAll
-		case "tcv_dismount":	execScripts("TCV_dismount.bat")
-		case "display_off":		execPs1Scripts("displayoff.ps1")
-		case "win_viewall":		activeAllWindow()
+		case "hue_on":				execScripts("PhilipsHueOn.bat")
+		case "hue_off":				execScripts("PhilipsHueOff.bat")
+		case "volume_down":			Send,{Volume_Down}
+		case "volume_up":			Send,{Volume_Up}
+		case "win_minimize":		WinMinimizeAll
+		case "tcv_dismount":		execScripts("TCV_dismount.bat")
+		case "display_off":			execPs1Scripts("displayoff.ps1")
+		case "win_viewall":			activeAllWindow()
+		case "device_speaker":		changeSoundDevice("1")
+		case "device_earphone":		changeSoundDevice("0")
+		case "active_chrome":		activateWindow("Chrome_WidgetWin_1","chrome.exe","")
 		case "hue_up":
 			if ( A_HUE_BRI <= 254 ){
 				A_HUE_BRI := A_HUE_BRI + 20
