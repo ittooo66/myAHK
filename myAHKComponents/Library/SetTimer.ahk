@@ -2,7 +2,7 @@ SetTimer, FileMonitor, 250
 Return
 
 FileMonitor:
-Loop,C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yVirtualboxz\SFs\PCControlServer\watch*
+Loop,C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yVirtualboxz\SFs\PCControlServer\watch\*
 {
 	Switch A_LoopFileName
 	{
@@ -32,10 +32,10 @@ Loop,C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yVirtualboxz\SFs\PCControlServer\wat
 			}
 			execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
 		case "start_cmd":		run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
-		case "playlist_liquicity":				Send,{l}
-		case "playlist_hospitalrecords":		Send,{a}
-		case "playlist_psychedelic":			Send,{g}
-		case "playlist_ids":					Send,{s}
+		case "playlist_liquicity":				run, C:\Users\ittoo\OneDrive\Music\Liquicity\Liquicity.fpl
+		case "playlist_hospitalrecords":		run, "C:\Users\ittoo\OneDrive\Music\Hospital Records\HospitalRecords.fpl"
+		case "playlist_psychedelic":			run, C:\Users\ittoo\OneDrive\Music\Psychedelic\Psychedelic.fpl
+		case "playlist_ids":					run, C:\Users\ittoo\OneDrive\Music\ids\ids.fpl
 		
 	}
 	
