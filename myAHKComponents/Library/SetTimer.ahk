@@ -2,7 +2,7 @@ SetTimer, FileMonitor, 250
 Return
 
 FileMonitor:
-Loop,C:\Users\ittoo\OneDrive\ï¿½hï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½g\ï¿½yVirtualboxï¿½z\SFs\PCControlServer\watch\*
+Loop,C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yVirtualboxz\SFs\PCControlServer\watch\*
 {
 	Switch A_LoopFileName
 	{
