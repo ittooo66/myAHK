@@ -55,8 +55,8 @@ mouseMove(keyUp,keyDown,keyLeft,keyRight,val=1,slp=10){
 	monitor2_dpi := 1.5
 
 	;各モニタの設定値を取得(paramが逆っぽいのでこの形式)
-	sysget, mon1,Monitor, 2
-	sysget, mon2,Monitor, 1
+	sysget, mon1,Monitor, 1
+	sysget, mon2,Monitor, 2
 
 	;各モニタの幅・高さを取得
 	monitor1_width := (mon1Right - mon1Left)*monitor1_dpi

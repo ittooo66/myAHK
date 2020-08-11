@@ -866,7 +866,7 @@ mbind_msblb(){
 	}else if MSBLF(){
 		changeWindowSize()
 	}else if MSBRF(){
-		changeSoundDevice("1")
+		changeSoundDevice("2")
 	}else{
 		Send,{XButton1}
 	}
