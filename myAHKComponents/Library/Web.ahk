@@ -12,9 +12,9 @@ download(){
 ;タスク追加(Trello)
 addTaskToTrello(){
 	InputBox, taskname , Add task to trello, Please input task name,, 200, 130,,,,,
-	if ErrorLevel <> 0
+	if (ErrorLevel <> 0 ){
 		return
-	else {
+	}
 
 		;ComObjを利用
 		oHttp := ComObjCreate("WinHttp.Winhttprequest.5.1")
@@ -32,13 +32,12 @@ addTaskToTrello(){
 		enc_taskname := UriEncode(taskname)
 
 		;最左のリストを指定してタスクを追加
-		POST_URL := "https://trello.com/1/cards?key=" . getStringWriter("TRELLO_API_KEY") . "&token=" . getStringWriter("TRELLO_API_TOKEN") . "&idList=" . latestListId . "&name=" . enc_taskname
+		POST_URL := "https://trello.com/1/cards?key=" . getStringWriter("TRELLO_API_KEY") . "&token=" . getStringWriter("TRELLO_API_TOKEN") . "&idList=" . latestListId . "&name=" . enc_taskname . "&pos=top"
 
 		oHTTP.Open("POST", POST_URL, 0)
 		oHTTP.Send()
 		msgBox, Task added.
-
-	}
+		
 }
 
 ;URIエンコード用
