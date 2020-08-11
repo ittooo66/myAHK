@@ -2,7 +2,7 @@ SetTimer, FileMonitor, 250
 Return
 
 FileMonitor:
-Loop,C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yVirtualboxz\SFs\PCControlServer\watch\*
+Loop,C:\Users\ittoo\OneDrive\ï¿½hï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½g\ï¿½yVirtualboxï¿½z\SFs\PCControlServer\watch\*
 {
 	Switch A_LoopFileName
 	{
@@ -14,7 +14,7 @@ Loop,C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yVirtualboxz\SFs\PCControlServer\wat
 		case "tcv_dismount":		execScripts("TCV_dismount.bat")
 		case "display_off":			execPs1Scripts("displayoff.ps1")
 		case "win_viewall":			activeAllWindow()
-		case "device_speaker":		changeSoundDevice("1")
+		case "device_speaker":		changeSoundDevice("2")
 		case "device_earphone":		changeSoundDevice("0")
 		case "active_chrome":		activateWindow("Chrome_WidgetWin_1","chrome.exe","")
 		case "hue_up":
@@ -36,7 +36,9 @@ Loop,C:\Users\ittoo\OneDrive\ƒhƒLƒ…ƒƒ“ƒg\yVirtualboxz\SFs\PCControlServer\wat
 		case "playlist_hospitalrecords":		run, "C:\Users\ittoo\OneDrive\Music\Hospital Records\HospitalRecords.fpl"
 		case "playlist_psychedelic":			run, C:\Users\ittoo\OneDrive\Music\Psychedelic\Psychedelic.fpl
 		case "playlist_ids":					run, C:\Users\ittoo\OneDrive\Music\ids\ids.fpl
-		
+		case "media_next":						Send,{Media_Next}
+		case "media_prev":						Send,{Media_Prev}
+		case "media_ss":						Send,{Media_Play_Pause}
 	}
 	
 	FileDelete, %A_LoopFileFullPath%
