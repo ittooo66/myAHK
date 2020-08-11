@@ -15,7 +15,6 @@
 
 #IfWinActive,ahk_class CabinetWClass				;Windows Explorer 個別定義 一式
 	RButton & MButton::Send,^{n}					;新規Window作成	
-	RButton & LButton::Send,!{Up}					;上へ戻る
 	RButton & XButton2::Send,!{v}{n}{Return}		;ナビゲーションウィンドウ表示切替
 	*q::
 	<^q::
@@ -33,10 +32,6 @@
 		else
 			mbind_q()
 	return
-#IfWinActive
-
-#IfWinActive,ahk_class #32770						;ファイル保存ウィンドウ 個別定義 一式
-	RButton & LButton::Send,!{Up}					;上へ戻る
 #IfWinActive
 
 #IfWinActive,ahk_class rctrl_renwnd32				;Outlook 個別定義 一式

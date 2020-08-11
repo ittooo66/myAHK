@@ -802,7 +802,9 @@ mbind_escape(){
 }
 
 mbind_mlb(){
-	if MMB(){
+	if MRB(){
+		Send,!{Up}
+	}else if MMB(){
 		Send,#{Tab}
 	}else if MSBRB(){
 		execScripts("PhilipsHueOn.bat")
