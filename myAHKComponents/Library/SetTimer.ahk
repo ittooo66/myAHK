@@ -1,8 +1,8 @@
-﻿SetTimer, FileMonitor, 250
+SetTimer, FileMonitor, 250
 Return
 
 FileMonitor:
-Loop,C:\Users\ittoo\OneDrive\ドキュメント\【Virtualbox】\SFs\PCControlServer\watch\*
+Loop,C:\Users\ittoo\OneDrive\home\share\PCControlServer\watch\*
 {
 	Switch A_LoopFileName
 	{
