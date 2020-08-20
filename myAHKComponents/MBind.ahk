@@ -764,11 +764,12 @@ mbind_backspace(){
 }
 
 mbind_return(){
-	if (SPACE() && CAPS() && SHIFT())
-		run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
+	CMD_HOME_DIR := getStringWriter("CMD_HOME_DIR") 
+	if (SPACE() && CAPS() && SHIFT()) 
+		run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt && cd %CMD_HOME_DIR% && ssh ManagementServer
 	else if (SPACE() && CAPS()){
 		if !activateWindow("ConsoleWindowClass","cmd.exe","")
-			run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt
+			run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt && cd %CMD_HOME_DIR% && ssh ManagementServer
 	}else if CAPS() || RCMD() {
 		Send,^{Return}
 	}else{
