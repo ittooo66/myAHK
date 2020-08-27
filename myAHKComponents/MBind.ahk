@@ -768,7 +768,7 @@ mbind_backspace(){
 }
 
 mbind_return(){
-	CMD_HOME_DIR := getStringWriter("CMD_HOME_DIR") 
+	CMD_HOME_DIR := getEnv("CMD_HOME_DIR") 
 	if (SPACE() && CAPS() && SHIFT()) 
 		run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt && cd %CMD_HOME_DIR% && ssh ManagementServer
 	else if (SPACE() && CAPS()){

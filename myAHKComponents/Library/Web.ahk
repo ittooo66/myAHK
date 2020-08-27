@@ -20,7 +20,7 @@ addTaskToTrello(){
 		oHttp := ComObjCreate("WinHttp.Winhttprequest.5.1")
 
 		;直近のworkボードから最左にあるリストのIDをlatestListIdとして取得
-		GET_URL := "https://trello.com/1/boards/" . getStringWriter("TRELLO_WORK_BOARD_ID") . "/lists?key=" . getStringWriter("TRELLO_API_KEY") . "&token=" . getStringWriter("TRELLO_API_TOKEN")
+		GET_URL := "https://trello.com/1/boards/" . getEnv("TRELLO_WORK_BOARD_ID") . "/lists?key=" . getEnv("TRELLO_API_KEY") . "&token=" . getEnv("TRELLO_API_TOKEN")
 		oHttp.open("GET", GET_URL)
 		oHttp.send()
 		res := oHTTP.responseText
@@ -32,7 +32,7 @@ addTaskToTrello(){
 		enc_taskname := UriEncode(taskname)
 
 		;最左のリストを指定してタスクを追加
-		POST_URL := "https://trello.com/1/cards?key=" . getStringWriter("TRELLO_API_KEY") . "&token=" . getStringWriter("TRELLO_API_TOKEN") . "&idList=" . latestListId . "&name=" . enc_taskname . "&pos=top"
+		POST_URL := "https://trello.com/1/cards?key=" . getEnv("TRELLO_API_KEY") . "&token=" . getEnv("TRELLO_API_TOKEN") . "&idList=" . latestListId . "&name=" . enc_taskname . "&pos=top"
 
 		oHTTP.Open("POST", POST_URL, 0)
 		oHTTP.Send()
