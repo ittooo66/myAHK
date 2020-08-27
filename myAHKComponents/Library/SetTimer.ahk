@@ -12,7 +12,7 @@ Loop,C:\Users\ittoo\OneDrive\home\share\PCControlServer\watch\*
 		case "volume_up":			Send,{Volume_Up}
 		case "win_minimize":		WinMinimizeAll
 		case "tcv_dismount":		execScripts("TCV_dismount.bat")
-		case "display_off":			execPs1Scripts("displayoff.ps1")
+		case "display_off":			execScripts("displayoff.ps1")
 		case "win_viewall":			activeAllWindow()
 		case "device_speaker":		changeSoundDevice("2")
 		case "device_earphone":		changeSoundDevice("0")

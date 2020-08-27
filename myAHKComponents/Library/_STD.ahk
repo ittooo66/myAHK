@@ -150,18 +150,15 @@ muteNMin(){
 	}
 }
 
-;Scripts配下のバッチファイルを実行する
-;scriptName:"バッチファイル名"
+;Scripts配下のファイルを実行する
+;scriptName:"ファイル名"
 execScripts(scriptName){
 	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\" . scriptName
-	run, %script%
-}
-
-;Scripts配下のPS1ファイルを実行する
-;scriptName:"PS1ファイル名"
-execPs1Scripts(scriptName){
-	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\" . scriptName
-	run, powershell.exe %script%
+	if scriptName contains ps1 
+		run, powershell.exe %script%
+	else 
+		run, %script%
+	
 }
 
 ;IfinStringのラッパー、IfInStringの動作が安定しなかったので作った
