@@ -8,6 +8,8 @@ mbind_a(){
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() && CAPS()
 		Send,{Volume_Down}
+	else if LCMD() && CAPS()
+		Send,^{NumpadSub}	;Explorer用バインド
 	else if RCMD() || CAPS()
 		press("^{LEFT}")
 	else if SPACE() && SHIFT()
@@ -265,6 +267,8 @@ mbind_q(){
 		mouseCursorResetToCenter()
 	else if RCMD() && CAPS()
 		Send,{Volume_Up}
+	else if LCMD() && CAPS()
+		Send,^{NumpadAdd}	;Explorer用バインド
 	else if RCMD() || CAPS()
 		Send,{BackSpace}
 	else if LCMD(){
@@ -822,7 +826,9 @@ mbind_mlb(){
 }
 
 mbind_mrb(){
-	if MSBRB(){
+	if MMB(){
+		Send,^{n}
+	}else if MSBRB(){
 		execScripts("PhilipsHueOff.bat")
 	}else if MSBLB(){
 		Send,{RWin}
