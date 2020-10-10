@@ -30,24 +30,24 @@ RALT(){ ;HHKB_右Alt
 LALT(){ ;HHKB_左Alt
 	return GetKeyState("LAlt","P")
 }
-MLB(){ ;Mouse_LeftButton
+MLB(){ ;GPRO_左クリック
 	return GetKeyState("LButton","P")
 }
-MRB(){ ;Mouse_RightButton
+MRB(){ ;GPRO_右クリック
 	return GetKeyState("RButton","P")
 }
-MMB(){ ;Mouse_MidButton
+MMB(){ ;GPRO_中クリック
 	return GetKeyState("MButton","P")
 }
-MSBLB(){ ;Mouse_SideButton_LeftBack
+MSBLB(){ ;GPRO_左下サイドボタン
 	return GetKeyState("XButton1","P")
 }
-MSBLF(){ ;Mouse_SideButton_LeftFront
+MSBLF(){ ;GPRO_左上サイドボタン
 	return GetKeyState("XButton2","P")
 }
-MSBRF(){ ;Mouse_SideButton_RightForward
+MSBRF(){ ;GPRO_右上サイドボタン
 	return GetKeyState("Appskey","P")
 }
-MSBRB(){ ;Mouse_SideButton_RightBack
+MSBRB(){ ;GPRO_右下サイドボタン
 	return GetKeyState("F20","P")
 }
