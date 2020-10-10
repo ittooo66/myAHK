@@ -189,7 +189,7 @@ mbind_l(){
 	if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
 	else if CAPS() && RCMD()
-		execScripts("PhilipsHueOn.bat")
+		execScripts("PhilipsHueOn.bat" . A_HUE_BRI)
 	else if RCMD() || (CAPS() && SHIFT())
 		press("6")
 	else if CAPS() & LCMD()
@@ -812,7 +812,7 @@ mbind_mlb(){
 	}else if MMB(){
 		Send,#{Tab}
 	}else if MSBRB(){
-		execScripts("PhilipsHueOn.bat")
+		execScripts("PhilipsHueOn.bat " . A_HUE_BRI)
 	}else if MSBLF(){
 		intelliScroll()
 	}else if MSBLB(){
