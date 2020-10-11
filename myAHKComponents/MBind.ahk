@@ -359,9 +359,9 @@ mbind_u(){
 
 mbind_v(){
 	if (SPACE() && CAPS() && SHIFT()){
-		execScripts("TCV_dismount.bat")
+		run , "C:\Program Files\TrueCrypt\TrueCrypt.exe" /q /dr
 	}else if (SPACE() && CAPS()){
-		execScripts("TCV_mount.bat")
+		run , "C:\Program Files\TrueCrypt\TrueCrypt.exe" /q /v \Device\Harddisk1\Partition0 /lr
 	}else if RCMD() || CAPS()
 		ClipExt_openLog()
 	else if SPACE() && SHIFT()
@@ -770,10 +770,10 @@ mbind_backspace(){
 mbind_return(){
 	CMD_HOME_DIR := getEnv("CMD_HOME_DIR") 
 	if (SPACE() && CAPS() && SHIFT()) 
-		run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt && cd %CMD_HOME_DIR% && ssh ManagementServer
+		run, C:\WINDOWS\system32\cmd.exe e /k doskey && cd %CMD_HOME_DIR% && ssh ManagementServer
 	else if (SPACE() && CAPS()){
 		if !activateWindow("ConsoleWindowClass","cmd.exe","")
-			run, C:\WINDOWS\system32\cmd.exe e /k doskey /macrofile=%A_ResDir%\Scripts\cmd.txt && cd %CMD_HOME_DIR% && ssh ManagementServer
+			run, C:\WINDOWS\system32\cmd.exe e /k doskey && cd %CMD_HOME_DIR% && ssh ManagementServer
 	}else if CAPS() || RCMD() {
 		Send,^{Return}
 	}else{
