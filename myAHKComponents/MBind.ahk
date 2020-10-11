@@ -128,7 +128,9 @@ mbind_g(){
 }
 
 mbind_h(){
-	if RCMD() || CAPS()
+	if LSHIFT() && RSHIFT()
+		moveWindow()
+	else if RCMD() || CAPS()
 		press("{BackSpace}")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SH")
@@ -226,7 +228,9 @@ mbind_m(){
 }
 
 mbind_n(){
-	if RCMD() || (CAPS() && SHIFT())
+	if LSHIFT() && RSHIFT()
+		changeWindowSize()
+	else if RCMD() || (CAPS() && SHIFT())
 		press("0")
 	else if CAPS()
 		press("{numpad0}")
