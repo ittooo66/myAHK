@@ -32,7 +32,12 @@ mbind_b(){
 }
 
 mbind_c(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if (SPACE() && CAPS() && SHIFT())
+		activateWindow("Chrome_WidgetWin_1","Discord.exe","", 1 )
+	else if (SPACE() && CAPS()){
+		if !activateWindow("Chrome_WidgetWin_1","Discord.exe","")
+			run, %A_AppDir%\Discord
+	}else if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroC.ahk
 	else if RCMD() || CAPS()
 		MacroC()
