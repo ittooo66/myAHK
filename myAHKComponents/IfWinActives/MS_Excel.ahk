@@ -177,7 +177,9 @@
 		Send,^+{l}							;フィルタ有効化・無効化
 	}
 	excel_bind_2(){
-		
+			Send,!{h}{b}{i}					;白線化
+			Send,{Down}{Left}{Left}{Left}{Left}
+			Send,{return}{Esc}
 	}
 	excel_bind_3(){
 		
