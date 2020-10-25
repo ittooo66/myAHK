@@ -6,7 +6,7 @@ mbind_a(){
 			run, %A_AppDir%\Code
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
-	else if RCMD() && CAPS()
+	else if CAPS() && RCMD()
 		Send,{Volume_Down}
 	else if LCMD() && CAPS()
 		Send,^{NumpadSub}	;Explorer用バインド
@@ -59,7 +59,7 @@ mbind_d(){
 			run, %A_AppDir%\Excel
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
-	else if RCMD() && CAPS(){
+	else if CAPS() && RCMD(){
 		execScripts("displayoff.ps1")
 	}else if RCMD() || CAPS(){
 		press("{DOWN}")
@@ -274,7 +274,7 @@ mbind_q(){
 			run, %A_AppDir%\PowerPoint
 	}else if LSHIFT() && RSHIFT()
 		mouseCursorResetToCenter()
-	else if RCMD() && CAPS()
+	else if CAPS() && RCMD()
 		Send,{Volume_Up}
 	else if LCMD() && CAPS()
 		Send,^{NumpadAdd}	;Explorer用バインド
@@ -303,7 +303,7 @@ mbind_q(){
 }
 
 mbind_r(){
-	if RCMD() && CAPS(){
+	if CAPS() && RCMD(){
 		execScripts("explorer_restart.bat")
 	}else if SPACE() && CAPS() && SHIFT(){
 		activateWindow("IEFrame","","", 1 )
@@ -510,7 +510,7 @@ mbind_3(){
 mbind_4(){
 	if LCMD() && SHIFT()
 		Send,!{PrintScreen}
-	else if RCMD() && CAPS()
+	else if CAPS() && RCMD()
 		Send,^+{F11}
 	else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("4")
@@ -529,7 +529,7 @@ mbind_4(){
 }
 
 mbind_5(){
-	if RCMD() && CAPS()
+	if CAPS() && RCMD()
 		Send,^+{F12}
 	else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("5")
