@@ -449,9 +449,18 @@ mbind_z(){
 }
 
 mbind_1(){
-	if RCMD() && CAPS()
-		Send,^+{F8}
-	else if SPACE() && CAPS() && SHIFT(){
+	if CAPS() && RCMD(){
+		SysGet, VirtualWidth, 78  ; 3840:4k一枚、8640:4k+2K、2880:2k一枚
+		Send,{RWin Down}{p}{RWin Up}
+		Sleep 200
+		if (VirtualWidth > 3840){
+			Send,{Down}{Return}{Esc}
+		}else if (VirtualWidth < 3840){
+			Send,{Up}{Return}{Esc}
+		}else{
+			Send,{Esc}
+		}
+	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("1")
 		consumeSpace()
 	}else if SPACE() && CAPS(){
@@ -468,9 +477,18 @@ mbind_1(){
 }
 
 mbind_2(){
-	if RCMD() && CAPS()
-		Send,^+{F9}
-	else if SPACE() && CAPS() && SHIFT(){
+	if CAPS() && RCMD(){
+		SysGet, VirtualWidth, 78  ; 3840:4k一枚、8640:4k+2K、2880:2k一枚
+		Send,{RWin Down}{p}{RWin Up}
+		Sleep 200
+		if (VirtualWidth > 3840){
+			Send,{Up}{Up}{Return}{Esc}
+		}else if (VirtualWidth < 3840){
+			Send,{Esc}
+		}else{
+			Send,{Down}{Return}{Esc}
+		}
+	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("2")
 		consumeSpace()
 	}else if SPACE() && CAPS(){
@@ -489,9 +507,18 @@ mbind_2(){
 mbind_3(){
 	if LCMD() && SHIFT()
 		Send,{PrintScreen}
-	else if RCMD() && CAPS()
-		Send,^+{F10}
-	else if SPACE() && CAPS() && SHIFT(){
+	else if CAPS() && RCMD(){
+		SysGet, VirtualWidth, 78  ; 3840:4k一枚、8640:4k+2K、2880:2k一枚
+		Send,{RWin Down}{p}{RWin Up}
+		Sleep 200
+		if (VirtualWidth > 3840){
+			Send,{Esc}
+		}else if (VirtualWidth < 3840){
+			Send,{Down}{Down}{Return}{Esc}
+		}else{
+			Send,{Up}{Return}{Esc}
+		}
+	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("3")
 		consumeSpace()
 	}else if SPACE() && CAPS(){
