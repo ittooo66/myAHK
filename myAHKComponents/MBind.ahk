@@ -505,9 +505,7 @@ mbind_2(){
 }
 
 mbind_3(){
-	if LCMD() && SHIFT()
-		Send,{PrintScreen}
-	else if CAPS() && RCMD(){
+	if CAPS() && RCMD(){
 		SysGet, VirtualWidth, 78  ; 3840:4k一枚、8640:4k+2K、2880:2k一枚
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
@@ -535,11 +533,7 @@ mbind_3(){
 }
 
 mbind_4(){
-	if LCMD() && SHIFT()
-		Send,!{PrintScreen}
-	else if CAPS() && RCMD()
-		Send,^+{F11}
-	else if SPACE() && CAPS() && SHIFT(){
+	if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("4")
 		consumeSpace()
 	}else if SPACE() && CAPS(){
