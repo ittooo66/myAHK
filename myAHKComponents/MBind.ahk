@@ -550,9 +550,7 @@ mbind_4(){
 }
 
 mbind_5(){
-	if CAPS() && RCMD()
-		Send,^+{F12}
-	else if SPACE() && CAPS() && SHIFT(){
+	if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("5")
 		consumeSpace()
 	}else if SPACE() && CAPS(){
