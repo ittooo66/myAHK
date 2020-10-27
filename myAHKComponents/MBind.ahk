@@ -872,7 +872,7 @@ mbind_mrb(){
 			FormatTime,hour,,H
 			FormatTime,minute,,mm
 			FormatTime,second,,ss
-			SplashImage,,CW000000 CT66cdaa B1 FM18 W130 X%mx% Y%my% ,,%month%/%daily%(%yb%)  %hour%:%minute%:%second%
+			SplashImage,,CW000000 CT66cdaa B1 FM18 W180 X%mx% Y%my% ,,%month%/%daily%(%yb%)  %hour%:%minute%:%second%
 			sleep , 1000
 		}
 		SplashImage,off
