@@ -450,16 +450,10 @@ mbind_z(){
 
 mbind_1(){
 	if CAPS() && RCMD(){
-		SysGet, VirtualWidth, 78  ; 3840:4k一枚、8640:4k+2K、2880:2k一枚
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
-		if (VirtualWidth > 3840){
-			Send,{Down}{Return}{Esc}
-		}else if (VirtualWidth < 3840){
-			Send,{Up}{Return}{Esc}
-		}else{
-			Send,{Esc}
-		}
+		Send,{End}{Return}{Esc}
+		Reload	;GrabWindowの挙動がおかしくなるのでReloadしてみる
 	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("1")
 		consumeSpace()
@@ -478,16 +472,10 @@ mbind_1(){
 
 mbind_2(){
 	if CAPS() && RCMD(){
-		SysGet, VirtualWidth, 78  ; 3840:4k一枚、8640:4k+2K、2880:2k一枚
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
-		if (VirtualWidth > 3840){
-			Send,{Up}{Up}{Return}{Esc}
-		}else if (VirtualWidth < 3840){
-			Send,{Esc}
-		}else{
-			Send,{Down}{Return}{Esc}
-		}
+		Send,{Home}{Return}{Esc}
+		Reload	;GrabWindowの挙動がおかしくなるのでReloadしてみる
 	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("2")
 		consumeSpace()
@@ -506,16 +494,10 @@ mbind_2(){
 
 mbind_3(){
 	if CAPS() && RCMD(){
-		SysGet, VirtualWidth, 78  ; 3840:4k一枚、8640:4k+2K、2880:2k一枚
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
-		if (VirtualWidth > 3840){
-			Send,{Esc}
-		}else if (VirtualWidth < 3840){
-			Send,{Down}{Down}{Return}{Esc}
-		}else{
-			Send,{Up}{Return}{Esc}
-		}
+		Send,{End}{Up}{Return}{Esc}
+		Reload	;GrabWindowの挙動がおかしくなるのでReloadしてみる
 	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("3")
 		consumeSpace()
