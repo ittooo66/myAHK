@@ -44,10 +44,14 @@ ClipExt_copyTo(num){
 ClipExt_pasteFrom(num){
 	;Spaceキーのスタックを消費
 	consumeSpace()
-	;content取得
-	FileRead, content ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
-	;content出力
-	directInput(content)
+	;暴発防止のSleep
+	sleep, 250
+	if SPACE(){
+		;content取得
+		FileRead, content ,*c %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
+		;content出力
+		directInput(content)
+	}
 }
 
 ;ショートカット生成
