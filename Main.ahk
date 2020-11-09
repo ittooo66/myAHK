@@ -16,7 +16,6 @@ global A_HUE_BRI := 0 ;0~254
 
 ;preload eventhookdef/settimer
 #include %A_ScriptDir%\myAHKComponents
-#include Library\EventHookDef.ahk
 #include Library\SetTimer.ahk
 
 ;Disable CAPSLOCK
@@ -57,10 +56,8 @@ RShift Up::IME_JP()
 #include Library\Clip.ahk
 #include Library\Mouse.ahk
 #include Library\Web.ahk
-#include Library\IntoRemoteDesktop.ahk
 #include Library\Logger.ahk
 #include Library\IME.ahk
-#include Library\EventHook.ahk
 ;TempMacro
 #include Resources\TempMacro\MacroZ.ahk
 #include Resources\TempMacro\MacroX.ahk

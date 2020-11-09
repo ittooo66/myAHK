@@ -377,9 +377,11 @@ mbind_v(){
 		ClipExt_copyTo("SV")
 	else if SPACE()
 		ClipExt_pasteFrom("SV")
-	else if LCMD() && LALT()
-		IntoRemoteDesktop()
-	else
+	else if LCMD() && LALT(){
+		;テキスト形式にして貼り付け
+		clipboard = %clipboard%
+		Send,^{v}
+	}else
 		press("v")
 }
 
