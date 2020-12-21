@@ -11,7 +11,7 @@ Loop,C:\Users\ittooo66\OneDrive\home\share\PCControlServer\watch\*
 		case "volume_down":			Send,{Volume_Down}
 		case "volume_up":			Send,{Volume_Up}
 		case "win_minimize":		WinMinimizeAll
-		case "tcv_dismount":		execScripts("TCV_dismount.bat")
+		case "tcv_dismount":		run , "C:\Program Files\TrueCrypt\TrueCrypt.exe" /q /dr
 		case "display_off":			execScripts("displayoff.ps1")
 		case "win_viewall":			activeAllWindow()
 		case "device_speaker":		changeSoundDevice("2")
