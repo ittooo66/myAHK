@@ -196,7 +196,7 @@ mbind_l(){
 	if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
 	else if CAPS() && RCMD()
-		execScripts("PhilipsHueOn.bat" . A_HUE_BRI)
+		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
 	else if RCMD() || (CAPS() && SHIFT())
 		press("6")
 	else if CAPS() & LCMD()
@@ -824,7 +824,7 @@ mbind_mlb(){
 	}else if MMB(){
 		Send,#{Tab}
 	}else if MSBRB(){
-		execScripts("PhilipsHueOn.bat " . A_HUE_BRI)
+		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
 	}else if MSBLF(){
 		intelliScroll()
 	}else if MSBLB(){
@@ -870,8 +870,18 @@ mbind_mrb(){
 mbind_mmb(){
 	if MRB(){
 		Send,^{t}
-	}else if LCMD() || SPACE() {
-		ClipExt_openLog()
+	}else if MSBRB(){
+		InputBox, ct , SELECTCOLOR , choose color temp (150-450) ,, 200, 130,,,,,300
+		if ErrorLevel <> 0
+			return
+		else {
+			If ct is integer
+			{
+				A_HUE_CT := ct
+				execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
+			}else
+				msgbox, Invalid Input Number
+		}
 	}else{
 		moveWindow()
 	}
@@ -919,12 +929,12 @@ mbind_wheelup(){
 	else if MSBRF()
 		Send,#^{Volume_Up}
 	else if MSBRB() {
-		if ( A_HUE_BRI <= 254 ){
-			A_HUE_BRI := A_HUE_BRI + 20
+		if ( A_HUE_BRI <= 762 ){
+			A_HUE_BRI := A_HUE_BRI + 40
 		} else {
-			A_HUE_BRI := 254
+			A_HUE_BRI := 762
 		}
-		execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
+		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
 	}else if MMB()
 		Send,#^{Left}
 	else
@@ -940,11 +950,11 @@ mbind_wheeldown(){
 		Send,#^{Volume_Down}
 	else if MSBRB() {
 		if ( A_HUE_BRI >= 0 ){
-			A_HUE_BRI := A_HUE_BRI - 20
+			A_HUE_BRI := A_HUE_BRI - 40
 		} else {
 			A_HUE_BRI := 0
 		}
-		execScripts("PhilipsHueOn.bat " . A_HUE_BRI )
+		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
 	}else if MMB()
 		Send,#^{Right}
 	else
