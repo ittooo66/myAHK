@@ -155,9 +155,9 @@ muteNMin(){
 execScripts(scriptName){
 	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\" . scriptName
 	if scriptName contains ps1 
-		run, powershell.exe %script%
+		run, powershell.exe %script%,,hide
 	else 
-		run, %script%
+		run, %script%,,hide
 	
 }
 
