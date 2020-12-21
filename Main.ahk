@@ -15,8 +15,10 @@ global A_HUE_CT := 300 ;150~450
 #HotkeyInterval 100
 #UseHook
 
-;preload eventhookdef/settimer
+;Components Root Directory
 #include %A_ScriptDir%\myAHKComponents
+
+;Preload settimer
 #include Library\SetTimer.ahk
 
 ;Disable CAPSLOCK
