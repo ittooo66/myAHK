@@ -850,7 +850,7 @@ mbind_mrb(){
 		WinGetPos,wx,wy,,,a
 		mx+=wx
 		my+=wy
-		Loop, 3 {
+		while(GetKeyState("RButton","P")){
 			FormatTime,month,,M
 			FormatTime,daily,,d
 			FormatTime,yb,,ddd
