@@ -379,8 +379,8 @@ mbind_v(){
 		ClipExt_pasteFrom("SV")
 	else if LCMD() && LALT(){
 		;テキスト形式にして貼り付け
-		clipboard = %clipboard%
-		Send,^{v}
+		arg = %clipboard%
+		directInput(arg)
 	}else
 		press("v")
 }
