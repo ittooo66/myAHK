@@ -831,6 +831,7 @@ mbind_mlb(){
 		if !activateWindow("CabinetWClass","explorer.exe","")
 			Send,#{e}
 	}else if MSBRF(){
+		; 要EarTrunpetショートカット設定
 		Send,^+{q}
 	}else{
 		Send,{LButton}
