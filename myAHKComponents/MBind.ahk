@@ -161,9 +161,13 @@ mbind_i(){
 mbind_j(){
 	if LSHIFT() && RSHIFT()
 		mousePress("j")
-	else if CAPS() && RCMD()
-		download()
-	else if RCMD() || (CAPS() && SHIFT())
+	else if CAPS() && RCMD(){
+		Send, ^l
+		clipboard =
+		Send, ^c
+		ClipWait
+		execScripts("youtube-dl-mp3.ps1")
+	}else if RCMD() || (CAPS() && SHIFT())
 		press("4")
 	else if CAPS()
 		press("{numpad4}")

@@ -1,14 +1,5 @@
 ;WEB操作関係
 
-;youtube動画DL
-download(){
-	Send, ^l
-	clipboard =
-	Send, ^c
-	ClipWait
-	execScripts("youtube-dl-mp3.ps1")
-}
-
 ;タスク追加(Trello)
 addTaskToTrello(){
 	InputBox, taskname , Add task to trello, Please input task name,, 200, 130,,,,,
