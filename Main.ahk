@@ -50,27 +50,6 @@ RWin & [::ShiftAltTab
 LShift Up::IME_EN()
 RShift Up::IME_JP()
 
-;MBind
-#include MBindListener.ahk
-#include MBindSetting.ahk
-#include MBind.ahk
-;Library
-#include Library\_STD.ahk
-#include Library\Clip.ahk
-#include Library\Mouse.ahk
-#include Library\Web.ahk
-#include Library\Logger.ahk
-#include Library\IME.ahk
-;TempMacro
-#include Resources\TempMacro\MacroZ.ahk
-#include Resources\TempMacro\MacroX.ahk
-#include Resources\TempMacro\MacroC.ahk
-;IfWinActives
-#include IfWinActives\_HookDef.ahk
-#include IfWinActives\_General.ahk
-#include IfWinActives\MS_Powerpoint.ahk
-#include IfWinActives\MS_Excel.ahk
-
 ;AHK Control
 RAlt & ,::
 XButton2 & MButton::
@@ -89,3 +68,26 @@ XButton1 & MButton::
 	logger_info("AHK EXIT")
 	ExitApp
 return
+
+;MBind
+#include MBindListener.ahk
+#include MBindSetting.ahk
+#include MBind.ahk
+;Library
+#include Library\_STD.ahk
+#include Library\Clip.ahk
+#include Library\IME.ahk
+#include Library\Logger.ahk
+#include Library\Mouse.ahk
+#include Library\Web.ahk
+;IfWinActives
+#include IfWinActives\_HookDef.ahk
+#include IfWinActives\_General.ahk
+#include IfWinActives\MS_Powerpoint.ahk
+#include IfWinActives\MS_Excel.ahk
+
+;TempMacro
+#include Resources\TempMacro\MacroZ.ahk
+#include Resources\TempMacro\MacroX.ahk
+#include Resources\TempMacro\MacroC.ahk
+
