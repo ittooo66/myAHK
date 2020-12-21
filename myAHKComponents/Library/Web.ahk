@@ -6,7 +6,7 @@ download(){
 	clipboard =
 	Send, ^c
 	ClipWait
-	Run, "https://y2mate.guru/en3/?url=%clipboard%"
+	execScripts("youtube-dl-mp3.ps1")
 }
 
 ;タスク追加(Trello)
