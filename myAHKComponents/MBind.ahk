@@ -327,12 +327,7 @@ mbind_r(){
 }
 
 mbind_s(){
-	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("TextEditorWindowW166","sakura.exe","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("TextEditorWindowW166","sakura.exe","")
-			run, %A_AppDir%\SakuraEditor
-	}else if LCMD() && CAPS()
+	if LCMD() && CAPS()
 		Send,^{PgUp}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
@@ -434,12 +429,7 @@ mbind_y(){
 }
 
 mbind_z(){
-	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("OpusApp","","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("OpusApp","","")
-			run, %A_AppDir%\Word
-	}else if ( CAPS() || RCMD() )&& SHIFT()
+	if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroZ.ahk
 	else if RCMD() || CAPS()
 		MacroZ()
