@@ -11,21 +11,20 @@ changeWindowSize(){
 
 	;4Kモニタ側の設定の場合
 	if(X<-1280){
-		dpiW:=(3840+X)*0.5
-		dpiH:=Y*0.5
-		touchW:=W*1.5+dpiW-4
-		touchH:=H*1.5+dpiH-4
-		;スケーリング後のアクティブウィンドウ左上からtouchW,touchH分絶対ピクセルでmouseMoveさせる
-		;上記設定はDPIスケール150%,メインモニタが右上にある状態で左の4Kモニタに対してのみ有効
+		;mousemoveのX=0,Y=0がスケーリングでずれるため、以下の係数で修正する。
+		;DPIスケール150%,メインモニタが右上にある状態で左の4Kモニタに対してのみ有効
+		;+2はチューニング値
+		rawX:=(3840+X)/2+2
+		rawY:=Y/2+2
 
 	;FHDモニタ側の設定の場合
 	}else{
-		touchW:=W-2
-		touchH:=H-2
+		rawX:=0
+		rawY:=0
 	}
 
 	BlockInput, MouseMove
-	Mousemove,%touchW%,%touchH%,0
+	Mousemove,%rawX%,%rawY%,0
 	Send,{LButton Down}
 	BlockInput, MouseMoveOff
 	while(MSBLF() && MSBLB()){
