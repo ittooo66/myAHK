@@ -232,3 +232,29 @@ intelliScroll(){
 		}
 	}
 }
+
+;ランチャ
+;str:アプリ名称。バインドしたキー名称のアルファベットに合わせる
+;shift:強制起動モード。1で有効化
+;IEのとき：CLASS="IEFrame",PROCESS="",TITLE=""
+;Outlookのとき：CLASS="rctrl_renwnd32",PROCESS="OUTLOOK.EXE",TITLE=""
+;AppDirはmyAHKComponents\Resources\Apps配下。
+launch(str, shift=0){
+	
+	;該当するショートカットがなければ、何もしない
+	IfNotExist, %A_AppDir%\%str%.lnk
+		return
+
+	;強制起動モードの場合、strに紐づくアプリショートカットを起動して終了
+	if (shift != 0){
+		run, %A_AppDir%\%str%
+
+	;通常モードの場合、	既存WindowをActivateして、いなければ起動
+	}else{
+		className := getEnv("APP_" . str . "_CLASS")
+		processName := getEnv("APP_" . str . "_PROCESS")
+		titleName := getEnv("APP_" . str . "_TITLE")
+		if !activateWindow(className,processName,titleName) 
+			run, %A_AppDir%\%str%
+	}
+}

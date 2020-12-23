@@ -1,9 +1,6 @@
 mbind_a(){
-	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("Chrome_WidgetWin_1","Code.exe","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("Chrome_WidgetWin_1","Code.exe","")
-			run, %A_AppDir%\Code
+	if (SPACE() && CAPS()){
+		launch("A",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if CAPS() && RCMD()
@@ -52,11 +49,8 @@ mbind_c(){
 }
 
 mbind_d(){
-	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("XLMAIN","","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("XLMAIN","","")
-			run, %A_AppDir%\Excel
+	if (SPACE() && CAPS()){
+		launch("D",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() && RCMD(){
@@ -72,11 +66,8 @@ mbind_d(){
 }
 
 mbind_e(){
-	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("","Mery.exe","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("","Mery.exe","")
-			run, %A_AppDir%\Mery
+	if (SPACE() && CAPS()){
+		launch("E",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
@@ -110,11 +101,8 @@ mbind_f(){
 }
 
 mbind_g(){
-	if (SPACE() && CAPS() && SHIFT()){
-		activateWindow("Chrome_WidgetWin_1","chrome.exe","", 1 )
-	}else if (SPACE() && CAPS()){
-		if !activateWindow("Chrome_WidgetWin_1","chrome.exe","")
-			run, %A_AppDir%\GBrowser
+	if (SPACE() && CAPS()){
+		launch("G",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
@@ -271,11 +259,8 @@ mbind_p(){
 }
 
 mbind_q(){
-	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("PPTFrameClass","","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("PPTFrameClass","","")
-			run, %A_AppDir%\PowerPoint
+	if (SPACE() && CAPS()){
+		launch("Q",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseCursorResetToCenter()
 	else if CAPS() && RCMD()
@@ -309,11 +294,8 @@ mbind_q(){
 mbind_r(){
 	if CAPS() && RCMD(){
 		execScripts("explorer_restart.bat")
-	}else if SPACE() && CAPS() && SHIFT(){
-		activateWindow("IEFrame","","", 1 )
 	}else if SPACE() && CAPS(){
-		if !activateWindow("IEFrame","","")
-			run, %A_AppDir%\Internet Explorer
+		launch("R",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
@@ -385,11 +367,8 @@ mbind_v(){
 }
 
 mbind_w(){
-	if (SPACE() && CAPS() & SHIFT())
-		activateWindow("rctrl_renwnd32","OUTLOOK.EXE","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("rctrl_renwnd32","OUTLOOK.EXE","")
-			run, %A_AppDir%\Outlook
+	if (SPACE() && CAPS()){
+		launch("W",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
