@@ -5,9 +5,10 @@ mbind_a(){
 		mouseMoveFast("w","r","a","g")
 	else if CAPS() && RCMD()
 		Send,{Volume_Down}
-	else if LCMD() && CAPS()
-		Send,^{NumpadSub}	;Explorer用バインド
-	else if RCMD() || CAPS()
+	else if LCMD() && CAPS(){
+		;Chromeの画面縮小。Q側の拡大バインドと対応
+		Send,^{NumpadSub}
+	}else if RCMD() || CAPS()
 		press("^{LEFT}")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SA")
@@ -262,11 +263,15 @@ mbind_q(){
 		mouseCursorResetToCenter()
 	else if CAPS() && RCMD()
 		Send,{Volume_Up}
-	else if LCMD() && CAPS()
-		Send,^{NumpadAdd}	;Explorer用バインド
-	else if RCMD() || CAPS()
+	else if LCMD() && CAPS(){
+		;Chromeの画面拡大。A側の拡大バインドと対応
+		;Explorerの表示整理バインドでもある
+		Send,^{NumpadAdd}
+	}else if RCMD() || CAPS()
 		Send,{BackSpace}
 	else if LCMD(){
+		;セーフティ付きのAltF4
+
 		;遅延時間の定義
 		static CLOSE_TIME_DELAY := 400
 		;変数初期化
