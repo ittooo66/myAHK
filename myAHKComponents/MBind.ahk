@@ -29,11 +29,8 @@ mbind_b(){
 }
 
 mbind_c(){
-	if (SPACE() && CAPS() && SHIFT())
-		activateWindow("Chrome_WidgetWin_1","Discord.exe","", 1 )
-	else if (SPACE() && CAPS()){
-		if !activateWindow("Chrome_WidgetWin_1","Discord.exe","")
-			run, %A_AppDir%\Discord
+	if (SPACE() && CAPS()){
+		launch("C",SHIFT())
 	}else if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroC.ahk
 	else if RCMD() || CAPS()
@@ -309,7 +306,9 @@ mbind_r(){
 }
 
 mbind_s(){
-	if LCMD() && CAPS()
+	if SPACE() && CAPS(){
+		launch("S",SHIFT())
+	}else if LCMD() && CAPS()
 		Send,^{PgUp}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
@@ -367,9 +366,9 @@ mbind_v(){
 }
 
 mbind_w(){
-	if (SPACE() && CAPS()){
+	if (SPACE() && CAPS())
 		launch("W",SHIFT())
-	}else if LSHIFT() && RSHIFT()
+	else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
 	else if RCMD() || CAPS()
 		press("{HOME}")
@@ -382,7 +381,9 @@ mbind_w(){
 }
 
 mbind_x(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if SPACE() && CAPS()
+		launch("X",SHIFT())
+	else if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroX.ahk
 	else if RCMD() || CAPS()
 		MacroX()
@@ -408,7 +409,9 @@ mbind_y(){
 }
 
 mbind_z(){
-	if ( CAPS() || RCMD() )&& SHIFT()
+	if SPACE() && CAPS()
+		launch("Z",SHIFT())
+	else if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroZ.ahk
 	else if RCMD() || CAPS()
 		MacroZ()
