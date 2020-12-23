@@ -584,9 +584,7 @@ mbind_8(){
 }
 
 mbind_9(){
-	if RCMD() || CAPS()
-		press("{F9}")
-	else if SPACE() && CAPS() && SHIFT(){
+	if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("9")
 		consumeSpace()
 	}else if SPACE() && CAPS(){
@@ -596,18 +594,16 @@ mbind_9(){
 		ClipExt_copyTo("S9")
 	else if SPACE()
 		ClipExt_pasteFrom("S9")
-	else if SHIFT(){
-		Send,{(}
-		Send,{)}
-		Send,{Left}
-	}else
+	else if SHIFT()
+		Send,{(}{)}{Left}
+	else if RCMD() || CAPS()
+		press("{F9}")
+	else
 		press("9")
 }
 
 mbind_0(){
-	if RCMD() || CAPS()
-		press("{F10}")
-	else if SPACE() && CAPS() && SHIFT(){
+	if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("0")
 		consumeSpace()
 	}else if SPACE() && CAPS(){
@@ -617,6 +613,8 @@ mbind_0(){
 		ClipExt_copyTo("S0")
 	else if SPACE()
 		ClipExt_pasteFrom("S0")
+	else if RCMD() || CAPS()
+		press("{F10}")
 	else
 		press("0")
 }
