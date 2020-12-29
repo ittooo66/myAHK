@@ -317,6 +317,8 @@ mbind_s(){
 		Send,^{PgUp}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
+	else if CAPS() & ALT()
+		Send,#+{s}
 	else if RCMD() || CAPS()
 		press("{LEFT}")
 	else if SPACE() && SHIFT()
