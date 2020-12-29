@@ -9,21 +9,17 @@ changeWindowSize(){
 	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
 	WinGetActiveStats, Title, W, H, X, Y
 
-	;微調整パラメータ
-	tune := 1
-
 	;4Kモニタ側の設定の場合
 	if(X<-1280){
 		;mousemoveのX=0,Y=0がスケーリングでずれるため、以下の係数で修正する。
 		;DPIスケール150%,メインモニタが右上にある状態で左の4Kモニタに対してのみ有効
-		;+2はチューニング値
-		rawX:=(3840+X)/2+tune
-		rawY:=Y/2+tune
+		rawX:=(3840+X)/2+1
+		rawY:=Y/2+1
 
 	;FHDモニタ側の設定の場合
 	}else{
-		rawX:=tune
-		rawY:=tune
+		rawX:=2
+		rawY:=0
 	}
 
 	BlockInput, MouseMove
