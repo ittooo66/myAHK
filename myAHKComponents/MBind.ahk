@@ -51,6 +51,13 @@ mbind_d(){
 		launch("D",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
+	else if CAPS() && ALT(){
+		Send, ^l
+		clipboard =
+		Send, ^c
+		ClipWait
+		execScripts("youtube-dl-mp3.ps1")
+		msgBox, Queued. URL:%Clipboard%
 	}else if RCMD() || CAPS(){
 		press("{DOWN}")
 	}else if SPACE() && SHIFT()
@@ -145,13 +152,7 @@ mbind_i(){
 mbind_j(){
 	if LSHIFT() && RSHIFT()
 		mousePress("j")
-	else if CAPS() && RCMD(){
-		Send, ^l
-		clipboard =
-		Send, ^c
-		ClipWait
-		execScripts("youtube-dl-mp3.ps1")
-	}else if RCMD() || (CAPS() && SHIFT())
+	else if RCMD() || (CAPS() && SHIFT())
 		press("4")
 	else if CAPS()
 		press("{numpad4}")
