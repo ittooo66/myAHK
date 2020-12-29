@@ -168,8 +168,6 @@ mbind_j(){
 mbind_k(){
 	if LSHIFT() && RSHIFT()
 		Send,{RButton}
-	else if CAPS() && RCMD()
-		execScripts("PhilipsHueOff.bat")
 	else if RCMD() || (CAPS() && SHIFT())
 		press("5")
 	else if CAPS()
@@ -185,8 +183,6 @@ mbind_k(){
 mbind_l(){
 	if LSHIFT() && RSHIFT()
 		Send,{WheelUp}
-	else if CAPS() && RCMD()
-		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
 	else if RCMD() || (CAPS() && SHIFT())
 		press("6")
 	else if CAPS() & LCMD()
