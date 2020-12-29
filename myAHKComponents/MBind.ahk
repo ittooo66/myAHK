@@ -294,7 +294,7 @@ mbind_q(){
 }
 
 mbind_r(){
-	if CAPS() && RCMD(){
+	if CAPS() && ALT(){
 		execScripts("explorer_restart.bat")
 	}else if SPACE() && CAPS(){
 		launch("R",SHIFT())
