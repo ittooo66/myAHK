@@ -51,8 +51,6 @@ mbind_d(){
 		launch("D",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
-	else if CAPS() && RCMD(){
-		execScripts("displayoff.ps1")
 	}else if RCMD() || CAPS(){
 		press("{DOWN}")
 	}else if SPACE() && SHIFT()
