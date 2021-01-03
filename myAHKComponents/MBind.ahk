@@ -3,7 +3,7 @@ mbind_a(){
 		launch("A",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMoveFast("w","r","a","g")
-	else if CAPS() && RCMD()
+	else if CAPS() && ALT()
 		Send,{Volume_Down}
 	else if LCMD() && CAPS(){
 		;Chromeの画面縮小。Q側の拡大バインドと対応
@@ -256,7 +256,7 @@ mbind_q(){
 		launch("Q",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseCursorResetToCenter()
-	else if CAPS() && RCMD()
+	else if CAPS() && ALT()
 		Send,{Volume_Up}
 	else if LCMD() && CAPS(){
 		;Chromeの画面拡大。A側の拡大バインドと対応
