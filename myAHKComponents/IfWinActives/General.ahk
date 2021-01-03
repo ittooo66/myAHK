@@ -8,23 +8,6 @@
 	RButton & LButton::Send,^+{n}					;新規Window
 #IfWinActive
 
-#IfWinActive,ahk_class rctrl_renwnd32				;Outlook 個別定義 一式
-	RButton & LButton::								;メールをDoneして次へ
-		send,^+{1}
-		sleep,200
-		send,{return}
-	return
-	RButton & XButton1::							;メールを閉じる
-		WinGetTitle, Title, A
-		IfInString, Title, Outlook , {
-			;Outlookのコア(メールと予定表)では無効
-			return
-		}else{
-			Send,!{F4}
-		}
-	return
-#IfWinActive
-
 #IfWinActive,ahk_exe mpc-hc.exe						;MPC-HC 個別定義 一式
   XButton2 & WheelUp::Send,{Left}					;戻る
   XButton2 & WheelDown::Send,{Right}				;進む
