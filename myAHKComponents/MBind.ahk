@@ -859,6 +859,7 @@ mbind_mmb(){
 			{
 				A_HUE_CT := ct
 				execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
+				setEnv("A_HUE_CT", A_HUE_CT)
 			}else
 				msgbox, Invalid Input Number
 		}
@@ -915,6 +916,7 @@ mbind_wheelup(){
 			A_HUE_BRI := 762
 		}
 		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
+		setEnv("A_HUE_BRI", A_HUE_BRI)
 	}else if MMB()
 		Send,#^{Left}
 	else
@@ -935,6 +937,7 @@ mbind_wheeldown(){
 			A_HUE_BRI := 0
 		}
 		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
+		setEnv("A_HUE_BRI", A_HUE_BRI)
 	}else if MMB()
 		Send,#^{Right}
 	else
