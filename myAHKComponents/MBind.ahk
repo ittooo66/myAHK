@@ -639,8 +639,10 @@ mbind_equal(){
 }
 
 mbind_bracket_left(){
-	if RCMD() || CAPS()
-		Send,#^{Left}
+	if ( CAPS() || RCMD() )&& SHIFT()
+		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroBRL.ahk
+	else if RCMD() || CAPS()
+		MacroBRL()
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SLBracket")
 	else if SPACE()
@@ -653,8 +655,10 @@ mbind_bracket_left(){
 }
 
 mbind_bracket_right(){
-	if RCMD() || CAPS()
-		Send,#^{Right}
+	if ( CAPS() || RCMD() )&& SHIFT()
+		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroBRR.ahk
+	else if RCMD() || CAPS()
+		MacroBRR()
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SRBracket")
 	else if SPACE()
@@ -664,7 +668,11 @@ mbind_bracket_right(){
 }
 
 mbind_backslash(){
-	if SPACE() && SHIFT()
+	if ( CAPS() || RCMD() )&& SHIFT()
+		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroYEN.ahk
+	else if RCMD() || CAPS()
+		MacroYEN()
+	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SBackslash")
 	else if SPACE()
 		ClipExt_pasteFrom("SBackslash")
@@ -673,10 +681,12 @@ mbind_backslash(){
 }
 
 mbind_semicolon(){
-	if LSHIFT() && RSHIFT()
-		Send,{WheelDown}
+	if ( CAPS() || RCMD() )&& SHIFT()
+		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroSMC.ahk
 	else if RCMD() || CAPS()
-		press("{+}")
+		MacroSMC()
+	else if LSHIFT() && RSHIFT()
+		Send,{WheelDown}
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SSemicolon")
 	else if SPACE()
@@ -736,7 +746,11 @@ mbind_camma(){
 }
 
 mbind_slash(){
-	if SPACE() && SHIFT()
+	if ( CAPS() || RCMD() )&& SHIFT()
+		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroSLS.ahk
+	else if RCMD() || CAPS()
+		MacroSLS()
+	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SSlash")
 	else if SPACE()
 		ClipExt_pasteFrom("SSlash")

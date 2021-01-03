@@ -88,4 +88,8 @@ return
 #include Resources\TempMacro\MacroZ.ahk
 #include Resources\TempMacro\MacroX.ahk
 #include Resources\TempMacro\MacroC.ahk
-
+#include Resources\TempMacro\MacroBRL.ahk
+#include Resources\TempMacro\MacroBRR.ahk
+#include Resources\TempMacro\MacroSLS.ahk
+#include Resources\TempMacro\MacroSMC.ahk
+#include Resources\TempMacro\MacroYEN.ahk
