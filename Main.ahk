@@ -79,8 +79,8 @@ return
 #include Library\Mouse.ahk
 #include Library\Web.ahk
 ;IfWinActives
-#include IfWinActives\_HookDef.ahk
-#include IfWinActives\_General.ahk
+#include IfWinActives\HookDef.ahk
+#include IfWinActives\General.ahk
 #include IfWinActives\MS_Powerpoint.ahk
 #include IfWinActives\MS_Excel.ahk
 
