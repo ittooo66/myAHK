@@ -84,11 +84,8 @@ mbind_e(){
 }
 
 mbind_f(){
-	if (SPACE() && CAPS() && SHIFT()){
-		activateWindow("CabinetWClass","explorer.exe","", 1 )
-	}else	if (SPACE() && CAPS()){
-		if !activateWindow("CabinetWClass","explorer.exe","")
-			Send,#{e}
+	if (SPACE() && CAPS()){
+		launch("F",SHIFT())
 	}else if LCMD() && CAPS()
 		Send,^{PgDn}
 	else if LSHIFT() && RSHIFT()
