@@ -53,7 +53,6 @@ RAlt & ,::
 XButton2 & MButton::
 	Suspend, Permit
 	splash("AHK reloading...",300)
-	tooltip
 	logger_info("AHK RELOADED")
 	Reload
 return
