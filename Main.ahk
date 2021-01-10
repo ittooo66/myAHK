@@ -52,8 +52,7 @@ RShift Up::IME_JP()
 RAlt & ,::
 XButton2 & MButton::
 	Suspend, Permit
-	tooltip, AHK reloading
-	sleep 300
+	splash("AHK reloading...",300)
 	tooltip
 	logger_info("AHK RELOADED")
 	Reload
@@ -61,8 +60,7 @@ return
 RAlt & .::
 XButton1 & MButton::
 	Suspend, Permit
-	tooltip, AHK shutting down
-	sleep 800
+	splash("AHK shutting down...",1000)
 	logger_info("AHK EXIT")
 	ExitApp
 return

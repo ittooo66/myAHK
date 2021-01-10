@@ -27,7 +27,9 @@ addTaskToTrello(){
 
 		oHTTP.Open("POST", POST_URL, 0)
 		oHTTP.Send()
-		msgBox, Task added.
+		
+		;確認メッセージ表示
+		splash("TASK ADDED.")
 		
 }
 

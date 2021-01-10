@@ -258,3 +258,20 @@ launch(str, shift=0){
 			run, %A_AppDir%\%str%
 	}
 }
+
+;通知メッセージの表示
+splash(str, sleep=3000 ,width=0 ,mx=0,my=0){
+	if (mx = 0 && my = 0){
+		MouseGetPos,mx,my
+		WinGetPos,wx,wy,,,a
+		mx+=wx
+		my+=wy
+	}
+	if (width=0){
+		SplashImage,,CW000000 CT66cdaa B FM18 X%mx% Y%my% ,,%str% ,,MS Gothic
+	}else{
+		SplashImage,,CW000000 CT66cdaa B FM18 W%width% X%mx% Y%my% ,,%str% ,,MS Gothic
+	}
+	sleep , %sleep%
+	SplashImage,off
+}
