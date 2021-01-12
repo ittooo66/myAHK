@@ -834,7 +834,11 @@ mbind_mrb(){
 	}else if MSBRB(){
 		execScripts("PhilipsHueOff.bat")
 	}else if MSBLB(){
-		Send,{RWin}
+		Send,{RWin Down}
+		while(GetKeyState("RButton","P")){
+			Sleep,30
+		}
+		Send,{RWin Up}
 	}else if MSBLF(){
 		MouseGetPos,mx,my
 		WinGetPos,wx,wy,,,a
