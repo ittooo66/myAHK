@@ -13,22 +13,22 @@
 
 + __MANUAL.pptx__
 
-  外部仕様を記載しています。内部仕様はここに記載。
+  外部仕様を記載しています。
 
 + __Main.ahk__
 
-  実行ファイル。基本的なバインド設定と#include設定のみを記載。
+  実行ファイル。基本的なバインド設定と`#include`設定を記載。
 
 + __myAHKComponents/__
 
   実行ファイル（Main.ahk）がロードする以下のComponentを格納。
 
-      MBind.ahk           :myAHK本体。全体的な挙動を記載。
-      MBindListener.ahk   :MBindを当てるためのリスナ。
-      MbindSetting.ahk    :MBindの仮想修飾キーの設定ファイル。
-      IfWinActives/       :特定Windowにだけ適用するバインドセット。
-      Library/            :追加機能群はここにいれる。仕様はコメントをみること。
-      Resources/          :各機能で利用するリソース置き場。Alias,Log,ps1など。
+      MBind.ahk           :本体。全体的な挙動を記載
+      MBindListener.ahk   :MBindを当てるためのリスナ
+      MbindSetting.ahk    :MBindの仮想修飾キーの設定ファイル
+      IfWinActives/       :特定Windowのみ適用するバインド
+      Library/            :追加機能のライブラリ
+      Resources/          :各機能で利用するリソース置き場
 
 + ___old/__
 
@@ -41,7 +41,7 @@
 ---
 
 1. CRLF or LF  
-Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipでDownloadする時にもにょる。以下対策。現状は前者。
+Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipでDownloadする時にもにょる。対策は以下。現状は前者。
     + `.git/config` ファイルにて `autoCRLF=false`
     + powershellで`git clone`するとそのへん宜しくやってくれるっぽい
 
@@ -49,8 +49,8 @@ Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipでDownload
     
     + IME切替  
         Alt+\`,Ctrl+\`には勝てない。    
-    + Win+L(画面ロック),Win+Enter(ナレーター)  
-          ナレーター機能はreg編集なしで解除できたが、ロック機能はreg編集しないとどうしようもない。
+    + Win+L(画面ロック)
+        ナレーター機能(Win+Enter)などはreg編集なしで解除できるが、ロック機能は要reg編集。reg編集不可の環境では負ける。
     
 1. 修飾キー特性  
     + __Windows__  
@@ -58,7 +58,7 @@ Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipでDownload
     + __Alt__  
       押下が漏れるらしく、Altを他バインドに変換してもAltおされっぱ扱いになるっぽい。AltはAltとして利用する方針で対処
     + __Capslock__  
-      入力が一番安定しない。Windowsキーと同様、AHK側での個別制御をせず、sc03aのGetKeyStateで入力状態を検知して対応  
+      入力が一番安定しない。Windowsキーと同様、原則無効化でAHK側での個別制御をせず、sc03aのGetKeyStateで入力状態を検知して対応  
     + __変換・無変換__  
       HHKBにはないが、JISキー系に対応するため、MBindSettings.ahkにはとりあえず定義している。割と無害で素直。
 
@@ -72,8 +72,7 @@ Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipでDownload
     + AHK 1.1.32.00 対応
 
 1. SetTimer機能
-    + Pollingやってるせいなのか何なのかわからんけど、使ってるとFPS系のカーソルが荒ぶる？
-    必要性が微妙なのであんまり使わないほうがいいかも
+    + Pollingやってるせいなのか何なのかわからんけど、使ってるとFPS系のカーソルが荒ぶる（？）ので、FPS系のゲームと併存できない
 
 
 [HHKB]: http://www.pfu.fujitsu.com/hhkeyboard/
