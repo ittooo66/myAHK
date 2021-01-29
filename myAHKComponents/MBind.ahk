@@ -57,7 +57,7 @@ mbind_d(){
 		Send, ^c
 		ClipWait
 		execScripts("youtube-dl-mp3.ps1")
-		msgBox, Queued. URL:%Clipboard%
+		splash("Queued : " . Clipboard ,,800)
 	}else if RCMD() || CAPS(){
 		press("{DOWN}")
 	}else if SPACE() && SHIFT()
