@@ -101,15 +101,22 @@ directInput(string){
 ;（イヤホン：num=0、スピーカ：num=1）
 changeSoundDevice(num){
 	run, control mmsys.cpl
-	sleep,1200
-	activateWindow("#32770","","")
-	Send,{Up}{Up}{Up}{Up}
-	Loop, %num%
+	sleep,1000
+	loop, 40
 	{
-		Send,{Down}
+		if activateWindow("#32770","","")
+		{
+			Send,{Up}{Up}{Up}{Up}
+			Loop, %num%
+			{
+				Send,{Down}
+			}
+			Send,!{s}
+			Send,{Esc}
+	 		break
+	 	}
+	 sleep,250
 	}
-	Send,!{s}
-	Send,{Esc}
 }
 
 ;外部変数への書き込み
