@@ -24,6 +24,25 @@
   XButton2 & LButton::MPC_intelliScroll()			;IntelliScroll
 #IfWinActive
 
+#IfWinActive,ahk_exe cmd.exe
+	*q::
+	<^q::
+	>^q::
+	>+q::
+	<+q::
+	vkFF & q::
+	vkEB & q::
+	LControl & q::
+	RControl & q::
+	LShift & q::
+	RShift & q::
+		if LCMD() 
+			Send,{e}{x}{i}{t}
+		else
+			mbind_q()
+	return
+#IfWinActive
+
 ;よさげなスクロール(for MPC)
 MPC_intelliScroll(){
 	;初期マウス位置の取得
