@@ -10,6 +10,9 @@ global A_SpaceConsumeFlag := 0
 global A_HUE_BRI := getEnv("A_HUE_BRI") ;0~762
 global A_HUE_CT := getEnv("A_HUE_CT") ;150~450
 
+;MouseCursor Setting
+execScripts("mouseCursor_black.ps1")
+
 ;Majinai
 #InstallKeybdHook
 #HotkeyInterval 100
@@ -60,6 +63,7 @@ RAlt & .::
 XButton1 & MButton::
 	Suspend, Permit
 	splash("AHK shutting down...",1000)
+	execScripts("mouseCursor_standard.ps1")
 	logger_info("AHK EXIT")
 	ExitApp
 return
