@@ -62,7 +62,7 @@ return
 RAlt & .::
 XButton1 & MButton::
 	Suspend, Permit
-	splash("AHK shutting down...",1000)
+	splash("AHK shutting down...",500)
 	execScripts("mouseCursor_standard.ps1")
 	logger_info("AHK EXIT")
 	ExitApp
