@@ -53,6 +53,7 @@ mbind_d(){
 		mouseMove("e","d","s","f")
 	else if CAPS() && ALT(){
 		Send, ^l
+		Sleep,250
 		clipboard =
 		Send, ^c
 		ClipWait
