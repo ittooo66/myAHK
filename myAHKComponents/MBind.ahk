@@ -891,8 +891,7 @@ mbind_msblb(){
 	}else if MSBLF(){
 		changeWindowSize()
 	}else if MSBRF(){
-		execScripts("ToggleAudioDevice.ps1")
-		splash("sound device changed.")
+		splash("null",1000)
 	}else{
 		Send,{XButton1}
 	}
@@ -903,7 +902,7 @@ mbind_msblf(){
 		Send,^+{t}
 	}else if MSBRF(){
 		execScripts("ToggleAudioDevice.ps1")
-		splash("sound device changed.")
+		splash("sound device changed.",1000)
 	}else if MSBLB(){
 		changeWindowSize()
 	}else if MSBLF(){
