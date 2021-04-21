@@ -10,15 +10,12 @@ $RegCursors.SetValue("AppStarting","%SystemRoot%\cursors\aero_working.ani")
 $RegCursors.SetValue("Arrow","%SystemRoot%\cursors\aero_arrow.cur")
 #ContactVisualization
 $RegCursors.SetValue("Crosshair","")
-$RegCursors.SetValue("CursorBaseSize",0x40)
 #GestureVisualization
 $RegCursors.SetValue("Hand","%SystemRoot%\cursors\aero_link.cur")
 $RegCursors.SetValue("Help","%SystemRoot%\cursors\aero_helpsel.cur")
 $RegCursors.SetValue("IBeam","")
 $RegCursors.SetValue("No","%SystemRoot%\cursors\aero_unavail.cur")
 $RegCursors.SetValue("NWPen","%SystemRoot%\cursors\aero_pen.cur")
-$RegCursors.SetValue("Person","%SystemRoot%\cursors\aero_person.cur")
-$RegCursors.SetValue("Pin","%SystemRoot%\cursors\aero_pin.cur")
 #Scheme Source
 $RegCursors.SetValue("SizeAll","%SystemRoot%\cursors\aero_move.cur")
 $RegCursors.SetValue("SizeNESW","%SystemRoot%\cursors\aero_nesw.cur")
