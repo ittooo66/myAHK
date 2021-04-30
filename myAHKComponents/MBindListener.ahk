@@ -712,7 +712,7 @@ RButton & LButton::
 MButton & LButton::
 XButton1 & LButton::
 XButton2 & LButton::
-AppsKey & LButton::
+F19 & LButton::
 F20 & LButton::
 LWin & LButton::
 RWin & LButton::
@@ -723,7 +723,7 @@ RButton::
 MButton & RButton::
 XButton1 & RButton::
 XButton2 & RButton::
-AppsKey & RButton::
+F19 & RButton::
 F20 & RButton::
 LWin & RButton::
 RWin & RButton::
@@ -734,7 +734,7 @@ MButton::
 RButton & MButton::
 ;XButton1 & MButton::AHK RELOADで利用
 ;XButton2 & MButton::AHK SUSPENDで利用
-AppsKey & MButton::
+F19 & MButton::
 ;F20 & MButton::AHK EXITで利用
 LWin & MButton::
 RWin & MButton::
@@ -747,7 +747,7 @@ RButton & WheelUp::
 ;XButton1 & WheelUp::ALTTABで利用
 XButton2 & WheelUp::
 F20 & WheelUp::
-AppsKey & WheelUp::
+F19 & WheelUp::
 LWin & WheelUp::
 RWin & WheelUp::
 	mbind_wheelup()
@@ -759,7 +759,7 @@ RButton & WheelDown::
 ;XButton1 & WheelDown::ALTTABで利用
 XButton2 & WheelDown::
 F20 & WheelDown::
-AppsKey & WheelDown::
+F19 & WheelDown::
 LWin & WheelDown::
 RWin & WheelDown::
 	mbind_wheeldown()
@@ -769,7 +769,7 @@ XButton1::
 RButton & XButton1::
 MButton & XButton1::
 XButton2 & XButton1::
-AppsKey & XButton1::
+F19 & XButton1::
 F20 & XButton1::
 LWin & XButton1::
 RWin & XButton1::
@@ -780,21 +780,21 @@ XButton2::
 RButton & XButton2::
 MButton & XButton2::
 XButton1 & XButton2::
-AppsKey & XButton2::
+F19 & XButton2::
 F20 & XButton2::
 LWin & XButton2::
 RWin & XButton2::
 	mbind_msblf()
 return
 
-AppsKey::
-RButton & AppsKey::
-MButton & AppsKey::
-XButton1 & AppsKey::
-XButton2 & AppsKey::
-F20 & AppsKey::
-LWin & AppsKey::
-RWin & AppsKey::
+F19::
+RButton & F19::
+MButton & F19::
+XButton1 & F19::
+XButton2 & F19::
+F20 & F19::
+LWin & F19::
+RWin & F19::
 	mbind_msbrf()
 return
 
@@ -803,7 +803,7 @@ RButton & F20::
 MButton & F20::
 XButton1 & F20::
 XButton2 & F20::
-AppsKey & F20::
+F19 & F20::
 LWin & F20::
 RWin & F20::
 	mbind_msbrb()

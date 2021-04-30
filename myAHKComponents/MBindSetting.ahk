@@ -46,7 +46,7 @@ MSBLF(){ ;GPRO_左上サイドボタン
 	return GetKeyState("XButton2","P")
 }
 MSBRF(){ ;GPRO_右上サイドボタン
-	return GetKeyState("Appskey","P")
+	return GetKeyState("F19","P")
 }
 MSBRB(){ ;GPRO_右下サイドボタン
 	return GetKeyState("F20","P")
