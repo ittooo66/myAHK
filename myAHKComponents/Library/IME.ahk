@@ -4,14 +4,14 @@
 IME_JP(){
   ;IME_ON(日本語 - ひらがな)
   IME_SET(1)
-  IME_SetConvMode( "A", 25 )
+  IME_SetConvMode(25)
 
   ;ENGだった場合、Alt+Shift押して再チャレンジ
   if ( IME_GetConvMode() != "25" ){
     Send,{Alt Down}{Shift Down}{Shift Up}{Alt Up}
     ;IME_ON(日本語 - ひらがな)
     IME_SET(1)
-    IME_SetConvMode( "A", 25 )
+    IME_SetConvMode(25)
   }
   SetCapsLockState, Off
 }
