@@ -56,7 +56,7 @@ RAlt & ,::
 XButton2 & MButton::
 	Suspend, Permit
 	splash("AHK reloading...",300)
-	logger_info("AHK RELOADED")
+	logger("ahk","AHK RELOADED")
 	Reload
 return
 RAlt & .::
@@ -64,7 +64,7 @@ XButton1 & MButton::
 	Suspend, Permit
 	splash("AHK shutting down...",500)
 	execScripts("mouseCursor_standard.ps1")
-	logger_info("AHK EXIT")
+	logger("ahk","AHK EXIT")
 	ExitApp
 return
 
@@ -76,7 +76,6 @@ return
 #include Library\_STD.ahk
 #include Library\Clip.ahk
 #include Library\IME.ahk
-#include Library\Logger.ahk
 #include Library\Mouse.ahk
 #include Library\Web.ahk
 ;IfWinActives
