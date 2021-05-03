@@ -3,28 +3,47 @@
 ; ・RDP時の挙動が安定しなくなる＆管理がしんどいので、使わない定義はなるべく削除すること
 ; ・PowerpointとExcel以外はここに雑多に追記していくこと
 
-#IfWinActive,ahk_exe Code.exe						;Visual Studio Code 個別定義 一式
-	RButton & MButton::Send,^{n}					;新規Tab
-	RButton & LButton::Send,^+{n}					;新規Window
+#IfWinActive,ahk_exe Code.exe							;Visual Studio Code 個別定義 一式
+	RButton & MButton::Send,^{n}						;新規Tab
+	RButton & LButton::Send,^+{n}						;新規Window
 #IfWinActive
 
 #IfWinActive,ahk_exe mpc-hc.exe						;MPC-HC 個別定義 一式
   XButton2 & WheelUp::Send,{Left}					;戻る
-  XButton2 & WheelDown::Send,{Right}				;進む
+  XButton2 & WheelDown::Send,{Right}			;進む
   RButton & XButton1::Send,!{x}						;閉じる
   RButton & LButton::Send,{Space}					;一時停止
-  XButton2 & LButton::MPC_intelliScroll()			;IntelliScroll
+  XButton2 & LButton::MPC_intelliScroll()	;IntelliScroll
 #IfWinActive
 
 #IfWinActive,ahk_exe mpc-be64.exe					;MPC-BE 個別定義 一式
   XButton2 & WheelUp::Send,{Left}					;戻る
-  XButton2 & WheelDown::Send,{Right}				;進む
+  XButton2 & WheelDown::Send,{Right}			;進む
   RButton & XButton1::Send,!{x}						;閉じる
   RButton & LButton::Send,{Space}					;一時停止
-  XButton2 & LButton::MPC_intelliScroll()			;IntelliScroll
+  XButton2 & LButton::MPC_intelliScroll()	;IntelliScroll
 #IfWinActive
 
-#IfWinActive,ahk_exe cmd.exe
+#IfWinActive,ahk_exe cmd.exe							;cmd.exe 個別定義 一式
+	*q::
+	<^q::
+	>^q::
+	>+q::
+	<+q::
+	vkFF & q::
+	vkEB & q::
+	LControl & q::
+	RControl & q::
+	LShift & q::
+	RShift & q::
+		if LCMD() 
+			Send,{e}{x}{i}{t}
+		else
+			mbind_q()
+	return
+#IfWinActive
+
+#IfWinActive,ahk_exe powershell.exe							;cmd.exe 個別定義 一式
 	*q::
 	<^q::
 	>^q::
