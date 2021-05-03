@@ -260,3 +260,17 @@ splash(str, sleep=3000 ,width=0 ,mx=0,my=0){
 	sleep , %sleep%
 	SplashImage,off
 }
+
+;log出力機能
+logger( label, message ){
+	;日付情報の作成
+	FormatTime,year,,yyyy
+	FormatTime,month,,MM
+	FormatTime,day,,dd
+	FormatTime,hour,,HH
+	FormatTime,minute,,mm
+	FormatTime,second,,ss
+	logger_date := year . "-" . month . "-" . day . " " . hour . ":" . minute ":" . second . "." . A_MSec . " "
+	log := logger_date . message . "`n"
+	FileAppend,	%log%, %A_WorkingDir%\myAHKComponents\Resources\Log\%label%.log
+}
