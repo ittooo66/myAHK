@@ -428,10 +428,10 @@ mbind_z(){
 
 mbind_1(){
 	if CAPS() && ALT(){
-		;表示Window制御：左画面のみ(EIZO 27 4K 150%)に表示
+		;表示Window制御：右画面のみ(BenQ 24 FHD 100%)に表示
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
-		Send,{End}{Return}{Esc}
+		Send,{Home}{Return}{Esc}
 		Reload	;GrabWindowの挙動がおかしくなるのでReloadしてみる
 	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("1")
@@ -474,10 +474,10 @@ mbind_2(){
 
 mbind_3(){
 	if CAPS() && ALT(){
-		;表示Window制御：右画面のみ(BenQ 24 FHD 100%)に表示
+		;表示Window制御：左画面のみ(EIZO 27 4K 150%)に表示
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
-		Send,{Home}{Return}{Esc}
+		Send,{End}{Return}{Esc}
 		Reload	;GrabWindowの挙動がおかしくなるのでReloadしてみる
 	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("3")
