@@ -926,13 +926,12 @@ mbind_wheelup(){
 	else if MSBRF()
 		Send,#^{Volume_Up}
 	else if MSBRB() {
-		if ( A_HUE_BRI <= 762 ){
+		if ( A_HUE_BRI < 762 ){
 			A_HUE_BRI := A_HUE_BRI + 40
 		} else {
 			A_HUE_BRI := 762
 		}
-		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
-		setEnv("A_HUE_BRI", A_HUE_BRI)
+		tooltip, %A_HUE_BRI%/762
 	}else if MMB()
 		Send,#^{Left}
 	else
@@ -947,13 +946,12 @@ mbind_wheeldown(){
 	else if MSBRF()
 		Send,#^{Volume_Down}
 	else if MSBRB() {
-		if ( A_HUE_BRI >= 0 ){
+		if ( A_HUE_BRI > 0 ){
 			A_HUE_BRI := A_HUE_BRI - 40
 		} else {
 			A_HUE_BRI := 0
 		}
-		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
-		setEnv("A_HUE_BRI", A_HUE_BRI)
+		tooltip, %A_HUE_BRI%/762
 	}else if MMB()
 		Send,#^{Right}
 	else

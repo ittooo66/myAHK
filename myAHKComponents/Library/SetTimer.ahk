@@ -1,7 +1,7 @@
-SetTimer, LOLWatch, 5000
+SetTimer, Watch, 5000
 Return
 
-LOLWatch:
+Watch:
 	;配列idに現在稼働中のWindowを突っ込む
 	WinGet, id, list, , , Program Manager
 	;for(int A_Index=1;A_Index<N(id);A_Index++)
@@ -19,6 +19,14 @@ LOLWatch:
 			logger("ahk","AHK EXIT")
 			ExitApp
 		}	
+	}
+
+	;HUEのバッチ処理用
+	tooltip,
+	ENV_HUE_BRI := getEnv("A_HUE_BRI")
+	if( ENV_HUE_BRI != A_HUE_BRI ){
+		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
+		setEnv("A_HUE_BRI", A_HUE_BRI)
 	}
 
 Return
