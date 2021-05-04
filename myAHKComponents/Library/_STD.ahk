@@ -113,28 +113,6 @@ getEnv(name){
 	return %file%
 }
 
-;ミュートタイマー機能
-muteNMin(){
-	InputBox, muteMinute , Delayed Mute, Mute After N minute,, 200, 130,,,,,60
-	if ErrorLevel <> 0
-		return
-	else {
-		If muteMinute is integer
-		{
-			msgbox, Mute After %muteMinute% Minute
-			Loop, %muteMinute%
-			{
-				sleep, 60000
-			}
-			Loop, 50
-			{
-				Send,{Volume_Down}
-			}
-		}else
-			msgbox, Invalid Input Number
-	}
-}
-
 ;Scripts配下のファイルを実行する
 ;scriptName:"ファイル名"
 execScripts(scriptName){
