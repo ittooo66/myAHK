@@ -83,7 +83,6 @@ return
 #include IfWinActives\General.ahk
 #include IfWinActives\MS_Powerpoint.ahk
 #include IfWinActives\MS_Excel.ahk
-
 ;TempMacro
 #include Resources\TempMacro\MacroZ.ahk
 #include Resources\TempMacro\MacroX.ahk
