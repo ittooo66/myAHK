@@ -855,8 +855,6 @@ mbind_mrb(){
 			splash(month . "/" . daily . "(" . yb . ") " . hour . ":" . minute . ":" . second ,1000,200,mx,my)
 		}
 		SplashImage,off
-	}else if MSBRF(){
-		muteNMin()
 	}else{
 		Send,{RButton}
 	}
