@@ -14,11 +14,17 @@ Watch:
 
 		;LoLの場合:チートツール判定を受けるため、AHKを終了
 		ifInString, this_process , League of Legends.exe, {
-			splash("League of Legends.exe Detected. Shutting down AHK...")
 			execScripts("mouseCursor_standard.ps1")
 			logger("ahk","AHK EXIT")
 			ExitApp
 		}	
+
+		;VALORANTの場合：まともに動かなくなるため、AHKを終了
+		ifInString, this_process , VALORANT-Win64-Shipping.exe, {
+			execScripts("mouseCursor_standard.ps1")
+			logger("ahk","AHK EXIT")
+			ExitApp
+		}
 	}
 
 	;HUEのバッチ処理用
