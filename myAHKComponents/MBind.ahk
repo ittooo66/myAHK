@@ -757,7 +757,7 @@ mbind_slash(){
 }
 
 mbind_backspace(){
-	if RCMD(){
+	if RCMD() || CAPS(){
 		;一行消し
 		Send,+{Home}
 		ClipExt_copy()
@@ -799,7 +799,7 @@ mbind_delete(){
 }
 
 mbind_escape(){
-	if CAPS(){
+	if CAPS() || RCMD(){
 		send,{Delete}
 	}else if SPACE() && SHIFT()
 		ClipExt_copyTo("SEscape")
@@ -986,7 +986,7 @@ mbind_space_up(){
 		return
 	;各種Spaceバインド
 	;　一定時間経過後のスペースキーを修飾キー(入力なし)として扱う
-	if CAPS()
+	if CAPS() || RCMD()
 		press("^{Space}")
 	else if(A_TickCount - A_SpaceDownTime < 400){
 		press("{Space}")
