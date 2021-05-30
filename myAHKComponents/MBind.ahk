@@ -809,6 +809,15 @@ mbind_escape(){
 		press("{Esc}")
 }
 
+mbind_tab(){
+	if CAPS() || RCMD(){
+		Send,^{Tab}
+	}else if LCMD(){
+		Send,#{Tab}
+	}else
+		press("{Tab}")
+}
+
 mbind_mlb(){
 	if MRB(){
 		Send,!{Up}

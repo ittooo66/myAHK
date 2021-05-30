@@ -703,6 +703,20 @@ LShift & Esc::
 	mbind_escape()
 return
 
+*Tab::
+<^Tab::
+>^Tab::
+>+Tab::
+<+Tab::
+vkFF & Tab::
+LControl & Tab::
+vkEB & Tab::
+RControl & Tab::
+RShift & Tab::
+LShift & Tab::
+	mbind_tab()	
+return
+
 ;Space機能
 *Space::mbind_space_down()
 *Space Up::mbind_space_up()
