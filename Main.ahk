@@ -77,7 +77,6 @@ return
 #include Library\Clip.ahk
 #include Library\IME.ahk
 #include Library\Mouse.ahk
-#include Library\Web.ahk
 ;IfWinActives
 #include IfWinActives\HookDef.ahk
 #include IfWinActives\General.ahk

@@ -134,10 +134,7 @@ mbind_i(){
 		Send,{MButton}
 	else if RCMD() || (CAPS() && SHIFT())
 		press("8")
-	else if CAPS() & SPACE(){
-		consumeSpace()
-		addTaskToTrello()
-	}else if CAPS()
+	else if CAPS()
 		press("{numpad8}")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SI")
