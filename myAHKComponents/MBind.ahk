@@ -34,6 +34,8 @@ mbind_c(){
 		launch("C",SHIFT())
 	}else if ( CAPS() || RCMD() )&& SHIFT()
 		run notepad.exe %A_WorkingDir%\myAHKComponents\Resources\TempMacro\MacroC.ahk
+	else if CAPS() && ALT()
+		Send,#^{c}
 	else if RCMD() || CAPS()
 		MacroC()
 	else if LCMD()
