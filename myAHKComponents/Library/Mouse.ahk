@@ -9,14 +9,13 @@ changeWindowSize(){
 	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
 	WinGetActiveStats, Title, W, H, X, Y
 
-	;4Kモニタ側の設定の場合
-	if(X<-1280){
-		;mousemoveのX=0,Y=0がスケーリングでずれるため、以下の係数で修正する。
-		;DPIスケール150%,メインモニタが右上にある状態で左の4Kモニタに対してのみ有効
-		rawX:=(3840+X)/2+1
-		rawY:=Y/2+2
+	;DELL WQHDのとき
+	if(X<0){
+		;謎の係数（-1/3）を掛けて修正
+		rawX := -X/3
+		rawY := -Y/3
 
-	;FHDモニタ側の設定の場合
+	;EIZO 4kのとき
 	}else{
 		rawX:=2
 		rawY:=0
