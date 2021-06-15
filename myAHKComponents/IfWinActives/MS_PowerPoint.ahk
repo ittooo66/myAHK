@@ -147,36 +147,36 @@
 		Send, !{h}{f}{1}{Down}{Down}{Down}{Down}{Down}{Down}{return}								;文字色変更（赤）
 	}
 	ppt_bind_t(){
-		Send, !{h}{f}{1}																			;文字色選択
+		Send, !{h}{f}{1}																					;文字色選択
 	}
 
 	ppt_bind_a(){
-		Send, !{h}{u}{2}																			;箇条書き
+		Send, !{h}{u}{2}																					;箇条書き
 	}
 	ppt_bind_s(){
-		Send, !{n}{s}{h}																			;図形配置
+		Send, !{n}{s}{h}																					;図形配置
 	}
 	ppt_bind_d(){
-		Send, !{j}{d}{s}{f}																			;図形塗り
+		Send, !{j}{d}{s}{f}																				;図形塗り
 	}
 	ppt_bind_f(){
-		Send, !{h}{f}{f}																			;フォント弄り
+		Send, !{h}{f}{f}																					;フォント弄り
 	}
 	ppt_bind_g(){
-		Send, !{h}{o}																				;図形の書式設定
+		Send, !{h}{o}																							;図形の書式設定
 	}
 	
 	ppt_bind_z(){
-		Send, !{j}{d}{a}{f}{f}																		;前面(Zenmen)へ移動
+		Send, !{j}{d}{a}{f}{r}																		;最前面(Zenmen)へ移動
 	}
 	ppt_bind_x(){
-		Send, !{j}{d}{a}{e}{b}																		;背面へ移動
+		Send, !{j}{d}{a}{e}{k}																		;背面へ移動
 	}
 	ppt_bind_c(){
 		Send, !{j}{d}{a}{g}{g}																		;Group化(Combine)
 	}
 	ppt_bind_v(){
-		Send,!{j}{d}{a}{g}{u}																		;Group化解除
+		Send,!{j}{d}{a}{g}{u}																			;Group化解除
 	}
 	ppt_bind_b(){
 		Send, !{j}{d}{s}{o}{w}																		;枠線太さ変更
