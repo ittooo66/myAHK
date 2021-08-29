@@ -41,15 +41,15 @@
 ---
 
 1. CRLF or LF  
-Gitの標準がLFなのでAHKの標準のCRLFと噛み合わずにzipでDownloadする時にもにょる。対策は以下。現状は前者。
-    + `.git/config` ファイルにて `autoCRLF=false`
-    + powershellで`git clone`するとそのへん宜しくやってくれるっぽい
+GitがLFなのでAHKのCRLFと噛み合わずにzipでDownloadする時にもにょる。対策は以下。現状は前者。
+    + `.git/config` にて `autoCRLF=false`
+    + powershellで`git clone`するとよしなにやってくれるっぽい
 
 1. AHKのフック負けリスト   
     
     + IME切替  
-        Alt+\`,Ctrl+\`には勝てない。    
-    + Win+L(画面ロック)
+        Alt+\`,Ctrl+\`には勝てない。  
+    + Win+L(画面ロック)  
         ナレーター機能(Win+Enter)などはreg編集なしで解除できるが、ロック機能は要reg編集。reg編集不可の環境では負ける。
     
 1. 修飾キー特性  
