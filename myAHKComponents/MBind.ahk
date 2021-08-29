@@ -349,7 +349,7 @@ mbind_v(){
 	if (SPACE() && CAPS() && SHIFT()){
 		run , "C:\Program Files\TrueCrypt\TrueCrypt.exe" /q /dr
 	}else if (SPACE() && CAPS()){
-		run , "C:\Program Files\TrueCrypt\TrueCrypt.exe" /q /v \Device\Harddisk0\Partition0 /lr
+		run , "C:\Program Files\TrueCrypt\TrueCrypt.exe" /q /v \Device\Harddisk2\Partition0 /lr
 	}else if RCMD() || CAPS()
 		ClipExt_openLog()
 	else if SPACE() && SHIFT()
