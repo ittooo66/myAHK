@@ -10,19 +10,32 @@ changeWindowSize(){
 	WinGetActiveStats, Title, W, H, X, Y
 
 	;DELL WQHDのとき
-	if(X<0){
+	if(X>3840){
 		;謎の係数（-1/3）を掛けて修正
 		rawX := -X/3
 		rawY := -Y/3
-
 	;EIZO 4kのとき
 	}else{
-		rawX:=2
+		rawX:=0
 		rawY:=0
 	}
 
+	X := rawX
+	Y := rawY
 	BlockInput, MouseMove
-	Mousemove,%rawX%,%rawY%,0
+
+	;えぐり値選定( -2 ~ +2 )
+	Loop, 5
+	{
+		diff := -3+A_Index
+		X := rawX + diff
+		Y := rawY + diff
+		Mousemove,%X%,%Y%,0
+		if ( A_Cursor = "SizeNWSE" ){
+			break
+		}
+	}
+
 	Send,{LButton Down}
 	BlockInput, MouseMoveOff
 	while(MSBLF() && MSBLB()){
