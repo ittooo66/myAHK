@@ -56,7 +56,7 @@ RAlt & ,::
 XButton2 & MButton::
 	Suspend, Permit
 	splash("AHK reloading...",300)
-	logger("ahk","AHK RELOADED")
+	logger("AHK RELOADED","ahk_ctrl")
 	Reload
 return
 RAlt & .::
@@ -64,7 +64,7 @@ XButton1 & MButton::
 	Suspend, Permit
 	splash("AHK shutting down...",500)
 	execScripts("mouseCursor_standard.ps1")
-	logger("ahk","AHK EXIT")
+	logger("AHK EXIT", "ahk_ctrl")
 	ExitApp
 return
 

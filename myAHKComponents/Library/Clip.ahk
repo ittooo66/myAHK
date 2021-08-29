@@ -7,7 +7,7 @@ ClipExt_copy(){
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
 	ClipWait 0.5, 1
 	;ログ追記
-	logger("clip",Clipboard)
+	logger(Clipboard , "clip")
 }
 
 ;切り取り
@@ -17,7 +17,7 @@ ClipExt_cut(){
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
 	ClipWait 0.5, 1
 	;ログ追記
-	logger("clip",Clipboard)
+	logger(Clipboard , "clip")
 }
 
 ;拡張クリップボード(copy)
@@ -33,7 +33,7 @@ ClipExt_copyTo(num){
 	;0.5secクリップボードの中身が入ってくるまで待つ。第二引数はClipboardAllタイプの変数を待つ、の証(1)
 	ClipWait 0.5, 1
 	;ログ追記
-	logger("clip",Clipboard)
+	logger(Clipboard , "clip")
 	;ファイルにClipboardを保存
 	FileAppend, %ClipboardAll%, %A_WorkingDir%\myAHKComponents\Resources\Clipboard\%num%.dat
 	;cb_bkから取得

@@ -241,7 +241,7 @@ splash(str, sleep=3000 ,width=0 ,mx=0,my=0){
 }
 
 ;log出力機能
-logger( label, message ){
+logger( message , label="info" ){
 	;日付情報の作成
 	FormatTime,year,,yyyy
 	FormatTime,month,,MM
