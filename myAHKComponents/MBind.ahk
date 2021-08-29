@@ -843,6 +843,25 @@ mbind_mrb(){
 		Send,^{n}
 	}else if MSBRB(){
 		execScripts("PhilipsHueOff.bat")
+	}else if MSBRF(){
+			InputBox, muteMinute , Delayed Mute, Mute After N minute,, 200, 130,,,,,60
+			if ErrorLevel <> 0
+				return
+			else {
+				If muteMinute is integer
+				{
+					msgbox, Mute After %muteMinute% Minute
+					Loop, %muteMinute%
+					{
+						sleep, 60000
+					}
+					Loop, 50
+					{
+						Send,{Volume_Down}
+					}
+				}else
+					msgbox, Invalid Input Number
+			}
 	}else if MSBLB(){
 		Send,{RWin Down}
 		while(GetKeyState("RButton","P")){
