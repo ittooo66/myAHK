@@ -176,7 +176,7 @@
 		Send, !{j}{d}{a}{g}{g}																		;Group化(Combine)
 	}
 	ppt_bind_v(){
-		Send,!{j}{d}{a}{g}{u}																			;Group化解除
+		Send,!{j}{d}{a}{g}    																		;Group化解除
 	}
 	ppt_bind_b(){
 		Send, !{j}{d}{s}{o}{w}																		;枠線太さ変更
