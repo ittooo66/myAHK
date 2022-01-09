@@ -13,7 +13,7 @@ changeWindowSize(){
 	if (X > 3840){
 		rawX := -X/3
 		rawY := -Y/3
-	}else if (X < 1280){
+	}else if (X < -1280){
 		rawX:=(3840+X)/2
 		rawY:=Y/2
 	}else{
