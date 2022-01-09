@@ -9,12 +9,13 @@ changeWindowSize(){
 	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
 	WinGetActiveStats, Title, W, H, X, Y
 
-	;DELL WQHDのとき
-	if(X>3840){
-		;謎の係数（-1/3）を掛けて修正
+	;各画面位置に応じた補正
+	if (X > 3840){
 		rawX := -X/3
 		rawY := -Y/3
-	;EIZO 4kのとき
+	}else if (X < 1280){
+		rawX:=(3840+X)/2
+		rawY:=Y/2
 	}else{
 		rawX:=0
 		rawY:=0
