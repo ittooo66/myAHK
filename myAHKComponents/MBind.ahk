@@ -930,10 +930,6 @@ mbind_msblf(){
 		if ( A_Toggle_AudioDevice = 0 ){
 			A_Toggle_AudioDevice = 1
 
-;			setEnv("AUDIO_DEVICE","BT-W3")
-;			execScripts("SetAudioDevice.ps1")
-;			splash("change sound device to BT-W3.",1000,800)
-
 			setEnv("AUDIO_DEVICE","iBasso")
 			execScripts("SetAudioDevice.ps1")
 			splash("change sound device to iBasso.",1000,800)
