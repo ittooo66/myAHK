@@ -19,7 +19,7 @@ switch ($Args[0]) {
         # 共存不可AP起動状態の取得
         $LolIsActive  = [int](tasklist | findstr "League\ of\ Legends.exe" | wsl wc -l)
         $VALOIsActive = [int](tasklist | findstr "VALORANT-Win64-Shipping" | wsl wc -l)
-        $NGAPIsActive = $LolIsActive # + $VALOIsActive
+        $NGAPIsActive = $LolIsActive + $VALOIsActive
 
         # FLGFILEがあり、NGAPが存在しない場合
         if((Test-Path $FLGFILE) -And (!$NGAPIsActive)){
