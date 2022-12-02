@@ -17,9 +17,11 @@ switch ($Args[0]) {
         $AHKisActive = [int](tasklist | findstr AutoHotkey.exe | wsl wc -l)
 
         # 共存不可AP起動状態の取得
+        # LOLはチート扱いされるので、自動停止させる
         $LolIsActive  = [int](tasklist | findstr "League\ of\ Legends.exe" | wsl wc -l)
-        $VALOIsActive = [int](tasklist | findstr "VALORANT-Win64-Shipping" | wsl wc -l)
-        $NGAPIsActive = $LolIsActive + $VALOIsActive
+        # $VALOIsActive = [int](tasklist | findstr "VALORANT-Win64-Shipping" | wsl wc -l)
+        # VALOつけっぱにしたいので、対象外にする
+        $NGAPIsActive = $LolIsActive # + $VALOIsActive
 
         # FLGFILEがあり、NGAPが存在しない場合
         if((Test-Path $FLGFILE) -And (!$NGAPIsActive)){
