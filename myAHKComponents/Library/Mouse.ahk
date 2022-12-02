@@ -43,7 +43,7 @@ changeWindowSize(){
 
 	Send,{LButton Down}
 	BlockInput, MouseMoveOff
-	while(MSBLF() && MSBLB()){
+	while(MRB()){
 		sleep,30
 	}
 	Send,{LButton Up}

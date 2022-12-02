@@ -820,7 +820,7 @@ mbind_tab(){
 
 mbind_mlb(){
 	if MRB(){
-		Send,!{Up}
+		changeWindowSize()
 	}else if MMB(){
 		Send,#{Tab}
 	}else if MSBRB(){

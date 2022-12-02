@@ -5,14 +5,12 @@
 
 #IfWinActive,ahk_exe Code.exe							;Visual Studio Code 個別定義 一式
 	RButton & MButton::Send,^{n}						;新規Tab
-	RButton & LButton::Send,^+{n}						;新規Window
 #IfWinActive
 
 #IfWinActive,ahk_exe mpc-hc.exe						;MPC-HC 個別定義 一式
   XButton2 & WheelUp::Send,{Left}					;戻る
   XButton2 & WheelDown::Send,{Right}			;進む
   RButton & XButton1::Send,!{x}						;閉じる
-  RButton & LButton::Send,{Space}					;一時停止
   XButton2 & LButton::MPC_intelliScroll()	;IntelliScroll
 #IfWinActive
 
@@ -20,7 +18,6 @@
   XButton2 & WheelUp::Send,{Left}					;戻る
   XButton2 & WheelDown::Send,{Right}			;進む
   RButton & XButton1::Send,!{x}						;閉じる
-  RButton & LButton::Send,{Space}					;一時停止
   XButton2 & LButton::MPC_intelliScroll()	;IntelliScroll
 #IfWinActive
 
