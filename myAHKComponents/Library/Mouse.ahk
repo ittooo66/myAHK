@@ -9,16 +9,20 @@ changeWindowSize(){
 	;W,H:スケーリング後のアクティブウインドウ幅(W),高さ(H)
 	WinGetActiveStats, Title, W, H, X, Y
 
+	;現在のディスプレイ枚数を取得
+	Sysget, cnt, MonitorCount
+
 	;各画面位置に応じた補正
-	if (X > 3840){
-		rawX := -X/3
-		rawY := -Y/3
-	}else if (X < -1280){
-		rawX:=(3840+X)/2
-		rawY:=Y/2
+	if (cnt > 1 && X > 2560){
+		; DELL 27-WQHD-144Hz のとき
+		rawX := (X-2560)/2
+		rawY := (Y+722)/2
 	}else{
-		rawX:=0
-		rawY:=0
+		;EIZO 27-4K-60Hz のとき
+		rawX := 0
+		rawY := 0
+		;rawX := -X/3
+		;rawY := -Y/3
 	}
 
 	X := rawX
