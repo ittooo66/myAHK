@@ -862,25 +862,20 @@ mbind_mrb(){
 		Send,^{n}
 	}else if MSBRB(){
 		execScripts("PhilipsHueOff.bat")
-	}else if MSBRF(){
-			InputBox, muteMinute , Delayed Mute, Mute After N minute,, 200, 130,,,,,60
-			if ErrorLevel <> 0
-				return
-			else {
-				If muteMinute is integer
-				{
-					msgbox, Mute After %muteMinute% Minute
-					Loop, %muteMinute%
-					{
-						sleep, 60000
-					}
-					Loop, 50
-					{
-						Send,{Volume_Down}
-					}
-				}else
-					msgbox, Invalid Input Number
-			}
+	}else if MSBRF(){	
+
+		if ( A_Toggle_Mute = 0 ){
+			A_Toggle_Mute = 1
+			setEnv("MIC_ACTIVE","1")
+			execScripts("MuteJabra.ps1")
+			splash("MIC Active.",500,200)
+		}else{
+			A_Toggle_Mute = 0
+			setEnv("MIC_ACTIVE","0")
+			execScripts("MuteJabra.ps1")
+			splash("MIC Muted.",500,200)
+		}
+
 	}else if MSBLB(){
 		Send,{RWin Down}
 		while(GetKeyState("RButton","P")){
@@ -936,7 +931,26 @@ mbind_msblb(){
 	}else if MSBLF(){
 		changeWindowSize()
 	}else if MSBRF(){
-		splash("null",1000)
+		InputBox, muteMinute , Delayed Mute, Mute After N minute,, 200, 130,,,,,60
+			if ErrorLevel <> 0
+				return
+			else {
+				If muteMinute is integer
+				{
+					msgbox, Mute After %muteMinute% Minute
+					Loop, %muteMinute%
+					{
+						sleep, 60000
+					}
+					Loop, 50
+					{
+						Send,{Volume_Down}
+					}
+				}else
+					msgbox, Invalid Input Number
+			}
+	}else if MSBRB(){
+		Send,+{.}
 	}else{
 		Send,{XButton1}
 	}
