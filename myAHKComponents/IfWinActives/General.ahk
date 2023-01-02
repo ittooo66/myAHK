@@ -7,7 +7,7 @@
 	RButton & MButton::Send,^{n}						;新規Tab
 #IfWinActive
 
-#IfWinActive,ahk_exe mpc-hc.exe						;MPC-HC 個別定義 一式
+#IfWinActive,ahk_exe mpc-hc64.exe					;MPC-HC 個別定義 一式
   XButton2 & WheelUp::Send,{Left}					;戻る
   XButton2 & WheelDown::Send,{Right}			;進む
   RButton & XButton1::Send,!{x}						;閉じる
@@ -21,42 +21,8 @@
   XButton2 & LButton::MPC_intelliScroll()	;IntelliScroll
 #IfWinActive
 
-#IfWinActive,ahk_exe cmd.exe							;cmd.exe 個別定義 一式
-	*q::
-	<^q::
-	>^q::
-	>+q::
-	<+q::
-	vkFF & q::
-	vkEB & q::
-	LControl & q::
-	RControl & q::
-	LShift & q::
-	RShift & q::
-		if LCMD() 
-			Send,{e}{x}{i}{t}
-		else
-			mbind_q()
-	return
-#IfWinActive
-
-#IfWinActive,ahk_exe powershell.exe							;cmd.exe 個別定義 一式
-	*q::
-	<^q::
-	>^q::
-	>+q::
-	<+q::
-	vkFF & q::
-	vkEB & q::
-	LControl & q::
-	RControl & q::
-	LShift & q::
-	RShift & q::
-		if LCMD() 
-			Send,{e}{x}{i}{t}
-		else
-			mbind_q()
-	return
+#IfWinActive,ahk_class CabinetWClass			;WindowsExplorer 個別定義 一式
+	RButton & WheelUp::Send,!{Up}						;上へ
 #IfWinActive
 
 ;よさげなスクロール(for MPC)

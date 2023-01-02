@@ -3,19 +3,34 @@
 	LShift & WheelUp::Send, ^{]}			;文字サイズ変更
 	LShift & WheelDown::Send, ^{[}			;文字サイズ変更
 
+	;図形サイズの変更
+	Space & WheelUp::
+	  if(MSBLF()){
+			Send,+{Left}
+		}else{
+			Send,+{Up}
+		}
+	return
+	Space & WheelDown::
+		if(MSBLF()){
+			Send,+{Right}
+		}else{
+			Send,+{Down}
+		}
+	return
+
 	XButton1::Send,^{z}
 	XButton2::Send,^{y}
 
-	;リボン切り替え
-	RButton & WheelUp::
-		Send,{Alt}
-		Send,{Left}
-		Send,{Alt}
-	return
-	RButton & WheelDown::
-		Send,{Alt}
-		Send,{Right}
-		Send,{Alt}
+	;グループ化
+	Space & G::
+		if (SHIFT()){
+			Send,^+{g}
+			consumeSpace()
+		}else{
+			Send,^{g}
+			consumeSpace()
+		}
 	return
 
 	;スクロール機能一式
@@ -173,10 +188,8 @@
 		Send, !{j}{d}{a}{e}{k}																		;背面へ移動
 	}
 	ppt_bind_c(){
-		Send, !{j}{d}{a}{g}{g}																		;Group化(Combine)
 	}
 	ppt_bind_v(){
-		Send,!{j}{d}{a}{g}    																		;Group化解除
 	}
 	ppt_bind_b(){
 		Send, !{j}{d}{s}{o}{w}																		;枠線太さ変更
