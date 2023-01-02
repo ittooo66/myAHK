@@ -73,7 +73,22 @@ mbind_d(){
 
 mbind_e(){
 	if (SPACE() && CAPS()){
-		launch("E",SHIFT())
+		if (SHIFT()){
+			APP_E_PATH := getEnv("APP_E_PATH") 
+			FormatTime,TimeString,,yyyyMMdd
+			run, %APP_E_PATH%  %A_Desktop%\memo\%TimeString%.txt
+			ConsumeSpace()
+		}else{
+			className := getEnv("APP_E_CLASS")
+			processName := getEnv("APP_E_PROCESS")
+			titleName := getEnv("APP_E_TITLE")
+			if !activateWindow(className,processName,titleName) {
+				APP_E_PATH := getEnv("APP_E_PATH")
+				FormatTime,TimeString,,yyyyMMdd
+				run, %APP_E_PATH%  %A_Desktop%\memo\%TimeString%.txt
+			}
+		}
+		;launch("E",SHIFT())
 	}else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
 	else if CAPS() || RCMD(){
