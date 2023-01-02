@@ -788,7 +788,6 @@ mbind_backspace(){
 }
 
 mbind_return(){
-	CMD_HOME_DIR := getEnv("CMD_HOME_DIR") 
 	if (SPACE() && CAPS() && SHIFT()) {
 		Run, ssh ManagementServer
 	}else if (SPACE() && CAPS()){
