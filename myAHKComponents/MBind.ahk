@@ -852,7 +852,7 @@ mbind_mlb(){
 			Send,#{e}
 	}else if MSBRF(){
 		; 要EarTrunpetショートカット設定
-		Send,^+{q}
+		Send,^+{k}
 	}else{
 		Send,{LButton}
 	}
