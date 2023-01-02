@@ -703,6 +703,7 @@ LShift & Esc::
 	mbind_escape()
 return
 
+<!Tab::AltTab
 *Tab::
 <^Tab::
 >^Tab::
