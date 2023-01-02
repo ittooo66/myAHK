@@ -102,15 +102,15 @@ directInput(string){
 ;揮発性なし（Reload,再起動でも値は普遍）
 ;書き方：setEnv("var","true")でvar.txtにtrueが書き込まれる
 setEnv(name, param){
-	FileDelete, %A_WorkingDir%\myAHKComponents\Resources\Variables\%name%.txt
-	FileAppend,	%param% , %A_WorkingDir%\myAHKComponents\Resources\Variables\%name%.txt
+	FileDelete, %A_WorkingDir%\Env\%name%.txt
+	FileAppend,	%param% , %A_WorkingDir%\Env\%name%.txt
 }
 
 ;外部変数の読み込み
 ;揮発性なし（Reload,再起動でも値は普遍）
 ;書き方：getEnv("var")でvar.txt内部の文字列を取得する
 getEnv(name){
-	FileRead, file , %A_WorkingDir%\myAHKComponents\Resources\Variables\%name%.txt
+	FileRead, file , %A_WorkingDir%\Env\%name%.txt
 	return %file%
 }
 
@@ -206,12 +206,15 @@ intelliScroll(){
 launch(str, shift=0){
 	
 	;該当するショートカットがなければ、何もしない
-	IfNotExist, %A_AppDir%\%str%.lnk
-		return
-
+	path := getEnv("APP_" . str . "_PATH")
+	IfNotExist, %path% 
+		{
+			Splash("invalid Application path")
+			return
+		}
 	;強制起動モードの場合、strに紐づくアプリショートカットを起動して終了
 	if (shift != 0){
-		run, %A_AppDir%\%str%
+		run, %path%
 
 	;通常モードの場合、	既存WindowをActivateして、いなければ起動
 	}else{
@@ -219,7 +222,7 @@ launch(str, shift=0){
 		processName := getEnv("APP_" . str . "_PROCESS")
 		titleName := getEnv("APP_" . str . "_TITLE")
 		if !activateWindow(className,processName,titleName) 
-			run, %A_AppDir%\%str%
+			run, %path%
 	}
 }
 
