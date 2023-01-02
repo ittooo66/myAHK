@@ -960,19 +960,19 @@ mbind_msblb(){
 mbind_msblf(){
 	if MRB(){
 		Send,^+{t}
+	}else if MSBRB(){
+		Send,+{,}
 	}else if MSBRF(){
-		if ( A_Toggle_AudioDevice = 0 ){
+		if (A_Toggle_AudioDevice = 0 ){
 			A_Toggle_AudioDevice = 1
-
-			setEnv("AUDIO_DEVICE","iBasso")
+			setEnv("AUDIO_DEVICE","BT-W3")
 			execScripts("SetAudioDevice.ps1")
-			splash("change sound device to iBasso.",1000,800)
-
-		}else{
+			splash("Audio Device Changed to BT-W3.",1000,330)
+		}else if (A_Toggle_AudioDevice = 1 ){
 			A_Toggle_AudioDevice = 0
 			setEnv("AUDIO_DEVICE","Jabra")
 			execScripts("SetAudioDevice.ps1")
-			splash("change sound device to Jabra.",1000,800)
+			splash("Audio Device Changed to Jabra.",1000,330)
 		}
 	}else if MSBLB(){
 		changeWindowSize()
