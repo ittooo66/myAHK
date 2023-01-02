@@ -470,6 +470,7 @@ mbind_2(){
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
 		Send,{End}{Up}{Return}{Esc}
+		Sleep 5000
 		Reload	;GrabWindowの挙動がおかしくなるのでReloadしてみる
 	}else if SPACE() && CAPS() && SHIFT(){
 		ClipExt_addAlias("2")
