@@ -52,7 +52,7 @@ changeWindowSize(){
 ;ウィンドウの移動
 moveWindow(){
 	Send,{Alt Down}{Space}
-	Sleep, 100
+	Sleep, 200
 	Send,{m}{Alt Up}{Left}{Right}
 }
 
