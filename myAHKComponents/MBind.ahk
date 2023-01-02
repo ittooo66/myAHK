@@ -773,11 +773,14 @@ mbind_backspace(){
 
 mbind_return(){
 	CMD_HOME_DIR := getEnv("CMD_HOME_DIR") 
-	if (SPACE() && CAPS() && SHIFT()) 
-		run, C:\WINDOWS\system32\cmd.exe e /k doskey && cd %CMD_HOME_DIR% && ssh ManagementServer
-	else if (SPACE() && CAPS()){
-		if !activateWindow("ConsoleWindowClass","cmd.exe","")
-			run, C:\WINDOWS\system32\cmd.exe e /k doskey && cd %CMD_HOME_DIR% && ssh ManagementServer
+	if (SPACE() && CAPS() && SHIFT()) {
+		Run, ssh ManagementServer
+	}else if (SPACE() && CAPS()){
+		if !activateWindow("ConsoleWindowClass","",""){ 
+			Run, ssh ManagementServer
+		}
+	}else if (SPACE()){
+		directInput("<br>")
 	}else if CAPS() || RCMD() {
 		Send,^{Return}
 	}else{
