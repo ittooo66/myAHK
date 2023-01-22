@@ -51,9 +51,9 @@ changeWindowSize(){
 
 ;ウィンドウの移動
 moveWindow(){
-	Send,{Alt Down}{Space}
+	Send,!{Space}
 	Sleep, 200
-	Send,{m}{Alt Up}{Left}{Right}
+	Send,{m}{Left}{Right}
 }
 
 ;key: イベント対象のキー4つ
