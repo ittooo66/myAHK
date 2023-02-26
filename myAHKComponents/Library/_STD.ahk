@@ -116,10 +116,10 @@ getEnv(name){
 
 ;Scripts配下のファイルを実行する
 ;scriptName:"ファイル名"
-execScripts(scriptName){
+execScripts(scriptName,arg1=0,arg2=0){
 	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\" . scriptName
 	if scriptName contains ps1 
-		run, powershell.exe %script%,,hide
+		RunWait, powershell.exe -ExecutionPolicy Bypass -File "%script%" "%arg1%" "%arg2%",, Hide
 	else 
 		run, %script%,,hide
 	
