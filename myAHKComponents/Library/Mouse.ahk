@@ -57,42 +57,8 @@ moveWindow(){
 }
 
 ;key: イベント対象のキー4つ
-mouseMove(keyUp,keyDown,keyLeft,keyRight,val=1,slp=10){
-
-	;Mouse関連機能を絶対座標モードに変更
-	CoordMode,Mouse,Screen
-
-	;各モニタの表示倍率値(DPIScale取得が各モニタ毎にできなかったのでこの形式)
-	monitor1_dpi := 1
-	monitor2_dpi := 1.5
-
-	;各モニタの設定値を取得(paramが逆っぽいのでこの形式)
-	sysget, mon1,Monitor, 1
-	sysget, mon2,Monitor, 2
-
-	;各モニタの幅・高さを取得
-	monitor1_width := (mon1Right - mon1Left)*monitor1_dpi
-	monitor1_height := (mon1Bottom - mon1Top)*monitor1_dpi
-	monitor2_width := (mon2Right - mon2Left)*monitor2_dpi
-	monitor2_height := (mon2Bottom - mon2Top)*monitor2_dpi
-
+mouseMove(keyUp,keyDown,keyLeft,keyRight,val=5,slp=10){
 	while(GetKeyState(keyUp,"P") || GetKeyState(keyDown,"P") || GetKeyState(keyLeft,"P") || GetKeyState(keyRight,"P")){
-
-		;Mouseの座標を取得(中途半端にDPIスケールがかかっている)
-		MouseGetPos,X,Y,,,1
-
-		;現在のマウスの座標(画面左上からのpixel値：mouseW,mouseH)を取得
-		if( mon1Left < X && X < mon1Right && mon1Top < Y && Y < mon1Bottom){
-			;Monitor1のとき
-			mouseW := X*monitor1_dpi
-			mouseH := Y*monitor1_dpi
-			MoveX := MouseW+mon1Left, MoveY := MouseH+mon1Top
-		}else{
-			;Monitor2のとき
-			mouseW := (X-mon2Left)*monitor2_dpi
-			mouseH := (Y-mon2Top)*monitor2_dpi
-			MoveX := MouseW+mon2Left, MoveY := MouseH+mon2Top
-		}
 
 		;移動
 		MoveY += GetKeyState(keyUp, "P") ? -val : 0
@@ -100,12 +66,14 @@ mouseMove(keyUp,keyDown,keyLeft,keyRight,val=1,slp=10){
 		MoveY += GetKeyState(keyDown, "P") ? val : 0
 		MoveX += GetKeyState(keyRight, "P") ? val : 0
 
-		;絶対座標指定でマウス移動
-		MouseMove, %MoveX%, %MoveY%, 0
-
+		;Powershellによるマウス移動
+		;※ HiDPIディスプレイ混成環境にてAHK純正のMouseMoveがバグるため、ps1化
+		execScripts("MouseMove.ps1", MoveX, MoveY )
+		
 		;Control系処理
 		Sleep, %slp%
 		val++
+
 	}
 }
 
