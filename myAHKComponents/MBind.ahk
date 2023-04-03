@@ -324,9 +324,14 @@ mbind_s(){
 		Send,^{PgUp}
 	else if LSHIFT() && RSHIFT()
 		mouseMove("e","d","s","f")
-	else if CAPS() & ALT()
+	else if CAPS() & ALT(){
+		if ( getEnv("PC_NAME") == "X" ){
+			Send,^!{s}
+		}else{
+			Send,#+{s}
+		}
 		Send,#+{s}
-	else if RCMD() || CAPS()
+	}else if RCMD() || CAPS()
 		press("{LEFT}")
 	else if SPACE() && SHIFT()
 		ClipExt_copyTo("SS")
