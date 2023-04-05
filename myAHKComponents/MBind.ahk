@@ -330,7 +330,6 @@ mbind_s(){
 		}else{
 			Send,#+{s}
 		}
-		Send,#+{s}
 	}else if RCMD() || CAPS()
 		press("{LEFT}")
 	else if SPACE() && SHIFT()
