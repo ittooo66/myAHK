@@ -19,6 +19,19 @@
   XButton2 & WheelDown::Send,{Right}			;進む
   RButton & XButton1::Send,!{x}						;閉じる
   XButton2 & LButton::MPC_intelliScroll()	;IntelliScroll
+	F20 & XButton1::Send,^{Up}
+	F20 & XButton2::Send,^{Down}
+#IfWinActive
+
+#IfWinActive,ahk_exe vlc.exe					    ;VLC 個別定義 一式
+  XButton2 & WheelUp::Send,{Left}					;戻る
+  XButton2 & WheelDown::Send,{Right}			;進む
+  RButton & XButton1::Send,!{x}						;閉じる
+  XButton2 & LButton::MPC_intelliScroll()	;IntelliScroll
+	F20 & XButton1::Send,^{Up}
+	F20 & XButton2::Send,^{Down}
+	XButton1::Send,{p}
+	XButton2::Send,{n}
 #IfWinActive
 
 #IfWinActive,ahk_class CabinetWClass			;WindowsExplorer 個別定義 一式
