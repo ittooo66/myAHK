@@ -118,9 +118,14 @@ getEnv(name){
 ;scriptName:"ファイル名"
 execScripts(scriptName,arg1=0,arg2=0){
 	script := A_WorkingDir . "\myAHKComponents\Resources\Scripts\" . scriptName
-	if scriptName contains ps1 
-		RunWait, powershell.exe -ExecutionPolicy Bypass -File "%script%" "%arg1%" "%arg2%",, Hide
-	else 
+	if (scriptName contains ps1) {
+		if (arg1=0 && arg2=0) {
+			run, powershell.exe %script%,,hide
+		}else{
+			;やや反応おそめ。実行時引数が必要になった時だけ、こっちを使う
+			RunWait, powershell.exe -ExecutionPolicy Bypass -File "%script%" "%arg1%" "%arg2%",, Hide
+		}
+	} else 
 		run, %script%,,hide
 	
 }
