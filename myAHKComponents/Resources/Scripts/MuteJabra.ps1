@@ -1,7 +1,7 @@
 # Need https://github.com/frgnca/AudioDeviceCmdlets
 
 #デバイス名を取得
-$mic_active=Get-Content C:\Users\ittooo66\OneDrive\home\src\ahk\Env\MIC_ACTIVE.txt -Raw
+$mic_active=Get-Content C:\Users\ittoo\OneDrive\home\src\ahk\Env\MIC_ACTIVE.txt -Raw
 
 # マイクを有効化したいとき
 if( $mic_active -eq "1" ){
