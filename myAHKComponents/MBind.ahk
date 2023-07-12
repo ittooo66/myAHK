@@ -1068,3 +1068,33 @@ mbind_space_up(){
 		press("{Space}")
 	}
 }
+
+
+mbind_key1(){
+	Send,{1}
+}
+mbind_key2(){
+	Send,{2}
+}
+mbind_key3(){
+	Send,{3}
+}
+mbind_key4(){
+	Send,{4}
+}
+mbind_key5(){
+	Send,{5}
+}
+mbind_key6(){
+	Send,{6}
+}
+mbind_key7(){
+	Send,{Volume_Down}
+}
+mbind_key8(){
+	Send,{Volume_Mute}
+}
+mbind_key9(){
+	Send,{Volume_Up}
+}
+

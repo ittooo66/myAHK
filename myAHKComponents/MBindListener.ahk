@@ -823,3 +823,55 @@ LWin & F20::
 RWin & F20::
 	mbind_msbrb()
 return
+
+
+Numpad1::
+NumpadEnd::
+	mbind_key1()
+return
+
+Numpad2::
+NumpadDown::
+	mbind_key2()
+return
+
+Numpad3::
+NumpadPgdn::
+	mbind_key3()
+return
+
+Numpad4::
+NumpadLeft::
+	mbind_key4()
+return
+
+Numpad5::
+NumpadClear::
+	mbind_key5()
+return
+
+Numpad6::
+NumpadRight::
+	mbind_key6()
+return
+
+Numpad7::
+NumpadHome::
+	mbind_key7()
+return
+
+Numpad8::
+NumpadUp::
+	mbind_key8()
+return
+
+
+Numpad9::
+NumpadPgup::
+	mbind_key9()
+return
+
+
+
+
+
