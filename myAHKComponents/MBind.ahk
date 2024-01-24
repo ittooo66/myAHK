@@ -76,7 +76,7 @@ mbind_e(){
 		if (SHIFT()){
 			APP_E_PATH := getEnv("APP_E_PATH") 
 			FormatTime,TimeString,,yyyyMMdd
-			run, %APP_E_PATH%  %A_Desktop%\memo\%TimeString%.txt
+			run, "%APP_E_PATH%"  "%A_Desktop%\memo\%TimeString%.txt"
 			ConsumeSpace()
 		}else{
 			className := getEnv("APP_E_CLASS")
@@ -85,7 +85,7 @@ mbind_e(){
 			if !activateWindow(className,processName,titleName) {
 				APP_E_PATH := getEnv("APP_E_PATH")
 				FormatTime,TimeString,,yyyyMMdd
-				run, %APP_E_PATH%  %A_Desktop%\memo\%TimeString%.txt
+				run, "%APP_E_PATH%"  "%A_Desktop%\memo\%TimeString%.txt"
 			}
 		}
 		;launch("E",SHIFT())
