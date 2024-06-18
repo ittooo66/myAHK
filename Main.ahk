@@ -9,6 +9,7 @@ global A_SpaceDownFlag := 0
 global A_SpaceConsumeFlag := 0
 global A_HUE_BRI := getEnv("A_HUE_BRI") ;0~762
 global A_HUE_CT := getEnv("A_HUE_CT") ;150~450
+global EXE_HUE := 0
 global A_Toggle_AudioDevice := 0
 global A_Toggle_Mute := 0
 
