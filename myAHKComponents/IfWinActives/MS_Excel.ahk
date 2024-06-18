@@ -8,6 +8,10 @@
 	Excel_intelliScroll(){
 		;初期マウス位置の取得
 		MouseGetPos, preMouseX, preMouseY
+
+		;スクロール処理開始
+		SetScrollLockState,On
+
 		while(GetKeyState("LButton","P")){
 			;現在マウス位置の取得
 			MouseGetPos, mouseX, mouseY
@@ -38,9 +42,11 @@
 				;X方向適用
 				while(absDiffPointX > 0){
 					if(diffPointX>0)
-						Excel_scrollRight()
+						;Excel_scrollRight()
+						Send,{Left}
 					else
-						Excel_scrollLeft()
+						;Excel_scrollLeft()
+						Send,{Right}
 
 					;スタック溜まったらSleep（１ミリSleepはまともに挙動しないので20程度見る）
 					sleepStack +=sleepCount
@@ -74,24 +80,32 @@
 				}
 			}
 		}
+		;スクロール処理終了
+		SetScrollLockState,Off
 	}
 	Excel_scrollLeft(){
-		try {
-			ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
-		}catch e{
-			;WindowのフォーカスをExcel以外に切り替えてExcelをROTに登録させる
-			gui,Show
-			gui,Destroy
-		}
+		SetScrollLockState,On
+		Send,{Right}
+		SetScrollLockState,Off
+		;try {
+		;	ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,1,0)
+		;}catch e{
+		;	;WindowのフォーカスをExcel以外に切り替えてExcelをROTに登録させる
+		;	gui,Show
+		;	gui,Destroy
+		;}
 	}
 	Excel_scrollRight(){
-		try {
-			ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
-		}catch e {
-			;WindowのフォーカスをExcel以外に切り替えてExcelをROTに登録させる
-			gui,Show
-			gui,Destroy
-		}
+		SetScrollLockState,On
+		Send,{Left}
+		SetScrollLockState,Off
+		;try {
+		;	ComObjActive("Excel.Application").ActiveWindow.SmallScroll(0,0,0,1)
+		;}catch e {
+		;	;WindowのフォーカスをExcel以外に切り替えてExcelをROTに登録させる
+		;	gui,Show
+		;	gui,Destroy
+		;}
 	}
 
 	;App個別バインド 一式
