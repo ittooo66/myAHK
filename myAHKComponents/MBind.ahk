@@ -341,7 +341,9 @@ mbind_s(){
 }
 
 mbind_t(){
-	if RCMD() || CAPS(){
+	if SPACE() && CAPS(){
+		launch("T",SHIFT())
+	}else if RCMD() || CAPS(){
 		press("{return}")
 	}else if SPACE() && SHIFT()
 		ClipExt_copyTo("ST")
@@ -930,6 +932,7 @@ mbind_mmb(){
 mbind_msblb(){
 	if MRB(){
 		Send,^{w}
+		Sleep,250
 	}else if MMB(){
 		WinMinimize, A
 	}else if MSBLF(){
@@ -972,10 +975,15 @@ mbind_msblf(){
 			execScripts("SetAudioDevice.ps1")
 			splash("Audio Device Changed to BT-W3.",1000,330)
 		}else if (A_Toggle_AudioDevice = 1 ){
-			A_Toggle_AudioDevice = 0
-			setEnv("AUDIO_DEVICE","Jabra")
+			A_Toggle_AudioDevice = 2
+			setEnv("AUDIO_DEVICE","XB23")
 			execScripts("SetAudioDevice.ps1")
-			splash("Audio Device Changed to Jabra.",1000,330)
+			splash("Audio Device Changed to XB23.",1000,330)
+		}else if (A_Toggle_AudioDevice = 2 ){
+			A_Toggle_AudioDevice = 0
+			setEnv("AUDIO_DEVICE","CX")
+			execScripts("SetAudioDevice.ps1")
+			splash("Audio Device Changed to CX.",1000,330)
 		}
 	}else if MSBLB(){
 		changeWindowSize()
@@ -1005,6 +1013,7 @@ mbind_wheelup(){
 		} else {
 			A_HUE_BRI := 762
 		}
+		EXE_HUE := 1
 		tooltip, %A_HUE_BRI%/762
 	}else if MMB()
 		Send,#^{Left}
@@ -1025,6 +1034,7 @@ mbind_wheeldown(){
 		} else {
 			A_HUE_BRI := 0
 		}
+		EXE_HUE := 1
 		tooltip, %A_HUE_BRI%/762
 	}else if MMB()
 		Send,#^{Right}
