@@ -731,6 +731,8 @@ F19 & LButton::
 F20 & LButton::
 LWin & LButton::
 RWin & LButton::
+!+LButton::
+^!LButton::
 	mbind_mlb()
 return
 
@@ -742,6 +744,8 @@ F19 & RButton::
 F20 & RButton::
 LWin & RButton::
 RWin & RButton::
+^!RButton::
+!+RButton::
 	mbind_mrb()
 return
 
@@ -753,6 +757,8 @@ F19 & MButton::
 ;F20 & MButton::AHK EXITで利用
 LWin & MButton::
 RWin & MButton::
+^!MButton::
+!+MButton::
 	mbind_mmb()
 return
 
@@ -765,6 +771,8 @@ F20 & WheelUp::
 F19 & WheelUp::
 LWin & WheelUp::
 RWin & WheelUp::
+^!WheelUp::
+!+WheelUp::
 	mbind_wheelup()
 return
 
@@ -777,6 +785,8 @@ F20 & WheelDown::
 F19 & WheelDown::
 LWin & WheelDown::
 RWin & WheelDown::
+^!WheelDown::
+!+WheelDown::
 	mbind_wheeldown()
 return
 
@@ -788,6 +798,8 @@ F19 & XButton1::
 F20 & XButton1::
 LWin & XButton1::
 RWin & XButton1::
+^!XButton1::
+!+XButton1::
 	mbind_msblb()
 return
 
@@ -799,6 +811,8 @@ F19 & XButton2::
 F20 & XButton2::
 LWin & XButton2::
 RWin & XButton2::
+^!XButton2::
+!+XButton2::
 	mbind_msblf()
 return
 

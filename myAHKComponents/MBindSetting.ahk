@@ -30,24 +30,24 @@ RALT(){ ;HHKB_右Alt
 LALT(){ ;HHKB_左Alt
 	return GetKeyState("LAlt","P")
 }
-MLB(){ ;GPRO_左クリック
+MLB(){ ;マウス_左クリック
 	return GetKeyState("LButton","P")
 }
-MRB(){ ;GPRO_右クリック
+MRB(){ ;マウス_右クリック
 	return GetKeyState("RButton","P")
 }
-MMB(){ ;GPRO_中クリック
+MMB(){ ;マウス_中クリック
 	return GetKeyState("MButton","P")
 }
-MSBLB(){ ;GPRO_左下サイドボタン
+MSBLB(){ ;マウス_左下サイドボタン
 	return GetKeyState("XButton1","P")
 }
-MSBLF(){ ;GPRO_左上サイドボタン
+MSBLF(){ ;マウス_左上サイドボタン
 	return GetKeyState("XButton2","P")
 }
-MSBRF(){ ;GPRO_右上サイドボタン
-	return GetKeyState("F19","P")
+MSBRF(){ ;マウス_右上サイドボタン
+	return GetKeyState("F19","P") | ( GetKeyState("Ctrl","P") && GetKeyState("Alt","P") )
 }
-MSBRB(){ ;GPRO_右下サイドボタン
-	return GetKeyState("F20","P")
+MSBRB(){ ;マウス_右下サイドボタン
+	return GetKeyState("F20","P") | ( GetKeyState("Alt","P") && GetKeyState("Shift","P") )
 }
