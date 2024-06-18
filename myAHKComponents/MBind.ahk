@@ -449,7 +449,7 @@ mbind_1(){
 		;表示Window制御：左画面のみ(DELL 27 WQHD)に表示
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
-		Send,{Home}{Return}{Esc}
+		Send,{End}{Return}{Esc}
 		Sleep 5000
 		Reload	;GrabWindowの挙動がおかしくなるのでReloadしてみる
 	}else if SPACE() && CAPS() && SHIFT(){
@@ -497,7 +497,7 @@ mbind_3(){
 		;表示Window制御：右画面のみ(EIZO 27 4K)に表示
 		Send,{RWin Down}{p}{RWin Up}
 		Sleep 200
-		Send,{End}{Return}{Esc}
+		Send,{Home}{Return}{Esc}
 		Sleep 5000
 		Reload	;GrabWindowの挙動がおかしくなるのでReloadしてみる
 	}else if SPACE() && CAPS() && SHIFT(){
