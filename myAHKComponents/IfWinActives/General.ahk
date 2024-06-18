@@ -7,6 +7,13 @@
 	RButton & MButton::Send,^{n}						;新規Tab
 #IfWinActive
 
+#IfWinActive,ahk_exe Trello.exe
+	RButton & XButton1::
+	Send,{c}										;Trello カードを削除
+	Sleep,250
+	return
+#IfWinActive
+
 #IfWinActive,ahk_exe mpc-hc64.exe					;MPC-HC 個別定義 一式
   XButton2 & WheelUp::Send,{Left}					;戻る
   XButton2 & WheelDown::Send,{Right}			;進む
