@@ -5,12 +5,11 @@ Watch:
 
 	;HUEのバッチ処理用
 	tooltip,
-	ENV_HUE_BRI := getEnv("A_HUE_BRI")
-	if( ENV_HUE_BRI != A_HUE_BRI ){
+	if( EXE_HUE != 0){
 		execScripts("PhilipsHueOn.bat " . A_HUE_BRI . " " . A_HUE_CT )
-		setEnv("A_HUE_BRI", A_HUE_BRI)
+		EXE_HUE := 0
 	}
-
+	
 	;USB_Connect用
 	if ( FileExist("C:\Users\ittoo\OneDrive\home\src\linux\HomeBridgeServer\BT-W3-OFF") ){
 		FileDelete, C:\Users\ittoo\OneDrive\home\src\linux\HomeBridgeServer\BT-W3-OFF
