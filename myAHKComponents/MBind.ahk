@@ -795,10 +795,10 @@ mbind_backspace(){
 
 mbind_return(){
 	if (SPACE() && CAPS() && SHIFT()) {
-		Run, ssh ManagementServer
+		Run, ssh RHEL9-Management
 	}else if (SPACE() && CAPS()){
 		if !activateWindow("ConsoleWindowClass","",""){ 
-			Run, ssh ManagementServer
+			Run, ssh RHEL9-Management
 		}
 	}else if (SPACE()){
 		directInput("<br>")
