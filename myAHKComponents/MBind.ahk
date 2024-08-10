@@ -971,19 +971,14 @@ mbind_msblf(){
 	}else if MSBRF(){
 		if (A_Toggle_AudioDevice = 0 ){
 			A_Toggle_AudioDevice = 1
-			setEnv("AUDIO_DEVICE","BT-W3")
-			execScripts("SetAudioDevice.ps1")
-			splash("Audio Device Changed to BT-W3.",1000,330)
-		}else if (A_Toggle_AudioDevice = 1 ){
-			A_Toggle_AudioDevice = 2
-			setEnv("AUDIO_DEVICE","XB23")
-			execScripts("SetAudioDevice.ps1")
-			splash("Audio Device Changed to XB23.",1000,330)
-		}else if (A_Toggle_AudioDevice = 2 ){
-			A_Toggle_AudioDevice = 0
 			setEnv("AUDIO_DEVICE","CX")
 			execScripts("SetAudioDevice.ps1")
 			splash("Audio Device Changed to CX.",1000,330)
+		}else if (A_Toggle_AudioDevice = 1 ){
+			A_Toggle_AudioDevice = 0
+			setEnv("AUDIO_DEVICE","iBasso")
+			execScripts("SetAudioDevice.ps1")
+			splash("Audio Device Changed to iBasso.",1000,330)
 		}
 	}else if MSBLB(){
 		changeWindowSize()
