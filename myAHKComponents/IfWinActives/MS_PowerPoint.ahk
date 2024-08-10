@@ -162,7 +162,7 @@
 		Send, !{h}{f}{1}{Down}{Down}{Down}{Down}{Down}{Down}{return}								;文字色変更（赤）
 	}
 	ppt_bind_t(){
-		Send, !{h}{f}{1}																					;文字色選択
+		Send, !{h}{f}{c}																					;文字色選択
 	}
 
 	ppt_bind_a(){
@@ -175,7 +175,7 @@
 		Send, !{j}{d}{s}{f}																				;図形塗り
 	}
 	ppt_bind_f(){
-		Send, !{h}{f}{f}																					;フォント弄り
+		Send, !{j}{d}{p}{a}{a}																					;揃え
 	}
 	ppt_bind_g(){
 		Send, !{h}{o}																							;図形の書式設定

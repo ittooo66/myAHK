@@ -873,12 +873,12 @@ mbind_mrb(){
 		if ( A_Toggle_Mute = 0 ){
 			A_Toggle_Mute = 1
 			setEnv("BT-W3_isEnabled","1")
-			FileAppend,, C:\Users\ittoo\OneDrive\home\src\linux\HomeBridgeServer\BT-W3-ON
+			run, "C:\Users\ittoo\OneDrive\home\src\ahk\myAHKComponents\Resources\Apps\USB_Connect\USB_On.exe"
 			splash("BT-W3 Enabled.",500,200)
 		}else{
 			A_Toggle_Mute = 0
 			setEnv("BT-W3_isEnabled","0")
-			FileAppend,, C:\Users\ittoo\OneDrive\home\src\linux\HomeBridgeServer\BT-W3-OFF
+			run, "C:\Users\ittoo\OneDrive\home\src\ahk\myAHKComponents\Resources\Apps\USB_Connect\USB_Off.exe"
 			splash("BT-W3 Disabled.",500,200)
 		}
 
