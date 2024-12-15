@@ -178,7 +178,7 @@
 		Send, !{j}{d}{p}{a}{a}																					;揃え
 	}
 	ppt_bind_g(){
-		Send, !{h}{o}																							;図形の書式設定
+		Send, !{h}{o}{1}																						;図形の書式設定
 	}
 	
 	ppt_bind_z(){
