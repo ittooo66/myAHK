@@ -26,6 +26,9 @@ if not "%2" == "" (
 	set ct=%2
 )
 
-curl -X PUT http://192.168.10.20/api/wYcnCswCImWhoyfzFtGKhVgsS-W8H6J1S1LjcVbq/lights/1/state -d "{\"on\":%on1%,\"bri\":%bri1%,\"ct\":%ct%}"
-curl -X PUT http://192.168.10.20/api/wYcnCswCImWhoyfzFtGKhVgsS-W8H6J1S1LjcVbq/lights/2/state -d "{\"on\":%on2%,\"bri\":%bri2%,\"ct\":%ct%}"
-curl -X PUT http://192.168.10.20/api/wYcnCswCImWhoyfzFtGKhVgsS-W8H6J1S1LjcVbq/lights/3/state -d "{\"on\":%on3%,\"bri\":%bri3%,\"ct\":%ct%}"
+rem curl -X PUT http://192.168.10.20/api/wYcnCswCImWhoyfzFtGKhVgsS-W8H6J1S1LjcVbq/lights/1/state -d "{\"on\":%on1%,\"bri\":%bri1%,\"ct\":%ct%}"
+rem curl -X PUT http://192.168.10.20/api/wYcnCswCImWhoyfzFtGKhVgsS-W8H6J1S1LjcVbq/lights/2/state -d "{\"on\":%on2%,\"bri\":%bri2%,\"ct\":%ct%}"
+rem curl -X PUT http://192.168.10.20/api/wYcnCswCImWhoyfzFtGKhVgsS-W8H6J1S1LjcVbq/lights/3/state -d "{\"on\":%on3%,\"bri\":%bri3%,\"ct\":%ct%}"
+
+curl -X PUT http://192.168.10.20/api/wYcnCswCImWhoyfzFtGKhVgsS-W8H6J1S1LjcVbq/lights/2/state -d "{\"on\":true,\"bri\":%1,\"ct\":%2}"
+curl -X PUT http://192.168.10.20/api/wYcnCswCImWhoyfzFtGKhVgsS-W8H6J1S1LjcVbq/lights/3/state -d "{\"on\":true,\"bri\":%1,\"ct\":%2}"

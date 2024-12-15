@@ -1008,13 +1008,13 @@ mbind_wheelup(){
 	else if MSBRF()
 		Send,#^{Volume_Up}
 	else if MSBRB() {
-		if ( A_HUE_BRI < 762 ){
+		if ( A_HUE_BRI < 254 ){
 			A_HUE_BRI := A_HUE_BRI + 40
 		} else {
-			A_HUE_BRI := 762
+			A_HUE_BRI := 254
 		}
 		EXE_HUE := 1
-		tooltip, %A_HUE_BRI%/762
+		tooltip, %A_HUE_BRI%/254
 	}else if MMB()
 		Send,#^{Left}
 	else
@@ -1035,7 +1035,7 @@ mbind_wheeldown(){
 			A_HUE_BRI := 0
 		}
 		EXE_HUE := 1
-		tooltip, %A_HUE_BRI%/762
+		tooltip, %A_HUE_BRI%/254
 	}else if MMB()
 		Send,#^{Right}
 	else
