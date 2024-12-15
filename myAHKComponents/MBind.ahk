@@ -1033,10 +1033,15 @@ mbind_wheeldown(){
 }
 
 consumeSpace(){
+	global A_SpaceConsumeFlag
 	A_SpaceConsumeFlag := 1
 }
 
 mbind_space_down(){
+	global A_SpaceDownFlag
+	global A_SpaceDownTime
+	global A_SpaceConsumeFlag
+
 	;Spaceキー押し下げ判定がない場合（初回入力）
 	if (A_SpaceDownFlag == 0){
 		;押し下げ判定付与
@@ -1055,6 +1060,9 @@ mbind_space_down(){
 }
 
 mbind_space_up(){
+	global A_SpaceDownTime
+	global A_SpaceConsumeFlag
+	global A_SpaceDownFlag
 	;Spaceキー押下げ判定を解除
 	A_SpaceDownFlag := 0
 	;Spaceバインドが消費済みならば、各バインド判定を無効にして終了
