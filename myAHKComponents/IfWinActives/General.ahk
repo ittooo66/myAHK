@@ -7,6 +7,11 @@
 	RButton & MButton::Send,^{n}						;新規Tab
 #IfWinActive
 
+#IfWinActive,ahk_exe Joplin.exe
+	LControl & L::Send,^{l}
+	LControl & Space::Send,^{l}
+#IfWinActive
+
 #IfWinActive,ahk_exe Trello.exe
 	RButton & XButton1::
 	Send,{c}										;Trello カードを削除
