@@ -868,20 +868,10 @@ mbind_mrb(){
 		Send,^{n}
 	}else if MSBRB(){
 		execScripts("PhilipsHueOff.bat")
-	}else if MSBRF(){	
-		; BT-W3 無効・有効切り替え
-		if ( A_Toggle_Mute = 0 ){
-			A_Toggle_Mute = 1
-			setEnv("BT-W3_isEnabled","1")
-			run, "C:\Users\ittoo\OneDrive\home\src\ahk\myAHKComponents\Resources\Apps\USB_Connect\USB_On.exe"
-			splash("BT-W3 Enabled.",500,200)
-		}else{
-			A_Toggle_Mute = 0
-			setEnv("BT-W3_isEnabled","0")
-			run, "C:\Users\ittoo\OneDrive\home\src\ahk\myAHKComponents\Resources\Apps\USB_Connect\USB_Off.exe"
-			splash("BT-W3 Disabled.",500,200)
-		}
-
+	}else if MSBRF(){
+		execScripts("save_co2_data.bat")
+		CO2 := getEnv("CO2")
+		splash("CO2 Concentration : " . CO2 . "ppm",1500,400)
 	}else if MSBLB(){
 		Send,{RWin Down}
 		while(GetKeyState("RButton","P")){
